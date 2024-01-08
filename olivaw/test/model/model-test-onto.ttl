@@ -1,0 +1,60 @@
+@prefix : <https://gitlab.com/acimov/acimov-methodology-template/blob/main/scripts/tests/model-test-onto.ttl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix earl: <https://www.w3.org/ns/earl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+###################
+# Test criterions #
+###################
+
+:syntax a earl:TestCriterion ;
+    dcterms:identifier "syntax" ;
+    dcterms:title "Syntax test"@en ;
+    dcterms:description "A test meant to check wether the test subject is syntaxically correct or not."@en .
+
+:owl-rl-constraint a earl:TestCriterion ;
+    dcterms:identifier "owl-rl-constraint" ;
+    dcterms:title "OWL RL Constraint test"@en ;
+    dcterms:description "A test meant to check wether the test subject is syntaxically correct or not."@en .
+
+:profile-compatibility a earl:TestCriterion ;
+    dcterms:identifier "profile-compatibility" ;
+    dcterms:title "Profile compatibility test"@en ;
+    dcterms:description "A test meant to check whether the test subject is compatible with a profile or not, and if it is not, why."@en .
+
+:term-referencing a earl:TestCriterion ;
+    dcterms:identifier "term-referencing" ;
+    dcterms:title "Term referencing test"@en ;
+    dcterms:description "A test case from the Best Practices tests checking if each term of the test subject is referenced to a module through a rdfs:isDefinedBy property."@en .
+
+:domain-and-range-referencing-test a earl:TestCriterion ;
+    dcterms:identifier "domain-and-range-referencing" ;
+    dcterms:title "Domain and range referencing test"@en ;
+    dcterms:description "A test case from the Best Practices tests checking if all the ranges and domains from the test subject point to terms that are defined in the vocabulary."@en .
+
+:terms-differenciation-test a earl:TestCriterion ;
+    dcterms:identifier "terms-differenciation" ;
+    dcterms:title "Terms differenciation test"@en ;
+    dcterms:description "A test case from the Best Practices tests checking if all the terms are different enough from each other according to the Levenshtein distance metric."@en .
+
+:labeled-terms-test a earl:TestCriterion ;
+    dcterms:identifier "labeled-terms" ;
+    dcterms:title "Term labeling test"@en ;
+    dcterms:description "A test case from the Best Practices tests checking if all the terms of the subject have a rdfs:label property pointing to a literal in English"@en .
+
+earl:Fail owl:equivalentClass [
+        a owl:Class ;
+        owl:unionOf (:MajorFail :MinorFail)
+    ] .
+
+:MajorFail rdfs:subClassOf earl:Fail ;
+    rdfs:label "Major fail"@en ;
+    rdfs:comment "The class of the fails that cannot be ignored."@en .
+
+:MinorFail rdfs:subClassOf earl:Fail ;
+    rdfs:label "Minor fail"@en ;
+    rdfs:comment "The class of the fails that can be ignored."@en .
+
+[ a owl:AllDisjointClasses ;
+    owl:members (:MajorFail :MinorFail) ] . 
