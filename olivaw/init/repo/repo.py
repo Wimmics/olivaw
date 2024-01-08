@@ -59,13 +59,9 @@ gist_list = {
     }
 }
 
-for key in gist_list.keys():
-    gist_list[key]["schemaversion"] = "1"
-
-def create_gist(key, name, content='', public=False):
+def create_gist(key, name, filename, content='', public=False):
     #form a request URL
     url=GITHUB_API+"/gists"
-    print("Request URL: %s" % url)
     
     #print headers,parameters,payload
     headers={'Authorization':'token %s' % key}
@@ -74,7 +70,7 @@ def create_gist(key, name, content='', public=False):
         "description": name,
         "public": public,
         "files": {
-            name:{"content": content}
+            filename:{"content": content}
         }
     }
 
@@ -86,10 +82,23 @@ def create_gist(key, name, content='', public=False):
 def init_gists(key):
     index = {}
 
-    for gist in gist_list.keys():
-        index[gist] = create_gist(key, gist, content=json.dumps(gist_list[gist]))
+    print("Creating gists...")
 
-    index_id = create_gist(key, "index", content=index)
+    suffix = "__".join(REF.split("/")[1:])
+    for gist in gist_list.keys():
+        index[gist] = create_gist(
+            key,
+            gist,
+            f"{REPO_URI.split('/')[-1]}__{suffix}.json",
+            content=json.dumps(gist_list[gist])
+        )
+
+    index_id = create_gist(
+        key,
+        "index",
+        f"{REPO_URI.split('/')[-1]}__{suffix}.json",
+        content=json.dumps(index)
+    )
 
     return index, index_id
 
@@ -97,8 +106,8 @@ def badge_uri(gist_id):
     suffix = "__".join(REF.split("/")[1:])
     return f"https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/{DEV_USERNAME}/{gist_id}/raw/{REPO_URI.split('/')[-1]}__{suffix}.json"
 
-def init_badges():
-    index, index_id = init_gists()
+def init_badges(secret):
+    index, index_id = init_gists(secret)
 
     updated = None
     with open(f"{ROOT_FOLDER}{sep}README.md", "r") as readme:
@@ -114,10 +123,10 @@ def init_badges():
 
         updated = "\n".join(updated)
     
-    with open(f"{ROOT_FOLDER}{sep}README.md", "r") as readme:
+    with open(f"{ROOT_FOLDER}{sep}README.md", "w") as readme:
         readme.write(updated)
 
-    return index_id
+    return index, index_id
 
 def init_repo():
     print("Let's initialize your repository")
@@ -128,7 +137,7 @@ def init_repo():
         load_dotenv(f"{PWD_TO_OVILAW}{sep}.env")
         gist_secret = getenv("GIST_SECRET")
         try:
-            gist_index = init_gists(gist_secret)
+            gist_index = init_badges(gist_secret)
             print("Gists initialized")
         except:
             pass
@@ -138,10 +147,10 @@ def init_repo():
             print("Please create a key on https://github.com/settings/tokens and create a key (only gist scope is required)")
             print("Key for gist access:")
             gist_secret = input()
-            gist_index = init_gists(gist_secret)
+            gist_index = init_badges(gist_secret)
             set_key(f"{PWD_TO_OVILAW}{sep}.env", "GIST_SECRET", gist_secret)
-        except:
-            print("Provided key seems to be invalid")
+        except Exception as e:
+            print(f"Provided key seems to be invalid: {str(e)}")
 
     print("First input the URL where your ontology should be deployed:")
     deploy_url = input()
@@ -160,9 +169,13 @@ def init_repo():
     with open(f"{PWD_TO_ROOT_FOLDER}.acimov{sep}parameters.json", "w") as params:
         params.write(json.dumps({
             "ontology_url": deploy_url,
-            "term_distance_threshold": 3,
+            "term_distance_threshold": levenshtein_threshold,
             "blocking_errors": [
                 "syntax-error",
                 "owl-rl-constraint-violation"
             ]
         }))
+
+    print("The repository is initialized!")
+    print("You still need to pass the Gist access token to Github so that your future Github Actions can be able to update the badges")
+    print(f"Just go to {REPO_URI}/settings/secrets/actions and set a secret named 'GIST_SECRET' to the value of the access token")

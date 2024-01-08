@@ -230,6 +230,10 @@ def modules_tests(
     :returns: A dictionary of reports, the keys are the file paths
     """
     modules = glob(glob_path) if isinstance(glob_path, str) else glob_path
+
+    if len(modules) == 0:
+        return []
+    
     unsafe_modules = []
 
     for module in modules:
@@ -266,6 +270,10 @@ def modelets_tests(
     """
 
     modelets = glob(glob_path) if isinstance(glob_path, str) else glob_path
+
+    if len(modelets) == 0:
+        return []
+
     unsafe_modelets = []
 
     for modelet in modelets:
@@ -470,6 +478,9 @@ def merged_fragment_set_test(
         relpath(fragment, PWD_TO_ROOT_FOLDER).replace(sep, "/")
         for fragment in fragments_to_merge
     ]
+
+    if len(fragments_keys) == 0:
+        return
 
     subject = make_subject(report, fragments_keys, name=heart_name, custom_title=custom_title)
     fragment_check(

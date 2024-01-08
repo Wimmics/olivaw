@@ -36,8 +36,8 @@ def init(line):
     target = line[0]
 
     if target == "repo":
-        # Implement here
-        return
+        from .init.repo.repo import init_repo
+        init_repo()
     elif target == "branch":
         # Implement here
         return

@@ -278,7 +278,7 @@ def make_stat_chapter(assertions):
 
     rates = []
     for nb in assertions_stats:
-        rate = nb/nb_assertions * 100
+        rate = nb/nb_assertions * 100 if nb_assertions > 0 else 0
         rate = int(max(1, rate)) if rate > 0 else 0
         rates.append(rate)
 
