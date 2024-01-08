@@ -1,6 +1,3 @@
-from .parameters import ONTOLOGY_URL, TERM_DISTANCE_THRESHOLD
-from .rdflib_info import ACIMOV_MODEL_TEST_URI
-
 # SparQL request listing all the ontology terms not linked to a moduled by a rdfs:isDefinedBy property
 NOT_REFERENCED = """
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -14,7 +11,7 @@ SELECT DISTINCT ?s where {
   FILTER NOT EXISTS { ?s rdf:type skos:Concept . }
   FILTER NOT EXISTS { FILTER ( str(?s) =  "ONTOLOGY_URL" ) }
 }
-""".replace("ONTOLOGY_URL", ONTOLOGY_URL)
+"""
 
 # SparQL request to get all the triples with their related modules, using the rdfs:isDefinedBy property 
 GET_BY_MODULE = """
@@ -27,7 +24,7 @@ SELECT ?m ?s ?p ?o where {
   FILTER(strstarts(str(?s), "ONTOLOGY_URL"))
 }
 ORDER BY ?m
-""".replace("ONTOLOGY_URL", ONTOLOGY_URL)
+"""
 
 # SparQL request to get all the properties with a domain linking to a term not defined in the ontology
 DOMAIN_OUT_Of_VOCABULARY = """
@@ -62,7 +59,7 @@ SELECT DISTINCT ?suffix ?domain WHERE {
   # Format the result
   BIND (SUBSTR(str(?property), STRLEN("ONTOLOGY_URL") + 1) as ?suffix)
 }
-""".replace("ONTOLOGY_URL", ONTOLOGY_URL)
+"""
 
 # SparQL request to get all the properties with a range linking to a term not defined in the ontology
 RANGE_OUT_OF_VOCABULARY = DOMAIN_OUT_Of_VOCABULARY.replace("domain", "range")
@@ -148,7 +145,7 @@ SELECT DISTINCT ?suffix1 ?suffix2 WHERE {
   FILTER(strlen(?suffix1) > 0)
   FILTER(strlen(?suffix2) > 0)
 } ORDER BY ?suffix1
-""".replace("ONTOLOGY_URL", ONTOLOGY_URL)
+"""
 
 # Not used for now
 # Gets the pairs of suffixes in the given graph and gives all the pairs of terms that are too similar
@@ -163,10 +160,7 @@ SELECT ?suffix1 ?suffix2 ?distance WHERE {
 """.replace(
     "GET_TERM_PAIRS",
     GET_TERM_PAIRS
-  ).replace(
-      "TERM_DISTANCE_THRESHOLD",
-      str(TERM_DISTANCE_THRESHOLD)
-) + LEVENSHTEIN_FUNCTION
+  ) + LEVENSHTEIN_FUNCTION
 
 NOT_LABELED = """
 select distinct ?suffix where {
@@ -179,7 +173,7 @@ select distinct ?suffix where {
   BIND(substr(str(?term), strlen("ONTOLOGY_URL") + 1) AS ?suffix)
   FILTER(strlen(?suffix) > 0)
 }
-""".replace("ONTOLOGY_URL", ONTOLOGY_URL)
+"""
 
 FAIL_ASSERTIONS = """
 select ?n ?c ?t ?d where {

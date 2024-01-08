@@ -1,12 +1,16 @@
 import requests
 import json
-from os.path import sep
+from os import getenv
+from os.path import sep, exists
+from dotenv import load_dotenv, set_key
 
 from olivaw.constants import (
     ROOT_FOLDER,
     DEV_USERNAME,
     REPO_URI,
-    REF
+    REF,
+    PWD_TO_OVILAW,
+    PWD_TO_ROOT_FOLDER
 )
 
 GITHUB_API="https://api.github.com"
@@ -58,13 +62,13 @@ gist_list = {
 for key in gist_list.keys():
     gist_list[key]["schemaversion"] = "1"
 
-def create_gist(name, content='', public=False):
+def create_gist(key, name, content='', public=False):
     #form a request URL
     url=GITHUB_API+"/gists"
     print("Request URL: %s" % url)
     
     #print headers,parameters,payload
-    headers={'Authorization':'token %s'%API_TOKEN}
+    headers={'Authorization':'token %s' % key}
     params={'scope':'gist'}
     payload={
         "description": name,
@@ -79,13 +83,13 @@ def create_gist(name, content='', public=False):
 
     return json.loads(res.text)['id']
 
-def init_gists():
+def init_gists(key):
     index = {}
 
     for gist in gist_list.keys():
-        index[gist] = create_gist(gist, content=json.dumps(gist_list[gist]))
+        index[gist] = create_gist(key, gist, content=json.dumps(gist_list[gist]))
 
-    index_id = create_gist("index", content=index)
+    index_id = create_gist(key, "index", content=index)
 
     return index, index_id
 
@@ -117,6 +121,28 @@ def init_badges():
 
 def init_repo():
     print("Let's initialize your repository")
+
+    gist_secret = None
+    gist_index = None
+    if exists(f"{PWD_TO_OVILAW}{sep}.env"):
+        load_dotenv(f"{PWD_TO_OVILAW}{sep}.env")
+        gist_secret = getenv("GIST_SECRET")
+        try:
+            gist_index = init_gists(gist_secret)
+            print("Gists initialized")
+        except:
+            pass
+
+    while gist_index is None:
+        try:
+            print("Please create a key on https://github.com/settings/tokens and create a key (only gist scope is required)")
+            print("Key for gist access:")
+            gist_secret = input()
+            gist_index = init_gists(gist_secret)
+            set_key(f"{PWD_TO_OVILAW}{sep}.env", "GIST_SECRET", gist_secret)
+        except:
+            print("Provided key seems to be invalid")
+
     print("First input the URL where your ontology should be deployed:")
     deploy_url = input()
     print("Then input the minimum Levenshtein threshold you expect between each of the future ontology terms")
@@ -124,9 +150,19 @@ def init_repo():
     levenshtein_threshold = None
     while levenshtein_threshold is None:
         try:
-            levenshtein_threshold = int(input())
+            levenshtein_input = input()
+            if levenshtein_input == '':
+                levenshtein_input = "3"
+            levenshtein_threshold = int(levenshtein_input)
         except:
             pass
     
-    # Pour l'instant
-    gist_index = init_gists()
+    with open(f"{PWD_TO_ROOT_FOLDER}.acimov{sep}parameters.json", "w") as params:
+        params.write(json.dumps({
+            "ontology_url": deploy_url,
+            "term_distance_threshold": 3,
+            "blocking_errors": [
+                "syntax-error",
+                "owl-rl-constraint-violation"
+            ]
+        }))

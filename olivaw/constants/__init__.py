@@ -11,44 +11,45 @@ from .rdflib_info import *
 
 from .markdown import *
 
-__all__ = ["parameters", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown"]
-
-from .parameters import ONTOLOGY_URL, BLOCKING_ERRORS
-
-# The character separating the ontology base URL from the suffix
-ONTOLOGY_SEPARATOR = ONTOLOGY_URL[-1]
+__all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown"]
 
 TEST_RESOURCES = None
 with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}tests-resources.json", "r") as f:
   TEST_RESOURCES = load(f)
 
 ONTOLOGY_URL = None
-CORESE_PYTHON_URL = None
 TERM_DISTANCE_THRESHOLD = None
-EARL_PREFIX = None
 BLOCKING_ERRORS = None
 
 with open(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json") as f:
   repo_parameters = load(f)
 
-  ##############
-  # Parameters #
-  ##############
-
   # The ontology base URL
   ONTOLOGY_URL = repo_parameters["ontology_url"]
-
-  # The URL of the Corese python library to fetch
-  CORESE_PYTHON_URL = repo_parameters["corese_python_url"]
 
   # The desired levenshtein threshold to accept terms as different enough
   TERM_DISTANCE_THRESHOLD = repo_parameters["term_distance_threshold"]
 
-  # The EARL ontology prefix
-  EARL_PREFIX= repo_parameters["earl_prefix"]
-
   # The errors ids that are defined as blocking
   BLOCKING_ERRORS = repo_parameters["blocking_errors"]
+
+def add_repo_variables(request):
+  return request.replace("ONTOLOGY_URL", ONTOLOGY_URL).replace("TERM_DISTANCE_THRESHOLD", str(TERM_DISTANCE_THRESHOLD))
+
+from .uris import *
+
+NOT_REFERENCED = add_repo_variables(NOT_REFERENCED)
+GET_BY_MODULE = add_repo_variables(GET_BY_MODULE)
+DOMAIN_OUT_Of_VOCABULARY = add_repo_variables(DOMAIN_OUT_Of_VOCABULARY)
+RANGE_OUT_OF_VOCABULARY = add_repo_variables(RANGE_OUT_OF_VOCABULARY)
+GET_TOO_CLOSED_PAIRS = add_repo_variables(GET_TOO_CLOSED_PAIRS)
+NOT_LABELED = add_repo_variables(NOT_LABELED)
+GET_TERM_PAIRS = add_repo_variables(GET_TERM_PAIRS)
+
+ONTOLOGY_NAMESPACE = Namespace(ONTOLOGY_URL)
+
+# The character separating the ontology base URL from the suffix
+ONTOLOGY_SEPARATOR = ONTOLOGY_URL[-1]
 
 for criterion in TEST_RESOURCES.keys():
   criterion_resource = TEST_RESOURCES[criterion]

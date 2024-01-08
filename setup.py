@@ -19,5 +19,5 @@ setup(
     },
     author='Me',
     description='Set of tools meant for acimov structured projects',
-    python_requires='>=3.5'
+    python_requires='>=3.8'
 )
