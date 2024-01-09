@@ -39,7 +39,8 @@ def init(line):
         from .init.repo.repo import init_repo
         init_repo()
     elif target == "branch":
-        # Implement here
+        from .init.branch.branch import init_branch
+        init_branch()
         return
     else:
         # Best way to deal with invalid command...?

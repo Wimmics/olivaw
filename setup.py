@@ -1,7 +1,8 @@
 from setuptools import setup, find_packages
+from os.path import sep
 
 requirements = None
-with open("requirements.txt", "r") as requirementsFile:
+with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}requirements.txt", "r") as requirementsFile:
     requirements = requirementsFile.readlines()
     requirements = [
         line.strip()

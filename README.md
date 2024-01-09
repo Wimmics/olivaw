@@ -5,8 +5,7 @@ Anyone can use it as a python library as follows:
 
 ```shell
 git clone https://github.com/Wimmics/olivaw
-cd olivaw
-pip install -e .
+pip install -e olivaw
 ```
 
 The repository should soon be used also as a Github Actions
