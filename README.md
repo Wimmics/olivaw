@@ -4,8 +4,7 @@ This repository is a python library meant for providing tool in an Acimov ontolo
 Anyone can use it as a python library as follows:
 
 ```shell
-git clone https://github.com/Wimmics/olivaw
-pip install -e olivaw
+pip install git+https://github.com/Wimmics/olivaw
 ```
 
 The repository should soon be used also as a Github Actions
