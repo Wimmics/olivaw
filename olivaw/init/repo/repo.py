@@ -126,7 +126,7 @@ def init_badges(secret):
     with open(f"{ROOT_FOLDER}{sep}README.md", "w") as readme:
         readme.write(updated)
 
-    return index, index_id
+    return index_id
 
 def init_repo():
     print("Let's initialize your repository")
@@ -173,8 +173,9 @@ def init_repo():
             "blocking_errors": [
                 "syntax-error",
                 "owl-rl-constraint-violation"
-            ]
-        }))
+            ],
+            "gist_index": gist_index
+        }, indent=4))
 
     print("The repository is initialized!")
     print("You still need to pass the Gist access token to Github so that your future Github Actions can be able to update the badges")
