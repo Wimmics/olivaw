@@ -19,6 +19,8 @@ In a repository respecting the Acimov architecture, model tests can be launched 
 olivaw test model
 ```
 
+Tests poewerd by [Corese](https://project.inria.fr/corese/) will be run
+
 Two files will be generated in the folder .acimov/output of your project:
 * a *.ttl* file containing a test report written with the [EARL](https://www.w3.org/WAI/ER/EARL10/WD-EARL10-Guide-20120125) ontology
 * a version of this test report converted into a *markdown* format that is human readable
