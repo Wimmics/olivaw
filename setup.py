@@ -14,6 +14,7 @@ setup(
     name='olivaw',
     version='1.0',
     packages=find_packages(include=["olivaw", "olivaw.*"]),
+    package_data={'': ['*.json']},
     install_requires=[requirements],
     entry_points = {
         "console_scripts": ["olivaw=olivaw.main:run"]
