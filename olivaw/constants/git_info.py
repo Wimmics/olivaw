@@ -63,7 +63,7 @@ DEV_USERNAME = arg_dev_username[0] if len(arg_dev_username) > 0 else check_outpu
 .strip()
 
 
-ACIMOV_MODEL_TEST_URI = f"{PROFILE_CHECK_URI}.acimov/model-test/model-test-onto.ttl"
+ACIMOV_MODEL_TEST_URI = f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/model/model-test-onto.ttl"
 # URL prefix for the files in the current branch in src
 SRC_URL = f"{REPO_URI}/blob/{BRANCH}/src/"
 DOMAINS_URL = SRC_URL.replace("src", "domains")
