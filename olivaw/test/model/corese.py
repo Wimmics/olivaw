@@ -329,34 +329,46 @@ def check_OWL_constraints(graph):
             # If the exception is of a different type, return an error message
             return [f"An error occurred while processing the graph: {e}"]
 
+def parse_description(line):
+    splitted = line.split('.')
+    return splitted[0 if len(splitted) == 1 else 1].strip()
+
 def profile_errors(raw_message):
+
     descriptions = []
     pointers = []
 
     lines = [
         line.strip()
-        for line in raw_message.split("\n")
-        if len(line.strip()) > 0
+        for line in raw_message.split("\n")[2:]
     ]
-
-    descriptions.append(lines[1].split(".")[1].strip())
     
     current_statement = ""
+    parsing_statement = False
 
-    for i in range(2, len(lines)):
+    for i in range(0, len(lines)):
         # Check if current statement is correct
-        try:
-            if len(current_statement) == 0 or current_statement.strip().endswith(";"):
-                raise Exception()
-            load([], extras=current_statement, disable_owl=True)
-            pointers.append(current_statement.strip())
-            descriptions.append(lines[i].split(".")[-1].strip())
-            current_statement = ""
-        except:
-            current_statement += f"\n {lines[i]}"
-            continue
-    
-    pointers.append(current_statement.strip())
+        if parsing_statement:
+            try:
+                if len(current_statement) == 0 or current_statement.strip().endswith(";"):
+                    raise Exception()
+                if parsing_statement:
+                    load([], extras=current_statement, disable_owl=True)
+                    pointers.append(current_statement.strip())
+                    current_statement = ""
+                    parsing_statement = False
+            except:
+                current_statement += f"\n {lines[i]}"
+                continue
+        else:
+                if len(current_statement) == 0:
+                    current_statement = parse_description(lines[i])
+                elif len(lines[i].strip()) > 0:
+                    current_statement += "\n" + lines[i].strip()
+                else:
+                    descriptions.append(current_statement)
+                    current_statement = ""
+                    parsing_statement = True
 
     pointers = [[pointer] for pointer in pointers]
 

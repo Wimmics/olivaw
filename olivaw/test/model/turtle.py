@@ -192,7 +192,7 @@ def load_subject(report, subject):
     return isolated_graph
 
 def extract_prefixes(graph):
-    return [
+    return [("kg", "https://www.example.org/")] + [
         (prefix, namespace)
         for prefix, namespace
         in graph.namespaces()
@@ -250,14 +250,8 @@ def parse_statement_into_graph(prefixes, raw_statement):
         prefix_error = str(e)
         prefix_error_splitted = prefix_error.split("\n")[1].strip()
         is_prefix_error = prefix_error.startswith("Prefix ") and prefix_error_splitted.endswith(" not bound")
-        if is_prefix_error:
+        if not is_prefix_error:
             raise Exception("The statement should contain no errors except for prefixes")
-        with open(f"{PWD_TO_ROOT_FOLDER}msg.txt", "w") as f:
-            f.write(rdf)
-        with open(f"{PWD_TO_ROOT_FOLDER}msg2.txt", "w") as f:
-            f.write(prefix_error)
-        import sys
-        sys.exit()
         prefix_error_splitted = prefix_error_splitted.split('"')[1]
         prefixes.append((prefix_error_splitted, "https://www.example.org/"))
         return parse_statement_into_graph(prefixes, raw_statement)
