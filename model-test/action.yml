@@ -35,7 +35,9 @@ runs:
       with:
         repository: ${{ inputs.repository }}
         ref: ${{ inputs.ref }}
-    - run: |
+    - name: Generate report
+      shell: bash
+      run: |
         pip install git+https://github.com/Wimmics/olivaw
 
         SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
@@ -82,6 +84,7 @@ runs:
         path: .acimov/output/model-test-actions.md
 
     - name: Commit the report
+      shell: bash
       run: |
         git config --global user.email "no-reply@github.com"
         git config --global user.name "Olivaw in Actions"
