@@ -61,18 +61,18 @@ runs:
         echo "RL_LABEL=$(echo ${TOKENS[29]})" >> $GITHUB_ENV
         echo "RL_COLOR=$(echo ${TOKENS[32]})" >> $GITHUB_ENV
 
-        INDEX="$(olivaw show gists --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        GISTS="$(olivaw show gists --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         GISTS="$($GISTS)"
 
-        echo "PASSBADGE="$(echo ${TOKENS[2]})" >> $GITHUB_ENV
-        echo "NOTTESTEDBADGE="$(echo ${TOKENS[5]})" >> $GITHUB_ENV
-        echo "CANNOTTELLBADGE="$(echo ${TOKENS[8]})" >> $GITHUB_ENV
-        echo "MINORFAILBADGE="$(echo ${TOKENS[11]})" >> $GITHUB_ENV
-        echo "MAJORFAILBADGE="$(echo ${TOKENS[14]})" >> $GITHUB_ENV
+        echo "PASSBADGE="$(echo ${GISTS[2]})" >> $GITHUB_ENV
+        echo "NOTTESTEDBADGE="$(echo ${GISTS[5]})" >> $GITHUB_ENV
+        echo "CANNOTTELLBADGE="$(echo ${GISTS[8]})" >> $GITHUB_ENV
+        echo "MINORFAILBADGE="$(echo ${GISTS[11]})" >> $GITHUB_ENV
+        echo "MAJORFAILBADGE="$(echo ${GISTS[14]})" >> $GITHUB_ENV
 
-        echo "ELBADGE="$(echo ${TOKENS[17]})" >> $GITHUB_ENV
-        echo "QLBADGE="$(echo ${TOKENS[20]})" >> $GITHUB_ENV
-        echo "RLBADGE="$(echo ${TOKENS[23]})" >> $GITHUB_ENV
+        echo "ELBADGE="$(echo ${GISTS[17]})" >> $GITHUB_ENV
+        echo "QLBADGE="$(echo ${GISTS[20]})" >> $GITHUB_ENV
+        echo "RLBADGE="$(echo ${GISTS[23]})" >> $GITHUB_ENV
 
         REF=${{ inputs.ref }}
         echo "github.ref: $REF"
