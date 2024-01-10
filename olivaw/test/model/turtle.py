@@ -254,6 +254,10 @@ def parse_statement_into_graph(prefixes, raw_statement):
         print(" ")
         is_prefix_error = prefix_error.startswith("Prefix ") and prefix_error.endswith(" not bound")
         if is_prefix_error:
+            with open(f"{PWD_TO_ROOT_FOLDER}msg.txt", "w") as f:
+                f.write(prefix_error)
+            import sys
+            sys.exit()
             raise Exception("The statement should contain no errors except for prefixes")
         prefix_error = prefix_error.split('"')[1]
         prefixes.append((prefix_error, "https://www.example.org/"))
