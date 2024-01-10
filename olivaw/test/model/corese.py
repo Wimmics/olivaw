@@ -16,11 +16,12 @@ from olivaw.constants import (
     GET_IMPORTS,
     ONTOLOGY_SEPARATOR,
     CORESE_LOCAL_PATH,
-    PWD_TO_ROOT_FOLDER
+    PWD_TO_ROOT_FOLDER,
+    MODE
 )
 
 def print_title(title):
-    if "--is-action" in argv:
+    if MODE == "actions":
         return
     title = "== " + title + " =="
     border = "=" * len(title)
@@ -30,7 +31,7 @@ def print_title(title):
     print(border)
 
 def smartPrint(message):
-    if "--is-action" in argv:
+    if MODE == "actions":
         return
     print(message)
 
@@ -186,7 +187,7 @@ def load(
 
     for file in path:
         if not exists(file):
-            smartPrint("File not found", file)
+            smartPrint(f"File not found: {file}")
             continue
         ld.parse(file)
     

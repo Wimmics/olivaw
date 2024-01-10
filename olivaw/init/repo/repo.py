@@ -96,7 +96,7 @@ def init_gists(key):
     index_id = create_gist(
         key,
         "index",
-        f"{REPO_URI.split('/')[-1]}__{suffix}.json",
+        f"{REPO_URI.split('/')[-1]}.json",
         content=json.dumps(index)
     )
 

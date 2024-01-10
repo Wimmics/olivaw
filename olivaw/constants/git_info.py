@@ -3,6 +3,13 @@ from os.path import relpath, sep
 
 from sys import argv
 
+modes = [
+  item.split('=')[1]
+  for item in argv
+  if item.startswith("--mode=")
+]
+MODE = modes[0] if len(modes) > 0 else "manual"
+
 arg_root = [item.split("=")[1] for item in argv if item.startswith("--REPO-ROOT=")]
 ROOT_FOLDER = arg_root[0] if len(arg_root) > 0 else check_output(
   "git rev-parse --show-toplevel".split(" ")

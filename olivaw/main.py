@@ -12,6 +12,13 @@ def run():
         test(args)
     elif command == "init":
         init(args)
+    elif command == "flush":
+        from olivaw.constants import ROOT_FOLDER
+        from os import listdir, remove
+        for filename in listdir(f"{ROOT_FOLDER}{sep}.acimov{sep}output"):
+            remove(f"{ROOT_FOLDER}/.acimov/output/{filename}")
+    elif command == "show":
+        show(args)
     else:
         print(f"Unknown command: {command}")
 
@@ -44,4 +51,13 @@ def init(line):
         return
     else:
         # Best way to deal with invalid command...?
+        print(f"Unknown target: {target}")
+
+def show(line):
+    target = line[0]
+
+    if target == "gists":
+        from olivaw.show.gists import show_gists
+        show_gists()
+    else:
         print(f"Unknown target: {target}")

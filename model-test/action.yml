@@ -1,0 +1,167 @@
+name: "Olivaw model test"
+author: "Wimmics"
+description: "Launches Olivaw model test"
+inputs:
+  repository:
+    description: "The url of the repository to test"
+    type: string
+    required: true
+  ref:
+    description: "The ref of the repository to test"
+    type: string
+    requird: true
+  skip-pass:
+    description: "Should the report ignore all the Pass status outcomes"
+    type: boolean
+    required: false
+    default: false
+  tested-only:
+    description: "Should the report ignore all the NotTested outcomes"
+    type: boolean
+    required: false
+    default: false
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-python@v5 
+      with:
+        python-version: 'pypy3.9'
+    - uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.repository }}
+        ref: ${{ inputs.ref }}
+    - run: |
+      pip install git+https://github.com/Wimmics/olivaw
+
+      SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+      TOKENS=($SUMMARY)
+
+      echo "PASS=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
+      echo "NOTTESTED=$(echo ${TOKENS[5]})" >> $GITHUB_ENV
+      echo "CANNOTTELL=$(echo ${TOKENS[8]})" >> $GITHUB_ENV
+      echo "MINORFAIL=$(echo ${TOKENS[11]})" >> $GITHUB_ENV
+      echo "MAJORFAIL=$(echo ${TOKENS[14]})" >> $GITHUB_ENV
+
+      echo "EL_LABEL=$(echo ${TOKENS[17]})" >> $GITHUB_ENV
+      echo "EL_COLOR=$(echo ${TOKENS[20]})" >> $GITHUB_ENV
+      echo "QL_LABEL=$(echo ${TOKENS[23]})" >> $GITHUB_ENV
+      echo "QL_COLOR=$(echo ${TOKENS[26]})" >> $GITHUB_ENV
+      echo "RL_LABEL=$(echo ${TOKENS[29]})" >> $GITHUB_ENV
+      echo "RL_COLOR=$(echo ${TOKENS[32]})" >> $GITHUB_ENV
+
+      INDEX="$(olivaw show gists --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+      GISTS="$($GISTS)"
+
+      echo "PASSBADGE="$(echo ${TOKENS[2]})" >> $GITHUB_ENV
+      echo "NOTTESTEDBADGE="$(echo ${TOKENS[5]})" >> $GITHUB_ENV
+      echo "CANNOTTELLBADGE="$(echo ${TOKENS[8]})" >> $GITHUB_ENV
+      echo "MINORFAILBADGE="$(echo ${TOKENS[11]})" >> $GITHUB_ENV
+      echo "MAJORFAILBADGE="$(echo ${TOKENS[14]})" >> $GITHUB_ENV
+
+      echo "ELBADGE="$(echo ${TOKENS[17]})" >> $GITHUB_ENV
+      echo "QLBADGE="$(echo ${TOKENS[20]})" >> $GITHUB_ENV
+      echo "RLBADGE="$(echo ${TOKENS[23]})" >> $GITHUB_ENV
+
+      REF=${{ inputs.ref }}
+      echo "github.ref: $REF"
+      IFS='/' read -ra PATHS <<< "$REF"
+      BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
+      echo $BRANCH_NAME
+      echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
+      echo "REPO=$(echo $${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
+
+    - name: Archive model test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: model-test-report
+        path: .acimov/output/model-test-actions.md
+
+    - name: Commit the report
+      run: |
+        git config --global user.email "no-reply@github.com"
+        git config --global user.name "Olivaw in Actions"
+        git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md README.md -f
+        git commit -m "Provide automatic model test report [skip actions]"
+        git remote set-url origin ${{ github.server_url }}/${{ github.repository }}
+        git push
+
+    - name: Create the Pass Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: ${{ env.PASSBADGE }}
+        filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
+        label: Pass
+        message: ${{ env.PASS }}
+        color: Green
+
+    - name: Create the NotTested Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: ${{ env.NOTTESTEDBADGE }}
+        filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
+        label: NotTested
+        message: ${{ env.NOTTESTED }}
+        color: White
+
+    - name: Create the CannotTell Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: ${{ env.CANNOTTELLBADGE }}
+        filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
+        label: CannotTell
+        message: ${{ env.CANNOTTELL }}
+        color: yellow
+
+    - name: Create the MinorFail Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: ${{ env.MINORFAILBADGE }}
+        filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
+        label: MinorFail
+        message: ${{ env.MINORFAIL }}
+        color: orange
+
+    - name: Create the MajorFail Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: ${{ secrets.MAJORFAILBADGE }}
+        filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
+        label: MajorFail
+        message: ${{ env.MAJORFAIL }}
+        color: red
+
+    - name: Create the OWL_EL Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: ${{ secrets.ELBADGE }}
+        filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
+        label: OWL EL
+        message: ${{ env.EL_LABEL }}
+        color: ${{ env.EL_COLOR }}
+
+    - name: Create the OWL_QL Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: ${{ secrets.QLBADGE }}
+        filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
+        label: OWL QL
+        message: ${{ env.QL_LABEL }}
+        color: ${{ env.QL_COLOR }}
+
+    - name: Create the OWL_RL Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ secrets.GIST_SECRET }}
+        gistID: ${{ secrets.RLBADGE }}
+        filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
+        label: OWL RL
+        message: ${{ env.RL_LABEL }}
+        color: ${{ env.RL_COLOR }}

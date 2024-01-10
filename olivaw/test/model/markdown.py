@@ -17,7 +17,8 @@ from olivaw.constants import (
     MODELET_URL_FORMAT,
     IS_OWL_EL_COMPATIBLE,
     IS_OWL_QL_COMPATIBLE,
-    IS_OWL_RL_COMPATIBLE
+    IS_OWL_RL_COMPATIBLE,
+    MODE
 )
 
 def parse_assertions(report):
@@ -376,7 +377,7 @@ def make_turtle_page(report, file_name) -> str:
         f"RL_label\t: {rl_label}",
         f"RL_color\t: {rl_color}"
     ]
-    if "--is-action" in argv:
+    if MODE == "actions":
         for badgeData in badgesData:
             print(badgeData)
 
