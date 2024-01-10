@@ -247,20 +247,16 @@ def parse_statement_into_graph(prefixes, raw_statement):
         return isolated_graph
     except Exception as e:
         prefix_error = str(e)
-        prefix_error = prefix_error.split("\n")[1].strip()
-        #'Prefix "[^"]+:" not bound'
-        print(" ")
-        print(prefix_error)
-        print(" ")
-        is_prefix_error = prefix_error.startswith("Prefix ") and prefix_error.endswith(" not bound")
+        prefix_error_splitted = prefix_error.split("\n")[1].strip()
+        is_prefix_error = prefix_error.startswith("Prefix ") and prefix_error_splitted.endswith(" not bound")
         if is_prefix_error:
             raise Exception("The statement should contain no errors except for prefixes")
         with open(f"{PWD_TO_ROOT_FOLDER}msg.txt", "w") as f:
                 f.write(prefix_error)
         import sys
         sys.exit()
-        prefix_error = prefix_error.split('"')[1]
-        prefixes.append((prefix_error, "https://www.example.org/"))
+        prefix_error_splitted = prefix_error_splitted.split('"')[1]
+        prefixes.append((prefix_error_splitted, "https://www.example.org/"))
         return parse_statement_into_graph(prefixes, raw_statement)
 
 
