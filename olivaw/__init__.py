@@ -1,3 +1,3 @@
-__all__ = ["main"]
+__all__ = ["main", "test", "init"]
 
 from .main import *
