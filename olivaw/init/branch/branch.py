@@ -6,7 +6,8 @@ from olivaw.constants import (
     ROOT_FOLDER,
     DEV_USERNAME,
     REPO_URI,
-    REF
+    REF,
+    NEW_LINES
 )
 
 def badge_uri(gist_id):
@@ -39,7 +40,7 @@ def init_branch():
             for item in badges[:5]
         ] + [" "] + readme[4:]
     
-    readme = "\n".join(readme)
+    readme = NEW_LINES.sub("\n", "\n".join(readme))
     
     with open(f"{ROOT_FOLDER}{sep}README.md", "w") as readmeFile:
         readmeFile.write(readme)

@@ -10,7 +10,8 @@ from olivaw.constants import (
     REPO_URI,
     REF,
     PWD_TO_OVILAW,
-    PWD_TO_ROOT_FOLDER
+    PWD_TO_ROOT_FOLDER,
+    NEW_LINES
 )
 
 GITHUB_API="https://api.github.com"
@@ -121,7 +122,7 @@ def init_badges(secret):
             for key in list(gist_list.keys())[5:]
         ] + [" "] + updated
 
-        updated = "\n".join(updated)
+        updated = NEW_LINES.sub("\n", "\n".join(updated))
     
     with open(f"{ROOT_FOLDER}{sep}README.md", "w") as readme:
         readme.write(updated)
