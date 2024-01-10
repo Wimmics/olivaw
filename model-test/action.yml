@@ -32,44 +32,44 @@ runs:
         repository: ${{ inputs.repository }}
         ref: ${{ inputs.ref }}
     - run: |
-      pip install git+https://github.com/Wimmics/olivaw
+        pip install git+https://github.com/Wimmics/olivaw
 
-      SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
-      TOKENS=($SUMMARY)
+        SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        TOKENS=($SUMMARY)
 
-      echo "PASS=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
-      echo "NOTTESTED=$(echo ${TOKENS[5]})" >> $GITHUB_ENV
-      echo "CANNOTTELL=$(echo ${TOKENS[8]})" >> $GITHUB_ENV
-      echo "MINORFAIL=$(echo ${TOKENS[11]})" >> $GITHUB_ENV
-      echo "MAJORFAIL=$(echo ${TOKENS[14]})" >> $GITHUB_ENV
+        echo "PASS=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
+        echo "NOTTESTED=$(echo ${TOKENS[5]})" >> $GITHUB_ENV
+        echo "CANNOTTELL=$(echo ${TOKENS[8]})" >> $GITHUB_ENV
+        echo "MINORFAIL=$(echo ${TOKENS[11]})" >> $GITHUB_ENV
+        echo "MAJORFAIL=$(echo ${TOKENS[14]})" >> $GITHUB_ENV
 
-      echo "EL_LABEL=$(echo ${TOKENS[17]})" >> $GITHUB_ENV
-      echo "EL_COLOR=$(echo ${TOKENS[20]})" >> $GITHUB_ENV
-      echo "QL_LABEL=$(echo ${TOKENS[23]})" >> $GITHUB_ENV
-      echo "QL_COLOR=$(echo ${TOKENS[26]})" >> $GITHUB_ENV
-      echo "RL_LABEL=$(echo ${TOKENS[29]})" >> $GITHUB_ENV
-      echo "RL_COLOR=$(echo ${TOKENS[32]})" >> $GITHUB_ENV
+        echo "EL_LABEL=$(echo ${TOKENS[17]})" >> $GITHUB_ENV
+        echo "EL_COLOR=$(echo ${TOKENS[20]})" >> $GITHUB_ENV
+        echo "QL_LABEL=$(echo ${TOKENS[23]})" >> $GITHUB_ENV
+        echo "QL_COLOR=$(echo ${TOKENS[26]})" >> $GITHUB_ENV
+        echo "RL_LABEL=$(echo ${TOKENS[29]})" >> $GITHUB_ENV
+        echo "RL_COLOR=$(echo ${TOKENS[32]})" >> $GITHUB_ENV
 
-      INDEX="$(olivaw show gists --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
-      GISTS="$($GISTS)"
+        INDEX="$(olivaw show gists --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        GISTS="$($GISTS)"
 
-      echo "PASSBADGE="$(echo ${TOKENS[2]})" >> $GITHUB_ENV
-      echo "NOTTESTEDBADGE="$(echo ${TOKENS[5]})" >> $GITHUB_ENV
-      echo "CANNOTTELLBADGE="$(echo ${TOKENS[8]})" >> $GITHUB_ENV
-      echo "MINORFAILBADGE="$(echo ${TOKENS[11]})" >> $GITHUB_ENV
-      echo "MAJORFAILBADGE="$(echo ${TOKENS[14]})" >> $GITHUB_ENV
+        echo "PASSBADGE="$(echo ${TOKENS[2]})" >> $GITHUB_ENV
+        echo "NOTTESTEDBADGE="$(echo ${TOKENS[5]})" >> $GITHUB_ENV
+        echo "CANNOTTELLBADGE="$(echo ${TOKENS[8]})" >> $GITHUB_ENV
+        echo "MINORFAILBADGE="$(echo ${TOKENS[11]})" >> $GITHUB_ENV
+        echo "MAJORFAILBADGE="$(echo ${TOKENS[14]})" >> $GITHUB_ENV
 
-      echo "ELBADGE="$(echo ${TOKENS[17]})" >> $GITHUB_ENV
-      echo "QLBADGE="$(echo ${TOKENS[20]})" >> $GITHUB_ENV
-      echo "RLBADGE="$(echo ${TOKENS[23]})" >> $GITHUB_ENV
+        echo "ELBADGE="$(echo ${TOKENS[17]})" >> $GITHUB_ENV
+        echo "QLBADGE="$(echo ${TOKENS[20]})" >> $GITHUB_ENV
+        echo "RLBADGE="$(echo ${TOKENS[23]})" >> $GITHUB_ENV
 
-      REF=${{ inputs.ref }}
-      echo "github.ref: $REF"
-      IFS='/' read -ra PATHS <<< "$REF"
-      BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
-      echo $BRANCH_NAME
-      echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
-      echo "REPO=$(echo $${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
+        REF=${{ inputs.ref }}
+        echo "github.ref: $REF"
+        IFS='/' read -ra PATHS <<< "$REF"
+        BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
+        echo $BRANCH_NAME
+        echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
+        echo "REPO=$(echo $${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
 
     - name: Archive model test results
       uses: actions/upload-artifact@v3
