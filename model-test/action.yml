@@ -14,6 +14,11 @@ inputs:
     description: "The personal access token with only gist scope allowed"
     type: string
     required: true
+  server-url:
+    description: "The platform URL"
+    type: string
+    required: false
+    default: "https://github.com"
   skip-pass:
     description: "Should the report ignore all the Pass status outcomes"
     type: boolean
@@ -40,7 +45,7 @@ runs:
       run: |
         pip install git+https://github.com/Wimmics/olivaw
 
-        SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         TOKENS=($SUMMARY)
 
         echo "PASS=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
@@ -56,7 +61,7 @@ runs:
         echo "RL_LABEL=$(echo ${TOKENS[29]})" >> $GITHUB_ENV
         echo "RL_COLOR=$(echo ${TOKENS[32]})" >> $GITHUB_ENV
 
-        INDEX="$(olivaw show gists --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        INDEX="$(olivaw show gists --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         GISTS="$($GISTS)"
 
         echo "PASSBADGE="$(echo ${TOKENS[2]})" >> $GITHUB_ENV
@@ -90,7 +95,7 @@ runs:
         git config --global user.name "Olivaw in Actions"
         git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md README.md -f
         git commit -m "Provide automatic model test report [skip actions]"
-        git remote set-url origin ${{ github.server_url }}/${{ github.repository }}
+        git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
         git push
 
     - name: Create the Pass Badge
