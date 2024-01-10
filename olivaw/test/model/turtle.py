@@ -249,6 +249,9 @@ def parse_statement_into_graph(prefixes, raw_statement):
         prefix_error = str(e)
         prefix_error = prefix_error.split("\n")[1].strip()
         #'Prefix "[^"]+:" not bound'
+        print(" ")
+        print(prefix_error)
+        print(" ")
         is_prefix_error = prefix_error.startswith("Prefix ") and prefix_error.endswith(" not bound")
         if is_prefix_error:
             raise Exception("The statement should contain no errors except for prefixes")
