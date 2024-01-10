@@ -1,3 +1,3 @@
 __main__ = ["repo"]
 
-from repo import *
+from .repo import *

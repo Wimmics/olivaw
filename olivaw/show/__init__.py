@@ -1,3 +1,3 @@
 __main__ = ["gists"]
 
-from gists import *
+from .gists import *
