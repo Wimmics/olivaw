@@ -61,8 +61,8 @@ runs:
         echo "RL_LABEL=$(echo ${TOKENS[29]})" >> $GITHUB_ENV
         echo "RL_COLOR=$(echo ${TOKENS[32]})" >> $GITHUB_ENV
 
-        GISTS="$(olivaw show gists --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
-        GISTS="$($GISTS)"
+        GISTDICT="$(olivaw show gists --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        GISTS="$($GISTDICT)"
 
         echo "PASSBADGE="$(echo ${GISTS[2]})" >> $GITHUB_ENV
         echo "NOTTESTEDBADGE="$(echo ${GISTS[5]})" >> $GITHUB_ENV
