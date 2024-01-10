@@ -27,7 +27,7 @@ def test(line):
     
     if target == "model":
         # Only instanciate Corese server if needed
-        from .test.model.suite import modelTest
+        from olivaw.test.model.suite import modelTest
         modelTest()
     elif target == "data":
         # Implement here
@@ -43,10 +43,10 @@ def init(line):
     target = line[0]
 
     if target == "repo":
-        from .init.repo.repo import init_repo
+        from olivaw.init.repo.repo import init_repo
         init_repo()
     elif target == "branch":
-        from .init.branch.branch import init_branch
+        from olivaw.init.branch.branch import init_branch
         init_branch()
         return
     else:
