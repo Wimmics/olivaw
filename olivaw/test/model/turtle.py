@@ -237,6 +237,7 @@ def parse_statement_for_html(statement):
     return statement
 
 def parse_statement_into_graph(prefixes, raw_statement):
+    rdf = None
     try:
         rdf = "\n".join([
             f"@prefix {line[0]}: <{line[1]}> ."
@@ -252,7 +253,9 @@ def parse_statement_into_graph(prefixes, raw_statement):
         if is_prefix_error:
             raise Exception("The statement should contain no errors except for prefixes")
         with open(f"{PWD_TO_ROOT_FOLDER}msg.txt", "w") as f:
-                f.write(prefix_error)
+            f.write(rdf)
+        with open(f"{PWD_TO_ROOT_FOLDER}msg2.txt", "w") as f:
+            f.write(prefix_error)
         import sys
         sys.exit()
         prefix_error_splitted = prefix_error_splitted.split('"')[1]
