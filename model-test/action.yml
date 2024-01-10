@@ -82,21 +82,20 @@ runs:
         echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
         echo "REPO=$(echo $${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
 
+        ls .acimov/output
+
+        git config --global user.email "no-reply@github.com"
+        git config --global user.name "Olivaw in Actions"
+        git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
+        git commit -m "Provide automatic model test report [skip actions]"
+        git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
+        git push
+
     - name: Archive model test results
       uses: actions/upload-artifact@v3
       with:
         name: model-test-report
         path: .acimov/output/model-test-actions.md
-
-    - name: Commit the report
-      shell: bash
-      run: |
-        git config --global user.email "no-reply@github.com"
-        git config --global user.name "Olivaw in Actions"
-        git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md README.md -f
-        git commit -m "Provide automatic model test report [skip actions]"
-        git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
-        git push
 
     - name: Create the Pass Badge
       uses: schneegans/dynamic-badges-action@v1.7.0
