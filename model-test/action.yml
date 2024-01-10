@@ -10,6 +10,10 @@ inputs:
     description: "The ref of the repository to test"
     type: string
     requird: true
+  gist-secret:
+    description: "The personal access token with only gist scope allowed"
+    type: string
+    required: true
   skip-pass:
     description: "Should the report ignore all the Pass status outcomes"
     type: boolean
@@ -89,7 +93,7 @@ runs:
     - name: Create the Pass Badge
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
-        auth: ${{ secrets.GIST_SECRET }}
+        auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.PASSBADGE }}
         filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
         label: Pass
@@ -99,7 +103,7 @@ runs:
     - name: Create the NotTested Badge
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
-        auth: ${{ secrets.GIST_SECRET }}
+        auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.NOTTESTEDBADGE }}
         filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
         label: NotTested
@@ -109,7 +113,7 @@ runs:
     - name: Create the CannotTell Badge
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
-        auth: ${{ secrets.GIST_SECRET }}
+        auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.CANNOTTELLBADGE }}
         filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
         label: CannotTell
@@ -119,7 +123,7 @@ runs:
     - name: Create the MinorFail Badge
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
-        auth: ${{ secrets.GIST_SECRET }}
+        auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.MINORFAILBADGE }}
         filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
         label: MinorFail
@@ -129,8 +133,8 @@ runs:
     - name: Create the MajorFail Badge
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
-        auth: ${{ secrets.GIST_SECRET }}
-        gistID: ${{ secrets.MAJORFAILBADGE }}
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.MAJORFAILBADGE }}
         filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
         label: MajorFail
         message: ${{ env.MAJORFAIL }}
@@ -139,8 +143,8 @@ runs:
     - name: Create the OWL_EL Badge
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
-        auth: ${{ secrets.GIST_SECRET }}
-        gistID: ${{ secrets.ELBADGE }}
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.ELBADGE }}
         filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
         label: OWL EL
         message: ${{ env.EL_LABEL }}
@@ -149,8 +153,8 @@ runs:
     - name: Create the OWL_QL Badge
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
-        auth: ${{ secrets.GIST_SECRET }}
-        gistID: ${{ secrets.QLBADGE }}
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.QLBADGE }}
         filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
         label: OWL QL
         message: ${{ env.QL_LABEL }}
@@ -159,8 +163,8 @@ runs:
     - name: Create the OWL_RL Badge
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
-        auth: ${{ secrets.GIST_SECRET }}
-        gistID: ${{ secrets.RLBADGE }}
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.RLBADGE }}
         filename: ${{ env.REPO }}__${{ env.BRANCH }}.json
         label: OWL RL
         message: ${{ env.RL_LABEL }}
