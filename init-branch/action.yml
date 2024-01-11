@@ -10,6 +10,10 @@ inputs:
     description: "The ref of the repository to test"
     type: string
     requird: true
+  gist-secret:
+    description: "The personal access token with only gist scope allowed"
+    type: string
+    required: true
   server-url:
     description: "The platform URL"
     type: string
@@ -29,7 +33,28 @@ runs:
     - name: Update README.md
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@test-branch
+        pip install git+https://github.com/Wimmics/olivaw@test-branch2
+
+        BADGES="$(olivaw show badges)"
+        BADGES_DATA=($BADGES)
+
+        echo "PASS=$(echo ${BADGES_DATA[5]})" >> $GITHUB_ENV
+        echo "NOTTESTED=$(echo ${BADGES_DATA[11]})" >> $GITHUB_ENV
+        echo "CANNOTTELL=$(echo ${BADGES_DATA[17]})" >> $GITHUB_ENV
+        echo "MINORFAIL=$(echo ${BADGES_DATA[23]})" >> $GITHUB_ENV
+        echo "MAJORFAIL=$(echo ${BADGES_DATA[29]})" >> $GITHUB_ENV
+
+        echo "EL_COLOR=$(echo ${BADGES_DATA[32]})" >> $GITHUB_ENV
+        echo "EL_MESSAGE=$(echo ${BADGES_DATA[35]})" >> $GITHUB_ENV
+
+        echo "QL_COLOR=$(echo ${BADGES_DATA[38]})" >> $GITHUB_ENV
+        echo "QL_MESSAGE=$(echo ${BADGES_DATA[41]})" >> $GITHUB_ENV
+
+        echo "RL_COLOR=$(echo ${BADGES_DATA[44]})" >> $GITHUB_ENV
+        echo "RL_MESSAGE=$(echo ${BADGES_DATA[47]})" >> $GITHUB_ENV
+
+        echo "GISTID=$(olivaw show gist --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})" >> $GITHUB_ENV
+
         olivaw init branch --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --REF=${{ inputs.ref }}
 
         REF=${{ inputs.ref }}
@@ -47,3 +72,82 @@ runs:
         git commit -m "Initialize README.md for branch ${{ env.BRANCH }} [skip actions]"
         git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
         git push
+    - name: Create the Pass Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_PASS.json
+        label: Pass
+        message: ${{ env.PASS }}
+        color: green
+
+    - name: Create the NotTested Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_NOTTESTED.json
+        label: NotTested
+        message: ${{ env.NOTTESTED }}
+        color: White
+
+    - name: Create the CannotTell Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_CANNOTTELL.json
+        label: CannotTell
+        message: ${{ env.CANNOTTELL }}
+        color: yellow
+
+    - name: Create the MinorFail Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_MINORFAIL.json
+        label: MinorFail
+        message: ${{ env.MINORFAIL }}
+        color: orange
+
+    - name: Create the MajorFail Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_MAJORFAIL.json
+        label: MajorFail
+        message: ${{ env.MAJORFAIL }}
+        color: red
+
+    - name: Create the OWL_EL Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_EL.json
+        label: OWL EL
+        message: ${{ env.EL_MESSAGE }}
+        color: ${{ env.EL_COLOR }}
+
+    - name: Create the OWL_QL Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_QL.json
+        label: OWL QL
+        message: ${{ env.QL_MESSAGE }}
+        color: ${{ env.QL_COLOR }}
+
+    - name: Create the OWL_RL Badge
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_RL.json
+        label: OWL RL
+        message: ${{ env.RL_MESSAGE }}
+        color: ${{ env.RL_COLOR }}

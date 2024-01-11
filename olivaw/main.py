@@ -57,7 +57,10 @@ def show(line):
     target = line[0]
 
     if target == "gist":
-        from olivaw.show.gists import show_gist
+        from olivaw.show.gist import show_gist
         show_gist()
+    elif target == "badges":
+        from olivaw.show.badges import show_badges
+        show_badges()
     else:
         print(f"Unknown target: {target}")

@@ -82,7 +82,7 @@ runs:
         filename: ${{ env.BRANCH }}_PASS.json
         label: Pass
         message: ${{ env.PASS }}
-        color: Green
+        color: green
 
     - name: Create the NotTested Badge
       uses: schneegans/dynamic-badges-action@v1.7.0

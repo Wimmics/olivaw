@@ -1,3 +1,4 @@
-__main__ = ["gists"]
+__main__ = ["gist", "badges"]
 
-from .gists import *
+from .gist import *
+from .badges import *
