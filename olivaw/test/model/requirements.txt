@@ -1,5 +1,0 @@
-py4j
-rdflib
-regex
-requests
-markdown

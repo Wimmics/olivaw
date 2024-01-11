@@ -2,7 +2,6 @@ from rdflib import Graph, Literal
 from datetime import datetime
 from sys import argv
 
-from .corese import smartPrint
 from olivaw.constants import (
     SEVERITY_RANGE,
     COLOR_BOX_TEMPLATE,
@@ -15,6 +14,8 @@ from olivaw.constants import (
     GET_ASSERTION_POINTERS,
     MODULE_URL_FORMAT,
     MODELET_URL_FORMAT,
+    DATASET_URL_FORMAT,
+    USECASE_URL_FORMAT,
     IS_OWL_EL_COMPATIBLE,
     IS_OWL_QL_COMPATIBLE,
     IS_OWL_RL_COMPATIBLE,
@@ -118,6 +119,14 @@ def subject_part_to_markdown(part):
     modelet_search = MODELET_URL_FORMAT.findall(part)
     if len(modelet_search) > 0:
         return f"[Modelet {modelet_search[0][8:]}]({part})"
+    
+    dataset_search = DATASET_URL_FORMAT.findall(part)
+    if len(dataset_search) > 0:
+        return f"[Dataset {dataset_search[0][8:]}]({part})"
+    
+    usecase_search = USECASE_URL_FORMAT.findall(part)
+    if len(usecase_search) > 0:
+        return f"[Use case {usecase_search[0][10:]}]({part})"
     
     return part
 

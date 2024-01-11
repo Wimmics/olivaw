@@ -1,1 +1,3 @@
-__main__ = ["model"]
+__main__ = ["model", "data"]
+
+from .data import *

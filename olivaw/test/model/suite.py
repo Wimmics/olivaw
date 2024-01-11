@@ -1,7 +1,7 @@
 from glob import glob
 from datetime import datetime
 from os import makedirs
-from os.path import exists
+from os.path import exists, sep
 from sys import argv
 from codecs import open as copen
 
@@ -14,7 +14,7 @@ from olivaw.constants import (
     BRANCH
 )
 
-from .corese import print_title # TODO Need later for a utils.py?
+from olivaw.test.corese import print_title # TODO Need later for a utils.py?
 
 from .testing import (
     modules_tests,
@@ -22,12 +22,12 @@ from .testing import (
     merged_fragment_set_test,
 )
 
-from .turtle import (
+from olivaw.test.turtle import (
     prepare_graph,
     make_assertor
 )
 
-from .markdown import (
+from olivaw.test.markdown import (
     make_turtle_page
 )
 
@@ -42,7 +42,7 @@ def datetime_id():
 ###
 # Test OWL_RL
 ###
-def modelTest():
+def test_model():
     _, *args = argv
 
     modes = [
@@ -60,7 +60,7 @@ def modelTest():
     test_assertor = make_assertor(
         report,
         mode,
-        f"{PROFILE_CHECK_URI}.acimov/model-test/complete-test.py"
+        f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/model/suite.py"
     )
 
     print_title("Checking existing modules")
@@ -109,7 +109,7 @@ def modelTest():
 
     print_title("Exporting results")
 
-    markdown = make_turtle_page(report, file_name)
+    markdown = make_turtle_page(report, file_base.split(sep)[-1])
 
     if not exists(PWD_TO_MODEL_OUTPUT_FOLDER):
         makedirs(PWD_TO_MODEL_OUTPUT_FOLDER)

@@ -69,3 +69,4 @@ ACIMOV_MODEL_TEST_URI = f"https://github.com/Wimmics/olivaw/blob/main/olivaw/tes
 # URL prefix for the files in the current branch in src
 SRC_URL = f"{REPO_URI}/blob/{BRANCH}/src/"
 DOMAINS_URL = SRC_URL.replace("src", "domains")
+USECASES_URL = SRC_URL.replace("src", "use-cases")
