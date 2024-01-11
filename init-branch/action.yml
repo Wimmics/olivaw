@@ -29,7 +29,7 @@ runs:
     - name: Update README.md
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@v0.0.1
+        pip install git+https://github.com/Wimmics/olivaw@test-branch
         olivaw init branch --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --REF=${{ inputs.ref }}
 
         REF=${{ inputs.ref }}
