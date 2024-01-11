@@ -28,10 +28,10 @@ def init_branch():
     badges = ["Pass", "NotTested", "CannotTell", "MinorFail", "MajorFail", "EL", "QL", "RL"]
 
     readme = [
-            f"![{badge} Badge]({badge_uri(gist_index, badge)})"
+            f"![{badge} Badge]({badge_uri(gist_index, badge.upper())})"
             for badge in badges[:5]
         ] + [" "] + [
-            f"![{badge} Badge]({badge_uri(gist_index, badge)})"
+            f"![{badge} Badge]({badge_uri(gist_index, badge.upper())})"
             for badge in badges[5:]
         ] + [" "] + readme[10:]
     
