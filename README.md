@@ -49,12 +49,51 @@ You can see:
 * A file named `parameters.json` has been create in the `.acimov/` folder
 * A gist has been created in `https://gist.github.com/{your_username}` with some files meant for badges in you repository
 
-### Launch model tests manually
+### Automatic badges initialization on on branch
 
-In a repository respecting the Acimov architecture, model tests can be launched to evaluate the quality of your ontology using this command:
+The badges have a stable URI depending on the user that created them, the branch where they are displayed and the badge type
 
-```shell
-olivaw test model
+When creating a new branch the badges URIs can be changed manually but it can be annoying
+
+So you can use the actions below to update it automatically when a brnch is created:
+
+```yaml
+name: init-branch
+on: create
+
+jobs:
+  model-test:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+    - uses: Wimmics/olivaw/init-branch@test-branch5
+      with:
+        repository: ${{ github.repository }}
+        ref: ${{ github.ref }}
+        gist-secret: ${{ secrets.GIST_SECRET }}
+```
+
+### Automatic tests on the project
+
+Tests can be launched automatically when someone pushed on your project
+You can use the actions below to implement it on your project
+
+```yaml
+name: model-test
+on: push
+
+jobs:
+  model-test:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+    - uses: Wimmics/olivaw/model-test@v0.0.1
+      with:
+        repository: ${{ github.repository }}
+        ref: ${{ github.ref }}
+        gist-secret: ${{ secrets.GIST_SECRET }}
 ```
 
 Tests powered by [Corese](https://project.inria.fr/corese/) will be run
@@ -63,9 +102,21 @@ Two files will be generated in the folder .acimov/output of your project:
 * a *.ttl* file containing a test report written with the [EARL](https://www.w3.org/WAI/ER/EARL10/WD-EARL10-Guide-20120125) ontology
 * a version of this test report converted into a *markdown* format that is human readable
 
+These files will be available in `.acimov/output` and the markdown file will also be upload as a Github artifact
+
 These options can also be used:
 
 * `--skip-pass` to ignore in the report all the *Pass* outcomes
 * `--tested-only` to ignore in the report all the *NotTested* outcomes
+
+### Launch model tests manually
+
+In a repository respecting the Acimov architecture, model tests can be launched to evaluate the quality of your ontology using this command:
+
+```shell
+olivaw test model
+```
+
+It can be launched from anywhere in the acimov repository
 
 More is about to come soon!
