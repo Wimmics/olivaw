@@ -43,10 +43,10 @@ def init(line):
     target = line[0]
 
     if target == "repo":
-        from olivaw.init.repo.repo import init_repo
+        from olivaw.init.repo import init_repo
         init_repo()
     elif target == "branch":
-        from olivaw.init.branch.branch import init_branch
+        from olivaw.init.branch import init_branch
         init_branch()
         return
     else:

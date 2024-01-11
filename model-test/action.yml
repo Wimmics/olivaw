@@ -19,16 +19,6 @@ inputs:
     type: string
     required: false
     default: "https://github.com"
-  skip-pass:
-    description: "Should the report ignore all the Pass status outcomes"
-    type: boolean
-    required: false
-    default: false
-  tested-only:
-    description: "Should the report ignore all the NotTested outcomes"
-    type: boolean
-    required: false
-    default: false
 
 runs:
   using: "composite"
@@ -70,8 +60,6 @@ runs:
         echo $BRANCH_NAME
         echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
         echo "REPO=$(echo $${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
-
-        ls .acimov/output
 
         git config --global user.email "no-reply@github.com"
         git config --global user.name "Olivaw in Actions"

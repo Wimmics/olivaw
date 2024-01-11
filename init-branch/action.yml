@@ -1,0 +1,49 @@
+name: "Olivaw branch initialisation"
+author: "Wimmics"
+description: "Launches Olivaw model test"
+inputs:
+  repository:
+    description: "The url of the repository to test"
+    type: string
+    required: true
+  ref:
+    description: "The ref of the repository to test"
+    type: string
+    requird: true
+  server-url:
+    description: "The platform URL"
+    type: string
+    required: false
+    default: "https://github.com"
+
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-python@v5 
+      with:
+        python-version: 'pypy3.9'
+    - uses: actions/checkout@v4
+      with:
+        repository: ${{ inputs.repository }}
+        ref: ${{ inputs.ref }}
+    - name: Update README.md
+      shell: bash
+      run: |
+        pip install git+https://github.com/Wimmics/olivaw@v0.0.1
+        olivaw init branch --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --REF=${{ inputs.ref }}
+
+        REF=${{ inputs.ref }}
+        echo "github.ref: $REF"
+        IFS='/' read -ra PATHS <<< "$REF"
+        BRANCH_NAME="${PATHS[2]}"
+        echo $BRANCH_NAME
+        echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
+    - name: Commit README.md
+      shell: bash
+      run: |
+        git config --global user.email "no-reply@github.com"
+        git config --global user.name "Olivaw in Actions"
+        git add README.md
+        git commit -m "Initialize README.md for branch ${{ env.BRANCH }} [skip actions]"
+        git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
+        git push
