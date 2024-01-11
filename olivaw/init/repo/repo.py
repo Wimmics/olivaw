@@ -110,10 +110,10 @@ def init_badges(secret):
         updated = readme.readlines()
 
         updated = [
-            f"![{badge_list[badge]['label']} Badge](https://img.shields.io/endpoint?url={badge_url(gist_id, badge)})"
+            f"![{badge_list[badge]['label']} Badge]({badge_url(gist_id, badge)})"
             for badge in list(badge_list.keys())[:5]
         ] + [" "] + [
-            f"![{badge_list[badge]['label']} Badge](https://img.shields.io/endpoint?url={badge_url(gist_id, badge)})"
+            f"![{badge_list[badge]['label']} Badge]({badge_url(gist_id, badge)})"
             for badge in list(badge_list.keys())[5:]
         ] + [" "] + updated
 
