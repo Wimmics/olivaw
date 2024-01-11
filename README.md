@@ -62,7 +62,7 @@ name: init-branch
 on: create
 
 jobs:
-  model-test:
+  init-branch:
     permissions:
       contents: write
     runs-on: ubuntu-latest
