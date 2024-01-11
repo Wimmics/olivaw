@@ -20,7 +20,7 @@ This tools can only operate on a acimov architectured github repository with at 
 * `src/` folder
 * `domains/` folder with at least one subfolder
 * `.acimov/` folder
-* a `README.md` file at the root folder
+* `README.md` file at the root folder
 
 It will also need a personal access token with the gist scope. To obtain one:
 
@@ -46,7 +46,7 @@ You will be asked the personal access token, the url of your ontology and finall
 You can see:
 
 * The README has been edited to contain some badges at the the top
-* A file named `parameters.json` has been create in the `.acimov/` folder
+* A file named `parameters.json` has been created in the `.acimov/` folder
 * A gist has been created in `https://gist.github.com/{your_username}` with some files meant for badges in you repository
 
 ### Automatic badges initialization on on branch
@@ -55,7 +55,7 @@ The badges have a stable URI depending on the user that created them, the branch
 
 When creating a new branch the badges URIs can be changed manually but it can be annoying
 
-So you can use the actions below to update it automatically when a brnch is created:
+So you can use the actions below to update it automatically when a branch is created:
 
 ```yaml
 name: init-branch
