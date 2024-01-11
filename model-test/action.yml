@@ -43,7 +43,7 @@ runs:
     - name: Generate report
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw
+        pip install git+https://github.com/Wimmics/olivaw@v0.0.1
 
         SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         TOKENS=($SUMMARY)
