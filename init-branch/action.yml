@@ -33,9 +33,9 @@ runs:
     - name: Update README.md
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@test-branch2
+        pip install git+https://github.com/Wimmics/olivaw@test-branch3
 
-        BADGES="$(olivaw show badges)"
+        BADGES="$(olivaw show badges --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         BADGES_DATA=($BADGES)
 
         echo "PASS=$(echo ${BADGES_DATA[5]})" >> $GITHUB_ENV
