@@ -1,5 +1,5 @@
 import requests
-import json
+from json import dumps, loads
 from os import getenv
 from os.path import sep, exists
 from dotenv import load_dotenv, set_key
@@ -11,13 +11,13 @@ from olivaw.constants import (
     REF,
     PWD_TO_OVILAW,
     PWD_TO_ROOT_FOLDER,
-    NEW_LINES
+    NEW_LINES,
+    REPO_NAME
 )
 
 GITHUB_API="https://api.github.com"
-API_TOKEN='TOKEN_HERE'
 
-gist_list = {
+badge_list = {
     "PASS": {
         "label": "Pass",
         "message": "0",
@@ -43,24 +43,28 @@ gist_list = {
         "message": "0",
         "color": "red"
     },
-    "OWL EL": {
+    "EL": {
         "label": "OWL EL",
         "message": "compatible",
         "color": "green"
     },
-    "OWL QL": {
+    "QL": {
         "label": "OWL QL",
         "message": "compatible",
         "color": "green"
     },
-    "OWL RL": {
+    "RL": {
         "label": "OWL RL",
         "message": "compatible",
         "color": "green"
     }
 }
 
-def create_gist(key, name, filename, content='', public=False):
+ref = "_".join(REF.split("/")[1:])
+
+def init_gist(key):
+    print("Creating gist...")
+
     #form a request URL
     url=GITHUB_API+"/gists"
     
@@ -68,58 +72,49 @@ def create_gist(key, name, filename, content='', public=False):
     headers={'Authorization':'token %s' % key}
     params={'scope':'gist'}
     payload={
-        "description": name,
-        "public": public,
+        "description": f"Badges for {REPO_NAME}",
+        "public": False,
         "files": {
-            filename:{"content": content}
+            f"{ref}_{badge}.json":{
+                "content": dumps({
+                    key: badge_list[badge][key]
+                    for key in badge_list[badge]
+                })
+            }
+            for badge in badge_list.keys()
         }
     }
 
     #make a requests
-    res=requests.post(url,headers=headers,params=params,data=json.dumps(payload))
-
-    return json.loads(res.text)['id']
-
-def init_gists(key):
-    index = {}
-
-    print("Creating gists...")
-
-    suffix = "__".join(REF.split("/")[1:])
-    for gist in gist_list.keys():
-        index[gist] = create_gist(
-            key,
-            gist,
-            f"{REPO_URI.split('/')[-1]}__{suffix}.json",
-            content=json.dumps(gist_list[gist])
-        )
-
-    index_id = create_gist(
-        key,
-        "index",
-        f"{REPO_URI.split('/')[-1]}.json",
-        content=json.dumps(index)
+    res=requests.post(
+        url,
+        headers=headers,
+        params=params,
+        data=dumps(payload)
     )
 
-    return index, index_id
+    if not res.status_code == 201:
+        print(f"Status code: {res.status_code}")
+        print(res.text)
 
-def badge_uri(gist_id):
-    suffix = "__".join(REF.split("/")[1:])
-    return f"https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/{DEV_USERNAME}/{gist_id}/raw/{REPO_URI.split('/')[-1]}__{suffix}.json"
+    return loads(res.text)['id']
+
+def badge_url(gist_id, badge):
+    return f"https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/{DEV_USERNAME}/{gist_id}/raw/{ref}_{badge}.json"
 
 def init_badges(secret):
-    index, index_id = init_gists(secret)
+    gist_id = init_gist(secret)
 
     updated = None
     with open(f"{ROOT_FOLDER}{sep}README.md", "r") as readme:
         updated = readme.readlines()
 
         updated = [
-            f"![{gist_list[key]['label']} Badge]({badge_uri(index[key])})"
-            for key in list(gist_list.keys())[:5]
+            f"![{badge_list[badge]['label']} Badge](https://img.shields.io/endpoint?url={badge_url(gist_id, badge)})"
+            for badge in list(badge_list.keys())[:5]
         ] + [" "] + [
-            f"![{gist_list[key]['label']} Badge]({badge_uri(index[key])})"
-            for key in list(gist_list.keys())[5:]
+            f"![{badge_list[badge]['label']} Badge](https://img.shields.io/endpoint?url={badge_url(gist_id, badge)})"
+            for badge in list(badge_list.keys())[5:]
         ] + [" "] + updated
 
         updated = NEW_LINES.sub("\n", "\n".join(updated))
@@ -127,28 +122,28 @@ def init_badges(secret):
     with open(f"{ROOT_FOLDER}{sep}README.md", "w") as readme:
         readme.write(updated)
 
-    return index_id
+    return gist_id
 
 def init_repo():
     print("Let's initialize your repository")
 
     gist_secret = None
-    gist_index = None
+    gist_id = None
     if exists(f"{PWD_TO_OVILAW}{sep}.env"):
         load_dotenv(f"{PWD_TO_OVILAW}{sep}.env")
         gist_secret = getenv("GIST_SECRET")
         try:
-            gist_index = init_badges(gist_secret)
+            gist_id = init_badges(gist_secret)
             print("Gists initialized")
         except:
             pass
 
-    while gist_index is None:
+    while gist_id is None:
         try:
             print("Please create a key on https://github.com/settings/tokens and create a key (only gist scope is required)")
             print("Key for gist access:")
             gist_secret = input()
-            gist_index = init_badges(gist_secret)
+            gist_id = init_badges(gist_secret)
             set_key(f"{PWD_TO_OVILAW}{sep}.env", "GIST_SECRET", gist_secret)
         except Exception as e:
             print(f"Provided key seems to be invalid: {str(e)}")
@@ -164,18 +159,19 @@ def init_repo():
             if levenshtein_input == '':
                 levenshtein_input = "3"
             levenshtein_threshold = int(levenshtein_input)
-        except:
-            pass
+        except Exception as e:
+            print(e)
+            return
     
     with open(f"{PWD_TO_ROOT_FOLDER}.acimov{sep}parameters.json", "w") as params:
-        params.write(json.dumps({
+        params.write(dumps({
             "ontology_url": deploy_url,
             "term_distance_threshold": levenshtein_threshold,
             "blocking_errors": [
                 "syntax-error",
                 "owl-rl-constraint-violation"
             ],
-            "gist_index": gist_index
+            "gist_index": gist_id
         }, indent=4))
 
     print("The repository is initialized!")

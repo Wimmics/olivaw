@@ -28,6 +28,8 @@ REPO_URI = arg_repo[0] if len(arg_repo) > 0 else check_output(
 if REPO_URI.endswith("/"):
   REPO_URI = REPO_URI[:-1]
 
+REPO_NAME = REPO_URI.split('/')[-1]
+
 # Base reporitory platform URL
 PLATFORM_URL = "/".join(REPO_URI.split("/")[:-2])
 

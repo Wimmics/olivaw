@@ -56,8 +56,8 @@ def init(line):
 def show(line):
     target = line[0]
 
-    if target == "gists":
-        from olivaw.show.gists import show_gists
-        show_gists()
+    if target == "gist":
+        from olivaw.show.gists import show_gist
+        show_gist()
     else:
         print(f"Unknown target: {target}")
