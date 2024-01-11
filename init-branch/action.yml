@@ -33,7 +33,7 @@ runs:
     - name: Update README.md
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@test-branch3
+        pip install git+https://github.com/Wimmics/olivaw@test-branch4
 
         BADGES="$(olivaw show badges --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         BADGES_DATA=($BADGES)
@@ -60,7 +60,7 @@ runs:
         REF=${{ inputs.ref }}
         echo "github.ref: $REF"
         IFS='/' read -ra PATHS <<< "$REF"
-        BRANCH_NAME="${PATHS[2]}"
+        BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
         echo $BRANCH_NAME
         echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
     - name: Commit README.md
