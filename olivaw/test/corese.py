@@ -325,7 +325,10 @@ def check_OWL_constraints(graph):
         if 'EngineException' in str(e):
             error_list = engine.getErrorList()
             return [
-                str(error_list.get(i)).replace("\n", "&#10;").replace("<", "&#60;")
+                str(error_list.get(i))\
+                    .replace("\n", " &#10;")\
+                    .replace("<", "&#60;")\
+                    .replace(">&", "> &")
                 for i in range(error_list.size())
             ]
         else:
