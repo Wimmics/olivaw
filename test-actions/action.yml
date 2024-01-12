@@ -44,7 +44,7 @@ runs:
       if: $${{ inputs.model-test }}
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@proto-data-test-2
+        pip install git+https://github.com/Wimmics/olivaw@proto-data-test-3
 
         SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         TOKENS=($SUMMARY)
