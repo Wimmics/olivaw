@@ -72,18 +72,20 @@ runs:
         echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
         echo "REPO=$(echo $${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
 
+        git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
+
     - name: Generate data test report
       shell: bash
       if: ${{ inputs.data-test }}
       run: |
         olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }}
+        git add .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
 
     - name: Add output files to repository
       shell: bash
       run: |
         git config --global user.email "no-reply@github.com"
         git config --global user.name "Olivaw in Actions"
-        git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
         git commit -m "Provide automatic tests report [skip actions]"
         git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
         git push
