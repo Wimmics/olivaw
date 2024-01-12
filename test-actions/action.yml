@@ -78,7 +78,7 @@ runs:
       shell: bash
       if: ${{ inputs.data-test }}
       run: |
-        olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }}
+        olivaw test data --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }}
         git add .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
 
     - name: Add output files to repository
