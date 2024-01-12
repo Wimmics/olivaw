@@ -2,7 +2,6 @@ from rdflib import Graph, Literal
 from datetime import datetime
 from sys import argv
 
-from .corese import smartPrint
 from olivaw.constants import (
     SEVERITY_RANGE,
     COLOR_BOX_TEMPLATE,

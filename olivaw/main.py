@@ -30,8 +30,9 @@ def test(line):
         from olivaw.test.model.suite import modelTest
         modelTest()
     elif target == "data":
-        # Implement here
-        return
+        # Only instanciate Corese server if needed
+        from olivaw.test.data.suite import dataTest
+        dataTest()
     elif target == "query":
         # Implement here
         return

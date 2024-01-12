@@ -1,6 +1,6 @@
-name: "Olivaw model test"
+name: "Olivaw tests"
 author: "Wimmics"
-description: "Launches Olivaw model test"
+description: "Launches Olivaw test suite"
 inputs:
   repository:
     description: "The url of the repository to test"
@@ -14,6 +14,16 @@ inputs:
     description: "The personal access token with only gist scope allowed"
     type: string
     required: true
+  model-test:
+    description: "Should the model tests be run"
+    type: boolean
+    required: false
+    default: true
+  data-test:
+    description: "Should the data tests be run"
+    type: boolean
+    required: true
+    default: false
   server-url:
     description: "The platform URL"
     type: string
@@ -30,7 +40,8 @@ runs:
       with:
         repository: ${{ inputs.repository }}
         ref: ${{ inputs.ref }}
-    - name: Generate report
+    - name: Generate model test report
+      if: $${{ inputs.model-test }}
       shell: bash
       run: |
         pip install git+https://github.com/Wimmics/olivaw@v0.0.1
@@ -61,10 +72,19 @@ runs:
         echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
         echo "REPO=$(echo $${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
 
+    - name: Generate data test report
+      shell: bash
+      if: ${{ inputs.data-test }}
+      run: |
+        olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }}
+
+    - name: Add output files to repository
+      shell: bash
+      run: |
         git config --global user.email "no-reply@github.com"
         git config --global user.name "Olivaw in Actions"
-        git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
-        git commit -m "Provide automatic model test report [skip actions]"
+        git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
+        git commit -m "Provide automatic tests report [skip actions]"
         git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
         git push
 

@@ -119,4 +119,12 @@ olivaw test model
 
 It can be launched from anywhere in the acimov repository
 
+### Flushing the output folder
+
+You can flush the `.acimov/output` folder with the following command
+
+```shell
+olivaw flush
+```
+
 More is about to come soon!

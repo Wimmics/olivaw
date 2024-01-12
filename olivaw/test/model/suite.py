@@ -14,7 +14,7 @@ from olivaw.constants import (
     BRANCH
 )
 
-from .corese import print_title # TODO Need later for a utils.py?
+from olivaw.test.corese import print_title # TODO Need later for a utils.py?
 
 from .testing import (
     modules_tests,
@@ -22,12 +22,12 @@ from .testing import (
     merged_fragment_set_test,
 )
 
-from .turtle import (
+from olivaw.test.turtle import (
     prepare_graph,
     make_assertor
 )
 
-from .markdown import (
+from olivaw.test.markdown import (
     make_turtle_page
 )
 
@@ -60,7 +60,7 @@ def modelTest():
     test_assertor = make_assertor(
         report,
         mode,
-        f"{PROFILE_CHECK_URI}.acimov/model-test/complete-test.py"
+        f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/model/suite.py"
     )
 
     print_title("Checking existing modules")

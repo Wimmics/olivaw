@@ -32,7 +32,7 @@ from olivaw.constants import (
     MODELET_URL_FORMAT,
     PWD_TO_ROOT_FOLDER,
     LITERAL_CUTTING_LENGTH,
-    PREFIX_ERROR
+    USECASES_URL
 )
 
 def statement(self, subject, *po):
@@ -84,11 +84,17 @@ def make_subject_id_part(fragment_list):
     modules = [item for item in fragment_list if item.startswith("src/")]
     modules = ['.'.join(item[4:].split('.')[:-1]) for item in modules]
     modules.sort()
-    modelets = [item for item in fragment_list if item.startswith("domains/")]
+    modelets = [item for item in fragment_list if item.startswith("domains/") and item.endswith("/onto.ttl")]
     modelets = ['-'.join(item.split('/')[1:-1]) for item in modelets]
     modelets.sort()
+    datasets = [item for item in fragment_list if item.startswith("domains/") and item.endswith("/dataset.ttl")]
+    datasets = ['-'.join(item.split('/')[1:-1]) for item in datasets]
+    datasets.sort()
+    usecases = [item for item in fragment_list if item.startswith("use-cases/")]
+    usecases = ['-'.join(item.split('/')[1:-1])[:-4] for item in usecases]
+    usecases.sort()
 
-    subject_id_part = '-'.join(modules + modelets)
+    subject_id_part = '-'.join(modules + modelets + datasets + usecases)
     return subject_id_part
 
 def make_subject_id(heart, appendix=[]):
@@ -109,9 +115,24 @@ def make_subject(
         custom_title=""
 ):
     subject_id = make_subject_id(heart, appendix=appendix) if name == "" else name
-
-    heart_type = "Set of fragments" if len(heart) > 1 else \
-                f"{'Standalone' if len(appendix) == 0 else 'Merged'} {'module' if heart[0].startswith('src/') else 'modelet'}"
+    
+    if len(heart) > 1:
+        heart_type = "Set of fragments"
+    else:
+        if len(appendix) == 0:
+            heart_type = "Standalone "
+        else:
+            heart_type = "Merged "
+        
+        if heart[0].startswith("src/"):
+            heart_type += "module"
+        elif heart[0].startswith("domains/"):
+            if heart[0].endswith("/onto.ttl"):
+                heart_type += "modelet"
+            else:
+                heart_type += "dataset"
+        else:
+            heart_type += "use case"
     
     title = f"{heart_type} {', '.join(heart)} from branch {BRANCH}"
 
@@ -126,16 +147,38 @@ def make_subject(
         for item in module_fragments
     ]
     
-    modelets_fragment = [item for item in heart + appendix if item.startswith('domains/')]
+    modelets_fragment = [
+        item
+        for item in heart + appendix
+        if item.startswith('domains/')
+        and item.endswith('/onto.ttl')
+    ]
     modelets_fragment = [
         URIRef(DOMAINS_URL + item.split("domains/")[-1])
         for item in modelets_fragment
     ]
 
+    datasets_fragment = [
+        item
+        for item in heart + appendix
+        if item.startswith('domains/')
+        and item.endswith('/dataset.ttl')
+    ]
+    datasets_fragment = [
+        URIRef(DOMAINS_URL + item.split("domains/")[-1])
+        for item in datasets_fragment
+    ]
+    
+    usecases_fragment = [item for item in heart + appendix if item.startswith('use-cases/')]
+    usecases_fragment = [
+        URIRef(USECASES_URL + item.split("use-cases/")[-1])
+        for item in usecases_fragment
+    ]
+
     test_subject = BNode(subject_id, subject_id)
     statements = [
         (DCTERMS.hasPart, part)
-        for part in module_fragments + modelets_fragment
+        for part in module_fragments + modelets_fragment + datasets_fragment + usecases_fragment
     ]
 
     statements = [
@@ -353,8 +396,8 @@ def make_outcomes(
 ):
     if len(pointers) > 0 and not len(pointers) == len(messages):
         pointers = []
-    
     outcomes = []
+
     outcome_ressources = TEST_RESOURCES[criterion]["errors"][error]
     if len(messages) == 0:
         if skip_pass:

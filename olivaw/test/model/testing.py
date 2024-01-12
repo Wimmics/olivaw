@@ -1,7 +1,7 @@
 from glob import glob
 from os.path import sep, relpath
 
-from .corese import (
+from olivaw.test.corese import (
     query_graph, 
     safe_load,
     prefix_manager,
@@ -25,7 +25,7 @@ from olivaw.constants import (
     NOT_LABELED
 )
 
-from .turtle import (
+from olivaw.test.turtle import (
     make_subject,
     make_not_tested,
     make_outcomes,
