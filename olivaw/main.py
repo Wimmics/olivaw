@@ -16,6 +16,8 @@ def run():
         from olivaw.constants import ROOT_FOLDER
         from os import listdir, remove
         for filename in listdir(f"{ROOT_FOLDER}{sep}.acimov{sep}output"):
+            if filename.split("-")[-1].split(".")[0] == "actions":
+                continue
             remove(f"{ROOT_FOLDER}/.acimov/output/{filename}")
     elif command == "show":
         show(args)
@@ -27,12 +29,12 @@ def test(line):
     
     if target == "model":
         # Only instanciate Corese server if needed
-        from olivaw.test.model.suite import modelTest
-        modelTest()
+        from olivaw.test.model.suite import test_model
+        test_model()
     elif target == "data":
         # Only instanciate Corese server if needed
-        from olivaw.test.data.suite import dataTest
-        dataTest()
+        from olivaw.test.data.suite import test_data
+        test_data()
     elif target == "query":
         # Implement here
         return

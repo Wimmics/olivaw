@@ -324,7 +324,10 @@ def check_OWL_constraints(graph):
         # If the exception message contains 'EngineException', return the list of errors
         if 'EngineException' in str(e):
             error_list = engine.getErrorList()
-            return [str(error_list.get(i)) for i in range(error_list.size())]
+            return [
+                str(error_list.get(i)).replace("\n", "&#10;").replace("<", "&#60;")
+                for i in range(error_list.size())
+            ]
         else:
             # If the exception is of a different type, return an error message
             return [f"An error occurred while processing the graph: {e}"]

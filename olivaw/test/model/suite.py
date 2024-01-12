@@ -42,7 +42,7 @@ def datetime_id():
 ###
 # Test OWL_RL
 ###
-def modelTest():
+def test_model():
     _, *args = argv
 
     modes = [

@@ -26,7 +26,7 @@ def datetime_id():
             .split(".")[:-1]
         ).replace(":", "-")
 
-def dataTest():
+def test_data():
     _, *args = argv
 
     modes = [
