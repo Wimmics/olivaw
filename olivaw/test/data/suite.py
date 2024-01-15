@@ -1,4 +1,5 @@
 from sys import argv
+from os.path import sep
 from glob import glob
 from datetime import datetime
 from codecs import open as copen
@@ -65,7 +66,7 @@ def test_data():
 
     print_title("Exporting results")
 
-    markdown = make_turtle_page(report, file_name)
+    markdown = make_turtle_page(report, file_base.split(sep)[-1])
 
     with open(f"{file_base}.ttl", "w") as f:
         f.write(report.serialize(format="ttl"))

@@ -1,7 +1,7 @@
 from glob import glob
 from datetime import datetime
 from os import makedirs
-from os.path import exists
+from os.path import exists, sep
 from sys import argv
 from codecs import open as copen
 
@@ -109,7 +109,7 @@ def test_model():
 
     print_title("Exporting results")
 
-    markdown = make_turtle_page(report, file_name)
+    markdown = make_turtle_page(report, file_base.split(sep)[-1])
 
     if not exists(PWD_TO_MODEL_OUTPUT_FOLDER):
         makedirs(PWD_TO_MODEL_OUTPUT_FOLDER)

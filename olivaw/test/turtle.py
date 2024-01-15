@@ -91,7 +91,7 @@ def make_subject_id_part(fragment_list):
     datasets = ['-'.join(item.split('/')[1:-1]) for item in datasets]
     datasets.sort()
     usecases = [item for item in fragment_list if item.startswith("use-cases/")]
-    usecases = ['-'.join(item.split('/')[1:-1])[:-4] for item in usecases]
+    usecases = ['-'.join(item.split('/')[1:-1]) for item in usecases]
     usecases.sort()
 
     subject_id_part = '-'.join(modules + modelets + datasets + usecases)
