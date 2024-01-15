@@ -89,25 +89,27 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/model-test@v0.0.1
+    - uses: Wimmics/olivaw/test-actions@v0.0.1
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
         gist-secret: ${{ secrets.GIST_SECRET }}
+        model-test: true
+        data-test: true
 ```
 
 Tests powered by [Corese](https://project.inria.fr/corese/) will be run
 
-Two files will be generated in the folder .acimov/output of your project:
-* a *.ttl* file containing a test report written with the [EARL](https://www.w3.org/WAI/ER/EARL10/WD-EARL10-Guide-20120125) ontology
+Four files will be generated in the folder .acimov/output of your project:
+* a *.ttl* file containing a model test report written with the [EARL](https://www.w3.org/WAI/ER/EARL10/WD-EARL10-Guide-20120125) ontology
 * a version of this test report converted into a *markdown* format that is human readable
 
+* a *.ttl* file containing a data test report written with the [EARL](https://www.w3.org/WAI/ER/EARL10/WD-EARL10-Guide-20120125) ontology
+* a version of this test report converted into a *markdown* format that is human readable
+
+The badges in the README.md files will also be updates accordingly!
+
 These files will be available in `.acimov/output` and the markdown file will also be upload as a Github artifact
-
-These options can also be used:
-
-* `--skip-pass` to ignore in the report all the *Pass* outcomes
-* `--tested-only` to ignore in the report all the *NotTested* outcomes
 
 ### Launch model tests manually
 
@@ -117,7 +119,31 @@ In a repository respecting the Acimov architecture, model tests can be launched 
 olivaw test model
 ```
 
+These options can also be used:
+
+* `--skip-pass` to ignore in the report all the *Pass* outcomes
+* `--tested-only` to ignore in the report all the *NotTested* outcomes
+
 It can be launched from anywhere in the acimov repository
+
+These files will be available in `.acimov/output`
+
+### Launch data tests manually
+
+In a repository respecting the Acimov architecture, model tests can be launched to evaluate the quality of your ontology using this command:
+
+```shell
+olivaw test data
+```
+
+These options can also be used:
+
+* `--skip-pass` to ignore in the report all the *Pass* outcomes
+* `--tested-only` to ignore in the report all the *NotTested* outcomes
+
+It can be launched from anywhere in the acimov repository
+
+These files will be available in `.acimov/output`
 
 ### Flushing the output folder
 

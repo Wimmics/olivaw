@@ -17,13 +17,11 @@ inputs:
   model-test:
     description: "Should the model tests be run"
     type: boolean
-    required: false
-    default: true
+    required: true
   data-test:
     description: "Should the data tests be run"
     type: boolean
     required: true
-    default: false
   server-url:
     description: "The platform URL"
     type: string
@@ -44,7 +42,7 @@ runs:
       if: $${{ inputs.model-test }}
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@proto-data-test-6
+        pip install git+https://github.com/Wimmics/olivaw@v0.0.2
 
         SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         TOKENS=($SUMMARY)
@@ -92,9 +90,17 @@ runs:
 
     - name: Archive model test results
       uses: actions/upload-artifact@v3
+      if: $${{ inputs.model-test }}
       with:
         name: model-test-report
         path: .acimov/output/model-test-actions.md
+
+    - name: Archive data test results
+      uses: actions/upload-artifact@v3
+      if: $${{ inputs.data-test }}
+      with:
+        name: data-test-report
+        path: .acimov/output/data-test-actions.md
 
     - name: Create the Pass Badge
       uses: schneegans/dynamic-badges-action@v1.7.0
