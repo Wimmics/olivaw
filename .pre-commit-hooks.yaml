@@ -1,0 +1,9 @@
+-   id: check-fragments
+    name: Check project fragment
+    description: Make a syntax and OWL constraint violation test on the fragments
+    entry: olivaw test precommit
+    require_serial: true
+    language: python
+    additional_dependencies: ['-r', 'requirements-precommit.txt']
+    files: \.ttl$
+    stages: [commit, push, manual]

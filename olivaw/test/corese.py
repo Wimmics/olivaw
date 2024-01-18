@@ -5,14 +5,11 @@ from atexit import register
 from subprocess import Popen, PIPE, DEVNULL
 from time import sleep
 from os.path import exists, sep
-from requests import get
 from typing import Union, List
 from py4j.java_gateway import launch_gateway, JavaGateway
-from sys import argv
 
 from olivaw.constants import (
     AST_ERROR_FORMAT,
-    CORESE_PYTHON_URL,
     GET_IMPORTS,
     ONTOLOGY_SEPARATOR,
     CORESE_LOCAL_PATH,
@@ -42,14 +39,6 @@ def smartPrint(message):
 
 # Capturing the stderr in an OS-agnostic way
 # From https://stackoverflow.com/questions/375427/a-non-blocking-read-on-a-subprocess-pipe-in-python
-
-print_title("Preparing Corese")
-
-if not exists(CORESE_LOCAL_PATH):
-    print_title("Downloading Corese")
-    response = get(CORESE_PYTHON_URL)
-    with open(CORESE_LOCAL_PATH, "wb") as jar:
-        jar.write(response.content)
 
 def enqueue_output(out, queue):
     """Get an element of the queue containing the java console output

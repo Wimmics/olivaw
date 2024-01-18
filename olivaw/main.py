@@ -4,7 +4,7 @@ from os.path import sep
 def run():
     olivaw_index = [
         i for i in range(len(argv))
-        if argv[i].split(sep)[-1] == "olivaw"
+        if argv[i].split(sep)[-1].split(".")[0] == "olivaw"
     ]
     command, *args = argv[olivaw_index[0] + 1:]
     
@@ -25,7 +25,7 @@ def run():
         print(f"Unknown command: {command}")
 
 def test(line):
-    target = line[0]
+    target = line.pop(0)
     
     if target == "model":
         # Only instanciate Corese server if needed
@@ -38,6 +38,9 @@ def test(line):
     elif target == "query":
         # Implement here
         return
+    elif target == "precommit":
+        from olivaw.hook.test import run
+        run(line)
     else:
         # Best way to deal with invalid command...?
         print(f"Unknown target: {target}")

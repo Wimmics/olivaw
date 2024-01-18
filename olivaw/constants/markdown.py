@@ -1,4 +1,3 @@
-import regex as re
 
 ERROR_TABLE_HEADER = [
     "|*Jump*|*Number*|*Status*|*Subject*|*Criterion*|*Title*|*Link*|",
@@ -7,11 +6,21 @@ ERROR_TABLE_HEADER = [
 
 COLOR_BOX_TEMPLATE = "EMOJI*TEXT*"
 
-MODULE_URL_FORMAT = re.compile('src/[^/]+$')
-MODELET_URL_FORMAT = re.compile('domains/[^/]+/[^/]+/onto\.ttl')
-DATASET_URL_FORMAT = re.compile('domains/[^/]+/[^/]+/dataset\.ttl')
-USECASE_URL_FORMAT = re.compile('use-cases/[^/]+/[^/]+$')
+global MODULE_URL_FORMAT, MODELET_URL_FORMAT, DATASET_URL_FORMAT, USECASE_URL_FORMAT
 
-NEW_LINES = re.compile('\\n+')
+try:
+    import regex as re
+
+    MODULE_URL_FORMAT = re.compile('src/[^/]+$')
+    MODELET_URL_FORMAT = re.compile('domains/[^/]+/[^/]+/onto\.ttl')
+    DATASET_URL_FORMAT = re.compile('domains/[^/]+/[^/]+/dataset\.ttl')
+    USECASE_URL_FORMAT = re.compile('use-cases/[^/]+/[^/]+$')
+
+    NEW_LINES = re.compile('\\n+')
+except:
+    MODULE_URL_FORMAT = None
+    MODELET_URL_FORMAT = None
+    DATASET_URL_FORMAT = None,
+    USECASE_URL_FORMAT = None
 
 LITERAL_CUTTING_LENGTH = 60

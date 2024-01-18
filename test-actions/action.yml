@@ -42,7 +42,7 @@ runs:
       if: $${{ inputs.model-test }}
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@v0.0.2
+        pip install git+https://github.com/Wimmics/olivaw@v0.0.3
 
         SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         TOKENS=($SUMMARY)
@@ -89,6 +89,7 @@ runs:
         git push
 
     - name: Archive model test results
+      if: $${{ inputs.model-test }}
       uses: actions/upload-artifact@v3
       if: $${{ inputs.model-test }}
       with:
@@ -96,8 +97,8 @@ runs:
         path: .acimov/output/model-test-actions.md
 
     - name: Archive data test results
-      uses: actions/upload-artifact@v3
       if: $${{ inputs.data-test }}
+      uses: actions/upload-artifact@v3
       with:
         name: data-test-report
         path: .acimov/output/data-test-actions.md

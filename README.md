@@ -1,61 +1,145 @@
 # Olivaw
 
-This repository is a python library meant for providing tool in an Acimov ontology development context.
-Anyone can use it as a python library as follows:
+An Agile methodology for ontology development named [ACIMOV](https://www.emse.fr/~zimmermann/Papers/mk2023.pdf) has been proposed on 2023.
+
+This methodology is an extension of [SAMOD](https://essepuntato.it/samod/) with some improvements, including:
+
+* the possibility to develop modular ontologies
+* ensuring alignment to selected reference ontologies
+* a wider collaboration between product owners, domain experts and ontology developpers
+
+This repository is a python library meant for providing tools in an Acimov ontology development context.
+
+In this repository you will find:
+
+* command lines that should help you to make your Acimov development easier
+* composite actions that you can directly call in workflows from your Acimov project
+* a pre-commit hook that should prevent the biggest mistakes that could be pushed in your Acimov repository
+
+This tool proposes different test tools all powered by Corese, you can check their [website](https://project.inria.fr/corese/) and [repository](https://github.com/Wimmics/corese)
+
+The test reports are then represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/)
+
+This project is very young so if a bug is to be found don't hesitate to create an [issue](https://github.com/Wimmics/olivaw/issues)
+
+# Getting started
+
+## Installing olivaw in your project
+
+First you will need a python environment version 3.8 or greater.
+
+Then install the python library using this command:
 
 ```shell
 pip install git+https://github.com/Wimmics/olivaw
 ```
 
-The repository should soon be used also as a Github Actions
+## Intializing a repository
 
-## Getting started
+### Acimov repository structure
 
-This projet is whole new so expect more features and documentation later.
+In order to use this tool properly you need an Acimov structured repository.
 
-### Initialize the repository
+This repository constains:
 
-This tools can only operate on a acimov architectured github repository with at least:
+* the folders:
+  * `.acimov/`
+  * `src/`
+  * `domains/`
+  * `use-cases/`
+*  a `README.md` at the root
 
-* `src/` folder
-* `domains/` folder with at least one subfolder
-* `.acimov/` folder
-* `README.md` file at the root folder
+A template repository ready to fork should be provided soon.
 
-It will also need a personal access token with the gist scope. To obtain one:
+### Getting a personnal access token with gist scope
 
-* Go to on this github web page: [https://github.com/settings/tokens](github.com/settings/tokens)
-* Create a token
-* Select the `gist` scope
-* Copy the generated token (it will not be possible to see it later)
+This framework proposes automatically updated badges at the top of the README.md on each branch.
 
-Your repository will need to know this token in a secret. You can follow these steps:
+To make this work you will need a personnal access token with the `gist` scope.
 
-* Go to `{you_repository_url}/settings/secrets/actions`
-* Click on `New repository secret`
-* Type `GIST_SECRET` as the secret name and the personal access token as value
+* First go to the [Github webpage dedicated to access token generation](https://github.com/settings/tokens)
+* Then create a personnal access token with only the `gist` scope. Copy/paste this token somewhere because it will never be shown to you again.
+* Then go to `{your_repository_url}/settings/secrets/actions`, create a new repository secret named `GIST_SECRET` and paste the key
 
-Now in your repository folder you can type the following command:
+### Initialize repository parameters
+
+Finally this library needs a `parameters.json` file in the `.acimov/` folder that should contain parameters related to the repository.
+
+You can use this command to generate one:
 
 ```shell
 olivaw init repo
 ```
 
-You will be asked the personal access token, the url of your ontology and finally the Levenshtein threshold distance you want between each of your terms.
+Just follow the instructions (you will be asked again the personnal access token with `gist` scope).
 
-You can see:
+After the execution of the command you should see a file named `parameters.json` in the `.acimov/` folder and also badges added to the top of your repository.
 
-* The README has been edited to contain some badges at the the top
-* A file named `parameters.json` has been created in the `.acimov/` folder
-* A gist has been created in `https://gist.github.com/{your_username}` with some files meant for badges in you repository
+You can enventually customize this parameters using the [parameters documentation](./docs/parameters.md).
 
-### Automatic badges initialization on on branch
+You are now ready to use all the commands of olivaw inside this repository!
 
-The badges have a stable URI depending on the user that created them, the branch where they are displayed and the badge type
+# Basics about olivaw
 
-When creating a new branch the badges URIs can be changed manually but it can be annoying
+## The command line
 
-So you can use the actions below to update it automatically when a branch is created:
+Here is only a short overview of the main commands. If you want to see the documentation related to all of the commands and their options see the [olivaw command line documentation](./docs/commands.md).
+
+Also more is about to come.
+
+### Model test
+
+Anywhere in the repository use this command to launch a model test:
+
+```shell
+olivaw test model
+```
+
+### Data test
+
+This command is for launching data test
+
+```shell
+olivaw test data
+```
+
+## The Github actions
+
+Here is an overview of the actions available. For more details see the [olivaw Github Actions documentation](./docs/actions.md).
+
+Each actions of this chapter involve to create a `.yaml` file located in `{your_repository_path}/.github/workflows/`.
+
+### Automatic tests on push
+
+In your `worflows/` folder, add a `test.yaml` file containing this:
+
+```yaml
+name: test
+on: push
+
+jobs:
+  test:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+    - uses: Wimmics/olivaw/test-actions@v0.0.3
+      with:
+        repository: ${{ github.repository }}
+        ref: ${{ github.ref }}
+        gist-secret: ${{ secrets.GIST_SECRET }}
+        model-test: true
+        data-test: true
+```
+
+Then, after each push on the repository an actions will be triggered and after one minute you should see in the `.acimov/output/` folder:
+
+* RDF files written in the turtle format representing the result of the test, written with the EARL vocabulary
+* markdown files representing in a human readable way the previous turtle files
+
+### Badges branch initialization
+
+In your `worflows/` folder, add a `init-branch.yaml` file containing this:
 
 ```yaml
 name: init-branch
@@ -67,90 +151,49 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/init-branch@v0.0.1
+    - uses: Wimmics/olivaw/init-branch@v0.0.3
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
         gist-secret: ${{ secrets.GIST_SECRET }}
 ```
 
-### Automatic tests on the project
+Then on each time a branch is published, the actions should create new gists and update the badges in the README.md without anything left to do for the developper.
 
-Tests can be launched automatically when someone pushed on your project
-You can use the actions below to implement it on your project
+## The pre-commit hook
+
+A pre-commit hook is available in this repository to prevent the developper to push big mistakes on the server.
+
+To use it you should need first need to install pre-commit. I strongly advise you to create a fresh new python 3.11 environment for the tool to work properly.
+
+Once your new environment set, you can install pre-commit with this command:
+
+```shell
+pip install pre-commit
+```
+
+Then you should add a file named `.pre-commit-config.yaml` at the root of you repository containing this:
 
 ```yaml
-name: model-test
-on: push
-
-jobs:
-  model-test:
-    permissions:
-      contents: write
-    runs-on: ubuntu-latest
-    steps:
-    - uses: Wimmics/olivaw/test-actions@v0.0.1
-      with:
-        repository: ${{ github.repository }}
-        ref: ${{ github.ref }}
-        gist-secret: ${{ secrets.GIST_SECRET }}
-        model-test: true
-        data-test: true
+default_language_version:
+  python: python3
+repos:
+- repo: https://github.com/Wimmics/olivaw
+  rev: v0.0.3
+  hooks:
+    - id: check-fragments
 ```
 
-Tests powered by [Corese](https://project.inria.fr/corese/) will be run
-
-Four files will be generated in the folder .acimov/output of your project:
-* a *.ttl* file containing a model test report written with the [EARL](https://www.w3.org/WAI/ER/EARL10/WD-EARL10-Guide-20120125) ontology
-* a version of this test report converted into a *markdown* format that is human readable
-
-* a *.ttl* file containing a data test report written with the [EARL](https://www.w3.org/WAI/ER/EARL10/WD-EARL10-Guide-20120125) ontology
-* a version of this test report converted into a *markdown* format that is human readable
-
-The badges in the README.md files will also be updates accordingly!
-
-These files will be available in `.acimov/output` and the markdown file will also be upload as a Github artifact
-
-### Launch model tests manually
-
-In a repository respecting the Acimov architecture, model tests can be launched to evaluate the quality of your ontology using this command:
+Then you just have to use this command at the root of the repository:
 
 ```shell
-olivaw test model
+pre-commit install
 ```
 
-These options can also be used:
+Finally add the `.pre-commit-config.yaml` file to the commit.
 
-* `--skip-pass` to ignore in the report all the *Pass* outcomes
-* `--tested-only` to ignore in the report all the *NotTested* outcomes
+Now, each time you commit, the staged files will be tested and the commit will be blocked if a syntax error or a owl constraint violation is present in these files.
 
-It can be launched from anywhere in the acimov repository
-
-These files will be available in `.acimov/output`
-
-### Launch data tests manually
-
-In a repository respecting the Acimov architecture, model tests can be launched to evaluate the quality of your ontology using this command:
-
-```shell
-olivaw test data
-```
-
-These options can also be used:
-
-* `--skip-pass` to ignore in the report all the *Pass* outcomes
-* `--tested-only` to ignore in the report all the *NotTested* outcomes
-
-It can be launched from anywhere in the acimov repository
-
-These files will be available in `.acimov/output`
-
-### Flushing the output folder
-
-You can flush the `.acimov/output` folder with the following command
-
-```shell
-olivaw flush
-```
+The test takes a few seconds and obviously pre-commit needs a moment to prepare the hook in at the very first use of this hook.
 
 More is about to come soon!
