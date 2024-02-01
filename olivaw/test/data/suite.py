@@ -53,12 +53,14 @@ def test_data():
 
     fragments = datasets + usecases
 
+    print_title("Running data tests")
+
     data_fragment_test(
         report,
         assertor,
         fragments, 
-        skip_pass=skip_pass,
-        tested_only=tested_only
+        skip_pass,
+        tested_only
     )
 
     file_name = mode if not mode == "manual" else f"{mode}-{DEV_USERNAME}-{datetime_id()}"

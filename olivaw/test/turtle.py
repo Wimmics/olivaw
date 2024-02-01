@@ -265,12 +265,15 @@ def shorten_literals(triples):
             parsed_triples.append(targetTriple)
     return parsed_triples
 
-def parse_statement_for_html(statement):
+def parse_statement_for_html(statement, is_literal=False):
     statement = [
-        line.strip().replace("<", "&#60;")
+        line.strip().replace("<", "&#60;").replace("_", "&lowbar;")
         for line in statement.split("\n")
         if len(line.strip()) > 0
     ]
+
+    if is_literal:
+        return "\n".join(statement)
         
     for i in range(len(statement)):
         if not statement[i].startswith("@"):
@@ -346,6 +349,8 @@ def make_pointer(report, subject, pointer_string):
         pointer_string[1:].startswith(str(ONTOLOGY_NAMESPACE)):
         
         pointer = extract_statement(report, subject, URIRef(statement_subject[1:-1]))
+    elif statement_subject[0] == '"':
+        pointer = Literal(parse_statement_for_html(pointer_string.strip()[1:-1], is_literal=True))
     elif statement_subject[0] != "[" and not is_statement:
         normalizedUri = Namespace(
             [
@@ -354,6 +359,8 @@ def make_pointer(report, subject, pointer_string):
             ][0]
         )[pointer_string.split(":")[1]]
         pointer = URIRef(normalizedUri)
+    elif pointer_string.strip()[0] == "@":
+        pointer = Literal(parse_statement_for_html(pointer_string))
     else:
         pointer = Literal(parse_statement(report, subject, pointer_string))
     
@@ -392,6 +399,7 @@ def make_outcomes(
     error,
     messages,
     pointers=[],
+    outcome_type=None,
     skip_pass=False
 ):
     if len(pointers) > 0 and not len(pointers) == len(messages):
@@ -413,13 +421,15 @@ def make_outcomes(
             )
         ]
     else:
+        if outcome_type is None:
+            outcome_type = "MajorFail" if outcome_ressources["blocking"] else "MinorFail"
         outcomes = [
             make_outcome(
                 report,
                 subject,
                 criterion,
                 error,
-                "MajorFail" if outcome_ressources["blocking"] else "MinorFail",
+                outcome_type,
                 messages[i],
                 pointers[i] if i < len(pointers) else []
             )
@@ -477,6 +487,7 @@ def make_assertion(
     error,
     messages,
     pointers=[],
+    outcome_type=None,
     skip_pass=False,
     tested_only=False
 ):
@@ -493,6 +504,7 @@ def make_assertion(
                 error,
                 messages,
                 pointers,
+                outcome_type=outcome_type,
                 skip_pass=skip_pass
             )
         ),

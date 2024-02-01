@@ -46,6 +46,7 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
   GET_TOO_CLOSED_PAIRS = add_repo_variables(GET_TOO_CLOSED_PAIRS)
   NOT_LABELED = add_repo_variables(NOT_LABELED)
   GET_TERM_PAIRS = add_repo_variables(GET_TERM_PAIRS)
+  GET_ONTOLOGY_TERMS = add_repo_variables(GET_ONTOLOGY_TERMS)
 
   ONTOLOGY_NAMESPACE = Namespace(ONTOLOGY_URL)
 
@@ -58,12 +59,4 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       error_resource = criterion_resource["errors"][error]
       error_resource["blocking"] = error in BLOCKING_ERRORS
 
-CRITERIONS_NEEDING_SYNTAX = [
-  criterion for criterion in TEST_RESOURCES.keys()
-  if not criterion == "syntax"
-]
-
-BEST_PRACTICES_TESTS = [
-  criterion for criterion in CRITERIONS_NEEDING_SYNTAX
-  if not criterion in ["syntax", "owl-rl-constraint", "profile"]
-]
+MODEL_BEST_PRACTICES_TESTS = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]

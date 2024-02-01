@@ -84,6 +84,7 @@ def get_error_output():
 
     return "\n".join(total_output).strip()
 
+print_title("Launching Corese")
 # Start java gateway
 graph_db_port = launch_gateway()
 graph_db_process = Popen(
@@ -135,7 +136,11 @@ DISABLE_OWL_AUTO_IMPORT = gateway.jvm.fr.inria.corese.core.util.Property.Value.D
 TEXT_CSV = 14
 TEXT_TSV = 15
 TURTLE = 2
+
+STD = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.STD
 OWL_RL = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL
+OWL_RL_LITE = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL_LITE
+OWL_RL_FULL = OWL_RL = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL_FULL 
 RDFS = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.RDFS_RL
 
 # A java object resolving prefixes into URIs and the other way
@@ -148,7 +153,8 @@ def load(
         disable_owl: bool=False,
         disable_import: bool=False,
         graph=None,
-        already_imported: List[str]=[]
+        already_imported: List[str]=[],
+        profile=STD
     ):
     """Load a graph from a local file or a URL
 
@@ -204,8 +210,14 @@ def load(
             imports,
             import_from_src=True,
             graph=graph,
-            already_imported=already_imported + imports
+            already_imported=already_imported + imports,
+            profile=profile
         )
+
+    if not disable_owl:
+        engine = RuleEngine.create(graph)
+        engine.setProfile(profile)
+        engine.process()
 
     property_manager.set(DISABLE_OWL_AUTO_IMPORT, False)
     return graph
@@ -238,7 +250,8 @@ def safe_load(
         disable_import: bool=False,
         disable_owl: bool=False,
         graph: Graph=None,
-        already_imported: List[str]=[]
+        already_imported: List[str]=[],
+        profile=STD
     ):
     """Safe method to load a graph and eventually catch the error if there is one
 
@@ -256,7 +269,8 @@ def safe_load(
             disable_import=disable_import,
             disable_owl=disable_owl,
             graph=graph,
-            already_imported=already_imported
+            already_imported=already_imported,
+            profile=profile
         )
         syntax_errors = [
             line.strip()
@@ -278,7 +292,7 @@ def safe_load(
             if len(message) > 0
         ]
     
-def query_graph(graph, query):
+def query_graph(graph, query, format=TEXT_TSV):
     """Query the given graph and return the result in TSV notation
 
     :param graph: The Corese graph to query
@@ -291,10 +305,14 @@ def query_graph(graph, query):
     mappings = query_process.query(abstract_syntax_tree)
 
     resultFormater = ResultFormat.create(mappings)
-    resultFormater.setSelectFormat(TEXT_TSV)
-    resultFormater.setConstructFormat(TEXT_TSV)
+    resultFormater.setSelectFormat(format)
+    resultFormater.setConstructFormat(format)
+
     
-    result = resultFormater.toString().split("\n")[1:-1]
+    result = resultFormater.toString()
+    
+    if not format == TURTLE:
+        result = result.split("\n")[1:-1]
 
     return result
 

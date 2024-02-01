@@ -293,5 +293,63 @@
                 }
             }
         }
+    },
+    "term-recognition": {
+        "title": "Test of ontology term existence",
+        "description": "Test checking if each term of the ontology used in the subject indeed exist in the ontology",
+        "errors": {
+            "unknown-term": {
+                "blocking": false,
+                "Pass": {
+                    "title": "Every term exists",
+                    "description": "All the ontologic terms in the subject are defined in the ontology"
+                },
+                "NotTested": {
+                    "title": "The test could not be run",
+                    "description": "The subject must be syntaxically correct"
+                },
+                "CannotTell": {
+                    "title": "Unknown ontology term",
+                    "description": "A term of the subject is not defined in the ontology"
+                },
+                "MajorFail": {
+                    "title": "Unknown ontology term",
+                    "description": "A term of the subject is not defined in the ontology"
+                },
+                "MinorFail": {
+                    "title": "Unknown ontology term",
+                    "description": "A term of the subject is not defined in the ontology"
+                }
+            }
+        }
+    },
+    "prefix-validity": {
+        "title": "Term validity test",
+        "description": "A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc)",
+        "errors": {
+            "prefix-typo": {
+                "blocking": false,
+                "Pass": {
+                    "title": "No prefix typo",
+                    "description": "It seems that none of the subject URIs have prefixes typos"
+                },
+                "NotTested": {
+                    "title": "The test could not be run",
+                    "description": "The subject must be syntaxically correct"
+                },
+                "CannotTell": {
+                    "title": "Possible prefix typo",
+                    "description": "A URI of the subject seems to be a typo of a very common prefix"
+                },
+                "MajorFail": {
+                    "title": "Possible prefix typo",
+                    "description": "A URI of the subject seems to be a typo of a very common prefix"
+                },
+                "MinorFail": {
+                    "title": "Possible prefix typo",
+                    "description": "A URI of the subject seems to be a typo of a very common prefix"
+                }
+            }
+        }
     }
 }

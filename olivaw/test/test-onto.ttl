@@ -28,20 +28,30 @@
     dcterms:title "Term referencing test"@en ;
     dcterms:description "A test case from the Best Practices tests checking if each term of the test subject is referenced to a module through a rdfs:isDefinedBy property."@en .
 
-:domain-and-range-referencing-test a earl:TestCriterion ;
+:domain-and-range-referencing a earl:TestCriterion ;
     dcterms:identifier "domain-and-range-referencing" ;
     dcterms:title "Domain and range referencing test"@en ;
     dcterms:description "A test case from the Best Practices tests checking if all the ranges and domains from the test subject point to terms that are defined in the vocabulary."@en .
 
-:terms-differenciation-test a earl:TestCriterion ;
+:terms-differenciation a earl:TestCriterion ;
     dcterms:identifier "terms-differenciation" ;
     dcterms:title "Terms differenciation test"@en ;
     dcterms:description "A test case from the Best Practices tests checking if all the terms are different enough from each other according to the Levenshtein distance metric."@en .
 
-:labeled-terms-test a earl:TestCriterion ;
+:labeled-terms a earl:TestCriterion ;
     dcterms:identifier "labeled-terms" ;
     dcterms:title "Term labeling test"@en ;
     dcterms:description "A test case from the Best Practices tests checking if all the terms of the subject have a rdfs:label property pointing to a literal in English"@en .
+
+:term-recognition a earl:TestCriterion ;
+    dcterms:identifier "term-recognition" ;
+    dcterms:title "Term recognition test"@en ;
+    dcterms:description "A test meant to detect if all the terms from the subject that are from the ontology namespace are indeed defined in the ontology"@en .
+
+:prefix-validity a earl:TestCriterion ;
+    dcterms:identifier "prefix-validity" ;
+    dcterms:title "Term validity test"@en ;
+    dcterms:description "A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc)"@en .
 
 earl:Fail owl:equivalentClass [
         a owl:Class ;

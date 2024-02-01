@@ -247,7 +247,7 @@ SELECT ?title ?description ?date ?script ?page WHERE {
 """
 
 GET_CRITERION_DATA = """
-SELECT ?identifier ?title ?description ?description {
+SELECT ?identifier ?title ?description {
   _:x a earl:TestCriterion ;
     dcterms:identifier ?identifier ;
     dcterms:title ?title ;
@@ -267,6 +267,70 @@ ask {
   ?subject dcterms:identifier "all-modules" .
   
   FILTER(contains(?title, "OWL EL"))
+}
+"""
+
+GET_ONTOLOGY_TERMS = """
+select distinct ?term where {
+  {
+    ?s ?p ?o .
+    filter (strstarts(str(?s), "ONTOLOGY_URL"))
+    bind (SUBSTR(str(?s), STRLEN("ONTOLOGY_URL") + 1) as ?term)
+  }
+  union
+  {
+    ?s ?p ?o .
+    filter (strstarts(str(?p), "ONTOLOGY_URL"))
+    bind (SUBSTR(str(?p), STRLEN("ONTOLOGY_URL") + 1) as ?term)
+  }
+  union
+  {
+    ?s ?p ?o .
+    filter (strstarts(str(?o), "ONTOLOGY_URL"))
+    bind (SUBSTR(str(?o), STRLEN("ONTOLOGY_URL") + 1) as ?term)
+  }
+}
+"""
+
+GET_TERM_USAGE = """
+construct {
+  ?s1 ?p1 ?o1 .
+  ?s2 ?p2 ?o2 .
+  ?s3 ?p3 ?o3 .
+}
+where {
+  optional {
+    ?s1 ?p1 ?o1 .
+    filter (str(?s1)= "TERM")
+    filter not exists { filter (?p1 = owl:sameAs) }
+  }
+  optional {
+    ?s2 ?p2 ?o2 .
+    filter (str(?p2)= "TERM")
+  }
+  optional {
+    ?s3 ?p3 ?o3 .
+    filter (str(?o3)= "TERM")
+    filter not exists { filter (?p3 = owl:sameAs) }
+  }
+}
+"""
+
+GET_URIS = """
+select ?uri where {
+  {
+    ?uri ?p1 ?o1 .
+  }
+  union
+  {
+    ?s2 ?uri ?o2 .
+  }
+  union
+  {
+    ?s3 ?p3 ?uri .
+  }
+  filter not exists { filter isblank(?uri) }
+  filter not exists { filter isliteral(?uri) }
 }
 """
 

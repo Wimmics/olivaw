@@ -1,5 +1,6 @@
 from glob import glob
 from os.path import sep, relpath
+from tqdm import tqdm
 
 from olivaw.test.corese import (
     query_graph, 
@@ -20,8 +21,8 @@ from olivaw.constants import (
     DECIDABILITY_RANGE,
     ONTOLOGY_URL,
     PWD_TO_ROOT_FOLDER,
-    CRITERIONS_NEEDING_SYNTAX,
-    BEST_PRACTICES_TESTS,
+    MODEL_BEST_PRACTICES_TESTS,
+    MODEL_BEST_PRACTICES_TESTS,
     NOT_LABELED
 )
 
@@ -168,7 +169,7 @@ def fragment_check(
             tested_only=tested_only
         )
         
-        for criterion_id in CRITERIONS_NEEDING_SYNTAX:
+        for criterion_id in MODEL_BEST_PRACTICES_TESTS:
             make_not_tested(
                 report,
                 assertor,
@@ -191,7 +192,7 @@ def fragment_check(
     )
 
     if with_import_load_error:
-        for criterion in BEST_PRACTICES_TESTS:
+        for criterion in MODEL_BEST_PRACTICES_TESTS:
             make_not_tested(
                 report,
                 assertor,
@@ -235,7 +236,7 @@ def modules_tests(
     
     unsafe_modules = []
 
-    for module in modules:
+    for module in tqdm(modules):
         module_key = relpath(module, PWD_TO_ROOT_FOLDER).replace(sep, "/")
         subject = make_subject(report, [module_key])
         load_error = fragment_check(
@@ -275,7 +276,7 @@ def modelets_tests(
 
     unsafe_modelets = []
 
-    for modelet in modelets:
+    for modelet in tqdm(modelets):
         if "template" in modelet:
             continue
 
