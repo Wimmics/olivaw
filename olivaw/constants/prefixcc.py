@@ -1,36 +1,31 @@
 from requests import get
 
+PREFIX_CC_PREFIXES = "https://prefix.cc/context"
+PREFIX_SIMILARITY_THRESHOLD = 2
+
 # Checking most common prefixes
-response = get("https://prefix.cc/context")
+response = get(PREFIX_CC_PREFIXES)
 common_prefixes = response.json()["@context"]
 
 uris = list(common_prefixes.items())
-uris.sort(key=lambda x: x[1])
-last_uri = ""
-namespaces = []
-
-# removing homonymous prefixes
-for match in uris:
-    if match[1] == last_uri:
-        continue
-    last_uri = match[1]
-    namespaces.append(match)
-
-namespaces.sort()
 
 def iterate_node(node):
     candidates = [uri for uri in node["uris"] if len(uri[1]) > node["rank"] + 1]
     children = set([candidate[1][node["rank"] + 1] for candidate in candidates])
   
-    for child in children:
-        subnode_uris = [uri for uri in candidates if uri[1][node["rank"] + 1] == child]
-        subnode = {
+    node["children"] = [
+        {
             "rank": node["rank"] + 1,
             "char": child,
             "children": [],
-            "uris": subnode_uris
+            "uris": [
+                uri
+                for uri in candidates
+                if uri[1][node["rank"] + 1] == child
+            ]
         }
-        node["children"].append(subnode)
+        for child in children
+    ]
         
     node["uris"] = [uri for uri in node["uris"] if len(uri[1]) == node["rank"] + 1]
 
@@ -46,9 +41,38 @@ def make_prefix_tree(node):
     for _ in range(nb_iteration):
         iterate(node)
 
-COMMON_URIS = {"rank": 0, "char": "h", "children": [], "uris": namespaces}
+def make_index(prefix_base):
+    prefix_base.sort(key=lambda x: x[1])
+    last_uri = ""
+    namespaces = []
 
-make_prefix_tree(COMMON_URIS)
+    # removing homonymous prefixes
+    for match in prefix_base:
+        if match[1] == last_uri:
+            continue
+        last_uri = match[1]
+        namespaces.append(match)
+
+    namespaces.sort()
+
+    tree = {
+        char: {
+            "rank": 0,
+            "char": char,
+            "children": [],
+            "uris": [
+                namespace
+                for namespace in namespaces
+                if namespace[1][0] == char
+            ]
+        }
+        for char in set([namespace[1][0] for namespace in namespaces])
+    }
+    for node in tree.values():
+        make_prefix_tree(node)
+    return tree
+
+COMMON_URIS_TREE = make_index(uris)
 
 def fetch_prefixes(node, nb_generations):
     if nb_generations < 0:
@@ -101,9 +125,10 @@ def recurse_search(subject, node, branch, score, threshold):
         
     return list(set(result))
 
-def similar_prefix_search(subject, node, threshold):
-    return [
+def similar_prefix_search(subject, index, threshold):
+    value =  [
         item
+        for node in index.values()
         for item in list(set(recurse_search(subject, node, "", 0, threshold)))
         if not item[1] == subject and
         not (
@@ -117,3 +142,4 @@ def similar_prefix_search(subject, node, threshold):
             subject.startswith("http:")
         )
     ]
+    return value

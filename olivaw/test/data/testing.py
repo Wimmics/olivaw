@@ -9,7 +9,8 @@ from olivaw.test.corese import (
     query_graph,
     TURTLE,
     OWL_RL,
-    TEXT_CSV
+    TEXT_CSV,
+    TEXT_TSV
 )
 
 from olivaw.test.turtle import (
@@ -23,16 +24,23 @@ from olivaw.constants import (
     MODULES_TTL_GLOB_PATH,
     GET_TERM_USAGE,
     GET_URIS,
+    GET_PREFIX_USAGE,
     ONTOLOGY_URL
 )
 
-from olivaw.constants.prefixcc import COMMON_URIS, similar_prefix_search
+from olivaw.constants.prefixcc import (
+    COMMON_URIS_TREE,
+    PREFIX_SIMILARITY_THRESHOLD,
+    similar_prefix_search,
+    make_index
+)
 
 # Checking most common prefixes
 response = get("https://prefix.cc/context")
 common_prefixes = response.json()["@context"]
 
 def fragment_check(
+    datasets,
     report,
     assertor,
     dataset,
@@ -103,6 +111,7 @@ def fragment_check(
     graph_rl = safe_load(dataset, disable_import=True, profile=OWL_RL)
     
     best_practices(
+        datasets,
         report,
         assertor,
         subject,
@@ -124,17 +133,35 @@ def get_ontology_terms(fragments):
             continue
 
         graph_terms = query_graph(graph, GET_ONTOLOGY_TERMS)
-        terms += [term[1:-1] for term in graph_terms if len(term[1:-1]) > 0]
+        terms += [(fragment, term[1:-1]) for term in graph_terms if len(term[1:-1]) > 0]
 
     terms = list(set(terms))
     terms.sort()
 
     return terms
 
+def get_uris(fragments):
+    uris = []
+
+    for fragment in fragments:
+        graph = safe_load(fragment, disable_import=True)
+
+        if isinstance(graph, list):
+            continue
+
+        graph_uris = query_graph(graph, GET_URIS, format=TEXT_CSV)
+        uris += [(fragment, term) for term in graph_uris]
+
+    uris = list(set(uris))
+    uris.sort()
+
+    return uris
+
 def data_fragment_test(report, assertor, datasets, skip_pass, tested_only):
 
     for dataset in tqdm(datasets):
         fragment_check(
+            datasets,
             report,
             assertor,
             dataset,
@@ -152,6 +179,7 @@ def get_prefix_suffix(uri):
     return uri, ""
 
 def best_practices(
+        datasets,
         report,
         assertor,
         subject,
@@ -162,7 +190,7 @@ def best_practices(
         skip_pass=False
     ):
     modules = glob(MODULES_TTL_GLOB_PATH)
-    ontology_terms = get_ontology_terms(modules)
+    ontology_terms = list(set([term for _, term in get_ontology_terms(modules)]))
 
     fragment_terms = query_graph(graph_rl, GET_ONTOLOGY_TERMS)
     fragment_terms = [term[1:-1] for term in fragment_terms if len(term[1:-1]) > 0]
@@ -194,34 +222,53 @@ def best_practices(
     uris = query_graph(graph_rl, GET_URIS, format=TEXT_CSV)
     prefixes = list(set([get_prefix_suffix(uri)[0] for uri in uris]))
 
+    all_prefixes = [
+        (path, get_prefix_suffix(uri)[0])
+        for path, uri in get_uris(datasets)
+    ]
+    all_prefixes_tree = make_index(all_prefixes)
+
     messages = []
     pointers = []
 
     for prefix in prefixes:
-        similar = similar_prefix_search(prefix, COMMON_URIS, 2)
+        similar_common = similar_prefix_search(prefix, COMMON_URIS_TREE, PREFIX_SIMILARITY_THRESHOLD)
+        similar_uncommon = [
+            (path, uri)
+            for path, uri in similar_prefix_search(prefix, all_prefixes_tree, PREFIX_SIMILARITY_THRESHOLD)
+            # Avoiding here all the double matching on the test scale (match between A and B and between B and A)
+            if uri > prefix
+        ]
 
-        if len(similar) > 0:
-            message = f"The prefix {prefix} seems suspicious. Did you mean one of these prefix?<br/><ul>" + \
-                        "".join([f"<li>prefix {match[0]}: <{match[1]}> .</li>" for match in similar]) + \
-                        "</ul>"
+        if len(similar_common) == 0 and len(similar_uncommon) == 0:
+            continue
 
-            lines = []
-            
-            with open(file_path, "r") as file:
-                lines = file.readlines()
-                lines = [
-                    f'"line {i}: {line}"'
-                    for i, line in enumerate(lines)
-                    if prefix in line
-                ]
+        # Testing prefixes with common existing prefixes
+        message = f"The prefix {prefix} seems suspicious. Did you mean one of these prefixes?"
+        
+        prefix_pointers = [
+            '"Prefix usage in the subject file:\n\n\n' + query_graph(
+                graph_rl,
+                GET_PREFIX_USAGE.replace("PREFIX", prefix),
+                format=TURTLE) + '"'
+            ]
+        
+        prefix_pointers += [
+            f'"Common prefix found \n@prefix {domain}: <{uri}> ."'
+            for domain, uri in similar_common
+        ]
 
-            pointer = [
-                f'"Common prefix {match[0]}: <{match[1]}> ."'
-                for match in similar
-            ] + lines
-
-            messages.append(message)
-            pointers.append(pointer)
+        for fragment_path, uri in similar_uncommon:
+            prefix_pointers += [
+                f'"Similar prefix found in file {fragment_path}\nPrefix found: {uri}\n\n' +
+                query_graph(
+                    safe_load(fragment_path, disable_import=True, profile=OWL_RL),
+                    GET_PREFIX_USAGE.replace("PREFIX", uri),
+                    format=TURTLE) + '"'
+            ]
+        
+        messages.append(message)
+        pointers.append(prefix_pointers)
 
     make_assertion(
         report,

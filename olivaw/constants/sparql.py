@@ -316,6 +316,30 @@ where {
 }
 """
 
+GET_PREFIX_USAGE = """
+construct {
+  ?s1 ?p1 ?o1 .
+  ?s2 ?p2 ?o2 .
+  ?s3 ?p3 ?o3 .
+}
+where {
+  optional {
+    ?s1 ?p1 ?o1 .
+    filter (strstarts(str(?s1), "PREFIX"))
+    filter not exists { filter (?p1 = owl:sameAs) }
+  }
+  optional {
+    ?s2 ?p2 ?o2 .
+    filter (strstarts(str(?p2), "PREFIX"))
+  }
+  optional {
+    ?s3 ?p3 ?o3 .
+    filter (strstarts(str(?o3), "PREFIX"))
+    filter not exists { filter (?p3 = owl:sameAs) }
+  }
+}
+"""
+
 GET_URIS = """
 select ?uri where {
   {
