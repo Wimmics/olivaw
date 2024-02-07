@@ -1,5 +1,5 @@
 from sys import argv
-from os.path import sep
+from os.path import sep, abspath
 from glob import glob
 from datetime import datetime
 from codecs import open as copen
@@ -8,7 +8,8 @@ from olivaw.constants import (
     DATASETS_TTL_GLOB_PATH,
     USE_CASES_TTL_GLOB_PATH,
     DEV_USERNAME,
-    PWD_TO_MODEL_OUTPUT_FOLDER
+    PWD_TO_MODEL_OUTPUT_FOLDER,
+    SKIPPED_FILES
 )
 
 from olivaw.test.corese import print_title
@@ -48,10 +49,11 @@ def test_data():
         f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/data/suite.py"
     )
 
-    datasets = glob(DATASETS_TTL_GLOB_PATH)
-    usecases = glob(USE_CASES_TTL_GLOB_PATH)
-
-    fragments = datasets + usecases
+    fragments = [
+        item
+        for item in glob(USE_CASES_TTL_GLOB_PATH) + glob(DATASETS_TTL_GLOB_PATH)
+        if not abspath(item) in SKIPPED_FILES
+    ]
 
     print_title("Running data tests")
 

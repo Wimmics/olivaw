@@ -27,6 +27,11 @@ inputs:
     type: boolean
     required: false
     default: true
+  archive-report:
+    description: "Should the report be archived as a Github Artifact"
+    type: boolean
+    required: false
+    default: true
   server-url:
     description: "The platform URL"
     type: string
@@ -39,32 +44,37 @@ runs:
     - uses: actions/setup-python@v5 
       with:
         python-version: 'pypy3.9'
-    - uses: actions/checkout@v4
+
+    - name: Get repository
+      uses: actions/checkout@v4
       with:
         repository: ${{ inputs.repository }}
         ref: ${{ inputs.ref }}
+
+    - name: Install Olivaw test suite
+      shell: bash
+      run: pip install git+https://github.com/Wimmics/olivaw@v0.0.3
+
     - name: Generate model test report
       id: model-test
       if: ${{ inputs.model-test }}
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@v0.0.3
+        MODEL_SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        MODEL_TOKENS=($MODEL_SUMMARY)
 
-        SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
-        TOKENS=($SUMMARY)
+        echo "MODEL_PASS=$(echo ${MODEL_TOKENS[2]})" >> $GITHUB_ENV
+        echo "MODEL_NOTTESTED=$(echo ${MODEL_TOKENS[5]})" >> $GITHUB_ENV
+        echo "MODEL_CANNOTTELL=$(echo ${MODEL_TOKENS[8]})" >> $GITHUB_ENV
+        echo "MODEL_MINORFAIL=$(echo ${MODEL_TOKENS[11]})" >> $GITHUB_ENV
+        echo "MODEL_MAJORFAIL=$(echo ${MODEL_TOKENS[14]})" >> $GITHUB_ENV
 
-        echo "PASS=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
-        echo "NOTTESTED=$(echo ${TOKENS[5]})" >> $GITHUB_ENV
-        echo "CANNOTTELL=$(echo ${TOKENS[8]})" >> $GITHUB_ENV
-        echo "MINORFAIL=$(echo ${TOKENS[11]})" >> $GITHUB_ENV
-        echo "MAJORFAIL=$(echo ${TOKENS[14]})" >> $GITHUB_ENV
-
-        echo "EL_LABEL=$(echo ${TOKENS[17]})" >> $GITHUB_ENV
-        echo "EL_COLOR=$(echo ${TOKENS[20]})" >> $GITHUB_ENV
-        echo "QL_LABEL=$(echo ${TOKENS[23]})" >> $GITHUB_ENV
-        echo "QL_COLOR=$(echo ${TOKENS[26]})" >> $GITHUB_ENV
-        echo "RL_LABEL=$(echo ${TOKENS[29]})" >> $GITHUB_ENV
-        echo "RL_COLOR=$(echo ${TOKENS[32]})" >> $GITHUB_ENV
+        echo "EL_LABEL=$(echo ${MODEL_TOKENS[17]})" >> $GITHUB_ENV
+        echo "EL_COLOR=$(echo ${MODEL_TOKENS[20]})" >> $GITHUB_ENV
+        echo "QL_LABEL=$(echo ${MODEL_TOKENS[23]})" >> $GITHUB_ENV
+        echo "QL_COLOR=$(echo ${MODEL_TOKENS[26]})" >> $GITHUB_ENV
+        echo "RL_LABEL=$(echo ${MODEL_TOKENS[29]})" >> $GITHUB_ENV
+        echo "RL_COLOR=$(echo ${MODEL_TOKENS[32]})" >> $GITHUB_ENV
 
         echo "GISTID=$(olivaw show gist --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})" >> $GITHUB_ENV
 
@@ -80,9 +90,18 @@ runs:
 
     - name: Generate data test report
       shell: bash
+      id: data-test
       if: ${{ inputs.data-test }}
       run: |
-        olivaw test data --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }}
+        DATA_SUMMARY="$(olivaw test data --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        DATA_TOKENS=($DATA_SUMMARY)
+
+        echo "DATA_PASS=$(echo ${MODEL_TOKENS[2]})" >> $GITHUB_ENV
+        echo "DATA_NOTTESTED=$(echo ${MODEL_TOKENS[5]})" >> $GITHUB_ENV
+        echo "DATA_CANNOTTELL=$(echo ${MODEL_TOKENS[8]})" >> $GITHUB_ENV
+        echo "DATA_MINORFAIL=$(echo ${MODEL_TOKENS[11]})" >> $GITHUB_ENV
+        echo "DATA_MAJORFAIL=$(echo ${MODEL_TOKENS[14]})" >> $GITHUB_ENV
+
         git add .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
 
     - name: Add output files to repository
@@ -99,72 +118,72 @@ runs:
         git push
 
     - name: Archive model test results
-      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' && inputs.archive-report }}
       uses: actions/upload-artifact@v3
       with:
         name: model-test-report
         path: .acimov/output/model-test-actions.md
 
     - name: Archive data test results
-      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' && inputs.archive-report }}
       uses: actions/upload-artifact@v3
       with:
         name: data-test-report
         path: .acimov/output/data-test-actions.md
 
-    - name: Create the Pass Badge
+    - name: Create the Pass Model Badge
       if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_PASS.json
+        filename: ${{ env.BRANCH }}_MODEL_PASS.json
         label: Pass
-        message: ${{ env.PASS }}
+        message: ${{ env.MODEL_PASS }}
         color: green
 
-    - name: Create the NotTested Badge
+    - name: Create the NotTested Model Badge
       if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_NOTTESTED.json
+        filename: ${{ env.BRANCH }}_MODEL_NOTTESTED.json
         label: NotTested
-        message: ${{ env.NOTTESTED }}
+        message: ${{ env.MODEL_NOTTESTED }}
         color: White
 
-    - name: Create the CannotTell Badge
+    - name: Create the CannotTell Model Badge
       if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_CANNOTTELL.json
+        filename: ${{ env.BRANCH }}_MODEL_CANNOTTELL.json
         label: CannotTell
-        message: ${{ env.CANNOTTELL }}
+        message: ${{ env.MODEL_CANNOTTELL }}
         color: yellow
 
-    - name: Create the MinorFail Badge
+    - name: Create the MinorFail Model Badge
       if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_MINORFAIL.json
+        filename: ${{ env.BRANCH }}_MODEL_MINORFAIL.json
         label: MinorFail
-        message: ${{ env.MINORFAIL }}
+        message: ${{ env.MODEL_MINORFAIL }}
         color: orange
 
-    - name: Create the MajorFail Badge
+    - name: Create the MajorFail Model Badge
       if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_MAJORFAIL.json
+        filename: ${{ env.BRANCH }}_MODEL_MAJORFAIL.json
         label: MajorFail
-        message: ${{ env.MAJORFAIL }}
+        message: ${{ env.MODEL_MAJORFAIL }}
         color: red
 
     - name: Create the OWL_EL Badge
@@ -199,3 +218,58 @@ runs:
         label: OWL RL
         message: ${{ env.RL_LABEL }}
         color: ${{ env.RL_COLOR }}
+
+    - name: Create the Pass Data badge
+      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' }}
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_DATA_PASS.json
+        label: Pass
+        message: ${{ env.DATA_PASS }}
+        color: green
+
+    - name: Create the NotTested Data Badge
+      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' }}
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_DATA_NOTTESTED.json
+        label: NotTested
+        message: ${{ env.DATA_NOTTESTED }}
+        color: White
+
+    - name: Create the CannotTell Data Badge
+      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' }}
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_DATA_CANNOTTELL.json
+        label: CannotTell
+        message: ${{ env.DATA_CANNOTTELL }}
+        color: yellow
+
+    - name: Create the MinorFail Data Badge
+      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' }}
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_DATA_MINORFAIL.json
+        label: MinorFail
+        message: ${{ env.DATA_MINORFAIL }}
+        color: orange
+
+    - name: Create the MajorFail Data Badge
+      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' }}
+      uses: schneegans/dynamic-badges-action@v1.7.0
+      with:
+        auth: ${{ inputs.gist-secret }}
+        gistID: ${{ env.GISTID }}
+        filename: ${{ env.BRANCH }}_DATA_MAJORFAIL.json
+        label: MajorFail
+        message: ${{ env.DATA_MAJORFAIL }}
+        color: red

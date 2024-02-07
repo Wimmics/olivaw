@@ -361,31 +361,36 @@ def make_turtle_page(report, file_name) -> str:
 
     md = "\n".join(md)
 
-    el_compatible = [x for x in report.query(IS_OWL_EL_COMPATIBLE)][0]
-    el_label = "compatible" if el_compatible else "incompatible"
-    el_color = "green" if el_compatible else "red"
-
-    ql_compatible = [x for x in report.query(IS_OWL_QL_COMPATIBLE)][0]
-    ql_label = "compatible" if ql_compatible else "incompatible"
-    ql_color = "red" if ql_compatible else "red"
-
-    rl_compatible = [x for x in report.query(IS_OWL_RL_COMPATIBLE)][0]
-    rl_label = "compatible" if rl_compatible else "incompatible"
-    rl_color = "green" if rl_compatible else "red"
-
     badgesData = [
         f"Pass\t\t: {len(assertions['Pass'])}",
         f"NotTested\t: {len(assertions['NotTested'])}",
         f"CannotTell\t: {len(assertions['CannotTell'])}",
         f"MinorFail\t: {len(assertions['MinorFail'])}",
-        f"MajorFail\t: {len(assertions['MajorFail'])}",
-        f"EL_label\t: {el_label}",
-        f"EL_color\t: {el_color}",
-        f"QL_label\t: {ql_label}",
-        f"QL_color\t: {ql_color}",
-        f"RL_label\t: {rl_label}",
-        f"RL_color\t: {rl_color}"
+        f"MajorFail\t: {len(assertions['MajorFail'])}"
     ]
+
+    if "model" in argv:
+        el_compatible = [x for x in report.query(IS_OWL_EL_COMPATIBLE)][0]
+        el_label = "compatible" if el_compatible else "incompatible"
+        el_color = "green" if el_compatible else "red"
+
+        ql_compatible = [x for x in report.query(IS_OWL_QL_COMPATIBLE)][0]
+        ql_label = "compatible" if ql_compatible else "incompatible"
+        ql_color = "red" if ql_compatible else "red"
+
+        rl_compatible = [x for x in report.query(IS_OWL_RL_COMPATIBLE)][0]
+        rl_label = "compatible" if rl_compatible else "incompatible"
+        rl_color = "green" if rl_compatible else "red"
+
+        badgesData += [
+            f"EL_label\t: {el_label}",
+            f"EL_color\t: {el_color}",
+            f"QL_label\t: {ql_label}",
+            f"QL_color\t: {ql_color}",
+            f"RL_label\t: {rl_label}",
+            f"RL_color\t: {rl_color}"
+        ]
+
     if MODE == "actions":
         for badgeData in badgesData:
             print(badgeData)

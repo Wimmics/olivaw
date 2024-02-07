@@ -1,5 +1,5 @@
 from glob import glob
-from os.path import sep, relpath
+from os.path import sep, relpath, abspath
 from tqdm import tqdm
 
 from olivaw.test.corese import (
@@ -23,7 +23,9 @@ from olivaw.constants import (
     PWD_TO_ROOT_FOLDER,
     MODEL_BEST_PRACTICES_TESTS,
     MODEL_BEST_PRACTICES_TESTS,
-    NOT_LABELED
+    NOT_LABELED,
+    SKIPPED_TESTS,
+    SKIPPED_FILES
 )
 
 from olivaw.test.turtle import (
@@ -93,6 +95,9 @@ def profile_check(
     results = []
 
     for decidability_level in DECIDABILITY_RANGE:
+        if "profile-compatibility" in SKIPPED_TESTS:
+            break
+
         # Keeping 2 arrays containing almost the same thing was not necessary, so getattr
         profile = getattr(owl_profile, decidability_level)
         compatible = engine.process(profile)
@@ -112,32 +117,34 @@ def profile_check(
             skip_pass=skip_pass
         )
     
-    assemble_assertion(
-        report,
-        assertor,
-        subject,
-        "profile-compatibility",
-        make_result(
+    if not "profile-compatibility" in SKIPPED_TESTS:
+        assemble_assertion(
             report,
-            results,
+            assertor,
+            subject,
+            "profile-compatibility",
+            make_result(
+                report,
+                results,
+                skip_pass=skip_pass,
+                not_tested=not_tested,
+            ),
             skip_pass=skip_pass,
-            not_tested=not_tested,
-        ),
-        skip_pass=skip_pass,
-        tested_only=not_tested
-    )
+            tested_only=not_tested
+        )
 
     # Check for respect for OWL constraints
-    make_assertion(
-        report,
-        assertor,
-        subject,
-        "owl-rl-constraint",
-        "owl-rl-constraint-violation",
-        check_OWL_constraints(fragment),
-        skip_pass=skip_pass,
-        tested_only=not_tested
-    )
+    if not "owl-rl-constraint" in SKIPPED_TESTS:
+        make_assertion(
+            report,
+            assertor,
+            subject,
+            "owl-rl-constraint",
+            "owl-rl-constraint-violation",
+            check_OWL_constraints(fragment),
+            skip_pass=skip_pass,
+            tested_only=not_tested
+        )
 
 def fragment_check(
         fragments,
@@ -312,6 +319,9 @@ def modelets_tests(
             module_key = f"src/{module}.ttl"
             module_path = f"{PWD_TO_ROOT_FOLDER}{module_key}"
 
+            if abspath(module_path) in SKIPPED_FILES:
+                continue
+
             merged_subject = make_subject(report, [module_key], [modelet_key])
 
             fragment_check(
@@ -369,8 +379,10 @@ def best_practices_test(
     :returns: An report dictionary
     """
 
+    skipped_best_practice = skip + SKIPPED_TESTS
+
     # Check for terms not linked to an ontology
-    if not "term-referencing" in skip:
+    if not "term-referencing" in skipped_best_practice:
         unlinked_subjects = query_graph(fragment_no_owl, NOT_REFERENCED)
         unlinked_subjects_pointers = [[pointer] for pointer in unlinked_subjects]
         unlinked_subject_messages = [
@@ -388,7 +400,7 @@ def best_practices_test(
             skip_pass=skip_pass
         )
     
-    if not "domain-and-range-referencing" in skip:
+    if not "domain-and-range-referencing" in skipped_best_practice:
         # Checking for domain property out of the vocabulary
         dov = query_graph(fragment_wih_import, DOMAIN_OUT_Of_VOCABULARY)
         dov = [line.split("\t") for line in dov]
@@ -434,7 +446,7 @@ def best_practices_test(
         )
 
     # Checking for too close terms
-    if not "terms-differenciation" in skip:
+    if not "terms-differenciation" in skipped_best_practice:
         term_pairs = query_graph(fragment_no_import, GET_TERM_PAIRS)
         term_pairs = [[item.strip()[1:-1] for item in line.split("\t")] for line in term_pairs]
         term_pairs = [pair for pair in term_pairs if levenshtein(*pair) < TERM_DISTANCE_THRESHOLD]
@@ -450,7 +462,7 @@ def best_practices_test(
             skip_pass=skip_pass
         )
     
-    if not "labeled-terms" in skip:
+    if not "labeled-terms" in skipped_best_practice:
         not_labeled_terms = query_graph(fragment_no_owl, NOT_LABELED)
         not_labeled_pointers = [[f"<{ONTOLOGY_URL}{line.strip()[1:-1]}>"] for line in not_labeled_terms if len(line.strip()) > 0]
         not_labeled_messages = [f"The term :{pointer[0].split(ONTOLOGY_SEPARATOR)[-1][:-1]} has no rdfs:label to define it in natural language" for pointer in not_labeled_pointers]

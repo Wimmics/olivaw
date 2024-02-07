@@ -32,7 +32,9 @@ from olivaw.constants import (
     MODELET_URL_FORMAT,
     PWD_TO_ROOT_FOLDER,
     LITERAL_CUTTING_LENGTH,
-    USECASES_URL
+    USECASES_URL,
+    SKIPPED_ERRORS,
+    SKIPPED_TESTS
 )
 
 def statement(self, subject, *po):
@@ -375,6 +377,9 @@ def make_outcome(
     description="",
     pointers=[]
 ):
+    if error in SKIPPED_ERRORS or criterion in SKIPPED_TESTS:
+        return None
+    
     outcome_ressources = TEST_RESOURCES[criterion]["errors"][error][outcome_type]
     outcome_title = outcome_ressources["title"]
     outcome_description = description if len(description) > 0 else outcome_ressources["description"]
@@ -405,6 +410,9 @@ def make_outcomes(
     if len(pointers) > 0 and not len(pointers) == len(messages):
         pointers = []
     outcomes = []
+
+    if error in SKIPPED_ERRORS:
+        return []
 
     outcome_ressources = TEST_RESOURCES[criterion]["errors"][error]
     if len(messages) == 0:
@@ -439,6 +447,11 @@ def make_outcomes(
     return outcomes
 
 def make_result(report, outcomes, skip_pass=False, not_tested=False):
+
+    # When pass, there is a pass outcome, when no outcome, then it is a skipped error
+    if outcomes is None or len(outcomes) == 0:
+        return None
+
     result_statement = [
         (RDF.type, EARL_NAMESPACE.TestResult)
     ] + [
@@ -468,6 +481,10 @@ def assemble_assertion(
     skip_pass=False,
     tested_only=False
 ):
+    # if result is None, then it is a skipped error
+    if result is None:
+        return
+    
     statement = [
         (RDF.type, EARL_NAMESPACE.Assertion),
         (EARL_NAMESPACE.assertedBy, assertor),
@@ -490,7 +507,7 @@ def make_assertion(
     outcome_type=None,
     skip_pass=False,
     tested_only=False
-):
+):    
     assemble_assertion(
         report,
         assertor,
@@ -525,23 +542,18 @@ def make_not_tested(
     outcomes = TEST_RESOURCES[criterion]["errors"].keys()
 
     for outcome in outcomes:
+        outcome = make_outcome(
+            report,
+            None,
+            criterion,
+            outcome,
+            "NotTested"
+        )
+        outcomes = [outcome] if not outcome is None else []
         assemble_assertion(
             report,
             assertor,
             subject,
             criterion,
-            make_result(
-                report,
-                [
-                    make_outcome(
-                        report,
-                        None,
-                        criterion,
-                        outcome,
-                        "NotTested"
-                    )
-                ],
-                not_tested=tested_only
-            )
-            
+            make_result(report, outcomes, not_tested=tested_only)
         )

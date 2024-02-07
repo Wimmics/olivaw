@@ -12,59 +12,17 @@ from olivaw.constants import (
     PWD_TO_OVILAW,
     PWD_TO_ROOT_FOLDER,
     NEW_LINES,
-    REPO_NAME
+    REPO_NAME,
+    GITHUB_API,
+    BADGE_LIST,
+    badge_url
 )
 
-GITHUB_API="https://api.github.com"
-
-badge_list = {
-    "PASS": {
-        "label": "Pass",
-        "message": "0",
-        "color": "green"
-    },
-    "NOTTESTED": {
-        "label": "NotTested",
-        "message": "0",
-        "color": "white"
-    },
-    "CANNOTTELL": {
-        "label": "CannotTell",
-        "message": "0",
-        "color": "yellow"
-    },
-    "MINORFAIL": {
-        "label" : "MinorFail",
-        "message": "0",
-        "color": "orange"
-    },
-    "MAJORFAIL": {
-        "label": "MajorFail",
-        "message": "0",
-        "color": "red"
-    },
-    "EL": {
-        "label": "OWL EL",
-        "message": "compatible",
-        "color": "green"
-    },
-    "QL": {
-        "label": "OWL QL",
-        "message": "compatible",
-        "color": "green"
-    },
-    "RL": {
-        "label": "OWL RL",
-        "message": "compatible",
-        "color": "green"
-    }
-}
+from .readme import update_readme
 
 ref = "_".join(REF.split("/")[1:])
 
 def init_gist(key):
-    print("Creating gist...")
-
     #form a request URL
     url=GITHUB_API+"/gists"
     
@@ -77,11 +35,11 @@ def init_gist(key):
         "files": {
             f"{ref}_{badge}.json":{
                 "content": dumps({
-                    key: badge_list[badge][key]
-                    for key in badge_list[badge]
+                    key: BADGE_LIST[badge][key]
+                    for key in BADGE_LIST[badge]
                 })
             }
-            for badge in badge_list.keys()
+            for badge in BADGE_LIST.keys()
         }
     }
 
@@ -99,31 +57,6 @@ def init_gist(key):
 
     return loads(res.text)['id']
 
-def badge_url(gist_id, badge):
-    return f"https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/{DEV_USERNAME}/{gist_id}/raw/{ref}_{badge}.json"
-
-def init_badges(secret):
-    gist_id = init_gist(secret)
-
-    updated = None
-    with open(f"{ROOT_FOLDER}{sep}README.md", "r") as readme:
-        updated = readme.readlines()
-
-        updated = [
-            f"![{badge_list[badge]['label']} Badge]({badge_url(gist_id, badge)})"
-            for badge in list(badge_list.keys())[:5]
-        ] + [" "] + [
-            f"![{badge_list[badge]['label']} Badge]({badge_url(gist_id, badge)})"
-            for badge in list(badge_list.keys())[5:]
-        ] + [" "] + updated
-
-        updated = NEW_LINES.sub("\n", "\n".join(updated))
-    
-    with open(f"{ROOT_FOLDER}{sep}README.md", "w") as readme:
-        readme.write(updated)
-
-    return gist_id
-
 def init_repo():
     print("Let's initialize your repository")
 
@@ -133,7 +66,9 @@ def init_repo():
         load_dotenv(f"{PWD_TO_OVILAW}{sep}.env")
         gist_secret = getenv("GIST_SECRET")
         try:
-            gist_id = init_badges(gist_secret)
+            print("Creating gist...")
+            gist_id = init_gist(gist_secret)
+            update_readme(gist_id)
             print("Gists initialized")
         except:
             pass
@@ -143,7 +78,9 @@ def init_repo():
             print("Please create a key on https://github.com/settings/tokens and create a key (only gist scope is required)")
             print("Key for gist access:")
             gist_secret = input()
-            gist_id = init_badges(gist_secret)
+            print("Creating gist...")
+            gist_id = init_gist(gist_secret)
+            update_readme(gist_id)
             set_key(f"{PWD_TO_OVILAW}{sep}.env", "GIST_SECRET", gist_secret)
         except Exception as e:
             print(f"Provided key seems to be invalid: {str(e)}")
@@ -171,7 +108,10 @@ def init_repo():
                 "syntax-error",
                 "owl-rl-constraint-violation"
             ],
-            "gist_index": gist_id
+            "gist_index": gist_id,
+            "skipped_errors": [],
+            "skipped_tests": [],
+            "skipped_files": []
         }, indent=4))
 
     print("The repository is initialized!")

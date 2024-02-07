@@ -1,7 +1,7 @@
 from glob import glob
 from datetime import datetime
 from os import makedirs
-from os.path import exists, sep
+from os.path import exists, sep, abspath
 from sys import argv
 from codecs import open as copen
 
@@ -10,8 +10,8 @@ from olivaw.constants import (
     MODELETS_TTL_GLOB_PATH,
     DEV_USERNAME,
     PWD_TO_MODEL_OUTPUT_FOLDER,
-    PROFILE_CHECK_URI,
-    BRANCH
+    BRANCH,
+    SKIPPED_FILES
 )
 
 from olivaw.test.corese import print_title # TODO Need later for a utils.py?
@@ -64,11 +64,20 @@ def test_model():
     )
 
     print_title("Checking existing modules")
-    modules = glob(MODULES_TTL_GLOB_PATH)
+    modules = [
+        item
+        for item in glob(MODULES_TTL_GLOB_PATH)
+        if not abspath(item) in SKIPPED_FILES
+    ]
+
     unsafe_modules = modules_tests(modules, report, test_assertor, skip_pass=skip_pass, tested_only=tested_only)
 
     print_title("Checking modelets")
-    modelets = glob(MODELETS_TTL_GLOB_PATH)
+    modelets = [
+        item
+        for item in glob(MODELETS_TTL_GLOB_PATH)
+        if not abspath(item) in SKIPPED_FILES
+    ]
     unsafe_modelets = modelets_tests(modelets, report, test_assertor, skip_pass=skip_pass, tested_only=tested_only)
 
     print_title("Checking the merge of safe modules")

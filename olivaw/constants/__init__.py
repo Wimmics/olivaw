@@ -11,7 +11,9 @@ from .rdflib_info import *
 
 from .markdown import *
 
-__all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown"]
+from .badges import *
+
+__all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown", "badges"]
 
 TEST_RESOURCES = None
 with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}tests-resources.json", "r") as f:
@@ -20,6 +22,8 @@ with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}tests-resources.json", "r")
 ONTOLOGY_URL = None
 TERM_DISTANCE_THRESHOLD = None
 BLOCKING_ERRORS = None
+GIST_INDEX = None
+SKIPPED_ERRORS = None
 
 if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
   with open(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json", "r") as f:
@@ -33,6 +37,19 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
 
     # The errors ids that are defined as blocking
     BLOCKING_ERRORS = repo_parameters["blocking_errors"]
+
+    # Id of Gist containing al the badges data
+    GIST_INDEX = repo_parameters["gist_index"]
+
+    # Error identifiers that should not be written in the reports
+    SKIPPED_ERRORS = repo_parameters["skipped_errors"] if "skipped_errors" in repo_parameters else []
+
+    # Test identifiers that should not be written in the reports
+    SKIPPED_TESTS = repo_parameters["skipped_tests"] if "skipped_tests" in repo_parameters else []
+
+    # Relative paths between repo root and files that should be skipped in tests
+    SKIPPED_FILES = repo_parameters["skipped_files"] if "skipped_files" in repo_parameters else []
+    SKIPPED_FILES = [abspath(f"{ROOT_FOLDER}{sep}{path}") for path in SKIPPED_FILES]
 
   def add_repo_variables(request):
     return request.replace("ONTOLOGY_URL", ONTOLOGY_URL).replace("TERM_DISTANCE_THRESHOLD", str(TERM_DISTANCE_THRESHOLD))
