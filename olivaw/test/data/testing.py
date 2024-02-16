@@ -36,10 +36,6 @@ from olivaw.constants.prefixcc import (
     make_index
 )
 
-# Checking most common prefixes
-response = get("https://prefix.cc/context")
-common_prefixes = response.json()["@context"]
-
 def fragment_check(
     datasets,
     report,
@@ -241,7 +237,7 @@ def best_practices(
             similar_uncommon = [
                 (path, uri)
                 for path, uri in similar_prefix_search(prefix, all_prefixes_tree, PREFIX_SIMILARITY_THRESHOLD)
-                # Avoiding here all the double matching on the test scale (match between A and B and between B and A)
+                # Avoiding here all the exact matches and double matching (match between A and B and between B and A)
                 if uri > prefix
             ]
 

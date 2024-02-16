@@ -1,13 +1,9 @@
+from os.path import sep
 from requests import get
+from json import dumps, loads
 
 PREFIX_CC_PREFIXES = "https://prefix.cc/context"
 PREFIX_SIMILARITY_THRESHOLD = 2
-
-# Checking most common prefixes
-response = get(PREFIX_CC_PREFIXES)
-common_prefixes = response.json()["@context"]
-
-uris = list(common_prefixes.items())
 
 def iterate_node(node):
     candidates = [uri for uri in node["uris"] if len(uri[1]) > node["rank"] + 1]
@@ -72,7 +68,28 @@ def make_index(prefix_base):
         make_prefix_tree(node)
     return tree
 
-COMMON_URIS_TREE = make_index(uris)
+def parse_tree_to_tuple_leaves(tree):
+    for node in tree.values():
+        parse_node_to_tupe_leaves(node)
+
+def parse_node_to_tupe_leaves(node):
+    node["uris"] = [tuple(item) for item in node["uris"]]
+
+    for child_node in node["children"]:
+        parse_node_to_tupe_leaves(child_node)
+
+try:
+    response = get(PREFIX_CC_PREFIXES)
+    common_prefixes = response.json()["@context"]
+    uris = list(common_prefixes.items())
+
+    COMMON_URIS_TREE = make_index(uris)
+    with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}uri_index.json", "w") as f:
+        f.write(dumps(COMMON_URIS_TREE))
+except:
+    with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}uri_index.json", "r") as f:
+        COMMON_URIS_TREE = loads(f.read())
+        parse_tree_to_tuple_leaves(COMMON_URIS_TREE)
 
 def fetch_prefixes(node, nb_generations):
     if nb_generations < 0:
@@ -130,16 +147,6 @@ def similar_prefix_search(subject, index, threshold):
         item
         for node in index.values()
         for item in list(set(recurse_search(subject, node, "", 0, threshold)))
-        if not item[1] == subject and
-        not (
-            item[1].startswith("http:") and
-            item[1][len("http:"):] == subject[len("https:"):] and
-            subject.startswith("https:")
-        ) and
-        not (
-            item[1].startswith("https:") and
-            item[1][len("https:"):] == subject[len("http:"):] and
-            subject.startswith("http:")
-        )
+        if not item[1] == subject
     ]
     return value

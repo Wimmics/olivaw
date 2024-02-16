@@ -84,16 +84,19 @@ def make_assertor(report, mode, script_uri):
 
 def make_subject_id_part(fragment_list):
     modules = [item for item in fragment_list if item.startswith("src/")]
-    modules = ['.'.join(item[4:].split('.')[:-1]) for item in modules]
+    modules = ['module-' + '.'.join(item[4:].split('.')[:-1]) for item in modules]
     modules.sort()
     modelets = [item for item in fragment_list if item.startswith("domains/") and item.endswith("/onto.ttl")]
-    modelets = ['-'.join(item.split('/')[1:-1]) for item in modelets]
+    modelets = ['modelet-' + '-'.join(item.split('/')[1:-1]) for item in modelets]
     modelets.sort()
     datasets = [item for item in fragment_list if item.startswith("domains/") and item.endswith("/dataset.ttl")]
-    datasets = ['-'.join(item.split('/')[1:-1]) for item in datasets]
+    datasets = ['dataset-' + '-'.join(item.split('/')[1:-1]) for item in datasets]
     datasets.sort()
     usecases = [item for item in fragment_list if item.startswith("use-cases/")]
-    usecases = ['-'.join(item.split('/')[1:-1]) for item in usecases]
+    usecases = [
+        'usecase-' + '-'.join('.'.join(item.split('.')[:-1]).split('/')[1:])
+        for item in usecases
+    ]
     usecases.sort()
 
     subject_id_part = '-'.join(modules + modelets + datasets + usecases)
@@ -117,7 +120,7 @@ def make_subject(
         custom_title=""
 ):
     subject_id = make_subject_id(heart, appendix=appendix) if name == "" else name
-    
+
     if len(heart) > 1:
         heart_type = "Set of fragments"
     else:

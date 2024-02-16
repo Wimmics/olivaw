@@ -54,7 +54,6 @@ def test_data():
         for item in glob(USE_CASES_TTL_GLOB_PATH) + glob(DATASETS_TTL_GLOB_PATH)
         if not abspath(item) in SKIPPED_FILES
     ]
-
     print_title("Running data tests")
 
     data_fragment_test(
