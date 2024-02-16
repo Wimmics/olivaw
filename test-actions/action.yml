@@ -53,7 +53,7 @@ runs:
 
     - name: Install Olivaw test suite
       shell: bash
-      run: pip install git+https://github.com/Wimmics/olivaw@test2
+      run: pip install git+https://github.com/Wimmics/olivaw@test3
 
     - name: Generate model test report
       id: model-test
@@ -96,11 +96,11 @@ runs:
         DATA_SUMMARY="$(olivaw test data --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         DATA_TOKENS=($DATA_SUMMARY)
 
-        echo "DATA_PASS=$(echo ${MODEL_TOKENS[2]})" >> $GITHUB_ENV
-        echo "DATA_NOTTESTED=$(echo ${MODEL_TOKENS[5]})" >> $GITHUB_ENV
-        echo "DATA_CANNOTTELL=$(echo ${MODEL_TOKENS[8]})" >> $GITHUB_ENV
-        echo "DATA_MINORFAIL=$(echo ${MODEL_TOKENS[11]})" >> $GITHUB_ENV
-        echo "DATA_MAJORFAIL=$(echo ${MODEL_TOKENS[14]})" >> $GITHUB_ENV
+        echo "DATA_PASS=$(echo ${DATA_TOKENS[2]})" >> $GITHUB_ENV
+        echo "DATA_NOTTESTED=$(echo ${DATA_TOKENS[5]})" >> $GITHUB_ENV
+        echo "DATA_CANNOTTELL=$(echo ${DATA_TOKENS[8]})" >> $GITHUB_ENV
+        echo "DATA_MINORFAIL=$(echo ${DATA_TOKENS[11]})" >> $GITHUB_ENV
+        echo "DATA_MAJORFAIL=$(echo ${DATA_TOKENS[14]})" >> $GITHUB_ENV
 
         git add .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
 
