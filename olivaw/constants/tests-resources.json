@@ -154,15 +154,15 @@
                 },
                 "CannotTell": {
                     "title": "OWL RL Constraint violation",
-                    "description": "The fragment violates at least one OWL violation"
+                    "description": "The fragment violates at least one OWL RL constraint"
                 },
                 "MajorFail": {
                     "title": "OWL RL Constraint violation",
-                    "description": "The fragment violates at least one OWL violation"
+                    "description": "The fragment violates at least one OWL RL constraint"
                 },
                 "MinorFail": {
                     "title": "OWL RL Constraint violation",
-                    "description": "The fragment violates at least one OWL violation"
+                    "description": "The fragment violates at least one OWL RL constraint"
                 }
             }
         }
@@ -200,29 +200,6 @@
         "title": "OWL Profile Compatibility Test",
         "description": "Test for the compatibility of the subject for the OWL Profile",
         "errors": {
-            "owl-tc-profile-error": {
-                "blocking": false,
-                "Pass": {
-                    "title": "OWL TC Profile compatible",
-                    "description": "The subject is included in the OWL TC sublanguage"
-                },
-                "NotTested": {
-                    "title": "The test could not be run",
-                    "description": "The subject must be syntaxically correct"
-                },
-                "CannotTell": {
-                    "title": "OWL TC Profile incompatible",
-                    "description": "The subject is not included in the OWL TC sublanguage"
-                },
-                "MajorFail": {
-                    "title": "OWL TC Profile incompatible",
-                    "description": "The subject is not included in the OWL TC sublanguage"
-                },
-                "MinorFail": {
-                    "title": "OWL TC Profile incompatible",
-                    "description": "The subject is not included in the OWL TC sublanguage"
-                }
-            },
             "owl-rl-profile-error": {
                 "blocking": false,
                 "Pass": {

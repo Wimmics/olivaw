@@ -105,7 +105,7 @@ else:
     DEV_USERNAME = None
 
 
-ACIMOV_MODEL_TEST_URI = f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/test-onto.ttl"
+ACIMOV_MODEL_TEST_URI = f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/olivaw-earl.ttl"
 # URL prefix for the files in the current branch in src
 SRC_URL = f"{REPO_URI}/blob/{BRANCH}/src/"
 DOMAINS_URL = SRC_URL.replace("src", "domains")

@@ -63,7 +63,7 @@ According to the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/), all th
 * CannotTell: the software cannot relate if this is a Fail or a Pass, a human being is needed to check
 * NotTested: the test needs some prerequisites to run. However these prerequisite were not fulfilled
 
-For the sake of being able to give a priority on a fail, like we could usually do in other tests frameworks, the Fail set was partitionned (see the [acimov dataset](../olivaw/test/test-onto.ttl)):
+For the sake of being able to give a priority on a fail, like we could usually do in other tests frameworks, the Fail set was partitionned (see the [acimov dataset](../olivaw/test/olivaw-earl.ttl)):
 
 * MajorFail: the bug is critical and must be solved
 * MinorFail: this fail is not preventing anyone to use the ontology (ex: Best Practice mistakes)
@@ -94,7 +94,7 @@ The tests executed on each resource are checking:
 * if each term has a `rdfs:label` label property pointing to at least one litteral in English
 * if each term has a `rdfs:isDefinedBy` property pointing to the module it belongs to
 
-These differents test can have different errors. To see these errors in details, check the [test resources file](../olivaw/constants/tests-resources.json)
+These differents test can have different errors. To see these errors in details, check the [test documentation](./tests.md#21-model-tests) and the [test resources file](../olivaw/constants/tests-resources.json)
 
 This command will output two files located in the `.acimov/output/` folder:
 
@@ -115,7 +115,7 @@ The tests executed on each resource are checking:
 * the syntax
 * the OWL constraints violation (each constraint that exists in OWL RL)
 
-These differents test can have different errors. To see these errors in details, check the [test resources file](../olivaw/constants/tests-resources.json)
+These differents test can have different errors. To see these errors in details, check the [test documentation](./tests.md#22-data-tests) and the [test resources file](../olivaw/constants/tests-resources.json)
 
 This command will output two files located in the `.acimov/output/` folder:
 

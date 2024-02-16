@@ -24,7 +24,7 @@ from olivaw.constants import (
     EARL_NAMESPACE,
     SRC_NAMESPACE,
     TEST_NAMESPACE,
-    ACIMOV_MODEL_NAMESPACE,
+    OLIVAW_EARL_NAMESPACE,
     ONTOLOGY_NAMESPACE,
     TEST_RESOURCES,
     BRANCH,
@@ -49,7 +49,7 @@ def prepare_graph():
     graph.bind("", ONTOLOGY_NAMESPACE)
     graph.bind("src", SRC_NAMESPACE)
     graph.bind("profile-test", TEST_NAMESPACE)
-    graph.bind("acimov-model-test", ACIMOV_MODEL_NAMESPACE)
+    graph.bind("olivaw-earl", OLIVAW_EARL_NAMESPACE)
 
     return graph
 
@@ -384,7 +384,7 @@ def make_outcome(
     outcome_title = outcome_ressources["title"]
     outcome_description = description if len(description) > 0 else outcome_ressources["description"]
     parsed_pointers = [make_pointer(report, subject, pointer) for pointer in pointers if len(pointer) > 0]
-    outcome_type_namespace = ACIMOV_MODEL_NAMESPACE if outcome_type.endswith("Fail") else EARL_NAMESPACE
+    outcome_type_namespace = OLIVAW_EARL_NAMESPACE if outcome_type.endswith("Fail") else EARL_NAMESPACE
     outcome_statement = [
         (RDF.type, outcome_type_namespace[outcome_type]),
         (DCTERMS.title, Literal(outcome_title, lang="en")),
@@ -489,7 +489,7 @@ def assemble_assertion(
         (RDF.type, EARL_NAMESPACE.Assertion),
         (EARL_NAMESPACE.assertedBy, assertor),
         (EARL_NAMESPACE.subject, subject),
-        (EARL_NAMESPACE.test, ACIMOV_MODEL_NAMESPACE[criterion]),
+        (EARL_NAMESPACE.test, OLIVAW_EARL_NAMESPACE[criterion]),
         (EARL_NAMESPACE.result, result),
     ]
 

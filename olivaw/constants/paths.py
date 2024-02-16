@@ -16,4 +16,4 @@ DATASETS_TTL_GLOB_PATH = f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}dataset.t
 USE_CASES_TTL_GLOB_PATH = f"{PWD_TO_ROOT_FOLDER}use-cases{sep}*{sep}*.ttl"
 
 PWD_TO_OVILAW = sep.join(__file__.split(sep)[:-2])
-PWD_TO_MODEL_TEST_ONTO = f"{PWD_TO_OVILAW}{sep}test{sep}test-onto.ttl"
+PWD_TO_MODEL_TEST_ONTO = f"{PWD_TO_OVILAW}{sep}test{sep}olivaw-earl.ttl"

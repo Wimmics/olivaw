@@ -9,9 +9,9 @@ from olivaw.constants import (
     GET_ASSERTOR_DETAILS,
     PWD_TO_MODEL_TEST_ONTO,
     GET_CRITERION_DATA,
-    GET_DETAILED_ASSERTIONS,
-    GET_ASSERTION_PARTS,
-    GET_ASSERTION_POINTERS,
+    GET_DETAILED_OUTCOMES,
+    GET_OUTCOMES_PARTS,
+    GET_OUTCOME_POINTERS,
     MODULE_URL_FORMAT,
     MODELET_URL_FORMAT,
     DATASET_URL_FORMAT,
@@ -22,19 +22,19 @@ from olivaw.constants import (
     MODE
 )
 
-def parse_assertions(report):
-    assertions = [assertion for assertion in report.query(GET_DETAILED_ASSERTIONS)]
+def parse_outcomes(report):
+    outcomes = [outcome for outcome in report.query(GET_DETAILED_OUTCOMES)]
     severities = set([str(severity[0]) for severity in SEVERITY_RANGE])
-    assertions = {
+    outcomes = {
         severity: [
-            assertion
-            for assertion in assertions
-            if str(assertion[4]).split("#")[-1] == severity
+            outcome
+            for outcome in outcomes
+            if str(outcome[4]).split("#")[-1] == severity
         ]
         for severity in severities
     }
 
-    all_parts = report.query(GET_ASSERTION_PARTS)
+    all_parts = report.query(GET_OUTCOMES_PARTS)
     subjectIds = set([str(line[0]) for line in all_parts])
     partsDict = {
         subjectId: [
@@ -44,7 +44,7 @@ def parse_assertions(report):
         for subjectId in subjectIds
     }
 
-    all_pointers = report.query(GET_ASSERTION_POINTERS)
+    all_pointers = report.query(GET_OUTCOME_POINTERS)
     outcomeIds = set([str(line[0]) for line in all_pointers])
     pointersDict = {
         outcomeId: [
@@ -53,7 +53,7 @@ def parse_assertions(report):
         ]
         for outcomeId in outcomeIds
     }
-    return assertions, partsDict, pointersDict
+    return outcomes, partsDict, pointersDict
 
 def parseCriterions():
     criterions = Graph()
@@ -132,15 +132,15 @@ def subject_part_to_markdown(part):
 
 def make_details_table(
     chapter,
-    assertionInfo,
+    outcomeInfo,
     partsDict,
     pointersDict,
     severity,
-    assertion_counter,
+    outcome_counter,
     emoji,
     criterions
 ):
-    _, _, _, outcome, _, subjectId, subjectTitle, criterionUri, outcomeTitle, outcomeDescription = assertionInfo
+    _, _, _, outcome, _, subjectId, subjectTitle, criterionUri, outcomeTitle, outcomeDescription = outcomeInfo
     subjectId = str(subjectId)
     outcome = str(outcome)
 
@@ -154,11 +154,11 @@ def make_details_table(
     criterionDescription = criterions[criterionId]["description"]
 
     chapter += [
-        f"### {severity} Assertion number {assertion_counter}",
+        f"### {severity} Outcome number {outcome_counter}",
         "",
-        f"[Jump to summary definition](#summary-{severity}-{str(assertion_counter)})",
+        f"[Jump to summary definition](#summary-{severity}-{str(outcome_counter)})",
         "",
-        f"{emoji}{severity} assertion"
+        f"{emoji}{severity} outcome"
         "",
         "#### Subject detail",
         f"|Name|{subjectId}|",
@@ -188,24 +188,24 @@ def make_details_table(
     chapter.append("")
     chapter.append("***")
 
-def make_severity_detail(assertions, criterions, severity, emoji, partsDict, pointersDict):
+def make_severity_detail(outcomes, criterions, severity, emoji, partsDict, pointersDict):
     result = []
-    severity_assertions = assertions[severity]
+    severity_outcomes = outcomes[severity]
 
-    if len(severity_assertions) == 0:
+    if len(severity_outcomes) == 0:
         return []
 
     result += [
-        f"## {severity} Assertion Details",
+        f"## {severity} Outcomes Details",
         "",
-        f"This subchapter gives more details to the {emoji}{severity} assertions",
+        f"This subchapter gives more details to the {emoji}{severity} outcomes",
         "",
     ]
 
-    for i, assertionInfo in enumerate(severity_assertions):
+    for i, outcomeInfo in enumerate(severity_outcomes):
         make_details_table(
             result,
-            assertionInfo,
+            outcomeInfo,
             partsDict,
             pointersDict,
             severity,
@@ -215,10 +215,10 @@ def make_severity_detail(assertions, criterions, severity, emoji, partsDict, poi
         )
     return result
 
-def make_severity_summary(assertions, severity, emoji):
-    severity_assertions = assertions[severity]
-    table_length = len(severity_assertions)
-    title = f"## {severity} Assertions Summary"
+def make_severity_summary(outcomes, severity, emoji):
+    severity_outcomes = outcomes[severity]
+    table_length = len(severity_outcomes)
+    title = f"## {severity} Outcomes Summary"
     id = title_to_id(title)
     
     summary = [
@@ -227,7 +227,7 @@ def make_severity_summary(assertions, severity, emoji):
         f"[Jump to statistic summary](#statistic-summary)"
         "",
         "",
-        f"{emoji}{str(len(severity_assertions))} {severity} assertions",
+        f"{emoji}{str(len(severity_outcomes))} {severity} outcomes",
         ""
     ] + ERROR_TABLE_HEADER + [
         "|".join([
@@ -240,34 +240,34 @@ def make_severity_summary(assertions, severity, emoji):
             f"`{str(subjectId)}`",
             f"[{criterionId.split('#')[-1]}]({criterionId})",
             str(errorTitle),
-            f"[Jump](#{severity.lower()}-assertion-number-{str(i+1)})",
+            f"[Jump](#{severity.lower()}-outcome-number-{str(i+1)})",
             ''
         ])
-        for i, (_, _, _, _, _, subjectId, _, criterionId, errorTitle, _) in enumerate(severity_assertions)
+        for i, (_, _, _, _, _, subjectId, _, criterionId, errorTitle, _) in enumerate(severity_outcomes)
     ] + ["", "***", ""]
     
     return summary
 
-def make_severity_chapter(assertions, partsDict, pointersDict, criterions, severity, emoji):
+def make_severity_chapter(outcomes, partsDict, pointersDict, criterions, severity, emoji):
     result = []
-    assertion_number = len(assertions[severity])
+    outcome_number = len(outcomes[severity])
     result += [
         "",
-        f"# {severity} Assertions",
+        f"# {severity} Outcomes",
         "",
-        f"Here is the chapter related to the {severity} assertion",
+        f"Here is the chapter related to the {severity} outcome",
         "",
-        f"{emoji}{assertion_number} {severity} assertions",
+        f"{emoji}{outcome_number} {severity} outcomes",
         "",
         "<details>",
-        f"<summary>Fold/Unfold the {assertion_number} summary and details</summary>",
+        f"<summary>Fold/Unfold the {outcome_number} summary and details</summary>",
         ""
     ] + make_severity_summary(
-        assertions,
+        outcomes,
         severity,
         emoji
     ) + make_severity_detail(
-        assertions,
+        outcomes,
         criterions,
         severity,
         emoji,
@@ -282,13 +282,13 @@ def make_severity_chapter(assertions, partsDict, pointersDict, criterions, sever
     ]
     return result
 
-def make_stat_chapter(assertions):
-    assertions_stats = [len(assertions[key]) for key, _, _ in SEVERITY_RANGE]
-    nb_assertions = sum(assertions_stats)
+def make_stat_chapter(outcomes):
+    outcomes_stats = [len(outcomes[key]) for key, _, _ in SEVERITY_RANGE]
+    nb_outcomes = sum(outcomes_stats)
 
     rates = []
-    for nb in assertions_stats:
-        rate = nb/nb_assertions * 100 if nb_assertions > 0 else 0
+    for nb in outcomes_stats:
+        rate = nb/nb_outcomes * 100 if nb_outcomes > 0 else 0
         rate = int(max(1, rate)) if rate > 0 else 0
         rates.append(rate)
 
@@ -297,7 +297,7 @@ def make_stat_chapter(assertions):
     bar = '<div  style="border-radius: 12px; height: 25px; overflow: hidden">'
     count_line = []
     for i in range(len(SEVERITY_RANGE)):
-        count_line.append(f"{SEVERITY_RANGE[i][1]}{str(assertions_stats[i])} {SEVERITY_RANGE[i][0]}")
+        count_line.append(f"{SEVERITY_RANGE[i][1]}{str(outcomes_stats[i])} {SEVERITY_RANGE[i][0]}")
         color = SEVERITY_RANGE[i][2]
         bar += f'<img src="../assets/{color}.png" width="{rates[i]}%" height="25px"/>'
     bar +='</div>'
@@ -309,7 +309,7 @@ def make_stat_chapter(assertions):
         "",
         "Here is a short overview for this test report",
         "",
-        f"{str(nb_assertions)} Assertions",
+        f"{str(nb_outcomes)} Outcomes",
         "",
         count_line,
         "",
@@ -317,8 +317,9 @@ def make_stat_chapter(assertions):
         "",
         "<br/>",
         "",
-        "According to the [EARL](https://www.w3.org/TR/EARL10-Schema/) vocabulary, each outcome type means:",
-        "* :x: Fail: The subject failed the test. ",
+        "The different status types are an extension of the [EARL](https://www.w3.org/TR/EARL10-Schema/) vocabulary where the nextended terms can be found in the [olivaw-earl dataset](https://github.com/Wimmics/olivaw/blob/main/olivaw/test/olivaw-earl.ttl), each outcome type means:",
+        "* :boom: MajorFail: This is an error that is critical and consider as blocking for production",
+        "* :exclamation: MinorFail: This is an error that should be fixed, but it is cannot be considered as critical error",
         "* :warning: CannotTell: It is unclear if the subject passed or failed the test. This happens when an automated test requires human judgement to make a definite decision.",
         "* :grey_question: NotTested:  The test has not been carried out. Here this is because a previous test that was mandatory to be passed did not end up as Pass.",
         "* :white_check_mark: Pass: The subject passed the test.",
@@ -331,11 +332,11 @@ def make_turtle_page(report, file_name) -> str:
 
     md = []
 
-    assertions, partsDict, pointersDict = parse_assertions(report)
+    outcomes, partsDict, pointersDict = parse_outcomes(report)
     criterions = parseCriterions()
 
     md += [
-        "# Test Report Markdown export",
+        "# Test Report Markdown Export",
         "",
         "This file is an export of the RDF test report made out of [EARL vocabulary](https://www.w3.org/TR/EARL10/)",
         "",
@@ -345,13 +346,13 @@ def make_turtle_page(report, file_name) -> str:
         ""
     ]
     md += make_assertor_chapter(report)
-    md += make_stat_chapter(assertions)
+    md += make_stat_chapter(outcomes)
     
     for severity, emoji, _ in SEVERITY_RANGE:
-        if len(assertions[severity]) == 0:
+        if len(outcomes[severity]) == 0:
             continue
         md += make_severity_chapter(
-            assertions,
+            outcomes,
             partsDict,
             pointersDict,
             criterions,
@@ -362,11 +363,11 @@ def make_turtle_page(report, file_name) -> str:
     md = "\n".join(md)
 
     badgesData = [
-        f"Pass\t\t: {len(assertions['Pass'])}",
-        f"NotTested\t: {len(assertions['NotTested'])}",
-        f"CannotTell\t: {len(assertions['CannotTell'])}",
-        f"MinorFail\t: {len(assertions['MinorFail'])}",
-        f"MajorFail\t: {len(assertions['MajorFail'])}"
+        f"Pass\t\t: {len(outcomes['Pass'])}",
+        f"NotTested\t: {len(outcomes['NotTested'])}",
+        f"CannotTell\t: {len(outcomes['CannotTell'])}",
+        f"MinorFail\t: {len(outcomes['MinorFail'])}",
+        f"MajorFail\t: {len(outcomes['MajorFail'])}"
     ]
 
     if "model" in argv:

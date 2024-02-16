@@ -22,6 +22,13 @@ The test reports are then represented using the [EARL vocabulary](https://www.w3
 
 This project is very young so if a bug is to be found don't hesitate to create an [issue](https://github.com/Wimmics/olivaw/issues)
 
+If you need more information than this page provides, please check:
+
+* the [tests](./docs/tests.md) documentation for the list of which tests are implemented in olivaw and the output formats
+* the [commands](./docs/commands.md) documentation for a detailed description of the available commands and options
+* the [parameters](./docs/parameters.md) documentation for the enumeration of all the parameters that can be set for your acimov project
+* the [actions](./docs/actions.md) documentation for a complete guide for the available composite actions
+
 # Getting started
 
 ## Installing olivaw in your project

@@ -34,7 +34,7 @@ The default value is 3.
 
 This is a list of errors that are considered as blocking in the context of your project.
 
-The error list can be found in the [test resources file](../olivaw/constants/tests-resources.json).
+The error list can be found in the [test documentation](./tests.md) and the [test resources file](../olivaw/constants/tests-resources.json).
 
 This file represents for each test the different errors that can occur and for each of them what to write in the report depending on the outcome status.
 
@@ -45,3 +45,29 @@ In a generated `parameters.json` file the default value is to consider blocking 
 The gist index containing the data for all the gist files of your badges
 
 The command `olivaw init repo` will automatically create a gist initialized with all the files your project need from the personnal acces token you provide it
+
+## skipped_errors
+
+A list of error ids that can be found in the [test documentation](./tests.md) and in the [test resources file](../olivaw/constants/tests-resources.json)
+
+If an error id is in this list, this error should not appear in any test report, in the markdown files as well as in the turtle files
+
+If not provided, olivaw considers that all errors should appear
+
+## skipped_tests
+
+A list of test ids that can be found in the [test documentation](./tests.md) and in the [test resources file](../olivaw/constants/tests-resources.json)
+
+If a test id is in this list, this test should not be run neither appear in any test report, in the markdown files as well as in the turtle files
+
+If not provided, olivaw considers that all tests should be run
+
+## skipped_files
+
+A list of files that could be found and tested in your Acimov project
+
+These paths should be formatted as a relative path from your repository root up to the file itself
+
+The provided files should not be tested by olivaw
+
+If not provided, olivaw considers that all files should be tested

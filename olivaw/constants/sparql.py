@@ -193,7 +193,7 @@ select ?n ?c ?t ?d where {
 }
 """
 
-GET_DETAILED_ASSERTIONS = """
+GET_DETAILED_OUTCOMES = """
 SELECT ?assertion ?subject ?result ?outcome ?outcomeType ?subjectId ?subjectTitle ?criterionId ?outcomeTitle ?outcomeDescription WHERE {
   ?assertion a earl:Assertion ;
   earl:result ?result ;
@@ -219,19 +219,19 @@ SEVERITY_RANGE = [
   ("Pass", ":white_check_mark:", "green")
 ]
 
-GET_ASSERTION_PARTS = """
+GET_OUTCOMES_PARTS = """
 SELECT DISTINCT ?subjectId ?part WHERE {
   { GET_DETAILED_ASSERTIONS }
   ?subject dcterms:hasPart ?part .
 }
-""".replace("GET_DETAILED_ASSERTIONS", GET_DETAILED_ASSERTIONS)
+""".replace("GET_DETAILED_ASSERTIONS", GET_DETAILED_OUTCOMES)
 
-GET_ASSERTION_POINTERS = """
+GET_OUTCOME_POINTERS = """
 SELECT DISTINCT ?outcome ?pointer WHERE {
   { GET_DETAILED_ASSERTIONS }
   ?outcome rdfs:seeAlso ?pointer .
 }
-""".replace("GET_DETAILED_ASSERTIONS", GET_DETAILED_ASSERTIONS)
+""".replace("GET_DETAILED_ASSERTIONS", GET_DETAILED_OUTCOMES)
 
 GET_ASSERTOR_DETAILS = """
 SELECT ?title ?description ?date ?script ?page WHERE {
