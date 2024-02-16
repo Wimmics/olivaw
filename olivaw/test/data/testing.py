@@ -26,7 +26,8 @@ from olivaw.constants import (
     GET_URIS,
     GET_PREFIX_USAGE,
     ONTOLOGY_URL,
-    SKIPPED_TESTS
+    SKIPPED_TESTS,
+    MODE
 )
 
 from olivaw.constants.prefixcc import (
@@ -157,7 +158,7 @@ def get_uris(fragments):
 
 def data_fragment_test(report, assertor, datasets, skip_pass, tested_only):
 
-    for dataset in tqdm(datasets):
+    for dataset in tqdm(datasets, disable=MODE=="actions"):
         fragment_check(
             datasets,
             report,

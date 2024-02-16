@@ -30,7 +30,7 @@ def update_readme(gist_id=None):
     ] + [" "] + ["Model test badges:\t"] + [
         f"![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})"
         for badge in list(BADGE_LIST.keys())[:5]
-    ] + ["Data test test badges:\t"] + [
+    ] + [" "] + ["Data test test badges:\t"] + [
         f"![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})"
         for badge in list(BADGE_LIST.keys())[8:]
     ] + [" "] + readme[first_title_line:]

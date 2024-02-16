@@ -71,4 +71,4 @@ BADGE_LIST = {
 }
 
 def badge_url(dev, gist_id, badge):
-    return f"https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/{dev}/{gist_id}/raw/{REF}_{badge}.json"
+    return f"https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/{dev}/{gist_id}/raw/{'_'.join(REF.split('/')[1:])}_{badge}.json"

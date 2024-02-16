@@ -25,7 +25,8 @@ from olivaw.constants import (
     MODEL_BEST_PRACTICES_TESTS,
     NOT_LABELED,
     SKIPPED_TESTS,
-    SKIPPED_FILES
+    SKIPPED_FILES,
+    MODE
 )
 
 from olivaw.test.turtle import (
@@ -243,7 +244,7 @@ def modules_tests(
     
     unsafe_modules = []
 
-    for module in tqdm(modules):
+    for module in tqdm(modules, disable=MODE=="actions"):
         module_key = relpath(module, PWD_TO_ROOT_FOLDER).replace(sep, "/")
         subject = make_subject(report, [module_key])
         load_error = fragment_check(
@@ -283,7 +284,7 @@ def modelets_tests(
 
     unsafe_modelets = []
 
-    for modelet in tqdm(modelets):
+    for modelet in tqdm(modelets, disable=MODE=="actions"):
         if "template" in modelet:
             continue
 
