@@ -53,7 +53,7 @@ runs:
 
     - name: Install Olivaw test suite
       shell: bash
-      run: pip install git+https://github.com/Wimmics/olivaw@test
+      run: pip install git+https://github.com/Wimmics/olivaw@test2
 
     - name: Generate model test report
       id: model-test
