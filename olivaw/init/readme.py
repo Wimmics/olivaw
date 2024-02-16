@@ -24,13 +24,13 @@ def update_readme(gist_id=None):
     if gist_id is None:
         gist_id = GIST_INDEX
 
-    readme = ["Profile badges:\t"] + [
+    readme = ["Profiles:\t"] + [
         f"![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})"
         for badge in list(BADGE_LIST.keys())[5:8]
-    ] + [" "] + ["Model test badges:\t"] + [
+    ] + [" "] + ["Model tests:\t"] + [
         f"![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})"
         for badge in list(BADGE_LIST.keys())[:5]
-    ] + [" "] + ["Data test test badges:\t"] + [
+    ] + [" "] + ["Data tests:\t"] + [
         f"![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})"
         for badge in list(BADGE_LIST.keys())[8:]
     ] + [" "] + readme[first_title_line:]

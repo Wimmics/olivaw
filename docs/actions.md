@@ -35,12 +35,20 @@ jobs:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
         gist-secret: ${{ secrets.GIST_SECRET }}
+        model-test: true
+        data-test: true
+        commit-report: true
+        archive-report: true
 ```
 
 The parameters are:
 * `repository`: a string structured like `your_organization/your_repository`. The environment variable `${{ github.repository }}` provides it
 * `ref`: a string containing a reference to which branch you are pushing, for example `refs/heads/main`. The environment variable `${{ github.ref }}` is perfect for it
 * `gist-secret`: a string containing the personnal access token with the `gist` scope to update the gist files. If there is this value in the `GIST_SECRET` secret that was asked at the repository initialization, then the environment variable `${{ secrets.GIST_SECRET }}` provides it
+* `model-test`: an optional boolean stating if the model tests should be run. The default value is `true`
+* `data-test`: an optional boolean stating if the data tests should be run. The default value is `true`
+* `commit-report`: an optional boolean stating if the reports should be pushed in the related branch, the default value is `true`
+* `archive-report`: an optional boolean stating if the reports should be stored as a Github artifact, the default value is `true`
 * `server-url`: an optional string containing the URL of the server, in case you are not hosted on github. The default is "https://github.com"
 
 ## Automatic test on push
