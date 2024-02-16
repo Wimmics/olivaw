@@ -28,6 +28,7 @@ If you need more information than this page provides, please check:
 * the [commands](./docs/commands.md) documentation for a detailed description of the available commands and options
 * the [parameters](./docs/parameters.md) documentation for the enumeration of all the parameters that can be set for your acimov project
 * the [actions](./docs/actions.md) documentation for a complete guide for the available composite actions
+* the [pre-commit](./docs/pre-commit.md) documentation for a guide concerning the olivaw pre-commit hook
 
 # Getting started
 
