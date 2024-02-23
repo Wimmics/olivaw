@@ -123,7 +123,7 @@ def test_model():
     if not exists(PWD_TO_MODEL_OUTPUT_FOLDER):
         makedirs(PWD_TO_MODEL_OUTPUT_FOLDER)
 
-    with open(f"{file_base}.ttl", "w") as f:
+    with copen(f"{file_base}.ttl", "w", "utf-8") as f:
         f.write(report.serialize(format="ttl"))
 
     with copen(f"{file_base}.md", "w", "utf-8") as f:

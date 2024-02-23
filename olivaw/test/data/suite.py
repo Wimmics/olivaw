@@ -71,7 +71,7 @@ def test_data():
 
     markdown = make_turtle_page(report, file_base.split(sep)[-1])
 
-    with open(f"{file_base}.ttl", "w") as f:
+    with copen(f"{file_base}.ttl", "w", "utf-8") as f:
         f.write(report.serialize(format="ttl"))
 
     with copen(f"{file_base}.md", "w", "utf-8") as f:
