@@ -16,6 +16,7 @@ from olivaw.constants import (
     MODELET_URL_FORMAT,
     DATASET_URL_FORMAT,
     USECASE_URL_FORMAT,
+    QUESTION_URL_FORMAT,
     IS_OWL_EL_COMPATIBLE,
     IS_OWL_QL_COMPATIBLE,
     IS_OWL_RL_COMPATIBLE,
@@ -127,6 +128,10 @@ def subject_part_to_markdown(part):
     usecase_search = USECASE_URL_FORMAT.findall(part)
     if len(usecase_search) > 0:
         return f"[Use case {usecase_search[0][10:]}]({part})"
+    
+    question_search = QUESTION_URL_FORMAT.findall(part)
+    if len(question_search) > 0:
+        return f"[Competency question {question_search[0][8:]}]({part})"
     
     return part
 

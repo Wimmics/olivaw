@@ -15,6 +15,7 @@ try:
     MODELET_URL_FORMAT = re.compile('domains/[^/]+/[^/]+/onto\.ttl')
     DATASET_URL_FORMAT = re.compile('domains/[^/]+/[^/]+/dataset\.ttl')
     USECASE_URL_FORMAT = re.compile('use-cases/[^/]+/[^/]+$')
+    QUESTION_URL_FORMAT = re.compile('domains/[^/]+/[^/]+/[^\.]+\.rq')
 
     NEW_LINES = re.compile('\\n+')
 except:

@@ -92,6 +92,9 @@ def make_subject_id_part(fragment_list):
     datasets = [item for item in fragment_list if item.startswith("domains/") and item.endswith("/dataset.ttl")]
     datasets = ['dataset-' + '-'.join(item.split('/')[1:-1]) for item in datasets]
     datasets.sort()
+    questions = [item for item in fragment_list if item.startswith("domains/") and item.endswith(".rq")]
+    questions = ['question-' + '-'.join(item[:-3].split('/')[1:]) for item in questions]
+    questions.sort()
     usecases = [item for item in fragment_list if item.startswith("use-cases/")]
     usecases = [
         'usecase-' + '-'.join('.'.join(item.split('.')[:-1]).split('/')[1:])
@@ -99,7 +102,7 @@ def make_subject_id_part(fragment_list):
     ]
     usecases.sort()
 
-    subject_id_part = '-'.join(modules + modelets + datasets + usecases)
+    subject_id_part = '-'.join(modules + modelets + datasets + questions + usecases)
     return subject_id_part
 
 def make_subject_id(heart, appendix=[]):
@@ -134,8 +137,10 @@ def make_subject(
         elif heart[0].startswith("domains/"):
             if heart[0].endswith("/onto.ttl"):
                 heart_type += "modelet"
-            else:
+            elif heart[0].endswith("/dataset.ttl"):
                 heart_type += "dataset"
+            else:
+                heart_type = "competency question"
         else:
             heart_type += "use case"
     
@@ -173,6 +178,17 @@ def make_subject(
         URIRef(DOMAINS_URL + item.split("domains/")[-1])
         for item in datasets_fragment
     ]
+
+    questions_fragment = [
+        item
+        for item in heart + appendix
+        if item.startswith('domains/')
+        and item.endswith('.rq')
+    ]
+    questions_fragment = [
+        URIRef(DOMAINS_URL + item.split("domains/")[-1])
+        for item in questions_fragment
+    ]
     
     usecases_fragment = [item for item in heart + appendix if item.startswith('use-cases/')]
     usecases_fragment = [
@@ -183,7 +199,7 @@ def make_subject(
     test_subject = BNode(subject_id, subject_id)
     statements = [
         (DCTERMS.hasPart, part)
-        for part in module_fragments + modelets_fragment + datasets_fragment + usecases_fragment
+        for part in module_fragments + modelets_fragment + datasets_fragment + questions_fragment + usecases_fragment
     ]
 
     statements = [

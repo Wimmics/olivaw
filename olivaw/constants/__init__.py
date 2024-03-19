@@ -13,7 +13,9 @@ from .markdown import *
 
 from .badges import *
 
-__all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown", "badges"]
+from .prefixcc import *
+
+__all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown", "badges", "prefixcc"]
 
 TEST_RESOURCES = None
 with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}tests-resources.json", "r") as f:
@@ -77,3 +79,20 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       error_resource["blocking"] = error in BLOCKING_ERRORS
 
 MODEL_BEST_PRACTICES_TESTS = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]
+
+DATASETS = None
+try:
+  from glob import glob
+  DATASETS = [
+    item
+    for item in glob(USE_CASES_TTL_GLOB_PATH) + glob(DATASETS_TTL_GLOB_PATH)
+    if not abspath(item) in SKIPPED_FILES
+  ]
+
+  ALL_SUBJECTS = [
+    item
+    for item in glob(USE_CASES_TTL_GLOB_PATH) + glob(DATASETS_TTL_GLOB_PATH) + glob(MODULES_TTL_GLOB_PATH) + glob(MODELETS_TTL_GLOB_PATH) + glob(COMPETENCY_QUESTIONS_GLOB_PATH)
+    if not abspath(item) in SKIPPED_FILES
+  ]
+except:
+  pass

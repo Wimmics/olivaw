@@ -1,24 +1,21 @@
 from sys import argv
-from os.path import sep, abspath
 from glob import glob
 from datetime import datetime
+from tqdm import tqdm
 from codecs import open as copen
-
-from olivaw.constants import (
-    DATASETS_TTL_GLOB_PATH,
-    USE_CASES_TTL_GLOB_PATH,
-    DEV_USERNAME,
-    PWD_TO_OUTPUT_FOLDER,
-    SKIPPED_FILES,
-    DATASETS
-)
+from os.path import sep
 
 from olivaw.test.corese import print_title
+from olivaw.test.turtle import prepare_graph, make_assertor
 from olivaw.test.markdown import make_turtle_page
-from olivaw.test.data.testing import data_fragment_test
-from olivaw.test.turtle import (
-    prepare_graph,
-    make_assertor
+
+from .testing import test_competency_question
+
+from olivaw.constants import (
+    DEV_USERNAME,
+    PWD_TO_OUTPUT_FOLDER,
+    COMPETENCY_QUESTIONS_GLOB_PATH,
+    MODE
 )
 
 def datetime_id():
@@ -29,7 +26,7 @@ def datetime_id():
             .split(".")[:-1]
         ).replace(":", "-")
 
-def test_data():
+def test_query():
     _, *args = argv
 
     modes = [
@@ -47,20 +44,17 @@ def test_data():
     assertor = make_assertor(
         report,
         mode,
-        f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/data/suite.py"
+        f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/query/suite.py"
     )
-    
-    print_title("Running data tests")
 
-    data_fragment_test(
-        report,
-        assertor,
-        skip_pass,
-        tested_only
-    )
+    # MAKE QUERY TEST MAGIC HERE
+    queries = glob(COMPETENCY_QUESTIONS_GLOB_PATH)
+
+    for query in tqdm(queries, disable=MODE=="actions"):
+        test_competency_question(report, assertor, query)
 
     file_name = mode if not mode == "manual" else f"{mode}-{DEV_USERNAME}-{datetime_id()}"
-    file_base = f"{PWD_TO_OUTPUT_FOLDER}data-test-{file_name}"
+    file_base = f"{PWD_TO_OUTPUT_FOLDER}query-test-{file_name}"
 
     print_title("Exporting results")
 

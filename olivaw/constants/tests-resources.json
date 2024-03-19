@@ -125,15 +125,15 @@
                 },
                 "CannotTell": {
                     "title": "Test subject has syntax errors",
-                    "description": "The subject has turtle syntax errors"
+                    "description": "The subject has syntax errors"
                 },
                 "MajorFail": {
                     "title": "Test subject has syntax errors",
-                    "description": "The subject has turtle syntax errors"
+                    "description": "The subject has syntax errors"
                 },
                 "MinorFail": {
                     "title": "Test subject has syntax errors",
-                    "description": "The subject has turtle syntax errors"
+                    "description": "The subject has syntax errors"
                 }
             }
         }
@@ -325,6 +325,64 @@
                 "MinorFail": {
                     "title": "Possible prefix typo",
                     "description": "A URI of the subject seems to be a typo of a very common prefix"
+                }
+            }
+        }
+    },
+    "query-type": {
+        "title": "Query type test",
+        "description": "A test meant to check if the query is indeed of type Select or Ask",
+        "errors":{
+            "wrong-query-type": {
+                "blocking": false,
+                "Pass": {
+                    "title": "Accurate query type",
+                    "description": "The query is of type Select or Ask"
+                },
+                "NotTested": {
+                    "title": "The test could not be run",
+                    "description": "The query must be syntaxically correct"
+                },
+                "CannotTell": {
+                    "title": "Unauthorized query type",
+                    "description": "The query is not of type Select or Ask"
+                },
+                "MinorFail": {
+                    "title": "Unauthorized query type",
+                    "description": "The query is not of type Select or Ask"
+                },
+                "MajorFail": {
+                    "title": "Unauthorized query type",
+                    "description": "The query is not of type Select or Ask"
+                }
+            }
+        }
+    },
+    "uri-validity": {
+        "title": "URI Validity test",
+        "description": "A test meant to check if all the URIs of th resource are well-formed",
+        "errors": {
+            "invalid-uri": {
+                "blocking": false,
+                "Pass": {
+                    "title": "All subject URI valid",
+                    "description": "All the URIs of the subject are valid"
+                },
+                "NotTested": {
+                    "title": "The test could not be run",
+                    "description": "The subject must be syntaxically valid"
+                },
+                "CannotTell": {
+                    "title": "Invalid URI",
+                    "description": "Some URIs of the subject are not valid URIs"
+                },
+                "MinorFail": {
+                    "title": "Invalid URI",
+                    "description": "Some URIs of the subject are not valid URIs"
+                },
+                "MajorFail": {
+                    "title": "Invalid URI",
+                    "description": "Some URIs of the subject are not valid URIs"
                 }
             }
         }

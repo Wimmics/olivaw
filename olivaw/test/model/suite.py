@@ -9,7 +9,7 @@ from olivaw.constants import (
     MODULES_TTL_GLOB_PATH,
     MODELETS_TTL_GLOB_PATH,
     DEV_USERNAME,
-    PWD_TO_MODEL_OUTPUT_FOLDER,
+    PWD_TO_OUTPUT_FOLDER,
     BRANCH,
     SKIPPED_FILES
 )
@@ -114,14 +114,14 @@ def test_model():
     )
 
     file_name = mode if not mode == "manual" else f"{mode}-{DEV_USERNAME}-{datetime_id()}"
-    file_base = f"{PWD_TO_MODEL_OUTPUT_FOLDER}model-test-{file_name}"
+    file_base = f"{PWD_TO_OUTPUT_FOLDER}model-test-{file_name}"
 
     print_title("Exporting results")
 
     markdown = make_turtle_page(report, file_base.split(sep)[-1])
 
-    if not exists(PWD_TO_MODEL_OUTPUT_FOLDER):
-        makedirs(PWD_TO_MODEL_OUTPUT_FOLDER)
+    if not exists(PWD_TO_OUTPUT_FOLDER):
+        makedirs(PWD_TO_OUTPUT_FOLDER)
 
     with copen(f"{file_base}.ttl", "w", "utf-8") as f:
         f.write(report.serialize(format="ttl"))

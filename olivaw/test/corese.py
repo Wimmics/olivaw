@@ -6,6 +6,7 @@ from subprocess import Popen, PIPE, DEVNULL
 from time import sleep
 from os.path import exists, sep
 from typing import Union, List
+from py4j import java_gateway
 from py4j.java_gateway import launch_gateway, JavaGateway
 
 from olivaw.constants import (
@@ -140,8 +141,13 @@ TURTLE = 2
 STD = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.STD
 OWL_RL = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL
 OWL_RL_LITE = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL_LITE
-OWL_RL_FULL = OWL_RL = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL_FULL 
+OWL_RL_FULL = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL_FULL 
 RDFS = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.RDFS_RL
+
+Query = gateway.jvm.fr.inria.corese.sparql.triple.parser.Query
+Binding = gateway.jvm.fr.inria.corese.sparql.triple.parser.Binding
+Source = gateway.jvm.fr.inria.corese.sparql.triple.parser.Source
+Service = gateway.jvm.fr.inria.corese.sparql.triple.parser.Service
 
 # A java object resolving prefixes into URIs and the other way
 prefix_manager = NSManager.create()

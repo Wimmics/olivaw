@@ -1,5 +1,6 @@
 from os.path import sep
-from requests import get
+from urllib.request import urlopen
+from ssl import create_default_context, CERT_NONE
 from json import dumps, loads
 
 PREFIX_CC_PREFIXES = "https://prefix.cc/context"
@@ -79,8 +80,17 @@ def parse_node_to_tupe_leaves(node):
         parse_node_to_tupe_leaves(child_node)
 
 try:
-    response = get(PREFIX_CC_PREFIXES)
-    common_prefixes = response.json()["@context"]
+    common_prefixes = None
+
+    # This site uses self signed certificate
+    myssl = create_default_context()
+    myssl.check_hostname = False
+    myssl.verify_mode = CERT_NONE
+    
+    with urlopen(PREFIX_CC_PREFIXES, context=myssl) as downloaded:
+        common_prefixes = loads(downloaded.read().decode())
+
+    common_prefixes = common_prefixes["@context"]
     uris = list(common_prefixes.items())
 
     COMMON_URIS_TREE = make_index(uris)

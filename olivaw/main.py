@@ -36,8 +36,9 @@ def test(line):
         from olivaw.test.data.suite import test_data
         test_data()
     elif target == "query":
-        # Implement here
-        return
+        # Only instanciate Corese server if needed
+        from olivaw.test.query.suite import test_query
+        test_query()
     elif target == "precommit":
         from olivaw.hook.test import run
         run(line)

@@ -53,6 +53,16 @@
     dcterms:title "Term validity test"@en ;
     dcterms:description "A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc)"@en .
 
+:query-type a earl:TestCriterion ;
+    dcterms:identifier "query-type" ;
+    dcterms:title "Query type test"@en ;
+    dcterms:description "A test meant to check if the query is indeed of type Select or Ask" .
+
+:uri-validity a earl:TestCriterion ;
+    dcterms:identifier "uri-validity" ;
+    dcterms:title "URI validity test"@en ;
+    dcterms:description "A test meant to check if all the URIs of th resource are well-formed"@en .
+
 earl:Fail owl:equivalentClass [
         a owl:Class ;
         owl:unionOf (:MajorFail :MinorFail)
