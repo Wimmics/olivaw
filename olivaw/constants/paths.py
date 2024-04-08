@@ -1,5 +1,5 @@
 from os import getcwd
-from os.path import sep, relpath, abspath
+from os.path import sep, relpath
 
 from .git_info import ROOT_FOLDER
 

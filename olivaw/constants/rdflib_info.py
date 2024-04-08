@@ -18,13 +18,16 @@ PREFIX_ERROR = None
 
 try:
     from rdflib import Namespace
-    from regex import compile as regex_compile
+    
 
     EARL_NAMESPACE = Namespace(EARL_PREFIX)
     SRC_NAMESPACE = Namespace(SRC_URL)
     TEST_NAMESPACE = Namespace(PROFILE_CHECK_URI)
     OLIVAW_EARL_NAMESPACE = Namespace(OLIVAW_EARL_DATASET)
 
-    PREFIX_ERROR = regex_compile('Prefix "[^"]+:" not bound')
+    
 except:
     pass
+
+from regex import compile as regex_compile
+PREFIX_ERROR = regex_compile('Prefix "[^"]+:" not bound')

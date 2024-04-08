@@ -1,7 +1,7 @@
 from subprocess import check_output
 from os.path import relpath, sep
 
-from sys import argv
+from sys import argv, exit
 
 modes = [
   item.split('=')[1]
@@ -24,6 +24,10 @@ else:
     .strip()
   except:
     ROOT_FOLDER = None
+
+if ROOT_FOLDER is None:
+  # git will print an error message explaining we are no in a git reository
+  exit(1)
 
 # The repository URI
 arg_repo = [item.split("=")[1] for item in argv if item.startswith("--REPO_URI=")]

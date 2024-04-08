@@ -1,4 +1,5 @@
 from json import load
+from sys import exit
 from os.path import sep, exists
 
 from .paths import *
@@ -43,19 +44,41 @@ SKIPPED_ERRORS = None
 
 if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
   with open(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json", "r") as f:
-    repo_parameters = load(f)
+    repo_parameters = None
+    
+    try:
+      repo_parameters = load(f)
+    except:
+      print("fatal: parameters.json is not a well formed json file")
+      exit(1)
 
     # The ontology base URL
-    ONTOLOGY_URL = repo_parameters["ontology_url"]
+    if "ontology_url" in repo_parameters:
+      ONTOLOGY_URL = repo_parameters["ontology_url"]
+    else:
+      print('fatal: parameter "ontology_url" not found in parameters.json')
+      exit(1)
 
     # The desired levenshtein threshold to accept terms as different enough
-    TERM_DISTANCE_THRESHOLD = repo_parameters["term_distance_threshold"]
+    if "term_distance_threshold" in repo_parameters:
+      TERM_DISTANCE_THRESHOLD = repo_parameters["term_distance_threshold"]
+    else:
+      print('fatal: parameter "term_distance_threshold" not found in parameters.json')
+      exit(1)
 
     # The errors ids that are defined as blocking
-    BLOCKING_ERRORS = repo_parameters["blocking_errors"]
+    if "blocking_errors" in repo_parameters:
+      BLOCKING_ERRORS = repo_parameters["blocking_errors"]
+    else:
+      print('fatal: parameter "blocking_errors" not found in parameters.json')
+      exit(1)
 
     # Id of Gist containing al the badges data
-    GIST_INDEX = repo_parameters["gist_index"]
+    if "gist_index" in repo_parameters:
+      GIST_INDEX = repo_parameters["gist_index"]
+    else:
+      print('fatal: parameter "gist_index" not found in parameters.json')
+      exit(1)
 
     # Error identifiers that should not be written in the reports
     SKIPPED_ERRORS = repo_parameters["skipped_errors"] if "skipped_errors" in repo_parameters else []
@@ -64,11 +87,15 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     SKIPPED_TESTS = repo_parameters["skipped_tests"] if "skipped_tests" in repo_parameters else []
 
     # Relative paths between repo root and files that should be skipped in tests
-    SKIPPED_FILES = repo_parameters["skipped_files"] if "skipped_files" in repo_parameters else []
-    SKIPPED_FILES = [abspath(f"{ROOT_FOLDER}{sep}{path}") for path in SKIPPED_FILES]
+    SKIPPED_FILES = [
+      abspath(f"{ROOT_FOLDER}{sep}{path}")
+      for path in repo_parameters["skipped_files"]
+    ] if "skipped_files" in repo_parameters else []
 
   def add_repo_variables(request):
-    return request.replace("ONTOLOGY_URL", ONTOLOGY_URL).replace("TERM_DISTANCE_THRESHOLD", str(TERM_DISTANCE_THRESHOLD))
+    return request\
+      .replace("ONTOLOGY_URL", ONTOLOGY_URL)\
+      .replace("TERM_DISTANCE_THRESHOLD", str(TERM_DISTANCE_THRESHOLD))
 
   from .uris import *
 
@@ -95,18 +122,9 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
 MODEL_BEST_PRACTICES_TESTS = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]
 
 DATASETS = None
-try:
-  from glob import glob
-  DATASETS = [
-    item
-    for item in glob(USE_CASES_TTL_GLOB_PATH) + glob(DATASETS_TTL_GLOB_PATH)
-    if not abspath(item) in SKIPPED_FILES
-  ]
-
-  ALL_SUBJECTS = [
-    item
-    for item in glob(USE_CASES_TTL_GLOB_PATH) + glob(DATASETS_TTL_GLOB_PATH) + glob(MODULES_TTL_GLOB_PATH) + glob(MODELETS_TTL_GLOB_PATH) + glob(COMPETENCY_QUESTIONS_GLOB_PATH)
-    if not abspath(item) in SKIPPED_FILES
-  ]
-except:
-  pass
+from glob import glob
+DATASETS = [
+  item
+  for item in glob(USE_CASES_TTL_GLOB_PATH) + glob(DATASETS_TTL_GLOB_PATH)
+  if not abspath(item) in SKIPPED_FILES
+]
