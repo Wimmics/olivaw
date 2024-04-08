@@ -3,7 +3,7 @@ from .git_info import (
     PLATFORM_URL,
     DEV_USERNAME,
     PROFILE_CHECK_URI,
-    ACIMOV_MODEL_TEST_URI
+    OLIVAW_EARL_DATASET
 )
 
 from .uris import EARL_PREFIX
@@ -23,7 +23,7 @@ try:
     EARL_NAMESPACE = Namespace(EARL_PREFIX)
     SRC_NAMESPACE = Namespace(SRC_URL)
     TEST_NAMESPACE = Namespace(PROFILE_CHECK_URI)
-    OLIVAW_EARL_NAMESPACE = Namespace(f"{ACIMOV_MODEL_TEST_URI}#")
+    OLIVAW_EARL_NAMESPACE = Namespace(OLIVAW_EARL_DATASET)
 
     PREFIX_ERROR = regex_compile('Prefix "[^"]+:" not bound')
 except:

@@ -17,10 +17,24 @@ from .prefixcc import *
 
 __all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown", "badges", "prefixcc"]
 
+COMMAND = []
+try:
+  COMMAND = [
+    argv[index]
+    for index in range(len(argv))
+    if index > [
+      i for i in range(len(argv))
+      if argv[i].split(sep)[-1].split(".")[0] == "olivaw"
+    ][0]
+  ]
+except:
+  pass
+
 TEST_RESOURCES = None
 with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}tests-resources.json", "r") as f:
   TEST_RESOURCES = load(f)
 
+CRITERION_IDS = list(TEST_RESOURCES.keys())
 ONTOLOGY_URL = None
 TERM_DISTANCE_THRESHOLD = None
 BLOCKING_ERRORS = None

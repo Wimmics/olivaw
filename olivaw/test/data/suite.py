@@ -5,12 +5,8 @@ from datetime import datetime
 from codecs import open as copen
 
 from olivaw.constants import (
-    DATASETS_TTL_GLOB_PATH,
-    USE_CASES_TTL_GLOB_PATH,
     DEV_USERNAME,
-    PWD_TO_OUTPUT_FOLDER,
-    SKIPPED_FILES,
-    DATASETS
+    PWD_TO_OUTPUT_FOLDER
 )
 
 from olivaw.test.corese import print_title

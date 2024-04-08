@@ -11,7 +11,8 @@ from olivaw.constants import (
     DEV_USERNAME,
     PWD_TO_OUTPUT_FOLDER,
     BRANCH,
-    SKIPPED_FILES
+    SKIPPED_FILES,
+    CUSTOM_MODEL_TESTS
 )
 
 from olivaw.test.corese import print_title # TODO Need later for a utils.py?

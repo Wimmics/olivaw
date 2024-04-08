@@ -16,5 +16,10 @@ DATASETS_TTL_GLOB_PATH = f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}dataset.t
 USE_CASES_TTL_GLOB_PATH = f"{PWD_TO_ROOT_FOLDER}use-cases{sep}*{sep}*.ttl"
 COMPETENCY_QUESTIONS_GLOB_PATH = f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}*.rq"
 
+CUSTOM_MODEL_TESTS = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}model{sep}*.shacl"
+CUSTOM_DATA_TESTS = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}data{sep}*.shacl"
+
 PWD_TO_OVILAW = sep.join(__file__.split(sep)[:-2])
 PWD_TO_MODEL_TEST_ONTO = f"{PWD_TO_OVILAW}{sep}test{sep}olivaw-earl.ttl"
+
+PWD_TO_CUSTOM_TESTS = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}"

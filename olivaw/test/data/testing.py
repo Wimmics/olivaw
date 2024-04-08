@@ -28,17 +28,14 @@ from olivaw.constants import (
     ONTOLOGY_URL,
     SKIPPED_TESTS,
     MODE,
-    DATASETS
+    DATASETS,
+    CUSTOM_DATA_TESTS
 )
 
-from olivaw.constants import (
-    COMMON_URIS_TREE,
-    PREFIX_SIMILARITY_THRESHOLD,
-    similar_prefix_search,
-    make_index
-)
-
+from olivaw.test.generic.shacl import load_valid_custom_tests, custom_test
 from olivaw.test.generic.prefix import prefix_test
+
+shape_tests = load_valid_custom_tests(CUSTOM_DATA_TESTS)
 
 def fragment_check(
     report,
@@ -110,6 +107,7 @@ def fragment_check(
         return
     
     graph_rl = safe_load(dataset, disable_import=True, profile=OWL_RL)
+    graph_no_owl = safe_load(dataset, disable_owl=True)
     
     best_practices(
         report,
@@ -120,6 +118,16 @@ def fragment_check(
         graph_with_import,
         graph_rl,
         skip_pass=skip_pass
+    )
+
+    custom_test(
+        report,
+        assertor,
+        subject,
+        graph_no_owl,
+        shape_tests,
+        skip_pass=skip_pass,
+        tested_only=tested_only
     )
         
 

@@ -1,4 +1,4 @@
-from olivaw.constants import URI_FORMAT
+from olivaw.constants import URI_FORMAT, SKIPPED_TESTS
 from olivaw.test.turtle import make_assertion
 
 def uri_test(
@@ -10,6 +10,9 @@ def uri_test(
     skip_pass=False,
     tested_only=False
 ):
+    if "uri-validity" in SKIPPED_TESTS:
+        return
+    
     invalid_uris = [
         uri
         for uri in uris

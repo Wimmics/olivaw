@@ -2,7 +2,7 @@ from os.path import relpath, sep
 
 from olivaw.test.corese import Graph, QueryProcess
 from olivaw.test.turtle import make_assertion, make_subject, make_not_tested
-from olivaw.constants import PWD_TO_ROOT_FOLDER, URI_FORMAT
+from olivaw.constants import PWD_TO_ROOT_FOLDER, SKIPPED_TESTS
 
 from olivaw.test.query.uris import retrieveURIFromQuery
 
@@ -36,15 +36,16 @@ def test_competency_question(
     except Exception as e:
         messages.append(str(e).split("\n")[1].split(":")[-1].strip())
 
-    make_assertion(
-        report,
-        assertor,
-        subject,
-        "syntax",
-        "syntax-error",
-        messages,
-        pointers= [[f'"{query}"']] * len(messages)
-    )
+    if not "syntax" in SKIPPED_TESTS:
+        make_assertion(
+            report,
+            assertor,
+            subject,
+            "syntax",
+            "syntax-error",
+            messages,
+            pointers= [[f'"{query}"']] * len(messages)
+        )
 
     if len(messages) > 0:
         make_not_tested(
@@ -63,74 +64,77 @@ def test_competency_question(
         )
         return
 
-    queryType = ""
+    if not "query-type" in SKIPPED_TESTS:
+        queryType = ""
 
-    if ast.isSelect():
-        queryType = "Select"
-    elif ast.isAsk():
-        queryType = "Ask"
-    elif ast.isDelete():
-        queryType = "Delete"
-    elif ast.isInsert():
-        queryType = "Insert"
-    elif ast.isConstruct():
-        queryType = "Construct"
-    elif ast.isDescribe():
-        queryType = "Describe"
+        if ast.isSelect():
+            queryType = "Select"
+        elif ast.isAsk():
+            queryType = "Ask"
+        elif ast.isDelete():
+            queryType = "Delete"
+        elif ast.isInsert():
+            queryType = "Insert"
+        elif ast.isConstruct():
+            queryType = "Construct"
+        elif ast.isDescribe():
+            queryType = "Describe"
 
-    messages = []
-    pointers = []
+        messages = []
+        pointers = []
 
-    if queryType != "Select" and queryType != "Ask":
-        messages =  [f"The query type was expected to be 'Ask' or 'Select', but got '{queryType}'"]
-        pointers = [[f'"{query}"']]
-    
-    make_assertion(
-        report,
-        assertor,
-        subject,
-        "query-type",
-        "wrong-query-type",
-        messages,
-        pointers,
-        skip_pass=skip_pass,
-        tested_only=tested_only
-    )
-
-    query_uris = retrieveURIFromQuery(query)
-
-    def get_uri_usage(uri):
-        return f'"{query}"'
-
-    uris_valid = uri_test(
-        report,
-        assertor,
-        subject,
-        query_uris,
-        get_uri_usage,
-        skip_pass=skip_pass,
-        tested_only=tested_only
-    )
-
-    if not uris_valid:
-        make_not_tested(
+        if queryType != "Select" and queryType != "Ask":
+            messages =  [f"The query type was expected to be 'Ask' or 'Select', but got '{queryType}'"]
+            pointers = [[f'"{query}"']]
+        
+        make_assertion(
             report,
             assertor,
             subject,
-            "prefix-validity",
+            "query-type",
+            "wrong-query-type",
+            messages,
+            pointers,
+            skip_pass=skip_pass,
             tested_only=tested_only
         )
-        return
-    
-    def get_prefix_usage(prefix):
-        return query
-    
-    prefix_test(
-        report,
-        subject,
-        assertor,
-        query_uris,
-        get_prefix_usage,
-        skip_pass=skip_pass
-    )
+
+    if not "uri-validity" in SKIPPED_TESTS:
+        query_uris = retrieveURIFromQuery(query)
+
+        def get_uri_usage(_):
+            return f'"{query}"'
+
+        uris_valid = uri_test(
+            report,
+            assertor,
+            subject,
+            query_uris,
+            get_uri_usage,
+            skip_pass=skip_pass,
+            tested_only=tested_only
+        )
+
+        if not uris_valid:
+            make_not_tested(
+                report,
+                assertor,
+                subject,
+                "prefix-validity",
+                tested_only=tested_only
+            )
+            return
+        
+    if not "prefix-validity" in SKIPPED_TESTS:    
+        def get_prefix_usage(_):
+            return query
+        
+        prefix_test(
+            report,
+            subject,
+            assertor,
+            query_uris,
+            get_prefix_usage,
+            skip_pass=skip_pass
+        )
     

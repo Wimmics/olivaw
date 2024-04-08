@@ -2,6 +2,8 @@ from rdflib import Graph, Literal
 from datetime import datetime
 from sys import argv
 
+from os.path import sep
+
 from olivaw.constants import (
     SEVERITY_RANGE,
     COLOR_BOX_TEMPLATE,
@@ -20,8 +22,12 @@ from olivaw.constants import (
     IS_OWL_EL_COMPATIBLE,
     IS_OWL_QL_COMPATIBLE,
     IS_OWL_RL_COMPATIBLE,
-    MODE
+    MODE,
+    OLIVAW_REF,
+    PWD_TO_ROOT_FOLDER
 )
+
+from olivaw.test.generic.shacl import get_criterion_data
 
 def parse_outcomes(report):
     outcomes = [outcome for outcome in report.query(GET_DETAILED_OUTCOMES)]
@@ -135,9 +141,29 @@ def subject_part_to_markdown(part):
     
     return part
 
+def criterion_uri_to_file(uri):
+    return f"{PWD_TO_ROOT_FOLDER}{sep.join(uri.split('#')[0].split('/')[-4:])}"
+
+def get_criterion_details(uri, criterions):
+    criterion_path = uri.split("#")[0].split("/")
+    criterion_ref = "/".join(criterion_path[3:5])
+
+    criterion_id = None
+    criterion_title = None
+    criterion_description = None
+
+    if criterion_ref == OLIVAW_REF:
+        criterion_id = uri.split('#')[-1]
+        criterion_title = criterions[criterion_id]["title"]
+        criterion_description = criterions[criterion_id]["description"]
+        return uri, criterion_id, criterion_title, criterion_description
+    else:
+        criterion_file = criterion_uri_to_file(uri)
+        return get_criterion_data(criterion_file)
+
 def make_details_table(
     chapter,
-    outcomeInfo,
+    outcome_info,
     partsDict,
     pointersDict,
     severity,
@@ -145,18 +171,16 @@ def make_details_table(
     emoji,
     criterions
 ):
-    _, _, _, outcome, _, subjectId, subjectTitle, criterionUri, outcomeTitle, outcomeDescription = outcomeInfo
-    subjectId = str(subjectId)
+    _, _, _, outcome, _, subject_id, subject_title, criterion_uri, outcome_title, outcome_description = outcome_info
+    subject_id = str(subject_id)
     outcome = str(outcome)
 
-    parts = [part for part in partsDict.get(subjectId, [])]
+    parts = [part for part in partsDict.get(subject_id, [])]
     parts = [part + ("" if part.endswith(".ttl") else ".ttl") for part in parts]
     parts = [subject_part_to_markdown(part) for part in parts]
     parts = "<br/>".join([f"- {part}" for part in parts])
 
-    criterionId = criterionUri.split('#')[-1]
-    criterionTitle = criterions[criterionId]["title"]
-    criterionDescription = criterions[criterionId]["description"]
+    _, criterion_id, criterion_title, criterion_description = get_criterion_details(criterion_uri, criterions)
 
     chapter += [
         f"### {severity} Outcome number {outcome_counter}",
@@ -166,22 +190,22 @@ def make_details_table(
         f"{emoji}{severity} outcome"
         "",
         "#### Subject detail",
-        f"|Name|{subjectId}|",
+        f"|Name|{subject_id}|",
         "|----|----|",
-        f"|Title|{subjectTitle}|",
+        f"|Title|{subject_title}|",
         f"|Composition|{parts}|",
         "",
         "#### Criterion detail",
-        f"|Identifier|[{criterionId}]({criterionUri})|",
+        f"|Identifier|[{criterion_id}]({criterion_uri})|",
         "|----|----|",
-        f"|Title|{criterionTitle}|",
-        f"|Description|{criterionDescription}|",
+        f"|Title|{criterion_title}|",
+        f"|Description|{criterion_description}|",
         "",
         "#### Outcome Detail",
         f"|Type|{emoji}{severity}|",
         "|----|----|",
-        f"|Title|{outcomeTitle}|",
-        f"|Description|{outcomeDescription}|"
+        f"|Title|{outcome_title}|",
+        f"|Description|{outcome_description}|"
     ]
 
     for rdfPointer in pointersDict.get(outcome, []):
@@ -220,7 +244,7 @@ def make_severity_detail(outcomes, criterions, severity, emoji, partsDict, point
         )
     return result
 
-def make_severity_summary(outcomes, severity, emoji):
+def make_severity_summary(outcomes, criterions, severity, emoji):
     severity_outcomes = outcomes[severity]
     table_length = len(severity_outcomes)
     title = f"## {severity} Outcomes Summary"
@@ -243,7 +267,8 @@ def make_severity_summary(outcomes, severity, emoji):
                 .replace('EMOJI', emoji)
                 .replace('TEXT', severity),
             f"`{str(subjectId)}`",
-            f"[{criterionId.split('#')[-1]}]({criterionId})",
+            f"[{get_criterion_details(criterionId, criterions)[1]}]({criterionId})",
+            #f"[{criterionId.split('#')[-1]}]({criterionId})",
             str(errorTitle),
             f"[Jump](#{severity.lower()}-outcome-number-{str(i+1)})",
             ''
@@ -269,6 +294,7 @@ def make_severity_chapter(outcomes, partsDict, pointersDict, criterions, severit
         ""
     ] + make_severity_summary(
         outcomes,
+        criterions,
         severity,
         emoji
     ) + make_severity_detail(

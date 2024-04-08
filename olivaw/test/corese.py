@@ -9,13 +9,17 @@ from typing import Union, List
 from py4j import java_gateway
 from py4j.java_gateway import launch_gateway, JavaGateway
 
+# Only in order to fix the not detected unbound prefix corese bug
+from rdflib import Graph as RdflibGraph
+
 from olivaw.constants import (
     AST_ERROR_FORMAT,
     GET_IMPORTS,
     ONTOLOGY_SEPARATOR,
     CORESE_LOCAL_PATH,
     PWD_TO_ROOT_FOLDER,
-    MODE
+    MODE,
+    URI_FORMAT
 )
 
 def print_title(title):
@@ -149,8 +153,40 @@ Binding = gateway.jvm.fr.inria.corese.sparql.triple.parser.Binding
 Source = gateway.jvm.fr.inria.corese.sparql.triple.parser.Source
 Service = gateway.jvm.fr.inria.corese.sparql.triple.parser.Service
 
+Shacl =  gateway.jvm.fr.inria.corese.core.shacl.Shacl
+TripleFormat = gateway.jvm.fr.inria.corese.core.print.TripleFormat
+
 # A java object resolving prefixes into URIs and the other way
 prefix_manager = NSManager.create()
+
+corese_namespaces = []
+for field in dir(NSManager):
+    try:
+        corese_namespaces.append(getattr(NSManager, field))
+    except:
+        pass
+
+corese_namespaces = [
+    (prefix_manager.getPrefix(uri), uri)
+    for uri in corese_namespaces
+    if isinstance(uri, str)
+    and len(URI_FORMAT.findall(uri)) > 0
+    and not prefix_manager.getPrefix(uri) is None
+] + [
+    ("ex", "http://example.org/ns#")
+]
+corese_namespaces = list(set(corese_namespaces))
+corese_namespaces.sort(key=lambda item: item[0])
+corese_namespaces = {
+    prefix: namespace
+    for prefix, namespace in corese_namespaces
+}
+corese_prefix_text = "\n".join(
+    [
+        f"@prefix {prefix}: <{namespace}> ."
+        for prefix, namespace in corese_namespaces.items()
+    ]
+)
 
 def load(
         path: Union[str, List[str], Graph],
@@ -284,10 +320,15 @@ def safe_load(
             if len(line.strip()) > 0
         ]
 
-        if len(syntax_errors) == 0:
-            return graph
+        if len(syntax_errors) > 0:
+            return syntax_errors
         
-        return syntax_errors
+        rdflib_errors = rdflib_check(path=path, extras=extras)
+
+        if len(rdflib_errors) > 0:
+            return rdflib_errors
+        
+        return graph
     
     except Exception as e:
         return [
@@ -297,6 +338,33 @@ def safe_load(
             ]
             if len(message) > 0
         ]
+    
+def rdflib_check(path="", extras=""):
+    if isinstance(path, list):
+        return [
+            item
+            for path in path
+            for item in rdflib_check(path=path)
+        ] + rdflib_check(extras=extras)
+
+    file_content = ""
+
+    if isinstance(path, str) and path != "":
+        with open(path, "r") as fragment_file:
+            file_content = fragment_file.read()
+
+    content = file_content if len(file_content) > 0 else extras
+
+    if content == "":
+        return []
+
+    # Detect the last unbound prefix that corese does not detect
+    try:
+        rdflib_fragment = RdflibGraph()
+        rdflib_fragment.parse(data=content, format="ttl")
+        return []
+    except Exception as rdflib_error:
+        return [rdflib_error.message]
     
 def query_graph(graph, query, format=TEXT_TSV):
     """Query the given graph and return the result in TSV notation

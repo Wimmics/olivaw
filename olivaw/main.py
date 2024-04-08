@@ -1,24 +1,16 @@
-from sys import argv
+from os import listdir, remove
 from os.path import sep
+from olivaw.constants import COMMAND, ROOT_FOLDER
 
 def run():
-    olivaw_index = [
-        i for i in range(len(argv))
-        if argv[i].split(sep)[-1].split(".")[0] == "olivaw"
-    ]
-    command, *args = argv[olivaw_index[0] + 1:]
-    
+    command, *args = COMMAND
+
     if command == "test":
         test(args)
     elif command == "init":
         init(args)
     elif command == "flush":
-        from olivaw.constants import ROOT_FOLDER
-        from os import listdir, remove
-        for filename in listdir(f"{ROOT_FOLDER}{sep}.acimov{sep}output"):
-            if filename.split("-")[-1].split(".")[0] == "actions":
-                continue
-            remove(f"{ROOT_FOLDER}/.acimov/output/{filename}")
+        flush()
     elif command == "show":
         show(args)
     else:
@@ -45,6 +37,12 @@ def test(line):
     else:
         # Best way to deal with invalid command...?
         print(f"Unknown target: {target}")
+
+def flush():
+    for filename in listdir(f"{ROOT_FOLDER}{sep}.acimov{sep}output"):
+        if filename.split("-")[-1].split(".")[0] == "actions":
+            continue
+        remove(f"{ROOT_FOLDER}/.acimov/output/{filename}")
 
 def init(line):
     target = line[0]

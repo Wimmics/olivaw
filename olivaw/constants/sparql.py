@@ -33,8 +33,9 @@ DOMAIN_OUT_Of_VOCABULARY = """
 
 SELECT DISTINCT ?suffix ?domain WHERE {
   # Get all the properties with a defined domain
-  ?property rdf:type owl:ObjectProperty .
-  ?property rdfs:domain ?domain .
+  ?property rdf:type owl:ObjectProperty ;
+    rdfs:domain ?domain ;
+    rdfs:isDefinedBy [] .
 
   # Get only the most specialized domains for each property
   FILTER NOT EXISTS {
@@ -49,7 +50,7 @@ SELECT DISTINCT ?suffix ?domain WHERE {
   
   # Ignore the domains in the ontology
   FILTER NOT EXISTS {
-    ?domain rdf:type ?o .
+    #?domain rdf:type ?o .
     FILTER(strstarts(str(?domain), "ONTOLOGY_URL"))
   }
   
@@ -355,6 +356,126 @@ select ?uri where {
   }
   filter not exists { filter isblank(?uri) }
   filter not exists { filter isliteral(?uri) }
+}
+"""
+
+GET_CRITERION_IDENTIFIER = """
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+
+select ?id where {
+  _:ns a earl:TestCriterion ;
+  dcterms:identifier ?id
+}
+"""
+
+GET_CRITERION_URI = """
+@prefix earl: <http://www.w3.org/ns/earl#> .
+
+select ?tc where {
+    ?tc a earl:TestCriterion
+}
+"""
+
+GET_VIOLATION = """
+CONSTRUCT {
+  VIOLATION_URI ?p ?po
+}
+WHERE {
+  VIOLATION_URI ?p ?o
+  bind (
+    if (
+      isliteral(?o) && strlen(?o) > 60 && datatype(?o) != dt:triple,
+      concat(substr(?o, 1, 60), "..."),
+      ?o
+    ) as ?po
+  )
+}
+"""
+
+GET_VIOLATIONS = """
+select ?o ?f ?t
+{
+  _:r a sh:ValidationReport ;
+    sh:result ?o .
+  ?o sh:focusNode ?f .
+  bind( datatype(?f) == dt:triple as ?t)
+}
+"""
+
+GET_CUSTOM_CRITERION_DATA = """
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+select ?tc ?identifier ?title ?description where {
+    ?tc a earl:TestCriterion ;
+        dcterms:identifier ?identifier ;
+        dcterms:title ?title ;
+        dcterms:description ?description
+}
+"""
+
+GET_SHAPE_DESCRIPTION = """
+construct {
+  ?s ?p ?o
+}
+where {
+  ?s ?p ?o
+  filter not exists {
+    ?s a earl:TestCriterion
+  }
+}
+"""
+
+GET_CRITERION_VALIDITY = """
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+
+select 
+  ?identifier
+  ?unique_criterion
+	?good_prefix
+	?title_cardinality_check
+	?title_type_check
+	?description_cardinality_check
+	?description_type_check
+	?identifier_cardinality_check
+	?identifier_type_check
+	?identifier_format_check
+	 where {
+  {
+    select distinct ?criterion (count(?criterion) as ?criterion_number) {
+      ?criterion a earl:TestCriterion .
+    }
+  }
+
+  {
+    select ?identifier (count(?identifier) as ?nidentifier) where {
+      ?criterion dcterms:identifier ?identifier
+    }
+  }
+
+  {
+    select ?title (count(?title) as ?ntitle) where {
+      ?criterion dcterms:title ?title
+    }
+  }
+
+  {
+    select ?description (count(?description) as ?ndescription) where {
+      ?criterion dcterms:description ?description
+    }
+  }
+
+  bind(?criterion_number == 1 as ?unique_criterion)
+  bind(strstarts(?criterion, "FILE_URI") as ?good_prefix)
+  bind(?ntitle == 1 as ?title_cardinality_check)
+  bind(?ndescription == 1 as ?description_cardinality_check)
+  bind(?nidentifier == 1 as ?identifier_cardinality_check)
+  bind(isliteral(?title) as ?title_type_check)
+  bind(isliteral(?description) as ?description_type_check)
+  bind(isliteral(?identifier) as ?identifier_type_check)
+  bind(regex(?identifier, "^([a-z]+(-[a-z]+)*){1}$") as ?identifier_format_check)
 }
 """
 

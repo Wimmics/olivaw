@@ -34,7 +34,9 @@ from olivaw.constants import (
     LITERAL_CUTTING_LENGTH,
     USECASES_URL,
     SKIPPED_ERRORS,
-    SKIPPED_TESTS
+    SKIPPED_TESTS,
+    URI_FORMAT,
+    BLOCKING_ERRORS
 )
 
 def statement(self, subject, *po):
@@ -223,18 +225,36 @@ def short_subject_part(part):
     return part
 
 def extractTriples(isolated_graph, searched_entity):
-    predicates_objects = [line for line in isolated_graph.predicate_objects(subject=searched_entity)]
+    triples = [
+        (searched_entity, predicate, object)
+        for predicate, object 
+        in isolated_graph.predicate_objects(subject=searched_entity)
+    ]
 
-    if len(predicates_objects) == 0:
+    if len(triples) == 0:
+        if isinstance(searched_entity, BNode):
+            return []
+        
+        triples = [
+            (subject, predicate, searched_entity)
+            for subject, predicate
+            in isolated_graph.subject_predicates(object=searched_entity)
+        ]
+
+    if len(triples) == 0:
+        triples = [
+            (subject, searched_entity, object)
+            for subject, object
+            in isolated_graph.subject_objects(predicate=searched_entity)
+        ]
+
+    if len(triples) == 0:
         return searched_entity
-    
-    all_triples = [(searched_entity, line[0], line[1]) for line in predicates_objects]
 
     blank_nodes = [
-        node
-        for line in predicates_objects
-        for node in line
-        if isinstance(node, BNode)
+        triple[-1]
+        for triple in triples
+        if isinstance(triple[-1], BNode)
     ]
 
     new_triples = [
@@ -245,7 +265,7 @@ def extractTriples(isolated_graph, searched_entity):
         for triple in triple_group
     ]
 
-    return all_triples + new_triples
+    return triples + new_triples
 
 def load_subject(report, subject):
     isolated_graph = Graph()
@@ -286,9 +306,19 @@ def shorten_literals(triples):
             parsed_triples.append(targetTriple)
     return parsed_triples
 
+def html_special_chars(text):
+    return text\
+        .replace("<", "&#60;")\
+        .replace("_", "&lowbar;")\
+        .replace("^", "&Hat;")\
+        .replace("    ", "&nbsp;&nbsp;&nbsp;&nbsp;")\
+        .replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;")\
+        .replace("\n", "<br/>")\
+        .strip()
+
 def parse_statement_for_html(statement, is_literal=False):
     statement = [
-        line.strip().replace("<", "&#60;").replace("_", "&lowbar;")
+        html_special_chars(line)
         for line in statement.split("\n")
         if len(line.strip()) > 0
     ]
@@ -368,7 +398,6 @@ def make_pointer(report, subject, pointer_string):
 
     if statement_subject[0] == "<" and not is_statement and \
         pointer_string[1:].startswith(str(ONTOLOGY_NAMESPACE)):
-        
         pointer = extract_statement(report, subject, URIRef(statement_subject[1:-1]))
     elif statement_subject[0] == '"':
         pointer = Literal(parse_statement_for_html(pointer_string.strip()[1:-1], is_literal=True))
@@ -399,15 +428,22 @@ def make_outcome(
     if error in SKIPPED_ERRORS or criterion in SKIPPED_TESTS:
         return None
     
-    outcome_ressources = TEST_RESOURCES[criterion]["errors"][error][outcome_type]
-    outcome_title = outcome_ressources["title"]
-    outcome_description = description if len(description) > 0 else outcome_ressources["description"]
+    test_name = criterion.split('/')[-1].split('#')[0]
+    test_name = '.'.join(test_name.split('.')[:-1])
+    outcome_title = f"Test {test_name} passed" if outcome_type == "Pass" else f"Error on custom test {test_name}"
+    outcome_description = f"The custom test {test_name} passed" if outcome_type == "Pass" else f"Error occured while running custom test {test_name}"
+    
+    if criterion in TEST_RESOURCES:
+        outcome_ressources = TEST_RESOURCES[criterion]["errors"][error][outcome_type]
+        outcome_title = outcome_ressources["title"]
+        outcome_description = description if len(description) > 0 else outcome_ressources["description"]
+    
     parsed_pointers = [make_pointer(report, subject, pointer) for pointer in pointers if len(pointer) > 0]
     outcome_type_namespace = OLIVAW_EARL_NAMESPACE if outcome_type.endswith("Fail") else EARL_NAMESPACE
     outcome_statement = [
         (RDF.type, outcome_type_namespace[outcome_type]),
         (DCTERMS.title, Literal(outcome_title, lang="en")),
-        (DCTERMS.description, Literal(outcome_description, lang="en"))
+        (DCTERMS.description, Literal(html_special_chars(outcome_description), lang="en"))
     ]
     outcome_statement += [(RDFS.seeAlso, pointer) for pointer in parsed_pointers]
 
@@ -433,7 +469,8 @@ def make_outcomes(
     if error in SKIPPED_ERRORS:
         return []
 
-    outcome_ressources = TEST_RESOURCES[criterion]["errors"][error]
+    outcome_ressources = TEST_RESOURCES[criterion]["errors"][error] if len(URI_FORMAT.findall(criterion)) == 0 else None
+
     if len(messages) == 0:
         if skip_pass:
             return []
@@ -444,12 +481,12 @@ def make_outcomes(
                 criterion,
                 error,
                 "Pass",
-                description=outcome_ressources["Pass"]["description"]
+                description=outcome_ressources["Pass"]["description"] if not outcome_ressources is None else None 
             )
         ]
     else:
         if outcome_type is None:
-            outcome_type = "MajorFail" if outcome_ressources["blocking"] else "MinorFail"
+            outcome_type = "MajorFail" if error in BLOCKING_ERRORS else "MinorFail"
         outcomes = [
             make_outcome(
                 report,
@@ -504,11 +541,15 @@ def assemble_assertion(
     if result is None:
         return
     
+    criterion = URIRef(criterion) \
+                if len(URI_FORMAT.findall(criterion)) > 0 else \
+                OLIVAW_EARL_NAMESPACE[criterion]
+    
     statement = [
         (RDF.type, EARL_NAMESPACE.Assertion),
         (EARL_NAMESPACE.assertedBy, assertor),
         (EARL_NAMESPACE.subject, subject),
-        (EARL_NAMESPACE.test, OLIVAW_EARL_NAMESPACE[criterion]),
+        (EARL_NAMESPACE.test, criterion),
         (EARL_NAMESPACE.result, result),
     ]
 

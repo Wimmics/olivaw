@@ -49,6 +49,8 @@ REPO_NAME = REPO_URI.split('/')[-1]
 # Base reporitory platform URL
 PLATFORM_URL = "/".join(REPO_URI.split("/")[:-2])
 
+REPO_REF = REPO_URI[len(PLATFORM_URL) + 1:]
+
 # The current branch
 arg_branch = [item.split("=")[1] for item in argv if item.startswith("--BRANCH=")]
 
@@ -104,9 +106,20 @@ else:
   except:
     DEV_USERNAME = None
 
-
-ACIMOV_MODEL_TEST_URI = f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/olivaw-earl.ttl"
 # URL prefix for the files in the current branch in src
 SRC_URL = f"{REPO_URI}/blob/{BRANCH}/src/"
 DOMAINS_URL = SRC_URL.replace("src", "domains")
 USECASES_URL = SRC_URL.replace("src", "use-cases")
+
+OLIVAW_REF = "Wimmics/olivaw"
+
+SHAPE_BASE_URIS = None
+
+OLIVAW_EARL_DATASET = "https://raw.githubusercontent.com/Wimmics/olivaw/main/olivaw/test/olivaw-earl.ttl#"
+
+GIT_RAW = "https://raw.githubusercontent.com"
+
+try:
+  SHAPE_BASE_URIS = f"{GIT_RAW}/{'/'.join(REPO_URI.split('/')[-2:])}/{BRANCH}/.acimov/custom-tests/"
+except:
+  pass

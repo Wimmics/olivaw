@@ -26,7 +26,8 @@ from olivaw.constants import (
     NOT_LABELED,
     SKIPPED_TESTS,
     SKIPPED_FILES,
-    MODE
+    MODE,
+    CUSTOM_MODEL_TESTS
 )
 
 from olivaw.test.turtle import (
@@ -38,6 +39,12 @@ from olivaw.test.turtle import (
     make_result
 )
 
+from olivaw.test.generic.shacl import (
+    custom_test,
+    load_valid_custom_tests
+)
+
+shape_tests = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
 
 def group_terms_by_module(modelet):
     """Get all the triples that has a subject included in the ontology.
@@ -105,16 +112,25 @@ def profile_check(
         raw_message = engine.getMessage()
         engine.setMessage("")
         error_id = f"{decidability_level.lower().replace('_', '-')}-profile-error"
-        messages, pointers = [], []
+        distinct_messages, grouped_pointers = [], []
         if not compatible:
             messages, pointers = profile_errors(raw_message)
+            distinct_messages = list(set(messages))
+            grouped_pointers = [
+                [
+                    pointers[i][0]
+                    for i in range(len(pointers))
+                    if messages[i] == message
+                ]
+                for message in distinct_messages
+            ]
         results += make_outcomes(
             report,
             subject,
             "profile-compatibility",
             error_id,
-            messages,
-            pointers=pointers,
+            distinct_messages,
+            pointers=grouped_pointers,
             skip_pass=skip_pass
         )
     
@@ -221,6 +237,16 @@ def fragment_check(
         fragment_no_owl,
         skip,
         skip_pass=skip_pass
+    )
+
+    custom_test(
+        report,
+        assertor,
+        subject,
+        fragment_no_owl,
+        shape_tests,
+        skip_pass=skip_pass,
+        tested_only=tested_only
     )
     
     return False
@@ -385,11 +411,8 @@ def best_practices_test(
     # Check for terms not linked to an ontology
     if not "term-referencing" in skipped_best_practice:
         unlinked_subjects = query_graph(fragment_no_owl, NOT_REFERENCED)
-        unlinked_subjects_pointers = [[pointer] for pointer in unlinked_subjects]
-        unlinked_subject_messages = [
-            f"Subject :{item[len(ONTOLOGY_URL)+1:-1]} not linked to a module by a rdfs:isDefinedBy property"
-            for item in unlinked_subjects
-        ]
+        unlinked_subjects_pointers = [[pointer for pointer in unlinked_subjects]] if len(unlinked_subjects) else []
+        unlinked_subject_messages = [f"Subject terms not linked to a module by a rdfs:isDefinedBy property"] if len(unlinked_subjects) else []
         make_assertion(
             report,
             assertor,
@@ -403,16 +426,15 @@ def best_practices_test(
     
     if not "domain-and-range-referencing" in skipped_best_practice:
         # Checking for domain property out of the vocabulary
-        dov = query_graph(fragment_wih_import, DOMAIN_OUT_Of_VOCABULARY)
+        dov = query_graph(fragment_no_import, DOMAIN_OUT_Of_VOCABULARY)
         dov = [line.split("\t") for line in dov]
         dov_messages = [
             f"The property :{item[0][1:-1]} has a domain out of the ontology: {item[1]}"
             for item in dov
         ]
-        dov_pointers = [
-            [f"<{ONTOLOGY_URL}{item[0][1:-1]}>", item[1]]
-            for item in dov
-        ]
+        dov_pointers = [[f"<{ONTOLOGY_URL}{item[0][1:-1]}>" for item in dov]]
+        dov_pointers = dov_pointers if len(dov_pointers[0]) > 0 else []
+
         make_assertion(
             report,
             assertor,
@@ -425,16 +447,11 @@ def best_practices_test(
         )
 
         # Checking for range property out of the vocabulary
-        rov = query_graph(fragment_wih_import, RANGE_OUT_OF_VOCABULARY)
+        rov = query_graph(fragment_no_import, RANGE_OUT_OF_VOCABULARY)
         rov = [line.split("\t") for line in rov]
-        rov_messages = [
-            f"The property :{item[0][1:-1]} has a range out of the ontology: {item[1]}"
-            for item in rov
-        ]
-        rov_pointers = [
-            [f"<{ONTOLOGY_URL}{item[0][1:-1]}>", item[1]]
-            for item in rov
-        ]
+        rov_messages = ["Some properties have a range out of the ontology"] if len(rov) > 0 else []
+        rov_pointers = [[f"<{ONTOLOGY_URL}{item[0][1:-1]}>" for item in rov]]
+        rov_pointers = rov_pointers if len(rov_pointers[0]) > 0 else [] 
         make_assertion(
             report,
             assertor,
@@ -448,9 +465,22 @@ def best_practices_test(
 
     # Checking for too close terms
     if not "terms-differenciation" in skipped_best_practice:
-        term_pairs = query_graph(fragment_no_import, GET_TERM_PAIRS)
-        term_pairs = [[item.strip()[1:-1] for item in line.split("\t")] for line in term_pairs]
+        term_pairs = query_graph(fragment_no_owl, GET_TERM_PAIRS)
+        term_pairs = [[
+                f"<{ONTOLOGY_URL}{item.strip()[1:-1]}>"
+                for item in line.split("\t")
+            ]
+            for line in term_pairs
+        ]
         term_pairs = [pair for pair in term_pairs if levenshtein(*pair) < TERM_DISTANCE_THRESHOLD]
+        term_pairs = [[
+            pair_item
+            for pair in term_pairs
+            for pair_item in pair
+        ]]
+        term_pairs = [] if len(term_pairs[0]) == 0 else term_pairs
+        
+        messages = ["Some terms are too similar"] if len(term_pairs) > 0 else []
 
         make_assertion(
             report,
@@ -458,15 +488,20 @@ def best_practices_test(
             subject,
             "terms-differenciation",
             "too-close-terms",
-            [f"The following terms are too similar: :{line[0]} and :{line[1]}" for line in term_pairs],
-            [[f"<{ONTOLOGY_URL}{item}>" for item in line] for line in term_pairs],
+            messages,
+            pointers=term_pairs,
             skip_pass=skip_pass
         )
     
     if not "labeled-terms" in skipped_best_practice:
         not_labeled_terms = query_graph(fragment_no_owl, NOT_LABELED)
-        not_labeled_pointers = [[f"<{ONTOLOGY_URL}{line.strip()[1:-1]}>"] for line in not_labeled_terms if len(line.strip()) > 0]
-        not_labeled_messages = [f"The term :{pointer[0].split(ONTOLOGY_SEPARATOR)[-1][:-1]} has no rdfs:label to define it in natural language" for pointer in not_labeled_pointers]
+        not_labeled_pointers = [[
+            f"<{ONTOLOGY_URL}{line.strip()[1:-1]}>"
+            for line in not_labeled_terms
+            if len(line.strip()) > 0
+        ]]
+        not_labeled_pointers = [] if len(not_labeled_pointers[0]) == 0 else not_labeled_pointers
+        not_labeled_messages = [f"The following terms have no rdfs:label to define it in natural language"] if len(not_labeled_pointers) > 0 else []
         make_assertion(
             report,
             assertor,

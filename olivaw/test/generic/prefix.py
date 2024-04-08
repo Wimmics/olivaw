@@ -5,7 +5,8 @@ from olivaw.constants import (
     GET_URIS,
     make_index,
     GET_PREFIX_USAGE,
-    DATASETS
+    DATASETS,
+    SKIPPED_TESTS
 )
 
 from olivaw.test.corese import (
@@ -53,6 +54,9 @@ def prefix_test(
     get_prefix_usage,
     skip_pass=False
 ):
+    if "prefix-validity" in SKIPPED_TESTS:
+        return
+    
     prefixes = list(set([get_prefix_suffix(uri)[0] for uri in uris]))
 
     datasets_prefixes = [
