@@ -30,7 +30,7 @@ def main(files: Sequence[str] | None = None):
         return 0
 
     paths = [
-        relpath(file, PWD_TO_ROOT_FOLDER)
+        (file, relpath(file, PWD_TO_ROOT_FOLDER))
         for file in files
         if exists(file)
     ]
@@ -38,7 +38,7 @@ def main(files: Sequence[str] | None = None):
     if len(files) == 0:
         return 0
 
-    for abs_file_path, rel_file_path in zip(files, paths):
+    for abs_file_path, rel_file_path in paths:
 
         if rel_file_path.startswith(f"src{sep}"):
             sorted_files["model"][modules_tests].append(abs_file_path)
