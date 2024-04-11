@@ -115,7 +115,7 @@ def main(files: Sequence[str] | None = None):
         #if error["criterion"].startswith(str(OLIVAW_EARL_DATASET)):
         criterion_title, criterion_description = [
             (str(title), str(description))
-            for title, description in olivaw_earl_graph.query(GET_CRITERION_SUMMARY.replace("CRITERION", f"<{error["criterion"]}>"))
+            for title, description in olivaw_earl_graph.query(GET_CRITERION_SUMMARY.replace("CRITERION", f"<{error['criterion']}>"))
         ][0]
 
         error["criterion_title"] = criterion_title
