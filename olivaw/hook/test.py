@@ -3,15 +3,16 @@
 from typing import Sequence
 from pre_commit import output
 from rdflib import Graph
-from rdflib.namespace import DCTERMS
 from os.path import sep, relpath, exists
 
-from olivaw.constants import PWD_TO_ROOT_FOLDER, GET_MAJOR_FAILS, OLIVAW_EARL_DATASET, PWD_TO_MODEL_TEST_ONTO, EARL_NAMESPACE, GET_CRITERION_SUMMARY
-from olivaw.test.corese import safe_load, check_OWL_constraints
+from olivaw.constants import PWD_TO_ROOT_FOLDER, GET_MAJOR_FAILS, OLIVAW_EARL_DATASET, PWD_TO_MODEL_TEST_ONTO, GET_CRITERION_SUMMARY
+from olivaw.test.corese import safe_load, query_graph, export_graph
 from olivaw.test.turtle import prepare_graph, make_assertor
 
 from olivaw.test.model.testing import modules_tests, modelets_tests
+from olivaw.test.model.testing import shape_tests as model_shape_tests
 from olivaw.test.data.testing import data_tests
+from olivaw.test.data.testing import shape_tests as data_shape_tests
 from olivaw.test.query.testing import question_tests
 
 sorted_files = {
@@ -29,8 +30,11 @@ sorted_files = {
 
 olivaw_earl_graph = Graph()
 olivaw_earl_graph.parse(PWD_TO_MODEL_TEST_ONTO)
-olivaw_earl_graph.bind("earl", EARL_NAMESPACE)
-olivaw_earl_graph.bind("dcterms", DCTERMS)
+
+custom_tests_base = [export_graph(graph) for graph in model_shape_tests] + [export_graph(graph) for graph in data_shape_tests]
+custom_tests_base = "\n".join(custom_tests_base)
+custom_tests = Graph()
+custom_tests.parse(data=custom_tests_base, format="ttl")
 
 def main(files: Sequence[str] | None = None):
     if files is None:
@@ -112,10 +116,14 @@ def main(files: Sequence[str] | None = None):
         ]
 
     for error in errors:
-        #if error["criterion"].startswith(str(OLIVAW_EARL_DATASET)):
+        standard_criterion = error["criterion"].startswith(str(OLIVAW_EARL_DATASET))
         criterion_title, criterion_description = [
             (str(title), str(description))
-            for title, description in olivaw_earl_graph.query(GET_CRITERION_SUMMARY.replace("CRITERION", f"<{error['criterion']}>"))
+            for title, description in (
+                olivaw_earl_graph
+                if standard_criterion
+                else custom_tests
+            ).query(GET_CRITERION_SUMMARY.replace("CRITERION", f"<{error['criterion']}>"))
         ][0]
 
         error["criterion_title"] = criterion_title

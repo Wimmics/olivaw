@@ -510,7 +510,7 @@ select ?subject_title ?criterion ?error_title ?error_description  where {
 ?result a earl:TestResult ;
     earl:outcome ?outcome .
 
-?outcome a olivaw-earl:MajorFail ;
+?outcome a olivaw-earl:MinorFail ;
     dcterms:title ?error_title ;
     dcterms:description ?error_description .
 }
@@ -518,9 +518,9 @@ select ?subject_title ?criterion ?error_title ?error_description  where {
 
 GET_CRITERION_SUMMARY = """
 select ?title ?description where {
-  CRITERION a earl:TestCriterion ;
-    dcterms:title ?title ;
-    dcterms:description ?description
+  CRITERION a <http://www.w3.org/ns/earl#TestCriterion> ;
+    <http://purl.org/dc/terms/title> ?title ;
+    <http://purl.org/dc/terms/description> ?description
 }
 """
 
