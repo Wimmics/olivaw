@@ -52,12 +52,12 @@ def main(files: Sequence[str] | None = None):
 
             else:
                 output.write_line(f"Unprocessable file: {abs_file_path}")
-                return 1
+
         elif rel_file_path.startswith(f"use-cases{sep}"):
             sorted_files["data"][data_tests].append(abs_file_path)
+
         else:
             output.write_line(f"Unprocessable file: {abs_file_path}")
-            return 1
         
     errors = []
         

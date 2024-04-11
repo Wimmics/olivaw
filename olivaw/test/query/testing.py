@@ -3,7 +3,7 @@ from os.path import relpath, sep
 
 from olivaw.test.corese import Graph, QueryProcess
 from olivaw.test.turtle import make_assertion, make_subject, make_not_tested
-from olivaw.constants import PWD_TO_ROOT_FOLDER, SKIPPED_TESTS, MODE
+from olivaw.constants import PWD_TO_ROOT_FOLDER, SKIPPED_TESTS, QUIET
 
 from olivaw.test.query.uris import retrieveURIFromQuery
 
@@ -17,7 +17,7 @@ def question_tests(
     skip_pass=False,
     tested_only=False
 ):
-    for query in tqdm(glob_path, disable=MODE=="actions"):
+    for query in tqdm(glob_path, disable=QUIET):
         test_competency_question(report, assertor, query, skip_pass=skip_pass, tested_only=tested_only)
 
 def test_competency_question(

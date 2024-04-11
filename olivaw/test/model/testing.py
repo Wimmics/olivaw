@@ -26,7 +26,7 @@ from olivaw.constants import (
     NOT_LABELED,
     SKIPPED_TESTS,
     SKIPPED_FILES,
-    MODE,
+    QUIET,
     CUSTOM_MODEL_TESTS,
     MODULES_TTL_GLOB_PATH,
     GET_DECLARED_ONTOLOGIES,
@@ -282,7 +282,7 @@ def modules_tests(
     
     unsafe_modules = []
 
-    for module in tqdm(modules, disable=MODE=="actions"):
+    for module in tqdm(modules, disable=QUIET):
         module_key = relpath(module, PWD_TO_ROOT_FOLDER).replace(sep, "/")
         subject = make_subject(report, [module_key])
         load_error = fragment_check(
@@ -322,7 +322,7 @@ def modelets_tests(
 
     unsafe_modelets = []
 
-    for modelet in tqdm(modelets, disable=MODE=="actions"):
+    for modelet in tqdm(modelets, disable=QUIET):
         if "template" in modelet:
             continue
 

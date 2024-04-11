@@ -32,6 +32,19 @@ try:
 except:
   pass
 
+modes = [
+  item.split('=')[1]
+  for item in COMMAND
+  if item.startswith("--mode=")
+]
+
+MODE = modes[0] if len(modes) > 0 else "manual"
+
+ACTIONS = MODE == "actions"
+PRECOMMIT = MODE == "precommit"
+
+QUIET = ACTIONS or PRECOMMIT
+
 TEST_RESOURCES = None
 with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}tests-resources.json", "r") as f:
   TEST_RESOURCES = load(f)

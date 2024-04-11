@@ -18,12 +18,12 @@ from olivaw.constants import (
     ONTOLOGY_SEPARATOR,
     CORESE_LOCAL_PATH,
     PWD_TO_ROOT_FOLDER,
-    MODE,
+    QUIET,
     URI_FORMAT
 )
 
 def print_title(title):
-    if MODE == "actions":
+    if QUIET:
         return
     title = "== " + title + " =="
     border = "=" * len(title)
@@ -33,7 +33,7 @@ def print_title(title):
     print(border)
 
 def smartPrint(message):
-    if MODE == "actions":
+    if QUIET:
         return
     print(message)
 

@@ -14,8 +14,7 @@ from .testing import question_tests
 from olivaw.constants import (
     DEV_USERNAME,
     PWD_TO_OUTPUT_FOLDER,
-    COMPETENCY_QUESTIONS_GLOB_PATH,
-    MODE
+    COMPETENCY_QUESTIONS_GLOB_PATH
 )
 
 def datetime_id():

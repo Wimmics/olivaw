@@ -27,7 +27,7 @@ from olivaw.constants import (
     GET_PREFIX_USAGE,
     ONTOLOGY_URL,
     SKIPPED_TESTS,
-    MODE,
+    QUIET,
     DATASETS,
     CUSTOM_DATA_TESTS
 )
@@ -151,7 +151,7 @@ def get_ontology_terms(fragments):
 
 def data_tests(glob_path, report, assertor, skip_pass, tested_only):
 
-    for dataset in tqdm(glob_path, disable=MODE=="actions"):
+    for dataset in tqdm(glob_path, disable=QUIET):
         fragment_check(
             report,
             assertor,
