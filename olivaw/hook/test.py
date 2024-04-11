@@ -35,19 +35,25 @@ def main(files: Sequence[str] | None = None):
     ]
 
     for abs_file_path, rel_file_path in zip(files, paths):
+
         if rel_file_path.startswith(f"src{sep}"):
             sorted_files["model"][modules_tests].append(abs_file_path)
+
         elif rel_file_path.startswith(f"domains{sep}"):
+
             if rel_file_path.endswith(f"{sep}onto.ttl"):
                 sorted_files["model"][modelets_tests].append(abs_file_path)
+
             elif rel_file_path.endswith(f"{sep}dataset.ttl"):
                 sorted_files["data"][data_tests].append(abs_file_path)
+
             elif rel_file_path.endswith(".rq"):
                 sorted_files["query"][question_tests].append(abs_file_path)
+
             else:
                 output.write_line(f"Unprocessable file: {abs_file_path}")
                 return 1
-        elif rel_file_path.startswith(f"domains{sep}"):
+        elif rel_file_path.startswith(f"use-cases{sep}"):
             sorted_files["data"][data_tests].append(abs_file_path)
         else:
             output.write_line(f"Unprocessable file: {abs_file_path}")
