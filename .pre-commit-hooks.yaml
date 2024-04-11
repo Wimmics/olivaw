@@ -5,5 +5,5 @@
     require_serial: true
     language: python
     additional_dependencies: ['-r', 'requirements-precommit.txt']
-    files: \.ttl$
+    files: \.ttl$|\.rq$
     stages: [commit, push, manual]
