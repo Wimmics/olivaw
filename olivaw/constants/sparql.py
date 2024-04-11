@@ -518,7 +518,7 @@ select ?subject_title ?criterion ?error_title ?error_description  where {
 
 GET_CRITERION_SUMMARY = """
 select ?title ?description where {
-  CRITERION a earl:Testriterion ;
+  CRITERION a earl:TestCriterion ;
     dcterms:title ?title ;
     dcterms:description ?description
 }
