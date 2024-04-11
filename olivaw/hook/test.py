@@ -2,7 +2,7 @@
 
 from typing import Sequence
 from pre_commit import output
-from os.path import sep, relpath
+from os.path import sep, relpath, exists
 
 from olivaw.constants import PWD_TO_ROOT_FOLDER, GET_MAJOR_FAILS
 from olivaw.test.corese import safe_load, check_OWL_constraints
@@ -26,13 +26,17 @@ sorted_files = {
 }
 
 def main(files: Sequence[str] | None = None):
-    if files is None or len(files) == 0:
+    if files is None:
         return 0
 
     paths = [
         relpath(file, PWD_TO_ROOT_FOLDER)
         for file in files
+        if exists(file)
     ]
+
+    if len(files) == 0:
+        return 0
 
     for abs_file_path, rel_file_path in zip(files, paths):
 

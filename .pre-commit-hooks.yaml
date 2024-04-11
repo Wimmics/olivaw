@@ -2,7 +2,7 @@
     name: Check project fragment
     description: Make a syntax and OWL constraint violation test on the fragments
     entry: olivaw test precommit
-    args: [--MODE=precommit]
+    args: [--mode=precommit]
     require_serial: true
     language: python
     additional_dependencies: ['-r', 'requirements-precommit.txt']
