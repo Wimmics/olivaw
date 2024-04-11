@@ -122,15 +122,12 @@ def main(files: Sequence[str] | None = None):
         error["criterion_description"] = criterion_description
 
     for error in errors:
-        output.write_line("Error:")
+        output.write_line("\nError:")
         output.write_line(f"\tSubject: {error['subject_title']}")
-        output.write(" ")
-        output.write_line(f"\tCriterion title: {error['criterion_title']}")
+        output.write_line(f"\n\tCriterion title: {error['criterion_title']}")
         output.write_line(f"\tCriterion description: {error['criterion_description']}")
-        output.write(" ")
-        output.write_line(f"\tError title: {error['error_title']}")
+        output.write_line(f"\n\tError title: {error['error_title']}")
         output.write_line(f"\tError description: {error['error_description']}")
-        output.write_line(" ")
     
     return int(len(errors) > 0)
 
