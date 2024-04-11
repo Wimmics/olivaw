@@ -123,7 +123,12 @@ def main(files: Sequence[str] | None = None):
                 olivaw_earl_graph
                 if standard_criterion
                 else custom_tests
-            ).query(GET_CRITERION_SUMMARY.replace("CRITERION", f"<{error['criterion']}>"))
+            ).query(
+                GET_CRITERION_SUMMARY.replace(
+                    "CRITERION",
+                    f"<{error['criterion']}>"
+                )
+            )
         ][0]
 
         error["criterion_title"] = criterion_title

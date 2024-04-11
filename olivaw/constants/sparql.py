@@ -510,7 +510,7 @@ select ?subject_title ?criterion ?error_title ?error_description  where {
 ?result a earl:TestResult ;
     earl:outcome ?outcome .
 
-?outcome a olivaw-earl:MinorFail ;
+?outcome a olivaw-earl:MajorFail ;
     dcterms:title ?error_title ;
     dcterms:description ?error_description .
 }
