@@ -43,7 +43,10 @@ else:
     .decode('utf-8')\
     .strip()
   except:
-    REPO_URI = None
+    pass
+
+if REPO_URI is None:
+  print('fatal: Command "git config --get remote.origin.url" should return the repository URI or argument "REPO_URI" should be set')
 
 if REPO_URI.endswith("/"):
   REPO_URI = REPO_URI[:-1]

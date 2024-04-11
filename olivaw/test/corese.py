@@ -188,6 +188,12 @@ corese_prefix_text = "\n".join(
     ]
 )
 
+def to_rdflib(graph):
+    content = f"{corese_prefix_text}\n{TripleFormat.create(graph).toString()}"
+    g = RdflibGraph()
+    g.parse(data=content, format="ttl")
+    return g
+
 def load(
         path: Union[str, List[str], Graph],
         extras: str="",
@@ -209,7 +215,7 @@ def load(
 
     if graph is None:
         graph = Graph()
-
+        
     if disable_owl:
         engine = RuleEngine.create(graph)
         engine.setProfile(RDFS)
@@ -389,6 +395,9 @@ def query_graph(graph, query, format=TEXT_TSV):
         result = result.split("\n")[1:-1]
 
     return result
+
+def export_graph(graph):
+    return  f"{corese_prefix_text}\n{TripleFormat.create(graph).toString()}"
 
 def check_OWL_constraints(graph):
     try:

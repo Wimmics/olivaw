@@ -7,6 +7,7 @@ def uri_test(
     subject,
     uris,
     get_uri_usage,
+    graph=None,
     skip_pass=False,
     tested_only=False
 ):
@@ -33,7 +34,8 @@ def uri_test(
         "uri-validity",
         "invalid-uri",
         messages,
-        pointers,
+        pointers=pointers,
+        graph=graph,
         skip_pass=skip_pass,
         tested_only=tested_only
     )

@@ -9,7 +9,7 @@ from olivaw.test.corese import print_title
 from olivaw.test.turtle import prepare_graph, make_assertor
 from olivaw.test.markdown import make_turtle_page
 
-from .testing import test_competency_question
+from .testing import question_tests
 
 from olivaw.constants import (
     DEV_USERNAME,
@@ -48,10 +48,13 @@ def test_query():
     )
 
     # MAKE QUERY TEST MAGIC HERE
-    queries = glob(COMPETENCY_QUESTIONS_GLOB_PATH)
-
-    for query in tqdm(queries, disable=MODE=="actions"):
-        test_competency_question(report, assertor, query)
+    question_tests(
+        COMPETENCY_QUESTIONS_GLOB_PATH,
+        report,
+        assertor,
+        skip_pass=skip_pass,
+        tested_only=tested_only
+    )
 
     file_name = mode if not mode == "manual" else f"{mode}-{DEV_USERNAME}-{datetime_id()}"
     file_base = f"{PWD_TO_OUTPUT_FOLDER}query-test-{file_name}"

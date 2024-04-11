@@ -67,7 +67,7 @@ def test_model():
     print_title("Checking existing modules")
     modules = [
         item
-        for item in glob(MODULES_TTL_GLOB_PATH)
+        for item in MODULES_TTL_GLOB_PATH
         if not abspath(item) in SKIPPED_FILES
     ]
 
@@ -76,7 +76,7 @@ def test_model():
     print_title("Checking modelets")
     modelets = [
         item
-        for item in glob(MODELETS_TTL_GLOB_PATH)
+        for item in MODELETS_TTL_GLOB_PATH
         if not abspath(item) in SKIPPED_FILES
     ]
     unsafe_modelets = modelets_tests(modelets, report, test_assertor, skip_pass=skip_pass, tested_only=tested_only)

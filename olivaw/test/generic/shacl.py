@@ -37,7 +37,7 @@ from rdflib.namespace import RDF, SH
 
 test_features = [
     "Custom test graph must have one and only one criterion",
-    "Criterion must be prefixed with the empty prefix : and empty prefix should be left non assigned",
+    "Criterion must be using relative paths and document base should be left non assigned",
     "Criterion must have one and only one dcterms:title property",
     "Criterion title must be a string",
     "Criterion must have one and only one dcterms:description property",
@@ -56,7 +56,7 @@ def file_to_uri(file):
 
 def complete_test_content(file):
     with open(file, "r") as shape_file:
-        return f"@prefix : <{file_to_uri(file)}> .\n{corese_prefix_text}\n{shape_file.read()}".replace("ONTOLOGY_URL", ONTOLOGY_URL)
+        return f"@base <{file_to_uri(file)}> .\n{corese_prefix_text}\n{shape_file.read()}".replace("ONTOLOGY_URL", ONTOLOGY_URL)
 
 def load_valid_custom_tests(files):
     custom_tests = []
@@ -160,15 +160,15 @@ def indent_violation(violation):
 
     return NEW_LINES.sub("\n", "\n".join(lines))
 
-def add_test_namespace(turtle, namespace):
+def add_base(turtle, namespace):
     escaped_namespace = re.escape(namespace)
     uri_format = re.compile(f"(<{escaped_namespace})([^>]*)(>)")
 
     for match in uri_format.findall(turtle):
         found = "".join(match)
-        turtle = turtle.replace(found, f":{match[1]}")
+        turtle = turtle.replace(found, f"<#{match[1]}>")
 
-    return f"@prefix : <{namespace}> .\n{turtle}"
+    return f"@base <{namespace}> .\n{turtle}"
 
 def parse_violation_focus(
     violation_summaries,
@@ -288,7 +288,7 @@ def custom_test(
         messages = [f"Violation of constraint in the custom test '{criterion_identifier}'"] if len(violation_uris) > 0 else []
 
         violation_summaries = [
-                add_test_namespace(
+                add_base(
                     indent_violation(
                         query_graph(
                             shacl_report,
@@ -307,15 +307,21 @@ def custom_test(
             violation_triples
         )
 
-        pointers = []
+        pointers = {}
 
         for summary, node in zip(violation_summaries, violation_nodes):
-            pointers.append(summary)
-            pointers.append(node)
+            if node in pointers:
+                pointers[node].append(summary)
+            else:
+                pointers[node] = [summary]
 
-        pointers = [pointers]
+        pointers = [
+            pointer
+            for node, summaries in pointers.items()
+            for pointer in summaries + [node]
+        ]
 
-        if len(pointers[0]) > 0:
+        if len(pointers) > 0:
             shape_content = TripleFormat.create(shape).toString()
             shape_content = f"{corese_prefix_text}\n{shape_content}"
             rdflib_shape = Graph()
@@ -326,9 +332,9 @@ def custom_test(
 
             shape_description = shape_description.serialize(format="ttl").decode()
 
-            shape_description = add_test_namespace(shape_description, criterion_namespace)
+            shape_description = add_base(shape_description, criterion_namespace)
 
-            pointers = [[shape_description] + pointers[0]]
+            pointers = [[shape_description] + pointers]
         else:
             pointers = []
 
@@ -342,6 +348,7 @@ def custom_test(
             f"{criterion_identifier}-error",
             messages,
             pointers=pointers,
+            graph=fragment_graph,
             skip_pass=skip_pass,
             tested_only=tested_only
         )

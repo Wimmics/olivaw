@@ -6,12 +6,13 @@ from codecs import open as copen
 
 from olivaw.constants import (
     DEV_USERNAME,
-    PWD_TO_OUTPUT_FOLDER
+    PWD_TO_OUTPUT_FOLDER,
+    DATASETS
 )
 
 from olivaw.test.corese import print_title
 from olivaw.test.markdown import make_turtle_page
-from olivaw.test.data.testing import data_fragment_test
+from olivaw.test.data.testing import data_tests
 from olivaw.test.turtle import (
     prepare_graph,
     make_assertor
@@ -48,7 +49,8 @@ def test_data():
     
     print_title("Running data tests")
 
-    data_fragment_test(
+    data_tests(
+        DATASETS,
         report,
         assertor,
         skip_pass,

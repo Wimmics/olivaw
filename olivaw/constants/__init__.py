@@ -1,5 +1,6 @@
 from json import load
 from sys import exit
+from glob import glob
 from os.path import sep, exists
 
 from .paths import *
@@ -107,6 +108,7 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
   NOT_LABELED = add_repo_variables(NOT_LABELED)
   GET_TERM_PAIRS = add_repo_variables(GET_TERM_PAIRS)
   GET_ONTOLOGY_TERMS = add_repo_variables(GET_ONTOLOGY_TERMS)
+  GET_IMPORTS = add_repo_variables(GET_IMPORTS)
 
   ONTOLOGY_NAMESPACE = Namespace(ONTOLOGY_URL)
 
@@ -121,10 +123,8 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
 
 MODEL_BEST_PRACTICES_TESTS = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]
 
-DATASETS = None
-from glob import glob
 DATASETS = [
   item
-  for item in glob(USE_CASES_TTL_GLOB_PATH) + glob(DATASETS_TTL_GLOB_PATH)
+  for item in USE_CASES_TTL_GLOB_PATH + DATASETS_TTL_GLOB_PATH
   if not abspath(item) in SKIPPED_FILES
 ]

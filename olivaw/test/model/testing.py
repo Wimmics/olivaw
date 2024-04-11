@@ -27,7 +27,10 @@ from olivaw.constants import (
     SKIPPED_TESTS,
     SKIPPED_FILES,
     MODE,
-    CUSTOM_MODEL_TESTS
+    CUSTOM_MODEL_TESTS,
+    MODULES_TTL_GLOB_PATH,
+    GET_DECLARED_ONTOLOGIES,
+    TRIPLES_FOR_MODULE
 )
 
 from olivaw.test.turtle import (
@@ -44,7 +47,23 @@ from olivaw.test.generic.shacl import (
     load_valid_custom_tests
 )
 
+from rdflib import Graph as RdflibGraph
+
 shape_tests = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
+ontologies = {}
+
+for module in MODULES_TTL_GLOB_PATH:
+    try:
+        g = RdflibGraph()
+        g.parse(module)
+        found_ontologies = [
+            str(ontology[0])
+            for ontology
+            in g.query(GET_DECLARED_ONTOLOGIES)
+        ]
+        ontologies = {**ontologies, **{ontology: module for ontology in found_ontologies}}
+    except:
+        continue
 
 def group_terms_by_module(modelet):
     """Get all the triples that has a subject included in the ontology.
@@ -53,27 +72,18 @@ def group_terms_by_module(modelet):
     :param modelet: Corese graph containing the modelet
     :returns: A dictionary of n3 for each module to be merged with the given n3
     """
-    tsv = query_graph(modelet, GET_BY_MODULE)
+    tsv = [
+        ontology
+        for ontology
+        in query_graph(modelet, GET_BY_MODULE)
+    ]
 
     grouped_triples = {}
 
     for line in tsv:
-        cut_line = line.split('\t')
-        module = cut_line[0][1:-1].split(ONTOLOGY_SEPARATOR)[-1]
-        triple = []
-
-        for element in cut_line[1:]:
-            uri = ""
-            # Resolve the URI if the element is prefixed
-            if not element[0] in ['<', '"', "'"]:
-                prefix = element.split(":")[0]
-                base_url = prefix_manager.getNamespace(prefix)
-                uri = f"<{base_url}{element[len(prefix)+1:]}>"
-            else:
-                uri = element
-            triple.append(uri)
-
-        triple = " ".join(triple) + " ."
+        module = line[1:-1]
+        triple = query_graph(modelet, TRIPLES_FOR_MODULE.replace("MODULE", line))
+        triple = "\n".join(triple)
 
         if not module in grouped_triples:
             grouped_triples[module] = triple
@@ -124,6 +134,7 @@ def profile_check(
                 ]
                 for message in distinct_messages
             ]
+
         results += make_outcomes(
             report,
             subject,
@@ -159,6 +170,7 @@ def profile_check(
             "owl-rl-constraint",
             "owl-rl-constraint-violation",
             check_OWL_constraints(fragment),
+            graph=fragment,
             skip_pass=skip_pass,
             tested_only=not_tested
         )
@@ -343,8 +355,8 @@ def modelets_tests(
         moduled_triples = group_terms_by_module(alone_no_owl)
 
         for module in moduled_triples.keys():
-            module_key = f"src/{module}.ttl"
-            module_path = f"{PWD_TO_ROOT_FOLDER}{module_key}"
+            module_key = f"src/{module[len(ONTOLOGY_URL):]}.ttl"
+            module_path = ontologies[module]
 
             if abspath(module_path) in SKIPPED_FILES:
                 continue
@@ -420,7 +432,8 @@ def best_practices_test(
             "term-referencing",
             "no-reference-module",
             unlinked_subject_messages,
-            unlinked_subjects_pointers,
+            pointers=unlinked_subjects_pointers,
+            graph=fragment_no_owl,
             skip_pass=skip_pass
         )
     
@@ -442,7 +455,8 @@ def best_practices_test(
             "domain-and-range-referencing",
             "domain-out-of-vocabulary",
             dov_messages,
-            dov_pointers,
+            pointers=dov_pointers,
+            graph=fragment_no_import,
             skip_pass=skip_pass
         )
 
@@ -459,7 +473,8 @@ def best_practices_test(
             "domain-and-range-referencing",
             "range-out-of-vocabulary",
             rov_messages,
-            rov_pointers,
+            pointers=rov_pointers,
+            graph=fragment_no_import,
             skip_pass=skip_pass
         )
 
@@ -490,6 +505,7 @@ def best_practices_test(
             "too-close-terms",
             messages,
             pointers=term_pairs,
+            graph=fragment_no_owl,
             skip_pass=skip_pass
         )
     
@@ -510,6 +526,7 @@ def best_practices_test(
             "not-labeled-term",
             not_labeled_messages,
             pointers=not_labeled_pointers,
+            graph=fragment_no_owl,
             skip_pass=skip_pass
         )
 

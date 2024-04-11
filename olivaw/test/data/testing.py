@@ -92,6 +92,7 @@ def fragment_check(
             "owl-rl-constraint",
             "owl-rl-constraint-violation",
             constraint_violations,
+            graph=graph_with_import,
             skip_pass=skip_pass,
             tested_only=tested_only
         )
@@ -148,9 +149,9 @@ def get_ontology_terms(fragments):
 
     return terms
 
-def data_fragment_test(report, assertor, skip_pass, tested_only):
+def data_tests(glob_path, report, assertor, skip_pass, tested_only):
 
-    for dataset in tqdm(DATASETS, disable=MODE=="actions"):
+    for dataset in tqdm(glob_path, disable=MODE=="actions"):
         fragment_check(
             report,
             assertor,
@@ -171,24 +172,27 @@ def best_practices(
     ):
 
     if not "term-recognition" in SKIPPED_TESTS:
-        modules = glob(MODULES_TTL_GLOB_PATH)
-        ontology_terms = list(set([term for _, term in get_ontology_terms(modules)]))
+        ontology_terms = list(set([term for _, term in get_ontology_terms(MODULES_TTL_GLOB_PATH)]))
 
         fragment_terms = query_graph(graph_rl, GET_ONTOLOGY_TERMS)
         fragment_terms = [term[1:-1] for term in fragment_terms if len(term[1:-1]) > 0]
 
         unknown_terms = [term for term in fragment_terms if not term in ontology_terms]
-        messages = [f'The term "{term}" was used in the fragment but not defined in the ontology' for term in unknown_terms]
-        pointers = [
-            [
+        messages = [
+            'Some fragment terms are in ontology namespace but not defined in ontology'
+        ] if len(unknown_terms) > 0 else []
+
+        pointers = [[
+            item
+            for term in unknown_terms
+            for item in [
                 query_graph(
                     graph_rl,
                     GET_TERM_USAGE.replace("TERM", f"{ONTOLOGY_URL}{term}"),
                     format=TURTLE
                 ).strip()
             ]
-            for term in unknown_terms
-        ]
+        ]] if len(unknown_terms) > 0 else []
 
         make_assertion(
             report,
@@ -198,6 +202,7 @@ def best_practices(
             "unknown-term",
             messages=messages,
             pointers=pointers,
+            graph=graph_rl,
             skip_pass=skip_pass
         )
 

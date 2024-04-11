@@ -39,6 +39,8 @@ from olivaw.constants import (
     BLOCKING_ERRORS
 )
 
+from olivaw.test.corese import export_graph, corese_prefix_text, to_rdflib
+
 def statement(self, subject, *po):
     for item in po:
         self.add((subject, item[0], item[1]))
@@ -52,6 +54,7 @@ def prepare_graph():
     graph.bind("src", SRC_NAMESPACE)
     graph.bind("profile-test", TEST_NAMESPACE)
     graph.bind("olivaw-earl", OLIVAW_EARL_NAMESPACE)
+    graph.bind("dcterms", DCTERMS)
 
     return graph
 
@@ -114,7 +117,7 @@ def make_subject_id(heart, appendix=[]):
         appendix_id = make_subject_id_part(appendix)
         result.append(appendix_id)
 
-    subject_id = "-".join(result)
+    subject_id = "-".join(result).replace("/", "-")
     return subject_id
 
 def make_subject(
@@ -155,10 +158,10 @@ def make_subject(
     
     module_fragments = [item for item in heart + appendix if item.startswith('src/')]
     module_fragments = [
-        SRC_NAMESPACE['.'.join(item.split('/')[-1].split('.')[:-1])]
+        SRC_NAMESPACE[item[4:-4]]
         for item in module_fragments
     ]
-    
+
     modelets_fragment = [
         item
         for item in heart + appendix
@@ -267,14 +270,6 @@ def extractTriples(isolated_graph, searched_entity):
 
     return triples + new_triples
 
-def load_subject(report, subject):
-    isolated_graph = Graph()
-
-    for part in report.objects(subject, DCTERMS.hasPart):
-        part_path = short_subject_part(str(part))
-        isolated_graph.parse(part_path)
-    return isolated_graph
-
 def extract_prefixes(graph):
     return [("kg", "https://www.example.org/")] + [
         (prefix, namespace)
@@ -333,31 +328,16 @@ def parse_statement_for_html(statement, is_literal=False):
     
     return statement
 
-def parse_statement_into_graph(prefixes, raw_statement):
-    rdf = None
-    try:
-        rdf = "\n".join([
-            f"@prefix {line[0]}: <{line[1]}> ."
-            for line in prefixes
-        ]) + "\n" + raw_statement + " ."
-        isolated_graph = Graph()
-        isolated_graph.parse(data=rdf, format="ttl")
-        return isolated_graph
-    except Exception as e:
-        prefix_error = str(e)
-        prefix_error_splitted = prefix_error.split("\n")[1].strip()
-        is_prefix_error = prefix_error.startswith("Prefix ") and prefix_error_splitted.endswith(" not bound")
-        if not is_prefix_error:
-            raise Exception("The statement should contain no errors except for prefixes")
-        prefix_error_splitted = prefix_error_splitted.split('"')[1]
-        prefixes.append((prefix_error_splitted, "https://www.example.org/"))
-        return parse_statement_into_graph(prefixes, raw_statement)
+def parse_statement_into_graph( raw_statement):
+    rdf = f"{corese_prefix_text}\n{raw_statement}"
+    if not rdf.strip().endswith("."):
+        rdf = f"{rdf} ."
+    isolated_graph = Graph()
+    isolated_graph.parse(data=rdf, format="ttl")
+    return isolated_graph
 
-
-def parse_statement(report, subject, raw_statement):
-    subject_loaded = load_subject(report, subject)
-    prefixes = extract_prefixes(subject_loaded)
-    isolad_graph = parse_statement_into_graph(prefixes, raw_statement)
+def parse_statement(raw_statement):
+    isolad_graph = parse_statement_into_graph(raw_statement)
     triples = [triple for triple in isolad_graph.triples((None, None, None))]
     triples = shorten_literals(triples)
     statement_graph = Graph()
@@ -367,38 +347,42 @@ def parse_statement(report, subject, raw_statement):
     return parse_statement_for_html(statement)
         
 
-def extract_statement(report, subject, pointer):
-    isolated_graph = load_subject(report, subject)
+def extract_statement(graph, pointer):
+    # TODO: CHANGE HERE
+    try:
+        isolated_graph = to_rdflib(graph)
 
-    triples = extractTriples(isolated_graph, pointer)
+        triples = extractTriples(isolated_graph, pointer)
 
-    if isinstance(triples, URIRef):
-        return triples
-    
-    statement = empty_graph_same_prefixes(isolated_graph)
-
-    if not isinstance(triples, list):
-        statement = f"<{str(triples)}>" if isinstance(triples, URIRef) else \
-                        "[]" if isinstance(triples, BNode) \
-                            else f'"{str(triples)}"'
-    else:
-        triples = shorten_literals(triples)
-        for triple in triples:
-            statement.add(triple)
+        if isinstance(triples, URIRef):
+            return triples
         
-        statement = statement.serialize(format="ttl", encoding="utf-8").decode(encoding="utf-8")
+        statement = empty_graph_same_prefixes(isolated_graph)
 
-    statement = parse_statement_for_html(statement)
-    
-    return Literal(statement)
+        if not isinstance(triples, list):
+            statement = f"<{str(triples)}>" if isinstance(triples, URIRef) else \
+                            "[]" if isinstance(triples, BNode) \
+                                else f'"{str(triples)}"'
+        else:
+            triples = shorten_literals(triples)
+            for triple in triples:
+                statement.add(triple)
+            
+            statement = statement.serialize(format="ttl", encoding="utf-8").decode(encoding="utf-8")
 
-def make_pointer(report, subject, pointer_string):
+        statement = parse_statement_for_html(statement)
+        
+        return Literal(statement)
+    except Exception as e:
+        return Literal("")
+
+def make_pointer(graph, report, pointer_string):
     statement_subject = pointer_string.split(" ")[0]
     is_statement = " " in pointer_string
 
     if statement_subject[0] == "<" and not is_statement and \
         pointer_string[1:].startswith(str(ONTOLOGY_NAMESPACE)):
-        pointer = extract_statement(report, subject, URIRef(statement_subject[1:-1]))
+        pointer = extract_statement(graph, URIRef(statement_subject[1:-1]))
     elif statement_subject[0] == '"':
         pointer = Literal(parse_statement_for_html(pointer_string.strip()[1:-1], is_literal=True))
     elif statement_subject[0] != "[" and not is_statement:
@@ -412,18 +396,18 @@ def make_pointer(report, subject, pointer_string):
     elif pointer_string.strip()[0] == "@":
         pointer = Literal(parse_statement_for_html(pointer_string))
     else:
-        pointer = Literal(parse_statement(report, subject, pointer_string))
-    
+        pointer = Literal(parse_statement(pointer_string))
+
     return pointer
 
 def make_outcome(
     report,
-    subject,
     criterion,
     error,
     outcome_type,
     description="",
-    pointers=[]
+    pointers=[],
+    graph=None
 ):
     if error in SKIPPED_ERRORS or criterion in SKIPPED_TESTS:
         return None
@@ -438,7 +422,7 @@ def make_outcome(
         outcome_title = outcome_ressources["title"]
         outcome_description = description if len(description) > 0 else outcome_ressources["description"]
     
-    parsed_pointers = [make_pointer(report, subject, pointer) for pointer in pointers if len(pointer) > 0]
+    parsed_pointers = [make_pointer(graph, report, pointer) for pointer in pointers if len(pointer) > 0]
     outcome_type_namespace = OLIVAW_EARL_NAMESPACE if outcome_type.endswith("Fail") else EARL_NAMESPACE
     outcome_statement = [
         (RDF.type, outcome_type_namespace[outcome_type]),
@@ -459,6 +443,7 @@ def make_outcomes(
     error,
     messages,
     pointers=[],
+    graph=None,
     outcome_type=None,
     skip_pass=False
 ):
@@ -477,7 +462,6 @@ def make_outcomes(
         outcomes = [
             make_outcome(
                 report,
-                subject,
                 criterion,
                 error,
                 "Pass",
@@ -490,12 +474,12 @@ def make_outcomes(
         outcomes = [
             make_outcome(
                 report,
-                subject,
                 criterion,
                 error,
                 outcome_type,
-                messages[i],
-                pointers[i] if i < len(pointers) else []
+                description=messages[i],
+                pointers=pointers[i] if i < len(pointers) else [],
+                graph=graph
             )
             for i in range(len(messages))
         ]
@@ -564,6 +548,7 @@ def make_assertion(
     error,
     messages,
     pointers=[],
+    graph=None,
     outcome_type=None,
     skip_pass=False,
     tested_only=False
@@ -580,7 +565,8 @@ def make_assertion(
                 criterion,
                 error,
                 messages,
-                pointers,
+                pointers=pointers,
+                graph=graph,
                 outcome_type=outcome_type,
                 skip_pass=skip_pass
             )
@@ -604,7 +590,6 @@ def make_not_tested(
     for outcome in outcomes:
         outcome = make_outcome(
             report,
-            None,
             criterion,
             outcome,
             "NotTested"

@@ -18,12 +18,23 @@ GET_BY_MODULE = """
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-SELECT ?m ?s ?p ?o where {
+SELECT DISTINCT ?m where {
   ?s ?p ?o .
   ?s rdfs:isDefinedBy ?m .
   FILTER(strstarts(str(?s), "ONTOLOGY_URL"))
 }
 ORDER BY ?m
+"""
+
+TRIPLES_FOR_MODULE = """
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+construct {
+  ?s ?p ?o .
+} where {
+  ?s ?p ?o .
+  ?s rdfs:isDefinedBy MODULE .
+}
 """
 
 # SparQL request to get all the properties with a domain linking to a term not defined in the ontology
@@ -70,6 +81,7 @@ GET_IMPORTS = """
 SELECT DISTINCT ?i WHERE {
   ?s rdf:type owl:Ontology ;
   owl:imports ?i .
+  FILTER(strstarts(str(?i), "ONTOLOGY_URL"))
 }
 """
 
@@ -427,6 +439,13 @@ where {
 }
 """
 
+GET_DECLARED_ONTOLOGIES = """
+select * where {
+  ?x a owl:Ontology
+  filter (isuri(?x))
+}
+"""
+
 GET_CRITERION_VALIDITY = """
 @prefix earl: <http://www.w3.org/ns/earl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -476,6 +495,24 @@ select
   bind(isliteral(?description) as ?description_type_check)
   bind(isliteral(?identifier) as ?identifier_type_check)
   bind(regex(?identifier, "^([a-z]+(-[a-z]+)*){1}$") as ?identifier_format_check)
+}
+"""
+
+GET_MAJOR_FAILS = """
+select ?subject_title ?criterion ?error_title ?error_description  where {
+  ?assertion a earl:Assertion ;
+    earl:subject ?subject ;
+    earl:test ?criterion ;
+    earl:result ?result .
+
+?subject dcterms:title ?subject_title .
+
+?result a earl:TestResult ;
+    earl:outcome ?outcome .
+
+?outcome a olivaw-earl:MajorFail ;
+    dcterms:title ?error_title ;
+    dcterms:description ?error_description .
 }
 """
 

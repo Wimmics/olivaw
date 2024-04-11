@@ -1,4 +1,5 @@
 from os import getcwd
+from glob import glob
 from os.path import sep, relpath
 
 from .git_info import ROOT_FOLDER
@@ -10,11 +11,11 @@ from .git_info import ROOT_FOLDER
 PWD_TO_ROOT_FOLDER = f"{relpath(ROOT_FOLDER, getcwd())}{sep}"
 PWD_TO_OUTPUT_FOLDER = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}output{sep}"
 PWD_TO_MODEL_TEST = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}test{sep}model{sep}"
-MODULES_TTL_GLOB_PATH = f"{PWD_TO_ROOT_FOLDER}src{sep}*.ttl"
-MODELETS_TTL_GLOB_PATH = f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}onto.ttl"
-DATASETS_TTL_GLOB_PATH = f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}dataset.ttl"
-USE_CASES_TTL_GLOB_PATH = f"{PWD_TO_ROOT_FOLDER}use-cases{sep}*{sep}*.ttl"
-COMPETENCY_QUESTIONS_GLOB_PATH = f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}*.rq"
+MODULES_TTL_GLOB_PATH = glob(f"{PWD_TO_ROOT_FOLDER}src{sep}**{sep}*.ttl", recursive=True)
+MODELETS_TTL_GLOB_PATH = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}onto.ttl")
+DATASETS_TTL_GLOB_PATH = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}dataset.ttl")
+USE_CASES_TTL_GLOB_PATH = glob(f"{PWD_TO_ROOT_FOLDER}use-cases{sep}*{sep}**{sep}*.ttl", recursive=True)
+COMPETENCY_QUESTIONS_GLOB_PATH = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}*.rq")
 
 CUSTOM_MODEL_TESTS = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}model{sep}*.shacl"
 CUSTOM_DATA_TESTS = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}data{sep}*.shacl"
