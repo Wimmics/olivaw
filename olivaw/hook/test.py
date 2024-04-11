@@ -2,9 +2,11 @@
 
 from typing import Sequence
 from pre_commit import output
+from rdflib import Graph
+from rdflib.namespace import DCTERMS
 from os.path import sep, relpath, exists
 
-from olivaw.constants import PWD_TO_ROOT_FOLDER, GET_MAJOR_FAILS
+from olivaw.constants import PWD_TO_ROOT_FOLDER, GET_MAJOR_FAILS, OLIVAW_EARL_DATASET, PWD_TO_MODEL_TEST_ONTO, EARL_NAMESPACE, GET_CRITERION_SUMMARY
 from olivaw.test.corese import safe_load, check_OWL_constraints
 from olivaw.test.turtle import prepare_graph, make_assertor
 
@@ -24,6 +26,11 @@ sorted_files = {
         question_tests: []
     }
 }
+
+olivaw_earl_graph = Graph()
+olivaw_earl_graph.parse(PWD_TO_MODEL_TEST_ONTO)
+olivaw_earl_graph.bind("earl", EARL_NAMESPACE)
+olivaw_earl_graph.bind("dcterms", DCTERMS)
 
 def main(files: Sequence[str] | None = None):
     if files is None:
@@ -105,9 +112,22 @@ def main(files: Sequence[str] | None = None):
         ]
 
     for error in errors:
+        #if error["criterion"].startswith(str(OLIVAW_EARL_DATASET)):
+        criterion_title, criterion_description = [
+            (str(title), str(description))
+            for title, description in olivaw_earl_graph.query(GET_CRITERION_SUMMARY)
+        ][0]
+
+        error["criterion_title"] = criterion_title
+        error["criterion_description"] = criterion_description
+
+    for error in errors:
         output.write_line("Error:")
         output.write_line(f"\tSubject: {error['subject_title']}")
-        output.write_line(f"\tCriterion: {error['criterion']}")
+        output.write(" ")
+        output.write_line(f"\tCriterion title: {error['criterion_title']}")
+        output.write_line(f"\tCriterion description: {error['criterion_description']}")
+        output.write(" ")
         output.write_line(f"\tError title: {error['error_title']}")
         output.write_line(f"\tError description: {error['error_description']}")
         output.write_line(" ")
