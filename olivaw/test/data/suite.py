@@ -7,7 +7,10 @@ from codecs import open as copen
 from olivaw.constants import (
     DEV_USERNAME,
     PWD_TO_OUTPUT_FOLDER,
-    DATASETS
+    DATASETS,
+    MODE,
+    SKIP_PASS,
+    TESTED_ONLY
 )
 
 from olivaw.test.corese import print_title
@@ -27,23 +30,9 @@ def datetime_id():
         ).replace(":", "-")
 
 def test_data():
-    _, *args = argv
-
-    modes = [
-        item.split('=')[1]
-        for item in args
-        if item.startswith("--mode=")
-    ]
-
-    skip_pass = "--skip-pass" in args
-    tested_only = "--tested-only" in args
-
-    mode = modes[0] if len(modes) > 0 else "manual"
-
     report = prepare_graph()
     assertor = make_assertor(
         report,
-        mode,
         f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/data/suite.py"
     )
     
@@ -52,12 +41,10 @@ def test_data():
     data_tests(
         DATASETS,
         report,
-        assertor,
-        skip_pass,
-        tested_only
+        assertor
     )
 
-    file_name = mode if not mode == "manual" else f"{mode}-{DEV_USERNAME}-{datetime_id()}"
+    file_name = MODE if not MODE == "manual" else f"{MODE}-{DEV_USERNAME}-{datetime_id()}"
     file_base = f"{PWD_TO_OUTPUT_FOLDER}data-test-{file_name}"
 
     print_title("Exporting results")

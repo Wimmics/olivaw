@@ -524,5 +524,25 @@ select ?title ?description where {
 }
 """
 
+ADD_VARIABLE = """
+DELETE {
+  ?s sh:select ?request .
+}
+INSERT {
+  ?s sh:select ?updated_request .  
+}
+WHERE  {
+  ?s sh:select ?request . 
+  FILTER (isliteral(?request))
+  BIND (concat(?request, "\\nvalues ($ontology_url) { (\\"ONTOLOGY_URL\\") }") as ?updated_request)
+}
+"""
+
+GET_ERRORS_OF_TEST = """
+select ?o where {
+    :CRITERION_ID :has-error ?o
+}
+"""
+
 IS_OWL_QL_COMPATIBLE = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL QL")
 IS_OWL_RL_COMPATIBLE = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL RL")

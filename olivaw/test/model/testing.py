@@ -5,7 +5,6 @@ from tqdm import tqdm
 from olivaw.test.corese import (
     query_graph, 
     safe_load,
-    prefix_manager,
     owl_profile,
     check_OWL_constraints,
     profile_errors
@@ -49,7 +48,7 @@ from olivaw.test.generic.shacl import (
 
 from rdflib import Graph as RdflibGraph
 
-shape_tests = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
+shape_tests, shape_data = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
 ontologies = {}
 
 for module in MODULES_TTL_GLOB_PATH:
@@ -96,9 +95,7 @@ def profile_check(
         fragment,
         report,
         assertor,
-        subject,
-        skip_pass=False,
-        not_tested=False
+        subject
     ):
     """Returns a report about whether an ontology is compatible with each profile and if not, why
 
@@ -141,8 +138,7 @@ def profile_check(
             "profile-compatibility",
             error_id,
             distinct_messages,
-            pointers=grouped_pointers,
-            skip_pass=skip_pass
+            pointers=grouped_pointers
         )
     
     if not "profile-compatibility" in SKIPPED_TESTS:
@@ -153,12 +149,8 @@ def profile_check(
             "profile-compatibility",
             make_result(
                 report,
-                results,
-                skip_pass=skip_pass,
-                not_tested=not_tested,
-            ),
-            skip_pass=skip_pass,
-            tested_only=not_tested
+                results
+            )
         )
 
     # Check for respect for OWL constraints
@@ -170,9 +162,7 @@ def profile_check(
             "owl-rl-constraint",
             "owl-rl-constraint-violation",
             check_OWL_constraints(fragment),
-            graph=fragment,
-            skip_pass=skip_pass,
-            tested_only=not_tested
+            graph=fragment
         )
 
 def fragment_check(
@@ -181,9 +171,7 @@ def fragment_check(
         assertor,
         subject,
         extras="",
-        skip=[],
-        skip_pass=False,
-        tested_only=False
+        skip=[]
     ):
 
     fragment_no_import = safe_load(
@@ -200,9 +188,7 @@ def fragment_check(
             subject,
             "syntax",
             "syntax-error",
-            fragment_no_import,
-            skip_pass=skip_pass,
-            tested_only=tested_only
+            fragment_no_import
         )
         
         for criterion_id in MODEL_BEST_PRACTICES_TESTS:
@@ -210,8 +196,7 @@ def fragment_check(
                 report,
                 assertor,
                 subject,
-                criterion_id,
-                tested_only=tested_only
+                criterion_id
             )
         return True
     
@@ -222,9 +207,7 @@ def fragment_check(
         fragment_no_import,
         report,
         assertor,
-        subject,
-        skip_pass=skip_pass,
-        not_tested=tested_only
+        subject
     )
 
     if with_import_load_error:
@@ -233,8 +216,7 @@ def fragment_check(
                 report,
                 assertor,
                 subject,
-                criterion,
-                tested_only=tested_only
+                criterion
             )
         return True
     
@@ -247,8 +229,7 @@ def fragment_check(
         fragment_with_import,
         fragment_no_import,
         fragment_no_owl,
-        skip,
-        skip_pass=skip_pass
+        skip
     )
 
     custom_test(
@@ -256,9 +237,7 @@ def fragment_check(
         assertor,
         subject,
         fragment_no_owl,
-        shape_tests,
-        skip_pass=skip_pass,
-        tested_only=tested_only
+        shape_tests
     )
     
     return False
@@ -266,9 +245,7 @@ def fragment_check(
 def modules_tests(
         glob_path,
         report,
-        assertor,
-        skip_pass=False,
-        tested_only=False
+        assertor
     ):
     """Returns a report about of a profile check of a set of ontologies
 
@@ -289,9 +266,7 @@ def modules_tests(
             module,
             report,
             assertor,
-            subject,
-            skip_pass=skip_pass,
-            tested_only=tested_only
+            subject
         )
 
         if load_error:
@@ -303,9 +278,7 @@ def modelets_tests(
         glob_path,
         report,
         assertor,
-        skip_merge_test=False,
-        skip_pass=False,
-        tested_only=False
+        skip_merge_test=False
     ):
     """Test of the modelets
     Test them individually, and then checks how each module behave
@@ -334,9 +307,7 @@ def modelets_tests(
             report,
             assertor,
             standalone_subject,
-            skip=["domain-and-range-referencing"],
-            skip_pass=skip_pass,
-            tested_only=tested_only
+            skip=["domain-and-range-referencing"]
         )
 
         if load_error:
@@ -368,9 +339,7 @@ def modelets_tests(
                 report,
                 assertor,
                 merged_subject,
-                extras=moduled_triples[module],
-                skip_pass=skip_pass,
-                tested_only=tested_only
+                extras=moduled_triples[module]
             )
 
     return unsafe_modelets
@@ -408,8 +377,7 @@ def best_practices_test(
         fragment_wih_import,
         fragment_no_import,
         fragment_no_owl,
-        skip=[],
-        skip_pass=False
+        skip=[]
     ):
     """Test the best practices mistakes that do not break the RDF syntax neither the OWL reasoning,
     but that should still not happen
@@ -433,8 +401,7 @@ def best_practices_test(
             "no-reference-module",
             unlinked_subject_messages,
             pointers=unlinked_subjects_pointers,
-            graph=fragment_no_owl,
-            skip_pass=skip_pass
+            graph=fragment_no_owl
         )
     
     if not "domain-and-range-referencing" in skipped_best_practice:
@@ -456,8 +423,7 @@ def best_practices_test(
             "domain-out-of-vocabulary",
             dov_messages,
             pointers=dov_pointers,
-            graph=fragment_no_import,
-            skip_pass=skip_pass
+            graph=fragment_no_import
         )
 
         # Checking for range property out of the vocabulary
@@ -474,8 +440,7 @@ def best_practices_test(
             "range-out-of-vocabulary",
             rov_messages,
             pointers=rov_pointers,
-            graph=fragment_no_import,
-            skip_pass=skip_pass
+            graph=fragment_no_import
         )
 
     # Checking for too close terms
@@ -505,8 +470,7 @@ def best_practices_test(
             "too-close-terms",
             messages,
             pointers=term_pairs,
-            graph=fragment_no_owl,
-            skip_pass=skip_pass
+            graph=fragment_no_owl
         )
     
     if not "labeled-terms" in skipped_best_practice:
@@ -526,8 +490,7 @@ def best_practices_test(
             "not-labeled-term",
             not_labeled_messages,
             pointers=not_labeled_pointers,
-            graph=fragment_no_owl,
-            skip_pass=skip_pass
+            graph=fragment_no_owl
         )
 
 def merged_fragment_set_test(
@@ -535,8 +498,6 @@ def merged_fragment_set_test(
         assertor,
         fragments_to_merge,
         heart_name,
-        skip_pass=False,
-        tested_only=False,
         custom_title=""
     ):
     fragments_keys = [
@@ -552,7 +513,5 @@ def merged_fragment_set_test(
         fragments_to_merge,
         report,
         assertor,
-        subject,
-        skip_pass=skip_pass,
-        tested_only=tested_only
+        subject
     )

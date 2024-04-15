@@ -10,22 +10,11 @@ from olivaw.test.query.uris import retrieveURIFromQuery
 from olivaw.test.generic.prefix import prefix_test
 from olivaw.test.generic.uri import uri_test
 
-def question_tests(
-    glob_path,
-    report,
-    assertor,
-    skip_pass=False,
-    tested_only=False
-):
+def question_tests(glob_path, report, assertor):
     for query in tqdm(glob_path, disable=QUIET):
-        test_competency_question(report, assertor, query, skip_pass=skip_pass, tested_only=tested_only)
+        test_competency_question(report, assertor, query)
 
-def test_competency_question(
-        report,
-        assertor,
-        file,
-        skip_pass=False,
-        tested_only=False):
+def test_competency_question(report, assertor, file):
     graph = Graph()
     query_process = QueryProcess.create(graph)
 
@@ -63,15 +52,13 @@ def test_competency_question(
             report,
             assertor,
             subject,
-            "query-type",
-            tested_only=tested_only
+            "query-type"
         )
         make_not_tested(
             report,
             assertor,
             subject,
-            "prefix-validity",
-            tested_only=tested_only
+            "prefix-validity"
         )
         return
 
@@ -105,9 +92,7 @@ def test_competency_question(
             "query-type",
             "wrong-query-type",
             messages,
-            pointers,
-            skip_pass=skip_pass,
-            tested_only=tested_only
+            pointers
         )
 
     if not "uri-validity" in SKIPPED_TESTS:
@@ -121,9 +106,7 @@ def test_competency_question(
             assertor,
             subject,
             query_uris,
-            get_uri_usage,
-            skip_pass=skip_pass,
-            tested_only=tested_only
+            get_uri_usage
         )
 
         if not uris_valid:
@@ -131,8 +114,7 @@ def test_competency_question(
                 report,
                 assertor,
                 subject,
-                "prefix-validity",
-                tested_only=tested_only
+                "prefix-validity"
             )
             return
         
@@ -145,7 +127,6 @@ def test_competency_question(
             subject,
             assertor,
             query_uris,
-            get_prefix_usage,
-            skip_pass=skip_pass
+            get_prefix_usage
         )
     

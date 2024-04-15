@@ -1,0 +1,310 @@
+{
+    "no-reference-module": {
+        "Pass": {
+            "title": "Any term is referenced",
+            "description": "Each term of the test subject is linked to a module by a rdfs:isDefinedBy property"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject syntax must be correct"
+        },
+        "CannotTell": {
+            "title": "Term not referenced to a module",
+            "description": "A term of the fragment is not linked to a module by a rdfs:isDefinedBy property"
+        },
+        "MajorFail": {
+            "title": "Term not referenced to a module",
+            "description": "A term of the fragment is not linked to a module by a rdfs:isDefinedBy property"
+        },
+        "MinorFail": {
+            "title": "Term not referenced to a module",
+            "description": "A term of the fragment is not linked to a module by a rdfs:isDefinedBy property"
+        }
+    },
+    "domain-out-of-vocabulary": {
+        "Pass": {
+            "title": "Domains properly defined",
+            "description": "Each rdfs:domain is defined within the fragment"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The syntax of the subject and any of its imports must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "Domain out of vocabulary",
+            "description": "A property defined in the fragment has a rdfs:domain defined out of the vocabulary"
+        },
+        "MajorFail": {
+            "title": "Domain out of vocabulary",
+            "description": "A property defined in the fragment has a rdfs:domain defined out of the vocabulary"
+        },
+        "MinorFail": {
+            "title": "Domain out of vocabulary",
+            "description": "A property defined in the fragment has a rdfs:domain defined out of the vocabulary"
+        }
+    },
+    "range-out-of-vocabulary": {
+        "Pass": {
+            "title": "Ranges properly defined",
+            "description": "Each rdfs:range is defined within the fragment"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The syntax of the subject and any of its imports must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "Range out of vocabulary",
+            "description": "A property defined in the fragment has a rdfs:range defined out of the vocabulary"
+        },
+        "MajorFail": {
+            "title": "Range out of vocabulary",
+            "description": "A property defined in the fragment has a rdfs:range defined out of the vocabulary"
+        },
+        "MinorFail": {
+            "title": "Range out of vocabulary",
+            "description": "A property defined in the fragment has a rdfs:range defined out of the vocabulary"
+        }
+    },
+    "too-close-terms": {
+        "Pass": {
+            "title": "Terms differenciated enough",
+            "description": "All the terms have have a satisfying Levenshtein distance from each other term."
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject needs to be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "Too close terms",
+            "description": "Two terms defined in the fragment have a Levenshtein distance too low"
+        },
+        "MajorFail": {
+            "title": "Too close terms",
+            "description": "Two terms defined in the fragment have a Levenshtein distance too low"
+        },
+        "MinorFail": {
+            "title": "Too close terms",
+            "description": "Two terms defined in the fragment have a Levenshtein distance too low"
+        }
+    },
+    "syntax-error": {
+        "Pass": {
+            "title": "Correct syntax",
+            "description": "Test subject has a correct syntax"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The file needs to be found"
+        },
+        "CannotTell": {
+            "title": "Test subject has syntax errors",
+            "description": "The subject has syntax errors"
+        },
+        "MajorFail": {
+            "title": "Test subject has syntax errors",
+            "description": "The subject has syntax errors"
+        },
+        "MinorFail": {
+            "title": "Test subject has syntax errors",
+            "description": "The subject has syntax errors"
+        }
+    },
+    "owl-rl-constraint-violation": {
+        "Pass": {
+            "title": "OWL RL consistent",
+            "description": "The provided graph is consistent for any OWL RL constraint"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject and its recursive imports must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "OWL RL Constraint violation",
+            "description": "The fragment violates at least one OWL RL constraint"
+        },
+        "MajorFail": {
+            "title": "OWL RL Constraint violation",
+            "description": "The fragment violates at least one OWL RL constraint"
+        },
+        "MinorFail": {
+            "title": "OWL RL Constraint violation",
+            "description": "The fragment violates at least one OWL RL constraint"
+        }
+    },
+    "not-labeled-term": {
+        "Pass": {
+            "title": "All terms labeled",
+            "description": "All the terms defined in the subject have a rdfs:label in English"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject and its recursive imports must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "Terms not labeled",
+            "description": "Some terms do not have a rdfs:label property pointing to a literal written in English"
+        },
+        "MajorFail": {
+            "title": "Terms not labeled",
+            "description": "Some terms do not have a rdfs:label property pointing to a literal written in English"
+        },
+        "MinorFail": {
+            "title": "Terms not labeled",
+            "description": "Some terms do not have a rdfs:label property pointing to a literal written in English"
+        }
+    },
+    "owl-rl-profile-error": {
+        "Pass": {
+            "title": "OWL RL Profile compatible",
+            "description": "The subject is included in the OWL RL sublanguage"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "OWL RL Profile incompatible",
+            "description": "The subject is not included in the OWL RL sublanguage"
+        },
+        "MajorFail": {
+            "title": "OWL RL Profile incompatible",
+            "description": "The subject is not included in the OWL RL sublanguage"
+        },
+        "MinorFail": {
+            "title": "OWL RL Profile incompatible",
+            "description": "The subject is not included in the OWL RL sublanguage"
+        }
+    },
+    "owl-ql-profile-error": {
+        "Pass": {
+            "title": "OWL QL Profile compatible",
+            "description": "The subject is included in the OWL QL sublanguage"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "OWL QL Profile incompatible",
+            "description": "The subject is not included in the OWL QL sublanguage"
+        },
+        "MajorFail": {
+            "title": "OWL QL Profile incompatible",
+            "description": "The subject is not included in the OWL QL sublanguage"
+        },
+        "MinorFail": {
+            "title": "OWL QL Profile incompatible",
+            "description": "The subject is not included in the OWL QL sublanguage"
+        }
+    },
+    "owl-el-profile-error": {
+        "Pass": {
+            "title": "OWL EL Profile compatible",
+            "description": "The subject is included in the OWL EL sublanguage"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "OWL EL Profile incompatible",
+            "description": "The subject is not included in the OWL EL sublanguage"
+        },
+        "MajorFail": {
+            "title": "OWL EL Profile incompatible",
+            "description": "The subject is not included in the OWL EL sublanguage"
+        },
+        "MinorFail": {
+            "title": "OWL EL Profile incompatible",
+            "description": "The subject is not included in the OWL EL sublanguage"
+        }
+    },
+    "unknown-term": {
+        "Pass": {
+            "title": "Every term exists",
+            "description": "All the ontologic terms in the subject are defined in the ontology"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "Unknown ontology term",
+            "description": "A term of the subject is not defined in the ontology"
+        },
+        "MajorFail": {
+            "title": "Unknown ontology term",
+            "description": "A term of the subject is not defined in the ontology"
+        },
+        "MinorFail": {
+            "title": "Unknown ontology term",
+            "description": "A term of the subject is not defined in the ontology"
+        }
+    },
+    "prefix-typo": {
+        "Pass": {
+            "title": "No prefix typo",
+            "description": "It seems that none of the subject URIs have prefixes typos"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "Possible prefix typo",
+            "description": "A URI of the subject seems to be a typo of a very common prefix"
+        },
+        "MajorFail": {
+            "title": "Possible prefix typo",
+            "description": "A URI of the subject seems to be a typo of a very common prefix"
+        },
+        "MinorFail": {
+            "title": "Possible prefix typo",
+            "description": "A URI of the subject seems to be a typo of a very common prefix"
+        }
+    },
+    "wrong-query-type": {
+        "Pass": {
+            "title": "Accurate query type",
+            "description": "The query is of type Select or Ask"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The query must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "Unauthorized query type",
+            "description": "The query is not of type Select or Ask"
+        },
+        "MinorFail": {
+            "title": "Unauthorized query type",
+            "description": "The query is not of type Select or Ask"
+        },
+        "MajorFail": {
+            "title": "Unauthorized query type",
+            "description": "The query is not of type Select or Ask"
+        }
+    },
+    "invalid-uri": {
+        "Pass": {
+            "title": "All subject URI valid",
+            "description": "All the URIs of the subject are valid"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject must be syntaxically valid"
+        },
+        "CannotTell": {
+            "title": "Invalid URI",
+            "description": "Some URIs of the subject are not valid URIs"
+        },
+        "MinorFail": {
+            "title": "Invalid URI",
+            "description": "Some URIs of the subject are not valid URIs"
+        },
+        "MajorFail": {
+            "title": "Invalid URI",
+            "description": "Some URIs of the subject are not valid URIs"
+        }
+    }
+}

@@ -1,4 +1,5 @@
 from datetime import datetime
+from itertools import zip_longest
 
 from rdflib import (
     Graph,
@@ -26,7 +27,7 @@ from olivaw.constants import (
     TEST_NAMESPACE,
     OLIVAW_EARL_NAMESPACE,
     ONTOLOGY_NAMESPACE,
-    TEST_RESOURCES,
+    ERROR_RESOURCES,
     BRANCH,
     MODULE_URL_FORMAT,
     MODELET_URL_FORMAT,
@@ -36,10 +37,14 @@ from olivaw.constants import (
     SKIPPED_ERRORS,
     SKIPPED_TESTS,
     URI_FORMAT,
-    BLOCKING_ERRORS
+    BLOCKING_ERRORS,
+    MODE,
+    SKIP_PASS,
+    TESTED_ONLY,
+    CRITERION_DATA
 )
 
-from olivaw.test.corese import export_graph, corese_prefix_text, to_rdflib
+from olivaw.test.corese import corese_prefix_text, to_rdflib
 
 def statement(self, subject, *po):
     for item in po:
@@ -58,10 +63,10 @@ def prepare_graph():
 
     return graph
 
-def make_assertor(report, mode, script_uri):
-    assertorId = f"{DEV_USERNAME}-{mode}"
-    title = f"{DEV_USERNAME} using {mode} script"
-    description = f"Test triggered by @{DEV_USERNAME} by {mode} trigger"
+def make_assertor(report, script_uri):
+    assertorId = f"{DEV_USERNAME}-{MODE}"
+    title = f"{DEV_USERNAME} using {MODE} script"
+    description = f"Test triggered by @{DEV_USERNAME} by {MODE} trigger"
     
     # Define the developper and the assertor
     assert_group = BNode(assertorId)
@@ -301,19 +306,9 @@ def shorten_literals(triples):
             parsed_triples.append(targetTriple)
     return parsed_triples
 
-def html_special_chars(text):
-    return text\
-        .replace("<", "&#60;")\
-        .replace("_", "&lowbar;")\
-        .replace("^", "&Hat;")\
-        .replace("    ", "&nbsp;&nbsp;&nbsp;&nbsp;")\
-        .replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;")\
-        .replace("\n", "<br/>")\
-        .strip()
-
 def parse_statement_for_html(statement, is_literal=False):
     statement = [
-        html_special_chars(line)
+        line
         for line in statement.split("\n")
         if len(line.strip()) > 0
     ]
@@ -373,15 +368,14 @@ def extract_statement(graph, pointer):
         statement = parse_statement_for_html(statement)
         
         return Literal(statement)
-    except Exception as e:
-        return Literal("")
+    except:
+        return Literal(str(pointer))
 
 def make_pointer(graph, report, pointer_string):
     statement_subject = pointer_string.split(" ")[0]
     is_statement = " " in pointer_string
 
-    if statement_subject[0] == "<" and not is_statement and \
-        pointer_string[1:].startswith(str(ONTOLOGY_NAMESPACE)):
+    if statement_subject[0] == "<" and not is_statement:
         pointer = extract_statement(graph, URIRef(statement_subject[1:-1]))
     elif statement_subject[0] == '"':
         pointer = Literal(parse_statement_for_html(pointer_string.strip()[1:-1], is_literal=True))
@@ -417,8 +411,8 @@ def make_outcome(
     outcome_title = f"Test {test_name} passed" if outcome_type == "Pass" else f"Error on custom test {test_name}"
     outcome_description = f"The custom test {test_name} passed" if outcome_type == "Pass" else f"Error occured while running custom test {test_name}"
     
-    if criterion in TEST_RESOURCES:
-        outcome_ressources = TEST_RESOURCES[criterion]["errors"][error][outcome_type]
+    if error in ERROR_RESOURCES:
+        outcome_ressources = ERROR_RESOURCES[error][outcome_type]
         outcome_title = outcome_ressources["title"]
         outcome_description = description if len(description) > 0 else outcome_ressources["description"]
     
@@ -427,7 +421,7 @@ def make_outcome(
     outcome_statement = [
         (RDF.type, outcome_type_namespace[outcome_type]),
         (DCTERMS.title, Literal(outcome_title, lang="en")),
-        (DCTERMS.description, Literal(html_special_chars(outcome_description), lang="en"))
+        (DCTERMS.description, Literal(outcome_description, lang="en"))
     ]
     outcome_statement += [(RDFS.seeAlso, pointer) for pointer in parsed_pointers]
 
@@ -444,8 +438,7 @@ def make_outcomes(
     messages,
     pointers=[],
     graph=None,
-    outcome_type=None,
-    skip_pass=False
+    outcome_type=None
 ):
     if len(pointers) > 0 and not len(pointers) == len(messages):
         pointers = []
@@ -454,18 +447,15 @@ def make_outcomes(
     if error in SKIPPED_ERRORS:
         return []
 
-    outcome_ressources = TEST_RESOURCES[criterion]["errors"][error] if len(URI_FORMAT.findall(criterion)) == 0 else None
-
     if len(messages) == 0:
-        if skip_pass:
+        if SKIP_PASS:
             return []
         outcomes = [
             make_outcome(
                 report,
                 criterion,
                 error,
-                "Pass",
-                description=outcome_ressources["Pass"]["description"] if not outcome_ressources is None else None 
+                "Pass"
             )
         ]
     else:
@@ -477,16 +467,17 @@ def make_outcomes(
                 criterion,
                 error,
                 outcome_type,
-                description=messages[i],
-                pointers=pointers[i] if i < len(pointers) else [],
+                description=message,
+                pointers=pointer,
                 graph=graph
             )
-            for i in range(len(messages))
+            for message, pointer
+            in zip_longest(messages, pointers, fillvalue=[])
         ]
 
     return outcomes
 
-def make_result(report, outcomes, skip_pass=False, not_tested=False):
+def make_result(report, outcomes):
 
     # When pass, there is a pass outcome, when no outcome, then it is a skipped error
     if outcomes is None or len(outcomes) == 0:
@@ -497,8 +488,8 @@ def make_result(report, outcomes, skip_pass=False, not_tested=False):
     ] + [
         (EARL_NAMESPACE.outcome, outcome)
         for outcome in outcomes
-        if not (make_outcome_type(report, outcome) == "Pass" and skip_pass) and
-           not (make_outcome_type(report, outcome) == "NotTested" and not_tested)
+        if not (make_outcome_type(report, outcome) == "Pass" and SKIP_PASS) and
+           not (make_outcome_type(report, outcome) == "NotTested" and TESTED_ONLY)
     ]
 
     result = BNode()
@@ -518,15 +509,14 @@ def assemble_assertion(
     subject,
     criterion,
     result,
-    skip_pass=False,
-    tested_only=False
+    criterion_uri=None
 ):
     # if result is None, then it is a skipped error
     if result is None:
         return
     
-    criterion = URIRef(criterion) \
-                if len(URI_FORMAT.findall(criterion)) > 0 else \
+    criterion = URIRef(criterion_uri) \
+                if criterion_uri else \
                 OLIVAW_EARL_NAMESPACE[criterion]
     
     statement = [
@@ -550,8 +540,7 @@ def make_assertion(
     pointers=[],
     graph=None,
     outcome_type=None,
-    skip_pass=False,
-    tested_only=False
+    criterion_uri=None
 ):    
     assemble_assertion(
         report,
@@ -567,38 +556,34 @@ def make_assertion(
                 messages,
                 pointers=pointers,
                 graph=graph,
-                outcome_type=outcome_type,
-                skip_pass=skip_pass
+                outcome_type=outcome_type
             )
         ),
-        skip_pass=skip_pass,
-        tested_only=tested_only
+        criterion_uri=criterion_uri
     )
 
 def make_not_tested(
     report,
     assertor,
     subject,
-    criterion,
-    tested_only=False
+    criterion
 ):
-    if tested_only:
+    if TESTED_ONLY:
         return
     
-    outcomes = TEST_RESOURCES[criterion]["errors"].keys()
+    errors = CRITERION_DATA[criterion]["errors"]
 
-    for outcome in outcomes:
-        outcome = make_outcome(
+    for error in errors:
+        error = make_outcome(
             report,
             criterion,
-            outcome,
+            error,
             "NotTested"
         )
-        outcomes = [outcome] if not outcome is None else []
         assemble_assertion(
             report,
             assertor,
             subject,
             criterion,
-            make_result(report, outcomes, not_tested=tested_only)
+            make_result(report, [error])
         )

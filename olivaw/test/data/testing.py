@@ -35,14 +35,12 @@ from olivaw.constants import (
 from olivaw.test.generic.shacl import load_valid_custom_tests, custom_test
 from olivaw.test.generic.prefix import prefix_test
 
-shape_tests = load_valid_custom_tests(CUSTOM_DATA_TESTS)
+shape_tests, shapes_data = load_valid_custom_tests(CUSTOM_DATA_TESTS)
 
 def fragment_check(
     report,
     assertor,
-    dataset,
-    skip_pass=False,
-    tested_only=False
+    dataset
 ):
     dataset_key = relpath(dataset, ROOT_FOLDER).replace(sep, "/")
     subject = make_subject(report, [dataset_key])
@@ -56,9 +54,7 @@ def fragment_check(
         subject,
         "syntax",
         "syntax-error",
-        [] if is_syntax_valid else graph_no_import,
-        skip_pass=skip_pass,
-        tested_only=tested_only
+        [] if is_syntax_valid else graph_no_import
     )
 
     graph_with_import = safe_load(dataset) if is_syntax_valid else None
@@ -69,16 +65,14 @@ def fragment_check(
             report,
             assertor,
             subject,
-            "owl-rl-constraint",
-            tested_only=tested_only
+            "owl-rl-constraint"
         )
 
         make_not_tested(
             report,
             assertor,
             subject,
-            "term-recognition",
-            tested_only=tested_only
+            "term-recognition"
         )
         return
 
@@ -92,9 +86,7 @@ def fragment_check(
             "owl-rl-constraint",
             "owl-rl-constraint-violation",
             constraint_violations,
-            graph=graph_with_import,
-            skip_pass=skip_pass,
-            tested_only=tested_only
+            graph=graph_with_import
         )
 
     if len(constraint_violations) > 0:
@@ -102,8 +94,7 @@ def fragment_check(
             report,
             assertor,
             subject,
-            "term-recognition",
-            tested_only=tested_only
+            "term-recognition"
         )
         return
     
@@ -114,11 +105,7 @@ def fragment_check(
         report,
         assertor,
         subject,
-        dataset,
-        graph_no_import,
-        graph_with_import,
-        graph_rl,
-        skip_pass=skip_pass
+        graph_rl
     )
 
     custom_test(
@@ -126,9 +113,7 @@ def fragment_check(
         assertor,
         subject,
         graph_no_owl,
-        shape_tests,
-        skip_pass=skip_pass,
-        tested_only=tested_only
+        shape_tests
     )
         
 
@@ -149,26 +134,20 @@ def get_ontology_terms(fragments):
 
     return terms
 
-def data_tests(glob_path, report, assertor, skip_pass, tested_only):
+def data_tests(glob_path, report, assertor):
 
     for dataset in tqdm(glob_path, disable=QUIET):
         fragment_check(
             report,
             assertor,
-            dataset,
-            skip_pass=skip_pass,
-            tested_only=tested_only
+            dataset
         )
 
 def best_practices(
         report,
         assertor,
         subject,
-        file_path,
-        graph_no_import,
-        graph_with_import,
-        graph_rl,
-        skip_pass=False
+        graph_rl
     ):
 
     if not "term-recognition" in SKIPPED_TESTS:
@@ -202,8 +181,7 @@ def best_practices(
             "unknown-term",
             messages=messages,
             pointers=pointers,
-            graph=graph_rl,
-            skip_pass=skip_pass
+            graph=graph_rl
         )
 
     if not "prefix-validity" in SKIPPED_TESTS:
@@ -221,6 +199,5 @@ def best_practices(
             subject,
             assertor,
             uris,
-            get_prefix_usage,
-            skip_pass=skip_pass
+            get_prefix_usage
         )

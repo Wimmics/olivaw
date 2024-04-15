@@ -17,9 +17,7 @@ from olivaw.test.corese import (
     OWL_RL
 )
 
-from olivaw.test.turtle import (
-    make_assertion
-)
+from olivaw.test.turtle import make_assertion
 
 def get_prefix_suffix(uri):
 
@@ -51,8 +49,7 @@ def prefix_test(
     subject,
     assertor,
     uris,
-    get_prefix_usage,
-    skip_pass=False
+    get_prefix_usage
 ):
     if "prefix-validity" in SKIPPED_TESTS:
         return
@@ -110,6 +107,5 @@ def prefix_test(
         "prefix-typo",
         messages=messages,
         pointers=pointers,
-        outcome_type="CannotTell",
-        skip_pass=skip_pass
+        outcome_type="CannotTell"
     )

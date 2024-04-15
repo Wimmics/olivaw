@@ -1,7 +1,5 @@
 from sys import argv
-from glob import glob
 from datetime import datetime
-from tqdm import tqdm
 from codecs import open as copen
 from os.path import sep
 
@@ -14,7 +12,8 @@ from .testing import question_tests
 from olivaw.constants import (
     DEV_USERNAME,
     PWD_TO_OUTPUT_FOLDER,
-    COMPETENCY_QUESTIONS_GLOB_PATH
+    COMPETENCY_QUESTIONS_GLOB_PATH,
+    MODE
 )
 
 def datetime_id():
@@ -26,23 +25,9 @@ def datetime_id():
         ).replace(":", "-")
 
 def test_query():
-    _, *args = argv
-
-    modes = [
-        item.split('=')[1]
-        for item in args
-        if item.startswith("--mode=")
-    ]
-
-    skip_pass = "--skip-pass" in args
-    tested_only = "--tested-only" in args
-
-    mode = modes[0] if len(modes) > 0 else "manual"
-
     report = prepare_graph()
     assertor = make_assertor(
         report,
-        mode,
         f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/query/suite.py"
     )
 
@@ -50,12 +35,10 @@ def test_query():
     question_tests(
         COMPETENCY_QUESTIONS_GLOB_PATH,
         report,
-        assertor,
-        skip_pass=skip_pass,
-        tested_only=tested_only
+        assertor
     )
 
-    file_name = mode if not mode == "manual" else f"{mode}-{DEV_USERNAME}-{datetime_id()}"
+    file_name = MODE if not MODE == "manual" else f"{MODE}-{DEV_USERNAME}-{datetime_id()}"
     file_base = f"{PWD_TO_OUTPUT_FOLDER}query-test-{file_name}"
 
     print_title("Exporting results")

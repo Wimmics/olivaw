@@ -7,9 +7,7 @@ def uri_test(
     subject,
     uris,
     get_uri_usage,
-    graph=None,
-    skip_pass=False,
-    tested_only=False
+    graph=None
 ):
     if "uri-validity" in SKIPPED_TESTS:
         return
@@ -35,9 +33,7 @@ def uri_test(
         "invalid-uri",
         messages,
         pointers=pointers,
-        graph=graph,
-        skip_pass=skip_pass,
-        tested_only=tested_only
+        graph=graph
     )
 
     return len(invalid_uris) == 0

@@ -9,7 +9,6 @@ from olivaw.constants import (
     COLOR_BOX_TEMPLATE,
     ERROR_TABLE_HEADER,
     GET_ASSERTOR_DETAILS,
-    PWD_TO_MODEL_TEST_ONTO,
     GET_CRITERION_DATA,
     GET_DETAILED_OUTCOMES,
     GET_OUTCOMES_PARTS,
@@ -24,10 +23,28 @@ from olivaw.constants import (
     IS_OWL_RL_COMPATIBLE,
     MODE,
     OLIVAW_REF,
-    PWD_TO_ROOT_FOLDER
+    PWD_TO_ROOT_FOLDER,
+    NEW_BR,
+    CRITERION_DATA
 )
 
 from olivaw.test.generic.shacl import get_criterion_data
+
+def html_special_chars(text):
+    return NEW_BR.sub(
+        "&#10;",
+        "&#10;".join([
+            line\
+                .replace("<", "&#60;")\
+                .replace("_", "&lowbar;")\
+                .replace("^", "&Hat;")\
+                .replace("    ", "&nbsp;&nbsp;&nbsp;&nbsp;")\
+                .replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;")
+                .strip()
+            for line in text.split("\n")
+            if len(line.strip()) > 0
+        ]).replace("&#10;&#60", " &#10; &#60")
+    )
 
 def parse_outcomes(report):
     outcomes = [outcome for outcome in report.query(GET_DETAILED_OUTCOMES)]
@@ -62,19 +79,6 @@ def parse_outcomes(report):
     }
     return outcomes, partsDict, pointersDict
 
-def parseCriterions():
-    criterions = Graph()
-    criterions.parse(PWD_TO_MODEL_TEST_ONTO)
-    criterions = criterions.query(GET_CRITERION_DATA)
-    criterions = {
-        str(criterion[0]): {
-            "title": str(criterion[1]),
-            "description": str(criterion[2])
-        }
-        for criterion in criterions
-    }
-    return criterions
-
 def title_to_id(title):
     start = 0
     while(title[start] == "#"): start += 1
@@ -102,8 +106,8 @@ def make_assertor_chapter(report):
 
     result.append(f"|Assertor|[{dev}]({page})|")
     result.append("|----|-----|")
-    result.append(f"|Title|{title}|")
-    result.append(f"|Description|{description}|")
+    result.append(f"|Title|{html_special_chars(title)}|")
+    result.append(f"|Description|{html_special_chars(description)}|")
     result.append(f"|Script|[{script_name}]({script})")
     result.append(f"|Date|{date}|")
 
@@ -113,38 +117,33 @@ def make_assertor_chapter(report):
 
     return result
 
-def get_criterions_data(criterions, id):
-    data = criterions.query(GET_CRITERION_DATA.replace("ID", id))
-    title, description = [x for x in data][0]
-    return title, description
-
 def subject_part_to_markdown(part):
     module_search = MODULE_URL_FORMAT.findall(part)
     if len(module_search) > 0:
-        return f"[Module {module_search[0][4:]}]({part})"
+        return f"[Module {html_special_chars(module_search[0][4:])}]({part})"
     
     modelet_search = MODELET_URL_FORMAT.findall(part)
     if len(modelet_search) > 0:
-        return f"[Modelet {modelet_search[0][8:]}]({part})"
+        return f"[Modelet {html_special_chars(modelet_search[0][8:])}]({part})"
     
     dataset_search = DATASET_URL_FORMAT.findall(part)
     if len(dataset_search) > 0:
-        return f"[Dataset {dataset_search[0][8:]}]({part})"
+        return f"[Dataset {html_special_chars(dataset_search[0][8:])}]({part})"
     
     usecase_search = USECASE_URL_FORMAT.findall(part)
     if len(usecase_search) > 0:
-        return f"[Use case {usecase_search[0][10:]}]({part})"
+        return f"[Use case {html_special_chars(usecase_search[0][10:])}]({part})"
     
     question_search = QUESTION_URL_FORMAT.findall(part)
     if len(question_search) > 0:
-        return f"[Competency question {question_search[0][8:]}]({part})"
+        return f"[Competency question {html_special_chars(question_search[0][8:])}]({part})"
     
     return part
 
 def criterion_uri_to_file(uri):
     return f"{PWD_TO_ROOT_FOLDER}{sep.join(uri.split('#')[0].split('/')[-4:])}"
 
-def get_criterion_details(uri, criterions):
+def get_criterion_details(uri):
     criterion_path = uri.split("#")[0].split("/")
     criterion_ref = "/".join(criterion_path[3:5])
 
@@ -154,8 +153,8 @@ def get_criterion_details(uri, criterions):
 
     if criterion_ref == OLIVAW_REF:
         criterion_id = uri.split('#')[-1]
-        criterion_title = criterions[criterion_id]["title"]
-        criterion_description = criterions[criterion_id]["description"]
+        criterion_title = CRITERION_DATA[criterion_id]["title"]
+        criterion_description = CRITERION_DATA[criterion_id]["description"]
         return uri, criterion_id, criterion_title, criterion_description
     else:
         criterion_file = criterion_uri_to_file(uri)
@@ -168,8 +167,7 @@ def make_details_table(
     pointersDict,
     severity,
     outcome_counter,
-    emoji,
-    criterions
+    emoji
 ):
     _, _, _, outcome, _, subject_id, subject_title, criterion_uri, outcome_title, outcome_description = outcome_info
     subject_id = str(subject_id)
@@ -180,7 +178,7 @@ def make_details_table(
     parts = [subject_part_to_markdown(part) for part in parts]
     parts = "<br/>".join([f"- {part}" for part in parts])
 
-    _, criterion_id, criterion_title, criterion_description = get_criterion_details(criterion_uri, criterions)
+    _, criterion_id, criterion_title, criterion_description = get_criterion_details(criterion_uri)
 
     chapter += [
         f"### {severity} Outcome number {outcome_counter}",
@@ -192,24 +190,24 @@ def make_details_table(
         "#### Subject detail",
         f"|Name|{subject_id}|",
         "|----|----|",
-        f"|Title|{subject_title}|",
+        f"|Title|{html_special_chars(subject_title)}|",
         f"|Composition|{parts}|",
         "",
         "#### Criterion detail",
         f"|Identifier|[{criterion_id}]({criterion_uri})|",
         "|----|----|",
-        f"|Title|{criterion_title}|",
-        f"|Description|{criterion_description}|",
+        f"|Title|{html_special_chars(criterion_title)}|",
+        f"|Description|{html_special_chars(criterion_description)}|",
         "",
         "#### Outcome Detail",
         f"|Type|{emoji}{severity}|",
         "|----|----|",
-        f"|Title|{outcome_title}|",
-        f"|Description|{outcome_description}|"
+        f"|Title|{html_special_chars(outcome_title)}|",
+        f"|Description|{html_special_chars(outcome_description)}|"
     ]
 
     for rdfPointer in pointersDict.get(outcome, []):
-        mdPointer = str(rdfPointer).replace("\n", "&#10;").replace("&#10;&#60", " &#10; &#60")
+        mdPointer = html_special_chars(str(rdfPointer))
         beforePointer = '<pre lang="Turtle"><code>' if isinstance(rdfPointer, Literal) else ""
         afterPointer = "</code></pre>" if isinstance(rdfPointer, Literal) else ""
         chapter.append(f"|Pointer|{beforePointer}{mdPointer}{afterPointer}|")
@@ -217,7 +215,7 @@ def make_details_table(
     chapter.append("")
     chapter.append("***")
 
-def make_severity_detail(outcomes, criterions, severity, emoji, partsDict, pointersDict):
+def make_severity_detail(outcomes, severity, emoji, partsDict, pointersDict):
     result = []
     severity_outcomes = outcomes[severity]
 
@@ -239,12 +237,11 @@ def make_severity_detail(outcomes, criterions, severity, emoji, partsDict, point
             pointersDict,
             severity,
             i + 1,
-            emoji,
-            criterions
+            emoji
         )
     return result
 
-def make_severity_summary(outcomes, criterions, severity, emoji):
+def make_severity_summary(outcomes, severity, emoji):
     severity_outcomes = outcomes[severity]
     table_length = len(severity_outcomes)
     title = f"## {severity} Outcomes Summary"
@@ -267,8 +264,7 @@ def make_severity_summary(outcomes, criterions, severity, emoji):
                 .replace('EMOJI', emoji)
                 .replace('TEXT', severity),
             f"`{str(subjectId)}`",
-            f"[{get_criterion_details(criterionId, criterions)[1]}]({criterionId})",
-            #f"[{criterionId.split('#')[-1]}]({criterionId})",
+            f"[{html_special_chars(get_criterion_details(criterionId)[1])}]({criterionId})",
             str(errorTitle),
             f"[Jump](#{severity.lower()}-outcome-number-{str(i+1)})",
             ''
@@ -278,7 +274,7 @@ def make_severity_summary(outcomes, criterions, severity, emoji):
     
     return summary
 
-def make_severity_chapter(outcomes, partsDict, pointersDict, criterions, severity, emoji):
+def make_severity_chapter(outcomes, partsDict, pointersDict, severity, emoji):
     result = []
     outcome_number = len(outcomes[severity])
     result += [
@@ -294,12 +290,10 @@ def make_severity_chapter(outcomes, partsDict, pointersDict, criterions, severit
         ""
     ] + make_severity_summary(
         outcomes,
-        criterions,
         severity,
         emoji
     ) + make_severity_detail(
         outcomes,
-        criterions,
         severity,
         emoji,
         partsDict,
@@ -364,7 +358,6 @@ def make_turtle_page(report, file_name) -> str:
     md = []
 
     outcomes, partsDict, pointersDict = parse_outcomes(report)
-    criterions = parseCriterions()
 
     md += [
         "# Test Report Markdown Export",
@@ -386,7 +379,6 @@ def make_turtle_page(report, file_name) -> str:
             outcomes,
             partsDict,
             pointersDict,
-            criterions,
             severity,
             emoji
         )

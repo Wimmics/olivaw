@@ -12,7 +12,7 @@ from olivaw.constants import (
     PWD_TO_OUTPUT_FOLDER,
     BRANCH,
     SKIPPED_FILES,
-    CUSTOM_MODEL_TESTS
+    MODE
 )
 
 from olivaw.test.corese import print_title # TODO Need later for a utils.py?
@@ -44,23 +44,10 @@ def datetime_id():
 # Test OWL_RL
 ###
 def test_model():
-    _, *args = argv
-
-    modes = [
-        item.split('=')[1]
-        for item in args
-        if item.startswith("--mode=")
-    ]
-
-    skip_pass = "--skip-pass" in args
-    tested_only = "--tested-only" in args
-
-    mode = modes[0] if len(modes) > 0 else "manual"
 
     report = prepare_graph()
     test_assertor = make_assertor(
         report,
-        mode,
         f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/model/suite.py"
     )
 
@@ -71,7 +58,7 @@ def test_model():
         if not abspath(item) in SKIPPED_FILES
     ]
 
-    unsafe_modules = modules_tests(modules, report, test_assertor, skip_pass=skip_pass, tested_only=tested_only)
+    unsafe_modules = modules_tests(modules, report, test_assertor)
 
     print_title("Checking modelets")
     modelets = [
@@ -79,7 +66,7 @@ def test_model():
         for item in MODELETS_TTL_GLOB_PATH
         if not abspath(item) in SKIPPED_FILES
     ]
-    unsafe_modelets = modelets_tests(modelets, report, test_assertor, skip_pass=skip_pass, tested_only=tested_only)
+    unsafe_modelets = modelets_tests(modelets, report, test_assertor)
 
     print_title("Checking the merge of safe modules")
     safe_modules = [
@@ -91,8 +78,6 @@ def test_model():
         test_assertor,
         safe_modules,
         "all-modules",
-        skip_pass=skip_pass,
-        tested_only=tested_only,
         custom_title=f"All the modules from branch {BRANCH} that are syntaxically correct as well as their recursive imports"    
     )
 
@@ -109,12 +94,10 @@ def test_model():
         test_assertor,
         safe_fragment,
         "all-fragments",
-        skip_pass=skip_pass,
-        tested_only=tested_only,
         custom_title=f"All the fragments from branch {BRANCH} that are syntaxically correct as well as their recursive imports"  
     )
 
-    file_name = mode if not mode == "manual" else f"{mode}-{DEV_USERNAME}-{datetime_id()}"
+    file_name = MODE if not MODE == "manual" else f"{MODE}-{DEV_USERNAME}-{datetime_id()}"
     file_base = f"{PWD_TO_OUTPUT_FOLDER}model-test-{file_name}"
 
     print_title("Exporting results")

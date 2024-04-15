@@ -18,6 +18,7 @@ try:
     QUESTION_URL_FORMAT = re.compile('domains/[^/]+/[^/]+/[^\.]+\.rq')
 
     NEW_LINES = re.compile('\\n+')
+    NEW_BR = re.compile('((\\&\\#10;)+)')
 except:
     MODULE_URL_FORMAT = None
     MODELET_URL_FORMAT = None

@@ -3,65 +3,11 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix earl: <http://www.w3.org/ns/earl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-###################
-# Test criterions #
-###################
-
-:syntax a earl:TestCriterion ;
-    dcterms:identifier "syntax" ;
-    dcterms:title "Syntax test"@en ;
-    dcterms:description "A test meant to check wether the test subject is syntaxically correct or not."@en .
-
-:owl-rl-constraint a earl:TestCriterion ;
-    dcterms:identifier "owl-rl-constraint" ;
-    dcterms:title "OWL RL Constraint test"@en ;
-    dcterms:description "A test meant to check wether the test subject is syntaxically correct or not."@en .
-
-:profile-compatibility a earl:TestCriterion ;
-    dcterms:identifier "profile-compatibility" ;
-    dcterms:title "Profile compatibility test"@en ;
-    dcterms:description "A test meant to check whether the test subject is compatible with a profile or not, and if it is not, why."@en .
-
-:term-referencing a earl:TestCriterion ;
-    dcterms:identifier "term-referencing" ;
-    dcterms:title "Term referencing test"@en ;
-    dcterms:description "A test case from the Best Practices tests checking if each term of the test subject is referenced to a module through a rdfs:isDefinedBy property."@en .
-
-:domain-and-range-referencing a earl:TestCriterion ;
-    dcterms:identifier "domain-and-range-referencing" ;
-    dcterms:title "Domain and range referencing test"@en ;
-    dcterms:description "A test case from the Best Practices tests checking if all the ranges and domains from the test subject point to terms that are defined in the vocabulary."@en .
-
-:terms-differenciation a earl:TestCriterion ;
-    dcterms:identifier "terms-differenciation" ;
-    dcterms:title "Terms differenciation test"@en ;
-    dcterms:description "A test case from the Best Practices tests checking if all the terms are different enough from each other according to the Levenshtein distance metric."@en .
-
-:labeled-terms a earl:TestCriterion ;
-    dcterms:identifier "labeled-terms" ;
-    dcterms:title "Term labeling test"@en ;
-    dcterms:description "A test case from the Best Practices tests checking if all the terms of the subject have a rdfs:label property pointing to a literal in English"@en .
-
-:term-recognition a earl:TestCriterion ;
-    dcterms:identifier "term-recognition" ;
-    dcterms:title "Term recognition test"@en ;
-    dcterms:description "A test meant to detect if all the terms from the subject that are from the ontology namespace are indeed defined in the ontology"@en .
-
-:prefix-validity a earl:TestCriterion ;
-    dcterms:identifier "prefix-validity" ;
-    dcterms:title "Term validity test"@en ;
-    dcterms:description "A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc)"@en .
-
-:query-type a earl:TestCriterion ;
-    dcterms:identifier "query-type" ;
-    dcterms:title "Query type test"@en ;
-    dcterms:description "A test meant to check if the query is indeed of type Select or Ask" .
-
-:uri-validity a earl:TestCriterion ;
-    dcterms:identifier "uri-validity" ;
-    dcterms:title "URI validity test"@en ;
-    dcterms:description "A test meant to check if all the URIs of th resource are well-formed"@en .
+#############################
+# EARL extension for Olivaw #
+#############################
 
 earl:Fail owl:equivalentClass [
         a owl:Class ;
@@ -78,3 +24,79 @@ earl:Fail owl:equivalentClass [
 
 [ a owl:AllDisjointClasses ;
     owl:members (:MajorFail :MinorFail) ] . 
+
+:has-error a owl:ObjectProperty ;
+    rdfs:label "can outcome"@en ;
+    rdfs:comment "A relationship between a test criterion and a error identifier this test criterion can end up with."@en ;
+    rdfs:domain earl:TestCriterion ;
+    rdfs:range xsd:string .
+
+###################
+# Test criterions #
+###################
+
+:syntax a earl:TestCriterion ;
+    :has-error "syntax-error" ;
+    dcterms:identifier "syntax" ;
+    dcterms:title "Syntax test"@en ;
+    dcterms:description "A test meant to check wether the test subject is syntaxically correct or not."@en .
+
+:owl-rl-constraint a earl:TestCriterion ;
+    :has-error "owl-rl-constraint-violation" ;
+    dcterms:identifier "owl-rl-constraint" ;
+    dcterms:title "OWL RL Constraint test"@en ;
+    dcterms:description "A test meant to check wether the test subject is syntaxically correct or not."@en .
+
+:profile-compatibility a earl:TestCriterion ;
+    :has-error "owl-rl-profile-error" , "owl-ql-profile-error" , "owl-el-profile-error" ;
+    dcterms:identifier "profile-compatibility" ;
+    dcterms:title "Profile compatibility test"@en ;
+    dcterms:description "A test meant to check whether the test subject is compatible with a profile or not, and if it is not, why."@en .
+
+:term-referencing a earl:TestCriterion ;
+    :has-error "no-reference-module" ;
+    dcterms:identifier "term-referencing" ;
+    dcterms:title "Term referencing test"@en ;
+    dcterms:description "A test case from the Best Practices tests checking if each term of the test subject is referenced to a module through a rdfs:isDefinedBy property."@en .
+
+:domain-and-range-referencing a earl:TestCriterion ;
+    :has-error "domain-out-of-vocabulary" , "range-out-of-vocabulary" ;
+    dcterms:identifier "domain-and-range-referencing" ;
+    dcterms:title "Domain and range referencing test"@en ;
+    dcterms:description "A test case from the Best Practices tests checking if all the ranges and domains from the test subject point to terms that are defined in the vocabulary."@en .
+
+:terms-differenciation a earl:TestCriterion ;
+    :has-error "too-close-terms" ;
+    dcterms:identifier "terms-differenciation" ;
+    dcterms:title "Terms differenciation test"@en ;
+    dcterms:description "A test case from the Best Practices tests checking if all the terms are different enough from each other according to the Levenshtein distance metric."@en .
+
+:labeled-terms a earl:TestCriterion ;
+    :has-error "not-labeled-term" ;
+    dcterms:identifier "labeled-terms" ;
+    dcterms:title "Term labeling test"@en ;
+    dcterms:description "A test case from the Best Practices tests checking if all the terms of the subject have a rdfs:label property pointing to a literal in English"@en .
+
+:term-recognition a earl:TestCriterion ;
+    :has-error "unknown-term" ;
+    dcterms:identifier "term-recognition" ;
+    dcterms:title "Term recognition test"@en ;
+    dcterms:description "A test meant to detect if all the terms from the subject that are from the ontology namespace are indeed defined in the ontology"@en .
+
+:prefix-validity a earl:TestCriterion ;
+    :has-error "prefix-typo" ;
+    dcterms:identifier "prefix-validity" ;
+    dcterms:title "Term validity test"@en ;
+    dcterms:description "A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc)"@en .
+
+:query-type a earl:TestCriterion ;
+    :has-error "wrong-query-type" ;
+    dcterms:identifier "query-type" ;
+    dcterms:title "Query type test"@en ;
+    dcterms:description "A test meant to check if the query is indeed of type Select or Ask" .
+
+:uri-validity a earl:TestCriterion ;
+    :has-error "invalid-uri" ;
+    dcterms:identifier "uri-validity" ;
+    dcterms:title "URI validity test"@en ;
+    dcterms:description "A test meant to check if all the URIs of th resource are well-formed"@en .

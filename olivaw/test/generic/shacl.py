@@ -29,7 +29,7 @@ from olivaw.constants import (
     NEW_LINES,
     GET_CRITERION_VALIDITY,
     CRITERION_IDS,
-    ONTOLOGY_URL
+    ADD_VARIABLE
 )
 
 from rdflib import Graph, URIRef
@@ -56,10 +56,11 @@ def file_to_uri(file):
 
 def complete_test_content(file):
     with open(file, "r") as shape_file:
-        return f"@base <{file_to_uri(file)}> .\n{corese_prefix_text}\n{shape_file.read()}".replace("ONTOLOGY_URL", ONTOLOGY_URL)
+        return f"@base <{file_to_uri(file)}> .\n{corese_prefix_text}\n{shape_file.read()}"
 
 def load_valid_custom_tests(files):
     custom_tests = []
+    custom_tests_data = []
     new_criterion_identifiers = []
 
     files = glob(files)
@@ -121,13 +122,16 @@ def load_valid_custom_tests(files):
             smartPrint(" ")
             continue
 
+        query_graph(custom_test, ADD_VARIABLE)
+
         custom_tests.append(custom_test)
+        custom_tests_data.append(get_criterion_data(custom_test))
         new_criterion_identifiers.append(identifier)
 
         smartPrint(f"Custom test {identifier} added (file {file})")
         smartPrint(" ")
     
-    return custom_tests
+    return custom_tests, custom_tests_data
 
 
 def load_custom_test(file):
@@ -256,9 +260,7 @@ def custom_test(
     assertor,
     subject,
     fragment_graph,
-    shapes,
-    skip_pass=False,
-    tested_only=False
+    shapes
 ):
     
     for shape in shapes:
@@ -267,7 +269,6 @@ def custom_test(
         if criterion_identifier in SKIPPED_TESTS:
             continue
         
-        criterion_identifier = criterion_identifier[1:-1]
         criterion_namespace = "#".join(criterion_uri.split("#")[:-1]) + "#"
 
         if criterion_identifier in SKIPPED_TESTS:
@@ -324,31 +325,27 @@ def custom_test(
         if len(pointers) > 0:
             shape_content = TripleFormat.create(shape).toString()
             shape_content = f"{corese_prefix_text}\n{shape_content}"
+
             rdflib_shape = Graph()
             rdflib_shape.bind("earl", EARL_NAMESPACE)
             rdflib_shape.parse(data=shape_content, format="ttl")
 
             shape_description = rdflib_shape.query(GET_SHAPE_DESCRIPTION)
-
             shape_description = shape_description.serialize(format="ttl").decode()
-
             shape_description = add_base(shape_description, criterion_namespace)
 
             pointers = [[shape_description] + pointers]
         else:
             pointers = []
 
-        criterion = query_graph(shape, GET_CRITERION_URI)[0][1:-1]
-
         make_assertion(
             report,
             assertor,
             subject,
-            criterion,
-            f"{criterion_identifier}-error",
+            criterion_identifier,
+            criterion_identifier,
             messages,
             pointers=pointers,
             graph=fragment_graph,
-            skip_pass=skip_pass,
-            tested_only=tested_only
+            criterion_uri=criterion_uri
         )

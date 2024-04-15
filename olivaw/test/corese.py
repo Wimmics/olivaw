@@ -381,7 +381,7 @@ def query_graph(graph, query, format=TEXT_TSV):
     """
     query_process = QueryProcess.create(graph)
 
-    abstract_syntax_tree = query_process.ast(query)
+    abstract_syntax_tree = query_process.compile(query).getAST()
     mappings = query_process.query(abstract_syntax_tree)
 
     resultFormater = ResultFormat.create(mappings)

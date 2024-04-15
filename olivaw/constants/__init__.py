@@ -1,6 +1,5 @@
 from json import load
 from sys import exit
-from glob import glob
 from os.path import sep, exists
 
 from .paths import *
@@ -43,13 +42,17 @@ MODE = modes[0] if len(modes) > 0 else "manual"
 ACTIONS = MODE == "actions"
 PRECOMMIT = MODE == "precommit"
 
+SKIP_PASS = "--skip-pass" in COMMAND
+TESTED_ONLY = "--tested-only" in COMMAND
+
 QUIET = ACTIONS or PRECOMMIT
 
-TEST_RESOURCES = None
-with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}tests-resources.json", "r") as f:
-  TEST_RESOURCES = load(f)
+ERROR_RESOURCES = None
+with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}error-resources.json", "r") as f:
+  ERROR_RESOURCES = load(f)
 
-CRITERION_IDS = list(TEST_RESOURCES.keys())
+ERROR_IDS = list(ERROR_RESOURCES.keys())
+
 ONTOLOGY_URL = None
 TERM_DISTANCE_THRESHOLD = None
 BLOCKING_ERRORS = None
@@ -122,17 +125,39 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
   GET_TERM_PAIRS = add_repo_variables(GET_TERM_PAIRS)
   GET_ONTOLOGY_TERMS = add_repo_variables(GET_ONTOLOGY_TERMS)
   GET_IMPORTS = add_repo_variables(GET_IMPORTS)
+  ADD_VARIABLE = add_repo_variables(ADD_VARIABLE)
 
   ONTOLOGY_NAMESPACE = Namespace(ONTOLOGY_URL)
 
   # The character separating the ontology base URL from the suffix
   ONTOLOGY_SEPARATOR = ONTOLOGY_URL[-1]
 
-  for criterion in TEST_RESOURCES.keys():
-    criterion_resource = TEST_RESOURCES[criterion]
-    for error in criterion_resource["errors"].keys():
-      error_resource = criterion_resource["errors"][error]
-      error_resource["blocking"] = error in BLOCKING_ERRORS
+  for error in ERROR_RESOURCES.keys():
+    ERROR_RESOURCES[error]["blocking"] = error in BLOCKING_ERRORS
+
+CRITERION_DATA = None
+try:
+    from rdflib import Graph
+    criterions_graph = Graph()
+    criterions_graph.parse(PWD_TO_MODEL_TEST_ONTO)
+    criterions = criterions_graph.query(GET_CRITERION_DATA)
+    CRITERION_DATA = {
+        str(criterion_id): {
+            "title": str(criterion_title),
+            "description": str(criterion_description),
+            "errors" : [
+              str(id)
+              for id in criterions_graph.query(
+                GET_ERRORS_OF_TEST.replace("CRITERION_ID", criterion_id)
+              )
+            ]
+        }
+        for criterion_id, criterion_title, criterion_description in criterions
+    }
+except:
+  raise
+
+CRITERION_IDS = list(CRITERION_DATA.keys())
 
 MODEL_BEST_PRACTICES_TESTS = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]
 
