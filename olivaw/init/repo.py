@@ -14,9 +14,9 @@ from olivaw.constants import (
     NEW_LINES,
     REPO_NAME,
     GITHUB_API,
-    BADGE_LIST,
-    badge_url
+    BADGE_LIST
 )
+from olivaw.init.util.badge import badge_url
 
 from .readme import update_readme
 

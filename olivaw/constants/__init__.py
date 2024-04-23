@@ -48,16 +48,12 @@ TESTED_ONLY = "--tested-only" in COMMAND
 QUIET = ACTIONS or PRECOMMIT
 
 ERROR_RESOURCES = None
-with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}error-resources.json", "r") as f:
+with open(f"{PWD_TO_CONSTANTS}{sep}error-resources.json", "r") as f:
   ERROR_RESOURCES = load(f)
 
 ERROR_IDS = list(ERROR_RESOURCES.keys())
 
-ONTOLOGY_URL = None
-TERM_DISTANCE_THRESHOLD = None
-BLOCKING_ERRORS = None
-GIST_INDEX = None
-SKIPPED_ERRORS = None
+ONTOLOGY_URL = TERM_DISTANCE_THRESHOLD = BLOCKING_ERRORS = GIST_INDEX = SKIPPED_ERRORS = None
 
 if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
   with open(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json", "r") as f:
@@ -116,16 +112,22 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
 
   from .uris import *
 
-  NOT_REFERENCED = add_repo_variables(NOT_REFERENCED)
-  GET_BY_MODULE = add_repo_variables(GET_BY_MODULE)
-  DOMAIN_OUT_Of_VOCABULARY = add_repo_variables(DOMAIN_OUT_Of_VOCABULARY)
-  RANGE_OUT_OF_VOCABULARY = add_repo_variables(RANGE_OUT_OF_VOCABULARY)
-  GET_TOO_CLOSED_PAIRS = add_repo_variables(GET_TOO_CLOSED_PAIRS)
-  NOT_LABELED = add_repo_variables(NOT_LABELED)
-  GET_TERM_PAIRS = add_repo_variables(GET_TERM_PAIRS)
-  GET_ONTOLOGY_TERMS = add_repo_variables(GET_ONTOLOGY_TERMS)
-  GET_IMPORTS = add_repo_variables(GET_IMPORTS)
-  ADD_VARIABLE = add_repo_variables(ADD_VARIABLE)
+  VARIABLE_REQUESTS = [
+    "NOT_REFERENCED",
+    "GET_BY_MODULE",
+    "DOMAIN_OUT_Of_VOCABULARY",
+    "RANGE_OUT_OF_VOCABULARY",
+    "GET_TOO_CLOSED_PAIRS",
+    "NOT_LABELED",
+    "GET_TERM_PAIRS",
+    "GET_ONTOLOGY_TERMS",
+    "GET_IMPORTS",
+    "ADD_VARIABLE"
+  ]
+
+  for request_name in VARIABLE_REQUESTS:
+    request_value = locals()[request_name]
+    locals()[request_name] = add_repo_variables(request_value)
 
   ONTOLOGY_NAMESPACE = Namespace(ONTOLOGY_URL)
 

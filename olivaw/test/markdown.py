@@ -1,4 +1,4 @@
-from rdflib import Graph, Literal
+from rdflib import Literal
 from datetime import datetime
 from sys import argv
 
@@ -9,7 +9,6 @@ from olivaw.constants import (
     COLOR_BOX_TEMPLATE,
     ERROR_TABLE_HEADER,
     GET_ASSERTOR_DETAILS,
-    GET_CRITERION_DATA,
     GET_DETAILED_OUTCOMES,
     GET_OUTCOMES_PARTS,
     GET_OUTCOME_POINTERS,
@@ -353,7 +352,7 @@ def make_stat_chapter(outcomes):
         ""
     ]
 
-def make_turtle_page(report, file_name) -> str:
+def markdown_export(report, file_name) -> str:
 
     md = []
 

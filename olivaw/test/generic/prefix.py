@@ -1,13 +1,12 @@
 from olivaw.constants import (
-    similar_prefix_search,
-    COMMON_URIS_TREE,
     PREFIX_SIMILARITY_THRESHOLD,
     GET_URIS,
-    make_index,
     GET_PREFIX_USAGE,
     DATASETS,
     SKIPPED_TESTS
 )
+
+from olivaw.test import COMMON_URIS_TREE
 
 from olivaw.test.corese import (
     safe_load,
@@ -17,6 +16,7 @@ from olivaw.test.corese import (
     OWL_RL
 )
 
+from olivaw.test.util import make_index, similar_prefix_search
 from olivaw.test.turtle import make_assertion
 
 def get_prefix_suffix(uri):

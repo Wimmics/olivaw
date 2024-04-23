@@ -6,19 +6,19 @@ ERROR_TABLE_HEADER = [
 
 COLOR_BOX_TEMPLATE = "EMOJI*TEXT*"
 
-global MODULE_URL_FORMAT, MODELET_URL_FORMAT, DATASET_URL_FORMAT, USECASE_URL_FORMAT
+MODULE_URL_FORMAT = MODELET_URL_FORMAT = DATASET_URL_FORMAT = USECASE_URL_FORMAT = None
 
 try:
-    import regex as re
+    from regex import compile as regex_compile
 
-    MODULE_URL_FORMAT = re.compile('src/[^/]+$')
-    MODELET_URL_FORMAT = re.compile('domains/[^/]+/[^/]+/onto\.ttl')
-    DATASET_URL_FORMAT = re.compile('domains/[^/]+/[^/]+/dataset\.ttl')
-    USECASE_URL_FORMAT = re.compile('use-cases/[^/]+/[^/]+$')
-    QUESTION_URL_FORMAT = re.compile('domains/[^/]+/[^/]+/[^\.]+\.rq')
+    MODULE_URL_FORMAT = regex_compile('src/[^/]+$')
+    MODELET_URL_FORMAT = regex_compile('domains/[^/]+/[^/]+/onto\.ttl')
+    DATASET_URL_FORMAT = regex_compile('domains/[^/]+/[^/]+/dataset\.ttl')
+    USECASE_URL_FORMAT = regex_compile('use-cases/[^/]+/[^/]+$')
+    QUESTION_URL_FORMAT = regex_compile('domains/[^/]+/[^/]+/[^\.]+\.rq')
 
-    NEW_LINES = re.compile('\\n+')
-    NEW_BR = re.compile('((\\&\\#10;)+)')
+    NEW_LINES = regex_compile('\\n+')
+    NEW_BR = regex_compile('((\\&\\#10;)+)')
 except:
     MODULE_URL_FORMAT = None
     MODELET_URL_FORMAT = None

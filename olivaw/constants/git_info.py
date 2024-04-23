@@ -115,9 +115,10 @@ OLIVAW_REF = "Wimmics/olivaw"
 
 SHAPE_BASE_URIS = None
 
-OLIVAW_EARL_DATASET = "https://raw.githubusercontent.com/Wimmics/olivaw/main/olivaw/test/olivaw-earl.ttl#"
-
 GIT_RAW = "https://raw.githubusercontent.com"
+OLIVAW_EARL_DATASET = f"{GIT_RAW}/{OLIVAW_REF}/main/olivaw/test/olivaw-earl.ttl#"
+
+OLIVAW_TEST_BLOB_URI = "https://github.com/Wimmics/olivaw/blob/main/olivaw/test"
 
 try:
   SHAPE_BASE_URIS = f"{GIT_RAW}/{'/'.join(REPO_URI.split('/')[-2:])}/{BRANCH}/.acimov/custom-tests/"

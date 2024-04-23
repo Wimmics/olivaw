@@ -1,7 +1,4 @@
 from os.path import relpath, sep
-from glob import glob
-from requests import get
-from tqdm import tqdm
 
 from olivaw.test.corese import (
     safe_load,
@@ -9,14 +6,14 @@ from olivaw.test.corese import (
     query_graph,
     TURTLE,
     OWL_RL,
-    TEXT_CSV,
-    TEXT_TSV
+    TEXT_CSV
 )
 
 from olivaw.test.turtle import (
     make_subject,
     make_assertion,
-    make_not_tested
+    make_not_tested,
+    new_report
 )
 from olivaw.constants import (
     ROOT_FOLDER,
@@ -27,13 +24,12 @@ from olivaw.constants import (
     GET_PREFIX_USAGE,
     ONTOLOGY_URL,
     SKIPPED_TESTS,
-    QUIET,
-    DATASETS,
     CUSTOM_DATA_TESTS
 )
 
 from olivaw.test.generic.shacl import load_valid_custom_tests, custom_test
 from olivaw.test.generic.prefix import prefix_test
+from olivaw.test.util import progress_bar
 
 shape_tests, shapes_data = load_valid_custom_tests(CUSTOM_DATA_TESTS)
 
@@ -134,14 +130,17 @@ def get_ontology_terms(fragments):
 
     return terms
 
-def data_tests(glob_path, report, assertor):
+def data_tests(glob_path, report=None, assertor=None):
+    if report is None or assertor is None:
+        report, assertor = new_report("data")
 
-    for dataset in tqdm(glob_path, disable=QUIET):
+    for dataset in progress_bar(glob_path):
         fragment_check(
             report,
             assertor,
             dataset
         )
+    return report
 
 def best_practices(
         report,

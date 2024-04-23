@@ -5,15 +5,29 @@ from pre_commit import output
 from rdflib import Graph
 from os.path import sep, relpath, exists
 
-from olivaw.constants import PWD_TO_ROOT_FOLDER, GET_MAJOR_FAILS, OLIVAW_EARL_DATASET, PWD_TO_MODEL_TEST_ONTO, GET_CRITERION_SUMMARY
-from olivaw.test.corese import safe_load, query_graph, export_graph
-from olivaw.test.turtle import prepare_graph, make_assertor
+from olivaw.test.corese import export_graph
+from olivaw.test.turtle import new_report, make_assertor
 
-from olivaw.test.model.testing import modules_tests, modelets_tests
-from olivaw.test.model.testing import shape_tests as model_shape_tests
-from olivaw.test.data.testing import data_tests
-from olivaw.test.data.testing import shape_tests as data_shape_tests
+from olivaw.test.model.testing import (
+    modules_tests,
+    modelets_tests,
+    shape_tests as model_shape_tests
+)
+
+from olivaw.test.data.testing import (
+    data_tests,
+    shape_tests as data_shape_tests
+)
+
 from olivaw.test.query.testing import question_tests
+
+from olivaw.constants import (
+    PWD_TO_ROOT_FOLDER,
+    GET_MAJOR_FAILS,
+    OLIVAW_EARL_DATASET,
+    PWD_TO_MODEL_TEST_ONTO,
+    GET_CRITERION_SUMMARY
+)
 
 sorted_files = {
     "model": {
@@ -87,22 +101,11 @@ def main(files: Sequence[str] | None = None):
         if nb_files == 0:
             continue
 
-        report = prepare_graph()
-        assertor = make_assertor(
-            report,
-            test_type,
-            f"https://github.com/Wimmics/olivaw/blob/main/olivaw/test/{test_type}/suite.py"
-        )
+        report, assertor = new_report(test_type)
 
         for suite in test_dict.keys():
             files = test_dict[suite]
-            suite(
-                files,
-                report,
-                assertor,
-                skip_pass=True,
-                tested_only=True
-            )
+            suite(files, report=report, assertor=assertor)
         
         errors += [
             {

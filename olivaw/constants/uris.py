@@ -9,7 +9,7 @@ EARL_PREFIX="http://www.w3.org/ns/earl#"
 
 URI_FORMAT = None
 try:
-    import regex as re
-    URI_FORMAT = re.compile("^(([^:/?#\s]+):)(\/\/([^/?#\s]*))?([^?#\s]*)(\?([^#\s]*))?(#(.*))?$")
+    from regex import compile as regex_compile
+    URI_FORMAT = regex_compile("^(([^:/?#\s]+):)(\/\/([^/?#\s]*))?([^?#\s]*)(\?([^#\s]*))?(#(.*))?$")
 except:
     pass

@@ -36,7 +36,7 @@ from olivaw.constants import (
     USECASES_URL,
     SKIPPED_ERRORS,
     SKIPPED_TESTS,
-    URI_FORMAT,
+    OLIVAW_TEST_BLOB_URI,
     BLOCKING_ERRORS,
     MODE,
     SKIP_PASS,
@@ -50,20 +50,23 @@ def statement(self, subject, *po):
     for item in po:
         self.add((subject, item[0], item[1]))
 
-def prepare_graph():
-    graph = Graph()
-    graph.statement = statement.__get__(graph)
+def new_report(test_type):
+    report = Graph()
+    report.statement = statement.__get__(report)
 
-    graph.bind("earl", EARL_NAMESPACE)
-    graph.bind("", ONTOLOGY_NAMESPACE)
-    graph.bind("src", SRC_NAMESPACE)
-    graph.bind("profile-test", TEST_NAMESPACE)
-    graph.bind("olivaw-earl", OLIVAW_EARL_NAMESPACE)
-    graph.bind("dcterms", DCTERMS)
+    report.bind("earl", EARL_NAMESPACE)
+    report.bind("", ONTOLOGY_NAMESPACE)
+    report.bind("src", SRC_NAMESPACE)
+    report.bind("profile-test", TEST_NAMESPACE)
+    report.bind("olivaw-earl", OLIVAW_EARL_NAMESPACE)
+    report.bind("dcterms", DCTERMS)
 
-    return graph
+    assertor = make_assertor(report, test_type)
 
-def make_assertor(report, script_uri):
+    return report, assertor
+
+def make_assertor(report, test_type):
+    script_uri = f"{OLIVAW_TEST_BLOB_URI}/{test_type}/suite.py"
     assertorId = f"{DEV_USERNAME}-{MODE}"
     title = f"{DEV_USERNAME} using {MODE} script"
     description = f"Test triggered by @{DEV_USERNAME} by {MODE} trigger"

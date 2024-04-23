@@ -1,18 +1,21 @@
-from tqdm import tqdm
 from os.path import relpath, sep
 
 from olivaw.test.corese import Graph, QueryProcess
-from olivaw.test.turtle import make_assertion, make_subject, make_not_tested
-from olivaw.constants import PWD_TO_ROOT_FOLDER, SKIPPED_TESTS, QUIET
+from olivaw.test.turtle import make_assertion, make_subject, make_not_tested, new_report
+from olivaw.constants import PWD_TO_ROOT_FOLDER, SKIPPED_TESTS
 
 from olivaw.test.query.uris import retrieveURIFromQuery
 
 from olivaw.test.generic.prefix import prefix_test
 from olivaw.test.generic.uri import uri_test
+from olivaw.test.util.print import progress_bar
 
-def question_tests(glob_path, report, assertor):
-    for query in tqdm(glob_path, disable=QUIET):
+def question_tests(glob_path, report=None, assertor=None):
+    if report is None or assertor is None:
+        report, assertor = new_report("query")
+    for query in progress_bar(glob_path):
         test_competency_question(report, assertor, query)
+    return report
 
 def test_competency_question(report, assertor, file):
     graph = Graph()

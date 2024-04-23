@@ -4,11 +4,11 @@ from json import loads
 from olivaw.constants import (
     ROOT_FOLDER,
     BADGE_LIST,
-    badge_url,
     DEV_USERNAME,
     NEW_LINES,
     GIST_INDEX
 )
+from olivaw.init.util.badge import badge_url
 
 def update_readme(gist_id=None):
     readme = None

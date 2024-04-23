@@ -1,6 +1,5 @@
 from glob import glob
 from os.path import sep, relpath, abspath
-from tqdm import tqdm
 
 from olivaw.test.corese import (
     query_graph, 
@@ -11,27 +10,20 @@ from olivaw.test.corese import (
 )
 from olivaw.constants import (
     GET_BY_MODULE,
-    NOT_REFERENCED,
-    ONTOLOGY_SEPARATOR,
-    DOMAIN_OUT_Of_VOCABULARY,
-    RANGE_OUT_OF_VOCABULARY,
-    GET_TERM_PAIRS,
-    TERM_DISTANCE_THRESHOLD,
     DECIDABILITY_RANGE,
     ONTOLOGY_URL,
     PWD_TO_ROOT_FOLDER,
     MODEL_BEST_PRACTICES_TESTS,
     MODEL_BEST_PRACTICES_TESTS,
-    NOT_LABELED,
     SKIPPED_TESTS,
     SKIPPED_FILES,
-    QUIET,
     CUSTOM_MODEL_TESTS,
     MODULES_TTL_GLOB_PATH,
     GET_DECLARED_ONTOLOGIES,
     TRIPLES_FOR_MODULE
 )
 
+from olivaw.test.model.best_practices import best_practices_test
 from olivaw.test.turtle import (
     make_subject,
     make_not_tested,
@@ -47,6 +39,8 @@ from olivaw.test.generic.shacl import (
 )
 
 from rdflib import Graph as RdflibGraph
+
+from olivaw.test.util.print import progress_bar
 
 shape_tests, shape_data = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
 ontologies = {}
@@ -242,24 +236,18 @@ def fragment_check(
     
     return False
 
-def modules_tests(
-        glob_path,
-        report,
-        assertor
-    ):
+def modules_tests(modules, report=None, assertor=None):
     """Returns a report about of a profile check of a set of ontologies
 
     :param glob_path: A glob-format path string
     :returns: A dictionary of reports, the keys are the file paths
     """
-    modules = glob(glob_path) if isinstance(glob_path, str) else glob_path
-
     if len(modules) == 0:
         return []
     
-    unsafe_modules = []
+    safe_modules = []
 
-    for module in tqdm(modules, disable=QUIET):
+    for module in progress_bar(modules):
         module_key = relpath(module, PWD_TO_ROOT_FOLDER).replace(sep, "/")
         subject = make_subject(report, [module_key])
         load_error = fragment_check(
@@ -269,17 +257,12 @@ def modules_tests(
             subject
         )
 
-        if load_error:
-            unsafe_modules.append(module)
+        if not load_error:
+            safe_modules.append(module)
 
-    return unsafe_modules
+    return safe_modules
 
-def modelets_tests(
-        glob_path,
-        report,
-        assertor,
-        skip_merge_test=False
-    ):
+def modelets_tests(modelets, report=None, assertor=None):
     """Test of the modelets
     Test them individually, and then checks how each module behave
     when merged with their related terms in the modelets
@@ -287,15 +270,12 @@ def modelets_tests(
     :param glob_path: A glob-format path string
     :returns: A dictionary of reports
     """
-
-    modelets = glob(glob_path) if isinstance(glob_path, str) else glob_path
-
     if len(modelets) == 0:
         return []
 
-    unsafe_modelets = []
+    safe_modelets = []
 
-    for modelet in tqdm(modelets, disable=QUIET):
+    for modelet in progress_bar(modelets):
         if "template" in modelet:
             continue
 
@@ -311,11 +291,9 @@ def modelets_tests(
         )
 
         if load_error:
-            unsafe_modelets.append(modelet)
             continue
-
-        if skip_merge_test:
-            continue
+        else:
+            safe_modelets.append(modelet)
         
         # Add each triple of the modelet to their related ontology, then proceed to profile checks
         alone_no_owl = safe_load(
@@ -342,156 +320,7 @@ def modelets_tests(
                 extras=moduled_triples[module]
             )
 
-    return unsafe_modelets
-
-def levenshtein(s1, s2):
-    """Returns the levenshtein distance between two trings
-    Algorithm borrowed from https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance#Python
-
-    :param s1: The first string
-    :param s2: The second string
-    :returns: The levenshtein distance
-    """
-    if len(s1) < len(s2):
-        return levenshtein(s2, s1)
-
-    if len(s2) == 0:
-        return len(s1)
-
-    previous_row = range(len(s2) + 1)
-    for i, c1 in enumerate(s1):
-        current_row = [i + 1]
-        for j, c2 in enumerate(s2):
-            insertions = previous_row[j + 1] + 1 # j+1 instead of j since previous_row and current_row are one character longer
-            deletions = current_row[j] + 1       # than s2
-            substitutions = previous_row[j] + (c1 != c2)
-            current_row.append(min(insertions, deletions, substitutions))
-        previous_row = current_row
-    
-    return previous_row[-1]
-
-def best_practices_test(
-        report,
-        assertor,
-        subject,
-        fragment_wih_import,
-        fragment_no_import,
-        fragment_no_owl,
-        skip=[]
-    ):
-    """Test the best practices mistakes that do not break the RDF syntax neither the OWL reasoning,
-    but that should still not happen
-
-    :param ontology: The ontology to test
-    :returns: An report dictionary
-    """
-
-    skipped_best_practice = skip + SKIPPED_TESTS
-
-    # Check for terms not linked to an ontology
-    if not "term-referencing" in skipped_best_practice:
-        unlinked_subjects = query_graph(fragment_no_owl, NOT_REFERENCED)
-        unlinked_subjects_pointers = [[pointer for pointer in unlinked_subjects]] if len(unlinked_subjects) else []
-        unlinked_subject_messages = [f"Subject terms not linked to a module by a rdfs:isDefinedBy property"] if len(unlinked_subjects) else []
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "term-referencing",
-            "no-reference-module",
-            unlinked_subject_messages,
-            pointers=unlinked_subjects_pointers,
-            graph=fragment_no_owl
-        )
-    
-    if not "domain-and-range-referencing" in skipped_best_practice:
-        # Checking for domain property out of the vocabulary
-        dov = query_graph(fragment_no_import, DOMAIN_OUT_Of_VOCABULARY)
-        dov = [line.split("\t") for line in dov]
-        dov_messages = [
-            f"The property :{item[0][1:-1]} has a domain out of the ontology: {item[1]}"
-            for item in dov
-        ]
-        dov_pointers = [[f"<{ONTOLOGY_URL}{item[0][1:-1]}>" for item in dov]]
-        dov_pointers = dov_pointers if len(dov_pointers[0]) > 0 else []
-
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "domain-and-range-referencing",
-            "domain-out-of-vocabulary",
-            dov_messages,
-            pointers=dov_pointers,
-            graph=fragment_no_import
-        )
-
-        # Checking for range property out of the vocabulary
-        rov = query_graph(fragment_no_import, RANGE_OUT_OF_VOCABULARY)
-        rov = [line.split("\t") for line in rov]
-        rov_messages = ["Some properties have a range out of the ontology"] if len(rov) > 0 else []
-        rov_pointers = [[f"<{ONTOLOGY_URL}{item[0][1:-1]}>" for item in rov]]
-        rov_pointers = rov_pointers if len(rov_pointers[0]) > 0 else [] 
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "domain-and-range-referencing",
-            "range-out-of-vocabulary",
-            rov_messages,
-            pointers=rov_pointers,
-            graph=fragment_no_import
-        )
-
-    # Checking for too close terms
-    if not "terms-differenciation" in skipped_best_practice:
-        term_pairs = query_graph(fragment_no_owl, GET_TERM_PAIRS)
-        term_pairs = [[
-                f"<{ONTOLOGY_URL}{item.strip()[1:-1]}>"
-                for item in line.split("\t")
-            ]
-            for line in term_pairs
-        ]
-        term_pairs = [pair for pair in term_pairs if levenshtein(*pair) < TERM_DISTANCE_THRESHOLD]
-        term_pairs = [[
-            pair_item
-            for pair in term_pairs
-            for pair_item in pair
-        ]]
-        term_pairs = [] if len(term_pairs[0]) == 0 else term_pairs
-        
-        messages = ["Some terms are too similar"] if len(term_pairs) > 0 else []
-
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "terms-differenciation",
-            "too-close-terms",
-            messages,
-            pointers=term_pairs,
-            graph=fragment_no_owl
-        )
-    
-    if not "labeled-terms" in skipped_best_practice:
-        not_labeled_terms = query_graph(fragment_no_owl, NOT_LABELED)
-        not_labeled_pointers = [[
-            f"<{ONTOLOGY_URL}{line.strip()[1:-1]}>"
-            for line in not_labeled_terms
-            if len(line.strip()) > 0
-        ]]
-        not_labeled_pointers = [] if len(not_labeled_pointers[0]) == 0 else not_labeled_pointers
-        not_labeled_messages = [f"The following terms have no rdfs:label to define it in natural language"] if len(not_labeled_pointers) > 0 else []
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "labeled-terms",
-            "not-labeled-term",
-            not_labeled_messages,
-            pointers=not_labeled_pointers,
-            graph=fragment_no_owl
-        )
+    return safe_modelets
 
 def merged_fragment_set_test(
         report,

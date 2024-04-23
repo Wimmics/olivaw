@@ -9,8 +9,7 @@ from olivaw.test.corese import (
     TripleFormat,
     TURTLE,
     corese_namespaces,
-    corese_prefix_text,
-    smartPrint
+    corese_prefix_text
 )
 
 from olivaw.test.turtle import make_assertion
@@ -34,6 +33,8 @@ from olivaw.constants import (
 
 from rdflib import Graph, URIRef
 from rdflib.namespace import RDF, SH
+
+from olivaw.test.util.print import smart_print
 
 test_features = [
     "Custom test graph must have one and only one criterion",
@@ -70,19 +71,19 @@ def load_valid_custom_tests(files):
         custom_test = safe_load([], extras=content, disable_owl=True)
 
         if isinstance(custom_test, list):
-            smartPrint(f"Custom test rejected (file {file})")
-            smartPrint(f"Cause: syntax error")
+            smart_print(f"Custom test rejected (file {file})")
+            smart_print(f"Cause: syntax error")
             for message in custom_test:
-                smartPrint(f"\t{message}")
-            smartPrint(" ")
+                smart_print(f"\t{message}")
+            smart_print(" ")
             continue
 
         criterion_test = query_graph(custom_test, GET_CRITERION_VALIDITY.replace("FILE_URI", file_to_uri(file)))
 
         if len(criterion_test) != 1:
-            smartPrint(f"Custom test rejected (file {file})")
-            smartPrint(f"Cause: The file should contain one unique earl:TestCriterion")
-            smartPrint(" ")
+            smart_print(f"Custom test rejected (file {file})")
+            smart_print(f"Cause: The file should contain one unique earl:TestCriterion")
+            smart_print(" ")
             continue
 
         identifier, *criterion_test_result = criterion_test[0].split("\t")
@@ -90,11 +91,11 @@ def load_valid_custom_tests(files):
         criterion_test_result = [item == "true" for item in criterion_test_result]
 
         if len(criterion_test_result) != 9:
-            smartPrint(f"Custom test rejected (file {file})")
-            smartPrint(f"Cause: The custom test graph should have the following features")
+            smart_print(f"Custom test rejected (file {file})")
+            smart_print(f"Cause: The custom test graph should have the following features")
             for criterion in test_features:
-                smartPrint(f"\t-{criterion}")
-            smartPrint(" ")
+                smart_print(f"\t-{criterion}")
+            smart_print(" ")
             continue
 
         if False in criterion_test_result:
@@ -103,23 +104,23 @@ def load_valid_custom_tests(files):
                 for i in range(len(criterion_test_result))
                 if not criterion_test_result[i]
             ]
-            smartPrint(f"Custom test rejected (file {file})")
-            smartPrint(f"Cause: The custom test graph should have the following features")
+            smart_print(f"Custom test rejected (file {file})")
+            smart_print(f"Cause: The custom test graph should have the following features")
             for criterion in criterions:
-                smartPrint(f"\t-{criterion}")
-            smartPrint(" ")
+                smart_print(f"\t-{criterion}")
+            smart_print(" ")
             continue
 
         if identifier in CRITERION_IDS:
-            smartPrint(f"Custom test rejected (file {file})")
-            smartPrint(f"Cause: The custom test identifier should not be the one of a default test")
-            smartPrint(" ")
+            smart_print(f"Custom test rejected (file {file})")
+            smart_print(f"Cause: The custom test identifier should not be the one of a default test")
+            smart_print(" ")
             continue
 
         if identifier in new_criterion_identifiers:
-            smartPrint(f"Custom test rejected (file {file})")
-            smartPrint(f"Cause: The custom test identifier should not be the one of another custom test")
-            smartPrint(" ")
+            smart_print(f"Custom test rejected (file {file})")
+            smart_print(f"Cause: The custom test identifier should not be the one of another custom test")
+            smart_print(" ")
             continue
 
         query_graph(custom_test, ADD_VARIABLE)
@@ -128,8 +129,8 @@ def load_valid_custom_tests(files):
         custom_tests_data.append(get_criterion_data(custom_test))
         new_criterion_identifiers.append(identifier)
 
-        smartPrint(f"Custom test {identifier} added (file {file})")
-        smartPrint(" ")
+        smart_print(f"Custom test {identifier} added (file {file})")
+        smart_print(" ")
     
     return custom_tests, custom_tests_data
 

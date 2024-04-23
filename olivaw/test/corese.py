@@ -6,7 +6,6 @@ from subprocess import Popen, PIPE, DEVNULL
 from time import sleep
 from os.path import exists, sep
 from typing import Union, List
-from py4j import java_gateway
 from py4j.java_gateway import launch_gateway, JavaGateway
 
 # Only in order to fix the not detected unbound prefix corese bug
@@ -18,25 +17,9 @@ from olivaw.constants import (
     ONTOLOGY_SEPARATOR,
     CORESE_LOCAL_PATH,
     PWD_TO_ROOT_FOLDER,
-    QUIET,
     URI_FORMAT
 )
-
-def print_title(title):
-    if QUIET:
-        return
-    title = "== " + title + " =="
-    border = "=" * len(title)
-    print("\n" * 2)
-    print(border)
-    print(title)
-    print(border)
-
-def smartPrint(message):
-    if QUIET:
-        return
-    print(message)
-
+from olivaw.test.util.print import print_title, smart_print
 
 #####################################################
 # Start the java server & capture the stderr output #
@@ -230,7 +213,7 @@ def load(
 
     for file in path:
         if not exists(file):
-            smartPrint(f"File not found: {file}")
+            smart_print(f"File not found: {file}")
             continue
         ld.parse(file)
     
