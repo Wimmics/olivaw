@@ -6,7 +6,6 @@ from rdflib import Graph
 from os.path import sep, relpath, exists
 
 from olivaw.test.corese import export_graph
-from olivaw.test.turtle import new_report, make_assertor
 
 from olivaw.test.model.testing import (
     modules_tests,
@@ -101,22 +100,19 @@ def main(files: Sequence[str] | None = None):
         if nb_files == 0:
             continue
 
-        report, assertor = new_report(test_type)
-
         for suite in test_dict.keys():
             files = test_dict[suite]
-            suite(files, report=report, assertor=assertor)
-        
-        errors += [
-            {
-                "subject_title": str(subject_title),
-                "criterion": str(criterion),
-                "error_title": str(error_title),
-                "error_description": str(error_description)
-            }
-            for (subject_title, criterion, error_title, error_description)
-            in report.query(GET_MAJOR_FAILS)
-        ]
+            report = suite(files)
+            errors += [
+                {
+                    "subject_title": str(subject_title),
+                    "criterion": str(criterion),
+                    "error_title": str(error_title),
+                    "error_description": str(error_description)
+                }
+                for (subject_title, criterion, error_title, error_description)
+                in report.query(GET_MAJOR_FAILS)
+            ]
 
     for error in errors:
         standard_criterion = error["criterion"].startswith(str(OLIVAW_EARL_DATASET))

@@ -30,84 +30,54 @@ from olivaw.constants import (
 from olivaw.test.generic.shacl import load_valid_custom_tests, custom_test
 from olivaw.test.generic.prefix import prefix_test
 from olivaw.test.util import progress_bar
+from olivaw.test.util.drafts import AssertDraft
 
 shape_tests, shapes_data = load_valid_custom_tests(CUSTOM_DATA_TESTS)
 
-def fragment_check(
-    report,
-    assertor,
-    dataset
-):
+def fragment_check(draft, dataset):
     dataset_key = relpath(dataset, ROOT_FOLDER).replace(sep, "/")
-    subject = make_subject(report, [dataset_key])
+    draft.make_subject([dataset_key])
     graph_no_import = safe_load(dataset, disable_import=True)
 
     is_syntax_valid = not isinstance(graph_no_import, list)
 
-    make_assertion(
-        report,
-        assertor,
-        subject,
-        "syntax",
-        "syntax-error",
-        [] if is_syntax_valid else graph_no_import
+    draft.make_assertion(
+        criterion="syntax",
+        error="syntax-error",
+        messages=[] if is_syntax_valid else graph_no_import
     )
 
     graph_with_import = safe_load(dataset) if is_syntax_valid else None
     is_valid = is_syntax_valid and not isinstance(graph_with_import, list)
 
     if not is_valid:
-        make_not_tested(
-            report,
-            assertor,
-            subject,
-            "owl-rl-constraint"
-        )
-
-        make_not_tested(
-            report,
-            assertor,
-            subject,
-            "term-recognition"
-        )
+        draft.make_not_tested("owl-rl-constraint", "term-recognition")
         return
 
     # Check for respect for OWL constraints
     if not "owl-rl-constraint" in SKIPPED_TESTS:
         constraint_violations = check_OWL_constraints(graph_with_import)
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "owl-rl-constraint",
-            "owl-rl-constraint-violation",
-            constraint_violations,
+        draft.make_assertion(
+            criterion="owl-rl-constraint",
+            error="owl-rl-constraint-violation",
+            messages=check_OWL_constraints(graph_with_import),
             graph=graph_with_import
         )
 
     if len(constraint_violations) > 0:
-        make_not_tested(
-            report,
-            assertor,
-            subject,
-            "term-recognition"
-        )
+        draft.make_not_tested("term-recognition")
         return
     
     graph_rl = safe_load(dataset, disable_import=True, profile=OWL_RL)
     graph_no_owl = safe_load(dataset, disable_owl=True)
     
     best_practices(
-        report,
-        assertor,
-        subject,
+        draft,
         graph_rl
     )
 
     custom_test(
-        report,
-        assertor,
-        subject,
+        draft,
         graph_no_owl,
         shape_tests
     )
@@ -134,21 +104,14 @@ def data_tests(glob_path, report=None, assertor=None):
     if report is None or assertor is None:
         report, assertor = new_report("data")
 
+    draft = AssertDraft(report, assertor)
+
     for dataset in progress_bar(glob_path):
-        fragment_check(
-            report,
-            assertor,
-            dataset
-        )
+        fragment_check(draft, dataset)
+
     return report
 
-def best_practices(
-        report,
-        assertor,
-        subject,
-        graph_rl
-    ):
-
+def best_practices(draft, graph_rl):
     if not "term-recognition" in SKIPPED_TESTS:
         ontology_terms = list(set([term for _, term in get_ontology_terms(MODULES_TTL_GLOB_PATH)]))
 
@@ -172,12 +135,9 @@ def best_practices(
             ]
         ]] if len(unknown_terms) > 0 else []
 
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "term-recognition",
-            "unknown-term",
+        draft.make_assertion(
+            criterion="term-recognition",
+            error="unknown-term",
             messages=messages,
             pointers=pointers,
             graph=graph_rl
@@ -193,10 +153,4 @@ def best_practices(
                 format=TURTLE
             )
         
-        prefix_test(
-            report,
-            subject,
-            assertor,
-            uris,
-            get_prefix_usage
-        )
+        prefix_test(draft, uris, get_prefix_usage)

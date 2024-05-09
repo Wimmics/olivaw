@@ -53,7 +53,8 @@ with open(f"{PWD_TO_CONSTANTS}{sep}error-resources.json", "r") as f:
 
 ERROR_IDS = list(ERROR_RESOURCES.keys())
 
-ONTOLOGY_URL = TERM_DISTANCE_THRESHOLD = BLOCKING_ERRORS = GIST_INDEX = SKIPPED_ERRORS = None
+ONTOLOGY_PREFIX = ONTOLOGY_URL = TERM_DISTANCE_THRESHOLD = BLOCKING_ERRORS = GIST_INDEX = SKIPPED_ERRORS = SKIPPED_TESTS = SKIP_FOR_TEST = SKIP_FOR_FILE = None
+TESTED_MODULES = TESTED_MODELETS = None
 
 if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
   with open(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json", "r") as f:
@@ -64,6 +65,9 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     except:
       print("fatal: parameters.json is not a well formed json file")
       exit(1)
+
+    if "ontology_prefix" in repo_parameters:
+      ONTOLOGY_PREFIX = repo_parameters["ontology_prefix"]
 
     # The ontology base URL
     if "ontology_url" in repo_parameters:
@@ -101,9 +105,46 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
 
     # Relative paths between repo root and files that should be skipped in tests
     SKIPPED_FILES = [
-      abspath(f"{ROOT_FOLDER}{sep}{path}")
+      (
+        abspath(f"{ROOT_FOLDER}{sep}{path}")
+        if exists(f"{ROOT_FOLDER}{sep}{path}")
+        else path
+      )
       for path in repo_parameters["skipped_files"]
     ] if "skipped_files" in repo_parameters else []
+
+    TESTED_MODULES = [
+      file for file in MODULES_TTL_GLOB_PATH
+      if not abspath(file) in SKIPPED_FILES
+    ]
+
+    TESTED_MODELETS = [
+      file for file in MODELETS_TTL_GLOB_PATH
+      if not abspath(file) in SKIPPED_FILES
+    ]
+
+    SKIP_FOR_TEST = {
+      criterion: [
+        (
+          abspath(f"{ROOT_FOLDER}{sep}{file}")
+          if exists(f"{ROOT_FOLDER}{sep}{file}")
+          else file
+        )
+        for file in files
+      ]
+      for criterion, files
+      in repo_parameters["skip_for_test"].items()
+    } if "skip_for_test" in repo_parameters else {}
+
+    SKIP_FOR_FILE = {
+      (
+        abspath(f"{ROOT_FOLDER}{sep}{file}")
+        if exists(f"{ROOT_FOLDER}{sep}{file}")
+        else file
+      ): criterions
+      for file, criterions
+      in repo_parameters["skip_for_file"].items()
+    } if "skip_for_file" in repo_parameters else {}
 
   def add_repo_variables(request):
     return request\

@@ -1,3 +1,12 @@
+from json import dumps, loads
+from os import sep
+from ssl import CERT_NONE, create_default_context
+from urllib.request import urlopen
+
+from olivaw.constants.paths import PWD_TO_CONSTANTS
+from olivaw.constants.prefixcc import PREFIX_CC_PREFIXES
+from olivaw.test.util.print import smart_print
+
 def iterate_node(node):
     candidates = [uri for uri in node["uris"] if len(uri[1]) > node["rank"] + 1]
     children = set([candidate[1][node["rank"] + 1] for candidate in candidates])
@@ -33,6 +42,80 @@ def make_prefix_tree(node):
         iterate(node)
 
 
+def fetch_prefixes(node, nb_generations):
+    if nb_generations < 0:
+        return []
+
+    result = []
+
+    for child in node["children"]:
+        result += fetch_prefixes(child, nb_generations - 1)
+
+    return node["uris"] + result
+
+
+def recurse_search(subject, node, branch, score, threshold):
+    if len(subject) == 0:
+        nb_generations = threshold - score
+        return fetch_prefixes(node, nb_generations)
+
+    if subject[0] == node["char"]:
+        if len(subject) == 1:
+            nb_generations = threshold - score
+            return fetch_prefixes(node, nb_generations)
+
+        if len(node["children"]) == 0:
+            return list(set(recurse_search(subject[2:], node, branch, score + 1, threshold)))
+
+        result = []
+        for child in node["children"]:
+            result += recurse_search(subject[1:], child, branch + node["char"], score, threshold)
+        return list(set(result))
+
+    if score + int(threshold > 0) > threshold:
+        return []
+
+    result = []
+
+    # if error was by adding a character
+    # then remove the subject first character and proceed on same node with incremented score
+    result += recurse_search(subject[1:], node, branch, score + 1, threshold)
+
+    # if error was by removing a character
+    for child in node["children"]:
+        # then keep the subject and proceed on each children node with incremented score
+        result += recurse_search(subject, child, branch + node["char"], score + 1, threshold)
+
+    # if error was by updating a character
+    # continue on children score with incremented score
+    for child in node["children"]:
+        result += recurse_search(subject[1:], child, branch + node["char"], score + 1, threshold)
+
+    return list(set(result))
+
+
+def similar_prefix_search(subject, index, threshold):
+   return  [
+        item
+        for node in index.values()
+        for item in list(set(recurse_search(subject, node, "", 0, threshold)))
+        if not (item[1] == subject and threshold > 0)
+    ]
+
+def common_prefix_search(subject, threshold):
+    return similar_prefix_search(subject, COMMON_URIS_TREE, threshold)
+
+def parse_node_to_tupe_leaves(node):
+    node["uris"] = [tuple(item) for item in node["uris"]]
+
+    for child_node in node["children"]:
+        parse_node_to_tupe_leaves(child_node)
+
+
+def parse_tree_to_tuple_leaves(tree):
+    for node in tree.values():
+        parse_node_to_tupe_leaves(node)
+
 def make_index(prefix_base):
     prefix_base.sort(key=lambda x: x[1])
     last_uri = ""
@@ -64,77 +147,54 @@ def make_index(prefix_base):
         make_prefix_tree(node)
     return tree
 
-
-def parse_node_to_tupe_leaves(node):
-    node["uris"] = [tuple(item) for item in node["uris"]]
-
-    for child_node in node["children"]:
-        parse_node_to_tupe_leaves(child_node)
-
-
-def parse_tree_to_tuple_leaves(tree):
-    for node in tree.values():
-        parse_node_to_tupe_leaves(node)
-
-
-def fetch_prefixes(node, nb_generations):
-    if nb_generations < 0:
-        return []
-
-    result = []
-
+def get_dict_from_node(node, result):
+    for (prefix, namespace) in node["uris"]:
+        result[namespace] = prefix
     for child in node["children"]:
-        result += fetch_prefixes(child, nb_generations - 1)
+        result = get_dict_from_node(child, result)
+    return result
 
-    return node["uris"] + result
-
-
-def recurse_search(subject, node, branch, score, threshold):
-    if len(subject) == 0:
-        nb_generations = threshold - score
-
-        return fetch_prefixes(node, nb_generations)
-
-    if subject[0] == node["char"]:
-        if len(subject) == 1:
-            nb_generations = threshold - score
-            return fetch_prefixes(node, nb_generations)
-
-        if len(node["children"]) == 0:
-            return list(set(recurse_search(subject[2:], node, branch, score + 1, threshold)))
-
-        result = []
-        for child in node["children"]:
-            result += recurse_search(subject[1:], child, branch + node["char"], score, threshold)
-        return list(set(result))
-
-    if score + 1 > threshold:
-        return []
-
-    result = []
-
-    # if error was by adding a character
-    # then remove the subject first character and proceed on same node with incremented score
-    result += recurse_search(subject[1:], node, branch, score + 1, threshold)
-
-    # if error was by removing a character
-    for child in node["children"]:
-        # then keep the subject and proceed on each children node with incremented score
-        result += recurse_search(subject, child, branch + node["char"], score + 1, threshold)
-
-    # if error was by updating a character
-    # continue on children score with incremented score
-    for child in node["children"]:
-        result += recurse_search(subject[1:], child, branch + node["char"], score + 1, threshold)
-
-    return list(set(result))
+def get_dict(index):
+    result = {}
+    for start in index.keys():
+        result = get_dict_from_node(index[start], result)
+    return result
 
 
-def similar_prefix_search(subject, index, threshold):
-    value =  [
-        item
-        for node in index.values()
-        for item in list(set(recurse_search(subject, node, "", 0, threshold)))
-        if not item[1] == subject
-    ]
-    return value
+uris = []
+COMMON_URI_DICT = {}
+
+try:
+    common_prefixes = None
+
+    # This site uses self signed certificate
+    myssl = create_default_context()
+    myssl.check_hostname = False
+    myssl.verify_mode = CERT_NONE
+    
+    with urlopen(PREFIX_CC_PREFIXES, context=myssl) as downloaded:
+        common_prefixes = loads(downloaded.read().decode())
+
+    common_prefixes = common_prefixes["@context"]
+    uris = list(common_prefixes.items())
+
+    for prefix, uri in uris:
+        COMMON_URI_DICT[uri] = prefix
+
+    COMMON_URIS_TREE = make_index(uris)
+    with open(f"{PWD_TO_CONSTANTS}{sep}uri_index.json", "w") as f:
+        f.write(dumps(COMMON_URIS_TREE))
+
+
+    smart_print(" ")
+    smart_print("New prefixcc index saved")
+    smart_print(" ")
+except:
+    with open(f"{sep.join(__file__.split(sep)[:-3])}{sep}constants{sep}uri_index.json", "r") as f:
+        COMMON_URIS_TREE = loads(f.read())
+        parse_tree_to_tuple_leaves(COMMON_URIS_TREE)
+
+    COMMON_URI_DICT = get_dict(COMMON_URIS_TREE)
+    smart_print(" ")
+    smart_print("prefixcc index loaded from disk")
+    smart_print(" ")

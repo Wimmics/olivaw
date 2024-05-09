@@ -17,7 +17,9 @@ from olivaw.constants import (
     ONTOLOGY_SEPARATOR,
     CORESE_LOCAL_PATH,
     PWD_TO_ROOT_FOLDER,
-    URI_FORMAT
+    URI_FORMAT,
+    ONTOLOGY_PREFIX,
+    ONTOLOGY_URL
 )
 from olivaw.test.util.print import print_title, smart_print
 
@@ -164,7 +166,7 @@ corese_namespaces = {
     prefix: namespace
     for prefix, namespace in corese_namespaces
 }
-corese_prefix_text = "\n".join(
+corese_prefix_text = f"@prefix {ONTOLOGY_PREFIX}: <{ONTOLOGY_URL}> .\n".join(
     [
         f"@prefix {prefix}: <{namespace}> ."
         for prefix, namespace in corese_namespaces.items()
@@ -198,6 +200,7 @@ def load(
 
     if graph is None:
         graph = Graph()
+        graph.query = query_graph.__get__(graph)
         
     if disable_owl:
         engine = RuleEngine.create(graph)

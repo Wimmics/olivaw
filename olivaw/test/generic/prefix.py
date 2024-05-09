@@ -17,7 +17,6 @@ from olivaw.test.corese import (
 )
 
 from olivaw.test.util import make_index, similar_prefix_search
-from olivaw.test.turtle import make_assertion
 
 def get_prefix_suffix(uri):
 
@@ -45,9 +44,7 @@ def get_uris(fragments):
     return uris
 
 def prefix_test(
-    report,
-    subject,
-    assertor,
+    draft,
     uris,
     get_prefix_usage
 ):
@@ -99,12 +96,9 @@ def prefix_test(
         messages.append(message)
         pointers.append(prefix_pointers)
 
-    make_assertion(
-        report,
-        assertor,
-        subject,
-        "prefix-validity",
-        "prefix-typo",
+    draft.make_assertion(
+        criterion="prefix-validity",
+        error="prefix-typo",
         messages=messages,
         pointers=pointers,
         outcome_type="CannotTell"

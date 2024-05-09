@@ -11,7 +11,7 @@ MODULE_URL_FORMAT = MODELET_URL_FORMAT = DATASET_URL_FORMAT = USECASE_URL_FORMAT
 try:
     from regex import compile as regex_compile
 
-    MODULE_URL_FORMAT = regex_compile('src/[^/]+$')
+    MODULE_URL_FORMAT = regex_compile('src/(([^/]+/)*[^/]+)$')
     MODELET_URL_FORMAT = regex_compile('domains/[^/]+/[^/]+/onto\.ttl')
     DATASET_URL_FORMAT = regex_compile('domains/[^/]+/[^/]+/dataset\.ttl')
     USECASE_URL_FORMAT = regex_compile('use-cases/[^/]+/[^/]+$')

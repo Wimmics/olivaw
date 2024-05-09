@@ -4,7 +4,9 @@ from olivaw.constants import (
     MODULES_TTL_GLOB_PATH,
     MODELETS_TTL_GLOB_PATH,
     BRANCH,
-    SKIPPED_FILES
+    SKIPPED_FILES,
+    TESTED_MODELETS,
+    TESTED_MODULES
 )
 
 from olivaw.test.util import print_title
@@ -25,21 +27,10 @@ def test_model():
     report, assertor = new_report("model")
 
     print_title("Checking existing modules")
-    modules = [
-        item
-        for item in MODULES_TTL_GLOB_PATH
-        if not abspath(item) in SKIPPED_FILES
-    ]
-
-    safe_modules = modules_tests(modules, report=report, assertor=assertor)
+    safe_modules = modules_tests(TESTED_MODULES, report=report, assertor=assertor)
 
     print_title("Checking modelets")
-    modelets = [
-        item
-        for item in MODELETS_TTL_GLOB_PATH
-        if not abspath(item) in SKIPPED_FILES
-    ]
-    safe_modelets = modelets_tests(modelets, report=report, assertor=assertor)
+    safe_modelets = modelets_tests(TESTED_MODELETS, report=report, assertor=assertor)
 
     print_title("Checking the merge of safe modules")
     merged_fragment_set_test(

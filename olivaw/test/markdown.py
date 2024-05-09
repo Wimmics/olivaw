@@ -119,7 +119,7 @@ def make_assertor_chapter(report):
 def subject_part_to_markdown(part):
     module_search = MODULE_URL_FORMAT.findall(part)
     if len(module_search) > 0:
-        return f"[Module {html_special_chars(module_search[0][4:])}]({part})"
+        return f"[Module {html_special_chars(module_search[0][0])}]({part})"
     
     modelet_search = MODELET_URL_FORMAT.findall(part)
     if len(modelet_search) > 0:

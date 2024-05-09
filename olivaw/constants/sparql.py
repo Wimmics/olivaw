@@ -1,47 +1,52 @@
 # SparQL request listing all the ontology terms not linked to a moduled by a rdfs:isDefinedBy property
 NOT_REFERENCED = """
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
 SELECT DISTINCT ?s where {
   ?s ?p ?o .
-  FILTER(strstarts(str(?s), "ONTOLOGY_URL"))
-  FILTER NOT EXISTS { ?s rdfs:isDefinedBy [] . }
+  FILTER(
+    strstarts(str(?s), "ONTOLOGY_URL") &&
+    strlen(?s) > strlen("ONTOLOGY_URL")
+  )
+  FILTER NOT EXISTS { ?s rdfs:isDefinedBy ?m . }
   FILTER NOT EXISTS { ?s rdf:type owl:Ontology . }
   FILTER NOT EXISTS { ?s rdf:type skos:Concept . }
-  FILTER NOT EXISTS { FILTER ( str(?s) =  "ONTOLOGY_URL" ) }
 }
 """
 
 # SparQL request to get all the triples with their related modules, using the rdfs:isDefinedBy property 
 GET_BY_MODULE = """
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
 SELECT DISTINCT ?m where {
   ?s ?p ?o .
   ?s rdfs:isDefinedBy ?m .
-  FILTER(strstarts(str(?s), "ONTOLOGY_URL"))
 }
 ORDER BY ?m
 """
 
-TRIPLES_FOR_MODULE = """
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+LINK_SUBJECTS_FOR_MODULE = """
+insert {
+  ?s ex:requires_description ?o .
+} where {
+  ?s ?p ?o .
+  filter( (isblank(?s) || exists { ?s rdfs:isDefinedBy MODULE}) && isblank(?o))
+}
+"""
 
+TRIPLES_FOR_MODULE = """
 construct {
   ?s ?p ?o .
 } where {
+  {
+    select ?s where {
+      ?x rdfs:isDefinedBy MODULE ;
+        ex:requires_description* ?s .
+    }
+  }
   ?s ?p ?o .
-  ?s rdfs:isDefinedBy MODULE .
+  filter (?p != ex:requires_description)
 }
 """
 
 # SparQL request to get all the properties with a domain linking to a term not defined in the ontology
 DOMAIN_OUT_Of_VOCABULARY = """
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-
 SELECT DISTINCT ?suffix ?domain WHERE {
   # Get all the properties with a defined domain
   ?property rdf:type owl:ObjectProperty ;
@@ -54,19 +59,8 @@ SELECT DISTINCT ?suffix ?domain WHERE {
     ?domain2 owl:subClassOf ?domain .
   }
 
-  # Ignore the owl:Thing domains
-  FILTER NOT EXISTS {
-    FILTER (?domain = owl:Thing)
-  }
-  
-  # Ignore the domains in the ontology
-  FILTER NOT EXISTS {
-    #?domain rdf:type ?o .
-    FILTER(strstarts(str(?domain), "ONTOLOGY_URL"))
-  }
-  
-  # Ignore the properties out of the ontology
-  FILTER(strstarts(str(?property), "ONTOLOGY_URL"))
+  # Ignore the owl:Thing domains and domains in the ontology
+  FILTER (!(?domain = owl:Thing || strstarts(str(?domain), "ONTOLOGY_URL")))
 
   # Format the result
   BIND (SUBSTR(str(?property), STRLEN("ONTOLOGY_URL") + 1) as ?suffix)
@@ -148,15 +142,11 @@ function fun:min(list, i, currentMin) {
 # Gets rid of the duplicates (ab and ba) and the auto pairs (aa)
 GET_TERM_PAIRS = """
 SELECT DISTINCT ?suffix1 ?suffix2 WHERE {
-  ?s1 ?p1 [] .
-  ?s2 ?p2 [] .
-  FILTER(strstarts(str(?s1), "ONTOLOGY_URL"))
-  FILTER(strstarts(str(?s2), "ONTOLOGY_URL"))
+  ?s1 rdfs:isDefinedBy ?module1 .
+  ?s2 rdfs:isDefinedBy ?module2 .
   FILTER(str(?s1) > str(?s2))
   BIND (SUBSTR(str(?s1), STRLEN("ONTOLOGY_URL") + 1) as ?suffix1)
   BIND (SUBSTR(str(?s2), STRLEN("ONTOLOGY_URL") + 1) as ?suffix2)
-  FILTER(strlen(?suffix1) > 0)
-  FILTER(strlen(?suffix2) > 0)
 } ORDER BY ?suffix1
 """
 
@@ -176,15 +166,12 @@ SELECT ?suffix1 ?suffix2 ?distance WHERE {
   ) + LEVENSHTEIN_FUNCTION
 
 NOT_LABELED = """
-select distinct ?suffix where {
-  ?term ?p [] .
-  FILTER(strstarts(str(?term), "ONTOLOGY_URL"))
-  FILTER NOT EXISTS {
+select distinct ?term where {
+  ?term rdfs:isDefinedBy ?module .
+  filter not exists {
     ?term rdfs:label ?label .
-    FILTER(lang(?label) = "en")
+    filter(lang(?label) = "en")
   }
-  BIND(substr(str(?term), strlen("ONTOLOGY_URL") + 1) AS ?suffix)
-  FILTER(strlen(?suffix) > 0)
 }
 """
 
@@ -546,3 +533,71 @@ select ?o where {
 
 IS_OWL_QL_COMPATIBLE = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL QL")
 IS_OWL_RL_COMPATIBLE = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL RL")
+
+ADD_DESCRIPTION_LINKS = """
+insert {
+  ?x ex:requires_description ?y .
+} where {
+  ?x ?p ?y .
+  filter ( (?x = <TERM>||isblank(?x)) && isblank(?y) )
+}
+"""
+
+EXTRACT_STATEMENT = """
+construct { ?s ?p ?parsed } where {
+  {
+    select ?s where {
+      <TERM> ex:requires_description* ?s .
+    }
+  }
+  ?s ?p ?o
+  filter (?p != ex:requires_description)
+  bind(
+    if(
+      isliteral(?o) && strlen(?o) > 60,
+       concat(substr(?o, 1, 60), "..."),
+       ?o
+      ) as ?parsed
+  )
+}
+"""
+
+REMOVE_DESCRIPTION_LINKS = """
+delete where { ?x ex:requires_description ?y . }
+"""
+
+GET_PREDICATE_USAGE = """
+construct {
+  ?x <TERM> ?y
+}
+where {
+  ?x <TERM> ?y
+}
+"""
+
+GET_OBJECT_USAGE = """
+construct {
+  ?x ?y <TERM>
+}
+where {
+  ?x ?y <TERM>
+}
+"""
+
+GET_GRAPH_NAMESPACES = """
+select distinct ?result where {
+  {select ?uri where {?uri ?u ?v}}
+  union {select ?uri where {?a ?uri ?c}}
+  union {select ?uri where {?d ?e ?uri}}
+  filter (isuri(?uri))
+  bind (replace(?uri, "^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\\\\?([^#]*))?(#(.*))?[#/=]", "") as ?suffix)
+  bind (substr(?uri, 1, strlen(?uri) - strlen(?suffix)) as ?prefix)
+  bind (
+    if (
+      substr(?prefix, strlen(?prefix) - 2) = "://",
+      str(?uri),
+      ?prefix
+    ) as ?result
+  )
+}
+"""

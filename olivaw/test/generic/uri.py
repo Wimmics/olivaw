@@ -1,14 +1,7 @@
 from olivaw.constants import URI_FORMAT, SKIPPED_TESTS
 from olivaw.test.turtle import make_assertion
 
-def uri_test(
-    report,
-    assertor,
-    subject,
-    uris,
-    get_uri_usage,
-    graph=None
-):
+def uri_test(draft, uris, get_uri_usage, graph=None):
     if "uri-validity" in SKIPPED_TESTS:
         return
     
@@ -25,13 +18,10 @@ def uri_test(
 
     pointers = [[get_uri_usage(uri)] for uri in uris]
 
-    make_assertion(
-        report,
-        assertor,
-        subject,
-        "uri-validity",
-        "invalid-uri",
-        messages,
+    draft.make_assertion(
+        criterion="uri-validity",
+        error="invalid-uri",
+        messages=messages,
         pointers=pointers,
         graph=graph
     )

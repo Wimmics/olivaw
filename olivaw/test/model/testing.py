@@ -1,6 +1,7 @@
 from glob import glob
 from os.path import sep, relpath, abspath
 
+from olivaw.constants.sparql import LINK_SUBJECTS_FOR_MODULE, REMOVE_DESCRIPTION_LINKS
 from olivaw.test.corese import (
     query_graph, 
     safe_load,
@@ -15,7 +16,6 @@ from olivaw.constants import (
     PWD_TO_ROOT_FOLDER,
     MODEL_BEST_PRACTICES_TESTS,
     MODEL_BEST_PRACTICES_TESTS,
-    SKIPPED_TESTS,
     SKIPPED_FILES,
     CUSTOM_MODEL_TESTS,
     MODULES_TTL_GLOB_PATH,
@@ -24,14 +24,6 @@ from olivaw.constants import (
 )
 
 from olivaw.test.model.best_practices import best_practices_test
-from olivaw.test.turtle import (
-    make_subject,
-    make_not_tested,
-    make_outcomes,
-    make_assertion,
-    assemble_assertion,
-    make_result
-)
 
 from olivaw.test.generic.shacl import (
     custom_test,
@@ -40,6 +32,7 @@ from olivaw.test.generic.shacl import (
 
 from rdflib import Graph as RdflibGraph
 
+from olivaw.test.util.drafts import AssertDraft
 from olivaw.test.util.print import progress_bar
 
 shape_tests, shape_data = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
@@ -75,7 +68,11 @@ def group_terms_by_module(modelet):
 
     for line in tsv:
         module = line[1:-1]
+        
+        query_graph(modelet, LINK_SUBJECTS_FOR_MODULE.replace("MODULE", line))
         triple = query_graph(modelet, TRIPLES_FOR_MODULE.replace("MODULE", line))
+        query_graph(modelet, REMOVE_DESCRIPTION_LINKS)
+
         triple = "\n".join(triple)
 
         if not module in grouped_triples:
@@ -85,12 +82,7 @@ def group_terms_by_module(modelet):
 
     return grouped_triples
 
-def profile_check(
-        fragment,
-        report,
-        assertor,
-        subject
-    ):
+def profile_check(fragment, draft):
     """Returns a report about whether an ontology is compatible with each profile and if not, why
 
     :param ontology: Corese graph containing the modelet
@@ -100,11 +92,14 @@ def profile_check(
     """
 
     engine = owl_profile(fragment)
+    draft(criterion="profile-compatibility", graph=fragment)
 
-    results = []
+    packed_errors = []
+    packed_messages = []
+    packed_pointers = []
 
     for decidability_level in DECIDABILITY_RANGE:
-        if "profile-compatibility" in SKIPPED_TESTS:
+        if draft.should_skip():
             break
 
         # Keeping 2 arrays containing almost the same thing was not necessary, so getattr
@@ -126,47 +121,25 @@ def profile_check(
                 for message in distinct_messages
             ]
 
-        results += make_outcomes(
-            report,
-            subject,
-            "profile-compatibility",
-            error_id,
-            distinct_messages,
-            pointers=grouped_pointers
-        )
+        packed_errors.append(error_id)
+        packed_messages.append(distinct_messages)
+        packed_pointers.append(grouped_pointers)
     
-    if not "profile-compatibility" in SKIPPED_TESTS:
-        assemble_assertion(
-            report,
-            assertor,
-            subject,
-            "profile-compatibility",
-            make_result(
-                report,
-                results
-            )
+    if not draft.should_skip():
+        draft.make_assertion(
+            error=packed_errors,
+            messages=packed_messages,
+            pointers=packed_pointers
         )
 
     # Check for respect for OWL constraints
-    if not "owl-rl-constraint" in SKIPPED_TESTS:
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "owl-rl-constraint",
-            "owl-rl-constraint-violation",
-            check_OWL_constraints(fragment),
-            graph=fragment
+    if not draft.should_skip(criterion="owl-rl-constraint"):
+        draft.make_assertion(
+            error="owl-rl-constraint-violation",
+            messages=check_OWL_constraints(fragment)
         )
 
-def fragment_check(
-        fragments,
-        report,
-        assertor,
-        subject,
-        extras="",
-        skip=[]
-    ):
+def fragment_check(fragments, draft, extras="", skip=[]):
 
     fragment_no_import = safe_load(
         fragments,
@@ -175,64 +148,36 @@ def fragment_check(
     )
     no_import_load_error = isinstance(fragment_no_import, list)
 
+    draft(criterion="syntax", error="syntax-error")
+
     if no_import_load_error:
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "syntax",
-            "syntax-error",
-            fragment_no_import
+        draft.make_assertion(
+            messages=["The subject has turtle syntax errors that makes it unprocessable by an engine"],
+            pointers=[[f'"{pointer}"' for pointer in fragment_no_import]]
         )
-        
-        for criterion_id in MODEL_BEST_PRACTICES_TESTS:
-            make_not_tested(
-                report,
-                assertor,
-                subject,
-                criterion_id
-            )
+        draft.make_not_tested(*MODEL_BEST_PRACTICES_TESTS)
         return True
     
     fragment_with_import = safe_load(fragments, extras)
     with_import_load_error = isinstance(fragment_with_import, list)
 
-    profile_check(
-        fragment_no_import,
-        report,
-        assertor,
-        subject
-    )
+    profile_check(fragment_no_import, draft)
 
     if with_import_load_error:
-        for criterion in MODEL_BEST_PRACTICES_TESTS:
-            make_not_tested(
-                report,
-                assertor,
-                subject,
-                criterion
-            )
+        draft.make_not_tested(*MODEL_BEST_PRACTICES_TESTS)
         return True
     
     fragment_no_owl = safe_load(fragments, extras, disable_owl=True)
 
     best_practices_test(
-        report,
-        assertor,
-        subject,
+        draft,
         fragment_with_import,
         fragment_no_import,
         fragment_no_owl,
         skip
     )
 
-    custom_test(
-        report,
-        assertor,
-        subject,
-        fragment_no_owl,
-        shape_tests
-    )
+    custom_test(draft, fragment_no_owl, shape_tests)
     
     return False
 
@@ -247,15 +192,13 @@ def modules_tests(modules, report=None, assertor=None):
     
     safe_modules = []
 
+    draft = AssertDraft(report, assertor)
+
     for module in progress_bar(modules):
         module_key = relpath(module, PWD_TO_ROOT_FOLDER).replace(sep, "/")
-        subject = make_subject(report, [module_key])
-        load_error = fragment_check(
-            module,
-            report,
-            assertor,
-            subject
-        )
+        draft(file=module)
+        draft.make_subject([module_key])
+        load_error = fragment_check(module, draft)
 
         if not load_error:
             safe_modules.append(module)
@@ -275,18 +218,18 @@ def modelets_tests(modelets, report=None, assertor=None):
 
     safe_modelets = []
 
+    draft = AssertDraft(report, assertor)
+
     for modelet in progress_bar(modelets):
         if "template" in modelet:
             continue
 
         modelet_key = relpath(modelet, PWD_TO_ROOT_FOLDER).replace(sep, "/")
-        standalone_subject = make_subject(report, [modelet_key])
+        draft.make_subject([modelet_key])
 
         load_error = fragment_check(
             modelet,
-            report,
-            assertor,
-            standalone_subject,
+            draft(file=modelet),
             skip=["domain-and-range-referencing"]
         )
 
@@ -296,27 +239,28 @@ def modelets_tests(modelets, report=None, assertor=None):
             safe_modelets.append(modelet)
         
         # Add each triple of the modelet to their related ontology, then proceed to profile checks
-        alone_no_owl = safe_load(
-            modelet,
-            disable_owl=True
-        )
+        alone_no_owl = safe_load(modelet, disable_owl=True)
 
         moduled_triples = group_terms_by_module(alone_no_owl)
 
         for module in moduled_triples.keys():
-            module_key = f"src/{module[len(ONTOLOGY_URL):]}.ttl"
-            module_path = ontologies[module]
-
-            if abspath(module_path) in SKIPPED_FILES:
+            if not module in ontologies:
                 continue
 
-            merged_subject = make_subject(report, [module_key], [modelet_key])
+            module_path = ontologies[module].replace(sep, "/")
+            module_key = relpath(module_path, PWD_TO_ROOT_FOLDER).replace(sep, "/")
+
+            if module_path.startswith("./"):
+                module_path = module_path[2:]
+
+            if draft.should_skip(file=[modelet, module_key]):
+                continue
+
+            draft.make_subject([module_path], [modelet_key])
 
             fragment_check(
                 module_path,
-                report,
-                assertor,
-                merged_subject,
+                draft,
                 extras=moduled_triples[module]
             )
 
@@ -337,10 +281,12 @@ def merged_fragment_set_test(
     if len(fragments_keys) == 0:
         return
 
-    subject = make_subject(report, fragments_keys, name=heart_name, custom_title=custom_title)
-    fragment_check(
-        fragments_to_merge,
-        report,
-        assertor,
-        subject
+    draft = AssertDraft(report, assertor, file=fragments_to_merge)
+    
+    draft.make_subject(
+        fragments_keys,
+        name=heart_name,
+        custom_title=custom_title
     )
+        
+    fragment_check(fragments_to_merge, draft)

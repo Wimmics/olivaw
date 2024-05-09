@@ -17,8 +17,6 @@ from olivaw.test.turtle import make_assertion
 from olivaw.constants import (
     GET_VIOLATIONS,
     GET_VIOLATION,
-    SKIPPED_TESTS,
-    GET_CRITERION_URI,
     GET_CUSTOM_CRITERION_DATA,
     GIT_RAW,
     REPO_REF,
@@ -257,9 +255,7 @@ def parse_violation_triple(triple):
     return parsed
 
 def custom_test(
-    report,
-    assertor,
-    subject,
+    draft,
     fragment_graph,
     shapes
 ):
@@ -267,13 +263,10 @@ def custom_test(
     for shape in shapes:
         criterion_uri, criterion_identifier, *_ = get_criterion_data(shape)
 
-        if criterion_identifier in SKIPPED_TESTS:
+        if draft.should_skip(criterion=criterion_identifier):
             continue
         
         criterion_namespace = "#".join(criterion_uri.split("#")[:-1]) + "#"
-
-        if criterion_identifier in SKIPPED_TESTS:
-            return
     
         shacl = Shacl(fragment_graph, shape)
         result = shacl.eval()
@@ -339,13 +332,10 @@ def custom_test(
         else:
             pointers = []
 
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            criterion_identifier,
-            criterion_identifier,
-            messages,
+        draft.make_assertion(
+            criterion=criterion_identifier,
+            error=criterion_identifier,
+            messages=messages,
             pointers=pointers,
             graph=fragment_graph,
             criterion_uri=criterion_uri

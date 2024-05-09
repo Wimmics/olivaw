@@ -15,9 +15,7 @@ from olivaw.test.util.nlp import levenshtein
 
 
 def best_practices_test(
-        report,
-        assertor,
-        subject,
+        draft,
         fragment_wih_import,
         fragment_no_import,
         fragment_no_owl,
@@ -30,25 +28,19 @@ def best_practices_test(
     :returns: An report dictionary
     """
 
-    skipped_best_practice = skip + SKIPPED_TESTS
-
     # Check for terms not linked to an ontology
-    if not "term-referencing" in skipped_best_practice:
+    if not draft.should_skip(criterion="term-referencing"):
         unlinked_subjects = query_graph(fragment_no_owl, NOT_REFERENCED)
         unlinked_subjects_pointers = [[pointer for pointer in unlinked_subjects]] if len(unlinked_subjects) else []
         unlinked_subject_messages = [f"Subject terms not linked to a module by a rdfs:isDefinedBy property"] if len(unlinked_subjects) else []
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "term-referencing",
-            "no-reference-module",
-            unlinked_subject_messages,
+        draft.make_assertion(
+            error="no-reference-module",
+            messages=unlinked_subject_messages,
             pointers=unlinked_subjects_pointers,
             graph=fragment_no_owl
         )
 
-    if not "domain-and-range-referencing" in skipped_best_practice:
+    if not draft.should_skip(criterion="domain-and-range-referencing"):
         # Checking for domain property out of the vocabulary
         dov = query_graph(fragment_no_import, DOMAIN_OUT_Of_VOCABULARY)
         dov = [line.split("\t") for line in dov]
@@ -59,13 +51,9 @@ def best_practices_test(
         dov_pointers = [[f"<{ONTOLOGY_URL}{item[0][1:-1]}>" for item in dov]]
         dov_pointers = dov_pointers if len(dov_pointers[0]) > 0 else []
 
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "domain-and-range-referencing",
-            "domain-out-of-vocabulary",
-            dov_messages,
+        draft.make_assertion(
+            error="domain-out-of-vocabulary",
+            messages=dov_messages,
             pointers=dov_pointers,
             graph=fragment_no_import
         )
@@ -76,19 +64,16 @@ def best_practices_test(
         rov_messages = ["Some properties have a range out of the ontology"] if len(rov) > 0 else []
         rov_pointers = [[f"<{ONTOLOGY_URL}{item[0][1:-1]}>" for item in rov]]
         rov_pointers = rov_pointers if len(rov_pointers[0]) > 0 else []
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "domain-and-range-referencing",
-            "range-out-of-vocabulary",
-            rov_messages,
+        draft.make_assertion(
+            criterion="domain-and-range-referencing",
+            error="range-out-of-vocabulary",
+            messages=rov_messages,
             pointers=rov_pointers,
             graph=fragment_no_import
         )
 
     # Checking for too close terms
-    if not "terms-differenciation" in skipped_best_practice:
+    if not draft.should_skip(criterion="terms-differenciation"):
         term_pairs = query_graph(fragment_no_owl, GET_TERM_PAIRS)
         term_pairs = [[
                 f"<{ONTOLOGY_URL}{item.strip()[1:-1]}>"
@@ -106,33 +91,20 @@ def best_practices_test(
 
         messages = ["Some terms are too similar"] if len(term_pairs) > 0 else []
 
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "terms-differenciation",
-            "too-close-terms",
-            messages,
+        draft.make_assertion(
+            error="too-close-terms",
+            messages=messages,
             pointers=term_pairs,
             graph=fragment_no_owl
         )
 
-    if not "labeled-terms" in skipped_best_practice:
+    if not draft.should_skip(criterion="labeled-terms"):
         not_labeled_terms = query_graph(fragment_no_owl, NOT_LABELED)
-        not_labeled_pointers = [[
-            f"<{ONTOLOGY_URL}{line.strip()[1:-1]}>"
-            for line in not_labeled_terms
-            if len(line.strip()) > 0
-        ]]
-        not_labeled_pointers = [] if len(not_labeled_pointers[0]) == 0 else not_labeled_pointers
-        not_labeled_messages = [f"The following terms have no rdfs:label to define it in natural language"] if len(not_labeled_pointers) > 0 else []
-        make_assertion(
-            report,
-            assertor,
-            subject,
-            "labeled-terms",
-            "not-labeled-term",
-            not_labeled_messages,
+        not_labeled_pointers = [] if len(not_labeled_terms) == 0 else [not_labeled_terms]
+        not_labeled_messages = [] if len(not_labeled_terms) == 0 else [f"The following terms have no rdfs:label to define it in natural language"]
+        draft.make_assertion(
+            error="not-labeled-term",
+            messages=not_labeled_messages,
             pointers=not_labeled_pointers,
             graph=fragment_no_owl
         )

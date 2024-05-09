@@ -23,6 +23,8 @@ from olivaw.constants import (
     DEV_PROFILE,
     DOMAINS_URL,
     EARL_NAMESPACE,
+    ONTOLOGY_PREFIX,
+    ONTOLOGY_URL,
     SRC_NAMESPACE,
     TEST_NAMESPACE,
     OLIVAW_EARL_NAMESPACE,
@@ -35,7 +37,7 @@ from olivaw.constants import (
     LITERAL_CUTTING_LENGTH,
     USECASES_URL,
     SKIPPED_ERRORS,
-    SKIPPED_TESTS,
+    EXTRACT_STATEMENT,
     OLIVAW_TEST_BLOB_URI,
     BLOCKING_ERRORS,
     MODE,
@@ -44,15 +46,12 @@ from olivaw.constants import (
     CRITERION_DATA
 )
 
-from olivaw.test.corese import corese_prefix_text, to_rdflib
-
-def statement(self, subject, *po):
-    for item in po:
-        self.add((subject, item[0], item[1]))
+from olivaw.constants.sparql import ADD_DESCRIPTION_LINKS, GET_GRAPH_NAMESPACES, GET_OBJECT_USAGE, GET_PREDICATE_USAGE, REMOVE_DESCRIPTION_LINKS
+from olivaw.test.corese import TURTLE, corese_prefix_text, to_rdflib, corese_namespaces
+from olivaw.test.util.prefix import COMMON_URI_DICT, common_prefix_search
 
 def new_report(test_type):
     report = Graph()
-    report.statement = statement.__get__(report)
 
     report.bind("earl", EARL_NAMESPACE)
     report.bind("", ONTOLOGY_NAMESPACE)
@@ -76,22 +75,26 @@ def make_assertor(report, test_type):
     developper = BNode(DEV_USERNAME)
 
     # Define the developper
-    report.statement(
-        developper,
-        (RDF.type, FOAF.Person),
-        (SDO.mainEntityOfPage, URIRef(DEV_PROFILE))
-    )
+    developper_statement = [
+        (developper, RDF.type, FOAF.Person),
+        (developper, SDO.mainEntityOfPage, URIRef(DEV_PROFILE))
+    ]
+
+    for triple in developper_statement:
+        report.add(triple)
 
     # Define the developper using the software
-    report.statement(
-        assert_group,
-        (RDF.type, FOAF.OnlineAccount),
-        (DCTERMS.title, Literal(title, lang="en")),
-        (DCTERMS.description, Literal(description, lang="en")),
-        (EARL_NAMESPACE.mainAssertor, developper),
-        (FOAF.member, URIRef(script_uri)),
-        (DCTERMS.date, Literal(datetime.now(), datatype=XSD.dateTime))
-    )
+    assertor_statement = [
+        (assert_group, RDF.type, FOAF.OnlineAccount),
+        (assert_group, DCTERMS.title, Literal(title, lang="en")),
+        (assert_group, DCTERMS.description, Literal(description, lang="en")),
+        (assert_group, EARL_NAMESPACE.mainAssertor, developper),
+        (assert_group, FOAF.member, URIRef(script_uri)),
+        (assert_group, DCTERMS.date, Literal(datetime.now(), datatype=XSD.dateTime))
+    ]
+
+    for triple in assertor_statement:
+        report.add(triple)
 
     return assert_group
 
@@ -129,7 +132,7 @@ def make_subject_id(heart, appendix=[]):
     return subject_id
 
 def make_subject(
-        report,
+        draft,
         heart,
         appendix=[],
         name="",
@@ -220,7 +223,8 @@ def make_subject(
         (DCTERMS.title, Literal(title, lang="en")),
         (DCTERMS.identifier, Literal(subject_id))
     ] + statements
-    report.statement(test_subject, *statements)
+
+    draft.reporting(test_subject, statements)
 
     return test_subject
 
@@ -309,7 +313,7 @@ def shorten_literals(triples):
             parsed_triples.append(targetTriple)
     return parsed_triples
 
-def parse_statement_for_html(statement, is_literal=False):
+def remove_prefixes(statement, is_literal=False):
     statement = [
         line
         for line in statement.split("\n")
@@ -342,37 +346,67 @@ def parse_statement(raw_statement):
     for triple in triples:
         statement_graph.add(triple)
     statement = statement_graph.serialize(format="ttl")
-    return parse_statement_for_html(statement)
+    return remove_prefixes(statement)
         
 
 def extract_statement(graph, pointer):
-    # TODO: CHANGE HERE
-    try:
-        isolated_graph = to_rdflib(graph)
 
-        triples = extractTriples(isolated_graph, pointer)
+    graph.query(ADD_DESCRIPTION_LINKS.replace("TERM", pointer))
+    statement = graph.query(EXTRACT_STATEMENT.replace("TERM", pointer), format=TURTLE).strip()
+    graph.query(REMOVE_DESCRIPTION_LINKS)
 
-        if isinstance(triples, URIRef):
-            return triples
-        
-        statement = empty_graph_same_prefixes(isolated_graph)
+    if len(statement) == 0:
+        statement = graph.query(GET_PREDICATE_USAGE.replace("TERM", pointer), format=TURTLE).strip()
 
-        if not isinstance(triples, list):
-            statement = f"<{str(triples)}>" if isinstance(triples, URIRef) else \
-                            "[]" if isinstance(triples, BNode) \
-                                else f'"{str(triples)}"'
-        else:
-            triples = shorten_literals(triples)
-            for triple in triples:
-                statement.add(triple)
-            
-            statement = statement.serialize(format="ttl", encoding="utf-8").decode(encoding="utf-8")
+    if len(statement) == 0:
+        statement = graph.query(GET_OBJECT_USAGE.replace("TERM", pointer), format=TURTLE).strip()
 
-        statement = parse_statement_for_html(statement)
-        
-        return Literal(statement)
-    except:
+    if len(statement) == 0:
         return Literal(str(pointer))
+    
+    namespaces = graph.query(GET_GRAPH_NAMESPACES)
+
+    binds = []
+
+    pointer_separator = [i for i in range(len(pointer)) if pointer[i] in ["#", "/", "="]]
+    pointer_namespace = pointer[:pointer_separator[-1]+1]
+    binds.append(("", Namespace(pointer_namespace)))
+
+    for namespace in namespaces:
+        namespace = namespace[1:-1] if namespace[0] == '"' else namespace
+        if namespace == ONTOLOGY_URL:
+            binds.append((ONTOLOGY_PREFIX, ONTOLOGY_NAMESPACE))
+            continue
+
+        if namespace in COMMON_URI_DICT:
+            prefix = COMMON_URI_DICT[namespace]
+            binds.append((prefix, Namespace(namespace)))
+            continue
+
+        corese_matches = [item for item in corese_namespaces if item[1] == namespace]
+
+        if len(corese_matches) == 0:
+            continue
+
+        corese_match = corese_matches[0]
+        binds.append((corese_match[0], Namespace(corese_match[1])))
+
+    rdflib_graph = Graph()
+    rdflib_graph.parse(
+        data=f"{corese_prefix_text}\n{statement}",
+        format="ttl"
+    )
+    
+    for bind in binds:
+        rdflib_graph.bind(*bind)
+
+    return Literal(
+        remove_prefixes(
+            rdflib_graph\
+                .serialize(format="ttl", encoding="utf-8")\
+                .decode(encoding="utf-8")
+            )
+        )
 
 def make_pointer(graph, report, pointer_string):
     statement_subject = pointer_string.split(" ")[0]
@@ -381,7 +415,7 @@ def make_pointer(graph, report, pointer_string):
     if statement_subject[0] == "<" and not is_statement:
         pointer = extract_statement(graph, URIRef(statement_subject[1:-1]))
     elif statement_subject[0] == '"':
-        pointer = Literal(parse_statement_for_html(pointer_string.strip()[1:-1], is_literal=True))
+        pointer = Literal(remove_prefixes(pointer_string.strip()[1:-1], is_literal=True))
     elif statement_subject[0] != "[" and not is_statement:
         normalizedUri = Namespace(
             [
@@ -391,96 +425,89 @@ def make_pointer(graph, report, pointer_string):
         )[pointer_string.split(":")[1]]
         pointer = URIRef(normalizedUri)
     elif pointer_string.strip()[0] == "@":
-        pointer = Literal(parse_statement_for_html(pointer_string))
+        pointer = Literal(remove_prefixes(pointer_string))
     else:
         pointer = Literal(parse_statement(pointer_string))
 
     return pointer
 
-def make_outcome(
-    report,
-    criterion,
-    error,
-    outcome_type,
-    description="",
-    pointers=[],
-    graph=None
-):
-    if error in SKIPPED_ERRORS or criterion in SKIPPED_TESTS:
+def make_outcome(draft):
+    if draft.should_skip():
         return None
-    
-    test_name = criterion.split('/')[-1].split('#')[0]
+        
+    test_name = draft.criterion.split('/')[-1].split('#')[0]
     test_name = '.'.join(test_name.split('.')[:-1])
-    outcome_title = f"Test {test_name} passed" if outcome_type == "Pass" else f"Error on custom test {test_name}"
-    outcome_description = f"The custom test {test_name} passed" if outcome_type == "Pass" else f"Error occured while running custom test {test_name}"
+    outcome_title = f"Test {test_name} passed" if draft.outcome_type == "Pass" else f"Error on custom test {test_name}"
+    outcome_description = f"The custom test {test_name} passed" if draft.outcome_type == "Pass" else f"Error occured while running custom test {test_name}"
     
-    if error in ERROR_RESOURCES:
-        outcome_ressources = ERROR_RESOURCES[error][outcome_type]
+    if draft.error in ERROR_RESOURCES:
+        outcome_ressources = ERROR_RESOURCES[draft.error][draft.outcome_type]
         outcome_title = outcome_ressources["title"]
-        outcome_description = description if len(description) > 0 else outcome_ressources["description"]
+        outcome_description = draft.description if (draft.has_field("description") and len(draft.description) > 0) else outcome_ressources["description"]
     
-    parsed_pointers = [make_pointer(graph, report, pointer) for pointer in pointers if len(pointer) > 0]
-    outcome_type_namespace = OLIVAW_EARL_NAMESPACE if outcome_type.endswith("Fail") else EARL_NAMESPACE
+    parsed_pointers = [
+        make_pointer(draft.graph, draft.report, pointer)
+        for pointer in draft.pointers
+        if len(pointer) > 0
+    ]
+
+    outcome_type_namespace = OLIVAW_EARL_NAMESPACE if draft.outcome_type.endswith("Fail") else EARL_NAMESPACE
+
     outcome_statement = [
-        (RDF.type, outcome_type_namespace[outcome_type]),
+        (RDF.type, outcome_type_namespace[draft.outcome_type]),
         (DCTERMS.title, Literal(outcome_title, lang="en")),
         (DCTERMS.description, Literal(outcome_description, lang="en"))
     ]
     outcome_statement += [(RDFS.seeAlso, pointer) for pointer in parsed_pointers]
 
     outcome = BNode()
-    report.statement(outcome, *outcome_statement)
+    draft.reporting(outcome, outcome_statement)
 
     return outcome
 
-def make_outcomes(
-    report,
-    subject,
-    criterion,
-    error,
-    messages,
-    pointers=[],
-    graph=None,
-    outcome_type=None
-):
-    if len(pointers) > 0 and not len(pointers) == len(messages):
-        pointers = []
+def make_outcomes(draft):
+    if isinstance(draft.error, list):
+        return [
+            outcome
+            for outcome_pack in [
+                draft.make_outcomes(
+                    outcome_type=None,
+                    error=error,
+                    messages=messages,
+                    pointers=pointers
+                )
+                for error, messages, pointers
+                in zip(
+                    draft.error,
+                    draft.messages,
+                    draft.pointers
+                )
+            ]
+            for outcome in outcome_pack
+        ]
+
+    draft.fix_pointers()
     outcomes = []
 
-    if error in SKIPPED_ERRORS:
+    if draft.error in SKIPPED_ERRORS:
         return []
 
-    if len(messages) == 0:
+    if len(draft.messages) == 0:
         if SKIP_PASS:
             return []
-        outcomes = [
-            make_outcome(
-                report,
-                criterion,
-                error,
-                "Pass"
-            )
-        ]
+        outcomes = [draft.make_outcome(outcome_type="Pass")]
     else:
-        if outcome_type is None:
-            outcome_type = "MajorFail" if error in BLOCKING_ERRORS else "MinorFail"
+        if not draft.has_field("outcome_type"):
+            draft(outcome_type="MajorFail" if draft.error in BLOCKING_ERRORS else "MinorFail")
         outcomes = [
-            make_outcome(
-                report,
-                criterion,
-                error,
-                outcome_type,
-                description=message,
-                pointers=pointer,
-                graph=graph
-            )
-            for message, pointer
-            in zip_longest(messages, pointers, fillvalue=[])
+            draft.make_outcome(description=message, pointers=pointers)
+            for message, pointers
+            in zip_longest(draft.messages, draft.pointers, fillvalue=[])
         ]
 
     return outcomes
 
-def make_result(report, outcomes):
+def make_result(draft, outcomes):
 
     # When pass, there is a pass outcome, when no outcome, then it is a skipped error
     if outcomes is None or len(outcomes) == 0:
@@ -491,12 +518,12 @@ def make_result(report, outcomes):
     ] + [
         (EARL_NAMESPACE.outcome, outcome)
         for outcome in outcomes
-        if not (make_outcome_type(report, outcome) == "Pass" and SKIP_PASS) and
-           not (make_outcome_type(report, outcome) == "NotTested" and TESTED_ONLY)
+        if not (make_outcome_type(draft.report, outcome) == "Pass" and SKIP_PASS) and
+           not (make_outcome_type(draft.report, outcome) == "NotTested" and TESTED_ONLY)
     ]
 
     result = BNode()
-    report.statement(result, *result_statement)
+    draft.reporting(result, result_statement)
 
     return result
 
@@ -506,87 +533,42 @@ def make_outcome_type(report, result):
     earl_separator = str(EARL_NAMESPACE)[-1]
     return str(outcomeType).split(earl_separator)[-1]
 
-def assemble_assertion(
-    report,
-    assertor,
-    subject,
-    criterion,
-    result,
-    criterion_uri=None
-):
+def assemble_assertion(draft, result):
     # if result is None, then it is a skipped error
     if result is None:
         return
     
-    criterion = URIRef(criterion_uri) \
-                if criterion_uri else \
-                OLIVAW_EARL_NAMESPACE[criterion]
+    criterion = URIRef(draft.criterion_uri) \
+                if draft.has_field("criterion_uri") else \
+                OLIVAW_EARL_NAMESPACE[draft.criterion]
     
     statement = [
         (RDF.type, EARL_NAMESPACE.Assertion),
-        (EARL_NAMESPACE.assertedBy, assertor),
-        (EARL_NAMESPACE.subject, subject),
+        (EARL_NAMESPACE.assertedBy, draft.assertor),
+        (EARL_NAMESPACE.subject, draft.subject),
         (EARL_NAMESPACE.test, criterion),
         (EARL_NAMESPACE.result, result),
     ]
 
     assertion = BNode()
-    report.statement(assertion, *statement)
+    draft.reporting(assertion, statement)
+    draft.new_assertion()
 
-def make_assertion(
-    report,
-    assertor,
-    subject,
-    criterion,
-    error,
-    messages,
-    pointers=[],
-    graph=None,
-    outcome_type=None,
-    criterion_uri=None
-):    
+def make_assertion(draft):
     assemble_assertion(
-        report,
-        assertor,
-        subject,
-        criterion,
-        make_result(report,
-            make_outcomes(
-                report,
-                subject,
-                criterion,
-                error,
-                messages,
-                pointers=pointers,
-                graph=graph,
-                outcome_type=outcome_type
-            )
-        ),
-        criterion_uri=criterion_uri
+        draft,
+        make_result(
+            draft, 
+            make_outcomes(draft)
+        )
     )
 
-def make_not_tested(
-    report,
-    assertor,
-    subject,
-    criterion
-):
-    if TESTED_ONLY:
+def make_not_tested(draft):
+    if TESTED_ONLY or draft.should_skip():
         return
-    
-    errors = CRITERION_DATA[criterion]["errors"]
+
+    errors = CRITERION_DATA[draft.criterion]["errors"]
 
     for error in errors:
-        error = make_outcome(
-            report,
-            criterion,
-            error,
-            "NotTested"
-        )
-        assemble_assertion(
-            report,
-            assertor,
-            subject,
-            criterion,
-            make_result(report, [error])
-        )
+        error = draft.make_outcome(outcome_type="NotTested")
+        assemble_assertion(draft, make_result(draft, [error]))
