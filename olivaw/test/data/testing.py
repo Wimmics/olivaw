@@ -9,12 +9,6 @@ from olivaw.test.corese import (
     TEXT_CSV
 )
 
-from olivaw.test.turtle import (
-    make_subject,
-    make_assertion,
-    make_not_tested,
-    new_report
-)
 from olivaw.constants import (
     ROOT_FOLDER,
     GET_ONTOLOGY_TERMS,
@@ -27,10 +21,10 @@ from olivaw.constants import (
     CUSTOM_DATA_TESTS
 )
 
+from olivaw.test.turtle import new_report
 from olivaw.test.generic.shacl import load_valid_custom_tests, custom_test
 from olivaw.test.generic.prefix import prefix_test
-from olivaw.test.util import progress_bar
-from olivaw.test.util.drafts import AssertDraft
+from olivaw.test.util import progress_bar, AssertDraft
 
 shape_tests, shapes_data = load_valid_custom_tests(CUSTOM_DATA_TESTS)
 

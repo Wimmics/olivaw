@@ -6,8 +6,6 @@ from olivaw.constants import (
     SKIPPED_TESTS
 )
 
-from olivaw.test import COMMON_URIS_TREE
-
 from olivaw.test.corese import (
     safe_load,
     query_graph,
@@ -16,7 +14,7 @@ from olivaw.test.corese import (
     OWL_RL
 )
 
-from olivaw.test.util import make_index, similar_prefix_search
+from olivaw.test.util import make_index, similar_prefix_search, COMMON_URIS_TREE
 
 def get_prefix_suffix(uri):
 

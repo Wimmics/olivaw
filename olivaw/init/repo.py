@@ -5,18 +5,14 @@ from os.path import sep, exists
 from dotenv import load_dotenv, set_key
 
 from olivaw.constants import (
-    ROOT_FOLDER,
-    DEV_USERNAME,
     REPO_URI,
     REF,
     PWD_TO_OVILAW,
     PWD_TO_ROOT_FOLDER,
-    NEW_LINES,
     REPO_NAME,
     GITHUB_API,
     BADGE_LIST
 )
-from olivaw.init.util.badge import badge_url
 
 from .readme import update_readme
 

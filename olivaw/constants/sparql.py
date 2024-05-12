@@ -47,7 +47,7 @@ construct {
 
 # SparQL request to get all the properties with a domain linking to a term not defined in the ontology
 DOMAIN_OUT_Of_VOCABULARY = """
-SELECT DISTINCT ?suffix ?domain WHERE {
+SELECT DISTINCT ?property ?domain WHERE {
   # Get all the properties with a defined domain
   ?property rdf:type owl:ObjectProperty ;
     rdfs:domain ?domain ;
@@ -61,9 +61,6 @@ SELECT DISTINCT ?suffix ?domain WHERE {
 
   # Ignore the owl:Thing domains and domains in the ontology
   FILTER (!(?domain = owl:Thing || strstarts(str(?domain), "ONTOLOGY_URL")))
-
-  # Format the result
-  BIND (SUBSTR(str(?property), STRLEN("ONTOLOGY_URL") + 1) as ?suffix)
 }
 """
 
@@ -79,65 +76,6 @@ SELECT DISTINCT ?i WHERE {
 }
 """
 
-# Not used for now... a LDScript implementation of the Levenshtein distance
-# Works on Corese command but not on GUI
-LEVENSHTEIN_FUNCTION = """
-function fun:levenshtein(x, y) {
-  if (strlen(x) = 0) {
-    return (strlen(y))
-  }
-  else {
-    if (strlen(y) = 0) {
-      return (strlen(x))
-    }
-    else {
-      let (
-        x0 = substr(x, 1, 1),
-        y0 = substr(y, 1, 1),
-        indicator = if(x0 = y0, 0, 1),
-        subx = substr(x, 2),
-        suby = substr(y, 2)
-      ) {
-        return (
-          fun:min(
-            xt:list (
-              fun:levenshtein(subx, y) + 1,
-              fun:levenshtein(suby, x) + 1,
-              fun:levenshtein(subx, suby) + indicator
-            ),
-            0,
-            0
-          )
-        )
-      }
-    }
-  }
-}
-
-function fun:min(list, i, currentMin) {
-  if (i = 0) {
-    return (
-      fun:min(list, i + 1, xt:get(list, 0))
-    )
-  }
-  else {
-    if (i >= xt:size(list)) {
-      return (currentMin)
-    }
-    else {
-      let (currentElement = xt:get(list, i)) {
-        if (currentElement < currentMin) {
-          return (fun:min(list, i + 1, currentElement))
-        }
-        else {
-          return (fun:min(list, i + 1, currentMin))
-        }
-      }
-    }
-  }
-}
-"""
-
 # SparQL request getting all the pairs of suffixes from the ontology in a given graph
 # Gets rid of the duplicates (ab and ba) and the auto pairs (aa)
 GET_TERM_PAIRS = """
@@ -150,21 +88,6 @@ SELECT DISTINCT ?suffix1 ?suffix2 WHERE {
 } ORDER BY ?suffix1
 """
 
-# Not used for now
-# Gets the pairs of suffixes in the given graph and gives all the pairs of terms that are too similar
-GET_TOO_CLOSED_PAIRS = """
-SELECT ?suffix1 ?suffix2 ?distance WHERE {
-  {
-    GET_TERM_PAIRS
-  }
-  BIND(fun:levenshtein(?suffix1, ?suffix2) AS ?distance)
-  FILTER(?distance > TERM_DISTANCE_THRESHOLD)
-}
-""".replace(
-    "GET_TERM_PAIRS",
-    GET_TERM_PAIRS
-  ) + LEVENSHTEIN_FUNCTION
-
 NOT_LABELED = """
 select distinct ?term where {
   ?term rdfs:isDefinedBy ?module .
@@ -172,24 +95,6 @@ select distinct ?term where {
     ?term rdfs:label ?label .
     filter(lang(?label) = "en")
   }
-}
-"""
-
-FAIL_ASSERTIONS = """
-select ?n ?c ?t ?d where {
-  ?a a earl:Assertion ;
-  earl:subject ?s ;
-  earl:test ?c ;
-  earl:result ?r .
-
-  ?s dcterms:title ?n .
-
-  ?r a earl:TestResult ;
-  earl:outcome ?o .
-
-  ?o a earl:Fail ;
-  dcterms:title ?t ;
-  dcterms:description ?d .
 }
 """
 
@@ -358,24 +263,6 @@ select ?uri where {
 }
 """
 
-GET_CRITERION_IDENTIFIER = """
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix earl: <http://www.w3.org/ns/earl#> .
-
-select ?id where {
-  _:ns a earl:TestCriterion ;
-  dcterms:identifier ?id
-}
-"""
-
-GET_CRITERION_URI = """
-@prefix earl: <http://www.w3.org/ns/earl#> .
-
-select ?tc where {
-    ?tc a earl:TestCriterion
-}
-"""
-
 GET_VIOLATION = """
 CONSTRUCT {
   VIOLATION_URI ?p ?po
@@ -407,10 +294,10 @@ GET_CUSTOM_CRITERION_DATA = """
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
 select ?tc ?identifier ?title ?description where {
-    ?tc a earl:TestCriterion ;
-        dcterms:identifier ?identifier ;
-        dcterms:title ?title ;
-        dcterms:description ?description
+  ?tc a earl:TestCriterion ;
+    dcterms:identifier ?identifier ;
+    dcterms:title ?title ;
+    dcterms:description ?description
 }
 """
 
@@ -581,6 +468,20 @@ construct {
 }
 where {
   ?x ?y <TERM>
+}
+"""
+
+SHORTEN_LITERALS = """
+construct {?s ?p ?parsed}
+where {
+  ?s ?p ?o .
+  bind(
+    if(
+      isliteral(?o) && strlen(?o) > 60,
+       concat(substr(?o, 1, 60), "..."),
+       ?o
+      ) as ?parsed
+  )
 }
 """
 

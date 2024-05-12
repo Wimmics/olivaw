@@ -158,7 +158,6 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     "GET_BY_MODULE",
     "DOMAIN_OUT_Of_VOCABULARY",
     "RANGE_OUT_OF_VOCABULARY",
-    "GET_TOO_CLOSED_PAIRS",
     "NOT_LABELED",
     "GET_TERM_PAIRS",
     "GET_ONTOLOGY_TERMS",

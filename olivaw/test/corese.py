@@ -114,7 +114,7 @@ register(gateway.shutdown)
 #)
 
 # Import of class
-owl_profile = gateway.jvm.fr.inria.corese.core.logic.OWLProfile
+OWLProfile = gateway.jvm.fr.inria.corese.core.logic.OWLProfile
 Graph = gateway.jvm.fr.inria.corese.core.Graph
 Load = gateway.jvm.fr.inria.corese.core.load.Load
 QueryProcess = gateway.jvm.fr.inria.corese.core.query.QueryProcess
@@ -144,37 +144,37 @@ TripleFormat = gateway.jvm.fr.inria.corese.core.print.TripleFormat
 # A java object resolving prefixes into URIs and the other way
 prefix_manager = NSManager.create()
 
-corese_namespaces = []
+CORESE_NAMESPACES = []
 for field in dir(NSManager):
     try:
-        corese_namespaces.append(getattr(NSManager, field))
+        CORESE_NAMESPACES.append(getattr(NSManager, field))
     except:
         pass
 
-corese_namespaces = [
+CORESE_NAMESPACES = [
     (prefix_manager.getPrefix(uri), uri)
-    for uri in corese_namespaces
+    for uri in CORESE_NAMESPACES
     if isinstance(uri, str)
     and len(URI_FORMAT.findall(uri)) > 0
     and not prefix_manager.getPrefix(uri) is None
 ] + [
     ("ex", "http://example.org/ns#")
 ]
-corese_namespaces = list(set(corese_namespaces))
-corese_namespaces.sort(key=lambda item: item[0])
-corese_namespaces = {
+CORESE_NAMESPACES = list(set(CORESE_NAMESPACES))
+CORESE_NAMESPACES.sort(key=lambda item: item[0])
+CORESE_NAMESPACES = {
     prefix: namespace
-    for prefix, namespace in corese_namespaces
+    for prefix, namespace in CORESE_NAMESPACES
 }
-corese_prefix_text = f"@prefix {ONTOLOGY_PREFIX}: <{ONTOLOGY_URL}> .\n".join(
+CORESE_PREFIX_TEXT = f"@prefix {ONTOLOGY_PREFIX}: <{ONTOLOGY_URL}> .\n".join(
     [
         f"@prefix {prefix}: <{namespace}> ."
-        for prefix, namespace in corese_namespaces.items()
+        for prefix, namespace in CORESE_NAMESPACES.items()
     ]
 )
 
 def to_rdflib(graph):
-    content = f"{corese_prefix_text}\n{TripleFormat.create(graph).toString()}"
+    content = f"{CORESE_PREFIX_TEXT}\n{TripleFormat.create(graph).toString()}"
     g = RdflibGraph()
     g.parse(data=content, format="ttl")
     return g
@@ -383,7 +383,7 @@ def query_graph(graph, query, format=TEXT_TSV):
     return result
 
 def export_graph(graph):
-    return  f"{corese_prefix_text}\n{TripleFormat.create(graph).toString()}"
+    return  f"{CORESE_PREFIX_TEXT}\n{TripleFormat.create(graph).toString()}"
 
 def check_OWL_constraints(graph):
     try:

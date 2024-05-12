@@ -1,10 +1,5 @@
-from os.path import abspath
-
 from olivaw.constants import (
-    MODULES_TTL_GLOB_PATH,
-    MODELETS_TTL_GLOB_PATH,
     BRANCH,
-    SKIPPED_FILES,
     TESTED_MODELETS,
     TESTED_MODULES
 )

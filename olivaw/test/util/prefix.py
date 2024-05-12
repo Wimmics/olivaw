@@ -163,6 +163,7 @@ def get_dict(index):
 
 uris = []
 COMMON_URI_DICT = {}
+COMMON_URIS_TREE = None
 
 try:
     common_prefixes = None

@@ -1,5 +1,3 @@
-from os.path import sep
-from requests import get
 from json import loads
 
 from olivaw.constants import ROOT_FOLDER

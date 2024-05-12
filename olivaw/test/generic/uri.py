@@ -1,5 +1,4 @@
 from olivaw.constants import URI_FORMAT, SKIPPED_TESTS
-from olivaw.test.turtle import make_assertion
 
 def uri_test(draft, uris, get_uri_usage, graph=None):
     if "uri-validity" in SKIPPED_TESTS:

@@ -1,5 +1,4 @@
 from os import sep
-from json import loads
 
 from olivaw.constants import (
     ROOT_FOLDER,
@@ -8,7 +7,7 @@ from olivaw.constants import (
     NEW_LINES,
     GIST_INDEX
 )
-from olivaw.init.util.badge import badge_url
+from olivaw.init.util import badge_url
 
 def update_readme(gist_id=None):
     readme = None

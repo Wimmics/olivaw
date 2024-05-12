@@ -8,11 +8,10 @@ from olivaw.test.corese import (
     Shacl,
     TripleFormat,
     TURTLE,
-    corese_namespaces,
-    corese_prefix_text
+    CORESE_NAMESPACES,
+    CORESE_PREFIX_TEXT
 )
 
-from olivaw.test.turtle import make_assertion
 
 from olivaw.constants import (
     GET_VIOLATIONS,
@@ -55,7 +54,7 @@ def file_to_uri(file):
 
 def complete_test_content(file):
     with open(file, "r") as shape_file:
-        return f"@base <{file_to_uri(file)}> .\n{corese_prefix_text}\n{shape_file.read()}"
+        return f"@base <{file_to_uri(file)}> .\n{CORESE_PREFIX_TEXT}\n{shape_file.read()}"
 
 def load_valid_custom_tests(files):
     custom_tests = []
@@ -190,7 +189,7 @@ def parse_violation_focus(
 
         graph = Graph()
         graph.parse(
-            data=f"{corese_prefix_text}\n{violation_summaries[i]}",
+            data=f"{CORESE_PREFIX_TEXT}\n{violation_summaries[i]}",
             format="ttl"
         )
 
@@ -218,14 +217,14 @@ def parse_violation_focus(
         summaries.append(
             violation_summaries
         )
-        focus.append(f"{corese_prefix_text}\n{parsed_triple}")
+        focus.append(f"{CORESE_PREFIX_TEXT}\n{parsed_triple}")
 
     return focus, violation_summaries
 
 def parse_violation_triple(triple):
     triple = ">".join(triple.split(">")[1:]).strip()
     graph = Graph()
-    turtle = f"{corese_prefix_text}\n{triple} ."
+    turtle = f"{CORESE_PREFIX_TEXT}\n{triple} ."
     
     graph.parse(data=turtle, format="ttl")
     
@@ -239,7 +238,7 @@ def parse_violation_triple(triple):
     for item in triple:
         if isinstance(item, URIRef):
             default_prefix = False
-            for key, value in corese_namespaces.items():
+            for key, value in CORESE_NAMESPACES.items():
                 if item.startswith(value):
                     default_prefix = True
                     parsed.append(f"{key}:{item[len(value):]}")
@@ -318,7 +317,7 @@ def custom_test(
 
         if len(pointers) > 0:
             shape_content = TripleFormat.create(shape).toString()
-            shape_content = f"{corese_prefix_text}\n{shape_content}"
+            shape_content = f"{CORESE_PREFIX_TEXT}\n{shape_content}"
 
             rdflib_shape = Graph()
             rdflib_shape.bind("earl", EARL_NAMESPACE)

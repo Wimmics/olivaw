@@ -1,22 +1,19 @@
-from glob import glob
-from os.path import sep, relpath, abspath
+from os.path import sep, relpath
 
 from olivaw.constants.sparql import LINK_SUBJECTS_FOR_MODULE, REMOVE_DESCRIPTION_LINKS
 from olivaw.test.corese import (
     query_graph, 
     safe_load,
-    owl_profile,
+    OWLProfile,
     check_OWL_constraints,
     profile_errors
 )
 from olivaw.constants import (
     GET_BY_MODULE,
     DECIDABILITY_RANGE,
-    ONTOLOGY_URL,
     PWD_TO_ROOT_FOLDER,
     MODEL_BEST_PRACTICES_TESTS,
     MODEL_BEST_PRACTICES_TESTS,
-    SKIPPED_FILES,
     CUSTOM_MODEL_TESTS,
     MODULES_TTL_GLOB_PATH,
     GET_DECLARED_ONTOLOGIES,
@@ -32,7 +29,7 @@ from olivaw.test.generic.shacl import (
 
 from rdflib import Graph as RdflibGraph
 
-from olivaw.test.util.drafts import AssertDraft
+from olivaw.test.util.draft import AssertDraft
 from olivaw.test.util.print import progress_bar
 
 shape_tests, shape_data = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
@@ -91,7 +88,7 @@ def profile_check(fragment, draft):
     with a key "is_reached" mapping a boolean indicating a compatibility, and a "message" justifying the result
     """
 
-    engine = owl_profile(fragment)
+    engine = OWLProfile(fragment)
     draft(criterion="profile-compatibility", graph=fragment)
 
     packed_errors = []
@@ -103,7 +100,7 @@ def profile_check(fragment, draft):
             break
 
         # Keeping 2 arrays containing almost the same thing was not necessary, so getattr
-        profile = getattr(owl_profile, decidability_level)
+        profile = getattr(OWLProfile, decidability_level)
         compatible = engine.process(profile)
         raw_message = engine.getMessage()
         engine.setMessage("")
@@ -139,8 +136,7 @@ def profile_check(fragment, draft):
             messages=check_OWL_constraints(fragment)
         )
 
-def fragment_check(fragments, draft, extras="", skip=[]):
-
+def fragment_check(fragments, draft, extras=""):
     fragment_no_import = safe_load(
         fragments,
         extras,
@@ -171,10 +167,8 @@ def fragment_check(fragments, draft, extras="", skip=[]):
 
     best_practices_test(
         draft,
-        fragment_with_import,
         fragment_no_import,
         fragment_no_owl,
-        skip
     )
 
     custom_test(draft, fragment_no_owl, shape_tests)
@@ -229,8 +223,7 @@ def modelets_tests(modelets, report=None, assertor=None):
 
         load_error = fragment_check(
             modelet,
-            draft(file=modelet),
-            skip=["domain-and-range-referencing"]
+            draft(file=modelet)
         )
 
         if load_error:

@@ -5,21 +5,17 @@ from olivaw.constants import (
     ONTOLOGY_URL,
     RANGE_OUT_OF_VOCABULARY,
     TERM_DISTANCE_THRESHOLD,
-    DOMAIN_OUT_Of_VOCABULARY,
-    SKIPPED_TESTS
+    DOMAIN_OUT_Of_VOCABULARY
 )
 
 from olivaw.test.corese import query_graph
-from olivaw.test.turtle import make_assertion
 from olivaw.test.util.nlp import levenshtein
 
 
 def best_practices_test(
         draft,
-        fragment_wih_import,
         fragment_no_import,
         fragment_no_owl,
-        skip=[]
     ):
     """Test the best practices mistakes that do not break the RDF syntax neither the OWL reasoning,
     but that should still not happen
@@ -43,52 +39,52 @@ def best_practices_test(
     if not draft.should_skip(criterion="domain-and-range-referencing"):
         # Checking for domain property out of the vocabulary
         dov = query_graph(fragment_no_import, DOMAIN_OUT_Of_VOCABULARY)
-        dov = [line.split("\t") for line in dov]
-        dov_messages = [
-            f"The property :{item[0][1:-1]} has a domain out of the ontology: {item[1]}"
-            for item in dov
-        ]
-        dov_pointers = [[f"<{ONTOLOGY_URL}{item[0][1:-1]}>" for item in dov]]
-        dov_pointers = dov_pointers if len(dov_pointers[0]) > 0 else []
+        dov = [[
+            uri
+            for line in dov
+            for uri in line.split("\t")
+        ]] if len(dov) > 0 else []
+        dov_messages = ["Some properties have a domain out of the ontology"] if len(dov) > 0 else []
 
         draft.make_assertion(
             error="domain-out-of-vocabulary",
             messages=dov_messages,
-            pointers=dov_pointers,
+            pointers=dov,
             graph=fragment_no_import
         )
 
         # Checking for range property out of the vocabulary
         rov = query_graph(fragment_no_import, RANGE_OUT_OF_VOCABULARY)
-        rov = [line.split("\t") for line in rov]
+        rov = [[
+            uri
+            for line in rov
+            for uri in line.split("\t")
+        ]] if len(rov) > 0 else []
         rov_messages = ["Some properties have a range out of the ontology"] if len(rov) > 0 else []
-        rov_pointers = [[f"<{ONTOLOGY_URL}{item[0][1:-1]}>" for item in rov]]
-        rov_pointers = rov_pointers if len(rov_pointers[0]) > 0 else []
+
         draft.make_assertion(
             criterion="domain-and-range-referencing",
             error="range-out-of-vocabulary",
             messages=rov_messages,
-            pointers=rov_pointers,
+            pointers=rov,
             graph=fragment_no_import
         )
 
     # Checking for too close terms
     if not draft.should_skip(criterion="terms-differenciation"):
         term_pairs = query_graph(fragment_no_owl, GET_TERM_PAIRS)
-        term_pairs = [[
-                f"<{ONTOLOGY_URL}{item.strip()[1:-1]}>"
-                for item in line.split("\t")
-            ]
+        term_pairs = [
+            [uri[1:-1] for uri in line.strip().split("\t")]
             for line in term_pairs
         ]
-        term_pairs = [pair for pair in term_pairs if levenshtein(*pair) < TERM_DISTANCE_THRESHOLD]
         term_pairs = [[
-            pair_item
+            f"<{ONTOLOGY_URL}{uri}>"
             for pair in term_pairs
-            for pair_item in pair
+            for uri in pair
+            if levenshtein(*pair) < TERM_DISTANCE_THRESHOLD
         ]]
-        term_pairs = [] if len(term_pairs[0]) == 0 else term_pairs
 
+        term_pairs = [] if len(term_pairs[0]) == 0 else term_pairs
         messages = ["Some terms are too similar"] if len(term_pairs) > 0 else []
 
         draft.make_assertion(

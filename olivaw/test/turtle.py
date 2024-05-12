@@ -31,10 +31,6 @@ from olivaw.constants import (
     ONTOLOGY_NAMESPACE,
     ERROR_RESOURCES,
     BRANCH,
-    MODULE_URL_FORMAT,
-    MODELET_URL_FORMAT,
-    PWD_TO_ROOT_FOLDER,
-    LITERAL_CUTTING_LENGTH,
     USECASES_URL,
     SKIPPED_ERRORS,
     EXTRACT_STATEMENT,
@@ -46,9 +42,22 @@ from olivaw.constants import (
     CRITERION_DATA
 )
 
-from olivaw.constants.sparql import ADD_DESCRIPTION_LINKS, GET_GRAPH_NAMESPACES, GET_OBJECT_USAGE, GET_PREDICATE_USAGE, REMOVE_DESCRIPTION_LINKS
-from olivaw.test.corese import TURTLE, corese_prefix_text, to_rdflib, corese_namespaces
-from olivaw.test.util.prefix import COMMON_URI_DICT, common_prefix_search
+from olivaw.constants.sparql import (
+    ADD_DESCRIPTION_LINKS,
+    GET_GRAPH_NAMESPACES,
+    GET_OBJECT_USAGE,
+    GET_PREDICATE_USAGE,
+    REMOVE_DESCRIPTION_LINKS,
+    SHORTEN_LITERALS
+)
+
+from olivaw.test.corese import (
+    TURTLE,
+    CORESE_PREFIX_TEXT,
+    CORESE_NAMESPACES
+)
+
+from olivaw.test.util.prefix import COMMON_URI_DICT
 
 def new_report(test_type):
     report = Graph()
@@ -228,100 +237,15 @@ def make_subject(
 
     return test_subject
 
-def short_subject_part(part):
-    module_search = MODULE_URL_FORMAT.findall(part)
-    if len(module_search) > 0:
-        return f"{PWD_TO_ROOT_FOLDER}{module_search[0]}.ttl"
-    
-    modelet_search = MODELET_URL_FORMAT.findall(part)
-    if len(modelet_search) > 0:
-        return f"{PWD_TO_ROOT_FOLDER}{modelet_search[0]}"
-    
-    return part
-
-def extractTriples(isolated_graph, searched_entity):
-    triples = [
-        (searched_entity, predicate, object)
-        for predicate, object 
-        in isolated_graph.predicate_objects(subject=searched_entity)
-    ]
-
-    if len(triples) == 0:
-        if isinstance(searched_entity, BNode):
-            return []
-        
-        triples = [
-            (subject, predicate, searched_entity)
-            for subject, predicate
-            in isolated_graph.subject_predicates(object=searched_entity)
-        ]
-
-    if len(triples) == 0:
-        triples = [
-            (subject, searched_entity, object)
-            for subject, object
-            in isolated_graph.subject_objects(predicate=searched_entity)
-        ]
-
-    if len(triples) == 0:
-        return searched_entity
-
-    blank_nodes = [
-        triple[-1]
-        for triple in triples
-        if isinstance(triple[-1], BNode)
-    ]
-
-    new_triples = [
-        triple for triple_group in [
-            extractTriples(isolated_graph, node)
-            for node in blank_nodes
-        ]
-        for triple in triple_group
-    ]
-
-    return triples + new_triples
-
-def extract_prefixes(graph):
-    return [("kg", "https://www.example.org/")] + [
-        (prefix, namespace)
-        for prefix, namespace
-        in graph.namespaces()
-    ]
-
-def empty_graph_same_prefixes(graphPrefixed):
-    graph = Graph()
-
-    for prefix, namespace in extract_prefixes(graphPrefixed):
-        graph.bind(prefix, namespace)
-
-    return graph
-
-def shorten_literals(triples):
-    parsed_triples = []
-    for triple in triples:
-            targetTriple = triple
-            if isinstance(triple[2], Literal):
-                if len(triple[2]) > LITERAL_CUTTING_LENGTH:
-                    separator = "..." if triple[2].datatype is None or triple[2].datatype == XSD.string else ""
-                    newLiteral = Literal(
-                        f"{triple[2][:LITERAL_CUTTING_LENGTH]}{separator}",
-                        lang=triple[2].language,
-                        datatype=triple[2].datatype
-                    )
-                    targetTriple = (targetTriple[0], targetTriple[1], newLiteral)
-            parsed_triples.append(targetTriple)
-    return parsed_triples
-
 def remove_prefixes(statement, is_literal=False):
+    if is_literal:
+        return statement
+
     statement = [
         line
         for line in statement.split("\n")
         if len(line.strip()) > 0
     ]
-
-    if is_literal:
-        return "\n".join(statement)
         
     for i in range(len(statement)):
         if not statement[i].startswith("@"):
@@ -330,27 +254,19 @@ def remove_prefixes(statement, is_literal=False):
     
     return statement
 
-def parse_statement_into_graph( raw_statement):
-    rdf = f"{corese_prefix_text}\n{raw_statement}"
+def parse_statement(raw_statement):
+    rdf = f"{CORESE_PREFIX_TEXT}\n{raw_statement}"
     if not rdf.strip().endswith("."):
         rdf = f"{rdf} ."
     isolated_graph = Graph()
     isolated_graph.parse(data=rdf, format="ttl")
-    return isolated_graph
 
-def parse_statement(raw_statement):
-    isolad_graph = parse_statement_into_graph(raw_statement)
-    triples = [triple for triple in isolad_graph.triples((None, None, None))]
-    triples = shorten_literals(triples)
-    statement_graph = Graph()
-    for triple in triples:
-        statement_graph.add(triple)
-    statement = statement_graph.serialize(format="ttl")
-    return remove_prefixes(statement)
-        
+    result = Graph()
+    for triple in isolated_graph.query(SHORTEN_LITERALS):
+        result.add(triple)
+    return remove_prefixes(result.serialize(format="ttl"))
 
 def extract_statement(graph, pointer):
-
     graph.query(ADD_DESCRIPTION_LINKS.replace("TERM", pointer))
     statement = graph.query(EXTRACT_STATEMENT.replace("TERM", pointer), format=TURTLE).strip()
     graph.query(REMOVE_DESCRIPTION_LINKS)
@@ -383,7 +299,7 @@ def extract_statement(graph, pointer):
             binds.append((prefix, Namespace(namespace)))
             continue
 
-        corese_matches = [item for item in corese_namespaces if item[1] == namespace]
+        corese_matches = [item for item in CORESE_NAMESPACES if item[1] == namespace]
 
         if len(corese_matches) == 0:
             continue
@@ -393,7 +309,7 @@ def extract_statement(graph, pointer):
 
     rdflib_graph = Graph()
     rdflib_graph.parse(
-        data=f"{corese_prefix_text}\n{statement}",
+        data=f"{CORESE_PREFIX_TEXT}\n{statement}",
         format="ttl"
     )
     
@@ -508,7 +424,6 @@ def make_outcomes(draft):
     return outcomes
 
 def make_result(draft, outcomes):
-
     # When pass, there is a pass outcome, when no outcome, then it is a skipped error
     if outcomes is None or len(outcomes) == 0:
         return None
