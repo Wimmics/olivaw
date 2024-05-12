@@ -1,13 +1,7 @@
 __main__ = ["model", "data"]
 
 from sys import exit
-from olivaw.constants import (
-    ONTOLOGY_PREFIX,
-    ONTOLOGY_RDFLIB_NAMESPACE,
-    TERM_DISTANCE_THRESHOLD,
-    BLOCKING_ERRORS,
-    BRANCH
-)
+from olivaw.constants import *
 
 required = [
     "ONTOLOGY_PREFIX",
