@@ -135,8 +135,14 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
 
   def add_repo_variables(request):
     return request\
-      .replace("ONTOLOGY_URL", ONTOLOGY_URL)\
-      .replace("TERM_DISTANCE_THRESHOLD", str(TERM_DISTANCE_THRESHOLD))
+      .replace(
+        "ONTOLOGY_URL",
+        ONTOLOGY_URL if (not ONTOLOGY_URL is None) else "ONTOLOGY_URL"
+      )\
+      .replace(
+        "TERM_DISTANCE_THRESHOLD",
+        str(TERM_DISTANCE_THRESHOLD) if (not TERM_DISTANCE_THRESHOLD is None) else "TERM_DISTANCE_THRESHOLD"
+      )
 
   from .uris import *
 
