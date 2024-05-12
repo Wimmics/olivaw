@@ -81,6 +81,8 @@ def init_repo():
         except Exception as e:
             print(f"Provided key seems to be invalid: {str(e)}")
 
+    print("First input the prefix you would like to use for your ontology:")
+    prefix = input()
     print("First input the URL where your ontology should be deployed:")
     deploy_url = input()
     print("Then input the minimum Levenshtein threshold you expect between each of the future ontology terms")
@@ -98,7 +100,8 @@ def init_repo():
     
     with open(f"{PWD_TO_ROOT_FOLDER}.acimov{sep}parameters.json", "w") as params:
         params.write(dumps({
-            "ontology_url": deploy_url,
+            "ontology_prefix": prefix,
+            "ontology_namespace": deploy_url,
             "term_distance_threshold": levenshtein_threshold,
             "blocking_errors": [
                 "syntax-error",
@@ -107,7 +110,9 @@ def init_repo():
             "gist_index": gist_id,
             "skipped_errors": [],
             "skipped_tests": [],
-            "skipped_files": []
+            "skipped_subjects": [],
+            "skip_for_test": {},
+            "skip_for_subject": {}
         }, indent=4))
 
     print("The repository is initialized!")

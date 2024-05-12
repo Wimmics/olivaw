@@ -53,7 +53,7 @@ with open(f"{PWD_TO_CONSTANTS}{sep}error-resources.json", "r") as f:
 
 ERROR_IDS = list(ERROR_RESOURCES.keys())
 
-ONTOLOGY_PREFIX = ONTOLOGY_URL = TERM_DISTANCE_THRESHOLD = BLOCKING_ERRORS = GIST_INDEX = SKIPPED_ERRORS = SKIPPED_TESTS = SKIP_FOR_TEST = SKIP_FOR_FILE = None
+ONTOLOGY_PREFIX = ONTOLOGY_URL = TERM_DISTANCE_THRESHOLD = BLOCKING_ERRORS = GIST_INDEX = SKIPPED_ERRORS = SKIPPED_TESTS = SKIP_FOR_TEST = SKIP_FOR_SUBJECT = None
 TESTED_MODULES = TESTED_MODELETS = None
 
 if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
@@ -68,12 +68,15 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
 
     if "ontology_prefix" in repo_parameters:
       ONTOLOGY_PREFIX = repo_parameters["ontology_prefix"]
+    else:
+      print('fatal: parameter "ontology_prefix" not found in parameters.json')
+      exit(1)
 
     # The ontology base URL
-    if "ontology_url" in repo_parameters:
-      ONTOLOGY_URL = repo_parameters["ontology_url"]
+    if "ontology_namespace" in repo_parameters:
+      ONTOLOGY_URL = repo_parameters["ontology_namespace"]
     else:
-      print('fatal: parameter "ontology_url" not found in parameters.json')
+      print('fatal: parameter "ontology_namespace" not found in parameters.json')
       exit(1)
 
     # The desired levenshtein threshold to accept terms as different enough
@@ -104,23 +107,23 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     SKIPPED_TESTS = repo_parameters["skipped_tests"] if "skipped_tests" in repo_parameters else []
 
     # Relative paths between repo root and files that should be skipped in tests
-    SKIPPED_FILES = [
+    SKIPPED_SUBJECTS = [
       (
         abspath(f"{ROOT_FOLDER}{sep}{path}")
         if exists(f"{ROOT_FOLDER}{sep}{path}")
         else path
       )
-      for path in repo_parameters["skipped_files"]
-    ] if "skipped_files" in repo_parameters else []
+      for path in repo_parameters["skipped_subjects"]
+    ] if "skipped_subjects" in repo_parameters else []
 
     TESTED_MODULES = [
       file for file in MODULES_TTL_GLOB_PATH
-      if not abspath(file) in SKIPPED_FILES
+      if not abspath(file) in SKIPPED_SUBJECTS
     ]
 
     TESTED_MODELETS = [
       file for file in MODELETS_TTL_GLOB_PATH
-      if not abspath(file) in SKIPPED_FILES
+      if not abspath(file) in SKIPPED_SUBJECTS
     ]
 
     SKIP_FOR_TEST = {
@@ -136,15 +139,15 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       in repo_parameters["skip_for_test"].items()
     } if "skip_for_test" in repo_parameters else {}
 
-    SKIP_FOR_FILE = {
+    SKIP_FOR_SUBJECT = {
       (
         abspath(f"{ROOT_FOLDER}{sep}{file}")
         if exists(f"{ROOT_FOLDER}{sep}{file}")
         else file
       ): criterions
       for file, criterions
-      in repo_parameters["skip_for_file"].items()
-    } if "skip_for_file" in repo_parameters else {}
+      in repo_parameters["skip_for_subject"].items()
+    } if "skip_for_subject" in repo_parameters else {}
 
   def add_repo_variables(request):
     return request\
@@ -205,5 +208,5 @@ MODEL_BEST_PRACTICES_TESTS = ["owl-rl-constraint", "profile-compatibility", "ter
 DATASETS = [
   item
   for item in USE_CASES_TTL_GLOB_PATH + DATASETS_TTL_GLOB_PATH
-  if not abspath(item) in SKIPPED_FILES
+  if not abspath(item) in SKIPPED_SUBJECTS
 ]
