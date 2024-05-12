@@ -1,3 +1,3 @@
 __all__ = ["badge"]
 
-from badge import *
+from .badge import *
