@@ -2,7 +2,7 @@ from olivaw.constants import (
     GET_TERM_PAIRS,
     NOT_LABELED,
     NOT_REFERENCED,
-    ONTOLOGY_URL,
+    ONTOLOGY_NAMESPACE,
     RANGE_OUT_OF_VOCABULARY,
     TERM_DISTANCE_THRESHOLD,
     DOMAIN_OUT_Of_VOCABULARY
@@ -78,7 +78,7 @@ def best_practices_test(
             for line in term_pairs
         ]
         term_pairs = [[
-            f"<{ONTOLOGY_URL}{uri}>"
+            f"<{ONTOLOGY_NAMESPACE}{uri}>"
             for pair in term_pairs
             for uri in pair
             if levenshtein(*pair) < TERM_DISTANCE_THRESHOLD

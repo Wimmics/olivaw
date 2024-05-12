@@ -19,7 +19,7 @@ from olivaw.constants import (
     PWD_TO_ROOT_FOLDER,
     URI_FORMAT,
     ONTOLOGY_PREFIX,
-    ONTOLOGY_URL
+    ONTOLOGY_NAMESPACE
 )
 from olivaw.test.util.print import print_title, smart_print
 
@@ -166,7 +166,7 @@ CORESE_NAMESPACES = {
     prefix: namespace
     for prefix, namespace in CORESE_NAMESPACES
 }
-CORESE_PREFIX_TEXT = f"@prefix {ONTOLOGY_PREFIX}: <{ONTOLOGY_URL}> .\n".join(
+CORESE_PREFIX_TEXT = f"@prefix {ONTOLOGY_PREFIX}: <{ONTOLOGY_NAMESPACE}> .\n".join(
     [
         f"@prefix {prefix}: <{namespace}> ."
         for prefix, namespace in CORESE_NAMESPACES.items()

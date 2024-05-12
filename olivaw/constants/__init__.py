@@ -53,7 +53,7 @@ with open(f"{PWD_TO_CONSTANTS}{sep}error-resources.json", "r") as f:
 
 ERROR_IDS = list(ERROR_RESOURCES.keys())
 
-ONTOLOGY_PREFIX = ONTOLOGY_URL = TERM_DISTANCE_THRESHOLD = BLOCKING_ERRORS = GIST_INDEX = SKIPPED_ERRORS = SKIPPED_TESTS = SKIP_FOR_TEST = SKIP_FOR_SUBJECT = None
+ONTOLOGY_PREFIX = ONTOLOGY_NAMESPACE = TERM_DISTANCE_THRESHOLD = BLOCKING_ERRORS = GIST_INDEX = SKIPPED_ERRORS = SKIPPED_TESTS = SKIP_FOR_TEST = SKIP_FOR_SUBJECT = None
 TESTED_MODULES = TESTED_MODELETS = None
 
 if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
@@ -70,7 +70,7 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
 
     # The ontology base URL
     if "ontology_namespace" in repo_parameters:
-      ONTOLOGY_URL = repo_parameters["ontology_namespace"]
+      ONTOLOGY_NAMESPACE = repo_parameters["ontology_namespace"]
 
     # The desired levenshtein threshold to accept terms as different enough
     if "term_distance_threshold" in repo_parameters:
@@ -136,8 +136,8 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
   def add_repo_variables(request):
     return request\
       .replace(
-        "ONTOLOGY_URL",
-        ONTOLOGY_URL if (not ONTOLOGY_URL is None) else "ONTOLOGY_URL"
+        "ONTOLOGY_NAMESPACE",
+        ONTOLOGY_NAMESPACE if (not ONTOLOGY_NAMESPACE is None) else "ONTOLOGY_NAMESPACE"
       )\
       .replace(
         "TERM_DISTANCE_THRESHOLD",
@@ -162,17 +162,22 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     request_value = locals()[request_name]
     locals()[request_name] = add_repo_variables(request_value)
 
-  ONTOLOGY_NAMESPACE = Namespace(ONTOLOGY_URL)
+ONTOLOGY_RDFLIB_NAMESPACE = None
+ONTOLOGY_SEPARATOR = None
 
+if not ONTOLOGY_NAMESPACE is None:
   # The character separating the ontology base URL from the suffix
-  ONTOLOGY_SEPARATOR = ONTOLOGY_URL[-1]
+  ONTOLOGY_SEPARATOR = ONTOLOGY_NAMESPACE[-1]
 
+if not BLOCKING_ERRORS is None:
   for error in ERROR_RESOURCES.keys():
     ERROR_RESOURCES[error]["blocking"] = error in BLOCKING_ERRORS
 
 CRITERION_DATA = None
 try:
     from rdflib import Graph
+    if not ONTOLOGY_NAMESPACE is None:
+      ONTOLOGY_RDFLIB_NAMESPACE = Namespace(ONTOLOGY_NAMESPACE)
     criterions_graph = Graph()
     criterions_graph.parse(PWD_TO_MODEL_TEST_ONTO)
     criterions = criterions_graph.query(GET_CRITERION_DATA)

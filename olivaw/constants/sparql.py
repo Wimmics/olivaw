@@ -3,8 +3,8 @@ NOT_REFERENCED = """
 SELECT DISTINCT ?s where {
   ?s ?p ?o .
   FILTER(
-    strstarts(str(?s), "ONTOLOGY_URL") &&
-    strlen(?s) > strlen("ONTOLOGY_URL")
+    strstarts(str(?s), "ONTOLOGY_NAMESPACE") &&
+    strlen(?s) > strlen("ONTOLOGY_NAMESPACE")
   )
   FILTER NOT EXISTS { ?s rdfs:isDefinedBy ?m . }
   FILTER NOT EXISTS { ?s rdf:type owl:Ontology . }
@@ -60,7 +60,7 @@ SELECT DISTINCT ?property ?domain WHERE {
   }
 
   # Ignore the owl:Thing domains and domains in the ontology
-  FILTER (!(?domain = owl:Thing || strstarts(str(?domain), "ONTOLOGY_URL")))
+  FILTER (!(?domain = owl:Thing || strstarts(str(?domain), "ONTOLOGY_NAMESPACE")))
 }
 """
 
@@ -72,7 +72,7 @@ GET_IMPORTS = """
 SELECT DISTINCT ?i WHERE {
   ?s rdf:type owl:Ontology ;
   owl:imports ?i .
-  FILTER(strstarts(str(?i), "ONTOLOGY_URL"))
+  FILTER(strstarts(str(?i), "ONTOLOGY_NAMESPACE"))
 }
 """
 
@@ -83,8 +83,8 @@ SELECT DISTINCT ?suffix1 ?suffix2 WHERE {
   ?s1 rdfs:isDefinedBy ?module1 .
   ?s2 rdfs:isDefinedBy ?module2 .
   FILTER(str(?s1) > str(?s2))
-  BIND (SUBSTR(str(?s1), STRLEN("ONTOLOGY_URL") + 1) as ?suffix1)
-  BIND (SUBSTR(str(?s2), STRLEN("ONTOLOGY_URL") + 1) as ?suffix2)
+  BIND (SUBSTR(str(?s1), STRLEN("ONTOLOGY_NAMESPACE") + 1) as ?suffix1)
+  BIND (SUBSTR(str(?s2), STRLEN("ONTOLOGY_NAMESPACE") + 1) as ?suffix2)
 } ORDER BY ?suffix1
 """
 
@@ -179,20 +179,20 @@ GET_ONTOLOGY_TERMS = """
 select distinct ?term where {
   {
     ?s ?p ?o .
-    filter (strstarts(str(?s), "ONTOLOGY_URL"))
-    bind (SUBSTR(str(?s), STRLEN("ONTOLOGY_URL") + 1) as ?term)
+    filter (strstarts(str(?s), "ONTOLOGY_NAMESPACE"))
+    bind (SUBSTR(str(?s), STRLEN("ONTOLOGY_NAMESPACE") + 1) as ?term)
   }
   union
   {
     ?s ?p ?o .
-    filter (strstarts(str(?p), "ONTOLOGY_URL"))
-    bind (SUBSTR(str(?p), STRLEN("ONTOLOGY_URL") + 1) as ?term)
+    filter (strstarts(str(?p), "ONTOLOGY_NAMESPACE"))
+    bind (SUBSTR(str(?p), STRLEN("ONTOLOGY_NAMESPACE") + 1) as ?term)
   }
   union
   {
     ?s ?p ?o .
-    filter (strstarts(str(?o), "ONTOLOGY_URL"))
-    bind (SUBSTR(str(?o), STRLEN("ONTOLOGY_URL") + 1) as ?term)
+    filter (strstarts(str(?o), "ONTOLOGY_NAMESPACE"))
+    bind (SUBSTR(str(?o), STRLEN("ONTOLOGY_NAMESPACE") + 1) as ?term)
   }
 }
 """
@@ -408,7 +408,7 @@ INSERT {
 WHERE  {
   ?s sh:select ?request . 
   FILTER (isliteral(?request))
-  BIND (concat(?request, "\\nvalues ($ontology_url) { (\\"ONTOLOGY_URL\\") }") as ?updated_request)
+  BIND (concat(?request, "\\nvalues ($ontology_url) { (\\"ONTOLOGY_NAMESPACE\\") }") as ?updated_request)
 }
 """
 

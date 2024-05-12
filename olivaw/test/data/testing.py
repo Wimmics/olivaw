@@ -16,7 +16,7 @@ from olivaw.constants import (
     GET_TERM_USAGE,
     GET_URIS,
     GET_PREFIX_USAGE,
-    ONTOLOGY_URL,
+    ONTOLOGY_NAMESPACE,
     SKIPPED_TESTS,
     CUSTOM_DATA_TESTS
 )
@@ -123,7 +123,7 @@ def best_practices(draft, graph_rl):
             for item in [
                 query_graph(
                     graph_rl,
-                    GET_TERM_USAGE.replace("TERM", f"{ONTOLOGY_URL}{term}"),
+                    GET_TERM_USAGE.replace("TERM", f"{ONTOLOGY_NAMESPACE}{term}"),
                     format=TURTLE
                 ).strip()
             ]

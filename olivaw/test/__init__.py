@@ -3,7 +3,7 @@ __main__ = ["model", "data"]
 from sys import exit
 from olivaw.constants import (
     ONTOLOGY_PREFIX,
-    ONTOLOGY_NAMESPACE,
+    ONTOLOGY_RDFLIB_NAMESPACE,
     TERM_DISTANCE_THRESHOLD,
     BLOCKING_ERRORS,
     BRANCH

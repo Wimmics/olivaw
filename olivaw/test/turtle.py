@@ -24,11 +24,11 @@ from olivaw.constants import (
     DOMAINS_URL,
     EARL_NAMESPACE,
     ONTOLOGY_PREFIX,
-    ONTOLOGY_URL,
+    ONTOLOGY_NAMESPACE,
     SRC_NAMESPACE,
     TEST_NAMESPACE,
     OLIVAW_EARL_NAMESPACE,
-    ONTOLOGY_NAMESPACE,
+    ONTOLOGY_RDFLIB_NAMESPACE,
     ERROR_RESOURCES,
     BRANCH,
     USECASES_URL,
@@ -63,7 +63,7 @@ def new_report(test_type):
     report = Graph()
 
     report.bind("earl", EARL_NAMESPACE)
-    report.bind("", ONTOLOGY_NAMESPACE)
+    report.bind("", ONTOLOGY_RDFLIB_NAMESPACE)
     report.bind("src", SRC_NAMESPACE)
     report.bind("profile-test", TEST_NAMESPACE)
     report.bind("olivaw-earl", OLIVAW_EARL_NAMESPACE)
@@ -290,8 +290,8 @@ def extract_statement(graph, pointer):
 
     for namespace in namespaces:
         namespace = namespace[1:-1] if namespace[0] == '"' else namespace
-        if namespace == ONTOLOGY_URL:
-            binds.append((ONTOLOGY_PREFIX, ONTOLOGY_NAMESPACE))
+        if namespace == ONTOLOGY_NAMESPACE:
+            binds.append((ONTOLOGY_PREFIX, ONTOLOGY_RDFLIB_NAMESPACE))
             continue
 
         if namespace in COMMON_URI_DICT:
