@@ -196,10 +196,9 @@ try:
         }
         for criterion_id, criterion_title, criterion_description in criterions
     }
+    CRITERION_IDS = list(CRITERION_DATA.keys())
 except:
   pass
-
-CRITERION_IDS = list(CRITERION_DATA.keys())
 
 MODEL_BEST_PRACTICES_TESTS = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]
 
