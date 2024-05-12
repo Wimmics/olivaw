@@ -31,6 +31,7 @@ from olivaw.constants import (
 from rdflib import Graph, URIRef
 from rdflib.namespace import RDF, SH
 
+from olivaw.test.turtle import make_assertion
 from olivaw.test.util import smart_print
 
 test_features = [
@@ -331,11 +332,13 @@ def custom_test(
         else:
             pointers = []
 
-        draft.make_assertion(
-            criterion=criterion_identifier,
-            error=criterion_identifier,
-            messages=messages,
-            pointers=pointers,
-            graph=fragment_graph,
-            criterion_uri=criterion_uri
+        make_assertion(
+            draft(
+                criterion=criterion_identifier,
+                error=criterion_identifier,
+                messages=messages,
+                pointers=pointers,
+                graph=fragment_graph,
+                criterion_uri=criterion_uri
+            )
         )
