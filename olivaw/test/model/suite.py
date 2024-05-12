@@ -4,8 +4,8 @@ from olivaw.constants import (
     TESTED_MODULES
 )
 
-from olivaw.test.util import print_title
-from olivaw.test.util.encoding import save_reports
+from olivaw.test.markdown import markdown_export
+from olivaw.test.util import print_title, file_name, save_reports
 
 from .testing import (
     modules_tests,
@@ -46,4 +46,9 @@ def test_model():
     )
 
     print_title("Exporting results")
-    save_reports("model", report)
+    file_base_name = file_name("model")
+    save_reports(
+        file_base_name,
+        report.serialize(format="ttl"),
+        markdown_export(report, file_base_name)
+    )

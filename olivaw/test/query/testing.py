@@ -1,15 +1,14 @@
 from os.path import relpath, sep
 
 from olivaw.test.corese import Graph, QueryProcess
-from olivaw.test.turtle import new_report
+from olivaw.test.turtle import make_subject, new_report
 from olivaw.constants import PWD_TO_ROOT_FOLDER, SKIPPED_TESTS
 
 from olivaw.test.query.uris import retrieveURIFromQuery
 
 from olivaw.test.generic.prefix import prefix_test
 from olivaw.test.generic.uri import uri_test
-from olivaw.test.util.draft import AssertDraft
-from olivaw.test.util.print import progress_bar
+from olivaw.test.util import AssertDraft, progress_bar
 
 def question_tests(glob_path, report=None, assertor=None):
     if report is None or assertor is None:
@@ -28,7 +27,7 @@ def test_competency_question(draft, file):
         query = query_file.read()
 
     query_key = relpath(file, PWD_TO_ROOT_FOLDER).replace(sep, "/")
-    draft.make_subject([query_key])
+    make_subject(draft, [query_key])
 
     ast = None
     messages = []

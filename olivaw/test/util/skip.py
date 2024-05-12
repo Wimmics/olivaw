@@ -5,6 +5,7 @@ from rdflib import DCTERMS
 from olivaw.constants import SKIP_FOR_TEST, SKIP_FOR_SUBJECT, SKIPPED_TESTS, SKIPPED_SUBJECTS
 
 def should_skip(draft):
+    subject_ref = None
     if draft.has_field("file") and isinstance(draft.file, str):
         subject_ref = abspath(draft.file)
     elif draft.has_field("subject"):

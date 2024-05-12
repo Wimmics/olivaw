@@ -57,7 +57,7 @@ from olivaw.test.corese import (
     CORESE_NAMESPACES
 )
 
-from olivaw.test.util.prefix import COMMON_URI_DICT
+from olivaw.test.util import COMMON_URI_DICT
 
 def new_report(test_type):
     report = Graph()
@@ -386,11 +386,13 @@ def make_outcomes(draft):
         return [
             outcome
             for outcome_pack in [
-                draft.make_outcomes(
-                    outcome_type=None,
-                    error=error,
-                    messages=messages,
-                    pointers=pointers
+                make_outcomes(
+                    draft(
+                        outcome_type=None,
+                        error=error,
+                        messages=messages,
+                        pointers=pointers
+                    )
                 )
                 for error, messages, pointers
                 in zip(
@@ -411,12 +413,12 @@ def make_outcomes(draft):
     if len(draft.messages) == 0:
         if SKIP_PASS:
             return []
-        outcomes = [draft.make_outcome(outcome_type="Pass")]
+        outcomes = [make_outcome(draft(outcome_type="Pass"))]
     else:
         if not draft.has_field("outcome_type"):
             draft(outcome_type="MajorFail" if draft.error in BLOCKING_ERRORS else "MinorFail")
         outcomes = [
-            draft.make_outcome(description=message, pointers=pointers)
+            make_outcome(draft(description=message, pointers=pointers))
             for message, pointers
             in zip_longest(draft.messages, draft.pointers, fillvalue=[])
         ]
@@ -478,12 +480,17 @@ def make_assertion(draft):
         )
     )
 
-def make_not_tested(draft):
+def make_not_tested(draft, *criterions):
+    if len(criterions) > 0:
+        for criterion in criterions:
+            make_not_tested(draft(criterion=criterion))
+        return
+
     if TESTED_ONLY or draft.should_skip():
         return
 
     errors = CRITERION_DATA[draft.criterion]["errors"]
 
     for error in errors:
-        error = draft.make_outcome(outcome_type="NotTested")
+        error = make_outcome(draft(outcome_type="NotTested"))
         assemble_assertion(draft, make_result(draft, [error]))

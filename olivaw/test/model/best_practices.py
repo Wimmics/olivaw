@@ -9,7 +9,8 @@ from olivaw.constants import (
 )
 
 from olivaw.test.corese import query_graph
-from olivaw.test.util.nlp import levenshtein
+from olivaw.test.turtle import make_assertion
+from olivaw.test.util import levenshtein
 
 
 def best_practices_test(
@@ -29,11 +30,13 @@ def best_practices_test(
         unlinked_subjects = query_graph(fragment_no_owl, NOT_REFERENCED)
         unlinked_subjects_pointers = [[pointer for pointer in unlinked_subjects]] if len(unlinked_subjects) else []
         unlinked_subject_messages = [f"Subject terms not linked to a module by a rdfs:isDefinedBy property"] if len(unlinked_subjects) else []
-        draft.make_assertion(
-            error="no-reference-module",
-            messages=unlinked_subject_messages,
-            pointers=unlinked_subjects_pointers,
-            graph=fragment_no_owl
+        make_assertion(
+            draft(
+                error="no-reference-module",
+                messages=unlinked_subject_messages,
+                pointers=unlinked_subjects_pointers,
+                graph=fragment_no_owl
+            )
         )
 
     if not draft.should_skip(criterion="domain-and-range-referencing"):
@@ -46,11 +49,13 @@ def best_practices_test(
         ]] if len(dov) > 0 else []
         dov_messages = ["Some properties have a domain out of the ontology"] if len(dov) > 0 else []
 
-        draft.make_assertion(
-            error="domain-out-of-vocabulary",
-            messages=dov_messages,
-            pointers=dov,
-            graph=fragment_no_import
+        make_assertion(
+            draft(
+                error="domain-out-of-vocabulary",
+                messages=dov_messages,
+                pointers=dov,
+                graph=fragment_no_import
+            )
         )
 
         # Checking for range property out of the vocabulary
@@ -62,12 +67,14 @@ def best_practices_test(
         ]] if len(rov) > 0 else []
         rov_messages = ["Some properties have a range out of the ontology"] if len(rov) > 0 else []
 
-        draft.make_assertion(
-            criterion="domain-and-range-referencing",
-            error="range-out-of-vocabulary",
-            messages=rov_messages,
-            pointers=rov,
-            graph=fragment_no_import
+        make_assertion(
+            draft(
+                criterion="domain-and-range-referencing",
+                error="range-out-of-vocabulary",
+                messages=rov_messages,
+                pointers=rov,
+                graph=fragment_no_import
+            )
         )
 
     # Checking for too close terms
@@ -87,20 +94,24 @@ def best_practices_test(
         term_pairs = [] if len(term_pairs[0]) == 0 else term_pairs
         messages = ["Some terms are too similar"] if len(term_pairs) > 0 else []
 
-        draft.make_assertion(
-            error="too-close-terms",
-            messages=messages,
-            pointers=term_pairs,
-            graph=fragment_no_owl
+        make_assertion(
+            draft(
+                error="too-close-terms",
+                messages=messages,
+                pointers=term_pairs,
+                graph=fragment_no_owl
+            )
         )
 
     if not draft.should_skip(criterion="labeled-terms"):
         not_labeled_terms = query_graph(fragment_no_owl, NOT_LABELED)
         not_labeled_pointers = [] if len(not_labeled_terms) == 0 else [not_labeled_terms]
         not_labeled_messages = [] if len(not_labeled_terms) == 0 else [f"The following terms have no rdfs:label to define it in natural language"]
-        draft.make_assertion(
-            error="not-labeled-term",
-            messages=not_labeled_messages,
-            pointers=not_labeled_pointers,
-            graph=fragment_no_owl
+        make_assertion(
+            draft(
+                error="not-labeled-term",
+                messages=not_labeled_messages,
+                pointers=not_labeled_pointers,
+                graph=fragment_no_owl
+            )
         )

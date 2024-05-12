@@ -31,7 +31,7 @@ from olivaw.constants import (
 from rdflib import Graph, URIRef
 from rdflib.namespace import RDF, SH
 
-from olivaw.test.util.print import smart_print
+from olivaw.test.util import smart_print
 
 test_features = [
     "Custom test graph must have one and only one criterion",

@@ -29,8 +29,8 @@ from olivaw.test.generic.shacl import (
 
 from rdflib import Graph as RdflibGraph
 
-from olivaw.test.util.draft import AssertDraft
-from olivaw.test.util.print import progress_bar
+from olivaw.test.turtle import make_assertion, make_not_tested, make_subject
+from olivaw.test.util import AssertDraft, progress_bar
 
 shape_tests, shape_data = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
 ontologies = {}
@@ -123,17 +123,21 @@ def profile_check(fragment, draft):
         packed_pointers.append(grouped_pointers)
     
     if not draft.should_skip():
-        draft.make_assertion(
-            error=packed_errors,
-            messages=packed_messages,
-            pointers=packed_pointers
+        make_assertion(
+            draft(
+                error=packed_errors,
+                messages=packed_messages,
+                pointers=packed_pointers
+            )
         )
 
     # Check for respect for OWL constraints
     if not draft.should_skip(criterion="owl-rl-constraint"):
-        draft.make_assertion(
-            error="owl-rl-constraint-violation",
-            messages=check_OWL_constraints(fragment)
+        make_assertion(
+            draft(
+                error="owl-rl-constraint-violation",
+                messages=check_OWL_constraints(fragment)
+            )
         )
 
 def fragment_check(fragments, draft, extras=""):
@@ -147,11 +151,13 @@ def fragment_check(fragments, draft, extras=""):
     draft(criterion="syntax", error="syntax-error")
 
     if no_import_load_error:
-        draft.make_assertion(
-            messages=["The subject has turtle syntax errors that makes it unprocessable by an engine"],
-            pointers=[[f'"{pointer}"' for pointer in fragment_no_import]]
+        make_assertion(
+            draft(
+                messages=["The subject has turtle syntax errors that makes it unprocessable by an engine"],
+                pointers=[[f'"{pointer}"' for pointer in fragment_no_import]]
+            )
         )
-        draft.make_not_tested(*MODEL_BEST_PRACTICES_TESTS)
+        make_not_tested(draft, *MODEL_BEST_PRACTICES_TESTS)
         return True
     
     fragment_with_import = safe_load(fragments, extras)
@@ -191,7 +197,7 @@ def modules_tests(modules, report=None, assertor=None):
     for module in progress_bar(modules):
         module_key = relpath(module, PWD_TO_ROOT_FOLDER).replace(sep, "/")
         draft(file=module)
-        draft.make_subject([module_key])
+        draft(subject=make_subject(draft, [module_key]))
         load_error = fragment_check(module, draft)
 
         if not load_error:
@@ -219,7 +225,7 @@ def modelets_tests(modelets, report=None, assertor=None):
             continue
 
         modelet_key = relpath(modelet, PWD_TO_ROOT_FOLDER).replace(sep, "/")
-        draft.make_subject([modelet_key])
+        draft(subject=make_subject(draft, [modelet_key]))
 
         load_error = fragment_check(
             modelet,
@@ -249,7 +255,7 @@ def modelets_tests(modelets, report=None, assertor=None):
             if draft.should_skip(file=[modelet, module_key]):
                 continue
 
-            draft.make_subject([module_path], [modelet_key])
+            make_subject(draft, [module_path], [modelet_key])
 
             fragment_check(
                 module_path,
@@ -276,10 +282,11 @@ def merged_fragment_set_test(
 
     draft = AssertDraft(report, assertor, file=fragments_to_merge)
     
-    draft.make_subject(
+    draft(subject=make_subject(
+        draft,
         fragments_keys,
         name=heart_name,
         custom_title=custom_title
-    )
+    ))
         
     fragment_check(fragments_to_merge, draft)

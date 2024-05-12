@@ -21,7 +21,7 @@ from olivaw.constants import (
     CUSTOM_DATA_TESTS
 )
 
-from olivaw.test.turtle import new_report
+from olivaw.test.turtle import make_assertion, make_not_tested, make_subject, new_report
 from olivaw.test.generic.shacl import load_valid_custom_tests, custom_test
 from olivaw.test.generic.prefix import prefix_test
 from olivaw.test.util import progress_bar, AssertDraft
@@ -30,36 +30,40 @@ shape_tests, shapes_data = load_valid_custom_tests(CUSTOM_DATA_TESTS)
 
 def fragment_check(draft, dataset):
     dataset_key = relpath(dataset, ROOT_FOLDER).replace(sep, "/")
-    draft.make_subject([dataset_key])
+    draft(subject=make_subject(draft, [dataset_key]))
     graph_no_import = safe_load(dataset, disable_import=True)
 
     is_syntax_valid = not isinstance(graph_no_import, list)
 
-    draft.make_assertion(
-        criterion="syntax",
-        error="syntax-error",
-        messages=[] if is_syntax_valid else graph_no_import
+    make_assertion(
+        draft(
+            criterion="syntax",
+            error="syntax-error",
+            messages=[] if is_syntax_valid else graph_no_import
+        )
     )
 
     graph_with_import = safe_load(dataset) if is_syntax_valid else None
     is_valid = is_syntax_valid and not isinstance(graph_with_import, list)
 
     if not is_valid:
-        draft.make_not_tested("owl-rl-constraint", "term-recognition")
+        make_not_tested(draft, "owl-rl-constraint", "term-recognition")
         return
 
     # Check for respect for OWL constraints
     if not "owl-rl-constraint" in SKIPPED_TESTS:
         constraint_violations = check_OWL_constraints(graph_with_import)
-        draft.make_assertion(
-            criterion="owl-rl-constraint",
-            error="owl-rl-constraint-violation",
-            messages=check_OWL_constraints(graph_with_import),
-            graph=graph_with_import
+        make_assertion(
+            draft(
+                criterion="owl-rl-constraint",
+                error="owl-rl-constraint-violation",
+                messages=check_OWL_constraints(graph_with_import),
+                graph=graph_with_import
+            )
         )
 
     if len(constraint_violations) > 0:
-        draft.make_not_tested("term-recognition")
+        make_not_tested(draft(criterion="term-recognition"))
         return
     
     graph_rl = safe_load(dataset, disable_import=True, profile=OWL_RL)
@@ -129,12 +133,14 @@ def best_practices(draft, graph_rl):
             ]
         ]] if len(unknown_terms) > 0 else []
 
-        draft.make_assertion(
-            criterion="term-recognition",
-            error="unknown-term",
-            messages=messages,
-            pointers=pointers,
-            graph=graph_rl
+        make_assertion(
+            draft(
+                criterion="term-recognition",
+                error="unknown-term",
+                messages=messages,
+                pointers=pointers,
+                graph=graph_rl
+            )
         )
 
     if not "prefix-validity" in SKIPPED_TESTS:
