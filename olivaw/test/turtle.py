@@ -324,18 +324,18 @@ def extract_statement(graph, pointer):
             )
         )
 
-def make_pointer(graph, report, pointer_string):
+def make_pointer(draft, pointer_string):
     statement_subject = pointer_string.split(" ")[0]
     is_statement = " " in pointer_string
 
     if statement_subject[0] == "<" and not is_statement:
-        pointer = extract_statement(graph, URIRef(statement_subject[1:-1]))
+        pointer = extract_statement(draft.graph, URIRef(statement_subject[1:-1]))
     elif statement_subject[0] == '"':
         pointer = Literal(remove_prefixes(pointer_string.strip()[1:-1], is_literal=True))
     elif statement_subject[0] != "[" and not is_statement:
         normalizedUri = Namespace(
             [
-                namespace for prefix, namespace in report.namespaces()
+                namespace for prefix, namespace in draft.report.namespaces()
                 if prefix == pointer_string.split(":")[0]
             ][0]
         )[pointer_string.split(":")[1]]
@@ -362,7 +362,7 @@ def make_outcome(draft):
         outcome_description = draft.description if (draft.has_field("description") and len(draft.description) > 0) else outcome_ressources["description"]
     
     parsed_pointers = [
-        make_pointer(draft.graph, draft.report, pointer)
+        make_pointer(draft, pointer)
         for pointer in draft.pointers
         if len(pointer) > 0
     ]
