@@ -63,42 +63,26 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     try:
       repo_parameters = load(f)
     except:
-      print("fatal: parameters.json is not a well formed json file")
-      exit(1)
+      pass
 
     if "ontology_prefix" in repo_parameters:
       ONTOLOGY_PREFIX = repo_parameters["ontology_prefix"]
-    else:
-      print('fatal: parameter "ontology_prefix" not found in parameters.json')
-      exit(1)
 
     # The ontology base URL
     if "ontology_namespace" in repo_parameters:
       ONTOLOGY_URL = repo_parameters["ontology_namespace"]
-    else:
-      print('fatal: parameter "ontology_namespace" not found in parameters.json')
-      exit(1)
 
     # The desired levenshtein threshold to accept terms as different enough
     if "term_distance_threshold" in repo_parameters:
       TERM_DISTANCE_THRESHOLD = repo_parameters["term_distance_threshold"]
-    else:
-      print('fatal: parameter "term_distance_threshold" not found in parameters.json')
-      exit(1)
 
     # The errors ids that are defined as blocking
     if "blocking_errors" in repo_parameters:
       BLOCKING_ERRORS = repo_parameters["blocking_errors"]
-    else:
-      print('fatal: parameter "blocking_errors" not found in parameters.json')
-      exit(1)
 
     # Id of Gist containing al the badges data
     if "gist_index" in repo_parameters:
       GIST_INDEX = repo_parameters["gist_index"]
-    else:
-      print('fatal: parameter "gist_index" not found in parameters.json')
-      exit(1)
 
     # Error identifiers that should not be written in the reports
     SKIPPED_ERRORS = repo_parameters["skipped_errors"] if "skipped_errors" in repo_parameters else []

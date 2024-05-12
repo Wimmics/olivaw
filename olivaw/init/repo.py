@@ -4,6 +4,8 @@ from os import getenv
 from os.path import sep, exists
 from dotenv import load_dotenv, set_key
 
+from .readme import update_readme
+
 from olivaw.constants import (
     REPO_URI,
     REF,
@@ -13,8 +15,6 @@ from olivaw.constants import (
     GITHUB_API,
     BADGE_LIST
 )
-
-from .readme import update_readme
 
 ref = "_".join(REF.split("/")[1:])
 
@@ -76,7 +76,7 @@ def init_repo():
             gist_secret = input()
             print("Creating gist...")
             gist_id = init_gist(gist_secret)
-            update_readme(gist_id)
+            update_readme(gist_id=gist_id)
             set_key(f"{PWD_TO_OVILAW}{sep}.env", "GIST_SECRET", gist_secret)
         except Exception as e:
             print(f"Provided key seems to be invalid: {str(e)}")
