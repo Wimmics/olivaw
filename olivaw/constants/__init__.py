@@ -197,7 +197,7 @@ try:
         for criterion_id, criterion_title, criterion_description in criterions
     }
 except:
-  raise
+  pass
 
 CRITERION_IDS = list(CRITERION_DATA.keys())
 
