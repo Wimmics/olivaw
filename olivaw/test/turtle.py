@@ -417,6 +417,7 @@ def make_outcomes(draft):
     else:
         if not draft.has_field("outcome_type"):
             draft(outcome_type="MajorFail" if draft.error in BLOCKING_ERRORS else "MinorFail")
+
         outcomes = [
             make_outcome(draft(description=message, pointers=pointers))
             for message, pointers
