@@ -30,18 +30,18 @@ def show_badges():
         for severity in ["PASS", "NOTTESTED", "CANNOTTELL", "MINORFAIL", "MAJORFAIL"]
     ] + ["EL", "QL", "RL"]
 
-    badge_urls = [
+    badges_urls = [
         f"{badges_base_url}/{'_'.join(REF.split('/')[1:])}_{badge}.json"
         for badge in badge_names
     ]
 
-    print(badge_urls)
-
     badges_data = [
-        get(url).text for url in badge_urls
+        get(url).text for url in badges_urls
     ]
 
-    print(badges_data)
+    with open(f"{ROOT_FOLDER}{sep}coucou.txt", "w") as f:
+        f.write("\n".join(badges_urls))
+        f.write("\n".join(badges_data))
 
     badges_data = [loads(url) for url in badges_data]
 
