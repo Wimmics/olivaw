@@ -127,7 +127,7 @@ runs:
     - name: Add output files to repository
       id: commit
       continue-on-error: true
-      if: ${{ (inputs.model-test || inputs.data-test || inputs.query-test) && inputs.commit-report }}
+      if: ${{ ((inputs.model-test || inputs.data-test || inputs.query-test) && inputs.commit-report) == 'true' }}
       shell: bash
       run: |
         git config --global user.email "no-reply@github.com"
