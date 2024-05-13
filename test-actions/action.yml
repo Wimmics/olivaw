@@ -61,7 +61,7 @@ runs:
 
     - name: Generate model test report
       id: model-test
-      if: ${{ inputs.model-test }}
+      if: ${{ inputs.model-test == 'true' }}
       shell: bash
       run: |
         MODEL_SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
@@ -95,7 +95,7 @@ runs:
     - name: Generate data test report
       shell: bash
       id: data-test
-      if: ${{ inputs.data-test }}
+      if: ${{ inputs.data-test == 'true' }}
       run: |
         DATA_SUMMARY="$(olivaw test data --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         DATA_TOKENS=($DATA_SUMMARY)
@@ -111,7 +111,7 @@ runs:
     - name: Generate query test report
       shell: bash
       id: query-test
-      if: ${{ inputs.query-test }}
+      if: ${{ inputs.query-test == 'true' }}
       run: |
         QUERY_SUMMARY="$(olivaw test query --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         QUERY_TOKENS=($QUERY_SUMMARY)
@@ -127,7 +127,7 @@ runs:
     - name: Add output files to repository
       id: commit
       continue-on-error: true
-      if: ${{ ((inputs.model-test || inputs.data-test || inputs.query-test) && inputs.commit-report) == 'true' }}
+      if: ${{ ((inputs.model-test == 'true' || inputs.data-test == 'true' || inputs.query-test == 'true') && inputs.commit-report) == 'true' }}
       shell: bash
       run: |
         git config --global user.email "no-reply@github.com"
@@ -138,28 +138,34 @@ runs:
         git push
 
     - name: Archive model test results
-      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' && inputs.archive-report }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && inputs.archive-report == 'true' }}
       uses: actions/upload-artifact@v3
       with:
         name: model-test-report
-        path: .acimov/output/model-test-actions.md
+        path: |
+            .acimov/output/model-test-actions.md
+            .acimov/output/model-test-actions.ttl
 
     - name: Archive data test results
-      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' && inputs.archive-report }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && inputs.archive-report == 'true' }}
       uses: actions/upload-artifact@v3
       with:
         name: data-test-report
-        path: .acimov/output/data-test-actions.md
+        path: |
+          .acimov/output/data-test-actions.md
+          .acimov/output/data-test-actions.ttl
 
     - name: Archive query test results
-      if: ${{ inputs.query-test && steps.query-test.conclusion == 'success' && inputs.archive-report }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && inputs.archive-report == 'true' }}
       uses: actions/upload-artifact@v3
       with:
         name: query-test-report
-        path: .acimov/output/query-test-actions.md
+        path: |
+          .acimov/output/query-test-actions.md
+          .acimov/output/query-test-actions.ttl
 
     - name: Create the Pass Model Badge
-      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -170,7 +176,7 @@ runs:
         color: green
 
     - name: Create the NotTested Model Badge
-      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -181,7 +187,7 @@ runs:
         color: White
 
     - name: Create the CannotTell Model Badge
-      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -192,7 +198,7 @@ runs:
         color: yellow
 
     - name: Create the MinorFail Model Badge
-      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -203,7 +209,7 @@ runs:
         color: orange
 
     - name: Create the MajorFail Model Badge
-      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -214,7 +220,7 @@ runs:
         color: red
 
     - name: Create the OWL_EL Badge
-      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -225,7 +231,7 @@ runs:
         color: ${{ env.EL_COLOR }}
 
     - name: Create the OWL_QL Badge
-      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -236,7 +242,7 @@ runs:
         color: ${{ env.QL_COLOR }}
 
     - name: Create the OWL_RL Badge
-      if: ${{ inputs.model-test && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -247,7 +253,7 @@ runs:
         color: ${{ env.RL_COLOR }}
 
     - name: Create the Pass Data badge
-      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -258,7 +264,7 @@ runs:
         color: green
 
     - name: Create the NotTested Data Badge
-      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -269,7 +275,7 @@ runs:
         color: White
 
     - name: Create the CannotTell Data Badge
-      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -280,7 +286,7 @@ runs:
         color: yellow
 
     - name: Create the MinorFail Data Badge
-      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -291,7 +297,7 @@ runs:
         color: orange
 
     - name: Create the MajorFail Data Badge
-      if: ${{ inputs.data-test && steps.data-test.conclusion == 'success' }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -302,7 +308,7 @@ runs:
         color: red
 
     - name: Create the Pass Query badge
-      if: ${{ inputs.query-test && steps.query-test.conclusion == 'success' }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -313,7 +319,7 @@ runs:
         color: green
 
     - name: Create the NotTested Query Badge
-      if: ${{ inputs.query-test && steps.query-test.conclusion == 'success' }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -324,7 +330,7 @@ runs:
         color: White
 
     - name: Create the CannotTell Query Badge
-      if: ${{ inputs.query-test && steps.query-test.conclusion == 'success' }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -335,7 +341,7 @@ runs:
         color: yellow
 
     - name: Create the MinorFail Query Badge
-      if: ${{ inputs.query-test && steps.query-test.conclusion == 'success' }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -346,7 +352,7 @@ runs:
         color: orange
 
     - name: Create the MajorFail Query Badge
-      if: ${{ inputs.query-test && steps.query-test.conclusion == 'success' }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
