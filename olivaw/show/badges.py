@@ -3,54 +3,42 @@ from requests import get
 from json import loads
 
 from olivaw.constants import ROOT_FOLDER
+from olivaw.constants.git_info import REF
 
 def show_badges():
     readme = None
     with open(f"{ROOT_FOLDER}{sep}README.md", "r") as readmeFile:
         readme = readmeFile.readlines()
 
-    badges_urls = [
+    first_title = [
+        i for i in range(len(readme))
+        if readme[i].startswith("# ")
+    ][0]
+
+    badges_base_url = [
         line.strip().split("?url=")[1][:-1]
-        for line in readme[:10]
-        if len(line.strip()) > 0
+        for line in readme[:first_title]
+        if len(line.strip()) > 0 and
+        "?url=" in line
+    ][0]
+
+    badges_base_url = "/".join(badges_base_url.split("/")[:-1])
+
+    badge_names = [
+        f"{test_type}_{severity}"
+        for test_type in ["MODEL", "DATA", "QUERY"]
+        for severity in ["PASS", "NOTTESTED", "CANNOTTELL", "MINORFAIL", "MAJORFAIL"]
+    ] + ["EL", "QL", "RL"]
+
+    badge_urls = [
+        f"{badges_base_url}/{'_'.join(REF.split('/')[1:])}_{badge}.json"
+        for badge in badge_names
     ]
 
-    badges_contents = [
-        loads(get(url).text)
-        for url in badges_urls
+    badges_data = [
+        loads(get(url).text) for url in badge_urls
     ]
 
-    badges_contents = [
-        [
-            f"LABEL\t=\t{badge['label']}",
-            f"COLOR\t=\t{badge['color']}",
-            f"MESSAGE\t=\t{badge['message']}"
-        ]
-        for badge in badges_contents
-    ]
-
-    badge_list = [
-        "PASS",
-        "NOTTESTED",
-        "CANNOTTELL",
-        "MINORFAIL",
-        "MAJORFAIL",
-        "EL",
-        "QL",
-        "RL"
-    ]
-
-    badges_contents = [
-        [f"{name}_{item}" for item in badge]
-        for badge, name in zip(badges_contents, badge_list)
-    ]
-
-    badges_contents = [
-        item
-        for badge in badges_contents
-        for item in badge
-    ]
-
-    for item in range(0, len(badges_contents), 3):
-        print(badges_contents[item+1])
-        print(badges_contents[item+2])
+    for name, data in zip(badge_names, badges_data):
+        print(f"{name}_COLOR\t=\t{data['color']}")
+        print(f"{name}_LABEL\t=\t{data['message']}")
