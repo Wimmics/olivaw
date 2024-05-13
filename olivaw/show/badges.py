@@ -22,6 +22,11 @@ def show_badges():
         "?url=" in line
     ][0]
 
+    old_ref = "_".join(badges_base_url.split("/")[-1].split(".")[0].split("_")[:-1])
+
+    if old_ref.endswith("MODEL") or old_ref.endswith("DATA") or old_ref.endswith("QUERY"):
+        old_ref = "_".join(old_ref.split("_")[:-1])
+
     badges_base_url = "/".join(badges_base_url.split("/")[:-1])
 
     badge_names = [
@@ -31,7 +36,7 @@ def show_badges():
     ] + ["EL", "QL", "RL"]
 
     badges_urls = [
-        f"{badges_base_url}/{'_'.join(REF.split('/')[1:])}_{badge}.json"
+        f"{badges_base_url}/{old_ref}_{badge}.json"
         for badge in badge_names
     ]
 

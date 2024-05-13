@@ -34,7 +34,7 @@ runs:
       shell: bash
       continue-on-error: true
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@test-actions-13
+        pip install git+https://github.com/Wimmics/olivaw@test-actions-14
 
         BADGES="$(olivaw show badges --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         BADGES_DATA=($BADGES)
