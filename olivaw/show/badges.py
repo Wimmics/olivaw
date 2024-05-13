@@ -35,9 +35,15 @@ def show_badges():
         for badge in badge_names
     ]
 
+    print(badge_urls)
+
     badges_data = [
-        loads(get(url).text) for url in badge_urls
+        get(url).text for url in badge_urls
     ]
+
+    print(badges_data)
+
+    badges_data = [loads(url) for url in badges_data]
 
     for name, data in zip(badge_names, badges_data):
         print(f"{name}_COLOR\t=\t{data['color']}")
