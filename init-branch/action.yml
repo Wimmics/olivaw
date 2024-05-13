@@ -23,7 +23,9 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: |
+    - name: Parsing repo ref data
+      shell: bash
+      run: |
         REF=${{ inputs.ref }}
         echo "github.ref: $REF"
         IFS='/' read -ra PATHS <<< "$REF"
