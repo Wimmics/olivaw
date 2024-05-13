@@ -34,45 +34,45 @@ runs:
       shell: bash
       continue-on-error: true
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@test-actions-14
+        pip install git+https://github.com/Wimmics/olivaw@test-actions-15
 
         BADGES="$(olivaw show badges --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         BADGES_DATA=($BADGES)
 
-        echo "MODEL_PASS_COLOR=${BADGES_DATA[3]}" >> $GITHUB_ENV
-        echo "MODEL_PASS_LABEL=${BADGES_DATA[6]}" >> $GITHUB_ENV
-        echo "MODEL_NOTTESTED_COLOR=${BADGES_DATA[9]}" >> $GITHUB_ENV
-        echo "MODEL_NOTTESTED_LABEL=${BADGES_DATA[12]}" >> $GITHUB_ENV
-        echo "MODEL_CANNOTTELL_COLOR=${BADGES_DATA[15]}" >> $GITHUB_ENV
-        echo "MODEL_CANNOTTELL_LABEL=${BADGES_DATA[18]}" >> $GITHUB_ENV
-        echo "MODEL_MINORFAIL_COLOR=${BADGES_DATA[21]}" >> $GITHUB_ENV
-        echo "MODEL_MINORFAIL_LABEL=${BADGES_DATA[24]}" >> $GITHUB_ENV
-        echo "MODEL_MAJORFAIL_COLOR=${BADGES_DATA[27]}" >> $GITHUB_ENV
-        echo "MODEL_MAJORFAIL_LABEL=${BADGES_DATA[30]}" >> $GITHUB_ENV
-        echo "DATA_PASS_COLOR=${BADGES_DATA[33]}" >> $GITHUB_ENV
-        echo "DATA_PASS_LABEL=${BADGES_DATA[36]}" >> $GITHUB_ENV
-        echo "DATA_NOTTESTED_COLOR=${BADGES_DATA[39]}" >> $GITHUB_ENV
-        echo "DATA_NOTTESTED_LABEL=${BADGES_DATA[42]}" >> $GITHUB_ENV
-        echo "DATA_CANNOTTELL_COLOR=${BADGES_DATA[45]}" >> $GITHUB_ENV
-        echo "DATA_CANNOTTELL_LABEL=${BADGES_DATA[48]}" >> $GITHUB_ENV
-        echo "DATA_MINORFAIL_COLOR=${BADGES_DATA[51]}" >> $GITHUB_ENV
-        echo "DATA_MINORFAIL_LABEL=${BADGES_DATA[54]}" >> $GITHUB_ENV
-        echo "DATA_MAJORFAIL_COLOR=${BADGES_DATA[57]}" >> $GITHUB_ENV
-        echo "DATA_MAJORFAIL_LABEL=${BADGES_DATA[60]}" >> $GITHUB_ENV
-        echo "QUERY_PASS_COLOR=${BADGES_DATA[63]}" >> $GITHUB_ENV
-        echo "QUERY_PASS_LABEL=${BADGES_DATA[66]}" >> $GITHUB_ENV
-        echo "QUERY_NOTTESTED_COLOR=${BADGES_DATA[69]}" >> $GITHUB_ENV
-        echo "QUERY_NOTTESTED_LABEL=${BADGES_DATA[72]}" >> $GITHUB_ENV
-        echo "QUERY_CANNOTTELL_COLOR=${BADGES_DATA[75]}" >> $GITHUB_ENV
-        echo "QUERY_CANNOTTELL_LABEL=${BADGES_DATA[78]}" >> $GITHUB_ENV
-        echo "QUERY_MINORFAIL_COLOR=${BADGES_DATA[81]}" >> $GITHUB_ENV
-        echo "QUERY_MINORFAIL_LABEL=${BADGES_DATA[84]}" >> $GITHUB_ENV
-        echo "QUERY_MAJORFAIL_COLOR=${BADGES_DATA[87]}" >> $GITHUB_ENV
-        echo "QUERY_MAJORFAIL_LABEL=${BADGES_DATA[90]}" >> $GITHUB_ENV
-        echo "EL_COLOR=${BADGES_DATA[93]}" >> $GITHUB_ENV
-        echo "EL_LABEL=${BADGES_DATA[96]}" >> $GITHUB_ENV
-        echo "RL_COLOR=${BADGES_DATA[99]}" >> $GITHUB_ENV
-        echo "RL_LABEL=${BADGES_DATA[102]}" >> $GITHUB_ENV
+        echo "MODEL_PASS_COLOR=${BADGES_DATA[2]}" >> $GITHUB_ENV
+        echo "MODEL_PASS_LABEL=${BADGES_DATA[5]}" >> $GITHUB_ENV
+        echo "MODEL_NOTTESTED_COLOR=${BADGES_DATA[8]}" >> $GITHUB_ENV
+        echo "MODEL_NOTTESTED_LABEL=${BADGES_DATA[11]}" >> $GITHUB_ENV
+        echo "MODEL_CANNOTTELL_COLOR=${BADGES_DATA[14]}" >> $GITHUB_ENV
+        echo "MODEL_CANNOTTELL_LABEL=${BADGES_DATA[17]}" >> $GITHUB_ENV
+        echo "MODEL_MINORFAIL_COLOR=${BADGES_DATA[20]}" >> $GITHUB_ENV
+        echo "MODEL_MINORFAIL_LABEL=${BADGES_DATA[23]}" >> $GITHUB_ENV
+        echo "MODEL_MAJORFAIL_COLOR=${BADGES_DATA[26]}" >> $GITHUB_ENV
+        echo "MODEL_MAJORFAIL_LABEL=${BADGES_DATA[29]}" >> $GITHUB_ENV
+        echo "DATA_PASS_COLOR=${BADGES_DATA[32]}" >> $GITHUB_ENV
+        echo "DATA_PASS_LABEL=${BADGES_DATA[35]}" >> $GITHUB_ENV
+        echo "DATA_NOTTESTED_COLOR=${BADGES_DATA[38]}" >> $GITHUB_ENV
+        echo "DATA_NOTTESTED_LABEL=${BADGES_DATA[41]}" >> $GITHUB_ENV
+        echo "DATA_CANNOTTELL_COLOR=${BADGES_DATA[44]}" >> $GITHUB_ENV
+        echo "DATA_CANNOTTELL_LABEL=${BADGES_DATA[47]}" >> $GITHUB_ENV
+        echo "DATA_MINORFAIL_COLOR=${BADGES_DATA[50]}" >> $GITHUB_ENV
+        echo "DATA_MINORFAIL_LABEL=${BADGES_DATA[53]}" >> $GITHUB_ENV
+        echo "DATA_MAJORFAIL_COLOR=${BADGES_DATA[56]}" >> $GITHUB_ENV
+        echo "DATA_MAJORFAIL_LABEL=${BADGES_DATA[59]}" >> $GITHUB_ENV
+        echo "QUERY_PASS_COLOR=${BADGES_DATA[62]}" >> $GITHUB_ENV
+        echo "QUERY_PASS_LABEL=${BADGES_DATA[65]}" >> $GITHUB_ENV
+        echo "QUERY_NOTTESTED_COLOR=${BADGES_DATA[68]}" >> $GITHUB_ENV
+        echo "QUERY_NOTTESTED_LABEL=${BADGES_DATA[71]}" >> $GITHUB_ENV
+        echo "QUERY_CANNOTTELL_COLOR=${BADGES_DATA[74]}" >> $GITHUB_ENV
+        echo "QUERY_CANNOTTELL_LABEL=${BADGES_DATA[77]}" >> $GITHUB_ENV
+        echo "QUERY_MINORFAIL_COLOR=${BADGES_DATA[80]}" >> $GITHUB_ENV
+        echo "QUERY_MINORFAIL_LABEL=${BADGES_DATA[83]}" >> $GITHUB_ENV
+        echo "QUERY_MAJORFAIL_COLOR=${BADGES_DATA[86]}" >> $GITHUB_ENV
+        echo "QUERY_MAJORFAIL_LABEL=${BADGES_DATA[89]}" >> $GITHUB_ENV
+        echo "EL_COLOR=${BADGES_DATA[92]}" >> $GITHUB_ENV
+        echo "EL_LABEL=${BADGES_DATA[95]}" >> $GITHUB_ENV
+        echo "RL_COLOR=${BADGES_DATA[98]}" >> $GITHUB_ENV
+        echo "RL_LABEL=${BADGES_DATA[101]}" >> $GITHUB_ENV
 
         echo "GISTID=$(olivaw show gist --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})" >> $GITHUB_ENV
 
