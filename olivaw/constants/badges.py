@@ -67,5 +67,30 @@ BADGE_LIST = {
         "label": "MajorFail",
         "message": "0",
         "color": "red"
+    },
+    "QUERY_PASS": {
+        "label": "Pass",
+        "message": "0",
+        "color": "green"
+    },
+    "QUERY_NOTTESTED": {
+        "label": "NotTested",
+        "message": "0",
+        "color": "white"
+    },
+    "QUERY_CANNOTTELL": {
+        "label": "CannotTell",
+        "message": "0",
+        "color": "yellow"
+    },
+    "QUERY_MINORFAIL": {
+        "label" : "MinorFail",
+        "message": "0",
+        "color": "orange"
+    },
+    "QUERY_MAJORFAIL": {
+        "label": "MajorFail",
+        "message": "0",
+        "color": "red"
     }
 }
