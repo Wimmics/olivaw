@@ -158,6 +158,7 @@ def fragment_check(fragments, draft, extras=""):
             )
         )
         make_not_tested(draft, *MODEL_BEST_PRACTICES_TESTS)
+        make_not_tested(draft(custom_test_data=shape_data), *list(shape_data.keys()))
         return True
     
     fragment_with_import = safe_load(fragments, extras)
@@ -166,7 +167,8 @@ def fragment_check(fragments, draft, extras=""):
     profile_check(fragment_no_import, draft)
 
     if with_import_load_error:
-        draft.make_not_tested(*MODEL_BEST_PRACTICES_TESTS)
+        make_not_tested(draft, *MODEL_BEST_PRACTICES_TESTS)
+        make_not_tested(draft(custom_test_data=shape_data), *list(shape_data.keys()))
         return True
     
     fragment_no_owl = safe_load(fragments, extras, disable_owl=True)

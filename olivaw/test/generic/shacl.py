@@ -130,8 +130,14 @@ def load_valid_custom_tests(files):
         smart_print(f"Custom test {identifier} added (file {file})")
         smart_print(" ")
     
-    return custom_tests, custom_tests_data
-
+    return custom_tests, {
+        line[1]: {
+            "title": line[2],
+            "description": line[3],
+            "errors": [line[1]]
+        }
+        for line in custom_tests_data
+    }
 
 def load_custom_test(file):
     shape_content = complete_test_content(file)

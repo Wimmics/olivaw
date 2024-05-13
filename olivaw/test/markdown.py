@@ -163,7 +163,7 @@ def subject_part_to_markdown(part):
 def criterion_uri_to_file(uri):
     return f"{PWD_TO_ROOT_FOLDER}{sep.join(uri.split('#')[0].split('/')[-4:])}"
 
-def get_criterion_details(uri):
+def get_criterion_details(uri, shape_data={}):
     criterion_path = uri.split("#")[0].split("/")
     criterion_ref = "/".join(criterion_path[3:5])
 
@@ -173,8 +173,9 @@ def get_criterion_details(uri):
 
     if criterion_ref == OLIVAW_REF:
         criterion_id = uri.split('#')[-1]
-        criterion_title = CRITERION_DATA[criterion_id]["title"]
-        criterion_description = CRITERION_DATA[criterion_id]["description"]
+        criterion_resource = CRITERION_DATA if criterion_id in CRITERION_DATA else shape_data
+        criterion_title = criterion_resource[criterion_id]["title"]
+        criterion_description = criterion_resource[criterion_id]["description"]
         return uri, criterion_id, criterion_title, criterion_description
     else:
         criterion_file = criterion_uri_to_file(uri)
@@ -187,7 +188,8 @@ def make_details_table(
     pointersDict,
     severity,
     outcome_counter,
-    emoji
+    emoji,
+    shape_data={}
 ):
     _, _, _, outcome, _, subject_id, subject_title, criterion_uri, outcome_title, outcome_description = outcome_info
     subject_id = str(subject_id)
@@ -198,7 +200,7 @@ def make_details_table(
     parts = [subject_part_to_markdown(part) for part in parts]
     parts = "<br/>".join([f"- {part}" for part in parts])
 
-    _, criterion_id, criterion_title, criterion_description = get_criterion_details(criterion_uri)
+    _, criterion_id, criterion_title, criterion_description = get_criterion_details(criterion_uri, shape_data=shape_data)
 
     chapter += [
         f"### {severity} Outcome number {outcome_counter}",
@@ -235,7 +237,7 @@ def make_details_table(
     chapter.append("")
     chapter.append("***")
 
-def make_severity_detail(outcomes, severity, emoji, partsDict, pointersDict):
+def make_severity_detail(outcomes, severity, emoji, partsDict, pointersDict, shape_data={}):
     result = []
     severity_outcomes = outcomes[severity]
 
@@ -257,11 +259,12 @@ def make_severity_detail(outcomes, severity, emoji, partsDict, pointersDict):
             pointersDict,
             severity,
             i + 1,
-            emoji
+            emoji,
+            shape_data=shape_data
         )
     return result
 
-def make_severity_summary(outcomes, severity, emoji):
+def make_severity_summary(outcomes, severity, emoji, shape_data={}):
     severity_outcomes = outcomes[severity]
     table_length = len(severity_outcomes)
     title = f"## {severity} Outcomes Summary"
@@ -284,7 +287,7 @@ def make_severity_summary(outcomes, severity, emoji):
                 .replace('EMOJI', emoji)
                 .replace('TEXT', severity),
             f"`{str(subjectId)}`",
-            f"[{html_special_chars(get_criterion_details(criterionId)[1])}]({criterionId})",
+            f"[{html_special_chars(get_criterion_details(criterionId, shape_data=shape_data)[1])}]({criterionId})",
             str(errorTitle),
             f"[Jump](#{severity.lower()}-outcome-number-{str(i+1)})",
             ''
@@ -294,7 +297,7 @@ def make_severity_summary(outcomes, severity, emoji):
     
     return summary
 
-def make_severity_chapter(outcomes, partsDict, pointersDict, severity, emoji):
+def make_severity_chapter(outcomes, partsDict, pointersDict, severity, emoji, shape_data={}):
     result = []
     outcome_number = len(outcomes[severity])
     result += [
@@ -311,13 +314,15 @@ def make_severity_chapter(outcomes, partsDict, pointersDict, severity, emoji):
     ] + make_severity_summary(
         outcomes,
         severity,
-        emoji
+        emoji,
+        shape_data=shape_data
     ) + make_severity_detail(
         outcomes,
         severity,
         emoji,
         partsDict,
-        pointersDict
+        pointersDict,
+        shape_data=shape_data
     ) + [
         "",
         "</details>",
@@ -373,7 +378,7 @@ def make_stat_chapter(outcomes):
         ""
     ]
 
-def markdown_export(report, file_name) -> str:
+def markdown_export(report, file_name, shape_data={}) -> str:
 
     md = []
 
@@ -400,7 +405,8 @@ def markdown_export(report, file_name) -> str:
             partsDict,
             pointersDict,
             severity,
-            emoji
+            emoji,
+            shape_data=shape_data
         )
 
     md = "\n".join(md)

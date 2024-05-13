@@ -354,7 +354,12 @@ def make_outcome(draft):
     test_name = draft.criterion.split('/')[-1].split('#')[0]
     test_name = '.'.join(test_name.split('.')[:-1])
     outcome_title = f"Test {test_name} passed" if draft.outcome_type == "Pass" else f"Error on custom test {test_name}"
-    outcome_description = f"The custom test {test_name} passed" if draft.outcome_type == "Pass" else f"Error occured while running custom test {test_name}"
+    outcome_description = f"The custom test {test_name} passed" if draft.outcome_type == "Pass" else \
+        (
+            f"Custom test {test_name} could not be run because the subject could not be loaded in the engine" \
+                if draft.outcome_type == "NotTested" else \
+            f"Error occured while running custom test {test_name}" 
+        )
     
     if draft.error in ERROR_RESOURCES:
         outcome_ressources = ERROR_RESOURCES[draft.error][draft.outcome_type]
@@ -483,14 +488,16 @@ def make_assertion(draft):
 
 def make_not_tested(draft, *criterions):
     if len(criterions) > 0:
+        custom_criterions = draft.custom_test_data if draft.has_field("custom_test_data") else None
         for criterion in criterions:
-            make_not_tested(draft(criterion=criterion))
+            make_not_tested(draft(criterion=criterion, custom_test_data=custom_criterions))
         return
 
     if TESTED_ONLY or draft.should_skip():
         return
 
-    errors = CRITERION_DATA[draft.criterion]["errors"]
+    criterion_resources = CRITERION_DATA if draft.criterion in CRITERION_DATA else draft.custom_test_data
+    errors = criterion_resources[draft.criterion]["errors"]
 
     for error in errors:
         error = make_outcome(draft(outcome_type="NotTested"))

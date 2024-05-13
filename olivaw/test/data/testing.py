@@ -47,9 +47,12 @@ def fragment_check(draft, dataset):
     is_valid = is_syntax_valid and not isinstance(graph_with_import, list)
 
     if not is_valid:
-        make_not_tested(draft, "owl-rl-constraint", "term-recognition")
+        make_not_tested(draft, "owl-rl-constraint", "term-recognition", "prefix-validity")
+        make_not_tested(draft(custom_test_data=shapes_data), *list(shapes_data.keys()))
         return
 
+    constraint_violations = []
+    
     # Check for respect for OWL constraints
     if not "owl-rl-constraint" in SKIPPED_TESTS:
         constraint_violations = check_OWL_constraints(graph_with_import)
@@ -57,7 +60,7 @@ def fragment_check(draft, dataset):
             draft(
                 criterion="owl-rl-constraint",
                 error="owl-rl-constraint-violation",
-                messages=check_OWL_constraints(graph_with_import),
+                messages=constraint_violations,
                 graph=graph_with_import
             )
         )

@@ -50,7 +50,7 @@ def test_competency_question(draft, file):
         )
 
     if len(messages) > 0:
-        make_not_tested(draft, "query-type", "prefix-validity")
+        make_not_tested(draft, "query-type", "prefix-validity", "uri-validity")
         return
 
     if not "query-type" in SKIPPED_TESTS:
