@@ -48,6 +48,24 @@ def html_special_chars(text):
         ]).replace("&#10;&#60", " &#10; &#60")
     )
 
+def profile_badge_data(report, request):
+    profile_statuses = [str(x[0]) for x in report.query(request)]
+
+    if len(profile_statuses) == 0:
+        return "undetermined", "grey"
+    
+    no_pass = [status for status in profile_statuses if status != "Pass"]
+
+    if len(no_pass) == 0:
+        return "compatible", "green"
+    
+    is_fail = [status for status in no_pass if "Fail" in status]
+
+    if len(is_fail) > 0:
+        return "incompatible", "red"
+    
+    return "undetermined", "grey"
+
 def parse_outcomes(report):
     outcomes = [outcome for outcome in report.query(GET_DETAILED_OUTCOMES)]
     severities = set([str(severity[0]) for severity in SEVERITY_RANGE])
@@ -396,17 +414,9 @@ def markdown_export(report, file_name) -> str:
     ]
 
     if "model" in argv:
-        el_compatible = [x for x in report.query(IS_OWL_EL_COMPATIBLE)][0]
-        el_label = "compatible" if el_compatible else "incompatible"
-        el_color = "green" if el_compatible else "red"
-
-        ql_compatible = [x for x in report.query(IS_OWL_QL_COMPATIBLE)][0]
-        ql_label = "compatible" if ql_compatible else "incompatible"
-        ql_color = "red" if ql_compatible else "red"
-
-        rl_compatible = [x for x in report.query(IS_OWL_RL_COMPATIBLE)][0]
-        rl_label = "compatible" if rl_compatible else "incompatible"
-        rl_color = "green" if rl_compatible else "red"
+        el_label, el_color = profile_badge_data(report, IS_OWL_EL_COMPATIBLE)
+        ql_label, ql_color = profile_badge_data(report, IS_OWL_QL_COMPATIBLE)
+        rl_label, rl_color = profile_badge_data(report, IS_OWL_RL_COMPATIBLE)
 
         badgesData += [
             f"EL_label\t: {el_label}",

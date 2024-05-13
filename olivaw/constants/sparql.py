@@ -161,17 +161,27 @@ SELECT ?identifier ?title ?description {
 """
 
 IS_OWL_EL_COMPATIBLE = """
-ask {
+select ?parsed {
   ?assertion a earl:Assertion ;
   earl:subject ?subject ;
+  earl:test olivaw-earl:profile-compatibility ;
   earl:result ?result .
   
+  ?subject dcterms:identifier "all-modules"  .
+
   ?result earl:outcome ?outcome .
-  ?outcome dcterms:title ?title .
-  ?outcome a earl:Pass .
-  ?subject dcterms:identifier "all-modules" .
-  
-  FILTER(contains(?title, "OWL EL"))
+
+  ?outcome a ?status ;
+    dcterms:title ?title .
+
+  filter(contains(?title, "OWL EL")) .
+  bind(
+    replace(
+      str(?status),
+      "^(([^:/?#\\\\s]+):)(\\\\/\\\\/([^/?#\\\\s]*))?([^?#\\\\s]*)(\\\\?([^#\\\\s]*))?(#(.*))?#",
+      ""
+    ) as ?parsed
+  )
 }
 """
 

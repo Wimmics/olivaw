@@ -3,6 +3,10 @@ from os.path import sep
 from olivaw.constants import COMMAND, ROOT_FOLDER
 
 def run():
+    if len(COMMAND) == 0:
+        print('fatal: olivaw without any argument is not a valid command, please read the documentation')
+        exit(1)
+        
     command, *args = COMMAND
 
     if command == "test":
