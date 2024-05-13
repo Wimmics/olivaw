@@ -32,7 +32,6 @@ runs:
         ref: ${{ inputs.ref }}
     - name: Update README.md
       shell: bash
-      continue-on-error: true
       run: |
         pip install git+https://github.com/Wimmics/olivaw@test-actions-15
 
@@ -89,7 +88,7 @@ runs:
       run: |
         git config --global user.email "no-reply@github.com"
         git config --global user.name "Olivaw in Actions"
-        git add README.md coucou.txt
+        git add README.md
         git commit -m "Initialize README.md for branch ${{ env.BRANCH }} [skip actions]"
         git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
         git push
