@@ -38,7 +38,8 @@ def html_special_chars(text):
                 .replace("_", "&lowbar;")\
                 .replace("^", "&Hat;")\
                 .replace("    ", "&nbsp;&nbsp;&nbsp;&nbsp;")\
-                .replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;")
+                .replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;")\
+                .replace("\\", "&#92;")\
                 .strip()
             for line in text.split("\n")
             if len(line.strip()) > 0
