@@ -27,6 +27,7 @@ from olivaw.constants import (
     PWD_TO_MODEL_TEST_ONTO,
     GET_CRITERION_SUMMARY
 )
+from olivaw.test.turtle import new_report
 
 sorted_files = {
     "model": {
@@ -101,8 +102,11 @@ def main(files: Sequence[str] | None = None):
             continue
 
         for suite in test_dict.keys():
+            
             files = test_dict[suite]
-            report = suite(files)
+            report, assertor = new_report(test_type)
+            suite(files, report, assertor)
+
             errors += [
                 {
                     "subject_title": str(subject_title),
