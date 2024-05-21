@@ -39,7 +39,7 @@ First you will need a python environment version 3.8 or greater.
 Then install the python library using this command:
 
 ```shell
-pip install git+https://github.com/Wimmics/olivaw
+pip install git+https://github.com/Wimmics/olivaw@v0.0.3
 ```
 
 ## Intializing a repository
@@ -131,6 +131,14 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
+    - run: |
+        REF=${{ github.ref }}
+        echo "github.ref: $REF"
+        IFS='/' read -ra PATHS <<< "$REF"
+        BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
+        echo $BRANCH_NAME
+        echo "MAIN=main" >> $GITHUB_ENV
+        echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
     - uses: Wimmics/olivaw/test-actions@v0.0.3
       with:
         repository: ${{ github.repository }}
@@ -138,6 +146,9 @@ jobs:
         gist-secret: ${{ secrets.GIST_SECRET }}
         model-test: true
         data-test: true
+        query-test: true
+        commit-report: ${{ env.BRANCH == env.MAIN }}
+        archive-report: true
 ```
 
 Then, after each push on the repository an actions will be triggered and after one minute you should see in the `.acimov/output/` folder:
@@ -154,12 +165,23 @@ name: init-branch
 on: create
 
 jobs:
-  init-branch:
+  model-test:
     permissions:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/init-branch@v0.0.3
+    - name: Parsing repo ref data
+      shell: bash
+      run: |
+        REF=${{ inputs.ref }}
+        echo "github.ref: $REF"
+        IFS='/' read -ra PATHS <<< "$REF"
+
+        REF_TYPE="${PATHS[1]}"
+        echo $REF_TYPE
+        echo "REF_TYPE=$(echo ${REF_TYPE})" >> $GITHUB_ENV
+    - uses: Wimmics/olivaw/init-branch@test-actions-18
+      if: ${{ env.REF_TYPE != 'tags' }}
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}

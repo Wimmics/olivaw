@@ -4,8 +4,6 @@ from olivaw.constants import (
     TESTED_MODULES
 )
 
-from olivaw.constants.paths import CUSTOM_MODEL_TESTS
-from olivaw.test.generic.shacl import load_valid_custom_tests
 from olivaw.test.markdown import markdown_export
 from olivaw.test.util import print_title, file_name, save_reports
 
@@ -17,8 +15,6 @@ from .testing import (
 )
 
 from olivaw.test.turtle import new_report
-
-shape_tests, shape_data = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
 
 ###
 # Test OWL_RL

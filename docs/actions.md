@@ -35,10 +35,6 @@ jobs:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
         gist-secret: ${{ secrets.GIST_SECRET }}
-        model-test: true
-        data-test: true
-        commit-report: true
-        archive-report: true
 ```
 
 The parameters are:

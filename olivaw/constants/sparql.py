@@ -60,7 +60,7 @@ SELECT DISTINCT ?property ?domain WHERE {
   }
 
   # Ignore the owl:Thing domains and domains in the ontology
-  FILTER (!(?domain = owl:Thing || strstarts(str(?domain), "ONTOLOGY_NAMESPACE")))
+  FILTER (!(isblank(?domain) || ?domain = owl:Thing || strstarts(str(?domain), "ONTOLOGY_NAMESPACE")))
 }
 """
 
@@ -134,7 +134,7 @@ SELECT DISTINCT ?subjectId ?part WHERE {
 GET_OUTCOME_POINTERS = """
 SELECT DISTINCT ?outcome ?pointer WHERE {
   { GET_DETAILED_ASSERTIONS }
-  ?outcome rdfs:seeAlso ?pointer .
+  ?outcome earl:info|earl:pointer ?pointer .
 }
 """.replace("GET_DETAILED_ASSERTIONS", GET_DETAILED_OUTCOMES)
 

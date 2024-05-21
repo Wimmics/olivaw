@@ -1,5 +1,7 @@
 from codecs import open as copen
 from datetime import datetime
+from os import makedirs
+from os.path import exists
 
 from olivaw.constants import MODE,  DEV_USERNAME, PWD_TO_OUTPUT_FOLDER
 
@@ -18,6 +20,8 @@ def file_name(test_type):
     return name
 
 def save(path, content):
+    if not exists(PWD_TO_OUTPUT_FOLDER):
+        makedirs(PWD_TO_OUTPUT_FOLDER)
     with copen(f"{path}", "w", "utf-8") as f:
         f.write(content)
 

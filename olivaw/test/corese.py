@@ -19,9 +19,27 @@ from olivaw.constants import (
     PWD_TO_ROOT_FOLDER,
     URI_FORMAT,
     ONTOLOGY_PREFIX,
-    ONTOLOGY_NAMESPACE
+    ONTOLOGY_NAMESPACE,
+    BACKSLASH_IN_URI
 )
+from olivaw.constants.paths import MODULES_TTL_GLOB_PATH
+from olivaw.constants.sparql import GET_DECLARED_ONTOLOGIES
 from olivaw.test.util.print import print_title, smart_print
+
+ontologies = {}
+
+for module in MODULES_TTL_GLOB_PATH:
+    try:
+        g = RdflibGraph()
+        g.parse(module)
+        found_ontologies = [
+            str(ontology[0])
+            for ontology
+            in g.query(GET_DECLARED_ONTOLOGIES)
+        ]
+        ontologies = {**ontologies, **{ontology: module for ontology in found_ontologies}}
+    except:
+        continue
 
 #####################################################
 # Start the java server & capture the stderr output #
@@ -180,7 +198,7 @@ def to_rdflib(graph):
     return g
 
 def load(
-        path: Union[str, List[str], Graph],
+        path: Union[str, List[str]],
         extras: str="",
         import_from_src: bool=True,
         disable_owl: bool=False,
@@ -231,12 +249,19 @@ def load(
     should_import_from_src = import_from_src and not disable_import and not disable_owl
 
     if should_import_from_src:
-        imports = query_graph(graph, GET_IMPORTS)
         imports = [
-            f"{PWD_TO_ROOT_FOLDER}src{sep}{item.split(ONTOLOGY_SEPARATOR)[-1][:-1]}.ttl"
-            for item in imports
+            ontologies[uri[1:-1].replace("\\/", "/")]
+            if uri in ontologies else None
+            for uri in query_graph(graph, GET_IMPORTS)
         ]
-        imports = [item for item in imports if not item in already_imported]
+        imports = [
+            subfile
+            for subfile in imports
+            if not (
+                subfile is None or
+                subfile in already_imported
+            )
+        ]
         if len(imports) == 0:
             property_manager.set(DISABLE_OWL_AUTO_IMPORT, False)
             return graph
@@ -278,12 +303,12 @@ def capture_syntax_errors():
     return "\n".join(final_report).strip()
 
 def safe_load(
-        path: Union[str, List[str], Graph],
+        path: Union[str, List[str]],
         extras: str="",
         import_from_src: bool=True,
         disable_import: bool=False,
         disable_owl: bool=False,
-        graph: Graph=None,
+        graph=None,
         already_imported: List[str]=[],
         profile=STD
     ):
@@ -315,7 +340,11 @@ def safe_load(
         if len(syntax_errors) > 0:
             return syntax_errors
         
-        rdflib_errors = rdflib_check(path=path, extras=extras)
+        try:
+            rdflib_errors = rdflib_check(path=path, extras=extras)
+        except:
+            print(path)
+            raise
 
         if len(rdflib_errors) > 0:
             return rdflib_errors
@@ -339,21 +368,18 @@ def rdflib_check(path="", extras=""):
             for item in rdflib_check(path=path)
         ] + rdflib_check(extras=extras)
 
-    file_content = ""
+    rdflib_fragment = RdflibGraph()
 
     if isinstance(path, str) and path != "":
-        with open(path, "r") as fragment_file:
-            file_content = fragment_file.read()
-
-    content = file_content if len(file_content) > 0 else extras
-
-    if content == "":
-        return []
+        try:
+            rdflib_fragment.parse(path)
+            return []
+        except Exception as rdflib_error:
+            return [rdflib_error.message]
 
     # Detect the last unbound prefix that corese does not detect
     try:
-        rdflib_fragment = RdflibGraph()
-        rdflib_fragment.parse(data=content, format="ttl")
+        rdflib_fragment.parse(data=extras, format="ttl")
         return []
     except Exception as rdflib_error:
         return [rdflib_error.message]
@@ -452,6 +478,14 @@ def profile_errors(raw_message):
                     current_statement = ""
                     parsing_statement = True
 
-    pointers = [[pointer] for pointer in pointers]
+    parsed = []
 
-    return descriptions, pointers
+    for pointer in pointers:
+        parsed_pointer = pointer
+        for match in BACKSLASH_IN_URI.findall(pointer):
+            parsed_pointer = parsed_pointer.replace(match, match.replace("\\/", "/"))
+        parsed.append(parsed_pointer)
+        
+    parsed = [[pointer] for pointer in parsed]
+
+    return descriptions, parsed

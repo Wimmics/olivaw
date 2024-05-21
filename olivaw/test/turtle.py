@@ -39,7 +39,8 @@ from olivaw.constants import (
     MODE,
     SKIP_PASS,
     TESTED_ONLY,
-    CRITERION_DATA
+    CRITERION_DATA,
+    BACKSLASH_IN_URI
 )
 
 from olivaw.constants.sparql import (
@@ -64,7 +65,6 @@ def new_report(test_type):
 
     report.bind("earl", EARL_NAMESPACE)
     report.bind("", ONTOLOGY_RDFLIB_NAMESPACE)
-    report.bind("src", SRC_NAMESPACE)
     report.bind("profile-test", TEST_NAMESPACE)
     report.bind("olivaw-earl", OLIVAW_EARL_NAMESPACE)
     report.bind("dcterms", DCTERMS)
@@ -109,7 +109,7 @@ def make_assertor(report, test_type):
 
 def make_subject_id_part(fragment_list):
     modules = [item for item in fragment_list if item.startswith("src/")]
-    modules = ['module-' + '.'.join(item[4:].split('.')[:-1]) for item in modules]
+    modules = ['module-' + '.'.join(item.split('.')[:-1]) for item in modules]
     modules.sort()
     modelets = [item for item in fragment_list if item.startswith("domains/") and item.endswith("/onto.ttl")]
     modelets = ['modelet-' + '-'.join(item.split('/')[1:-1]) for item in modelets]
@@ -118,7 +118,7 @@ def make_subject_id_part(fragment_list):
     datasets = ['dataset-' + '-'.join(item.split('/')[1:-1]) for item in datasets]
     datasets.sort()
     questions = [item for item in fragment_list if item.startswith("domains/") and item.endswith(".rq")]
-    questions = ['question-' + '-'.join(item[:-3].split('/')[1:]) for item in questions]
+    questions = ['question-' + '-'.join(item.split('/')[1:]) for item in questions]
     questions.sort()
     usecases = [item for item in fragment_list if item.startswith("use-cases/")]
     usecases = [
@@ -178,7 +178,7 @@ def make_subject(
     
     module_fragments = [item for item in heart + appendix if item.startswith('src/')]
     module_fragments = [
-        SRC_NAMESPACE[item[4:-4]]
+        SRC_NAMESPACE[item[4:]]
         for item in module_fragments
     ]
 
@@ -280,6 +280,9 @@ def extract_statement(graph, pointer):
     if len(statement) == 0:
         return Literal(str(pointer))
     
+    for match in BACKSLASH_IN_URI.findall(statement):
+        statement = statement.replace(match, match.replace("\\/", "/"))
+    
     namespaces = graph.query(GET_GRAPH_NAMESPACES)
 
     binds = []
@@ -329,10 +332,12 @@ def make_pointer(draft, pointer_string):
     is_statement = " " in pointer_string
 
     if statement_subject[0] == "<" and not is_statement:
-        pointer = extract_statement(draft.graph, URIRef(statement_subject[1:-1]))
+        pointer = extract_statement(draft.graph, URIRef(statement_subject[1:-1].replace("\\/", "/")))
     elif statement_subject[0] == '"':
         pointer = Literal(remove_prefixes(pointer_string.strip()[1:-1], is_literal=True))
     elif statement_subject[0] != "[" and not is_statement:
+        if pointer_string.split(":")[0] == "_":
+            return Literal(pointer_string)
         normalizedUri = Namespace(
             [
                 namespace for prefix, namespace in draft.report.namespaces()
@@ -378,8 +383,13 @@ def make_outcome(draft):
         (RDF.type, outcome_type_namespace[draft.outcome_type]),
         (DCTERMS.title, Literal(outcome_title, lang="en")),
         (DCTERMS.description, Literal(outcome_description, lang="en"))
+    ] + [
+        (
+            EARL_NAMESPACE["info" if isinstance(pointer, Literal) else "pointer"],
+            pointer
+        )
+        for pointer in parsed_pointers
     ]
-    outcome_statement += [(RDFS.seeAlso, pointer) for pointer in parsed_pointers]
 
     outcome = BNode()
     draft.reporting(outcome, outcome_statement)

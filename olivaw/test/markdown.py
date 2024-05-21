@@ -31,8 +31,8 @@ from olivaw.test.generic.shacl import get_criterion_data
 
 def html_special_chars(text):
     return NEW_BR.sub(
-        "&#10;",
-        "&#10;".join([
+        " &#10;",
+        " &#10;".join([
             line\
                 .replace("<", "&#60;")\
                 .replace("_", "&lowbar;")\
@@ -45,7 +45,7 @@ def html_special_chars(text):
                 .strip()
             for line in text.split("\n")
             if len(line.strip()) > 0
-        ]).replace("&#10;&#60", " &#10; &#60")
+        ]).replace("&#10;&#60", "&#10; &#60")
     )
 
 def profile_badge_data(report, request):
@@ -121,13 +121,13 @@ def make_assertor_chapter(report):
     date = datetime.fromisoformat(str(date)).strftime("%Y-%m-%d %H:%M:%S")
     dev = page.split('/')[-1]
 
-    description = description.replace(f"@{dev}", f"[@{dev}]({page})")
+    description = html_special_chars(description).replace(f"@{dev}", f"[@{dev}]({page})")
     script_name = script.split("/")[-1]
 
     result.append(f"|Assertor|[{dev}]({page})|")
     result.append("|----|-----|")
     result.append(f"|Title|{html_special_chars(title)}|")
-    result.append(f"|Description|{html_special_chars(description)}|")
+    result.append(f"|Description|{description}|")
     result.append(f"|Script|[{script_name}]({script})")
     result.append(f"|Date|{date}|")
 
@@ -140,23 +140,23 @@ def make_assertor_chapter(report):
 def subject_part_to_markdown(part):
     module_search = MODULE_URL_FORMAT.findall(part)
     if len(module_search) > 0:
-        return f"[Module {html_special_chars(module_search[0][0])}]({part})"
+        return f"[Module {html_special_chars(module_search[0][0][:-4])}]({part})"
     
     modelet_search = MODELET_URL_FORMAT.findall(part)
     if len(modelet_search) > 0:
-        return f"[Modelet {html_special_chars(modelet_search[0][8:])}]({part})"
+        return f"[Modelet {html_special_chars(modelet_search[0][8:-9])}]({part})"
     
     dataset_search = DATASET_URL_FORMAT.findall(part)
     if len(dataset_search) > 0:
-        return f"[Dataset {html_special_chars(dataset_search[0][8:])}]({part})"
+        return f"[Dataset {html_special_chars(dataset_search[0][8:][:-4])}]({part})"
     
     usecase_search = USECASE_URL_FORMAT.findall(part)
     if len(usecase_search) > 0:
-        return f"[Use case {html_special_chars(usecase_search[0][10:])}]({part})"
+        return f"[Use case {html_special_chars(usecase_search[0][10:][:-4])}]({part})"
     
     question_search = QUESTION_URL_FORMAT.findall(part)
     if len(question_search) > 0:
-        return f"[Competency question {html_special_chars(question_search[0][8:])}]({part})"
+        return f"[Competency question {html_special_chars(question_search[0][8:-3])}]({part})"
     
     return part
 

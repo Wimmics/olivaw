@@ -6,7 +6,8 @@ from olivaw.test.corese import (
     safe_load,
     OWLProfile,
     check_OWL_constraints,
-    profile_errors
+    profile_errors,
+    ontologies
 )
 from olivaw.constants import (
     GET_BY_MODULE,
@@ -33,20 +34,6 @@ from olivaw.test.turtle import make_assertion, make_not_tested, make_subject
 from olivaw.test.util import AssertDraft, progress_bar
 
 shape_tests, shape_data = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
-ontologies = {}
-
-for module in MODULES_TTL_GLOB_PATH:
-    try:
-        g = RdflibGraph()
-        g.parse(module)
-        found_ontologies = [
-            str(ontology[0])
-            for ontology
-            in g.query(GET_DECLARED_ONTOLOGIES)
-        ]
-        ontologies = {**ontologies, **{ontology: module for ontology in found_ontologies}}
-    except:
-        continue
 
 def group_terms_by_module(modelet):
     """Get all the triples that has a subject included in the ontology.
@@ -257,7 +244,7 @@ def modelets_tests(modelets, report=None, assertor=None):
             if draft.should_skip(file=[modelet, module_key]):
                 continue
 
-            make_subject(draft, [module_path], [modelet_key])
+            draft(subject=make_subject(draft, [module_path], [modelet_key]))
 
             fragment_check(
                 module_path,

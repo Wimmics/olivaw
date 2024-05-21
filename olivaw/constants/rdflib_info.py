@@ -26,5 +26,6 @@ try:
     OLIVAW_EARL_NAMESPACE = Namespace(OLIVAW_EARL_DATASET)
 
     PREFIX_ERROR = regex_compile('Prefix "[^"]+:" not bound')
+    BACKSLASH_IN_URI = regex_compile("<[^>]*>")
 except:
     pass

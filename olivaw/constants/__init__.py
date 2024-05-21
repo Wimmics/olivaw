@@ -133,6 +133,12 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       in repo_parameters["skip_for_subject"].items()
     } if "skip_for_subject" in repo_parameters else {}
 
+    DATASETS = [
+      item
+      for item in USE_CASES_TTL_GLOB_PATH + DATASETS_TTL_GLOB_PATH
+      if not abspath(item) in SKIPPED_SUBJECTS
+    ]
+
   def add_repo_variables(request):
     return request\
       .replace(
@@ -199,9 +205,3 @@ except:
   pass
 
 MODEL_BEST_PRACTICES_TESTS = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]
-
-DATASETS = [
-  item
-  for item in USE_CASES_TTL_GLOB_PATH + DATASETS_TTL_GLOB_PATH
-  if not abspath(item) in SKIPPED_SUBJECTS
-]
