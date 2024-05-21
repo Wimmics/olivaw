@@ -381,6 +381,7 @@ def make_outcome(draft):
 
     outcome_statement = [
         (RDF.type, outcome_type_namespace[draft.outcome_type]),
+        (DCTERMS.identifier, Literal(draft.error)),
         (DCTERMS.title, Literal(outcome_title, lang="en")),
         (DCTERMS.description, Literal(outcome_description, lang="en"))
     ] + [

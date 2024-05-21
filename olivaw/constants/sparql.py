@@ -99,7 +99,7 @@ select distinct ?term where {
 """
 
 GET_DETAILED_OUTCOMES = """
-SELECT ?assertion ?subject ?result ?outcome ?outcomeType ?subjectId ?subjectTitle ?criterionId ?outcomeTitle ?outcomeDescription WHERE {
+SELECT ?assertion ?subject ?result ?outcome ?outcomeType ?subjectId ?subjectTitle ?criterionId ?outcomeTitle ?outcomeDescription ?outcomeId WHERE {
   ?assertion a earl:Assertion ;
   earl:result ?result ;
   earl:subject ?subject ;
@@ -111,6 +111,7 @@ SELECT ?assertion ?subject ?result ?outcome ?outcomeType ?subjectId ?subjectTitl
   ?result earl:outcome ?outcome .
   
   ?outcome a ?outcomeType ;
+    dcterms:identifier ?outcomeId ;
     dcterms:title ?outcomeTitle ;
     dcterms:description ?outcomeDescription .
 } ORDER BY DESC(?subjectId) ?criterionId

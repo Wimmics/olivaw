@@ -68,7 +68,8 @@ def profile_badge_data(report, request):
 
 def parse_outcomes(report):
     outcomes = [outcome for outcome in report.query(GET_DETAILED_OUTCOMES)]
-    severities = set([str(severity[0]) for severity in SEVERITY_RANGE])
+    found_severities = list(set([str(severity[0]) for severity in SEVERITY_RANGE]))
+    severities = [severity[0] for severity in SEVERITY_RANGE if severity[0] in found_severities]
     outcomes = {
         severity: [
             outcome
@@ -76,6 +77,14 @@ def parse_outcomes(report):
             if str(outcome[4]).split("#")[-1] == severity
         ]
         for severity in severities
+    }
+
+    outcomes = {
+        severity: [
+            (*outcome, j + sum([len(outcomes[severities[k]]) for k in range(i)]), len(outcomes[severity]), j)
+            for j, outcome in enumerate(outcomes[severity])
+        ]
+        for i, severity in enumerate(severities)
     }
 
     all_parts = report.query(GET_OUTCOMES_PARTS)
@@ -122,13 +131,13 @@ def make_assertor_chapter(report):
     dev = page.split('/')[-1]
 
     description = html_special_chars(description).replace(f"@{dev}", f"[@{dev}]({page})")
-    script_name = script.split("/")[-1]
+    script_name = script.split("/")[-2]
 
     result.append(f"|Assertor|[{dev}]({page})|")
     result.append("|----|-----|")
     result.append(f"|Title|{html_special_chars(title)}|")
     result.append(f"|Description|{description}|")
-    result.append(f"|Script|[{script_name}]({script})")
+    result.append(f"|Script|[{script_name} test suite]({script})")
     result.append(f"|Date|{date}|")
 
     result.append("")
@@ -191,7 +200,7 @@ def make_details_table(
     emoji,
     shape_data={}
 ):
-    _, _, _, outcome, _, subject_id, subject_title, criterion_uri, outcome_title, outcome_description = outcome_info
+    _, _, _, outcome, _, subject_id, subject_title, criterion_uri, outcome_title, outcome_description, outcome_id, outcome_number, severity_list_size, severity_index = outcome_info
     subject_id = str(subject_id)
     outcome = str(outcome)
 
@@ -202,10 +211,14 @@ def make_details_table(
 
     _, criterion_id, criterion_title, criterion_description = get_criterion_details(criterion_uri, shape_data=shape_data)
 
+    table_top = f"#{severity.lower()}-outcome-number-{outcome_counter}"
+
     chapter += [
         f"### {severity} Outcome number {outcome_counter}",
         "",
-        f"[Jump to summary definition](#summary-{severity}-{str(outcome_counter)})",
+        f"[Jump to summary definition](#summary-{severity}-{str(outcome_counter)})" + \
+            ("" if severity_index == 0 else f"\t|\t[Previous {severity} outcome](#{severity.lower()}-outcome-number-{str(severity_index)})") + \
+            ("" if severity_index == severity_list_size - 1 else f"\t|\t[Next {severity} outcome](#{severity.lower()}-outcome-number-{str(severity_index + 2)})"),
         "",
         f"{emoji}{severity} outcome"
         "",
@@ -222,17 +235,18 @@ def make_details_table(
         f"|Description|{html_special_chars(criterion_description)}|",
         "",
         "#### Outcome Detail",
-        f"|Type|{emoji}{severity}|",
-        "|----|----|",
-        f"|Title|{html_special_chars(outcome_title)}|",
-        f"|Description|{html_special_chars(outcome_description)}|"
+        f"|Jump|Type|{emoji}{severity}|",
+        "|----|----|----|",
+        f"|[Section top]({table_top})|Identifier|`{outcome_id}`|",
+        f"|[Section top]({table_top})|Title|{html_special_chars(outcome_title)}|",
+        f"|[Section top]({table_top})|Description|{html_special_chars(outcome_description)}|"
     ]
 
     for rdfPointer in pointersDict.get(outcome, []):
         mdPointer = html_special_chars(str(rdfPointer))
         beforePointer = '<pre lang="Turtle"><code>' if isinstance(rdfPointer, Literal) else ""
         afterPointer = "</code></pre>" if isinstance(rdfPointer, Literal) else ""
-        chapter.append(f"|Pointer|{beforePointer}{mdPointer}{afterPointer}|")
+        chapter.append(f"|[Section top]({table_top})|Pointer|{beforePointer}{mdPointer}{afterPointer}|")
 
     chapter.append("")
     chapter.append("***")
@@ -268,20 +282,17 @@ def make_severity_summary(outcomes, severity, emoji, shape_data={}):
     severity_outcomes = outcomes[severity]
     table_length = len(severity_outcomes)
     title = f"## {severity} Outcomes Summary"
-    id = title_to_id(title)
+    id = f"#{severity.lower()}-outcomes"
     
     summary = [
         title,
-        "",
-        f"[Jump to statistic summary](#statistic-summary)"
-        "",
         "",
         f"{emoji}{str(len(severity_outcomes))} {severity} outcomes",
         ""
     ] + ERROR_TABLE_HEADER + [
         "|".join([
             '',
-            f"[Table top]({id})",
+            f"[Chapter top]({id})",
             f'<div id="summary-{severity}-{str(i + 1)}">{str(i+1)}/{str(table_length)}</div>',
             COLOR_BOX_TEMPLATE
                 .replace('EMOJI', emoji)
@@ -292,17 +303,26 @@ def make_severity_summary(outcomes, severity, emoji, shape_data={}):
             f"[Jump](#{severity.lower()}-outcome-number-{str(i+1)})",
             ''
         ])
-        for i, (_, _, _, _, _, subjectId, _, criterionId, errorTitle, _) in enumerate(severity_outcomes)
+        for i, (_, _, _, _, _, subjectId, _, criterionId, errorTitle, *_) in enumerate(severity_outcomes)
     ] + ["", "***", ""]
     
     return summary
 
-def make_severity_chapter(outcomes, partsDict, pointersDict, severity, emoji, shape_data={}):
+def make_severity_chapter(outcomes, partsDict, pointersDict, severity, emoji, shape_data={}, previous_severity=None, next_severity=None):
     result = []
     outcome_number = len(outcomes[severity])
     result += [
         "",
         f"# {severity} Outcomes",
+        "",
+        "\t|\t".join([
+            link for link in [
+                f"[Jump to statistic summary](#statistic-summary)",
+                ("" if previous_severity is None else f"[Previous section](#{previous_severity.lower()}-outcomes)"),
+                ("" if next_severity is None else f"[Next section](#{next_severity.lower()}-outcomes)")
+            ]
+            if not link == ""
+        ]),
         "",
         f"Here is the chapter related to the {severity} outcome",
         "",
@@ -396,17 +416,24 @@ def markdown_export(report, file_name, shape_data={}) -> str:
     ]
     md += make_assertor_chapter(report)
     md += make_stat_chapter(outcomes)
+
+    report_severities = [
+        (severity, emoji)
+        for severity, emoji, _
+        in SEVERITY_RANGE
+        if len(outcomes[severity]) > 0
+    ]
     
-    for severity, emoji, _ in SEVERITY_RANGE:
-        if len(outcomes[severity]) == 0:
-            continue
+    for i, (severity, emoji) in enumerate(report_severities):
         md += make_severity_chapter(
             outcomes,
             partsDict,
             pointersDict,
             severity,
             emoji,
-            shape_data=shape_data
+            shape_data=shape_data,
+            previous_severity=None if i == 0 else report_severities[i - 1][0],
+            next_severity=None if i == len(report_severities) - 1 else report_severities[i + 1][0]
         )
 
     md = "\n".join(md)
