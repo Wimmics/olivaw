@@ -419,7 +419,7 @@ INSERT {
 WHERE  {
   ?s sh:select ?request . 
   FILTER (isliteral(?request))
-  BIND (concat(?request, "\\nvalues ($ontology_url) { (\\"ONTOLOGY_NAMESPACE\\") }") as ?updated_request)
+  BIND (concat(?request, "\\nvalues ($ontology_namespace) { (\\"ONTOLOGY_NAMESPACE\\") }") as ?updated_request)
 }
 """
 

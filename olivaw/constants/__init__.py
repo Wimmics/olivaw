@@ -34,16 +34,16 @@ except:
 modes = [
   item.split('=')[1]
   for item in COMMAND
-  if item.startswith("--mode=")
+  if item.startswith("--MODE=")
 ]
 
 MODE = modes[0] if len(modes) > 0 else "manual"
 
-ACTIONS = MODE == "actions"
-PRECOMMIT = MODE == "precommit"
+ACTIONS = MODE == "ACTIONS"
+PRECOMMIT = MODE == "PRECOMMIT"
 
-SKIP_PASS = "--skip-pass" in COMMAND
-TESTED_ONLY = "--tested-only" in COMMAND
+SKIP_PASS = "--SKIP-PASS" in COMMAND
+TESTED_ONLY = "--TESTED-ONLY" in COMMAND
 
 QUIET = ACTIONS or PRECOMMIT
 

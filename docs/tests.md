@@ -1,11 +1,14 @@
 # Tests documentation
 
+
 Many tests are made using this framework. This document is meant to describe:
 
 * the output formats available for the report
 * the tests that are run and for each of them
     * its description
     * the possible errors that this test can encounter
+
+These tests are powered by Corese, check their [website](https://project.inria.fr/corese/) and [repository](https://github.com/Wimmics/corese)
 
 # Table of contents
 
@@ -34,6 +37,11 @@ Many tests are made using this framework. This document is meant to describe:
 &emsp;&emsp;2.2.2. [owl-rl-constraint](#222-owl-rl-constraint)<br/>
 &emsp;&emsp;2.2.3. [term-recognition](#223-term-recognition)<br/>
 &emsp;&emsp;2.2.4. [prefix-validity](#224-prefix-validity)<br/>
+&emsp;2.3. [Data tests](#23-query-tests)<br/>
+&emsp;&emsp;2.3.1. [syntax](#231-syntax)<br/>
+&emsp;&emsp;2.3.2. [query-type](#232-query-type)<br/>
+&emsp;&emsp;2.3.3. [uri-validity](#233-uri-validity)<br/>
+&emsp;&emsp;2.3.4. [prefix-validity](#234-prefix-validity)<br/>
 3. [References](#3-references)
 
 
@@ -144,9 +152,11 @@ Then a result is represented this way:
     a earl:TestResult ;
     earl:outcome [
         a acimov-model-test:MinorFail ;
+        dcterms:identifier "the-error-identifier" ;
         dcterms:title "OWL QL Profile incompatible" ;
         dcterms:description "Class Expression not supported with rdfs:subClassOf" ;
-        rdfs:seeAlso """ ... some turtle code ... """
+        earl:info """ ... some turtle code ... """ ;
+        earl:pointer <any.interesting.uri>
     ] , [
         ... content for outcome 2 ...
     ]
@@ -168,7 +178,7 @@ In the EARL vocabulary, the following outcome types are available:
 * `earl:NotTested`: This outcome means that the test could not be run because some requirements needed for this test was not fulfilled. If a test could not be run, the assertion will have only one outcome of type `earl:NotTested`
 * `earl:Fail`: This outome denotes that a problem was detected, that is defenitely an error, and that made this test not passed
 
-In order to add more expressivity to denote the severity of an error, the `earl:Fail` set was partionned into two subsets:
+In order to add more expressivity to denote the severity of an error, in the [olivaw-earl dataset](../olivaw/test/olivaw-earl.ttl), the `earl:Fail` set was partionned into two subsets:
 
 * `olivaw-earl:MinorFail`: An error is detected but is not considered as blocking for production
 * `olivaw-earl:MajorFail`: An error is detected and is considered blocking for production
@@ -298,6 +308,10 @@ Here **valid** means a module or modelet:
 
 This **valid** definition is meant for these two last tests not to be inapplicable if one singlere error exists in one fragment.
 
+Some projects or developpers may have specific needs like skipping some tests, some subjects of tests, or skipping a combination of tests and subjects. The `.acimov/parameters.json` can help for this, so check the [parameters.json documentation](./parameters.md) for more details.
+
+Some projects would also need some test that cannot be covered by the default olivaw model tests. It is possible to add some custom model tests that will also be treated during the model tests, check the [custom tests documentation](./custom-tests.md) for more details.
+
 Then let's see which tests are made on all of these subjects
 
 ### 2.1.1. syntax
@@ -361,8 +375,9 @@ This test checks if each defined term if the ontology is linked to a module by a
 |id|no-reference-module|
 |-|-|
 |title|Term not referenced to a module|
-|description|Should provide you which term of the subject is missing a `rdfs:isDefinedBy` property|
-|pointer|An extract of the subject code containing the related term definition|
+|description|Subject terms not linked to a module by a rdfs:isDefinedBy property|
+|pointer|Term definition of the subject code containing the related term definition|
+|pointer|Another definition of the subject code containing the related term definition|
 
 ### 2.1.4. domain-and-range-referencing
 
@@ -384,18 +399,22 @@ It just just checking that, when a `rdfs:domain` or a `rdfs:range` is set on an 
 |id|domain-out-of-vocabulary|
 |-|-|
 |title|Domain out of vocabulary|
-|description|A message explaining which property has a `rdfs:domain` set out of the vocabulary|
-|pointer|The property definition in the subject|
-|pointer|A URI to the rdfs:domain out of vocabulary|
+|description|Some properties have a domain out of the ontology|
+|pointer|Definition of a subject ontology term that has a domain out of vocabulary|
+|pointer|The URI that is out of vocabulary|
+|pointer|Definition of another subject ontology term that has a domain out of vocabulary|
+|pointer|The URI that is out of vocabulary|
 
 * **range-out-of-vocabulary**
 
 |id|range-out-of-vocabulary|
 |-|-|
 |title|Range out of vocabulary|
-|description|A message explaining which property has a `rdfs:range` set out of the vocabulary|
-|pointer|The property definition in the subject|
-|pointer|A URI to the rdfs:range out of vocabulary|
+|description|Some properties have a domain out of the ontology|
+|pointer|Definition of a subject ontology term that has a range out of vocabulary|
+|pointer|The URI that is out of vocabulary|
+|pointer|Definition of another subject ontology term that has a range out of vocabulary|
+|pointer|The URI that is out of vocabulary|
 
 ### 2.1.5. terms-differenciation
 
@@ -417,9 +436,11 @@ Then, those pairs that have a distance under the defined parameter `term_distanc
 |id|too-close-terms|
 |-|-|
 |title|Too close terms|
-|description|Explains which pair of terms are considered too close from a spelling point of view|
-|pointer|Turtle definition of the first term that is concerned|
-|pointer|Turtle definition of the second term that is concerned|
+|description|Some terms are too similar|
+|pointer|Turtle definition of the first term of the first pair that is concerned|
+|pointer|Turtle definition of the second term of the first pair that is concerned|
+|pointer|Turtle definition of the first term of the next pair that is concerned|
+|pointer|Turtle definition of the second term of the next pair that is concerned|
 
 ### 2.1.6. labeled-terms
 
@@ -437,8 +458,9 @@ This test checks if the terms of the ontology all have a `rdfs:label` property (
 |id|not-labeled-term|
 |-|-|
 |title|Terms not labeled|
-|description|Describes which term is missing a `rdfs:label` property|
-|pointer|Turtle definition of the term that is concerned|
+|description|The following terms have no rdfs:label to define it in natural language|
+|pointer|Turtle definition of a term that is concerned|
+|pointer|Turtle definition of another term that is concerned|
 
 ### 2.1.7. profile-compatibility
 
@@ -485,6 +507,10 @@ These tests only apply on the following subjects:
 
 * the motivating scenarii datasets (all the `domains/*/*/dataset.ttl` files)
 * the modelets (all the `use-cases/*/onto.ttl` files)
+
+Some projects or developpers may have specific needs like skipping some tests, some subjects of tests, or skipping a combination of tests and subjects. The `.acimov/parameters.json` can help for this, so check the [parameters.json documentation](./parameters.md) for more details.
+
+Some projects would also need some test that cannot be covered by the default olivaw model tests. It is possible to add some custom model tests that will also be treated during the model tests, check the [custom tests documentation](./custom-tests.md) for more details.
 
 Then let's see which tests are made on all of these subjects
 
@@ -587,6 +613,102 @@ Since it can also be on purpose, this test willa always return outcomes of type 
 |pointer|Namespace usage in the tested file|
 |pointer|Common prefix from prefixcc that is too close|
 |pointer|Prefix from another file that is too close|
+
+## 2.3 Query tests
+
+This section is meant to enumerate the tests being processed during the query tests
+
+These tests only apply on the following subjects:
+
+* the competency questions (all the `domains/*/*/*.rq` files)
+
+Some projects or developpers may have specific needs like skipping some tests, some subjects of tests, or skipping a combination of tests and subjects. The `.acimov/parameters.json` can help for this, so check the [parameters.json documentation](./parameters.md) for more details.
+
+Then let's see which tests are made on all of these subjects
+
+### 2.3.1. Syntax
+
+This test checks if the SparQL request is syntaxically valid.
+
+The request should be syntaxically valid in order for this test to pass 
+
+|id|syntax|
+|-|-|
+|title|Syntax test|
+|description|A test meant to check wether the test subject is syntaxically correct or not.|
+
+**Possible errors:**
+
+* **syntax-error**
+
+|id|syntax-error|
+|-|-|
+|title|Unknown ontology term|
+|description|Test subject has syntax errors|
+|pointer|Some error messages from the SparQL request parsing error|
+
+### 2.3.2. Query type
+
+This test checks if the SparQL request is of type `SELECT` or `ASK`
+
+The request should be of one of these types for the request to pass
+
+|id|query-type|
+|-|-|
+|title|Syntax test|
+|description|Error message from the SparQL request parsing error|
+
+**Possible errors:**
+
+* **wrong-query-type**
+
+|id|wrong-query-type|
+|-|-|
+|title|Unknown ontology term|
+|description|The query type was expected to be 'Ask' or 'Select', but got '{queryType}'|
+|pointer|The SparQL request|
+
+### 2.3.3. URI Validity
+
+This test checks if the SparQL request contains URIs that are all valid URIs
+
+The request should contain only well formed URIs tha respect the regex `^(([^:/?#\s]+):)(\/\/([^/?#\s]*))?([^?#\s]*)(\?([^#\s]*))?(#(.*))?$`
+
+|id|uri-validity|
+|-|-|
+|title|URI validity test|
+|description|A test meant to check if all the URIs of the resource are well-formed|
+
+**Possible errors:**
+
+* **invalid-uri**
+
+|id|invalid-uri|
+|-|-|
+|title|Invalid URI|
+|description|Expected valid URIs in subject but got: {the invalid uri}|
+|pointer|The SparQL request|
+
+### 2.3.4. Prefix Validity
+
+This test checks if any namespace from the request are similar from any other namespace from prefixcc or a namespace that can be found in the ontology.
+
+|id|prefix-validity|
+|-|-|
+|title|Prefix validity test|
+|description|A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc) or an ontology namespace|
+
+**Possible errors:**
+
+* **prefix-typo**
+
+|id|prefix-typo|
+|-|-|
+|title|Invalid URI|
+|description|Possible prefix typo|
+|pointer|The SparQL request|
+|pointer|The prefix found in prefixcc|
+|pointer|The similar namespace usage in the ontology|
 
 # 3. References
 

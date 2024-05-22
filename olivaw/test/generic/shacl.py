@@ -36,7 +36,7 @@ from olivaw.test.util import smart_print
 
 test_features = [
     "Custom test graph must have one and only one criterion",
-    "Criterion must be using relative paths and document base should be left non assigned",
+    "Criterion must be using relative paths syntax and document base should be left non assigned",
     "Criterion must have one and only one dcterms:title property",
     "Criterion title must be a string",
     "Criterion must have one and only one dcterms:description property",

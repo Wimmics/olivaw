@@ -30,21 +30,23 @@ repos:
 - repo: https://github.com/Wimmics/olivaw
   rev: v0.0.3
   hooks:
-    - id: check-fragments
+    - id: olivaw-test
 ```
 
-Now, each time a commit is done the olivaw pre-commit hook will trigger.
+Now, each time a commit is done, the olivaw pre-commit hook will trigger. It works using git cli as well as GitHub Desktop.
 
 The first time this hook trigger, the olivaw repository will be cloned to a virtual environment that will be reused each time the hook will trigger in the future.
 
 In this yaml file:
 
-* the `repo` field is just the url of the olivaw repository to clone
+* the `repo` field is the url of the olivaw repository to clone
 * the `rev` field is the tag to checkout the repository to
 * the `id` field is the name of the olivaw pre-commit hook within the repository
 
-Then some code will be executed based on the [olivaw pre-commit hook configuration file](../.pre-commit-hooks.yaml)
+Then, during each event trigger, some code will be executed based on the [olivaw pre-commit hook configuration file](../.pre-commit-hooks.yaml)
 
-The [syntax tests](tests.md#211-syntax) and the [owl rl constraint violation tests](./tests.md#212-owl-rl-constraint) will be run.
+For each file that is staged for commit, the accurate test (model, data or query) suite will be applied.
 
-If one of these tests raise an error, the commit or push will be blocked and some error will be outputed.
+Check the [tests documentation](./tests.md#2-available-tests) for more details.
+
+If one of these tests raise an error, the commit or push will be blocked and some error summaries will be outputed.

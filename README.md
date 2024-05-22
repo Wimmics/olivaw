@@ -10,31 +10,25 @@ This methodology is an extension of [SAMOD](https://essepuntato.it/samod/) with 
 
 This repository is a python library meant for providing tools in an Acimov ontology development context.
 
-In this repository you will find:
+Olivaw proposes:
 
-* command lines that should help you to make your Acimov development easier
-* composite actions that you can directly call in workflows from your Acimov project
-* a pre-commit hook that should prevent the biggest mistakes that could be pushed in your Acimov repository
+* command lines that makes an Acimov development easier
+* composite actions that can directly be called in workflows from any Acimov project
+* a pre-commit hook that should prevent the biggest mistakes that could be pushed in an Acimov repository
 
-This tool proposes different test tools all powered by Corese, you can check their [website](https://project.inria.fr/corese/) and [repository](https://github.com/Wimmics/corese)
+This tool proposes different test tools all powered by Corese, check their [website](https://project.inria.fr/corese/) and [repository](https://github.com/Wimmics/corese)
 
 The test reports are then represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/)
 
-This project is very young so if a bug is to be found don't hesitate to create an [issue](https://github.com/Wimmics/olivaw/issues)
+All the functional documentation concerning olivaw can be found in [the docs/ folder](./docs/)
 
-If you need more information than this page provides, please check:
-
-* the [tests](./docs/tests.md) documentation for the list of which tests are implemented in olivaw and the output formats
-* the [commands](./docs/commands.md) documentation for a detailed description of the available commands and options
-* the [parameters](./docs/parameters.md) documentation for the enumeration of all the parameters that can be set for your acimov project
-* the [actions](./docs/actions.md) documentation for a complete guide for the available composite actions
-* the [pre-commit](./docs/pre-commit.md) documentation for a guide concerning the olivaw pre-commit hook
+If a bug is to be found don't hesitate to create an [issue](https://github.com/Wimmics/olivaw/issues)
 
 # Getting started
 
-## Installing olivaw in your project
+## Installing olivaw in a project
 
-First you will need a python environment version 3.8 or greater.
+First prepare a python environment version 3.8 or greater.
 
 Then install the python library using this command:
 
@@ -46,7 +40,7 @@ pip install git+https://github.com/Wimmics/olivaw@v0.0.3
 
 ### Acimov repository structure
 
-In order to use this tool properly you need an Acimov structured repository.
+This tool is meant to work on an Acimov structured repository.
 
 This repository constains:
 
@@ -63,11 +57,11 @@ A template repository ready to fork should be provided soon.
 
 This framework proposes automatically updated badges at the top of the README.md on each branch.
 
-To make this work you will need a personnal access token with the `gist` scope.
+To make this work a personnal access token with the `gist` scope is required.
 
 * First go to the [Github webpage dedicated to access token generation](https://github.com/settings/tokens)
-* Then create a personnal access token with only the `gist` scope. Copy/paste this token somewhere because it will never be shown to you again.
-* Then go to `{your_repository_url}/settings/secrets/actions`, create a new repository secret named `GIST_SECRET` and paste the key
+* Then create a personnal access token with only the `gist` scope. Copy/paste this token somewhere because it will never be shown again.
+* Then go to `{repository_url}/settings/secrets/actions`, create a new repository secret named `GIST_SECRET` and paste the key
 
 ### Initialize repository parameters
 
@@ -79,9 +73,9 @@ You can use this command to generate one:
 olivaw init repo
 ```
 
-Just follow the instructions (you will be asked again the personnal access token with `gist` scope).
+Just follow the instructions (the personnal access token with `gist` scope will be asked again).
 
-After the execution of the command you should see a file named `parameters.json` in the `.acimov/` folder and also badges added to the top of your repository.
+After the execution of the command file named `parameters.json` in the `.acimov/` folder should have appeared and also badges added to the top of the repository `README.md` file.
 
 You can enventually customize this parameters using the [parameters documentation](./docs/parameters.md).
 
@@ -91,7 +85,7 @@ You are now ready to use all the commands of olivaw inside this repository!
 
 ## The command line
 
-Here is only a short overview of the main commands. If you want to see the documentation related to all of the commands and their options see the [olivaw command line documentation](./docs/commands.md).
+Here is only a short overview of the main commands. Check the [olivaw command line documentation](./docs/commands.md) for more details about the available commands.
 
 Also more is about to come.
 
@@ -111,15 +105,23 @@ This command is for launching data test
 olivaw test data
 ```
 
+### Query test
+
+This command is for launching query test
+
+```shell
+olivaw test query
+```
+
 ## The Github actions
 
 Here is an overview of the actions available. For more details see the [olivaw Github Actions documentation](./docs/actions.md).
 
-Each actions of this chapter involve to create a `.yaml` file located in `{your_repository_path}/.github/workflows/`.
+Each actions of this chapter involve to create a `.yaml` file located in `{repository_path}/.github/workflows/`.
 
 ### Automatic tests on push
 
-In your `worflows/` folder, add a `test.yaml` file containing this:
+In `worflows/` folder, add a `test.yaml` file containing this:
 
 ```yaml
 name: test
@@ -151,14 +153,14 @@ jobs:
         archive-report: true
 ```
 
-Then, after each push on the repository an actions will be triggered and after one minute you should see in the `.acimov/output/` folder:
+Then, after each push on the repository an actions will be triggered and after some time, in the `.acimov/output/` folder should have appeared:
 
 * RDF files written in the turtle format representing the result of the test, written with the EARL vocabulary
 * markdown files representing in a human readable way the previous turtle files
 
 ### Badges branch initialization
 
-In your `worflows/` folder, add a `init-branch.yaml` file containing this:
+In `worflows/` folder, add a `init-branch.yaml` file containing this:
 
 ```yaml
 name: init-branch
@@ -194,15 +196,15 @@ Then on each time a branch is published, the actions should create new gists and
 
 A pre-commit hook is available in this repository to prevent the developper to push big mistakes on the server.
 
-To use it you should need first need to install pre-commit. I strongly advise you to create a fresh new python 3.11 environment for the tool to work properly.
+To use it should need first need to install pre-commit. I strongly advise to create a fresh new python 3.11 environment for the tool to work properly.
 
-Once your new environment set, you can install pre-commit with this command:
+Once the new environment set, install pre-commit with this command:
 
 ```shell
 pip install pre-commit
 ```
 
-Then you should add a file named `.pre-commit-config.yaml` at the root of you repository containing this:
+Then add a file named `.pre-commit-config.yaml` at the root of the repository containing this:
 
 ```yaml
 default_language_version:
@@ -214,16 +216,18 @@ repos:
     - id: check-fragments
 ```
 
-Then you just have to use this command at the root of the repository:
+Then use this command at the root of the repository:
 
 ```shell
 pre-commit install
 ```
 
-Finally add the `.pre-commit-config.yaml` file to the commit.
+Finally add the `.pre-commit-config.yaml` file to the commit:
 
-Now, each time you commit, the staged files will be tested and the commit will be blocked if a syntax error or a owl constraint violation is present in these files.
+```turtle
+git add .pre-commit-config.yaml
+```
 
-The test takes a few seconds and obviously pre-commit needs a moment to prepare the hook in at the very first use of this hook.
+Now, each time a commit is made, the staged files will be tested and the commit will be blocked if any blocking error is to be found in those files.
 
-More is about to come soon!
+The test takes a few seconds and pre-commit needs a moment to prepare the hook on the very first use.

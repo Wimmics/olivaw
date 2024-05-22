@@ -1,8 +1,8 @@
--   id: check-fragments
+-   id: olivaw-test
     name: Check project fragment
     description: Make a syntax and OWL constraint violation test on the fragments
     entry: olivaw test precommit
-    args: [--mode=precommit]
+    args: [--MODE=PRECOMMIT]
     require_serial: true
     language: python
     additional_dependencies: ['-r', 'requirements-precommit.txt']

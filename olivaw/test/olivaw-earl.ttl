@@ -86,8 +86,8 @@ earl:Fail owl:equivalentClass [
 :prefix-validity a earl:TestCriterion ;
     :has-error "prefix-typo" ;
     dcterms:identifier "prefix-validity" ;
-    dcterms:title "Term validity test"@en ;
-    dcterms:description "A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc)"@en .
+    dcterms:title "Prefix validity test"@en ;
+    dcterms:description "A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc) or an ontology namespace"@en .
 
 :query-type a earl:TestCriterion ;
     :has-error "wrong-query-type" ;
@@ -99,4 +99,4 @@ earl:Fail owl:equivalentClass [
     :has-error "invalid-uri" ;
     dcterms:identifier "uri-validity" ;
     dcterms:title "URI validity test"@en ;
-    dcterms:description "A test meant to check if all the URIs of th resource are well-formed"@en .
+    dcterms:description "A test meant to check if all the URIs of the resource are well-formed"@en .

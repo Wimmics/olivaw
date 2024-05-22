@@ -10,22 +10,27 @@ Once done, there are options that are common between all these commands
 
 All of these options are optional but can override the git information that are automatically retrieved
 
-* `--mode=...`: set to *actions* if you want to make the tool think it is in an actions environment
+* `--MODE=...`: set to *ACTIONS* if you want to make the tool think it is in an actions environment
 * `--REPO-ROOT=...` set to override path to the repository root folder
 * `--REPO_URI=`: set to override the repository URI
-* `--BRANCH=`: set to override the actual branch
-* `--REF=`: set to override the actuel ref
-* `--DEV_USERNAME=`: set to override the actual git user name
+* `--BRANCH=...`: set to override the actual branch
+* `--REF=...`: set to override the actuel ref
+* `--DEV_USERNAME=...`: set to override the actual git user name
 
 # olivaw init
 
-There are commands for initializing a repository or a branch of a already initialized repository.
+There are commands for initializing a repository or a branch of an already initialized repository.
 
 ## olivaw init repo
 
+```shell
+olivaw init repo
+```
+
 This command is meant to initialize an acimov repository. This command should require:
 
-* the deployment URL of the repository
+* the preferred prefix for your ontology
+* the namespace of the ontology
 * a personnal access with the `gist` scope
 * a minimal Levenshtein distance you expect between the terms of your ontology
 
@@ -37,117 +42,96 @@ Finally this command should provide:
 
 ## olivaw init branch
 
+```shell
+olivaw init branch
+```
+
 This command is meant for the [init-branch actions](./actions.md#branch-initialization) but can also be used locally if needed.
 
 The command updates the URLs for the files of the badges so that these badges are functional after the next [test actions](./actions.md#automatic-test-on-push)
 
 # olivaw test
 
-There are several commands meant for testing the ontology fragments of your project.
-
-An acimov project can have 3 kinds of tests about the ontology fragments:
-
-* *model tests*: tests about the validity of the *modules* and the *modelets*. This involves testing any file that is meant for describing parts of the vocabulary.
-* *data tests*: tests about the validity of the *datasets* that are developped and the *use cases*. This is basically testing not the ontology parts but anything that is an instanciation of your ontology
-* *query tests*: this methodology involves to develop relevant questions that can not be formalized at some point in sparQL due to a missing term. The ontology developpers then implement these needed terms and prove that these questions can then be answered through sparQL requests. This test is meant for testing the implementation of these questions.
-
 This project aims to provides automatic solutions for those tests.
 
-These tests are powered by Corese, check their [website](https://project.inria.fr/corese/) and [repository](https://github.com/Wimmics/corese)
-The test reports are then represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/)
+There are several commands meant for testing the ontology fragments of your project.
 
-According to the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/), all the tests processed here can have one of these status:
-
-* Pass: the test went fine
-* Fail: the test went wrong
-* CannotTell: the software cannot relate if this is a Fail or a Pass, a human being is needed to check
-* NotTested: the test needs some prerequisites to run. However these prerequisite were not fulfilled
-
-For the sake of being able to give a priority on a fail, like we could usually do in other tests frameworks, the Fail set was partitionned (see the [acimov dataset](../olivaw/test/olivaw-earl.ttl)):
-
-* MajorFail: the bug is critical and must be solved
-* MinorFail: this fail is not preventing anyone to use the ontology (ex: Best Practice mistakes)
+With olivaw, [model tests](./tests.md#21-model-tests), [data tests](./tests.md#22-data-tests) and [query tests](./tests.md#23-query-tests) can be applied on an acimov project. Check the [test documentation](./tests.md) for all the details.
 
 For all of these commands these two options are available on top of those mentioned in the beggining of this chapter:
 
-* `--skip-pass` to ignore in the report all the *Pass* outcomes
-* `--tested-only` to ignore in the report all the *NotTested* outcomes
+* `--SKIP-PASS` to ignore in the report all the *Pass* outcomes
+* `--TESTED-ONLY` to ignore in the report all the *NotTested* outcomes
+
+These differents tests can have different errors. To see these errors in details, check the [test documentation](./tests.md#21-model-tests) and the [test resources file](../olivaw/constants/tests-resources.json)
+
+These tests will output two files located in the `.acimov/output/` folder:
+
+* One RDF file written in turtle format providing a report that is program-readable. See the [turtle format documentation](./tests.md#11-turtle-format) for more details.
+* One markdown file that is the human-readable version of the previous RDF file. See the [markdown format documentation](./tests.md#12-markdown-format) for more details
 
 ## olivaw test model
 
-This command makes a model test on the project.
+```shell
+olivaw test model
+```
 
-The resources that are being tested are:
-
-* The modules (the `.ttl` files located in the `src/` folder)
-* The modelets (the `onto.ttl` files that can be found in depth in `domains/` folder)
-* The modules with some terms merged from the modelets (the terms from the modelets have a `rdfs:isDefinedBy` property to indicate to which module it should belong after merging)
-* all the modules merged together in one unique graph
-* all the modules and all the modelets merged together in one graph
-
-The tests executed on each resource are checking:
-
-* the syntax
-* the OWL constraints violation (each constraint that exists in OWL RL)
-* if the resource is compatible with a given profile (OWL EL, OWL QL, OWL TC)
-* if the terms of the ontology are far enough from each other on a spelling point of view
-* if each term has a `rdfs:label` label property pointing to at least one litteral in English
-* if each term has a `rdfs:isDefinedBy` property pointing to the module it belongs to
-
-These differents test can have different errors. To see these errors in details, check the [test documentation](./tests.md#21-model-tests) and the [test resources file](../olivaw/constants/tests-resources.json)
-
-This command will output two files located in the `.acimov/output/` folder:
-
-* One RDF file written in turtle format providing a report that is program-readable
-* One markdown file that is the human-readable version of the previous RDF file
+This command makes a model test on the project. See the [model tests documentation](./tests.md#21-model-tests) for more details.
 
 ## olivaw test data
 
-This command makes a data test on the project.
+```shell
+olivaw test data
+```
 
-The resources that are being tested are:
+This command makes a data test on the project. See the [data tests documentation](./tests.md#22-data-tests) for more details.
 
-* The datasets (the `dataset.ttl` files located in depth in the `domains/` folder)
-* The use cases (any `.ttl` file located in the `use-cases/` folder)
+## olivaw test query
 
-The tests executed on each resource are checking:
+```shell
+olivaw test query
+```
 
-* the syntax
-* the OWL constraints violation (each constraint that exists in OWL RL)
-
-These differents test can have different errors. To see these errors in details, check the [test documentation](./tests.md#22-data-tests) and the [test resources file](../olivaw/constants/tests-resources.json)
-
-This command will output two files located in the `.acimov/output/` folder:
-
-* One RDF file written in turtle format providing a report that is program-readable
-* One markdown file that is the human-readable version of the previous RDF file
+This command makes a query test on the project. See the [query tests documentation](./tests.md#23-query-tests) for more details.
 
 ## olivaw test precommit
+
+```shell
+olivaw test precommit
+```
 
 This command line is only a entry point for olivaw precommit hook.
 
 It is only mean to work in a precommit hook trigger.
 
+For more details about the pre-commt hook, check the related [pre-commit documentation](./pre-commit.md)
+
 # olivaw flush
-
-Generating many tests can pollute a lot the `.acimov/output/` folder and you would want to empty it without touching on the files generated by Github Actions.
-
-You can flush the `.acimov/output/` folder with the following command:
 
 ```shell
 olivaw flush
 ```
 
+Generating many tests can pollute a lot the `.acimov/output/` folder and you would want to empty it without removing the files generated by Github Actions.
+
 # olivaw show
 
-The commands of this chapter are meant to retrieve easily information from the parameters for the project.
+The commands of this chapter are meant to retrieve easily some information from the parameters for the project.
 
 These commands were actually meant for Github Actions but they can also be used by users on demand.
 
 ## olivaw show gist
 
+```shell
+olivaw show gist
+```
+
 Output the gist ID that should contain the files for the information of all the badges
 
 ## olivaw show badges
+
+```shell
+olivaw show badges
+```
 
 Output the values of the badges of the actual branch

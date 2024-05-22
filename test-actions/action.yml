@@ -64,7 +64,7 @@ runs:
       if: ${{ inputs.model-test == 'true' }}
       shell: bash
       run: |
-        MODEL_SUMMARY="$(olivaw test model --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        MODEL_SUMMARY="$(olivaw test model --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         MODEL_TOKENS=($MODEL_SUMMARY)
 
         echo "MODEL_PASS=$(echo ${MODEL_TOKENS[2]})" >> $GITHUB_ENV
@@ -80,7 +80,7 @@ runs:
         echo "RL_LABEL=$(echo ${MODEL_TOKENS[29]})" >> $GITHUB_ENV
         echo "RL_COLOR=$(echo ${MODEL_TOKENS[32]})" >> $GITHUB_ENV
 
-        echo "GISTID=$(olivaw show gist --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})" >> $GITHUB_ENV
+        echo "GISTID=$(olivaw show gist --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})" >> $GITHUB_ENV
 
         REF=${{ inputs.ref }}
         echo "github.ref: $REF"
@@ -97,7 +97,7 @@ runs:
       id: data-test
       if: ${{ inputs.data-test == 'true' }}
       run: |
-        DATA_SUMMARY="$(olivaw test data --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        DATA_SUMMARY="$(olivaw test data --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         DATA_TOKENS=($DATA_SUMMARY)
 
         echo "DATA_PASS=$(echo ${DATA_TOKENS[2]})" >> $GITHUB_ENV
@@ -113,7 +113,7 @@ runs:
       id: query-test
       if: ${{ inputs.query-test == 'true' }}
       run: |
-        QUERY_SUMMARY="$(olivaw test query --mode=actions --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        QUERY_SUMMARY="$(olivaw test query --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         QUERY_TOKENS=($QUERY_SUMMARY)
 
         echo "QUERY_PASS=$(echo ${QUERY_TOKENS[2]})" >> $GITHUB_ENV

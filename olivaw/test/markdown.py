@@ -460,7 +460,7 @@ def markdown_export(report, file_name, shape_data={}) -> str:
             f"RL_color\t: {rl_color}"
         ]
 
-    if MODE == "actions":
+    if MODE == "ACTIONS":
         for badgeData in badgesData:
             print(badgeData)
 
