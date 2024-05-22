@@ -213,7 +213,7 @@ repos:
 - repo: https://github.com/Wimmics/olivaw
   rev: v0.0.3
   hooks:
-    - id: check-fragments
+    - id: olivaw-test
 ```
 
 Then use this command at the root of the repository:
