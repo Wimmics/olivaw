@@ -22,6 +22,8 @@ The test reports are then represented using the [EARL vocabulary](https://www.w3
 
 All the functional documentation concerning olivaw can be found in [the docs/ folder](./docs/)
 
+There is also technical docuùentation that can be followed from [there](./olivaw/)
+
 If a bug is to be found don't hesitate to create an [issue](https://github.com/Wimmics/olivaw/issues)
 
 # Getting started
