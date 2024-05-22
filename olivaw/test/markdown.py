@@ -217,8 +217,8 @@ def make_details_table(
         f"### {severity} Outcome number {outcome_counter}",
         "",
         f"[Jump to summary definition](#summary-{severity}-{str(outcome_counter)})" + \
-            ("" if severity_index == 0 else f"\t|\t[Previous {severity} outcome](#{severity.lower()}-outcome-number-{str(severity_index)})") + \
-            ("" if severity_index == severity_list_size - 1 else f"\t|\t[Next {severity} outcome](#{severity.lower()}-outcome-number-{str(severity_index + 2)})"),
+            (f"\t|\tPrevious {severity} outcome" if severity_index == 0 else f"\t|\t[Previous {severity} outcome](#{severity.lower()}-outcome-number-{str(severity_index)})") + \
+            (f"\t|\tNext {severity} outcome" if severity_index == severity_list_size - 1 else f"\t|\t[Next {severity} outcome](#{severity.lower()}-outcome-number-{str(severity_index + 2)})"),
         "",
         f"{emoji}{severity} outcome"
         "",
@@ -318,8 +318,8 @@ def make_severity_chapter(outcomes, partsDict, pointersDict, severity, emoji, sh
         "\t|\t".join([
             link for link in [
                 f"[Jump to statistic summary](#statistic-summary)",
-                ("" if previous_severity is None else f"[Previous section](#{previous_severity.lower()}-outcomes)"),
-                ("" if next_severity is None else f"[Next section](#{next_severity.lower()}-outcomes)")
+                ("Previous section" if previous_severity is None else f"[Previous section](#{previous_severity.lower()}-outcomes)"),
+                ("Next section" if next_severity is None else f"[Next section](#{next_severity.lower()}-outcomes)")
             ]
             if not link == ""
         ]),
