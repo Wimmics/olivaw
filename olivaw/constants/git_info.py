@@ -5,8 +5,9 @@ from sys import argv, exit
 
 arg_root = [item.split("=")[1] for item in argv if item.startswith("--REPO-ROOT=")]
 
-# Root folder of the current repository
-ROOT_FOLDER = None
+ROOT_FOLDER: str = None
+"""Root folder of the current repository"""
+
 if len(arg_root) > 0:
   ROOT_FOLDER = arg_root[0]
 else:
@@ -26,8 +27,9 @@ if ROOT_FOLDER is None:
 # The repository URI
 arg_repo = [item.split("=")[1] for item in argv if item.startswith("--REPO_URI=")]
 
-# Repository origin URI
-REPO_URI = None
+REPO_URI: str = None
+"""Repository origin URI"""
+
 if len(arg_repo) > 0:
   REPO_URI = arg_repo[0]
 else:
@@ -46,20 +48,21 @@ if REPO_URI is None:
 if REPO_URI.endswith("/"):
   REPO_URI = REPO_URI[:-1]
 
-# Repository name
-REPO_NAME = REPO_URI.split('/')[-1]
+REPO_NAME: str = REPO_URI.split('/')[-1]
+"""Repository name"""
 
-# Base reporitory platform URL
-PLATFORM_URL = "/".join(REPO_URI.split("/")[:-2])
+PLATFORM_URL: str = "/".join(REPO_URI.split("/")[:-2])
+"""Base reporitory platform URL"""
 
-# Identifier of the current repository
-REPO_REF = REPO_URI[len(PLATFORM_URL) + 1:]
+REPO_REF: str = REPO_URI[len(PLATFORM_URL) + 1:]
+"""Identifier of the current repository"""
 
 # The current branch
 arg_branch = [item.split("=")[1] for item in argv if item.startswith("--BRANCH=")]
 
-# Current branch of the head repository
-BRANCH = None
+BRANCH: str = None
+"""Current branch of the head repository"""
+
 if len(arg_branch) > 0:
   BRANCH = arg_branch[0]
 else:
@@ -74,8 +77,9 @@ else:
 
 arg_ref = [item.split("=")[1] for item in argv if item.startswith("--REF=")]
 
-# The currrent repository ref
-REF = None
+REF: str = None
+"""The current repository ref"""
+
 if len(arg_ref) > 0:
   REF = arg_ref[0]
 else:
@@ -88,16 +92,11 @@ else:
   except:
     REF = None
 
-# The relative path from root to the profile_test folder
-PATH_TO_PROFILE_FOLDER = relpath(".", ROOT_FOLDER)
-
-# Is the PWD at the root of the repository
-IS_PROFILE_FOLDER_PWD = PATH_TO_PROFILE_FOLDER == "." or PATH_TO_PROFILE_FOLDER == f".{sep}"
-
 arg_dev_username = [item.split("=")[1] for item in argv if item.startswith("--DEV_USERNAME=")]
 
-# Name of the current developper
-DEV_USERNAME = None
+DEV_USERNAME: str = None
+"""Name of the current developper"""
+
 if len(arg_dev_username) > 0:
   DEV_USERNAME = arg_dev_username[0]
 else:
@@ -110,29 +109,29 @@ else:
   except:
     DEV_USERNAME = None
 
-# URL prefix for the files in the current branch in src
-SRC_URL = f"{REPO_URI}/blob/{BRANCH}/src/"
+SRC_URL: str = f"{REPO_URI}/blob/{BRANCH}/src/"
+"""URL prefix for the files in the current branch in src"""
 
-# URL prefix for the files in the current branch in domains folder
-DOMAINS_URL = SRC_URL.replace("src", "domains")
+DOMAINS_URL: str = SRC_URL.replace("src", "domains")
+"""URL prefix for the files in the current branch in domains folder"""
 
-# URL prefix for the files in the current branch in use-cases folder
-USECASES_URL = SRC_URL.replace("src", "use-cases")
+USECASES_URL: str = SRC_URL.replace("src", "use-cases")
+"""URL prefix for the files in the current branch in use-cases folder"""
 
-# Identifier of olivaw repository
-OLIVAW_REF = "Wimmics/olivaw"
+OLIVAW_REF: str = "Wimmics/olivaw"
+"""Identifier of olivaw repository"""
 
-# Prefix of the URIs of the custom tests criterions and shapes
-SHAPE_BASE_URIS = None
+SHAPE_BASE_URIS: str = None
+"""Prefix of the URIs of the custom tests criterions and shapes"""
 
-# Base URL for the files hosted on GitHub, on raw mode
-GIT_RAW = "https://raw.githubusercontent.com"
+GIT_RAW: str = "https://raw.githubusercontent.com"
+"""Base URL for the files hosted on GitHub, on raw mode"""
 
-# URI of the olivaw-earl dataset
-OLIVAW_EARL_DATASET = f"{GIT_RAW}/{OLIVAW_REF}/main/olivaw/test/olivaw-earl.ttl#"
+OLIVAW_EARL_DATASET: str = f"{GIT_RAW}/{OLIVAW_REF}/main/olivaw/test/olivaw-earl.ttl#"
+"""URI of the olivaw-earl dataset"""
 
-# URI prefix for the files in the test folder, in olivaw repository, on branch main 
-OLIVAW_TEST_BLOB_URI = "https://github.com/Wimmics/olivaw/blob/main/olivaw/test"
+OLIVAW_TEST_BLOB_URI: str = "https://github.com/Wimmics/olivaw/blob/main/olivaw/test"
+"""URI prefix for the files in the test folder, in olivaw repository, on branch main"""
 
 try:
   SHAPE_BASE_URIS = f"{GIT_RAW}/{'/'.join(REPO_URI.split('/')[-2:])}/{BRANCH}/.acimov/custom-tests/"

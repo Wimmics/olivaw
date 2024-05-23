@@ -8,41 +8,41 @@ from .git_info import ROOT_FOLDER
 # Relative paths #
 ##################
 
-# Path to the repository folder
-PWD_TO_ROOT_FOLDER = f"{relpath(ROOT_FOLDER, getcwd())}{sep}"
+PWD_TO_ROOT_FOLDER: str = f"{relpath(ROOT_FOLDER, getcwd())}{sep}"
+"""Path to the repository folder"""
 
-# Path to the repository output folder
-PWD_TO_OUTPUT_FOLDER = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}output{sep}"
+PWD_TO_OUTPUT_FOLDER: str = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}output{sep}"
+"""Path to the repository output folder"""
 
-# Modules files in the repository
-MODULES_TTL_GLOB_PATH = glob(f"{PWD_TO_ROOT_FOLDER}src{sep}**{sep}*.ttl", recursive=True)
+MODULES_TTL_GLOB_PATH: list[str] = glob(f"{PWD_TO_ROOT_FOLDER}src{sep}**{sep}*.ttl", recursive=True)
+"""Modules files in the repository"""
 
-# Modelets files in the repository
-MODELETS_TTL_GLOB_PATH = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}onto.ttl")
+MODELETS_TTL_GLOB_PATH: list[str] = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}onto.ttl")
+"""Modelets files in the repository"""
 
-# Dataset files in the repository
-DATASETS_TTL_GLOB_PATH = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}dataset.ttl")
+DATASETS_TTL_GLOB_PATH: list[str] = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}dataset.ttl")
+"""Dataset files in the repository"""
 
-# Use case files in the repository
-USE_CASES_TTL_GLOB_PATH = glob(f"{PWD_TO_ROOT_FOLDER}use-cases{sep}*{sep}**{sep}*.ttl", recursive=True)
+USE_CASES_TTL_GLOB_PATH: list[str] = glob(f"{PWD_TO_ROOT_FOLDER}use-cases{sep}*{sep}**{sep}*.ttl", recursive=True)
+"""Use case files in the repository"""
 
-# Competency questions files in the repository
-QUESTIONS_GLOB_PATH = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}*.rq")
+QUESTIONS_GLOB_PATH: list[str] = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}*.rq")
+"""Competency questions files in the repository"""
 
-# Custom model test files in the repository
-CUSTOM_MODEL_TESTS = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}model{sep}*.shacl"
+CUSTOM_MODEL_TESTS: str = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}model{sep}*.shacl"
+"""Custom model test files in the repository"""
 
-# Custom data test files in the repository
-CUSTOM_DATA_TESTS = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}data{sep}*.shacl"
+CUSTOM_DATA_TESTS: str = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}data{sep}*.shacl"
+"""Custom data test files in the repository"""
 
-# Path to the olivaw constants folder
-PWD_TO_CONSTANTS = sep.join(__file__.split(sep)[:-1])
+PWD_TO_CONSTANTS: str = sep.join(__file__.split(sep)[:-1])
+"""Path to the olivaw constants folder"""
 
-# Path to the olivaw subfolder
-PWD_TO_OVILAW = sep.join(__file__.split(sep)[:-2])
+PWD_TO_OVILAW: str = sep.join(__file__.split(sep)[:-2])
+"""Path to the olivaw subfolder"""
 
-# Path to the olivaw-earl dataset
-PWD_TO_MODEL_TEST_ONTO = f"{PWD_TO_OVILAW}{sep}test{sep}olivaw-earl.ttl"
+PWD_TO_MODEL_TEST_ONTO: str = f"{PWD_TO_OVILAW}{sep}test{sep}olivaw-earl.ttl"
+"""Path to the olivaw-earl dataset"""
 
-# Path to the repository custom-tests folder
-PWD_TO_CUSTOM_TESTS = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}"
+PWD_TO_CUSTOM_TESTS: str = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}"
+"""Path to the repository custom-tests folder"""

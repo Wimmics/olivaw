@@ -1,11 +1,10 @@
-# Github API that allows to manage gissts
-GITHUB_API="https://api.github.com"
+GITHUB_API: str="https://api.github.com"
+"""Github API that allows to manage gissts"""
 
-# Base URL for badges that read some gist content
-GIST_BADGE_PREFIX = "https://img.shields.io/endpoint?url=https://gist.githubusercontent.com"
+GIST_BADGE_PREFIX: str = "https://img.shields.io/endpoint?url=https://gist.githubusercontent.com"
+"""Base URL for badges that read some gist content"""
 
-# Set of default values for the different badges
-BADGE_LIST = {
+BADGE_LIST: dict[str, dict[str, str]] = {
     "MODEL_PASS": {
         "label": "Pass",
         "message": "0",
@@ -97,3 +96,4 @@ BADGE_LIST = {
         "color": "red"
     }
 }
+"""Set of default values for the different badges"""

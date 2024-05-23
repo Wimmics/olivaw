@@ -1,5 +1,7 @@
-# SparQL request listing all the ontology terms not linked to a moduled by a rdfs:isDefinedBy property
-NOT_REFERENCED = """
+from typing import List, Tuple
+
+
+NOT_REFERENCED: str = """
 SELECT DISTINCT ?s where {
   ?s ?p ?o .
   FILTER(
@@ -11,18 +13,18 @@ SELECT DISTINCT ?s where {
   FILTER NOT EXISTS { ?s rdf:type skos:Concept . }
 }
 """
+"""SparQL request listing all the ontology terms not linked to a moduled by a rdfs:isDefinedBy property"""
 
-# SparQL request to get all the triples with their related modules, using the rdfs:isDefinedBy property 
-GET_BY_MODULE = """
+GET_BY_MODULE: str = """
 SELECT DISTINCT ?m where {
   ?s ?p ?o .
   ?s rdfs:isDefinedBy ?m .
 }
 ORDER BY ?m
 """
+"""SparQL request to get all the triples with their related modules, using the rdfs:isDefinedBy property """
 
-# Request adding links that will allow to extract the content of a modelet that is related to a given module
-LINK_SUBJECTS_FOR_MODULE = """
+LINK_SUBJECTS_FOR_MODULE: str = """
 insert {
   ?s ex:requires_description ?o .
 } where {
@@ -30,9 +32,9 @@ insert {
   filter( (isblank(?s) || exists { ?s rdfs:isDefinedBy MODULE}) && isblank(?o))
 }
 """
+"""Request adding links that will allow to extract the content of a modelet that is related to a given module"""
 
-# Request extracting the content of a modelet for a given module
-TRIPLES_FOR_MODULE = """
+TRIPLES_FOR_MODULE: str = """
 construct {
   ?s ?p ?o .
 } where {
@@ -46,9 +48,9 @@ construct {
   filter (?p != ex:requires_description)
 }
 """
+"""Request extracting the content of a modelet for a given module"""
 
-# SparQL request to get all the properties with a domain linking to a term not defined in the ontology
-DOMAIN_OUT_Of_VOCABULARY = """
+DOMAIN_OUT_Of_VOCABULARY: str = """
 SELECT DISTINCT ?property ?domain WHERE {
   # Get all the properties with a defined domain
   ?property rdf:type owl:ObjectProperty ;
@@ -65,22 +67,21 @@ SELECT DISTINCT ?property ?domain WHERE {
   FILTER (!(isblank(?domain) || ?domain = owl:Thing || strstarts(str(?domain), "ONTOLOGY_NAMESPACE")))
 }
 """
+"""SparQL request to get all the properties with a domain linking to a term not defined in the ontology"""
 
-# SparQL request to get all the properties with a range linking to a term not defined in the ontology
-RANGE_OUT_OF_VOCABULARY = DOMAIN_OUT_Of_VOCABULARY.replace("domain", "range")
+RANGE_OUT_OF_VOCABULARY: str = DOMAIN_OUT_Of_VOCABULARY.replace("domain", "range")
+"""SparQL request to get all the properties with a range linking to a term not defined in the ontology"""
 
-# Gets all the imports in a graph
-GET_IMPORTS = """
+GET_IMPORTS: str = """
 SELECT DISTINCT ?i WHERE {
   ?s rdf:type owl:Ontology ;
   owl:imports ?i .
   FILTER(strstarts(str(?i), "ONTOLOGY_NAMESPACE"))
 }
 """
+"""Gets all the imports in a graph"""
 
-# SparQL request getting all the pairs of suffixes from the ontology in a given graph
-# Gets rid of the duplicates (ab and ba) and the auto pairs (aa)
-GET_TERM_PAIRS = """
+GET_TERM_PAIRS: str = """
 SELECT DISTINCT ?suffix1 ?suffix2 WHERE {
   ?s1 rdfs:isDefinedBy ?module1 .
   ?s2 rdfs:isDefinedBy ?module2 .
@@ -89,9 +90,10 @@ SELECT DISTINCT ?suffix1 ?suffix2 WHERE {
   BIND (SUBSTR(str(?s2), STRLEN("ONTOLOGY_NAMESPACE") + 1) as ?suffix2)
 } ORDER BY ?suffix1
 """
+"""SparQL request getting all the pairs of suffixes from the ontology in a given graph and 
+gets rid of the duplicates (ab and ba) and the auto pairs (aa)"""
 
-# Request getting the ontology term that are not labeld with a rdfs:label property poiting to a literal in English
-NOT_LABELED = """
+NOT_LABELED: str = """
 select distinct ?term where {
   ?term rdfs:isDefinedBy ?module .
   filter not exists {
@@ -100,9 +102,9 @@ select distinct ?term where {
   }
 }
 """
+"""Request getting the ontology term that are not labeld with a rdfs:label property poiting to a literal in English"""
 
-# Get all the data that is related to each outcome
-GET_DETAILED_OUTCOMES = """
+GET_DETAILED_OUTCOMES: str = """
 SELECT ?assertion ?subject ?result ?outcome ?outcomeType ?subjectId ?subjectTitle ?criterionId ?outcomeTitle ?outcomeDescription ?outcomeId WHERE {
   ?assertion a earl:Assertion ;
   earl:result ?result ;
@@ -120,34 +122,34 @@ SELECT ?assertion ?subject ?result ?outcome ?outcomeType ?subjectId ?subjectTitl
     dcterms:description ?outcomeDescription .
 } ORDER BY DESC(?subjectId) ?criterionId
 """
+"""Get all the data that is related to each outcome"""
 
-# Data related to each severity that can be assigned to an outcome
-SEVERITY_RANGE = [
+SEVERITY_RANGE: List[Tuple[str, str, str]] = [
   ("MajorFail", ":boom:", "red"),
   ("MinorFail", ":exclamation:", "orange"),
   ("CannotTell", ":warning:", "grey"),
   ("NotTested", ":grey_question:", "white"),
   ("Pass", ":white_check_mark:", "green")
 ]
+"""List of severities with their related emojis and colors"""
 
-# Retrieve the parts related to the subject of an outcome
-GET_OUTCOMES_PARTS = """
+GET_OUTCOMES_PARTS: str = """
 SELECT DISTINCT ?subjectId ?part WHERE {
   { GET_DETAILED_ASSERTIONS }
   ?subject dcterms:hasPart ?part .
 }
 """.replace("GET_DETAILED_ASSERTIONS", GET_DETAILED_OUTCOMES)
+"""Retrieve the parts related to the subject of an outcome"""
 
-# Retrieve the pointers related to an outcome
-GET_OUTCOME_POINTERS = """
+GET_OUTCOME_POINTERS: str = """
 SELECT DISTINCT ?outcome ?pointer WHERE {
   { GET_DETAILED_ASSERTIONS }
   ?outcome earl:info|earl:pointer ?pointer .
 }
 """.replace("GET_DETAILED_ASSERTIONS", GET_DETAILED_OUTCOMES)
+"""Retrieve the pointers related to an outcome"""
 
-# Retrieve the information related to the assertor of a test report
-GET_ASSERTOR_DETAILS = """
+GET_ASSERTOR_DETAILS: str = """
 SELECT ?title ?description ?date ?script ?page WHERE {
   ?account a foaf:OnlineAccount ;
   dcterms:title ?title ;
@@ -159,9 +161,9 @@ SELECT ?title ?description ?date ?script ?page WHERE {
   _:assertor schema:mainEntityOfPage ?page .
 } LIMIT 1
 """
+"""Retrieve the information related to the assertor of a test report"""
 
-# Retrieve the information of the criterion of a olivaw-earl TestCriterion
-GET_CRITERION_DATA = """
+GET_CRITERION_DATA: str = """
 SELECT ?identifier ?title ?description {
   _:x a earl:TestCriterion ;
     dcterms:identifier ?identifier ;
@@ -169,9 +171,9 @@ SELECT ?identifier ?title ?description {
     dcterms:description ?description .
 }
 """
+"""Retrieve the information of the criterion of a olivaw-earl TestCriterion"""
 
-# Check if the model test report can state if the ontology is OWL EL compatible
-IS_OWL_EL_COMPATIBLE = """
+IS_OWL_EL_COMPATIBLE: str = """
 select ?parsed {
   ?assertion a earl:Assertion ;
   earl:subject ?subject ;
@@ -195,9 +197,9 @@ select ?parsed {
   )
 }
 """
+"""Check if the model test report can state if the ontology is OWL EL compatible"""
 
-# Retrieve the terms from the fragments that are namespaced in the ontology
-GET_ONTOLOGY_TERMS = """
+GET_ONTOLOGY_TERMS: str = """
 select distinct ?term where {
   {
     ?s ?p ?o .
@@ -218,9 +220,9 @@ select distinct ?term where {
   }
 }
 """
+"""Retrieve the terms from the fragments that are namespaced in the ontology"""
 
-# Retrieve the usage of a given ontology term in the fragment
-GET_TERM_USAGE = """
+GET_TERM_USAGE: str = """
 construct {
   ?s1 ?p1 ?o1 .
   ?s2 ?p2 ?o2 .
@@ -243,9 +245,9 @@ where {
   }
 }
 """
+"""Retrieve the usage of a given ontology term in the fragment"""
 
-# Retrieve the usage of a namespace in the fragment
-GET_PREFIX_USAGE = """
+GET_PREFIX_USAGE: str = """
 construct {
   ?s1 ?p1 ?o1 .
   ?s2 ?p2 ?o2 .
@@ -268,9 +270,9 @@ where {
   }
 }
 """
+"""Retrieve the usage of a namespace in the fragment"""
 
-# Retrieve the URIs that are used in the fragment
-GET_URIS = """
+GET_URIS: str = """
 select ?uri where {
   {
     ?uri ?p1 ?o1 .
@@ -287,9 +289,9 @@ select ?uri where {
   filter not exists { filter isliteral(?uri) }
 }
 """
+"""Retrieve the URIs that are used in the fragment"""
 
-# Get the information related to a violation in a ShaCL report
-GET_VIOLATION = """
+GET_VIOLATION: str = """
 CONSTRUCT {
   VIOLATION_URI ?p ?po
 }
@@ -304,9 +306,9 @@ WHERE {
   )
 }
 """
+"""Get the information related to a violation in a ShaCL report"""
 
-# List the violations that can be found in a ShaCL report
-GET_VIOLATIONS = """
+GET_VIOLATIONS: str = """
 select ?o ?f ?t
 {
   _:r a sh:ValidationReport ;
@@ -315,9 +317,9 @@ select ?o ?f ?t
   bind( datatype(?f) == dt:triple as ?t)
 }
 """
+"""List the violations that can be found in a ShaCL report"""
 
-# Retrieve the criterion data in a custom test
-GET_CUSTOM_CRITERION_DATA = """
+GET_CUSTOM_CRITERION_DATA: str = """
 @prefix earl: <http://www.w3.org/ns/earl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
@@ -328,9 +330,9 @@ select ?tc ?identifier ?title ?description where {
     dcterms:description ?description
 }
 """
+"""Retrieve the criterion data in a custom test"""
 
-# Retrieve all the ShaCL data from a criterion
-GET_SHAPE_DESCRIPTION = """
+GET_SHAPE_DESCRIPTION: str = """
 construct {
   ?s ?p ?o
 }
@@ -341,17 +343,17 @@ where {
   }
 }
 """
+"""Retrieve all the ShaCL data from a criterion"""
 
-# Retrieve the declared ontologies from a fragment
-GET_DECLARED_ONTOLOGIES = """
+GET_DECLARED_ONTOLOGIES: str = """
 select * where {
   ?x a owl:Ontology
   filter (isuri(?x))
 }
 """
+"""Retrieve the declared ontologies from a fragment"""
 
-# SparQL request that check if a custom test was declared properly 
-GET_CRITERION_VALIDITY = """
+GET_CRITERION_VALIDITY: str = """
 @prefix earl: <http://www.w3.org/ns/earl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 
@@ -402,9 +404,9 @@ select
   bind(regex(?identifier, "^([a-z]+(-[a-z]+)*){1}$") as ?identifier_format_check)
 }
 """
+"""SparQL request that check if a custom test was declared properly"""
 
-# Retrieve the information from any MajorFail outcome of a report
-GET_MAJOR_FAILS = """
+GET_MAJOR_FAILS: str = """
 select ?subject_title ?criterion ?error_title ?error_description  where {
   ?assertion a earl:Assertion ;
     earl:subject ?subject ;
@@ -421,18 +423,18 @@ select ?subject_title ?criterion ?error_title ?error_description  where {
     dcterms:description ?error_description .
 }
 """
+"""Retrieve the information from any MajorFail outcome of a report"""
 
-# Retrieve the minimal data from a criterion
-GET_CRITERION_SUMMARY = """
+GET_CRITERION_SUMMARY: str = """
 select ?title ?description where {
   CRITERION a <http://www.w3.org/ns/earl#TestCriterion> ;
     <http://purl.org/dc/terms/title> ?title ;
     <http://purl.org/dc/terms/description> ?description
 }
 """
+"""Retrieve the minimal data from a criterion"""
 
-# Update the SparQL request in a custom test to add the variable $ontology_namespace
-ADD_VARIABLE = """
+ADD_VARIABLE: str = """
 DELETE {
   ?s sh:select ?request .
 }
@@ -445,22 +447,22 @@ WHERE  {
   BIND (concat(?request, "\\nvalues ($ontology_namespace) { (\\"ONTOLOGY_NAMESPACE\\") }") as ?updated_request)
 }
 """
+"""Update the SparQL request in a custom test to add the variable $ontology_namespace"""
 
-# Retrieve the possible error that can occur during a given test
-GET_ERRORS_OF_TEST = """
+GET_ERRORS_OF_TEST: str = """
 select ?o where {
     :CRITERION_ID :has-error ?o
 }
 """
+"""Retrieve the possible error that can occur during a given test"""
 
-# SparQL request that checks if the ontology is OWL QL compatible
-IS_OWL_QL_COMPATIBLE = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL QL")
+IS_OWL_QL_COMPATIBLE: str = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL QL")
+"""SparQL request that checks if the ontology is OWL QL compatible"""
 
-# SparQL request that checks if the ontology is OWL RL compatible
-IS_OWL_RL_COMPATIBLE = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL RL")
+IS_OWL_RL_COMPATIBLE: str = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL RL")
+"""SparQL request that checks if the ontology is OWL RL compatible"""
 
-# Request that adds links that are useful for creating a code snippet
-ADD_DESCRIPTION_LINKS = """
+ADD_DESCRIPTION_LINKS: str = """
 insert {
   ?x ex:requires_description ?y .
 } where {
@@ -468,9 +470,9 @@ insert {
   filter ( (?x = <TERM>||isblank(?x)) && isblank(?y) )
 }
 """
+"""Request that adds links that are useful for creating a code snippet"""
 
-# Extract the triples that are useful to create a code snippet
-EXTRACT_STATEMENT = """
+EXTRACT_STATEMENT: str = """
 construct { ?s ?p ?parsed } where {
   {
     select ?s where {
@@ -488,14 +490,14 @@ construct { ?s ?p ?parsed } where {
   )
 }
 """
+"""Extract the triples that are useful to create a code snippet"""
 
-# Remove some description links that are created for code snippet extraction
-REMOVE_DESCRIPTION_LINKS = """
+REMOVE_DESCRIPTION_LINKS: str = """
 delete where { ?x ex:requires_description ?y . }
 """
+"""Remove some description links that are created for code snippet extraction"""
 
-# Retrieve the usage of a given predicate in the fragment
-GET_PREDICATE_USAGE = """
+GET_PREDICATE_USAGE: str = """
 construct {
   ?x <TERM> ?y
 }
@@ -503,9 +505,9 @@ where {
   ?x <TERM> ?y
 }
 """
+"""Retrieve the usage of a given predicate in the fragment"""
 
-# Retrieve the usage of a given object in the fragment
-GET_OBJECT_USAGE = """
+GET_OBJECT_USAGE: str = """
 construct {
   ?x ?y <TERM>
 }
@@ -513,9 +515,9 @@ where {
   ?x ?y <TERM>
 }
 """
+"""Retrieve the usage of a given object in the fragment"""
 
-# Request to shorten the literals when creating a code snippet
-SHORTEN_LITERALS = """
+SHORTEN_LITERALS: str = """
 construct {?s ?p ?parsed}
 where {
   ?s ?p ?o .
@@ -528,9 +530,9 @@ where {
   )
 }
 """
+"""Request to shorten the literals when creating a code snippet"""
 
-# Retrieve the different namespaces that are used in a fragment
-GET_GRAPH_NAMESPACES = """
+GET_GRAPH_NAMESPACES: str = """
 select distinct ?result where {
   {select ?uri where {?uri ?u ?v}}
   union {select ?uri where {?a ?uri ?c}}
@@ -547,3 +549,4 @@ select distinct ?result where {
   )
 }
 """
+"""Retrieve the different namespaces that are used in a fragment"""

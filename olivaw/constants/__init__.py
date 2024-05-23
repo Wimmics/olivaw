@@ -1,6 +1,6 @@
 from json import load
-from sys import exit
 from os.path import sep, exists
+from typing import Union
 
 from .paths import *
 
@@ -18,7 +18,7 @@ from .prefixcc import *
 
 __all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown", "badges", "prefixcc"]
 
-COMMAND = []
+COMMAND: list[str] = []
 """List of all the arguments that were typed after "olivaw" in the command line"""
 
 try:
@@ -39,72 +39,73 @@ modes = [
   if item.startswith("--MODE=")
 ]
 
-MODE = modes[0] if len(modes) > 0 else "manual"
+MODE: str = modes[0] if len(modes) > 0 else "manual"
 """The execution mode that will drive some olivaw behaviour, default is manual"""
 
-ACTIONS = MODE == "ACTIONS"
-"""Boolean indicating if olivaw is in actions mode"""
+ACTIONS: bool = MODE == "ACTIONS"
+"""Indicates if olivaw is in actions mode"""
 
-PRECOMMIT = MODE == "PRECOMMIT"
-"""Boolean indicating if olivaw is in pre-commit mode"""
+PRECOMMIT: bool = MODE == "PRECOMMIT"
+"""Indicates if olivaw is in pre-commit mode"""
 
-SKIP_PASS = "--SKIP-PASS" in COMMAND
-"""Boolean indicating if the reports should ommit the Pass outcomes"""
+SKIP_PASS: bool = "--SKIP-PASS" in COMMAND
+"""Indicates if the reports should ommit the Pass outcomes"""
 
-TESTED_ONLY = "--TESTED-ONLY" in COMMAND
-"""Boolean indicating if the reports should ommit the NotTested outcomes"""
+TESTED_ONLY: bool = "--TESTED-ONLY" in COMMAND
+"""Indicates if the reports should ommit the NotTested outcomes"""
 
-QUIET = ACTIONS or PRECOMMIT
-"""Boolean indicating if the reports should hide the progress bars"""
+QUIET: bool = ACTIONS or PRECOMMIT
+"""Indicates if the reports should hide the progress bars"""
 
-ERROR_RESOURCES = None
-"""Dictionary providing the useful data concerning the errors"""
+ERROR_RESOURCES: dict = None
+"""Provides the useful data concerning the errors"""
+
 with open(f"{PWD_TO_CONSTANTS}{sep}error-resources.json", "r") as f:
   ERROR_RESOURCES = load(f)
 
-ERROR_IDS = list(ERROR_RESOURCES.keys())
+ERROR_IDS: list[str] = list(ERROR_RESOURCES.keys())
 """Set of all the errors of the default tests"""
 
-ONTOLOGY_PREFIX = None
+ONTOLOGY_PREFIX: str = None
 """Preferred prefix for the ontology"""
 
-ONTOLOGY_NAMESPACE = None
+ONTOLOGY_NAMESPACE: str = None
 """The ontology base URL"""
 
-TERM_DISTANCE_THRESHOLD = None
+TERM_DISTANCE_THRESHOLD: int = None
 """The desired levenshtein threshold to accept terms as different enough"""
 
-BLOCKING_ERRORS = None
+BLOCKING_ERRORS: list[str] = None
 """The errors ids that are defined as blocking"""
 
-GIST_INDEX = None
+GIST_INDEX: str = None
 """Id of Gist containing all the badges data"""
 
-SKIPPED_ERRORS = None
+SKIPPED_ERRORS: list[str] = None
 """Error identifiers for errors that should not be written in the reports"""
 
-SKIPPED_TESTS = None
+SKIPPED_TESTS: list[str] = None
 """Test identifiers that should not be written in the reports"""
 
-SKIPPED_SUBJECTS = None
+SKIPPED_SUBJECTS: list[str] = None
 """Subject identifiers or relative paths from repo root to files that should be skipped in tests"""
 
-SKIP_FOR_TEST = None
+SKIP_FOR_TEST: dict[str, list[str]] = None
 """Dictionary of tests identifier linked to test that should not be run for this subject"""
 
-SKIP_FOR_SUBJECT = None
+SKIP_FOR_SUBJECT: dict[str, list[str]] = None
 """Dictionary of subjects (subjects identifiers or relative paths from repo root to files) that are linked to tests that should not be run on it"""
 
-TESTED_MODULES = None
+TESTED_MODULES: list[str] = None
 """List of all the modules that should be tested"""
 
-TESTED_MODELETS = None
+TESTED_MODELETS: list[str] = None
 """List of all the modelets that should be tested"""
 
-DATASETS = None
+DATASETS: list[str] = None
 """Set of data fragments that should be tested"""
 
-VARIABLE_REQUESTS = None
+VARIABLE_REQUESTS: list[str] = None
 """SparQL request that rely on some repository data"""
 
 if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
@@ -213,9 +214,9 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     locals()[request_name] = add_repo_variables(request_value)
 
 ONTOLOGY_RDFLIB_NAMESPACE = None
-"""Rdflib object representing the ontology namespace"""
+"""rdflib.namespace.Namespace: Object representing the ontology namespace"""
 
-ONTOLOGY_SEPARATOR = None
+ONTOLOGY_SEPARATOR: str = None
 """Last character from the end of the ontology namespace"""
 
 if not ONTOLOGY_NAMESPACE is None:
@@ -226,10 +227,13 @@ if not BLOCKING_ERRORS is None:
   for error in ERROR_RESOURCES.keys():
     ERROR_RESOURCES[error]["blocking"] = error in BLOCKING_ERRORS
 
-CRITERION_DATA = None
+CRITERION_DATA: dict[str, dict[str, Union[str, list[str]]]] = None
 """Dictonary storing the criterions from the earl-olivaw dataset"""
+
 try:
     from rdflib import Graph
+    from rdflib.namespace import Namespace
+
     if not ONTOLOGY_NAMESPACE is None:
       ONTOLOGY_RDFLIB_NAMESPACE = Namespace(ONTOLOGY_NAMESPACE)
     criterions_graph = Graph()
@@ -252,5 +256,5 @@ try:
 except:
   pass
 
-MODEL_BEST_PRACTICES_TESTS = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]
+MODEL_BEST_PRACTICES_TESTS: list[str] = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]
 """Set of model tests that rely on the syntax test to pass"""

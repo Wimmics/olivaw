@@ -1,5 +1,5 @@
-# URI for the prefix.xx namespace dataset
-PREFIX_CC_PREFIXES = "https://prefix.cc/context"
+PREFIX_CC_PREFIXES: str = "https://prefix.cc/context"
+"""URI for the prefix.cc namespace dataset"""
 
-# Threshold of Levenshtein distance to consider to namespaces oddly similar 
-PREFIX_SIMILARITY_THRESHOLD = 2
+PREFIX_SIMILARITY_THRESHOLD: int = 2
+"""Threshold of Levenshtein distance to consider to namespaces oddly similar"""
