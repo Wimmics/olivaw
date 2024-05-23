@@ -4,7 +4,7 @@ from urllib.request import urlopen
 
 from olivaw.constants import CORESE_PYTHON_URL, CORESE_LOCAL_PATH
 
-# Parse the requirements file
+# Parse the requirements from requirements.txt
 requirements = None
 with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}requirements.txt", "r") as requirementsFile:
     requirements = requirementsFile.readlines()
@@ -14,7 +14,7 @@ with open(f"{sep.join(__file__.split(sep)[:-1])}{sep}requirements.txt", "r") as 
         if len(line.strip()) > 0
     ]
 
-# Download the corese jar
+# Download the corese jar from inria website
 if not exists(CORESE_LOCAL_PATH):
     with urlopen(CORESE_PYTHON_URL) as downloaded:
         with open(CORESE_LOCAL_PATH, "wb") as jar:

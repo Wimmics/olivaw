@@ -18,8 +18,9 @@ from .prefixcc import *
 
 __all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown", "badges", "prefixcc"]
 
-# List of all the arguments that were typed after "olivaw" in the command line
 COMMAND = []
+"""List of all the arguments that were typed after "olivaw" in the command line"""
+
 try:
   COMMAND = [
     argv[index]
@@ -38,34 +39,73 @@ modes = [
   if item.startswith("--MODE=")
 ]
 
-# The execution mode that will drive some olivaw behaviour, default is manual
 MODE = modes[0] if len(modes) > 0 else "manual"
+"""The execution mode that will drive some olivaw behaviour, default is manual"""
 
-# Boolean indicating if olivaw is in actions mode
 ACTIONS = MODE == "ACTIONS"
+"""Boolean indicating if olivaw is in actions mode"""
 
-# Boolean inidication if olivaw is in pre-commit mode
 PRECOMMIT = MODE == "PRECOMMIT"
+"""Boolean indicating if olivaw is in pre-commit mode"""
 
-# Boolean indicating if the reports should ommit the Pass outcomes
 SKIP_PASS = "--SKIP-PASS" in COMMAND
+"""Boolean indicating if the reports should ommit the Pass outcomes"""
 
-# Boolean indicating if the reports should ommit the NotTested outcomes
 TESTED_ONLY = "--TESTED-ONLY" in COMMAND
+"""Boolean indicating if the reports should ommit the NotTested outcomes"""
 
-# Boolean indicating if the reports should hide the progress bars
 QUIET = ACTIONS or PRECOMMIT
+"""Boolean indicating if the reports should hide the progress bars"""
 
-# Dictionary providing the useful data concerning the errors
 ERROR_RESOURCES = None
+"""Dictionary providing the useful data concerning the errors"""
 with open(f"{PWD_TO_CONSTANTS}{sep}error-resources.json", "r") as f:
   ERROR_RESOURCES = load(f)
 
-# Set of all the errors of the default tests
 ERROR_IDS = list(ERROR_RESOURCES.keys())
+"""Set of all the errors of the default tests"""
 
-ONTOLOGY_PREFIX = ONTOLOGY_NAMESPACE = TERM_DISTANCE_THRESHOLD = BLOCKING_ERRORS = GIST_INDEX = SKIPPED_ERRORS = SKIPPED_TESTS = SKIP_FOR_TEST = SKIP_FOR_SUBJECT = None
-TESTED_MODULES = TESTED_MODELETS = None
+ONTOLOGY_PREFIX = None
+"""Preferred prefix for the ontology"""
+
+ONTOLOGY_NAMESPACE = None
+"""The ontology base URL"""
+
+TERM_DISTANCE_THRESHOLD = None
+"""The desired levenshtein threshold to accept terms as different enough"""
+
+BLOCKING_ERRORS = None
+"""The errors ids that are defined as blocking"""
+
+GIST_INDEX = None
+"""Id of Gist containing all the badges data"""
+
+SKIPPED_ERRORS = None
+"""Error identifiers for errors that should not be written in the reports"""
+
+SKIPPED_TESTS = None
+"""Test identifiers that should not be written in the reports"""
+
+SKIPPED_SUBJECTS = None
+"""Subject identifiers or relative paths from repo root to files that should be skipped in tests"""
+
+SKIP_FOR_TEST = None
+"""Dictionary of tests identifier linked to test that should not be run for this subject"""
+
+SKIP_FOR_SUBJECT = None
+"""Dictionary of subjects (subjects identifiers or relative paths from repo root to files) that are linked to tests that should not be run on it"""
+
+TESTED_MODULES = None
+"""List of all the modules that should be tested"""
+
+TESTED_MODELETS = None
+"""List of all the modelets that should be tested"""
+
+DATASETS = None
+"""Set of data fragments that should be tested"""
+
+VARIABLE_REQUESTS = None
+"""SparQL request that rely on some repository data"""
 
 if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
   with open(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json", "r") as f:
@@ -76,33 +116,25 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     except:
       pass
 
-    # Preferred prefix for the ontology
     if "ontology_prefix" in repo_parameters:
       ONTOLOGY_PREFIX = repo_parameters["ontology_prefix"]
 
-    # The ontology base URL
     if "ontology_namespace" in repo_parameters:
       ONTOLOGY_NAMESPACE = repo_parameters["ontology_namespace"]
 
-    # The desired levenshtein threshold to accept terms as different enough
     if "term_distance_threshold" in repo_parameters:
       TERM_DISTANCE_THRESHOLD = repo_parameters["term_distance_threshold"]
 
-    # The errors ids that are defined as blocking
     if "blocking_errors" in repo_parameters:
       BLOCKING_ERRORS = repo_parameters["blocking_errors"]
 
-    # Id of Gist containing al the badges data
     if "gist_index" in repo_parameters:
       GIST_INDEX = repo_parameters["gist_index"]
 
-    # Error identifiers that should not be written in the reports
     SKIPPED_ERRORS = repo_parameters["skipped_errors"] if "skipped_errors" in repo_parameters else []
 
-    # Test identifiers that should not be written in the reports
     SKIPPED_TESTS = repo_parameters["skipped_tests"] if "skipped_tests" in repo_parameters else []
 
-    # Relative paths between repo root and files that should be skipped in tests
     SKIPPED_SUBJECTS = [
       (
         abspath(f"{ROOT_FOLDER}{sep}{path}")
@@ -112,19 +144,16 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       for path in repo_parameters["skipped_subjects"]
     ] if "skipped_subjects" in repo_parameters else []
 
-    # List of all the modules that should be tested 
     TESTED_MODULES = [
       file for file in MODULES_TTL_GLOB_PATH
       if not abspath(file) in SKIPPED_SUBJECTS
     ]
 
-    # List of all the modelets that should be tested
     TESTED_MODELETS = [
       file for file in MODELETS_TTL_GLOB_PATH
       if not abspath(file) in SKIPPED_SUBJECTS
     ]
 
-    # Dictionary of tests identifier linked to test that should not be run for this subject
     SKIP_FOR_TEST = {
       criterion: [
         (
@@ -138,7 +167,6 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       in repo_parameters["skip_for_test"].items()
     } if "skip_for_test" in repo_parameters else {}
 
-    # Dictionary of subjects (subjects identifiers or files) that are linked to tests that should not be run on it
     SKIP_FOR_SUBJECT = {
       (
         abspath(f"{ROOT_FOLDER}{sep}{file}")
@@ -149,7 +177,6 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       in repo_parameters["skip_for_subject"].items()
     } if "skip_for_subject" in repo_parameters else {}
 
-    # Set of data fragments that should be tested
     DATASETS = [
       item
       for item in USE_CASES_TTL_GLOB_PATH + DATASETS_TTL_GLOB_PATH
@@ -169,7 +196,6 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
 
   from .uris import *
 
-  # SparQL request that rely on some repository data
   VARIABLE_REQUESTS = [
     "NOT_REFERENCED",
     "GET_BY_MODULE",
@@ -186,11 +212,11 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     request_value = locals()[request_name]
     locals()[request_name] = add_repo_variables(request_value)
 
-# Rdflib object representing the ontology namespace
 ONTOLOGY_RDFLIB_NAMESPACE = None
+"""Rdflib object representing the ontology namespace"""
 
-# Last character from the end of the ontology namespace
 ONTOLOGY_SEPARATOR = None
+"""Last character from the end of the ontology namespace"""
 
 if not ONTOLOGY_NAMESPACE is None:
   # The character separating the ontology base URL from the suffix
@@ -200,8 +226,8 @@ if not BLOCKING_ERRORS is None:
   for error in ERROR_RESOURCES.keys():
     ERROR_RESOURCES[error]["blocking"] = error in BLOCKING_ERRORS
 
-# Dictonary storing the criterions from the earl-olivaw dataset
 CRITERION_DATA = None
+"""Dictonary storing the criterions from the earl-olivaw dataset"""
 try:
     from rdflib import Graph
     if not ONTOLOGY_NAMESPACE is None:
@@ -226,5 +252,5 @@ try:
 except:
   pass
 
-# Set of model tests that rely on the syntax test to pass
 MODEL_BEST_PRACTICES_TESTS = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]
+"""Set of model tests that rely on the syntax test to pass"""
