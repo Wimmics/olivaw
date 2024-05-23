@@ -1,3 +1,5 @@
+"""Module providing functions for turtle report format generation"""
+
 from datetime import datetime
 from itertools import zip_longest
 

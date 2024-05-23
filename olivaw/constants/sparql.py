@@ -1,5 +1,6 @@
-from typing import List, Tuple
+"""Module providing SparQL requests"""
 
+from typing import List, Tuple
 
 NOT_REFERENCED: str = """
 SELECT DISTINCT ?s where {

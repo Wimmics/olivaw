@@ -1,3 +1,5 @@
+"""Module providing functions related to NLP like levenshtein distance"""
+
 def levenshtein(s1, s2):
     """Returns the levenshtein distance between two trings
     Algorithm borrowed from https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance#Python

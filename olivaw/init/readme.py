@@ -1,3 +1,5 @@
+"""Module providing functions for updating the main README.md project file using badges URIs"""
+
 from os import sep
 
 from olivaw.constants import (

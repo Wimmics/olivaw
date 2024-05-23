@@ -1,3 +1,5 @@
+"""Module providing constants related to project files paths"""
+
 from os import getcwd
 from glob import glob
 from os.path import sep, relpath

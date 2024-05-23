@@ -1,3 +1,5 @@
+"""Module providing functions for indexing URIs and exploring similar URIs through these indexes"""
+
 from json import dumps, loads
 from os import sep
 from ssl import CERT_NONE, create_default_context

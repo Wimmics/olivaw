@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+"""Module providing the reusable pre-commit hook"""
 
 from typing import Sequence
 from pre_commit import output

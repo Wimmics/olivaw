@@ -1,3 +1,5 @@
+"""Package aggregating olivaw constants and repository constants from parameters.json to provide constants all over olivaw package"""
+
 from json import load
 from os.path import sep, exists
 from typing import Union

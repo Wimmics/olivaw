@@ -1,3 +1,5 @@
+"""Module managing the "olivaw init branch" command"""
+
 from .readme import update_readme
 
 def init_branch():

@@ -1,6 +1,6 @@
-from subprocess import check_output
-from os.path import relpath, sep
+"""Module providing constants related to the git information of the project and the developper"""
 
+from subprocess import check_output
 from sys import argv, exit
 
 arg_root = [item.split("=")[1] for item in argv if item.startswith("--REPO-ROOT=")]

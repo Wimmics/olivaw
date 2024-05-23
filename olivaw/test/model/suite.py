@@ -1,3 +1,5 @@
+"""Module managing the "olivaw test model" command"""
+
 from olivaw.constants import (
     BRANCH,
     TESTED_MODELETS,

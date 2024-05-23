@@ -1,3 +1,5 @@
+"""Module providing URIs constants and formats"""
+
 ##############
 # Parameters #
 ##############

@@ -1,3 +1,5 @@
+"""Module providing the prefix-validity test"""
+
 from olivaw.constants import (
     PREFIX_SIMILARITY_THRESHOLD,
     GET_URIS,

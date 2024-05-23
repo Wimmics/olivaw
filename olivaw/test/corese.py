@@ -1,3 +1,5 @@
+"""Module providing features to support Corese-python use all over olivaw.test package"""
+
 from queue import Queue, Empty
 from sys import builtin_module_names
 from threading  import Thread
@@ -14,9 +16,7 @@ from rdflib import Graph as RdflibGraph
 from olivaw.constants import (
     AST_ERROR_FORMAT,
     GET_IMPORTS,
-    ONTOLOGY_SEPARATOR,
     CORESE_LOCAL_PATH,
-    PWD_TO_ROOT_FOLDER,
     URI_FORMAT,
     ONTOLOGY_PREFIX,
     ONTOLOGY_NAMESPACE,

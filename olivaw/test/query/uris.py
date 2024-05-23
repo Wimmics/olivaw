@@ -1,3 +1,5 @@
+"""Module providing the functions needed for exploring a Corese SparQL request AST"""
+
 from py4j import java_gateway
 
 from olivaw.test.corese import (

@@ -1,3 +1,5 @@
+"""Module providing functions related to the badges URIs"""
+
 from olivaw.constants import REF, GIST_BADGE_PREFIX
 
 

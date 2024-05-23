@@ -1,3 +1,5 @@
+"""Module responsible for the "olivaw show gist" command"""
+
 from os.path import exists
 from json import loads
 

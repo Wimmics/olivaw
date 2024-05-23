@@ -1,3 +1,5 @@
+"""Module providing a print function that will behave depending on the execution mode (manual/actions/precommit)"""
+
 from tqdm import tqdm
 from olivaw.constants import QUIET
 

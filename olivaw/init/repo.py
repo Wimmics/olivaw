@@ -1,3 +1,5 @@
+"""Module managing the "olivaw init repo" command"""
+
 import requests
 from json import dumps, loads
 from os import getenv

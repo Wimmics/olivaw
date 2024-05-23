@@ -1,3 +1,5 @@
+"""Module providing useful functions for saving files with proper encodings"""
+
 from codecs import open as copen
 from datetime import datetime
 from os import makedirs

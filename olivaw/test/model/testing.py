@@ -1,3 +1,5 @@
+"""Module providing the business logic behind the "olivaw test model" command"""
+
 from os.path import sep, relpath
 
 from olivaw.constants.sparql import LINK_SUBJECTS_FOR_MODULE, REMOVE_DESCRIPTION_LINKS
@@ -16,8 +18,6 @@ from olivaw.constants import (
     MODEL_BEST_PRACTICES_TESTS,
     MODEL_BEST_PRACTICES_TESTS,
     CUSTOM_MODEL_TESTS,
-    MODULES_TTL_GLOB_PATH,
-    GET_DECLARED_ONTOLOGIES,
     TRIPLES_FOR_MODULE
 )
 
@@ -27,8 +27,6 @@ from olivaw.test.generic.shacl import (
     custom_test,
     load_valid_custom_tests
 )
-
-from rdflib import Graph as RdflibGraph
 
 from olivaw.test.turtle import make_assertion, make_not_tested, make_subject
 from olivaw.test.util import AssertDraft, progress_bar

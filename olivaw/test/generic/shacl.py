@@ -1,3 +1,5 @@
+"""Module providing the features concerning the custom tests"""
+
 import regex as re
 from glob import glob
 from os.path import sep

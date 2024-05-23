@@ -1,3 +1,5 @@
+"""Package providing features for supporting continuous integration and quality check over an Agile ontology development project"""
+
 from os import makedirs
 from os.path import exists
 

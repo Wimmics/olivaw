@@ -1,3 +1,5 @@
+"""Module responsible for the business logic behind the "olivaw test data" command"""
+
 from os.path import relpath, sep
 
 from olivaw.test.corese import (

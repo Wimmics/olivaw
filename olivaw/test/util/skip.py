@@ -1,7 +1,7 @@
+"""Module providing functions that states if a test should be run according to the test, the subject and the repository parameters"""
+
 from os.path import abspath
-
 from rdflib import DCTERMS
-
 from olivaw.constants import SKIP_FOR_TEST, SKIP_FOR_SUBJECT, SKIPPED_TESTS, SKIPPED_SUBJECTS
 
 def should_skip(draft):

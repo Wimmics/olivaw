@@ -1,3 +1,5 @@
+"""Olivaw installation script"""
+
 from setuptools import setup, find_packages
 from os.path import sep, exists
 from urllib.request import urlopen

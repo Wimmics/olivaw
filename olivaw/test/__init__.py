@@ -1,3 +1,5 @@
+"""Package managing any olivaw commands starting with "olivaw test" """
+
 __main__ = ["model", "data"]
 
 from sys import exit

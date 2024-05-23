@@ -1,3 +1,5 @@
+"""Module providing the business logic behind the "olivaw test query" command"""
+
 from os.path import relpath, sep
 
 from olivaw.test.corese import Graph, QueryProcess

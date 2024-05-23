@@ -1,3 +1,5 @@
+"""Package managing all the default model tests that are related to best practices"""
+
 from olivaw.constants import (
     GET_TERM_PAIRS,
     NOT_LABELED,

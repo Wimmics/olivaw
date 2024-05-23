@@ -1,3 +1,5 @@
+"""Module providing constants related to rdflib"""
+
 from .git_info import (
     SRC_URL,
     PLATFORM_URL,

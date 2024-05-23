@@ -1,3 +1,5 @@
+"""Module responsible for the uri-validity test"""
+
 from olivaw.constants import URI_FORMAT, SKIPPED_TESTS
 from olivaw.test.turtle import make_assertion
 

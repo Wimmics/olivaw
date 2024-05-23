@@ -1,3 +1,5 @@
+"""Module reponsible for providing the draft class that stores the useful data when preparing a test"""
+
 from olivaw.test.util.skip import should_skip as should_test_skip
 
 class AssertDraft:

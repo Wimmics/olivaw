@@ -1,3 +1,5 @@
+"""Package managing any olivaw command starting with "olivaw init" """
+
 ___main__ = ["branch", "repo"]
 
 from .branch import *

@@ -1,3 +1,5 @@
+"""Module providing the constants related to the GitHub badges and their related gists"""
+
 GITHUB_API: str="https://api.github.com"
 """Github API that allows to manage gissts"""
 

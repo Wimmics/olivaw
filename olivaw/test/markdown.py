@@ -1,3 +1,5 @@
+"""Module providing functions for markdown report format generation"""
+
 from rdflib import Literal
 from datetime import datetime
 from sys import argv

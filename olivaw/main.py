@@ -1,3 +1,5 @@
+"""Module providing the entry point of the program and the call of the proper functions in the olivaw package"""
+
 from os import listdir, remove
 from os.path import sep
 from olivaw.constants import COMMAND, ROOT_FOLDER

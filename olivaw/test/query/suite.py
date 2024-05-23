@@ -1,3 +1,5 @@
+"""Module responsible for the "olivaw test query" command"""
+
 from os.path import abspath
 
 from olivaw.test.markdown import markdown_export

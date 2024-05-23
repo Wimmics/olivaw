@@ -1,3 +1,5 @@
+"""Module providing constants related to Corese"""
+
 from os.path import abspath, sep
 
 from .uris import CORESE_PYTHON_URL
