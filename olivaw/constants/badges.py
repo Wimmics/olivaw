@@ -1,7 +1,10 @@
+# Github API that allows to manage gissts
 GITHUB_API="https://api.github.com"
 
+# Base URL for badges that read some gist content
 GIST_BADGE_PREFIX = "https://img.shields.io/endpoint?url=https://gist.githubusercontent.com"
 
+# Set of default values for the different badges
 BADGE_LIST = {
     "MODEL_PASS": {
         "label": "Pass",

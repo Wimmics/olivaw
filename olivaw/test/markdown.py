@@ -6,7 +6,6 @@ from os.path import sep
 
 from olivaw.constants import (
     SEVERITY_RANGE,
-    COLOR_BOX_TEMPLATE,
     ERROR_TABLE_HEADER,
     GET_ASSERTOR_DETAILS,
     GET_DETAILED_OUTCOMES,
@@ -294,9 +293,7 @@ def make_severity_summary(outcomes, severity, emoji, shape_data={}):
             '',
             f"[Chapter top]({id})",
             f'<div id="summary-{severity}-{str(i + 1)}">{str(i+1)}/{str(table_length)}</div>',
-            COLOR_BOX_TEMPLATE
-                .replace('EMOJI', emoji)
-                .replace('TEXT', severity),
+            f"{emoji}*{severity}",
             f"`{str(subjectId)}`",
             f"[{html_special_chars(get_criterion_details(criterionId, shape_data=shape_data)[1])}]({criterionId})",
             str(errorTitle),

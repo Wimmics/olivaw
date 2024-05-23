@@ -21,6 +21,7 @@ SELECT DISTINCT ?m where {
 ORDER BY ?m
 """
 
+# Request adding links that will allow to extract the content of a modelet that is related to a given module
 LINK_SUBJECTS_FOR_MODULE = """
 insert {
   ?s ex:requires_description ?o .
@@ -30,6 +31,7 @@ insert {
 }
 """
 
+# Request extracting the content of a modelet for a given module
 TRIPLES_FOR_MODULE = """
 construct {
   ?s ?p ?o .
@@ -88,6 +90,7 @@ SELECT DISTINCT ?suffix1 ?suffix2 WHERE {
 } ORDER BY ?suffix1
 """
 
+# Request getting the ontology term that are not labeld with a rdfs:label property poiting to a literal in English
 NOT_LABELED = """
 select distinct ?term where {
   ?term rdfs:isDefinedBy ?module .
@@ -98,6 +101,7 @@ select distinct ?term where {
 }
 """
 
+# Get all the data that is related to each outcome
 GET_DETAILED_OUTCOMES = """
 SELECT ?assertion ?subject ?result ?outcome ?outcomeType ?subjectId ?subjectTitle ?criterionId ?outcomeTitle ?outcomeDescription ?outcomeId WHERE {
   ?assertion a earl:Assertion ;
@@ -117,6 +121,7 @@ SELECT ?assertion ?subject ?result ?outcome ?outcomeType ?subjectId ?subjectTitl
 } ORDER BY DESC(?subjectId) ?criterionId
 """
 
+# Data related to each severity that can be assigned to an outcome
 SEVERITY_RANGE = [
   ("MajorFail", ":boom:", "red"),
   ("MinorFail", ":exclamation:", "orange"),
@@ -125,6 +130,7 @@ SEVERITY_RANGE = [
   ("Pass", ":white_check_mark:", "green")
 ]
 
+# Retrieve the parts related to the subject of an outcome
 GET_OUTCOMES_PARTS = """
 SELECT DISTINCT ?subjectId ?part WHERE {
   { GET_DETAILED_ASSERTIONS }
@@ -132,6 +138,7 @@ SELECT DISTINCT ?subjectId ?part WHERE {
 }
 """.replace("GET_DETAILED_ASSERTIONS", GET_DETAILED_OUTCOMES)
 
+# Retrieve the pointers related to an outcome
 GET_OUTCOME_POINTERS = """
 SELECT DISTINCT ?outcome ?pointer WHERE {
   { GET_DETAILED_ASSERTIONS }
@@ -139,6 +146,7 @@ SELECT DISTINCT ?outcome ?pointer WHERE {
 }
 """.replace("GET_DETAILED_ASSERTIONS", GET_DETAILED_OUTCOMES)
 
+# Retrieve the information related to the assertor of a test report
 GET_ASSERTOR_DETAILS = """
 SELECT ?title ?description ?date ?script ?page WHERE {
   ?account a foaf:OnlineAccount ;
@@ -152,6 +160,7 @@ SELECT ?title ?description ?date ?script ?page WHERE {
 } LIMIT 1
 """
 
+# Retrieve the information of the criterion of a olivaw-earl TestCriterion
 GET_CRITERION_DATA = """
 SELECT ?identifier ?title ?description {
   _:x a earl:TestCriterion ;
@@ -161,6 +170,7 @@ SELECT ?identifier ?title ?description {
 }
 """
 
+# Check if the model test report can state if the ontology is OWL EL compatible
 IS_OWL_EL_COMPATIBLE = """
 select ?parsed {
   ?assertion a earl:Assertion ;
@@ -186,6 +196,7 @@ select ?parsed {
 }
 """
 
+# Retrieve the terms from the fragments that are namespaced in the ontology
 GET_ONTOLOGY_TERMS = """
 select distinct ?term where {
   {
@@ -208,6 +219,7 @@ select distinct ?term where {
 }
 """
 
+# Retrieve the usage of a given ontology term in the fragment
 GET_TERM_USAGE = """
 construct {
   ?s1 ?p1 ?o1 .
@@ -232,6 +244,7 @@ where {
 }
 """
 
+# Retrieve the usage of a namespace in the fragment
 GET_PREFIX_USAGE = """
 construct {
   ?s1 ?p1 ?o1 .
@@ -256,6 +269,7 @@ where {
 }
 """
 
+# Retrieve the URIs that are used in the fragment
 GET_URIS = """
 select ?uri where {
   {
@@ -274,6 +288,7 @@ select ?uri where {
 }
 """
 
+# Get the information related to a violation in a ShaCL report
 GET_VIOLATION = """
 CONSTRUCT {
   VIOLATION_URI ?p ?po
@@ -290,6 +305,7 @@ WHERE {
 }
 """
 
+# List the violations that can be found in a ShaCL report
 GET_VIOLATIONS = """
 select ?o ?f ?t
 {
@@ -300,6 +316,7 @@ select ?o ?f ?t
 }
 """
 
+# Retrieve the criterion data in a custom test
 GET_CUSTOM_CRITERION_DATA = """
 @prefix earl: <http://www.w3.org/ns/earl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -312,6 +329,7 @@ select ?tc ?identifier ?title ?description where {
 }
 """
 
+# Retrieve all the ShaCL data from a criterion
 GET_SHAPE_DESCRIPTION = """
 construct {
   ?s ?p ?o
@@ -324,6 +342,7 @@ where {
 }
 """
 
+# Retrieve the declared ontologies from a fragment
 GET_DECLARED_ONTOLOGIES = """
 select * where {
   ?x a owl:Ontology
@@ -331,6 +350,7 @@ select * where {
 }
 """
 
+# SparQL request that check if a custom test was declared properly 
 GET_CRITERION_VALIDITY = """
 @prefix earl: <http://www.w3.org/ns/earl#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -383,6 +403,7 @@ select
 }
 """
 
+# Retrieve the information from any MajorFail outcome of a report
 GET_MAJOR_FAILS = """
 select ?subject_title ?criterion ?error_title ?error_description  where {
   ?assertion a earl:Assertion ;
@@ -401,6 +422,7 @@ select ?subject_title ?criterion ?error_title ?error_description  where {
 }
 """
 
+# Retrieve the minimal data from a criterion
 GET_CRITERION_SUMMARY = """
 select ?title ?description where {
   CRITERION a <http://www.w3.org/ns/earl#TestCriterion> ;
@@ -409,6 +431,7 @@ select ?title ?description where {
 }
 """
 
+# Update the SparQL request in a custom test to add the variable $ontology_namespace
 ADD_VARIABLE = """
 DELETE {
   ?s sh:select ?request .
@@ -423,15 +446,20 @@ WHERE  {
 }
 """
 
+# Retrieve the possible error that can occur during a given test
 GET_ERRORS_OF_TEST = """
 select ?o where {
     :CRITERION_ID :has-error ?o
 }
 """
 
+# SparQL request that checks if the ontology is OWL QL compatible
 IS_OWL_QL_COMPATIBLE = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL QL")
+
+# SparQL request that checks if the ontology is OWL RL compatible
 IS_OWL_RL_COMPATIBLE = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL RL")
 
+# Request that adds links that are useful for creating a code snippet
 ADD_DESCRIPTION_LINKS = """
 insert {
   ?x ex:requires_description ?y .
@@ -441,6 +469,7 @@ insert {
 }
 """
 
+# Extract the triples that are useful to create a code snippet
 EXTRACT_STATEMENT = """
 construct { ?s ?p ?parsed } where {
   {
@@ -460,10 +489,12 @@ construct { ?s ?p ?parsed } where {
 }
 """
 
+# Remove some description links that are created for code snippet extraction
 REMOVE_DESCRIPTION_LINKS = """
 delete where { ?x ex:requires_description ?y . }
 """
 
+# Retrieve the usage of a given predicate in the fragment
 GET_PREDICATE_USAGE = """
 construct {
   ?x <TERM> ?y
@@ -473,6 +504,7 @@ where {
 }
 """
 
+# Retrieve the usage of a given object in the fragment
 GET_OBJECT_USAGE = """
 construct {
   ?x ?y <TERM>
@@ -482,6 +514,7 @@ where {
 }
 """
 
+# Request to shorten the literals when creating a code snippet
 SHORTEN_LITERALS = """
 construct {?s ?p ?parsed}
 where {
@@ -496,6 +529,7 @@ where {
 }
 """
 
+# Retrieve the different namespaces that are used in a fragment
 GET_GRAPH_NAMESPACES = """
 select distinct ?result where {
   {select ?uri where {?uri ?u ?v}}

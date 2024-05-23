@@ -18,6 +18,7 @@ from .prefixcc import *
 
 __all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown", "badges", "prefixcc"]
 
+# List of all the arguments that were typed after "olivaw" in the command line
 COMMAND = []
 try:
   COMMAND = [
@@ -37,20 +38,30 @@ modes = [
   if item.startswith("--MODE=")
 ]
 
+# The execution mode that will drive some olivaw behaviour, default is manual
 MODE = modes[0] if len(modes) > 0 else "manual"
 
+# Boolean indicating if olivaw is in actions mode
 ACTIONS = MODE == "ACTIONS"
+
+# Boolean inidication if olivaw is in pre-commit mode
 PRECOMMIT = MODE == "PRECOMMIT"
 
+# Boolean indicating if the reports should ommit the Pass outcomes
 SKIP_PASS = "--SKIP-PASS" in COMMAND
+
+# Boolean indicating if the reports should ommit the NotTested outcomes
 TESTED_ONLY = "--TESTED-ONLY" in COMMAND
 
+# Boolean indicating if the reports should hide the progress bars
 QUIET = ACTIONS or PRECOMMIT
 
+# Dictionary providing the useful data concerning the errors
 ERROR_RESOURCES = None
 with open(f"{PWD_TO_CONSTANTS}{sep}error-resources.json", "r") as f:
   ERROR_RESOURCES = load(f)
 
+# Set of all the errors of the default tests
 ERROR_IDS = list(ERROR_RESOURCES.keys())
 
 ONTOLOGY_PREFIX = ONTOLOGY_NAMESPACE = TERM_DISTANCE_THRESHOLD = BLOCKING_ERRORS = GIST_INDEX = SKIPPED_ERRORS = SKIPPED_TESTS = SKIP_FOR_TEST = SKIP_FOR_SUBJECT = None
@@ -65,6 +76,7 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     except:
       pass
 
+    # Preferred prefix for the ontology
     if "ontology_prefix" in repo_parameters:
       ONTOLOGY_PREFIX = repo_parameters["ontology_prefix"]
 
@@ -100,16 +112,19 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       for path in repo_parameters["skipped_subjects"]
     ] if "skipped_subjects" in repo_parameters else []
 
+    # List of all the modules that should be tested 
     TESTED_MODULES = [
       file for file in MODULES_TTL_GLOB_PATH
       if not abspath(file) in SKIPPED_SUBJECTS
     ]
 
+    # List of all the modelets that should be tested
     TESTED_MODELETS = [
       file for file in MODELETS_TTL_GLOB_PATH
       if not abspath(file) in SKIPPED_SUBJECTS
     ]
 
+    # Dictionary of tests identifier linked to test that should not be run for this subject
     SKIP_FOR_TEST = {
       criterion: [
         (
@@ -123,6 +138,7 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       in repo_parameters["skip_for_test"].items()
     } if "skip_for_test" in repo_parameters else {}
 
+    # Dictionary of subjects (subjects identifiers or files) that are linked to tests that should not be run on it
     SKIP_FOR_SUBJECT = {
       (
         abspath(f"{ROOT_FOLDER}{sep}{file}")
@@ -133,6 +149,7 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       in repo_parameters["skip_for_subject"].items()
     } if "skip_for_subject" in repo_parameters else {}
 
+    # Set of data fragments that should be tested
     DATASETS = [
       item
       for item in USE_CASES_TTL_GLOB_PATH + DATASETS_TTL_GLOB_PATH
@@ -152,6 +169,7 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
 
   from .uris import *
 
+  # SparQL request that rely on some repository data
   VARIABLE_REQUESTS = [
     "NOT_REFERENCED",
     "GET_BY_MODULE",
@@ -168,7 +186,10 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     request_value = locals()[request_name]
     locals()[request_name] = add_repo_variables(request_value)
 
+# Rdflib object representing the ontology namespace
 ONTOLOGY_RDFLIB_NAMESPACE = None
+
+# Last character from the end of the ontology namespace
 ONTOLOGY_SEPARATOR = None
 
 if not ONTOLOGY_NAMESPACE is None:
@@ -179,6 +200,7 @@ if not BLOCKING_ERRORS is None:
   for error in ERROR_RESOURCES.keys():
     ERROR_RESOURCES[error]["blocking"] = error in BLOCKING_ERRORS
 
+# Dictonary storing the criterions from the earl-olivaw dataset
 CRITERION_DATA = None
 try:
     from rdflib import Graph
@@ -204,4 +226,5 @@ try:
 except:
   pass
 
+# Set of model tests that rely on the syntax test to pass
 MODEL_BEST_PRACTICES_TESTS = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]

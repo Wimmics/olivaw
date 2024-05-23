@@ -8,12 +8,19 @@ from .git_info import (
 
 from .uris import EARL_PREFIX
 
+# Link to the developper GitHub profile
 DEV_PROFILE = f"{PLATFORM_URL}/{DEV_USERNAME}"
 
+# Rdflib object representing EARL namespace
 EARL_NAMESPACE = None
+
+# Rdflib object representing repository src folder namespace
 SRC_NAMESPACE = None
-TEST_NAMESPACE = None
+
+# Rdflib object representing the olivaw-earl namespace
 OLIVAW_EARL_NAMESPACE = None
+
+# Regex detecting the rdflib prefix error
 PREFIX_ERROR = None
 
 try:
@@ -22,7 +29,6 @@ try:
 
     EARL_NAMESPACE = Namespace(EARL_PREFIX)
     SRC_NAMESPACE = Namespace(SRC_URL)
-    TEST_NAMESPACE = Namespace(PROFILE_CHECK_URI)
     OLIVAW_EARL_NAMESPACE = Namespace(OLIVAW_EARL_DATASET)
 
     PREFIX_ERROR = regex_compile('Prefix "[^"]+:" not bound')

@@ -26,7 +26,6 @@ from olivaw.constants import (
     ONTOLOGY_PREFIX,
     ONTOLOGY_NAMESPACE,
     SRC_NAMESPACE,
-    TEST_NAMESPACE,
     OLIVAW_EARL_NAMESPACE,
     ONTOLOGY_RDFLIB_NAMESPACE,
     ERROR_RESOURCES,
@@ -65,7 +64,6 @@ def new_report(test_type):
 
     report.bind("earl", EARL_NAMESPACE)
     report.bind("", ONTOLOGY_RDFLIB_NAMESPACE)
-    report.bind("profile-test", TEST_NAMESPACE)
     report.bind("olivaw-earl", OLIVAW_EARL_NAMESPACE)
     report.bind("dcterms", DCTERMS)
 
