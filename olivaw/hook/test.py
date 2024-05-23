@@ -51,7 +51,15 @@ custom_tests_base = "\n".join(custom_tests_base)
 custom_tests = Graph()
 custom_tests.parse(data=custom_tests_base, format="ttl")
 
-def main(files: Sequence[str] | None = None):
+def main(files: Sequence[str] | None = None) -> int:
+    """Function embedding the business logic behind a pre-commit worker
+    
+    :param files: List of options sent to the pre-commit worker through the command line
+    :type files: list[str]
+
+    :return: The error code that will return the pre-commit worker
+    :rtype: int
+    """
     if files is None:
         return 0
 
@@ -148,5 +156,10 @@ def main(files: Sequence[str] | None = None):
     
     return int(len(errors) > 0)
 
-def run(line):
+def run(line: list[str]) -> None:
+    """Entry point of the `olivaw test precommit` command
+
+    :param line: list of parameters sent to the pre-commit worker through the command line
+    :type line: list[str]
+    """
     raise SystemExit(main(line))

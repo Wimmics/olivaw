@@ -31,6 +31,8 @@ from olivaw.test.generic.shacl import (
 from olivaw.test.turtle import make_assertion, make_not_tested, make_subject
 from olivaw.test.util import AssertDraft, progress_bar
 
+from rdflib import Graph, BNode
+
 shape_tests, shape_data = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
 
 def group_terms_by_module(modelet):
@@ -168,11 +170,20 @@ def fragment_check(fragments, draft, extras=""):
     
     return False
 
-def modules_tests(modules, report=None, assertor=None):
-    """Returns a report about of a profile check of a set of ontologies
+def modules_tests(modules: list[str], report: Graph=None, assertor: BNode=None) -> list[str]:
+    """Apply the modules test on the provided modules and write the result in the provided report
 
-    :param glob_path: A glob-format path string
-    :returns: A dictionary of reports, the keys are the file paths
+    :param modules: A list of module paths to test
+    :type modules: list[str]
+
+    :params report: the report where the results will be written, defaults to None
+    :type report: rdflib.Graph, optional
+    
+    :params assertor: the assertor of this test, defaults to None
+    :type assertor: rdflib.URIRef
+
+    :return: The list of the module paths that can be used in further aggregated graph tests
+    :rtype: list[str]
     """
     if len(modules) == 0:
         return []

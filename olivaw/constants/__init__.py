@@ -216,7 +216,7 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     locals()[request_name] = add_repo_variables(request_value)
 
 ONTOLOGY_RDFLIB_NAMESPACE = None
-"""rdflib.namespace.Namespace: Object representing the ontology namespace"""
+"""Object representing the ontology namespace"""
 
 ONTOLOGY_SEPARATOR: str = None
 """Last character from the end of the ontology namespace"""

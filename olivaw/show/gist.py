@@ -5,7 +5,8 @@ from json import loads
 
 from olivaw.constants import ROOT_FOLDER
 
-def show_gist():
+def show_gist() -> None:
+    """Executes the `olivaw show gist` command"""
     parameters_path = f"{ROOT_FOLDER}/.acimov/parameters.json"
 
     if not exists(parameters_path):

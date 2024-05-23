@@ -4,7 +4,9 @@ from os import listdir, remove
 from os.path import sep
 from olivaw.constants import COMMAND, ROOT_FOLDER
 
-def run():
+def run() -> None:
+    """Parse an olivaw command and execute it"""
+
     if len(COMMAND) == 0:
         print('fatal: olivaw without any argument is not a valid command, please read the documentation')
         exit(1)
@@ -22,7 +24,12 @@ def run():
     else:
         print(f"Unknown command: {command}")
 
-def test(line):
+def test(line: list[str]) -> None:
+    """Parse an olivaw command starting with `olivaw test` and execute it
+
+    :param line: list of options following `olivaw test` in the command line typed in the terminal
+    :type line: list[str]
+    """
     target = line.pop(0)
     
     if target == "model":
@@ -41,16 +48,22 @@ def test(line):
         from olivaw.hook.test import run
         run(line)
     else:
-        # Best way to deal with invalid command...?
         print(f"Unknown target: {target}")
 
 def flush():
+    """Execute the `olivaw flush` command"""
+
     for filename in listdir(f"{ROOT_FOLDER}{sep}.acimov{sep}output"):
         if filename.split("-")[-1].split(".")[0] == "actions":
             continue
         remove(f"{ROOT_FOLDER}/.acimov/output/{filename}")
 
-def init(line):
+def init(line: list[str]):
+    """Parse an olivaw command starting with `olivaw init` and execute it
+
+    :param line: list of options following `olivaw init` in the command line typed in the terminal
+    :type line: list[str]
+    """
     target = line[0]
 
     if target == "repo":
@@ -61,10 +74,14 @@ def init(line):
         init_branch()
         return
     else:
-        # Best way to deal with invalid command...?
         print(f"Unknown target: {target}")
 
-def show(line):
+def show(line: list[str]):
+    """Parse an olivaw command starting with `olivaw show` and execute it
+
+    :param line: list of options following `olivaw show` in the command line typed in the terminal
+    :type line: list[str]
+    """
     target = line[0]
 
     if target == "gist":

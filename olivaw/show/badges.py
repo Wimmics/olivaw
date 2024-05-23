@@ -7,7 +7,9 @@ from json import loads
 from olivaw.constants import ROOT_FOLDER
 from olivaw.constants.git_info import REF
 
-def show_badges():
+def show_badges() -> None:
+    """Executes the `olivaw show badges` command"""
+
     readme = None
     with open(f"{ROOT_FOLDER}{sep}README.md", "r") as readmeFile:
         readme = readmeFile.readlines()

@@ -11,7 +11,13 @@ from olivaw.constants import (
 )
 from olivaw.init.util import badge_url
 
-def update_readme(gist_id=None):
+def update_readme(gist_id: str=None) -> None:
+    """Updates the main README.md file with the proper badges URIs
+
+    :param gist_id: ID of the gist storing the project badges data
+    :type gist_id: str, optional
+    """
+
     readme = None
     with open(f"{ROOT_FOLDER}{sep}README.md", "r") as readmeFile:
         readme = readmeFile.readlines()

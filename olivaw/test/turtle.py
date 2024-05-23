@@ -2,6 +2,7 @@
 
 from datetime import datetime
 from itertools import zip_longest
+from typing import Optional, Tuple
 
 from rdflib import (
     Graph,
@@ -19,6 +20,8 @@ from rdflib.namespace import (
     SDO,
     XSD
 )
+
+from rdflib.term import Identifier
 
 from olivaw.constants import (
     DEV_USERNAME,
@@ -60,8 +63,17 @@ from olivaw.test.corese import (
 )
 
 from olivaw.test.util import COMMON_URI_DICT
+from olivaw.test.util.draft import AssertDraft
 
-def new_report(test_type):
+def new_report(test_type: str) -> Tuple[Graph, BNode]:
+    """Creates a new report and add the assertor
+
+    :param test_type: The type of test that this report will be used for
+    :type test_type: str
+
+    :return: The report and the assertor
+    :rtype: rdflib.BNode
+    """
     report = Graph()
 
     report.bind("earl", EARL_NAMESPACE)
@@ -73,7 +85,16 @@ def new_report(test_type):
 
     return report, assertor
 
-def make_assertor(report, test_type):
+def make_assertor(report: Graph, test_type: str) -> BNode:
+    """Writes an assertor in the report and returns the assertor
+
+    :param report: The test report
+    :type report: rdflib.Graph
+
+    :return: The assertor node
+    :rtype: rdflib.BNode
+    """
+
     script_uri = f"{OLIVAW_TEST_BLOB_URI}/{test_type}/suite.py"
     assertorId = f"{DEV_USERNAME}-{MODE}"
     title = f"{DEV_USERNAME} using {MODE} script"
@@ -107,7 +128,16 @@ def make_assertor(report, test_type):
 
     return assert_group
 
-def make_subject_id_part(fragment_list):
+def make_subject_id_part(fragment_list: list[str]) -> str:
+    """Analyze the heart or appendix of a subject and generate the subject identifier part related to this
+
+    :param fragment_list: List of files from the heart or appendix of a subject
+    :type fragment_list: list[str]
+
+    :return: Subject identifier part
+    :rtype: str
+    """
+
     modules = [item for item in fragment_list if item.startswith("src/")]
     modules = ['module-' + '.'.join(item.split('.')[:-1]) for item in modules]
     modules.sort()
@@ -130,7 +160,19 @@ def make_subject_id_part(fragment_list):
     subject_id_part = '-'.join(modules + modelets + datasets + questions + usecases)
     return subject_id_part
 
-def make_subject_id(heart, appendix=[]):
+def make_subject_id(heart: list[str], appendix: list[str]=[]) -> str:
+    """Computes the subject identifier of a subject
+
+    :param heart: List of file paths that are the heart of the subject
+    :type heart: list[str]
+
+    :param appendix: List of file âths that are the appendix of the subject
+    :type appendix: list[str], optional
+
+    :return: The subject identifier
+    :rtype: str
+    """
+
     result = [make_subject_id_part(heart)]
 
     if len(appendix):
@@ -141,12 +183,33 @@ def make_subject_id(heart, appendix=[]):
     return subject_id
 
 def make_subject(
-        draft,
-        heart,
-        appendix=[],
-        name="",
-        custom_title=""
+        draft: AssertDraft,
+        heart: list[str],
+        appendix: list[str]=[],
+        name: str="",
+        custom_title: str=""
 ):
+    """Writes the test subject in the report and returns it
+
+    :param draft: Draft of the test
+    :type draft: AssertDraft
+    
+    :param heart: List of file paths that are the heart of the subject
+    :type heart: list[str]
+
+    :param appendix: List of file opaths that are the appendix of the subject, defaults to empty list
+    :type appendix: list[str], optional
+
+    :param name: Desired subject identifier, defaults to computing it
+    :type name: str, optional
+
+    :param custom_title: Desired subject title, defaults to computing it
+    :type custom_title: str, optional
+
+    :return: The node representing the test subject
+    :rtype: rdflib.BNode
+    """
+
     subject_id = make_subject_id(heart, appendix=appendix) if name == "" else name
 
     if len(heart) > 1:
@@ -237,7 +300,15 @@ def make_subject(
 
     return test_subject
 
-def remove_prefixes(statement, is_literal=False):
+def remove_prefixes(statement: str, is_literal: bool=False) -> str:
+    """Remove the prefixes declaration from a code snippet
+
+    :param statement: the code snippet
+    :type statement: str
+
+    :param is_literal: is the code snippet already parsed, defaults to False
+    :type is_literal: bool, optional
+    """
     if is_literal:
         return statement
 
@@ -254,7 +325,15 @@ def remove_prefixes(statement, is_literal=False):
     
     return statement
 
-def parse_statement(raw_statement):
+def parse_statement(raw_statement: str) -> str:
+    """Returns a human-friendly version of a code snippet passed as input
+
+    :param raw_statement: the code snippet
+    :type raw_statement: str
+
+    :return: the code snippet represented in a human friendly way
+    :rtype: str
+    """
     rdf = f"{CORESE_PREFIX_TEXT}\n{raw_statement}"
     if not rdf.strip().endswith("."):
         rdf = f"{rdf} ."
@@ -266,7 +345,18 @@ def parse_statement(raw_statement):
         result.add(triple)
     return remove_prefixes(result.serialize(format="ttl"))
 
-def extract_statement(graph, pointer):
+def extract_statement(graph: Graph, pointer: URIRef) -> Literal:
+    """Returns a RDF Literal of a code snippet containing all the relevant data about the URI passed as input
+    
+    :param graph: Graph that contains the information about the required URI
+    :type graph: rdflib.Graph
+
+    :param pointer: The URI that will be defined by the code snippet
+    :type pointer: rdflib.URIRef
+
+    :return: Literal containing the code snippet
+    :rtype: rdflib.Literal
+    """
     graph.query(ADD_DESCRIPTION_LINKS.replace("TERM", pointer))
     statement = graph.query(EXTRACT_STATEMENT.replace("TERM", pointer), format=TURTLE).strip()
     graph.query(REMOVE_DESCRIPTION_LINKS)
@@ -327,7 +417,19 @@ def extract_statement(graph, pointer):
             )
         )
 
-def make_pointer(draft, pointer_string):
+def make_pointer(draft: AssertDraft, pointer_string: str) -> Identifier:
+    """Returns a Literal containing a human-friendly representation of a pointer for the report
+
+    :param draft: The test assertion draft
+    :type draft: AssertDraft
+
+    :param pointer_string: The string not parsed version of the pointer
+    :type pointer_string: str
+
+    :return: A Literal containing the human-friendly version of the pointer
+    :rtype: rdflib.Identifier
+    """
+
     statement_subject = pointer_string.split(" ")[0]
     is_statement = " " in pointer_string
 
@@ -352,7 +454,16 @@ def make_pointer(draft, pointer_string):
 
     return pointer
 
-def make_outcome(draft):
+def make_outcome(draft: AssertDraft) -> Optional[BNode]:
+    """Makes an outcome given the information stored in the draft
+    
+    :param draft: The assertion draft
+    :type draft: rdflib.Graph
+
+    :return: A node representing the outcome
+    :rtype: rdflib.Bnode or NoneType if outcome should be skipped 
+    """
+
     if draft.should_skip():
         return None
         
@@ -397,7 +508,15 @@ def make_outcome(draft):
 
     return outcome
 
-def make_outcomes(draft):
+def make_outcomes(draft: AssertDraft) -> list[BNode]:
+    """Prepare outcomes in the report given the information stored in the draft
+
+    :param draft: The test assertion draft
+    :type draft: AssertDraft
+
+    :return: A list of Nodes representing each generated outcomes
+    :rtype: list[BNode]
+    """
     if isinstance(draft.error, list):
         return [
             outcome
@@ -442,7 +561,18 @@ def make_outcomes(draft):
 
     return outcomes
 
-def make_result(draft, outcomes):
+def make_result(draft: AssertDraft, outcomes: list[BNode]) -> BNode:
+    """Prepare a Result node given the output passed in parameter
+    
+    :param draft: Test assertion draft
+    :type draft: AssertDraft
+
+    :param outcomes: List of the outcome to be linked to the result
+    :type outcomes: list[BNode]
+
+    :return: A BNode representing the result
+    :rtype: rdflib.BNode
+    """
     # When pass, there is a pass outcome, when no outcome, then it is a skipped error
     if outcomes is None or len(outcomes) == 0:
         return None
@@ -452,8 +582,8 @@ def make_result(draft, outcomes):
     ] + [
         (EARL_NAMESPACE.outcome, outcome)
         for outcome in outcomes
-        if not (make_outcome_type(draft.report, outcome) == "Pass" and SKIP_PASS) and
-           not (make_outcome_type(draft.report, outcome) == "NotTested" and TESTED_ONLY)
+        if not (get_outcome_type(draft.report, outcome) == "Pass" and SKIP_PASS) and
+           not (get_outcome_type(draft.report, outcome) == "NotTested" and TESTED_ONLY)
     ]
 
     result = BNode()
@@ -461,13 +591,33 @@ def make_result(draft, outcomes):
 
     return result
 
-def make_outcome_type(report, result):
-    outcome = report.value(result, EARL_NAMESPACE.outcome)
+def get_outcome_type(report: Graph, outcome: BNode) -> str:
+    """Returns the outcome type of an outcome
+    
+    :param report: The graph containing the outcome
+    :type report: rdflib.Graph
+
+    :param outcome: The outcome that needs the outcome type extraction
+    :type outcome: rdflib.BNode
+
+    :return: The outcome type of the given outcome
+    :rtype: str
+    """
+
+    outcome = report.value(outcome, EARL_NAMESPACE.outcome)
     outcomeType = report.value(outcome, RDF.type)
     earl_separator = str(EARL_NAMESPACE)[-1]
     return str(outcomeType).split(earl_separator)[-1]
 
-def assemble_assertion(draft, result):
+def assemble_assertion(draft: AssertDraft, result: BNode) -> None:
+    """Given the data stored in the draft and the result node passed as input, write an assertion in the report
+    
+    :param draft: The assertion draft
+    :type draft: AssertDraft
+
+    :param result: The result Node
+    :type result: rdflib.BNode
+    """
     # if result is None, then it is a skipped error
     if result is None:
         return
@@ -488,7 +638,12 @@ def assemble_assertion(draft, result):
     draft.reporting(assertion, statement)
     draft.new_assertion()
 
-def make_assertion(draft):
+def make_assertion(draft: AssertDraft) -> None:
+    """Computes all the elements to make an assertion given the draft content and assemble it
+    
+    :param draft: The assertion draft
+    :type draft: AssertDraft
+    """
     assemble_assertion(
         draft,
         make_result(
@@ -497,7 +652,16 @@ def make_assertion(draft):
         )
     )
 
-def make_not_tested(draft, *criterions):
+def make_not_tested(draft: AssertDraft, *criterions: list[str]) -> None:
+    """Prepare assertions with outcome set as NotTested for the criterions identifiers passed as input, given the draft content
+
+    :param draft: The test assertion draft
+    :type draft: AssertDraft
+
+    :param criterions: the list of criterion identifiers we want to report as NotTested
+    :type criterion: list[str]
+    """
+
     if len(criterions) > 0:
         custom_criterions = draft.custom_test_data if draft.has_field("custom_test_data") else None
         for criterion in criterions:

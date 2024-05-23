@@ -20,7 +20,16 @@ from olivaw.constants import (
 
 ref = "_".join(REF.split("/")[1:])
 
-def init_gist(key):
+def init_gist(key: str) -> str:
+    """Initialize the gist that will store the badges data
+    
+    :param key: GitHub secret with the `gist` scope authorized
+    :type key: string
+
+    :return: Gist ID that stores the badges data
+    :rtype: str
+    """
+
     #form a request URL
     url=GITHUB_API+"/gists"
     
@@ -55,7 +64,9 @@ def init_gist(key):
 
     return loads(res.text)['id']
 
-def init_repo():
+def init_repo() -> None:
+    """Executes the `olivaw init repo` command"""
+
     print("Let's initialize your repository")
 
     gist_secret = None
