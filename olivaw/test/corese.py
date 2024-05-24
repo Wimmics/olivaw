@@ -1,14 +1,20 @@
 """Module providing features to support Corese-python use all over olivaw.test package"""
 
 from queue import Queue, Empty
-from sys import builtin_module_names
 from threading  import Thread
 from atexit import register
 from subprocess import Popen, PIPE, DEVNULL
 from time import sleep
 from os.path import exists, sep
-from typing import Union, List
-from py4j.java_gateway import launch_gateway, JavaGateway
+from typing import IO, Union, List
+
+from py4j.java_gateway import (
+    launch_gateway,
+    JavaGateway,
+    JavaClass,
+    JavaObject,
+    JavaMember
+)
 
 # Only in order to fix the not detected unbound prefix corese bug
 from rdflib import Graph as RdflibGraph
@@ -22,6 +28,7 @@ from olivaw.constants import (
     ONTOLOGY_NAMESPACE,
     BACKSLASH_IN_URI
 )
+from olivaw.constants.git_info import ON_POSIX
 from olivaw.constants.paths import MODULES_TTL_GLOB_PATH
 from olivaw.constants.sparql import GET_DECLARED_ONTOLOGIES
 from olivaw.test.util.print import print_title, smart_print
@@ -48,26 +55,30 @@ for module in MODULES_TTL_GLOB_PATH:
 # Capturing the stderr in an OS-agnostic way
 # From https://stackoverflow.com/questions/375427/a-non-blocking-read-on-a-subprocess-pipe-in-python
 
-def enqueue_output(out, queue):
-    """Get an element of the queue containing the java console output
-    ... Without blocking in Windows OS
+def enqueue_output(out: IO[bytes], queue: Queue) -> str:
+    """Get an element of the queue containing the java console output without blocking in Windows OS
 
-    :param out: The output to capture
+    :param out: The program standard output to capture
+    :type out: IO[bytes]
+
     :param queue: The queue capturing the output
+    :type queue: Queue
+
     :returns: An element of the queue
+    :rtype: str
     """
     for line in iter(out.readline, b''):
         queue.put(line)
     out.close()
 
 
-ON_POSIX = 'posix' in builtin_module_names
 error_queue = Queue()
 
-def get_error_line():
+def get_error_line() -> str:
     """Get an output line of the java console without blocking (OS-agnotstic)
 
     :returns: The first line of the java console output
+    :rtype: str
     """
     # read line without blocking
     try:
@@ -76,10 +87,11 @@ def get_error_line():
         return ""
 
 
-def get_error_output():
-    """Returns The total output of the java console without blocking (OS-agnotstic)
+def get_error_output() -> str:
+    """Returns The total output of the java console without blocking (OS-agnostic)
 
     :returns: The total output
+    :rtype: str
     """
     total_output = []
     current_line = "a"
@@ -132,37 +144,82 @@ register(gateway.shutdown)
 #)
 
 # Import of class
-OWLProfile = gateway.jvm.fr.inria.corese.core.logic.OWLProfile
-Graph = gateway.jvm.fr.inria.corese.core.Graph
-Load = gateway.jvm.fr.inria.corese.core.load.Load
-QueryProcess = gateway.jvm.fr.inria.corese.core.query.QueryProcess
-RuleEngine = gateway.jvm.fr.inria.corese.core.rule.RuleEngine
-ResultFormat = gateway.jvm.fr.inria.corese.core.print.ResultFormat
-NSManager = gateway.jvm.fr.inria.corese.sparql.triple.parser.NSManager
-property_manager = gateway.jvm.fr.inria.corese.core.util.Property
-DISABLE_OWL_AUTO_IMPORT = gateway.jvm.fr.inria.corese.core.util.Property.Value.DISABLE_OWL_AUTO_IMPORT
-TEXT_CSV = 14
-TEXT_TSV = 15
-TURTLE = 2
+OWLProfile: JavaClass = gateway.jvm.fr.inria.corese.core.logic.OWLProfile
+"""Python reference to Corese Java Class `fr.inria.corese.core.logic.OWLProfile`"""
 
-STD = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.STD
-OWL_RL = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL
-OWL_RL_LITE = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL_LITE
-OWL_RL_FULL = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL_FULL 
-RDFS = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.RDFS_RL
+Graph: JavaClass = gateway.jvm.fr.inria.corese.core.Graph
+"""Python reference to Corese Java Class `fr.inria.corese.core.Graph`"""
 
-Query = gateway.jvm.fr.inria.corese.sparql.triple.parser.Query
-Binding = gateway.jvm.fr.inria.corese.sparql.triple.parser.Binding
-Source = gateway.jvm.fr.inria.corese.sparql.triple.parser.Source
-Service = gateway.jvm.fr.inria.corese.sparql.triple.parser.Service
+Load: JavaClass = gateway.jvm.fr.inria.corese.core.load.Load
+"""Python reference to Corese Java Class `fr.inria.corese.core.load.Load`"""
 
-Shacl =  gateway.jvm.fr.inria.corese.core.shacl.Shacl
-TripleFormat = gateway.jvm.fr.inria.corese.core.print.TripleFormat
+QueryProcess: JavaClass = gateway.jvm.fr.inria.corese.core.query.QueryProcess
+"""Python reference to Corese Java Class `fr.inria.corese.core.query.QueryProcess`"""
+
+RuleEngine: JavaClass = gateway.jvm.fr.inria.corese.core.rule.RuleEngine
+"""Python reference to Corese Java Class `fr.inria.corese.core.rule.RuleEngine`"""
+
+ResultFormat: JavaClass = gateway.jvm.fr.inria.corese.core.print.ResultFormat
+"""Python reference to Corese Java Class `fr.inria.corese.core.print.ResultFormat`"""
+
+NSManager: JavaClass = gateway.jvm.fr.inria.corese.sparql.triple.parser.NSManager
+"""Python reference to Corese Java Class `fr.inria.corese.sparql.triple.parser.NSManager`"""
+
+Property: JavaClass = gateway.jvm.fr.inria.corese.core.util.Property
+"""Python reference to Corese Java Class `fr.inria.corese.core.util.Property`"""
+
+DISABLE_OWL_AUTO_IMPORT: JavaMember = gateway.jvm.fr.inria.corese.core.util.Property.Value.DISABLE_OWL_AUTO_IMPORT
+"""Python reference to Corese Java Enum Value `fr.inria.corese.core.util.Property.Value.DISABLE_OWL_AUTO_IMPORT`"""
+
+TEXT_CSV: int = 14
+"""Python reference to Corese Java Enum Value `fr.inria.corese.command.utils.format.EnumResultFormat.TEXT_CSV`"""
+
+TEXT_TSV: int = 15
+"""Python reference to Corese Java Enum Value `fr.inria.corese.command.utils.format.EnumResultFormat.TEXT_TSV`"""
+
+TURTLE: int = 2
+"""Python reference to Corese Java Enum Value `fr.inria.corese.command.utils.format.EnumResultFormat.TURTLE`"""
+
+STD: int = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.STD
+"""Python reference to `public static final int fr.inria.corese.core.rule.RuleEngine.STD`"""
+
+OWL_RL: int = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL
+"""Python reference to `public static final int fr.inria.corese.core.rule.RuleEngine.OWL_RL`"""
+
+OWL_RL_LITE: int = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL_LITE
+"""Python reference to `public static final int fr.inria.corese.core.rule.RuleEngine.OWL_RL_LITE`"""
+
+OWL_RL_FULL: int = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.OWL_RL_FULL 
+"""Python reference to `public static final int fr.inria.corese.core.rule.RuleEngine.OWL_RL_FULL`"""
+
+RDFS_RL: int = gateway.jvm.fr.inria.corese.core.rule.RuleEngine.RDFS_RL
+"""Python reference to `public static final int fr.inria.corese.core.rule.RuleEngine.RDFS_RL`"""
+
+Query: JavaClass = gateway.jvm.fr.inria.corese.sparql.triple.parser.Query
+"""Python reference to Corese Java Class `fr.inria.corese.sparql.triple.parser.Query`"""
+
+Binding: JavaClass = gateway.jvm.fr.inria.corese.sparql.triple.parser.Binding
+"""Python reference to Corese Java Class `fr.inria.corese.sparql.triple.parser.Binding`"""
+
+Source: JavaClass = gateway.jvm.fr.inria.corese.sparql.triple.parser.Source
+"""Python reference to Corese Java Class `fr.inria.corese.sparql.triple.parser.Source`"""
+
+Service: JavaClass = gateway.jvm.fr.inria.corese.sparql.triple.parser.Service
+"""Python reference to Corese Java Class `fr.inria.corese.sparql.triple.parser.Service`"""
+
+Shacl: JavaClass =  gateway.jvm.fr.inria.corese.core.shacl.Shacl
+"""Python reference to Corese Java Class `fr.inria.corese.core.shacl.Shacl`"""
+
+TripleFormat: JavaClass = gateway.jvm.fr.inria.corese.core.print.TripleFormat
+"""Python reference to Corese Java Class `fr.inria.corese.core.print.TripleFormat`"""
 
 # A java object resolving prefixes into URIs and the other way
-prefix_manager = NSManager.create()
+prefix_manager: JavaObject = NSManager.create()
+"""JavaObject that is an instance of Corese Java Class `NSManager`"""
 
-CORESE_NAMESPACES = []
+CORESE_NAMESPACES: list[tuple[str, str]] = []
+"""List of Corese default prefixes and their related namespaces"""
+
 for field in dir(NSManager):
     try:
         CORESE_NAMESPACES.append(getattr(NSManager, field))
@@ -184,14 +241,23 @@ CORESE_NAMESPACES = {
     prefix: namespace
     for prefix, namespace in CORESE_NAMESPACES
 }
-CORESE_PREFIX_TEXT = f"@prefix {ONTOLOGY_PREFIX}: <{ONTOLOGY_NAMESPACE}> .\n".join(
+CORESE_PREFIX_TEXT: str = f"@prefix {ONTOLOGY_PREFIX}: <{ONTOLOGY_NAMESPACE}> .\n".join(
     [
         f"@prefix {prefix}: <{namespace}> ."
         for prefix, namespace in CORESE_NAMESPACES.items()
     ]
 )
+"""Turtle prefix definition of all the default set prefixes of Corese"""
 
-def to_rdflib(graph):
+def to_rdflib(graph: JavaObject) -> RdflibGraph:
+    """Exports a Corese graph to a rdflib.Graph instance
+
+    :param graph: The Corese Graph
+    :type graph: JavaObject (instance of Java Class `fr.inria.corese.core.Graph`)
+
+    :return: The rdflib equivalent Graph
+    :rtype: rdflib.Graph
+    """
     content = f"{CORESE_PREFIX_TEXT}\n{TripleFormat.create(graph).toString()}"
     g = RdflibGraph()
     g.parse(data=content, format="ttl")
@@ -203,16 +269,40 @@ def load(
         import_from_src: bool=True,
         disable_owl: bool=False,
         disable_import: bool=False,
-        graph=None,
+        graph: JavaObject=None,
         already_imported: List[str]=[],
         profile=STD
-    ):
-    """Load a graph from a local file or a URL
+    ) -> JavaObject:
+    """Load a graph from one to several local files and/or a string.
 
     :param path: local path or a URL or a list of these
-    :param extras: raw string in n3 notation containing extra triples
-    :returns: the graph load
+    :type path: Union[str, list[str]]
+
+    :param extras: Some extra turtle data, default to empty string
+    :type extras: str, optional
+
+    :param import_from_src: Should the turtle URIs should be loaded from local project if possible, defaults to True
+    :type import_from_src: bool, optional
+
+    :param disable_owl: Should the OWL RL reasoning be disabled, defaults to False
+    :type disable_owl: bool, optional
+
+    :param disable_import: Should the loading process ignore all the `owl:imports` clauses, defaults to False
+    :type disable_import: bool, optional
+
+    :param graph: Optional graph that will be injected the turtle content, defaults to None and creates a new graph if not specified
+    :type graph: JavaObject (instance of Java Class `fr.inria.corese.core.Graph`)
+
+    :param already_imported: List of resources that already have been injected into the passed `graph` parameter, defaults to empty list
+    :type already_imported: List[str]
+
+    :param profile: Reasoning profile to apply to the graph, defaults to no reasoning (value STD = 0)
+    :type profile: int, one of `STD`(0) / `OWL_RL`(1) / `OWL_LR_LITE`(2) / `OWL_RL_EXT`(3) / `OWL_RL_TEST`(4) / `RDFS_RL`(5)
+
+    :returns: Java Object (instance of Java Class `fr.inria.corese.core.Graph`)
+    :rtype: JavaObject
     """
+
     if isinstance(path, str):
         path = [path]
 
@@ -222,13 +312,13 @@ def load(
         
     if disable_owl:
         engine = RuleEngine.create(graph)
-        engine.setProfile(RDFS)
+        engine.setProfile(RDFS_RL)
         engine.processWithoutWorkflow()
         engine.process()
         engine.getErrorList()
 
     disable_owl_import = import_from_src or disable_import or disable_owl
-    property_manager.set(DISABLE_OWL_AUTO_IMPORT, disable_owl_import)
+    Property.set(DISABLE_OWL_AUTO_IMPORT, disable_owl_import)
 
     ld = Load.create(graph)
 
@@ -263,7 +353,7 @@ def load(
             )
         ]
         if len(imports) == 0:
-            property_manager.set(DISABLE_OWL_AUTO_IMPORT, False)
+            Property.set(DISABLE_OWL_AUTO_IMPORT, False)
             return graph
         graph = load(
             imports,
@@ -278,13 +368,14 @@ def load(
         engine.setProfile(profile)
         engine.process()
 
-    property_manager.set(DISABLE_OWL_AUTO_IMPORT, False)
+    Property.set(DISABLE_OWL_AUTO_IMPORT, False)
     return graph
 
-def capture_syntax_errors():
+def capture_syntax_errors() -> str:
     """Captures the syntax errors that are not raised from the java console output
 
-    :returns: A raw string containing the syntax errors
+    :returns: A string containing the syntax errors
+    :rtype: str
     """
     output = get_error_output()
     output_lines = output.split("\n")
@@ -311,13 +402,39 @@ def safe_load(
         graph=None,
         already_imported: List[str]=[],
         profile=STD
-    ):
-    """Safe method to load a graph and eventually catch the error if there is one
+    ) -> Union[JavaObject, list[str]]:
+    """Load a graph from one to several local files and/or a string.
+    
+    Returns a Graph if no syntax error or a list of error messages
 
     :param path: local path or a URL or a list of these
-    :param extras: raw string in n3 notation containing extra triples
-    :returns: A graph if it succeeds, an error report if it doesn't
+    :type path: Union[str, list[str]]
+
+    :param extras: Some extra turtle data, default to empty string
+    :type extras: str, optional
+
+    :param import_from_src: Should the turtle URIs should be loaded from local project if possible, defaults to True
+    :type import_from_src: bool, optional
+
+    :param disable_owl: Should the OWL RL reasoning be disabled, defaults to False
+    :type disable_owl: bool, optional
+
+    :param disable_import: Should the loading process ignore all the `owl:imports` clauses, defaults to False
+    :type disable_import: bool, optional
+
+    :param graph: Optional graph that will be injected the turtle content, defaults to None and creates a new graph if not specified
+    :type graph: JavaObject (instance of Java Class `fr.inria.corese.core.Graph`)
+
+    :param already_imported: List of resources that already have been injected into the passed `graph` parameter, defaults to empty list
+    :type already_imported: List[str]
+
+    :param profile: Reasoning profile to apply to the graph, defaults to no reasoning (value STD = 0)
+    :type profile: int, one of `STD`(0) / `OWL_RL`(1) / `OWL_LR_LITE`(2) / `OWL_RL_EXT`(3) / `OWL_RL_TEST`(4) / `RDFS_RL`(5)
+
+    :returns: Java Object (instance of Java Class `fr.inria.corese.core.Graph`) if loading process ended up successfully or a list of error messages otherwise
+    :rtype: Union[JavaObject, list[str]]
     """
+
     syntax_errors = ""
     try:
         get_error_output()
@@ -360,7 +477,19 @@ def safe_load(
             if len(message) > 0
         ]
     
-def rdflib_check(path="", extras=""):
+def rdflib_check(path: Union[str, list[str]]="", extras: str="") -> list[str]:
+    """Test the provided fragments into rdflib to detect some errors that Corese couldn't detect
+
+    :param path: Local file path or list of local files
+    :type path: Union[str, list[str]]
+
+    :param extras: Extra turtle data to also inject, defaults to empty string
+    :type extras: str, optional
+
+    :return: A list of error messages
+    :rtype: list[str]
+    """
+
     if isinstance(path, list):
         return [
             item
@@ -384,12 +513,20 @@ def rdflib_check(path="", extras=""):
     except Exception as rdflib_error:
         return [rdflib_error.message]
     
-def query_graph(graph, query, format=TEXT_TSV):
-    """Query the given graph and return the result in TSV notation
+def query_graph(graph: JavaObject, query: str, format: int=TEXT_TSV) -> Union[list[str], str]:
+    """Query the given Corese graph and returns the request result (`ASK` request not implemented)
 
     :param graph: The Corese graph to query
-    :param query: The SparQL query
-    :returns: A string containing the result in TSV notation
+    :type graph: JavaObject (instance of `fr.inria.corese.core.Graph`)
+
+    :param query: The SparQL query to run
+    :type query: str
+
+    :param format: Expected output format, defaults to TEXT_TSV(15)
+    :type format: int, optional, one of `RDFXML`(1) / `TURTLE`(2) / `TRIG`(3) / `JSONLD`(4) / `NTRIPLES`(6) / `NQUADS`(7) / `BIDING_XML`(11) / `BIDING_JSON`(13) / `TEXT_CSV`(14) / `TEXT_TSV`(15) / `TEXT_MARKDOWN`(16)  
+    
+    :returns: Query result, list of result lines (list[str]) or turtle data (str)
+    :rtype: Union[list[str], str]
     """
     query_process = QueryProcess.create(graph)
 
@@ -408,10 +545,28 @@ def query_graph(graph, query, format=TEXT_TSV):
 
     return result
 
-def export_graph(graph):
+def export_graph(graph: JavaObject) -> str:
+    """Export a Corese Graph content into RDF text
+
+    :param graph: The Corese graph to export
+    :type graph: JavaObject (instance of `fr.inria.corese.core.Graph`)
+
+    :returns: RDF data (turtle syntax)
+    :rtype: str
+    """
     return  f"{CORESE_PREFIX_TEXT}\n{TripleFormat.create(graph).toString()}"
 
-def check_OWL_constraints(graph):
+def check_OWL_constraints(graph: JavaObject) -> list[str]:
+    """Detects the OWL RL logic errors from the graph (OWL RL constraint violation)
+
+    ex: Instance of disjoint classes
+
+    :param graph: The Corese graph to test
+    :type graph: JavaObject (instance of `fr.inria.corese.core.Graph`)
+
+    :returns: A list of error messages
+    :rtype: list[str]
+    """
     try:
         engine = RuleEngine.create(graph)
         engine.setProfile(OWL_RL)
@@ -437,11 +592,27 @@ def check_OWL_constraints(graph):
             # If the exception is of a different type, return an error message
             return [f"An error occurred while processing the graph: {e}"]
 
-def parse_description(line):
+def parse_description(line: str) -> str:
+    """Retrieve an error message from Corese profile detection output
+
+    :param line: One line of Corese profile detection output
+    :type line: str
+
+    :returns: The error message
+    :rtype: str
+    """
     splitted = line.split('.')
     return splitted[0 if len(splitted) == 1 else 1].strip()
 
-def profile_errors(raw_message):
+def profile_errors(raw_message: str) -> tuple[list[str], list[list[str]]]:
+    """Parses the Corese profile detection output into error messages and turtle code snippets
+
+    :param raw_message: The raw Corese profile detection output
+    :type raw_message: str
+
+    :returns: The list of different error messages and the list of their related code snippets
+    :rtype: tuple[list[str], list[list[str]]]
+    """
 
     descriptions = []
     pointers = []

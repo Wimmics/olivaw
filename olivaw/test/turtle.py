@@ -4,6 +4,8 @@ from datetime import datetime
 from itertools import zip_longest
 from typing import Optional, Tuple
 
+from py4j.java_gateway import JavaObject
+
 from rdflib import (
     Graph,
     BNode,
@@ -14,7 +16,6 @@ from rdflib import (
 
 from rdflib.namespace import (
     RDF,
-    RDFS,
     FOAF,
     DCTERMS,
     SDO,
@@ -345,11 +346,11 @@ def parse_statement(raw_statement: str) -> str:
         result.add(triple)
     return remove_prefixes(result.serialize(format="ttl"))
 
-def extract_statement(graph: Graph, pointer: URIRef) -> Literal:
+def extract_statement(graph: JavaObject, pointer: URIRef) -> Literal:
     """Returns a RDF Literal of a code snippet containing all the relevant data about the URI passed as input
     
-    :param graph: Graph that contains the information about the required URI
-    :type graph: rdflib.Graph
+    :param graph: Corese Graph that contains the information about the required URI
+    :type graph: py4j.java_gateway.JavaObject (containing fr.inria.corese.core.Graph)
 
     :param pointer: The URI that will be defined by the code snippet
     :type pointer: rdflib.URIRef

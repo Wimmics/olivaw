@@ -1,7 +1,7 @@
 """Module providing constants related to the git information of the project and the developper"""
 
 from subprocess import check_output
-from sys import argv, exit
+from sys import argv, builtin_module_names, exit
 
 arg_root = [item.split("=")[1] for item in argv if item.startswith("--REPO-ROOT=")]
 
@@ -137,3 +137,6 @@ try:
   SHAPE_BASE_URIS = f"{GIT_RAW}/{'/'.join(REPO_URI.split('/')[-2:])}/{BRANCH}/.acimov/custom-tests/"
 except:
   pass
+
+ON_POSIX: bool = 'posix' in builtin_module_names
+"""Boolean stating if the current OS is Linux based"""
