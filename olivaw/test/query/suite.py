@@ -7,7 +7,8 @@ from .testing import question_tests
 from olivaw.test.util import save_reports, print_title, file_name
 from olivaw.constants import QUESTIONS_GLOB_PATH, SKIPPED_SUBJECTS
 
-def test_query():
+def test_query() -> None:
+    """Executes the query tests over the current project"""
     questions = [
         item
         for item in QUESTIONS_GLOB_PATH

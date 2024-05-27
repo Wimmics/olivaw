@@ -2,6 +2,8 @@
 
 from os.path import relpath, sep
 
+from rdflib import BNode, Graph as RdfLibGraph
+
 from olivaw.test.corese import Graph, QueryProcess
 from olivaw.test.turtle import make_assertion, make_not_tested, make_subject, new_report
 from olivaw.constants import PWD_TO_ROOT_FOLDER, SKIPPED_TESTS
@@ -12,7 +14,25 @@ from olivaw.test.generic.prefix import prefix_test
 from olivaw.test.generic.uri import uri_test
 from olivaw.test.util import AssertDraft, progress_bar
 
-def question_tests(glob_path, report=None, assertor=None):
+def question_tests(
+        glob_path: list[str],
+        report: RdfLibGraph=None,
+        assertor: BNode=None
+    ) -> RdfLibGraph:
+    """Executes the query tests over the provided subjects
+
+    :param glob_path: List of paths to competency questions to test
+    :type glob_path: `list[str]`
+
+    :param report: Test report to use, defaults to `None` and creates a new one
+    :type report: `rdflib.Graph`
+
+    :param assertor: Assertor to use in the tests, defaults to `None` and creates a new one
+    :type assertor: `rdflib.BNode`
+
+    :returns: The test report
+    :rtype: `rdflib.Graph`
+    """
     if report is None or assertor is None:
         report, assertor = new_report("query")
     draft = AssertDraft(report, assertor)
@@ -20,7 +40,15 @@ def question_tests(glob_path, report=None, assertor=None):
         test_competency_question(draft, query)
     return report
 
-def test_competency_question(draft, file):
+def test_competency_question(draft: RdfLibGraph, file: str) -> None:
+    """Executes the query tests over a provided file
+
+    :param draft: The assertion draft containing the useful information for reporting
+    :type draft: `olivaw.test.AssertDraft`
+
+    :param file: File path leading to the file that is to be tested
+    :type file: `str`
+    """
     graph = Graph()
     query_process = QueryProcess.create(graph)
 

@@ -24,10 +24,10 @@ def init_gist(key: str) -> str:
     """Initialize the gist that will store the badges data
     
     :param key: GitHub secret with the `gist` scope authorized
-    :type key: string
+    :type key: `string`
 
     :return: Gist ID that stores the badges data
-    :rtype: str
+    :rtype: `str`
     """
 
     #form a request URL

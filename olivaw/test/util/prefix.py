@@ -9,7 +9,12 @@ from olivaw.constants.paths import PWD_TO_CONSTANTS
 from olivaw.constants.prefixcc import PREFIX_CC_PREFIXES
 from olivaw.test.util.print import smart_print
 
-def iterate_node(node):
+def iterate_node(node: dict) -> None:
+    """Makes the children nodes of an index tree node passed in parameters
+    
+    :param node: The node to build the children from
+    :type node: `dict`
+    """
     candidates = [uri for uri in node["uris"] if len(uri[1]) > node["rank"] + 1]
     children = set([candidate[1][node["rank"] + 1] for candidate in candidates])
 
@@ -30,7 +35,12 @@ def iterate_node(node):
     node["uris"] = [uri for uri in node["uris"] if len(uri[1]) == node["rank"] + 1]
 
 
-def iterate(root):
+def iterate(root: dict) -> None:
+    """Build the recursive structure of the tree index starting from a nde
+    
+    :param root: The root node to start the building from
+    :type root: `dict`
+    """
     if len(root["children"]) > 0:
         for child in root["children"]:
             iterate(child)
@@ -38,13 +48,29 @@ def iterate(root):
     iterate_node(root)
 
 
-def make_prefix_tree(node):
+def make_prefix_tree(node: dict) -> None:
+    """Launch the recursive building of the tree index starting from a node
+
+    :param node: The node to recurse
+    :type: `dict`
+    """
     nb_iteration = max([len(uri[1]) for uri in node["uris"]])
     for _ in range(nb_iteration):
         iterate(node)
 
 
-def fetch_prefixes(node, nb_generations):
+def fetch_prefixes(node: dict, nb_generations: int) -> list[tuple[str, str]]:
+    """Returns the proper URIs that could satisfy the search requirements on the current branch
+
+    :param node: The current index node
+    :type node: `dict`
+
+    :param nb_generations: How many generations is going to be fetched on the current branch
+    :type nb_generation: `int`
+
+    :returns: List of prefix and namespace couples that statisfy the requirements
+    :rtype: `list[tuple[str, str]]`
+    """
     if nb_generations < 0:
         return []
 
@@ -56,7 +82,33 @@ def fetch_prefixes(node, nb_generations):
     return node["uris"] + result
 
 
-def recurse_search(subject, node, branch, score, threshold):
+def recurse_search(
+        subject: str,
+        node: dict,
+        branch: str,
+        score: int,
+        threshold: int
+    ) -> list[tuple[str, str]]:
+    """Returns the most similar prefixes to the one passed as argument, on the node passed as parameter, only those under a given Levenshtein distance
+
+    :param subject: Namespace to search into the node
+    :type subject: `str`
+
+    :param node: Node that is searched
+    :type node: `int`
+
+    :param branch: Current string made by the exploration of the index up to the current node
+    :type branch: `str`
+
+    :param score: Current Levenshtein distance computed so far
+    :type score: `int`
+
+    :param threshold: Maximum Levenshtein distance tolerated for the found namespaces
+    :type threshold: `int`
+
+    :returns: List of prefix and namespace couples that statisfy the requirements
+    :rtype: `list[tuple[str, str]]`
+    """
     if len(subject) == 0:
         nb_generations = threshold - score
         return fetch_prefixes(node, nb_generations)
@@ -96,7 +148,21 @@ def recurse_search(subject, node, branch, score, threshold):
     return list(set(result))
 
 
-def similar_prefix_search(subject, index, threshold):
+def similar_prefix_search(subject: str, index: dict, threshold: int) -> list[tuple[str, str]]:
+   """Returns the most similar prefixes to the one passed as argument, with the index passed as argument, only those under a given Levenshtein distance
+
+    :param subject: Namespace to search into the index
+    :type subject: `str`
+
+    :param index: The index to search into
+    :type index: `dict`
+
+    :param threshold: Maximum Levenshtein distance tolerated for the found namespaces
+    :type threshold: `int`
+
+    :returns: List of prefix and namespace couples that statisfy the requirements
+    :rtype: `list[tuple[str, str]]`
+    """
    return  [
         item
         for node in index.values()
@@ -104,21 +170,50 @@ def similar_prefix_search(subject, index, threshold):
         if not (item[1] == subject and threshold > 0)
     ]
 
-def common_prefix_search(subject, threshold):
+def common_prefix_search(subject: str, threshold: int) -> list[tuple[str, str]]:
+    """Returns the most similar prefixes to the one passed as argument from `prefix.cc` dataset, only those under a given Levenshtein distance
+
+    :param subject: Namespace to search into the index
+    :type subject: `str`
+
+    :param threshold: Maximum Levenshtein distance tolerated for the found namespaces
+    :type threshold: `int`
+
+    :returns: List of prefix and namespace couples that statisfy the requirements
+    :rtype: `list[tuple[str, str]]`
+    """
     return similar_prefix_search(subject, COMMON_URIS_TREE, threshold)
 
-def parse_node_to_tupe_leaves(node):
+def parse_node_to_tuple_leaves(node: dict) -> None:
+    """Parse the given index node to set the prefix/URIs stored as tuples
+    
+    :param node: URI index node
+    :type node: `dict`
+    """
     node["uris"] = [tuple(item) for item in node["uris"]]
 
     for child_node in node["children"]:
-        parse_node_to_tupe_leaves(child_node)
+        parse_node_to_tuple_leaves(child_node)
 
 
-def parse_tree_to_tuple_leaves(tree):
+def parse_tree_to_tuple_leaves(tree: dict) -> None:
+    """Parse the given index to set the prefix/URIs stored as tuples
+    
+    :param tree: URI index
+    :type tree: `dict`
+    """
     for node in tree.values():
-        parse_node_to_tupe_leaves(node)
+        parse_node_to_tuple_leaves(node)
 
-def make_index(prefix_base):
+def make_index(prefix_base: list[tuple[str, str]]) -> dict:
+    """Makes a URI index out of a prefix/namespace dataset
+
+    :param prefix_base: Dataset of prefixes and their related namespaces
+    :type prefix_base: `list[tuple[str, str]]`
+
+    :returns: An index that stores all of these URIs
+    :rtype: `dict`
+    """
     prefix_base.sort(key=lambda x: x[1])
     last_uri = ""
     namespaces = []
@@ -149,14 +244,30 @@ def make_index(prefix_base):
         make_prefix_tree(node)
     return tree
 
-def get_dict_from_node(node, result):
+def get_dict_from_node(node: dict, result: dict[str, str]) -> dict[str, str]:
+    """Makes a dictionary linking a namespace to a prefix given a URI index node passed in parameter
+
+    :param node: The URI index node
+    :type node: `dict`
+
+    :returns: A dictionary linking a namespace to a prefix given a namespace index pass in parameter
+    :rtype: `dict[str, str]`
+    """
     for (prefix, namespace) in node["uris"]:
         result[namespace] = prefix
     for child in node["children"]:
         result = get_dict_from_node(child, result)
     return result
 
-def get_dict(index):
+def get_dict(index: dict) -> dict[str, str]:
+    """Makes a dictionary linking a namespace to a prefix given a namespace index pass in parameter
+
+    :param index: The URI index
+    :type index: `dict`
+
+    :returns: A dictionary linking a namespace to a prefix given a namespace index pass in parameter
+    :rtype: `dict[str, str]`
+    """
     result = {}
     for start in index.keys():
         result = get_dict_from_node(index[start], result)
@@ -164,8 +275,11 @@ def get_dict(index):
 
 
 uris = []
-COMMON_URI_DICT = {}
-COMMON_URIS_TREE = None
+COMMON_URI_DICT: dict[str, str] = {}
+"""Dict linking a common namespace to its preferred prefix (from `prefix.cc`)"""
+
+COMMON_URIS_TREE: dict = None
+"""Index storing the most common prefixes (from `prefix.cc`) and related namespaces for Levenshtein distance search"""
 
 try:
     common_prefixes = None

@@ -1,5 +1,6 @@
 """Module providing the features concerning the custom tests"""
 
+from typing import Union
 import regex as re
 from glob import glob
 from os.path import sep
@@ -36,6 +37,10 @@ from rdflib.namespace import RDF, SH
 from olivaw.test.turtle import make_assertion
 from olivaw.test.util import smart_print
 
+from py4j.java_gateway import JavaObject
+
+from olivaw.test.util.draft import AssertDraft
+
 test_features = [
     "Custom test graph must have one and only one criterion",
     "Criterion must be using relative paths syntax and document base should be left non assigned",
@@ -48,18 +53,55 @@ test_features = [
     "Identifier must be composed of lowercase letters and dashes"
 ]
 
-def file_to_uri(file):
+def file_to_uri(file: str) -> str:
+    """Returns the raw GitHub URI of a given custom test file
+
+    :param file: The file path of that custom test file
+    :type file: `str`
+
+    :returns: The raw GitHub URI of the custom test file
+    :rtype: `str`
+    """
     cut_path = file.split(sep)
     test_name = cut_path[-1]
     test_type = cut_path[-2]
 
     return f"{GIT_RAW}/{REPO_REF}/{BRANCH}/.acimov/custom-tests/{test_type}/{test_name}#"
 
-def complete_test_content(file):
+def complete_test_content(file: str) -> str:
+    """Provides the content of a custom test file, updated with the `@base` keyword and the Corese known-by-default prefixes
+
+    :param file: The custom test file path
+    :type file: `str`
+
+    :returns: The updated custom test turtle data
+    :rtype: `str`
+    """
     with open(file, "r") as shape_file:
         return f"@base <{file_to_uri(file)}> .\n{CORESE_PREFIX_TEXT}\n{shape_file.read()}"
 
-def load_valid_custom_tests(files):
+def load_valid_custom_tests(files: list[str]) -> tuple[list[JavaObject], dict[str, dict[str, Union[str, list[str]]]]]:
+    """Loads the custom tests that are valid to be integrated in olivaw tests
+    
+    :param files: List of custom tests to load
+    :type files: `list[str]`
+
+    :returns: List of custom tests loaded as graph, and a dictionary that provides tha data of the loaded custom tests
+    :rtype: 
+
+    ```
+    tuple[
+        list[JavaObject], # List of `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
+        dict[ # dict containing information about all the custom tests
+            str, # A custom test criterion identifier
+            dict [ # A dict contaninig the information about a given custom test
+                str, # A information name
+                Union[str, List[str]] # Some useful information
+            ]
+        ]
+    ]
+    ```
+    """
     custom_tests = []
     custom_tests_data = []
     new_criterion_identifiers = []
@@ -141,16 +183,39 @@ def load_valid_custom_tests(files):
         for line in custom_tests_data
     }
 
-def load_custom_test(file):
+def load_custom_test(file: str) -> JavaObject:
+    """Loads a given custom test
+
+    :param file: File path to the custom test
+    :type file: `str`
+
+    :returns: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
+    """
     shape_content = complete_test_content(file)
     return safe_load([], extras=shape_content, disable_owl=True)
 
-def get_criterion_data(test_file):
+def get_criterion_data(test_file: str) -> tuple[str, str, str, str]:
+    """Retrieves the useful information concerning a custom test criterion
+
+    :param test_file: File path to the custom test file
+    :type test_file: `str`
+
+    :returns: The test criterion URI, identifier, title and description
+    :rtype: `tuple[str, str, str, str]`
+    """
     shape = load_custom_test(test_file) if isinstance(test_file, str) else test_file
     data = query_graph(shape, GET_CUSTOM_CRITERION_DATA)[0]
     return [item[1:-1] for item in data.split("\t")]
 
-def indent_violation(violation):
+def indent_violation(violation: str) -> str:
+    """Add indent to a custom test violation node turtle data
+
+    :param violation: Turtle data of the violation node
+    :type violation: `str`
+
+    :returns: Same turtle data of violation node, with indent
+    :rtype: `str`
+    """
     lines = violation.split("\n")
     uri_subjects = [
         i
@@ -171,7 +236,18 @@ def indent_violation(violation):
 
     return NEW_LINES.sub("\n", "\n".join(lines))
 
-def add_base(turtle, namespace):
+def add_base(turtle: str, namespace: str) -> str:
+    """Formats all the URIs using the relative path syntax for base namespace
+
+    :param turtle: Turtle data
+    :type turtle: `str`
+
+    :param namespace: Base namespace
+    :type namespace: `str`
+
+    :returns: The parsed turtle data
+    :rtype `str`
+    """
     escaped_namespace = re.escape(namespace)
     uri_format = re.compile(f"(<{escaped_namespace})([^>]*)(>)")
 
@@ -182,10 +258,24 @@ def add_base(turtle, namespace):
     return f"@base <{namespace}> .\n{turtle}"
 
 def parse_violation_focus(
-    violation_summaries,
-    violation_nodes,
-    violation_triples
-    ):
+    violation_summaries: list[str],
+    violation_nodes: list[str],
+    violation_triples: list[bool]
+    ) -> tuple[list[str], list[str]]:
+    """Prepare the useful pointers for the report and parse the summary for human reading
+
+    :param violation_summaries: The violations that can be found in the ShaCL report graph
+    :type violation_summaries: `list[str]`
+
+    :param violation_nodes: The focus nodes that lead to each ShaCL violation
+    :type violation_nodes: `list[str]`
+
+    :param violation_triples: For each violation_node element, is it a focus triple?
+    :type violation_triple: `list[bool]`
+    
+    :returns: A list of focus node descriptions and a list of parsed violation summaries
+    :rtype: `tuple[list[str], list[str]]`
+    """
 
     focus = []
     summaries = []
@@ -230,7 +320,15 @@ def parse_violation_focus(
 
     return focus, violation_summaries
 
-def parse_violation_triple(triple):
+def parse_violation_triple(triple: str) -> str:
+    """Parse the focus triple in a violation summary to make it human-readable
+
+    :param triple: The focus triple
+    :type triple: `str`
+
+    :returns: The parsed violation focus triple
+    :rtype: `str`
+    """
     triple = ">".join(triple.split(">")[1:]).strip()
     graph = Graph()
     turtle = f"{CORESE_PREFIX_TEXT}\n{triple} ."
@@ -263,11 +361,21 @@ def parse_violation_triple(triple):
     return parsed
 
 def custom_test(
-    draft,
-    fragment_graph,
-    shapes
-):
-    
+    draft: AssertDraft,
+    fragment_graph: JavaObject,
+    shapes: list[JavaObject]
+) -> None:
+    """Executes the custom tests pas in parameter to the fragment passed in parameter
+
+    :param draft: The assertion draft containing the useful information for reporting
+    :type draft: `olivaw.test.AssertDraft`
+
+    :param fragment_graph: The fragment to be tested
+    :type fragment_graph: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
+
+    :param shapes: List of graphs containing the information of each custom tests
+    :type shapes: `list[py4j.java_gateway.JavaObject]` with each `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
+    """
     for shape in shapes:
         criterion_uri, criterion_identifier, *_ = get_criterion_data(shape)
 

@@ -1,6 +1,6 @@
 """Module providing SparQL requests"""
 
-from typing import List, Tuple
+from typing import List
 
 NOT_REFERENCED: str = """
 SELECT DISTINCT ?s where {
@@ -125,7 +125,7 @@ SELECT ?assertion ?subject ?result ?outcome ?outcomeType ?subjectId ?subjectTitl
 """
 """Get all the data that is related to each outcome"""
 
-SEVERITY_RANGE: List[Tuple[str, str, str]] = [
+SEVERITY_RANGE: List[tuple[str, str, str]] = [
   ("MajorFail", ":boom:", "red"),
   ("MinorFail", ":exclamation:", "orange"),
   ("CannotTell", ":warning:", "grey"),

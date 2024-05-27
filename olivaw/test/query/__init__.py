@@ -1,4 +1,4 @@
-"""Package managing the command "olivaw test query" """
+"""Package managing the command `olivaw test query` """
 
 __all__ = ["query"]
 

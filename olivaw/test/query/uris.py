@@ -1,6 +1,7 @@
 """Module providing the functions needed for exploring a Corese SparQL request AST"""
 
 from py4j import java_gateway
+from py4j.java_gateway import JavaObject
 
 from olivaw.test.corese import (
     gateway,
@@ -12,7 +13,15 @@ from olivaw.test.corese import (
     QueryProcess
 )
 
-def retrieveFromMathExpression(term):
+def retrieveFromMathExpression(term: JavaObject) -> list[str]:
+    """Retrieves the URIs form a Corese Sparql request AST math expression
+
+    :param term: Corese SparQL AST math expression
+    :type term: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.sparql.triple.parser.Expression`
+
+    :returns: A list of URIs
+    :rtype: `list[str]`
+    """
     if term.isExist():
         return [
             element
@@ -26,13 +35,29 @@ def retrieveFromMathExpression(term):
             for element in retrieveFromMathExpression(term.getArg(i))
         ]
             
-def retrieveFromLeaf(leaf):
+def retrieveFromLeaf(leaf: JavaObject) -> list[str]:
+    """Retrieve the URIs from a Corese SparQL request AST Atom
+
+    :param leaf: The Corese SparQL request AST Atom
+    :type leaf: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.sparql.triple.parser.Atom`
+
+    :returns: A list of URIs
+    :rtype: `list[str]`
+    """
     if leaf.isURI():
         return [ leaf.getLongName() ]
     else:
         return []
         
-def retrieveFromBody(body):
+def retrieveFromBody(body: JavaObject) -> list[str]:
+    """Retrieve the URIs from a Corese SparQL request AST Exp iterable
+
+    :param leaf: The Corese SparQL request AST Exp iterable
+    :type leaf: `py4j.java_gateway.JavaObject` referencing an instance of `Iterable<fr.inria.corese.sparql.triple.parser.Exp>`
+
+    :returns: A list of URIs
+    :rtype: `list[str]`
+    """
     if java_gateway.is_instance_of(gateway, body, Query):
         return retrieveFromBody(body.getBody())
 
@@ -69,7 +94,15 @@ def retrieveFromBody(body):
             retrievedValues += retrieveFromLeaf(item.getSource()) + retrieveFromBody(item.getBody())
     return retrievedValues
 
-def retrieveURIFromQuery(query):
+def retrieveURIFromQuery(query: str) -> list[str]:
+    """Retrieve the URIs from a Corese SparQL request
+
+    :param leaf: The Corese SparQL request
+    :type leaf: `str`
+
+    :returns: A list of URIs
+    :rtype: `list[str]`
+    """
     graph = Graph()
     query_process = QueryProcess.create(graph)
     ast = query_process.ast(query)

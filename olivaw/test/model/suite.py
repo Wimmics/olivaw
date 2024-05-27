@@ -1,4 +1,4 @@
-"""Module managing the "olivaw test model" command"""
+"""Module executing the `olivaw test model` command"""
 
 from olivaw.constants import (
     BRANCH,
@@ -21,7 +21,8 @@ from olivaw.test.turtle import new_report
 ###
 # Test OWL_RL
 ###
-def test_model():
+def test_model() -> None:
+    """Executes the model tests over all the model fragments from the project"""
     report, assertor = new_report("model")
 
     print_title("Checking existing modules")

@@ -35,10 +35,10 @@ def html_special_chars(text: str) -> str:
     """Parse the characters from string that need to be converted into HTML special chars
     
     :param text: The unparsed text
-    :type text: str
+    :type text: `str`
 
     :returns: The parsed text
-    :rtype: str
+    :rtype: `str`
     """
     return NEW_BR.sub(
         " &#10;",
@@ -62,13 +62,13 @@ def profile_badge_data(report: Graph, request: str) -> tuple[str, str]:
     """Given the report and an ontology profile compatibility request, returns the proper label and colors of its related badge
     
     :param report: test report
-    :type report: rdflib.Graph
+    :type report: `rdflib.Graph`
 
     :param request: Request that retrieve the profile compatibility of the ontology in the report
-    :type request: str
+    :type request: `str`
 
     :returns: The related badge label and message
-    :rtype: tuple[str, str]
+    :rtype: `tuple[str, str]`
     """
     profile_statuses = [str(x[0]) for x in report.query(request)]
 
@@ -116,58 +116,39 @@ def parse_outcomes(report: Graph) -> tuple[
     """Retrieves all the outcomes information from the report
 
     :param report: The report graph
-    :type report: rdflib.Graph
+    :type report: `rdflib.Graph`
 
     :returns: A dictionary of the outcomes information, a dictionary of the the related subject parts and a dictionary of the related pointers
-    :rtype: tuple[
+    :rtype:
     
-    dict[ # dictionary of the outcomes information
-    
-        str, # Severity name
-
-        tuple[
-        
-            BNode, # Assertion
-
-            BNode, # Subject
-
-            BNode, # Result
-
-            BNode, # Outcome
-
-            Literal, # Outcome type
-
-            Literal, # Subject identifier
-
-            Literal, # Subject title
-
-            Literal, # Criterion identifier
-
-            Literal, # Outcome title
-
-            Literal, # Outcome description
-
-            Literal # Outcome identifier
-
+    ```
+    tuple[
+        dict[ # dictionary of the outcomes information
+            str, # Severity name
+            tuple[
+                BNode, # Assertion
+                BNode, # Subject
+                BNode, # Result
+                BNode, # Outcome
+                Literal, # Outcome type
+                Literal, # Subject identifier
+                Literal, # Subject title
+                Literal, # Criterion identifier
+                Literal, # Outcome title
+                Literal, # Outcome description
+                Literal # Outcome identifier
+            ]
+        ],
+        dict[ # dictionary of the the related subject parts
+            str, # Subject Identifier
+            list[str] # List of file URIs
+        ],
+        dict[ # dictionary of the related pointers
+            str, # Outcome
+            list[Union[URIRef, Literal]] # List of pointers (URIs or code snippets)
         ]
-
-    ],
-
-    dict[ # dictionary of the the related subject parts
-    
-        str, # Subject Identifier
-
-        list[str] # List of file URIs
-
-    ],
-
-    dict[ # dictionary of the related pointers
-    
-        str, # Outcome
-
-        list[Union[URIRef, Literal]] # List of pointers (URIs or code snippets)
-
     ]
+    ```
     """
     outcomes = [outcome for outcome in report.query(GET_DETAILED_OUTCOMES)]
     found_severities = list(set([str(severity[0]) for severity in SEVERITY_RANGE]))
@@ -214,10 +195,10 @@ def title_to_id(title: str) -> str:
     """Converts a markdown title to its related CSS id
 
     :param title: The title line
-    :type title: str
+    :type title: `str`
 
     :returns: The CSS id
-    :rtype: id
+    :rtype: `id`
     """
     start = 0
     while(title[start] == "#"): start += 1
@@ -228,10 +209,10 @@ def make_assertor_chapter(report: Graph) -> list[str]:
     """Generates the assertor chapter of the report
     
     :param report: The report graph
-    :type graph: rdflib.Graph
+    :type graph: `rdflib.Graph`
 
     :returns: A list of markdown lines containing the assertor chapter
-    :rtype: list[str]
+    :rtype: `list[str]`
     """
     result = []
 
@@ -268,10 +249,10 @@ def subject_part_to_markdown(part: str) -> str:
     """Generates a markdown link for a subject part file URI
 
     :param part: the subject part file URI
-    :type part: str
+    :type part: `str`
 
     :returns: The markdown link
-    :rtype: str 
+    :rtype: `str`
     """
     module_search = MODULE_URL_FORMAT.findall(part)
     if len(module_search) > 0:
@@ -299,10 +280,10 @@ def criterion_uri_to_file(uri: str) -> str:
     """Provides the local file path related to a custom test criterion URI
     
     :param uri: The custom test criterion URI
-    :type uri: str
+    :type uri: `str`
 
     :returns: The path to the locaw file that defines the custom test criterion
-    :rtype: str
+    :rtype: `str`
     """
     return f"{PWD_TO_ROOT_FOLDER}{sep.join(uri.split('#')[0].split('/')[-4:])}"
 
@@ -325,25 +306,23 @@ def get_criterion_details(
     """Retrieves the useful information about the given criterion URI
 
     :param uri: URI of the criterion that is searched for
-    :type uri: str
+    :type uri: `str`
 
-    :param shape_data: dictionary providing information about eventual custom tests
-    :type shape_data: dict[ # Dictionary about custom tests data
-
+    :param shape_data: dictionary providing information about eventual custom tests, defaults to `{}`
+    :type shape_data: optional:\n
+    
+    ```
+    dict[ # Dictionary about custom tests data
         str, # Custom test identifier
-
         dict[ # Information about a given custom test
-
             str, # One of title / description / errors
-
             Union[str, list[str]] # Useful data
-
         ]
-
     ]
+    ```
 
     :returns: The criterion URI, identifier, title and description
-    :rtype: tuple[str, str, str, str]
+    :rtype: `tuple[str, str, str, str]`
     
     """
     criterion_path = uri.split("#")[0].split("/")
@@ -400,75 +379,68 @@ def make_details_table(
     """Generates the section related to a particular outcome detail
 
     :param chapter: list of the lines containing the current chapter
-    :type chapter: list[str]
+    :type chapter: `list[str]`
 
     :param outcome_info: tuple containing the useful information related to the outcome to detail
-    :type outcome_info: tuple[
+    :type outcome_info:
     
+    ```
+    tuple[
         BNode, # Assertion
-
         BNode, # Subject
-
         BNode, # Result
-
         BNode, # Outcome
-
         Literal, # Outcome type
-
         Literal, # Subject identifier
-
         Literal, # Subject title
-
         Literal, # Criterion identifier
-
         Literal, # Outcome title
-
         Literal, # Outcome description
-
         Literal # Outcome identifier
     ]
+    ```
 
     :param partsDict: dictionary of all the subject parts
-    :type partsDict: dict[ # dictionary of the related pointers
-
+    :type partsDict:
+    
+    ```
+    dict[ # dictionary of the related pointers
         str, # Outcome
-
         list[Union[URIRef, Literal]] # List of pointers (URIs or code snippets)
-
     ]
+    ```
 
     :param pointersDict: dictionary of the related pointers
-    :type dict[ # dictionary of the related pointers
-
+    :type pointersDict: 
+    
+    ```
+    dict[ # dictionary of the related pointers
         str, # Outcome
-
         list[Union[URIRef, Literal]] # List of pointers (URIs or code snippets)
-
     ]
+    ```
 
     :param severity: severity of the outcome to detail
-    :type severity: str
+    :type severity: `str`
 
     :param outcome_number: Outcome number i that severity
-    :type outcome_number: int
+    :type outcome_number: `int`
 
     :param emoji: text for the emoji related to the outcome severity
-    :type emoji: str
+    :type emoji: `str`
 
     :param shape_data: dictionary storing information about eventual custom tests
-    :type shape_data: dict[ # Dictionary about custom tests data
-
+    :type shape_data: optional:\n
+    
+    ```
+    dict[ # Dictionary about custom tests data
         str, # Custom test identifier
-
         dict[ # Information about a given custom test
-
             str, # One of title / description / errors
-
             Union[str, list[str]] # Useful data
-
         ]
-
     ]
+    ```
     """
     _, _, _, outcome, _, subject_id, subject_title, criterion_uri, outcome_title, outcome_description, outcome_id, outcome_number, severity_list_size, severity_index = outcome_info
     subject_id = str(subject_id)
@@ -558,77 +530,67 @@ def make_severity_detail(
     """Generate the outcome details section ofr all the outcomes of that severity
 
     :param outcomes: The list of the outcomes of that section
-    :type outcomes: list[ # List of the outcomes information related to the severity
-
+    :type outcomes:
+    
+    ```
+    list[ # List of the outcomes information related to the severity
         tuple[
-        
             BNode, # Assertion
-
             BNode, # Subject
-
             BNode, # Result
-
             BNode, # Outcome
-
             Literal, # Outcome type
-
             Literal, # Subject identifier
-
             Literal, # Subject title
-
             Literal, # Criterion identifier
-
             Literal, # Outcome title
-
             Literal, # Outcome description
-
             Literal # Outcome identifier
-
         ]
-
     ]
+    ```
 
     :param severity: The severity of all the outcomes from the list
-    :type severity: str
+    :type severity: `str`
 
     :param emoji: The emoji associated to the severity of that chapter
-    :type emoji: str
+    :type emoji: `str`
 
     :param partsDict: dictionary of all the subject parts
-    :type partsDict: dict[ # dictionary of the related pointers
-
+    :type partsDict:
+    
+    ```
+    dict[ # dictionary of the related pointers
         str, # Outcome
-
         list[Union[URIRef, Literal]] # List of pointers (URIs or code snippets)
-
     ]
+    ```
 
     :param pointersDict: dictionary of the related pointers
-    :type dict[ # dictionary of the related pointers
-
+    :type pointersDict:
+    
+    ```
+    dict[ # dictionary of the related pointers
         str, # Outcome
-
         list[Union[URIRef, Literal]] # List of pointers (URIs or code snippets)
-
     ]
+    ```
 
     :param shape_data: dictionary storing information about eventual custom tests
-    :type shape_data: dict[ # Dictionary about custom tests data
-
+    :type shape_data: optional: \n
+    
+    ```
+    dict[ # Dictionary about custom tests data
         str, # Custom test identifier
-
         dict[ # Information about a given custom test
-
             str, # One of title / description / errors
-
             Union[str, list[str]] # Useful data
-
         ]
-
     ]
+    ```
 
     :returns: The generated markdown as list of lines
-    :rtype: list[str]
+    :rtype: `list[str]`
     """
     result = []
     severity_outcomes = outcomes[severity]
@@ -685,59 +647,47 @@ def make_severity_summary(
     """For a given severity chapter, generates the summary table
     
     :param outcomes: The list of the outcomes of that section
-    :type outcomes: list[ # List of the outcomes information related to the severity
-
+    :type outcomes:
+    
+    ```
+    list[ # List of the outcomes information related to the severity
         tuple[
-        
             BNode, # Assertion
-
             BNode, # Subject
-
             BNode, # Result
-
             BNode, # Outcome
-
             Literal, # Outcome type
-
             Literal, # Subject identifier
-
             Literal, # Subject title
-
             Literal, # Criterion identifier
-
             Literal, # Outcome title
-
             Literal, # Outcome description
-
             Literal # Outcome identifier
-
         ]
-
     ]
+    ```
 
     :param severity: The severity of all the outcomes from the list
-    :type severity: str
+    :type severity: `str`
 
     :param emoji: The emoji associated to the severity of that chapter
-    :type emoji: str
+    :type emoji: `str`
 
     :param shape_data: dictionary storing information about eventual custom tests
-    :type shape_data: dict[ # Dictionary about custom tests data
-
+    :type shape_data: optional: \n
+    
+    ```
+    dict[ # Dictionary about custom tests data
         str, # Custom test identifier
-
         dict[ # Information about a given custom test
-
             str, # One of title / description / errors
-
             Union[str, list[str]] # Useful data
-
         ]
-
     ]
+    ```
 
     :returns: The generated markdown section, as list of lines
-    :rtype: list[str]
+    :rtype: `list[str]`
     """
     severity_outcomes = outcomes[severity]
     table_length = len(severity_outcomes)
@@ -805,83 +755,73 @@ def make_severity_chapter(
     """Generates all the markdown sections related to a given outcome severity
 
     :param outcomes: The list of the outcomes of that section
-    :type outcomes: list[ # List of the outcomes information related to the severity
-
+    :type outcomes:
+    
+    ```
+    list[ # List of the outcomes information related to the severity
         tuple[
-        
             BNode, # Assertion
-
             BNode, # Subject
-
             BNode, # Result
-
             BNode, # Outcome
-
             Literal, # Outcome type
-
             Literal, # Subject identifier
-
             Literal, # Subject title
-
             Literal, # Criterion identifier
-
             Literal, # Outcome title
-
             Literal, # Outcome description
-
             Literal # Outcome identifier
-
         ]
-
     ]
+    ```
 
     :param partsDict: dictionary of all the subject parts
-    :type partsDict: dict[ # dictionary of the related pointers
-
+    :type partsDict:
+    
+    ```
+    dict[ # dictionary of the related pointers
         str, # Outcome
-
         list[Union[URIRef, Literal]] # List of pointers (URIs or code snippets)
-
     ]
+    ```
 
     :param pointersDict: dictionary of the related pointers
-    :type dict[ # dictionary of the related pointers
-
+    :type pointersDict:
+    
+    ```
+    dict[ # dictionary of the related pointers
         str, # Outcome
-
         list[Union[URIRef, Literal]] # List of pointers (URIs or code snippets)
-
     ]
+    ```
 
     :param severity: The severity of all the outcomes from the list
-    :type severity: str
+    :type severity: `str`
 
     :param emoji: The emoji associated to the severity of that chapter
-    :type emoji: str
+    :type emoji: `str`
 
     :param shape_data: dictionary storing information about eventual custom tests
-    :type shape_data: dict[ # Dictionary about custom tests data
-
+    :type shape_data: optional \n
+    
+    ```
+    dict[ # Dictionary about custom tests data
         str, # Custom test identifier
-
         dict[ # Information about a given custom test
-
             str, # One of title / description / errors
-
             Union[str, list[str]] # Useful data
-
         ]
-
     ]
+    ```
 
     :param previous_severity: The severity of the previous severity chapter
-    :type previous_severity: str
+    :type previous_severity: `str`
 
     :param next_severity: The severity of the previous severity chapter
-    :type next_severity: str
+    :type next_severity: `str`
 
     :returns: The markdown content as list of lines
-    :rtype: list[str]
+    :rtype: `list[str]`
     """
     result = []
     outcome_number = len(outcomes[severity])
@@ -946,42 +886,30 @@ def make_stat_chapter(outcomes: dict [ # Dictionary linking a severity to its re
     """Generates the statistic summary markdown chapter
 
     :param outcomes: A dictionary storing information about all the report outcomes
-    :type outcomes: dict [ # Dictionary linking a severity to its related outcomes
-
+    :type outcomes:
+    
+    ```
+    dict [ # Dictionary linking a severity to its related outcomes
         list[ # List of the outcomes information related to the severity
-
             tuple[
-            
                 BNode, # Assertion
-
                 BNode, # Subject
-
                 BNode, # Result
-
                 BNode, # Outcome
-
                 Literal, # Outcome type
-
                 Literal, # Subject identifier
-
                 Literal, # Subject title
-
                 Literal, # Criterion identifier
-
                 Literal, # Outcome title
-
                 Literal, # Outcome description
-
                 Literal # Outcome identifier
-
             ]
-
         ]
-
     ]
+    ```
 
     :returns: The statistic summary markdown section, as a list of lines
-    :rtype: list[str]
+    :rtype: `list[str]`
     """
     outcomes_stats = [len(outcomes[key]) for key, _, _ in SEVERITY_RANGE]
     nb_outcomes = sum(outcomes_stats)
@@ -1042,28 +970,26 @@ def markdown_export(
     """Generates the markdown report format out of the turtle report format
 
     :param report: The turtle report
-    :type report: rdflib.Graph
+    :type report: `rdflib.Graph`
 
     :param file_name: The expected file name
-    :type file_name: str
+    :type file_name: `str`
 
     :param shape_data: dictionary storing information about eventual custom tests
-    :type shape_data: dict[ # Dictionary about custom tests data
-
+    :type shape_data: optional \n
+    
+    ```
+    dict[ # Dictionary about custom tests data
         str, # Custom test identifier
-
         dict[ # Information about a given custom test
-
             str, # One of title / description / errors
-
             Union[str, list[str]] # Useful data
-
         ]
-
     ]
+    ```
 
     :returns: A string containing the markdown report format
-    :rtype: str
+    :rtype: `str`
     
     """
     md = []

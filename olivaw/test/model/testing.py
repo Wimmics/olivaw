@@ -1,6 +1,8 @@
-"""Module providing the business logic behind the "olivaw test model" command"""
+"""Module providing the business logic behind the `olivaw test model` command"""
 
 from os.path import sep, relpath
+from typing import Union
+from py4j.java_gateway import JavaObject
 
 from olivaw.constants.sparql import LINK_SUBJECTS_FOR_MODULE, REMOVE_DESCRIPTION_LINKS
 from olivaw.test.corese import (
@@ -35,12 +37,15 @@ from rdflib import Graph, BNode
 
 shape_tests, shape_data = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
 
-def group_terms_by_module(modelet):
+def group_terms_by_module(modelet: JavaObject) -> dict[str, str]:
     """Get all the triples that has a subject included in the ontology.
     Group all of these triples by module (using rdfs:isDefinedBy property)
 
     :param modelet: Corese graph containing the modelet
-    :returns: A dictionary of n3 for each module to be merged with the given n3
+    :type modelet: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
+
+    :returns: A dictionary that links a module to some modelet turtle data
+    :rtype: `dict[str, str]`
     """
     tsv = [
         ontology
@@ -66,13 +71,14 @@ def group_terms_by_module(modelet):
 
     return grouped_triples
 
-def profile_check(fragment, draft):
-    """Returns a report about whether an ontology is compatible with each profile and if not, why
+def profile_check(fragment: JavaObject, draft: AssertDraft) -> None:
+    """Executes the profile-compatibility tests over the provided fragment
 
-    :param ontology: Corese graph containing the modelet
-    :param extra: string in n3 notation, additional triples to add to the graph
-    :returns: A dictionary with a key for each profile containing itself another dictionary
-    with a key "is_reached" mapping a boolean indicating a compatibility, and a "message" justifying the result
+    :param fragment: Corese fgraph containing the fragment to be tested
+    :type fragment: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
+
+    :param draft: The assertion draft containing the useful information for reporting
+    :type draft: `olivaw.test.AssertDraft`
     """
 
     engine = OWLProfile(fragment)
@@ -127,7 +133,21 @@ def profile_check(fragment, draft):
             )
         )
 
-def fragment_check(fragments, draft, extras=""):
+def fragment_check(fragments, draft, extras="") -> bool:
+    """Executes the model tests over the files and extra turtle data passed as input
+
+    :param fragments: List of paths of files that are the parts of the subject
+    :type fragments: `list[str]`
+
+    :param draft: The assertion draft containing the useful information for reporting
+    :type draft: `olivaw.test.AssertDraft`
+
+    :param extras: Extra turtle data to inject into the subject, defaults to `""`
+    :type extras: `str`, optional
+
+    :returns: Boolean stating if the fragment can be used in further aggregated graph tests
+    :rtype: `bool`
+    """
     fragment_no_import = safe_load(
         fragments,
         extras,
@@ -174,16 +194,16 @@ def modules_tests(modules: list[str], report: Graph=None, assertor: BNode=None) 
     """Apply the modules test on the provided modules and write the result in the provided report
 
     :param modules: A list of module paths to test
-    :type modules: list[str]
+    :type modules: `list[str]`
 
-    :params report: the report where the results will be written, defaults to None
-    :type report: rdflib.Graph, optional
+    :params report: the report where the results will be written, defaults to `None`
+    :type report: `rdflib.Graph`, optional
     
-    :params assertor: the assertor of this test, defaults to None
-    :type assertor: rdflib.URIRef
+    :params assertor: the assertor of this test, defaults to `None`
+    :type assertor: `rdflib.URIRef`
 
     :return: The list of the module paths that can be used in further aggregated graph tests
-    :rtype: list[str]
+    :rtype: `list[str]`
     """
     if len(modules) == 0:
         return []
@@ -203,13 +223,20 @@ def modules_tests(modules: list[str], report: Graph=None, assertor: BNode=None) 
 
     return safe_modules
 
-def modelets_tests(modelets, report=None, assertor=None):
-    """Test of the modelets
-    Test them individually, and then checks how each module behave
-    when merged with their related terms in the modelets
+def modelets_tests(modelets, report: Graph=None, assertor: BNode=None) -> list[str]:
+    """Executes the tests related to modelets on the provided modelets
 
-    :param glob_path: A glob-format path string
-    :returns: A dictionary of reports
+    :param modelets: List of modelets paths to test
+    :type modelets: `list[str]`
+
+    :param report: Test report to use, defaults to `None` and creating a new one
+    :type report: `rdflib.Graph`, optional
+
+    :param assertor: Assertor to use for report, defaults to `None` and creating a new one
+    :type assertor: `rdflib.BNode`, optional
+
+    :returns: The list of the modelet paths that can be used in further aggregated graph tests
+    :rtype: list[str]
     """
     if len(modelets) == 0:
         return []
@@ -264,12 +291,26 @@ def modelets_tests(modelets, report=None, assertor=None):
     return safe_modelets
 
 def merged_fragment_set_test(
-        report,
-        assertor,
-        fragments_to_merge,
-        heart_name,
-        custom_title=""
-    ):
+        report: Graph,
+        assertor: BNode,
+        fragments_to_merge: list[str],
+        heart_name: str,
+        custom_title: str=""
+    ) -> None:
+    """Executes the model tests in an aggregation of ontology fragments
+    
+    :param report: The test report to use
+    :type report: `rdflib.Graph`
+
+    :param fragments_to_merge: List of paths to files to include in the test subject
+    :type fragments_to_merge: `list[str]`
+
+    :param heart_name: Identifier to attribute to the subject
+    :type heart_name: `str`
+
+    :param custom_title: Custom title to give to the subject, defaults to `""` and computes a title
+    :type custom_title: `str`
+    """
     fragments_keys = [
         relpath(fragment, PWD_TO_ROOT_FOLDER).replace(sep, "/")
         for fragment in fragments_to_merge

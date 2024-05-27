@@ -28,7 +28,7 @@ def test(line: list[str]) -> None:
     """Parse an olivaw command starting with `olivaw test` and execute it
 
     :param line: list of options following `olivaw test` in the command line typed in the terminal
-    :type line: list[str]
+    :type line: `list[str]`
     """
     target = line.pop(0)
     
@@ -62,7 +62,7 @@ def init(line: list[str]):
     """Parse an olivaw command starting with `olivaw init` and execute it
 
     :param line: list of options following `olivaw init` in the command line typed in the terminal
-    :type line: list[str]
+    :type line: `list[str]`
     """
     target = line[0]
 
@@ -80,7 +80,7 @@ def show(line: list[str]):
     """Parse an olivaw command starting with `olivaw show` and execute it
 
     :param line: list of options following `olivaw show` in the command line typed in the terminal
-    :type line: list[str]
+    :type line: `list[str]`
     """
     target = line[0]
 

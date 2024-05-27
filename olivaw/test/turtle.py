@@ -2,7 +2,7 @@
 
 from datetime import datetime
 from itertools import zip_longest
-from typing import Optional, Tuple
+from typing import Optional
 
 from py4j.java_gateway import JavaObject
 
@@ -66,14 +66,14 @@ from olivaw.test.corese import (
 from olivaw.test.util import COMMON_URI_DICT
 from olivaw.test.util.draft import AssertDraft
 
-def new_report(test_type: str) -> Tuple[Graph, BNode]:
+def new_report(test_type: str) -> tuple[Graph, BNode]:
     """Creates a new report and add the assertor
 
     :param test_type: The type of test that this report will be used for
-    :type test_type: str
+    :type test_type: `str`
 
     :return: The report and the assertor
-    :rtype: rdflib.BNode
+    :rtype: `rdflib.BNode`
     """
     report = Graph()
 
@@ -90,10 +90,10 @@ def make_assertor(report: Graph, test_type: str) -> BNode:
     """Writes an assertor in the report and returns the assertor
 
     :param report: The test report
-    :type report: rdflib.Graph
+    :type report: `rdflib.Graph`
 
     :return: The assertor node
-    :rtype: rdflib.BNode
+    :rtype: `rdflib.BNode`
     """
 
     script_uri = f"{OLIVAW_TEST_BLOB_URI}/{test_type}/suite.py"
@@ -133,10 +133,10 @@ def make_subject_id_part(fragment_list: list[str]) -> str:
     """Analyze the heart or appendix of a subject and generate the subject identifier part related to this
 
     :param fragment_list: List of files from the heart or appendix of a subject
-    :type fragment_list: list[str]
+    :type fragment_list: `list[str]`
 
     :return: Subject identifier part
-    :rtype: str
+    :rtype: `str`
     """
 
     modules = [item for item in fragment_list if item.startswith("src/")]
@@ -165,13 +165,13 @@ def make_subject_id(heart: list[str], appendix: list[str]=[]) -> str:
     """Computes the subject identifier of a subject
 
     :param heart: List of file paths that are the heart of the subject
-    :type heart: list[str]
+    :type heart: `list[str]`
 
-    :param appendix: List of file âths that are the appendix of the subject
-    :type appendix: list[str], optional
+    :param appendix: List of file paths that are the appendix of the subject, defaults to `[]`
+    :type appendix: `list[str]`, optional
 
     :return: The subject identifier
-    :rtype: str
+    :rtype: `str`
     """
 
     result = [make_subject_id_part(heart)]
@@ -193,22 +193,22 @@ def make_subject(
     """Writes the test subject in the report and returns it
 
     :param draft: Draft of the test
-    :type draft: AssertDraft
+    :type draft: `olivaw.test.AssertDraft`
     
     :param heart: List of file paths that are the heart of the subject
-    :type heart: list[str]
+    :type heart: `list[str]`
 
-    :param appendix: List of file opaths that are the appendix of the subject, defaults to empty list
-    :type appendix: list[str], optional
+    :param appendix: List of file opaths that are the appendix of the subject, defaults to `[]`
+    :type appendix: `list[str]`, optional
 
-    :param name: Desired subject identifier, defaults to computing it
-    :type name: str, optional
+    :param name: Desired subject identifier, defaults to `""` and compute it
+    :type name: `str`, optional
 
-    :param custom_title: Desired subject title, defaults to computing it
-    :type custom_title: str, optional
+    :param custom_title: Desired subject title, defaults to `""` and compute it
+    :type custom_title: `str`, optional
 
     :return: The node representing the test subject
-    :rtype: rdflib.BNode
+    :rtype: `rdflib.BNode`
     """
 
     subject_id = make_subject_id(heart, appendix=appendix) if name == "" else name
@@ -305,10 +305,10 @@ def remove_prefixes(statement: str, is_literal: bool=False) -> str:
     """Remove the prefixes declaration from a code snippet
 
     :param statement: the code snippet
-    :type statement: str
+    :type statement: `str`
 
-    :param is_literal: is the code snippet already parsed, defaults to False
-    :type is_literal: bool, optional
+    :param is_literal: is the code snippet already parsed, defaults to `False`
+    :type is_literal: `bool`, optional
     """
     if is_literal:
         return statement
@@ -330,10 +330,10 @@ def parse_statement(raw_statement: str) -> str:
     """Returns a human-friendly version of a code snippet passed as input
 
     :param raw_statement: the code snippet
-    :type raw_statement: str
+    :type raw_statement: `str`
 
     :return: the code snippet represented in a human friendly way
-    :rtype: str
+    :rtype: `str`
     """
     rdf = f"{CORESE_PREFIX_TEXT}\n{raw_statement}"
     if not rdf.strip().endswith("."):
@@ -350,13 +350,13 @@ def extract_statement(graph: JavaObject, pointer: URIRef) -> Literal:
     """Returns a RDF Literal of a code snippet containing all the relevant data about the URI passed as input
     
     :param graph: Corese Graph that contains the information about the required URI
-    :type graph: py4j.java_gateway.JavaObject (containing fr.inria.corese.core.Graph)
+    :type graph: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
 
     :param pointer: The URI that will be defined by the code snippet
-    :type pointer: rdflib.URIRef
+    :type pointer: `rdflib.URIRef`
 
     :return: Literal containing the code snippet
-    :rtype: rdflib.Literal
+    :rtype: `rdflib.Literal`
     """
     graph.query(ADD_DESCRIPTION_LINKS.replace("TERM", pointer))
     statement = graph.query(EXTRACT_STATEMENT.replace("TERM", pointer), format=TURTLE).strip()
@@ -422,13 +422,13 @@ def make_pointer(draft: AssertDraft, pointer_string: str) -> Identifier:
     """Returns a Literal containing a human-friendly representation of a pointer for the report
 
     :param draft: The test assertion draft
-    :type draft: AssertDraft
+    :type draft: `olivaw.test.AssertDraft`
 
     :param pointer_string: The string not parsed version of the pointer
-    :type pointer_string: str
+    :type pointer_string: `str`
 
     :return: A Literal containing the human-friendly version of the pointer
-    :rtype: rdflib.Identifier
+    :rtype: `rdflib.Identifier`
     """
 
     statement_subject = pointer_string.split(" ")[0]
@@ -459,10 +459,10 @@ def make_outcome(draft: AssertDraft) -> Optional[BNode]:
     """Makes an outcome given the information stored in the draft
     
     :param draft: The assertion draft
-    :type draft: rdflib.Graph
+    :type draft: `olivaw.test.AssertDraft`
 
     :return: A node representing the outcome
-    :rtype: rdflib.Bnode or NoneType if outcome should be skipped 
+    :rtype: `rdflib.BNode` or `NoneType` if outcome should be skipped 
     """
 
     if draft.should_skip():
@@ -513,10 +513,10 @@ def make_outcomes(draft: AssertDraft) -> list[BNode]:
     """Prepare outcomes in the report given the information stored in the draft
 
     :param draft: The test assertion draft
-    :type draft: AssertDraft
+    :type draft: `olivaw.test.AssertDraft`
 
     :return: A list of Nodes representing each generated outcomes
-    :rtype: list[BNode]
+    :rtype: `list[BNode]`
     """
     if isinstance(draft.error, list):
         return [
@@ -566,13 +566,13 @@ def make_result(draft: AssertDraft, outcomes: list[BNode]) -> BNode:
     """Prepare a Result node given the output passed in parameter
     
     :param draft: Test assertion draft
-    :type draft: AssertDraft
+    :type draft: `olivaw.test.AssertDraft`
 
     :param outcomes: List of the outcome to be linked to the result
-    :type outcomes: list[BNode]
+    :type outcomes: `list[BNode]`
 
     :return: A BNode representing the result
-    :rtype: rdflib.BNode
+    :rtype: `rdflib.BNode`
     """
     # When pass, there is a pass outcome, when no outcome, then it is a skipped error
     if outcomes is None or len(outcomes) == 0:
@@ -596,13 +596,13 @@ def get_outcome_type(report: Graph, outcome: BNode) -> str:
     """Returns the outcome type of an outcome
     
     :param report: The graph containing the outcome
-    :type report: rdflib.Graph
+    :type report: `rdflib.Graph`
 
     :param outcome: The outcome that needs the outcome type extraction
-    :type outcome: rdflib.BNode
+    :type outcome: `rdflib.BNode`
 
     :return: The outcome type of the given outcome
-    :rtype: str
+    :rtype: `str`
     """
 
     outcome = report.value(outcome, EARL_NAMESPACE.outcome)
@@ -614,10 +614,10 @@ def assemble_assertion(draft: AssertDraft, result: BNode) -> None:
     """Given the data stored in the draft and the result node passed as input, write an assertion in the report
     
     :param draft: The assertion draft
-    :type draft: AssertDraft
+    :type draft: `olivaw.test.AssertDraft`
 
     :param result: The result Node
-    :type result: rdflib.BNode
+    :type result: `rdflib.BNode`
     """
     # if result is None, then it is a skipped error
     if result is None:
@@ -643,7 +643,7 @@ def make_assertion(draft: AssertDraft) -> None:
     """Computes all the elements to make an assertion given the draft content and assemble it
     
     :param draft: The assertion draft
-    :type draft: AssertDraft
+    :type draft: `olivaw.test.AssertDraft`
     """
     assemble_assertion(
         draft,
@@ -657,10 +657,10 @@ def make_not_tested(draft: AssertDraft, *criterions: list[str]) -> None:
     """Prepare assertions with outcome set as NotTested for the criterions identifiers passed as input, given the draft content
 
     :param draft: The test assertion draft
-    :type draft: AssertDraft
+    :type draft: `olivaw.test.AssertDraft`
 
     :param criterions: the list of criterion identifiers we want to report as NotTested
-    :type criterion: list[str]
+    :type criterion: `list[str]`
     """
 
     if len(criterions) > 0:

@@ -1,4 +1,4 @@
-"""Package managing any olivaw command starting with "olivaw show" """
+"""Package managing any olivaw command starting with `olivaw show` """
 
 __main__ = ["gist", "badges"]
 

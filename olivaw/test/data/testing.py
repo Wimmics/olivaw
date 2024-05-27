@@ -1,6 +1,8 @@
-"""Module responsible for the business logic behind the "olivaw test data" command"""
+"""Module responsible for the business logic behind the `olivaw test data` command"""
 
 from os.path import relpath, sep
+
+from rdflib import BNode, Graph
 
 from olivaw.test.corese import (
     safe_load,
@@ -28,9 +30,19 @@ from olivaw.test.generic.shacl import load_valid_custom_tests, custom_test
 from olivaw.test.generic.prefix import prefix_test
 from olivaw.test.util import progress_bar, AssertDraft
 
+from py4j.java_gateway import JavaObject
+
 shape_tests, shapes_data = load_valid_custom_tests(CUSTOM_DATA_TESTS)
 
-def fragment_check(draft, dataset):
+def fragment_check(draft: AssertDraft, dataset: str) -> None:
+    """Executes a data test over a data fragment
+
+    :param draft: The assertion draft containing the useful information for reporting
+    :type draft: `olivaw.test.AssertDraft`
+
+    :param dataset: File path of the data fragment to be tested
+    :type dataset: `str`
+    """
     dataset_key = relpath(dataset, ROOT_FOLDER).replace(sep, "/")
     draft(subject=make_subject(draft, [dataset_key]))
     graph_no_import = safe_load(dataset, disable_import=True)
@@ -86,7 +98,15 @@ def fragment_check(draft, dataset):
     )
         
 
-def get_ontology_terms(fragments):
+def get_ontology_terms(fragments: list[str]) -> list[str]:
+    """Get all the terms that are defined in the ontology
+
+    :param fragments: List of the ontology files paths
+    :type fragments: `list[str]`
+
+    :returns: The list of the ontology terms URIs
+    :rtype: `list[str]`
+    """
     terms = []
 
     for fragment in fragments:
@@ -103,7 +123,18 @@ def get_ontology_terms(fragments):
 
     return terms
 
-def data_tests(glob_path, report=None, assertor=None):
+def data_tests(glob_path: list[str], report: Graph=None, assertor: BNode=None) -> None:
+    """Execute a data test on each data fragment passed as input
+
+    :param glob_path: List of all the data fragments to be tested
+    :type glob_path: `list[str]`
+
+    :param report: Test report to use for the tests to be run, defaults to `None` and create a new one
+    :type report: `rdflib.Graph`, optional
+
+    :param assertor: Test assertor to use in the test, defaults to `None` and create a new one
+    :type assertor: `rdflib.BNode`, optional
+    """
     if report is None or assertor is None:
         report, assertor = new_report("data")
 
@@ -114,7 +145,15 @@ def data_tests(glob_path, report=None, assertor=None):
 
     return report
 
-def best_practices(draft, graph_rl):
+def best_practices(draft: AssertDraft, graph_rl: JavaObject) -> None:
+    """Executes the data best practices tests over the Corese graph passed as input
+
+    :param draft: The assertion draft containing the useful information for reporting
+    :type draft: `olivaw.test.AssertDraft`
+
+    :param graph_rl: The Corese graph containing the data fragment
+    :type graph_rl: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
+    """
     if not "term-recognition" in SKIPPED_TESTS:
         ontology_terms = list(set([term for _, term in get_ontology_terms(MODULES_TTL_GLOB_PATH)]))
 

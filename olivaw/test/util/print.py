@@ -3,7 +3,12 @@
 from tqdm import tqdm
 from olivaw.constants import QUIET
 
-def print_title(title):
+def print_title(title: str) -> None:
+    """Prints the title if olivaw execution mode allows it
+
+    :param title: The title to print
+    :type title: `str`
+    """
     if QUIET:
         return
     title = "== " + title + " =="
@@ -14,10 +19,23 @@ def print_title(title):
     print(border)
 
 
-def smart_print(message):
+def smart_print(message: str) -> None:
+    """Prints the provided message if olivaw execution mode allows it
+    
+    :param message: The message to print
+    :type message: `str`
+    """
     if QUIET:
         return
     print(message)
 
-def progress_bar(array):
+def progress_bar(array: list) -> tqdm:
+    """Provides a visible progress bar for a list if olivaw execution mode allows it
+
+    :param array: The list
+    :type array: `list`
+    
+    :returns: A progress bar
+    :rtype: `tqdm.tqdm`
+    """
     return tqdm(array, disable=QUIET)

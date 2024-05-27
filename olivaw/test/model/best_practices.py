@@ -1,5 +1,7 @@
 """Package managing all the default model tests that are related to best practices"""
 
+from py4j.java_gateway import JavaObject
+
 from olivaw.constants import (
     GET_TERM_PAIRS,
     NOT_LABELED,
@@ -13,18 +15,24 @@ from olivaw.constants import (
 from olivaw.test.corese import query_graph
 from olivaw.test.turtle import make_assertion
 from olivaw.test.util import levenshtein
+from olivaw.test.util.draft import AssertDraft
 
 
 def best_practices_test(
-        draft,
-        fragment_no_import,
-        fragment_no_owl,
-    ):
-    """Test the best practices mistakes that do not break the RDF syntax neither the OWL reasoning,
-    but that should still not happen
+        draft: AssertDraft,
+        fragment_no_import: JavaObject,
+        fragment_no_owl: JavaObject,
+    ) -> None:
+    """Test the best practices mistakes that do not break the RDF syntax neither the OWL reasoning
 
-    :param ontology: The ontology to test
-    :returns: An report dictionary
+    :param draft: The assertion draft containing the useful information for reporting
+    :type draft: `olivaw.test.AssertDraft`
+
+    :param fragment_no_import: Corese graph containing the fragment with `owl:imports` clauses ignored
+    :type fragment_no_owl: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
+
+    :param fragment_no_owl: Corese graph containing the fragment without any owl reasoning
+    :type fragment_no_owl: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
     """
 
     # Check for terms not linked to an ontology

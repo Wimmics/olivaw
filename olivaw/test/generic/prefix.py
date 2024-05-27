@@ -1,5 +1,6 @@
 """Module providing the prefix-validity test"""
 
+from typing import Callable
 from olivaw.constants import (
     PREFIX_SIMILARITY_THRESHOLD,
     GET_URIS,
@@ -18,16 +19,32 @@ from olivaw.test.corese import (
 
 from olivaw.test.turtle import make_assertion
 from olivaw.test.util import make_index, similar_prefix_search, COMMON_URIS_TREE
+from olivaw.test.util.draft import AssertDraft
 
-def get_prefix_suffix(uri):
+def get_prefix_suffix(uri: str) -> tuple[str, str]:
+    """Returns the namespace and the suffix related to the given URI
 
+    :param uri: The URI to analyze
+    :type uri: `str`
+
+    :returns: The namespace and the suffix of that URI
+    :rtype: `tuple[str, str]`
+    """
     for i in range(len(uri) - 1, 0, -1):
         if uri[i] in ["#", "/", ":", "="]:
             return uri[:i+1], uri[i+1:]
         
     return uri, ""
 
-def get_uris(fragments):
+def get_uris(fragments: list[str]) -> list[str]:
+    """Retrieves all the URIs that can be found in a set of fragments
+
+    :param fragments: List of files paths to retrieve URIs
+    :type fragments: `list[str]`
+
+    :returns: A list of URIs that can be found in the fragments
+    :rtype: `list[str]`
+    """
     uris = []
 
     for fragment in fragments:
@@ -45,10 +62,21 @@ def get_uris(fragments):
     return uris
 
 def prefix_test(
-    draft,
-    uris,
-    get_prefix_usage
-):
+    draft: AssertDraft,
+    uris: list[str],
+    get_prefix_usage: Callable[[str], str]
+) -> None:
+    """Executes the prefix test on the provided URIs
+
+    :param draft:The assertion draft containing the useful information for reporting
+    :type draft: `olivaw.test.AssertDraft`
+
+    :param uris: The URIs that can be found in the subject
+    :type uris: `list[str]`
+
+    :param get_prefix_usage: Pointer to a function that provides the usage of a URI in the subject
+    :type get_prefix_usage: `typing.Callable[[str], str]`
+    """
     if "prefix-validity" in SKIPPED_TESTS:
         return
     

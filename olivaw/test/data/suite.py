@@ -1,11 +1,12 @@
-"""Module responsible for the "olivaw test data" command"""
+"""Module executing the `olivaw test data` command"""
 
 from olivaw.test.markdown import markdown_export
 from .testing import data_tests, shapes_data
 from olivaw.constants import DATASETS
 from olivaw.test.util import print_title, save_reports, file_name
 
-def test_data():
+def test_data() -> None:
+    """Executes the data tests over the project"""
     print_title("Running data tests")
     report = data_tests(DATASETS)
 

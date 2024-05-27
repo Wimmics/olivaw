@@ -1,4 +1,4 @@
-"""Package managing the command "olivaw test data" """
+"""Package managing the command `olivaw test data` """
 
 __all__ = ["suite", "testing"]
 

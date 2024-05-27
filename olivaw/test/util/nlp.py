@@ -5,8 +5,13 @@ def levenshtein(s1, s2):
     Algorithm borrowed from https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/Levenshtein_distance#Python
 
     :param s1: The first string
+    :type s1: `str`
+
     :param s2: The second string
+    :type s2: `str`
+
     :returns: The levenshtein distance
+    :rtype: `int`
     """
     if len(s1) < len(s2):
         return levenshtein(s2, s1)

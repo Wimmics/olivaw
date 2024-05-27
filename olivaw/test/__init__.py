@@ -1,4 +1,4 @@
-"""Package managing any olivaw commands starting with "olivaw test" """
+"""Package managing any olivaw commands starting with `olivaw test` """
 
 __main__ = ["model", "data"]
 

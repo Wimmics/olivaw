@@ -2,9 +2,23 @@
 
 from os.path import abspath
 from rdflib import DCTERMS
-from olivaw.constants import SKIP_FOR_TEST, SKIP_FOR_SUBJECT, SKIPPED_TESTS, SKIPPED_SUBJECTS
+from olivaw.constants import (
+    SKIP_FOR_TEST,
+    SKIP_FOR_SUBJECT,
+    SKIPPED_TESTS,
+    SKIPPED_SUBJECTS
+)
+from olivaw.test.util.draft import AssertDraft
 
-def should_skip(draft):
+def should_skip(draft: AssertDraft) -> bool:
+    """Returns a boolean stating if the current test should be skipped
+
+    :param draft: Assertion draft useful information for the current test
+    :type draft: `olivaw.test.AssertDraft`
+
+    :returns: A boolean stating if the current test should be skipped
+    :rtype: `bool`
+    """
     subject_file = subject_id = None
     if draft.has_field("file") and isinstance(draft.file, str):
         subject_file = abspath(draft.file)

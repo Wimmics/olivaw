@@ -14,8 +14,8 @@ from olivaw.init.util import badge_url
 def update_readme(gist_id: str=None) -> None:
     """Updates the main README.md file with the proper badges URIs
 
-    :param gist_id: ID of the gist storing the project badges data
-    :type gist_id: str, optional
+    :param gist_id: ID of the gist storing the project badges data, defaults to `None`
+    :type gist_id: `str`, optional
     """
 
     readme = None
