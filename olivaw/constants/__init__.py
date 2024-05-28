@@ -215,7 +215,7 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
   VARIABLE_REQUESTS = [
     "NOT_REFERENCED",
     "GET_BY_MODULE",
-    "DOMAIN_OUT_Of_VOCABULARY",
+    "DOMAIN_OUT_OF_VOCABULARY",
     "RANGE_OUT_OF_VOCABULARY",
     "NOT_LABELED",
     "GET_TERM_PAIRS",
