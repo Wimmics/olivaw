@@ -65,6 +65,7 @@ from olivaw.test.corese import (
 
 from olivaw.test.util import COMMON_URI_DICT
 from olivaw.test.util.draft import AssertDraft
+from olivaw.test.util.skip import should_skip
 
 def new_report(test_type: str) -> tuple[Graph, BNode]:
     """Creates a new report and add the assertor
@@ -465,7 +466,7 @@ def make_outcome(draft: AssertDraft) -> Optional[BNode]:
     :rtype: `rdflib.BNode` or `NoneType` if outcome should be skipped 
     """
 
-    if draft.should_skip():
+    if should_skip(draft):
         return None
         
     test_name = draft.criterion.split('/')[-1].split('#')[0]
@@ -669,7 +670,7 @@ def make_not_tested(draft: AssertDraft, *criterions: list[str]) -> None:
             make_not_tested(draft(criterion=criterion, custom_test_data=custom_criterions))
         return
 
-    if TESTED_ONLY or draft.should_skip():
+    if TESTED_ONLY or should_skip(draft):
         return
 
     criterion_resources = CRITERION_DATA if draft.criterion in CRITERION_DATA else draft.custom_test_data

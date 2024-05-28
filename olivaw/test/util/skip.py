@@ -10,15 +10,19 @@ from olivaw.constants import (
 )
 from olivaw.test.util.draft import AssertDraft
 
-def should_skip(draft: AssertDraft) -> bool:
+def should_skip(draft: AssertDraft, **kwargs) -> bool:
     """Returns a boolean stating if the current test should be skipped
 
     :param draft: Assertion draft useful information for the current test
     :type draft: `olivaw.test.AssertDraft`
 
+    :param **kwargs: Set of optional parameter to set to the `olivaw.test.AssertDraft` instance
+    :type **kwargs: See `olivaw.test.AssertDraft` class documentation for complete details
+
     :returns: A boolean stating if the current test should be skipped
     :rtype: `bool`
     """
+    draft(**kwargs)
     subject_file = subject_id = None
     if draft.has_field("file") and isinstance(draft.file, str):
         subject_file = abspath(draft.file)

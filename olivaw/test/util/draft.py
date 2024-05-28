@@ -2,7 +2,6 @@
 
 from rdflib import BNode, Graph
 from rdflib.term import Identifier
-from olivaw.test.util.skip import should_skip as should_test_skip
 
 class AssertDraft:
     """Utilitary class that stores useful data for building report assertions
@@ -134,14 +133,3 @@ class AssertDraft:
             len(self.pointers) > 0 and \
             len(self.pointers) == len(self.messages): return
         self.pointers = []
-    
-    def should_skip(self, **kwargs) -> bool:
-        """Returns if the current `olivaw.test.AssertDraft` instance test should be skipped
-        
-        :param **kwargs: Set of optional information to set to the current `olivaw.test.AssertDraft` instance
-        :type **kwargs: See the `olivaw.test.AssertDraft`class documentation for the details
-
-        :returns: A boolean stating if the current test should be skipped
-        :rtype: `bool`
-        """
-        return should_test_skip(self(**kwargs))

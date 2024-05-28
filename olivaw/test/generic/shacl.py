@@ -40,6 +40,7 @@ from olivaw.test.util import smart_print
 from py4j.java_gateway import JavaObject
 
 from olivaw.test.util.draft import AssertDraft
+from olivaw.test.util.skip import should_skip
 
 test_features = [
     "Custom test graph must have one and only one criterion",
@@ -379,7 +380,7 @@ def custom_test(
     for shape in shapes:
         criterion_uri, criterion_identifier, *_ = get_criterion_data(shape)
 
-        if draft.should_skip(criterion=criterion_identifier):
+        if should_skip(draft, criterion=criterion_identifier):
             continue
         
         criterion_namespace = "#".join(criterion_uri.split("#")[:-1]) + "#"

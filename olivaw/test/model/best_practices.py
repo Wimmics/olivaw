@@ -16,6 +16,7 @@ from olivaw.test.corese import query_graph
 from olivaw.test.turtle import make_assertion
 from olivaw.test.util import levenshtein
 from olivaw.test.util.draft import AssertDraft
+from olivaw.test.util.skip import should_skip
 
 
 def best_practices_test(
@@ -36,7 +37,7 @@ def best_practices_test(
     """
 
     # Check for terms not linked to an ontology
-    if not draft.should_skip(criterion="term-referencing"):
+    if not should_skip(draft, criterion="term-referencing"):
         unlinked_subjects = query_graph(fragment_no_owl, NOT_REFERENCED)
         unlinked_subjects_pointers = [[pointer for pointer in unlinked_subjects]] if len(unlinked_subjects) else []
         unlinked_subject_messages = [f"Subject terms not linked to a module by a rdfs:isDefinedBy property"] if len(unlinked_subjects) else []
@@ -49,7 +50,7 @@ def best_practices_test(
             )
         )
 
-    if not draft.should_skip(criterion="domain-and-range-referencing"):
+    if not should_skip(draft, criterion="domain-and-range-referencing"):
         # Checking for domain property out of the vocabulary
         dov = query_graph(fragment_no_import, DOMAIN_OUT_Of_VOCABULARY)
         dov = [[
@@ -88,7 +89,7 @@ def best_practices_test(
         )
 
     # Checking for too close terms
-    if not draft.should_skip(criterion="terms-differenciation"):
+    if not should_skip(draft, criterion="terms-differenciation"):
         term_pairs = query_graph(fragment_no_owl, GET_TERM_PAIRS)
         term_pairs = [
             [uri[1:-1] for uri in line.strip().split("\t")]
@@ -113,7 +114,7 @@ def best_practices_test(
             )
         )
 
-    if not draft.should_skip(criterion="labeled-terms"):
+    if not should_skip(draft, criterion="labeled-terms"):
         not_labeled_terms = query_graph(fragment_no_owl, NOT_LABELED)
         not_labeled_pointers = [] if len(not_labeled_terms) == 0 else [not_labeled_terms]
         not_labeled_messages = [] if len(not_labeled_terms) == 0 else [f"The following terms have no rdfs:label to define it in natural language"]

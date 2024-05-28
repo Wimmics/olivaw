@@ -35,6 +35,8 @@ from olivaw.test.util import AssertDraft, progress_bar
 
 from rdflib import Graph, BNode
 
+from olivaw.test.util.skip import should_skip
+
 shape_tests, shape_data = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
 
 def group_terms_by_module(modelet: JavaObject) -> dict[str, str]:
@@ -89,7 +91,7 @@ def profile_check(fragment: JavaObject, draft: AssertDraft) -> None:
     packed_pointers = []
 
     for decidability_level in DECIDABILITY_RANGE:
-        if draft.should_skip():
+        if should_skip(draft):
             break
 
         # Keeping 2 arrays containing almost the same thing was not necessary, so getattr
@@ -115,7 +117,7 @@ def profile_check(fragment: JavaObject, draft: AssertDraft) -> None:
         packed_messages.append(distinct_messages)
         packed_pointers.append(grouped_pointers)
     
-    if not draft.should_skip():
+    if not should_skip(draft):
         make_assertion(
             draft(
                 error=packed_errors,
@@ -125,7 +127,7 @@ def profile_check(fragment: JavaObject, draft: AssertDraft) -> None:
         )
 
     # Check for respect for OWL constraints
-    if not draft.should_skip(criterion="owl-rl-constraint"):
+    if not should_skip(draft, criterion="owl-rl-constraint"):
         make_assertion(
             draft(
                 error="owl-rl-constraint-violation",
@@ -277,7 +279,7 @@ def modelets_tests(modelets, report: Graph=None, assertor: BNode=None) -> list[s
             if module_path.startswith("./"):
                 module_path = module_path[2:]
 
-            if draft.should_skip(file=[modelet, module_key]):
+            if should_skip(draft, file=[modelet, module_key]):
                 continue
 
             draft(subject=make_subject(draft, [module_path], [modelet_key]))
