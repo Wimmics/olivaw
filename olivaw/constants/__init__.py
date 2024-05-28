@@ -6,17 +6,27 @@ from typing import Union
 
 from .paths import *
 
-from .corese_info import *
 from .git_info import *
 from .sparql import *
-
-from .rdflib_info import *
-
-from .markdown import *
 
 from .badges import *
 
 from .prefixcc import *
+
+try:
+  from .corese_info import *
+except:
+  pass
+
+try:
+  from .markdown import *
+except:
+  pass
+
+try:
+  from .rdflib_info import *
+except:
+  pass
 
 __all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown", "badges", "prefixcc"]
 
@@ -197,7 +207,10 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
         str(TERM_DISTANCE_THRESHOLD) if (not TERM_DISTANCE_THRESHOLD is None) else "TERM_DISTANCE_THRESHOLD"
       )
 
-  from .uris import *
+  try:
+    from .uris import *
+  except:
+    pass
 
   VARIABLE_REQUESTS = [
     "NOT_REFERENCED",

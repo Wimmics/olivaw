@@ -9,7 +9,7 @@ from olivaw.constants import (
     ONTOLOGY_NAMESPACE,
     RANGE_OUT_OF_VOCABULARY,
     TERM_DISTANCE_THRESHOLD,
-    DOMAIN_OUT_Of_VOCABULARY
+    DOMAIN_OUT_OF_VOCABULARY
 )
 
 from olivaw.test.corese import query_graph
@@ -52,7 +52,7 @@ def best_practices_test(
 
     if not should_skip(draft, criterion="domain-and-range-referencing"):
         # Checking for domain property out of the vocabulary
-        dov = query_graph(fragment_no_import, DOMAIN_OUT_Of_VOCABULARY)
+        dov = query_graph(fragment_no_import, DOMAIN_OUT_OF_VOCABULARY)
         dov = [[
             uri
             for line in dov

@@ -45,7 +45,7 @@ from olivaw.constants import (
     SKIP_PASS,
     TESTED_ONLY,
     CRITERION_DATA,
-    BACKSLASH_IN_URI
+    URI_PATTERN
 )
 
 from olivaw.constants.sparql import (
@@ -372,7 +372,7 @@ def extract_statement(graph: JavaObject, pointer: URIRef) -> Literal:
     if len(statement) == 0:
         return Literal(str(pointer))
     
-    for match in BACKSLASH_IN_URI.findall(statement):
+    for match in URI_PATTERN.findall(statement):
         statement = statement.replace(match, match.replace("\\/", "/"))
     
     namespaces = graph.query(GET_GRAPH_NAMESPACES)

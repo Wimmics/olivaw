@@ -704,7 +704,7 @@ def make_severity_summary(
             '',
             f"[Chapter top]({id})",
             f'<div id="summary-{severity}-{str(i + 1)}">{str(i+1)}/{str(table_length)}</div>',
-            f"{emoji}*{severity}",
+            f"{emoji}{severity}",
             f"`{str(subjectId)}`",
             f"[{html_special_chars(get_criterion_details(criterionId, shape_data=shape_data)[1])}]({criterionId})",
             str(errorTitle),

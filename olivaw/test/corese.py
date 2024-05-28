@@ -26,7 +26,7 @@ from olivaw.constants import (
     URI_FORMAT,
     ONTOLOGY_PREFIX,
     ONTOLOGY_NAMESPACE,
-    BACKSLASH_IN_URI
+    URI_PATTERN
 )
 from olivaw.constants.git_info import ON_POSIX
 from olivaw.constants.paths import MODULES_TTL_GLOB_PATH
@@ -653,7 +653,7 @@ def profile_errors(raw_message: str) -> tuple[list[str], list[list[str]]]:
 
     for pointer in pointers:
         parsed_pointer = pointer
-        for match in BACKSLASH_IN_URI.findall(pointer):
+        for match in URI_PATTERN.findall(pointer):
             parsed_pointer = parsed_pointer.replace(match, match.replace("\\/", "/"))
         parsed.append(parsed_pointer)
         

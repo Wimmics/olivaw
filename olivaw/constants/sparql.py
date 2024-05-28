@@ -51,7 +51,7 @@ construct {
 """
 """Request extracting the content of a modelet for a given module"""
 
-DOMAIN_OUT_Of_VOCABULARY: str = """
+DOMAIN_OUT_OF_VOCABULARY: str = """
 SELECT DISTINCT ?property ?domain WHERE {
   # Get all the properties with a defined domain
   ?property rdf:type owl:ObjectProperty ;
@@ -70,7 +70,7 @@ SELECT DISTINCT ?property ?domain WHERE {
 """
 """SparQL request to get all the properties with a domain linking to a term not defined in the ontology"""
 
-RANGE_OUT_OF_VOCABULARY: str = DOMAIN_OUT_Of_VOCABULARY.replace("domain", "range")
+RANGE_OUT_OF_VOCABULARY: str = DOMAIN_OUT_OF_VOCABULARY.replace("domain", "range")
 """SparQL request to get all the properties with a range linking to a term not defined in the ontology"""
 
 GET_IMPORTS: str = """
