@@ -5,6 +5,7 @@ import regex as re
 from glob import glob
 from os.path import sep
 
+from olivaw.constants.regex import NEW_LINES
 from olivaw.test.corese import (
     safe_load,
     query_graph,
@@ -25,7 +26,6 @@ from olivaw.constants import (
     BRANCH,
     EARL_NAMESPACE,
     GET_SHAPE_DESCRIPTION,
-    NEW_LINES,
     GET_CRITERION_VALIDITY,
     CRITERION_IDS,
     ADD_VARIABLE
@@ -34,7 +34,7 @@ from olivaw.constants import (
 from rdflib import Graph, URIRef
 from rdflib.namespace import RDF, SH
 
-from olivaw.test.turtle import make_assertion
+from olivaw.test.turtle import make_assertion, turtle_pointer, uri_pointer
 from olivaw.test.util import smart_print
 
 from py4j.java_gateway import JavaObject
@@ -254,25 +254,29 @@ def add_base(turtle: str, namespace: str) -> str:
 
     for match in uri_format.findall(turtle):
         found = "".join(match)
-        turtle = turtle.replace(found, f"<#{match[1]}>")
+        turtle = turtle.replace(found, f"<{match[1]}>")
 
     return f"@base <{namespace}> .\n{turtle}"
 
 def parse_violation_focus(
-    violation_summaries: list[str],
+    draft: AssertDraft,
     violation_nodes: list[str],
-    violation_triples: list[bool]
+    violation_focuses: list[str],
+    is_focus_a_triple: list[bool]
     ) -> tuple[list[str], list[str]]:
     """Prepare the useful pointers for the report and parse the summary for human reading
 
-    :param violation_summaries: The violations that can be found in the ShaCL report graph
-    :type violation_summaries: `list[str]`
+    :param draft: The assertion draft containing the useful information for reporting
+    :type draft: `olivaw.test.AssertDraft`
 
-    :param violation_nodes: The focus nodes that lead to each ShaCL violation
+    :param violation_nodes: The violation nodes that can be found in the ShaCL report graph
     :type violation_nodes: `list[str]`
 
-    :param violation_triples: For each violation_node element, is it a focus triple?
-    :type violation_triple: `list[bool]`
+    :param violation_focuses: The focus nodes or triples that lead to each ShaCL violation
+    :type violation_focuses: `list[str]`
+
+    :param is_focus_a_triple: For each violation_node element, is it a focus triple?
+    :type is_focus_a_triple: `list[bool]`
     
     :returns: A list of focus node descriptions and a list of parsed violation summaries
     :rtype: `tuple[list[str], list[str]]`
@@ -281,15 +285,15 @@ def parse_violation_focus(
     focus = []
     summaries = []
 
-    for i, is_triple in enumerate(violation_triples):
+    for i, is_triple in enumerate(is_focus_a_triple):
         if not is_triple:
-            focus.append(violation_nodes[i])
-            summaries.append(violation_summaries[i])
+            focus.append(uri_pointer(draft, violation_focuses[i]))
+            summaries.append(violation_nodes[i])
             continue
 
         graph = Graph()
         graph.parse(
-            data=f"{CORESE_PREFIX_TEXT}\n{violation_summaries[i]}",
+            data=f"{CORESE_PREFIX_TEXT}\n{violation_nodes[i]}",
             format="ttl"
         )
 
@@ -309,17 +313,27 @@ def parse_violation_focus(
 
         parsed_triple = parse_violation_triple(str(focus_triple))
 
-        parsed_triple_for_turtle = parsed_triple.split("\n")
-        parsed_triple_for_turtle = f"(\n\t\t{parsed_triple_for_turtle[0]}\n\t\t{parsed_triple_for_turtle[1]}\n\t\t{parsed_triple_for_turtle[2]}\n\t)"
+        parsed_triple_list = parsed_triple.split("\n")
+        parsed_triple_for_turtle = f"(\n\t\t{parsed_triple_list[0]}\n\t\t{parsed_triple_list[1]}\n\t\t{parsed_triple_list[2]}\n\t)"
 
-        violation_summaries[i] = violation_summaries[i].replace(violation_nodes[i], parsed_triple_for_turtle)
+        violation_nodes[i] = violation_nodes[i].replace(violation_focuses[i], parsed_triple_for_turtle)
 
-        summaries.append(
-            violation_summaries
+        summaries.append(violation_nodes)
+
+        focus.append(turtle_pointer(f"{CORESE_PREFIX_TEXT}\n{parsed_triple} ."))
+
+    test_uri = "#".join(draft.criterion_uri.split("#")[:-1]) + "#"
+
+    return focus, [
+        turtle_pointer(
+            violation_nodes_item,
+            extra_prefix_declaration=[
+                (draft.criterion, test_uri),
+                ("violation", "urn:uuid:")
+            ]
         )
-        focus.append(f"{CORESE_PREFIX_TEXT}\n{parsed_triple}")
-
-    return focus, violation_summaries
+        for violation_nodes_item in violation_nodes
+    ]
 
 def parse_violation_triple(triple: str) -> str:
     """Parse the focus triple in a violation summary to make it human-readable
@@ -380,10 +394,16 @@ def custom_test(
     for shape in shapes:
         criterion_uri, criterion_identifier, *_ = get_criterion_data(shape)
 
+        draft(
+            graph=fragment_graph, 
+            criterion=criterion_identifier,
+            criterion_uri=criterion_uri
+        )
+
         if should_skip(draft, criterion=criterion_identifier):
             continue
         
-        criterion_namespace = "#".join(criterion_uri.split("#")[:-1]) + "#"
+        criterion_namespace = "#".join(criterion_uri.split("#")[:-1])
     
         shacl = Shacl(fragment_graph, shape)
         result = shacl.eval()
@@ -393,13 +413,13 @@ def custom_test(
 
         violations = query_graph(shacl_report, GET_VIOLATIONS)
         violations = [violation.split("\t") for violation in violations]
-        violation_uris = [violation[0] for violation in violations]
-        violation_nodes = [violation[1] for violation in violations]
-        violation_triples = [violation[2] == "true" for violation in violations]
+        violation_nodes = [violation[0] for violation in violations]
+        violation_focuses = [violation[1] for violation in violations]
+        is_focus_triple = [violation[2] == "true" for violation in violations]
 
-        messages = [f"Violation of constraint in the custom test '{criterion_identifier}'"] if len(violation_uris) > 0 else []
+        messages = [f"Violation of constraint in the custom test '{criterion_identifier}'"] if len(violation_nodes) > 0 else []
 
-        violation_summaries = [
+        violation_nodes = [
                 add_base(
                     indent_violation(
                         query_graph(
@@ -410,22 +430,23 @@ def custom_test(
                     ),
                     criterion_namespace
                 )
-            for violation_uri in violation_uris
+            for violation_uri in violation_nodes
         ]
 
-        violation_nodes, violation_summaries = parse_violation_focus(
-            violation_summaries,
+        violation_focuses, violation_nodes = parse_violation_focus(
+            draft,
             violation_nodes,
-            violation_triples
+            violation_focuses,
+            is_focus_triple
         )
 
         pointers = {}
 
-        for summary, node in zip(violation_summaries, violation_nodes):
-            if node in pointers:
-                pointers[node].append(summary)
+        for violation_node, focus in zip(violation_nodes, violation_focuses):
+            if focus in pointers:
+                pointers[focus].append(violation_node)
             else:
-                pointers[node] = [summary]
+                pointers[focus] = [violation_node]
 
         pointers = [
             pointer
@@ -445,17 +466,17 @@ def custom_test(
             shape_description = shape_description.serialize(format="ttl").decode()
             shape_description = add_base(shape_description, criterion_namespace)
 
-            pointers = [[shape_description] + pointers]
+            pointers = [[turtle_pointer(
+                shape_description,
+                extra_prefix_declaration=[("", f"{criterion_namespace}#")]
+            )] + pointers]
         else:
             pointers = []
 
         make_assertion(
-            draft(
-                criterion=criterion_identifier,
-                error=criterion_identifier,
-                messages=messages,
-                pointers=pointers,
-                graph=fragment_graph,
-                criterion_uri=criterion_uri
-            )
+            draft,
+            error=criterion_identifier,
+            messages=messages,
+            pointers=pointers,
+            graph=fragment_graph
         )

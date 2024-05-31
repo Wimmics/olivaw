@@ -83,9 +83,9 @@ earl:Fail owl:equivalentClass [
     dcterms:title "Term recognition test"@en ;
     dcterms:description "A test meant to detect if all the terms from the subject that are from the ontology namespace are indeed defined in the ontology"@en .
 
-:prefix-validity a earl:TestCriterion ;
-    :has-error "prefix-typo" ;
-    dcterms:identifier "prefix-validity" ;
+:namespace-validity a earl:TestCriterion ;
+    :has-error "namespace-typo" ;
+    dcterms:identifier "namespace-validity" ;
     dcterms:title "Prefix validity test"@en ;
     dcterms:description "A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc) or an ontology namespace"@en .
 

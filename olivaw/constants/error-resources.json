@@ -241,26 +241,26 @@
             "description": "A term of the subject is not defined in the ontology"
         }
     },
-    "prefix-typo": {
+    "namespace-typo": {
         "Pass": {
-            "title": "No prefix typo",
-            "description": "It seems that none of the subject URIs have prefixes typos"
+            "title": "No namespace typo",
+            "description": "It seems that none of the subject URIs have namespaces typos"
         },
         "NotTested": {
             "title": "The test could not be run",
             "description": "The subject must be syntaxically correct"
         },
         "CannotTell": {
-            "title": "Possible prefix typo",
-            "description": "A URI of the subject seems to be a typo of a very common prefix"
+            "title": "Possible namespace typo",
+            "description": "A URI of the subject seems to be a typo of a very common namespace"
         },
         "MajorFail": {
-            "title": "Possible prefix typo",
-            "description": "A URI of the subject seems to be a typo of a very common prefix"
+            "title": "Possible namespace typo",
+            "description": "A URI of the subject seems to be a typo of a very common namespace"
         },
         "MinorFail": {
-            "title": "Possible prefix typo",
-            "description": "A URI of the subject seems to be a typo of a very common prefix"
+            "title": "Possible namespace typo",
+            "description": "A URI of the subject seems to be a typo of a very common namespace"
         }
     },
     "wrong-query-type": {

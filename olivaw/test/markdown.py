@@ -14,19 +14,19 @@ from olivaw.constants import (
     GET_DETAILED_OUTCOMES,
     GET_OUTCOMES_PARTS,
     GET_OUTCOME_POINTERS,
-    MODULE_URL_FORMAT,
-    MODELET_URL_FORMAT,
-    DATASET_URL_FORMAT,
-    USECASE_URL_FORMAT,
-    QUESTION_URL_FORMAT,
     IS_OWL_EL_COMPATIBLE,
     IS_OWL_QL_COMPATIBLE,
     IS_OWL_RL_COMPATIBLE,
     MODE,
     OLIVAW_REF,
     PWD_TO_ROOT_FOLDER,
+    CRITERION_DATA,
+    DATASET_URL_FORMAT,
+    MODELET_URL_FORMAT,
+    MODULE_URL_FORMAT,
     NEW_BR,
-    CRITERION_DATA
+    QUESTION_URL_FORMAT,
+    USECASE_URL_FORMAT
 )
 
 from olivaw.test.generic.shacl import get_criterion_data
@@ -264,7 +264,7 @@ def subject_part_to_markdown(part: str) -> str:
     
     dataset_search = DATASET_URL_FORMAT.findall(part)
     if len(dataset_search) > 0:
-        return f"[Dataset {html_special_chars(dataset_search[0][8:][:-4])}]({part})"
+        return f"[Dataset {html_special_chars(dataset_search[0][8:-12])}]({part})"
     
     usecase_search = USECASE_URL_FORMAT.findall(part)
     if len(usecase_search) > 0:

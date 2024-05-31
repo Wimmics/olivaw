@@ -30,7 +30,14 @@ from olivaw.test.generic.shacl import (
     load_valid_custom_tests
 )
 
-from olivaw.test.turtle import make_assertion, make_not_tested, make_subject
+from olivaw.test.turtle import (
+    make_assertion,
+    make_not_tested,
+    make_subject,
+    text_pointer,
+    turtle_pointer
+)
+
 from olivaw.test.util import AssertDraft, progress_bar
 
 from rdflib import Graph, BNode
@@ -106,7 +113,7 @@ def profile_check(fragment: JavaObject, draft: AssertDraft) -> None:
             distinct_messages = list(set(messages))
             grouped_pointers = [
                 [
-                    pointers[i][0]
+                    turtle_pointer(pointers[i][0])
                     for i in range(len(pointers))
                     if messages[i] == message
                 ]
@@ -129,10 +136,9 @@ def profile_check(fragment: JavaObject, draft: AssertDraft) -> None:
     # Check for respect for OWL constraints
     if not should_skip(draft, criterion="owl-rl-constraint"):
         make_assertion(
-            draft(
-                error="owl-rl-constraint-violation",
-                messages=check_OWL_constraints(fragment)
-            )
+            draft,
+            error="owl-rl-constraint-violation",
+            messages=check_OWL_constraints(fragment)
         )
 
 def fragment_check(fragments, draft, extras="") -> bool:
@@ -161,10 +167,9 @@ def fragment_check(fragments, draft, extras="") -> bool:
 
     if no_import_load_error:
         make_assertion(
-            draft(
-                messages=["The subject has turtle syntax errors that makes it unprocessable by an engine"],
-                pointers=[[f'"{pointer}"' for pointer in fragment_no_import]]
-            )
+            draft,
+            messages=["The subject has turtle syntax errors that makes it unprocessable by an engine"],
+            pointers=[[text_pointer(pointer) for pointer in fragment_no_import]]
         )
         make_not_tested(draft, *MODEL_BEST_PRACTICES_TESTS)
         make_not_tested(draft(custom_test_data=shape_data), *list(shape_data.keys()))

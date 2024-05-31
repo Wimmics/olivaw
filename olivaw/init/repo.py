@@ -116,6 +116,7 @@ def init_repo() -> None:
             "ontology_prefix": prefix,
             "ontology_namespace": deploy_url,
             "term_distance_threshold": levenshtein_threshold,
+            "project_prefixes": {},
             "blocking_errors": [
                 "syntax-error",
                 "owl-rl-constraint-violation"

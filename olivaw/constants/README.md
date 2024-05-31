@@ -18,3 +18,4 @@ The files that can be found here:
 * [sparql.py](./sparql.py): A set of SparQL requests that are useful all over the project
 * [uri_index.json](./uri_index.json): An index of all the common namespaces available in prefix.cc, in order to check for namespaces that may be similar to well known other namespaces
 * [uris.py](./uris.py): Some URIs that can be useful all over the project
+* [regex.py](./regex.py): Some import regexes for the project

@@ -20,16 +20,14 @@ from py4j.java_gateway import (
 from rdflib import Graph as RdflibGraph
 
 from olivaw.constants import (
-    AST_ERROR_FORMAT,
     GET_IMPORTS,
     CORESE_LOCAL_PATH,
-    URI_FORMAT,
     ONTOLOGY_PREFIX,
-    ONTOLOGY_NAMESPACE,
-    URI_PATTERN
+    ONTOLOGY_NAMESPACE
 )
 from olivaw.constants.git_info import ON_POSIX
 from olivaw.constants.paths import MODULES_TTL_GLOB_PATH
+from olivaw.constants.regex import AST_ERROR_FORMAT, URI_FORMAT, URI_PATTERN
 from olivaw.constants.sparql import GET_DECLARED_ONTOLOGIES
 from olivaw.test.util.print import print_title, smart_print
 
@@ -241,12 +239,12 @@ CORESE_NAMESPACES = {
     prefix: namespace
     for prefix, namespace in CORESE_NAMESPACES
 }
-CORESE_PREFIX_TEXT: str = f"@prefix {ONTOLOGY_PREFIX}: <{ONTOLOGY_NAMESPACE}> .\n".join(
+CORESE_PREFIX_TEXT: str = "\n".join(
     [
         f"@prefix {prefix}: <{namespace}> ."
         for prefix, namespace in CORESE_NAMESPACES.items()
     ]
-)
+) + f"\n@prefix {ONTOLOGY_PREFIX}: <{ONTOLOGY_NAMESPACE}> ."
 """Turtle prefix definition of all the default set prefixes of Corese"""
 
 def to_rdflib(graph: JavaObject) -> RdflibGraph:
@@ -657,6 +655,6 @@ def profile_errors(raw_message: str) -> tuple[list[str], list[list[str]]]:
             parsed_pointer = parsed_pointer.replace(match, match.replace("\\/", "/"))
         parsed.append(parsed_pointer)
         
-    parsed = [[pointer] for pointer in parsed]
+    parsed = [[pointer + ("" if pointer.endswith(".") else " .")] for pointer in parsed]
 
     return descriptions, parsed

@@ -248,7 +248,7 @@ where {
 """
 """Retrieve the usage of a given ontology term in the fragment"""
 
-GET_PREFIX_USAGE: str = """
+GET_NAMESPACE_USAGE: str = """
 construct {
   ?s1 ?p1 ?o1 .
   ?s2 ?p2 ?o2 .
@@ -257,16 +257,16 @@ construct {
 where {
   optional {
     ?s1 ?p1 ?o1 .
-    filter (strstarts(str(?s1), "PREFIX"))
+    filter (strstarts(str(?s1), "NAMESPACE"))
     filter not exists { filter (?p1 = owl:sameAs) }
   }
   optional {
     ?s2 ?p2 ?o2 .
-    filter (strstarts(str(?p2), "PREFIX"))
+    filter (strstarts(str(?p2), "NAMESPACE"))
   }
   optional {
     ?s3 ?p3 ?o3 .
-    filter (strstarts(str(?o3), "PREFIX"))
+    filter (strstarts(str(?o3), "NAMESPACE"))
     filter not exists { filter (?p3 = owl:sameAs) }
   }
 }
@@ -445,7 +445,7 @@ INSERT {
 WHERE  {
   ?s sh:select ?request . 
   FILTER (isliteral(?request))
-  BIND (concat(?request, "\\nvalues ($ontology_namespace) { (\\"ONTOLOGY_NAMESPACE\\") }") as ?updated_request)
+  BIND (concat(?request, "\\nvalues ($ontology_namespace) { (\\"ONTOLOGY_NAMESPACE\\") }\\n") as ?updated_request)
 }
 """
 """Update the SparQL request in a custom test to add the variable $ontology_namespace"""

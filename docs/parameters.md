@@ -46,7 +46,7 @@ The list of error identifiers can be found in the [error resource file](../oliva
 
 Most of the errors are considered by default as `MinorFail` except the `prefix-typo` error that is considered a `CannotTell`. If a error is considered as blocking, it will always be mentionned as a `MajorFail` outcome if integrated to a test report.
 
-See the [outcome documentation](./tests.md#115-the-outcomes), the [prefix validity test documentation](./tests.md#224-prefix-validity) and the [error resource file](../olivaw/constants/error-resources.json) for more details.
+See the [outcome documentation](./tests.md#115-the-outcomes), the [prefix validity test documentation](./tests.md#224-namespace-validity) and the [error resource file](../olivaw/constants/error-resources.json) for more details.
 
 ## gist_index
 

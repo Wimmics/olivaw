@@ -1,7 +1,6 @@
 """Module providing constants related to rdflib"""
 
 from rdflib import Namespace
-from regex import compile as regex_compile, Pattern
 
 from .git_info import (
     SRC_URL,
@@ -23,9 +22,3 @@ SRC_NAMESPACE: Namespace = Namespace(SRC_URL)
 
 OLIVAW_EARL_NAMESPACE: Namespace = Namespace(OLIVAW_EARL_DATASET)
 """Rdflib object representing the olivaw-earl namespace"""
-
-PREFIX_ERROR: Pattern = regex_compile('Prefix "[^"]+:" not bound')
-"""Regex detecting the rdflib prefix error"""
-
-URI_PATTERN: Pattern = regex_compile("<[^>]*>")
-"""Regex detecting a URI node in some RDF data"""

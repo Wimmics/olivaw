@@ -36,12 +36,12 @@ These tests are powered by Corese, check their [website](https://project.inria.f
 &emsp;&emsp;2.2.1. [syntax](#221-syntax)<br/>
 &emsp;&emsp;2.2.2. [owl-rl-constraint](#222-owl-rl-constraint)<br/>
 &emsp;&emsp;2.2.3. [term-recognition](#223-term-recognition)<br/>
-&emsp;&emsp;2.2.4. [prefix-validity](#224-prefix-validity)<br/>
+&emsp;&emsp;2.2.4. [namespace-validity](#224-namespace-validity)<br/>
 &emsp;2.3. [Data tests](#23-query-tests)<br/>
 &emsp;&emsp;2.3.1. [syntax](#231-syntax)<br/>
 &emsp;&emsp;2.3.2. [query-type](#232-query-type)<br/>
 &emsp;&emsp;2.3.3. [uri-validity](#233-uri-validity)<br/>
-&emsp;&emsp;2.3.4. [prefix-validity](#234-prefix-validity)<br/>
+&emsp;&emsp;2.3.4. [namespace-validity](#234-namespace-validity)<br/>
 3. [References](#3-references)
 
 
@@ -582,7 +582,7 @@ This means that when a term is used, and this term is in the ontology namespace,
 |description|Explains the used term that is not defined in the ontology|
 |pointer|Triples from the subject mentioning that term|
 
-### 2.2.4. prefix-validity
+### 2.2.4. namespace-validity
 
 This test checks if the namespaces that can be found are different enough:
 
@@ -597,7 +597,7 @@ The prefixcc dataset allows to cover well known namespaces while comparing the n
 
 Since it can also be on purpose, this test willa always return outcomes of type `CannotTell` by defaut (see the [outcomes](#the-outcomes) documentation for more details).
 
-|id|prefix-validity|
+|id|namespace-validity|
 |-|-|
 |title|Term validity test|
 |description|A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc)|
@@ -693,7 +693,7 @@ The request should contain only well formed URIs tha respect the regex `^(([^:/?
 
 This test checks if any namespace from the request are similar from any other namespace from prefixcc or a namespace that can be found in the ontology.
 
-|id|prefix-validity|
+|id|namespace-validity|
 |-|-|
 |title|Prefix validity test|
 |description|A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc) or an ontology namespace|

@@ -1,10 +1,10 @@
-"""Module providing the prefix-validity test"""
+"""Module providing the namespace-validity test"""
 
 from typing import Callable
 from olivaw.constants import (
-    PREFIX_SIMILARITY_THRESHOLD,
+    NAMESPACE_SIMILARITY_THRESHOLD,
     GET_URIS,
-    GET_PREFIX_USAGE,
+    GET_NAMESPACE_USAGE,
     DATASETS,
     SKIPPED_TESTS
 )
@@ -17,8 +17,10 @@ from olivaw.test.corese import (
     OWL_RL
 )
 
-from olivaw.test.turtle import make_assertion
-from olivaw.test.util import make_index, similar_prefix_search, COMMON_URIS_TREE
+from rdflib.term import Identifier
+
+from olivaw.test.turtle import make_assertion, text_pointer, turtle_pointer
+from olivaw.test.util import make_index, similar_namespace_search, COMMON_URIS_TREE
 from olivaw.test.util.draft import AssertDraft
 
 def get_prefix_suffix(uri: str) -> tuple[str, str]:
@@ -61,12 +63,12 @@ def get_uris(fragments: list[str]) -> list[str]:
 
     return uris
 
-def prefix_test(
+def namespace_test(
     draft: AssertDraft,
     uris: list[str],
-    get_prefix_usage: Callable[[str], str]
+    get_namespace_usage: Callable[[str], Identifier]
 ) -> None:
-    """Executes the prefix test on the provided URIs
+    """Executes the namespace test on the provided URIs
 
     :param draft:The assertion draft containing the useful information for reporting
     :type draft: `olivaw.test.AssertDraft`
@@ -74,13 +76,13 @@ def prefix_test(
     :param uris: The URIs that can be found in the subject
     :type uris: `list[str]`
 
-    :param get_prefix_usage: Pointer to a function that provides the usage of a URI in the subject
-    :type get_prefix_usage: `typing.Callable[[str], str]`
+    :param get_namespace_usage: Pointer to a function that provides the error pointer providing the usage of a URI in the subject
+    :type get_namespace_usage: `typing.Callable[[str], rdflib.term.Identifier]`
     """
-    if "prefix-validity" in SKIPPED_TESTS:
+    if "namespace-validity" in SKIPPED_TESTS:
         return
     
-    prefixes = list(set([get_prefix_suffix(uri)[0] for uri in uris]))
+    namespaces = list(set([get_prefix_suffix(uri)[0] for uri in uris]))
 
     datasets_prefixes = [
         (path, get_prefix_suffix(uri)[0])
@@ -91,46 +93,49 @@ def prefix_test(
     messages = []
     pointers = []
 
-    for prefix in prefixes:
-        similar_common = similar_prefix_search(prefix, COMMON_URIS_TREE, PREFIX_SIMILARITY_THRESHOLD)
+    for namespace in namespaces:
+        similar_common = similar_namespace_search(namespace, COMMON_URIS_TREE, NAMESPACE_SIMILARITY_THRESHOLD)
         similar_uncommon = [
             (path, uri)
-            for path, uri in similar_prefix_search(prefix, datasets_prefixes_tree, PREFIX_SIMILARITY_THRESHOLD)
+            for path, uri in similar_namespace_search(namespace, datasets_prefixes_tree, NAMESPACE_SIMILARITY_THRESHOLD)
             # Avoiding here all the exact matches and double matching (match between A and B and between B and A)
-            if uri > prefix
+            if uri > namespace
         ]
 
         if len(similar_common) == 0 and len(similar_uncommon) == 0:
             continue
 
-        # Testing prefixes with common existing prefixes
-        message = f"The prefix {prefix} seems suspicious. Did you mean one of these prefixes?"
+        # Testing namespace with common existing namespaces
+        message = f"The namespace {namespace} seems suspicious. Did you mean one of these namespaces?"
         
-        prefix_pointers = [f'"Prefix usage in the subject file:\n\n\n {get_prefix_usage(prefix)}"']
+        namespace_pointers = [text_pointer("Namespace usage in the subject file:"), get_namespace_usage(namespace)]
         
-        prefix_pointers += [
-            f'"Common prefix found \n@prefix {domain}: <{uri}> ."'
+        namespace_pointers += [
+            text_pointer(f"Common namespace found \n@prefix {domain}: <{uri}> .")
             for domain, uri in similar_common
         ]
 
         for fragment_path, uri in similar_uncommon:
-            prefix_pointers += [
-                f'"Similar prefix found in file {fragment_path}\nPrefix found: {uri}\n\n' +
-                query_graph(
-                    safe_load(fragment_path, disable_import=True, profile=OWL_RL),
-                    GET_PREFIX_USAGE.replace("PREFIX", uri),
-                    format=TURTLE) + '"'
+            namespace_pointers += [
+                text_pointer(f"Similar namespace found in file {fragment_path}\nNamespace found: {uri}"),
+                turtle_pointer(
+                    query_graph(
+                        safe_load(fragment_path, disable_import=True, profile=OWL_RL),
+                        GET_NAMESPACE_USAGE.replace("NAMESPACE", uri),
+                        format=TURTLE
+                    ),
+                    extra_prefix_declaration=[("similar-namespace", uri)]
+                )
             ]
-        
+
         messages.append(message)
-        pointers.append(prefix_pointers)
+        pointers.append(namespace_pointers)
 
     make_assertion(
-        draft(
-            criterion="prefix-validity",
-            error="prefix-typo",
-            messages=messages,
-            pointers=pointers,
-            outcome_type="CannotTell"
-        )
+        draft,
+        criterion="namespace-validity",
+        error="namespace-typo",
+        messages=messages,
+        pointers=pointers,
+        outcome_type="CannotTell"
     )

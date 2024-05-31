@@ -22,8 +22,6 @@ from rdflib.namespace import (
     XSD
 )
 
-from rdflib.term import Identifier
-
 from olivaw.constants import (
     DEV_USERNAME,
     DEV_PROFILE,
@@ -31,6 +29,7 @@ from olivaw.constants import (
     EARL_NAMESPACE,
     ONTOLOGY_PREFIX,
     ONTOLOGY_NAMESPACE,
+    PROJECT_PREFIXES,
     SRC_NAMESPACE,
     OLIVAW_EARL_NAMESPACE,
     ONTOLOGY_RDFLIB_NAMESPACE,
@@ -44,10 +43,11 @@ from olivaw.constants import (
     MODE,
     SKIP_PASS,
     TESTED_ONLY,
-    CRITERION_DATA,
-    URI_PATTERN
+    CRITERION_DATA
 )
 
+from olivaw.constants.regex import PREFIX_PATTERN
+from olivaw.constants.regex import URI_PATTERN
 from olivaw.constants.sparql import (
     ADD_DESCRIPTION_LINKS,
     GET_GRAPH_NAMESPACES,
@@ -150,7 +150,7 @@ def make_subject_id_part(fragment_list: list[str]) -> str:
     datasets = ['dataset-' + '-'.join(item.split('/')[1:-1]) for item in datasets]
     datasets.sort()
     questions = [item for item in fragment_list if item.startswith("domains/") and item.endswith(".rq")]
-    questions = ['question-' + '-'.join(item.split('/')[1:]) for item in questions]
+    questions = ['question-' + '-'.join(item[:-3].split('/')[1:]) for item in questions]
     questions.sort()
     usecases = [item for item in fragment_list if item.startswith("use-cases/")]
     usecases = [
@@ -302,7 +302,7 @@ def make_subject(
 
     return test_subject
 
-def remove_prefixes(statement: str, is_literal: bool=False) -> str:
+def separate_prefix_data(statement: str, is_literal: bool=False) -> str:
     """Remove the prefixes declaration from a code snippet
 
     :param statement: the code snippet
@@ -314,18 +314,17 @@ def remove_prefixes(statement: str, is_literal: bool=False) -> str:
     if is_literal:
         return statement
 
-    statement = [
+    parsed_statement = [
         line
         for line in statement.split("\n")
         if len(line.strip()) > 0
     ]
         
-    for i in range(len(statement)):
-        if not statement[i].startswith("@"):
-            statement = "\n".join(statement[i:])
-            break
+    for i in range(len(parsed_statement)):
+        if not parsed_statement[i].startswith("@"):
+            return "\n".join(parsed_statement[:max(0, i)]), "\n".join(parsed_statement[i:len(parsed_statement)])
     
-    return statement
+    return "\n".join(parsed_statement), ""
 
 def parse_statement(raw_statement: str) -> str:
     """Returns a human-friendly version of a code snippet passed as input
@@ -345,7 +344,7 @@ def parse_statement(raw_statement: str) -> str:
     result = Graph()
     for triple in isolated_graph.query(SHORTEN_LITERALS):
         result.add(triple)
-    return remove_prefixes(result.serialize(format="ttl"))
+    return separate_prefix_data(result.serialize(format="ttl"))
 
 def extract_statement(graph: JavaObject, pointer: URIRef) -> Literal:
     """Returns a RDF Literal of a code snippet containing all the relevant data about the URI passed as input
@@ -374,97 +373,125 @@ def extract_statement(graph: JavaObject, pointer: URIRef) -> Literal:
     
     for match in URI_PATTERN.findall(statement):
         statement = statement.replace(match, match.replace("\\/", "/"))
-    
-    namespaces = graph.query(GET_GRAPH_NAMESPACES)
-
-    binds = []
 
     pointer_separator = [i for i in range(len(pointer)) if pointer[i] in ["#", "/", "="]]
     pointer_namespace = pointer[:pointer_separator[-1]+1]
-    binds.append(("", Namespace(pointer_namespace)))
 
-    for namespace in namespaces:
-        namespace = namespace[1:-1] if namespace[0] == '"' else namespace
-        if namespace == ONTOLOGY_NAMESPACE:
-            binds.append((ONTOLOGY_PREFIX, ONTOLOGY_RDFLIB_NAMESPACE))
-            continue
-
-        if namespace in COMMON_URI_DICT:
-            prefix = COMMON_URI_DICT[namespace]
-            binds.append((prefix, Namespace(namespace)))
-            continue
-
-        corese_matches = [item for item in CORESE_NAMESPACES if item[1] == namespace]
-
-        if len(corese_matches) == 0:
-            continue
-
-        corese_match = corese_matches[0]
-        binds.append((corese_match[0], Namespace(corese_match[1])))
-
-    rdflib_graph = Graph()
-    rdflib_graph.parse(
-        data=f"{CORESE_PREFIX_TEXT}\n{statement}",
-        format="ttl"
+    pretty_pointer = make_readable_turtle(
+        statement,
+        extra_prefix_declaration=[("", Namespace(pointer_namespace))]
     )
+    return Literal(separate_prefix_data(pretty_pointer)[1])
+
+def make_readable_turtle(turtle: str, extra_prefix_declaration: list[tuple[str, str]] = []) -> str:
+    """Parses some turtle data to make it more human readable
     
-    for bind in binds:
-        rdflib_graph.bind(*bind)
+    :param turtle: The turtle data content
+    :type pointer: `str`
 
-    return Literal(
-        remove_prefixes(
-            rdflib_graph\
-                .serialize(format="ttl", encoding="utf-8")\
-                .decode(encoding="utf-8")
-            )
-        )
+    :param extra_prefix_declaration: Set of extra prefix definitions with namespaces to use for the turtle data, defaults to empty `[]`
+    :type extra_prefix_declaration: `list[tuple[str, str]]`, optional
 
-def make_pointer(draft: AssertDraft, pointer_string: str) -> Identifier:
-    """Returns a Literal containing a human-friendly representation of a pointer for the report
-
-    :param draft: The test assertion draft
-    :type draft: `olivaw.test.AssertDraft`
-
-    :param pointer_string: The string not parsed version of the pointer
-    :type pointer_string: `str`
-
-    :return: A Literal containing the human-friendly version of the pointer
-    :rtype: `rdflib.Identifier`
+    :returns: The human readable version of the pointer
+    :rtype: `str`
     """
+    turtle_prefixes, turtle_data = separate_prefix_data(turtle)
+    total_turtle = f"{turtle_prefixes}\n{CORESE_PREFIX_TEXT}\n{turtle_data}".strip()
 
-    statement_subject = pointer_string.split(" ")[0]
-    is_statement = " " in pointer_string
+    prefix_declaration = [
+        (
+            prefix,
+            namespace if isinstance(namespace, Namespace) else
+            Namespace(namespace)
+        )
+        for prefix, namespace in
+            list(CORESE_NAMESPACES.items()) + \
+            [(ONTOLOGY_PREFIX, ONTOLOGY_NAMESPACE)] + \
+            PREFIX_PATTERN.findall(turtle_prefixes) + \
+            list(PROJECT_PREFIXES.items()) + \
+            extra_prefix_declaration
+    ]
 
-    if statement_subject[0] == "<" and not is_statement:
-        pointer = extract_statement(draft.graph, URIRef(statement_subject[1:-1].replace("\\/", "/")))
-    elif statement_subject[0] == '"':
-        pointer = Literal(remove_prefixes(pointer_string.strip()[1:-1], is_literal=True))
-    elif statement_subject[0] != "[" and not is_statement:
-        if pointer_string.split(":")[0] == "_":
-            return Literal(pointer_string)
-        normalizedUri = Namespace(
-            [
-                namespace for prefix, namespace in draft.report.namespaces()
-                if prefix == pointer_string.split(":")[0]
-            ][0]
-        )[pointer_string.split(":")[1]]
-        pointer = URIRef(normalizedUri)
-    elif pointer_string.strip()[0] == "@":
-        pointer = Literal(remove_prefixes(pointer_string))
-    else:
-        pointer = Literal(parse_statement(pointer_string))
+    parsed_graph = Graph()
+    parsed_graph.parse(data=total_turtle, format="ttl")
 
-    return pointer
+    for prefix, namespace in prefix_declaration:
+        parsed_graph.bind(prefix, namespace)
 
-def make_outcome(draft: AssertDraft) -> Optional[BNode]:
+    return parsed_graph.serialize(format="ttl")
+
+def uri_pointer(draft: AssertDraft, uri: str) -> Literal:
+    """Makes a pointer containing some turtle definition of a URI
+
+    :param draft: The assertion draft containing the useful information for reporting
+    :type draft: `olivaw.test.AssertDraft`
+    
+    :param uri: The URI
+    :type uri: `str`
+
+    :returns: The pointer node to use for the report
+    :rtype: `rdlib.Literal`
+    """
+    if uri[0] == "<":
+        return extract_statement(draft.graph, URIRef(uri[1:-1].replace("\\/", "/")))
+    
+    uri_prefix, uri_suffix = uri.split(":")
+    if uri.split(":")[0] == "_":
+        return Literal(uri)
+    
+    return URIRef(
+        [
+            namespace for prefix, namespace in draft.report.namespaces()
+            if prefix == uri_prefix
+        ][0] + uri_suffix
+    )
+
+def text_pointer(pointer: str) -> Literal:
+    """Makes a pointer containing some text
+    
+    :param pointer: The text content
+    :type pointer: `str`
+
+    :returns: The pointer node to use for the report
+    :rtype: `rdlib.Literal`
+    """
+    return Literal(pointer.strip())
+
+def turtle_pointer(pointer: str, extra_prefix_declaration: list[tuple[str, str]] = []) -> Literal:
+    """Makes a pointer containing some turtle data
+    
+    :param pointer: The turtle data content
+    :type pointer: `str`
+
+    :param extra_prefix_declaration: Set of extra prefix definitions with namespaces to use for the turtle data, defaults to empty `[]`
+    :type extra_prefix_declaration: `list[tuple[str, str]]`, optional
+
+    :returns: The pointer node to use for the report
+    :rtype: `rdlib.Literal`
+    """
+    return Literal(
+        separate_prefix_data(
+            make_readable_turtle(
+                pointer,
+                extra_prefix_declaration=extra_prefix_declaration
+            )
+        )[1]
+    )
+
+def make_outcome(draft: AssertDraft, **kwargs) -> Optional[BNode]:
     """Makes an outcome given the information stored in the draft
     
     :param draft: The assertion draft
     :type draft: `olivaw.test.AssertDraft`
 
+    :param **kwargs: Optional set of parameters to set to the `olivaw.test.AssertDraft` instance
+    :type **kwargs: See `olivaw.test.AssertDraft` for more details
+
     :return: A node representing the outcome
     :rtype: `rdflib.BNode` or `NoneType` if outcome should be skipped 
     """
+
+    draft(**kwargs)
 
     if should_skip(draft):
         return None
@@ -483,12 +510,6 @@ def make_outcome(draft: AssertDraft) -> Optional[BNode]:
         outcome_ressources = ERROR_RESOURCES[draft.error][draft.outcome_type]
         outcome_title = outcome_ressources["title"]
         outcome_description = draft.description if (draft.has_field("description") and len(draft.description) > 0) else outcome_ressources["description"]
-    
-    parsed_pointers = [
-        make_pointer(draft, pointer)
-        for pointer in draft.pointers
-        if len(pointer) > 0
-    ]
 
     outcome_type_namespace = OLIVAW_EARL_NAMESPACE if draft.outcome_type.endswith("Fail") else EARL_NAMESPACE
 
@@ -502,7 +523,7 @@ def make_outcome(draft: AssertDraft) -> Optional[BNode]:
             EARL_NAMESPACE["info" if isinstance(pointer, Literal) else "pointer"],
             pointer
         )
-        for pointer in parsed_pointers
+        for pointer in draft.pointers
     ]
 
     outcome = BNode()
@@ -640,12 +661,16 @@ def assemble_assertion(draft: AssertDraft, result: BNode) -> None:
     draft.reporting(assertion, statement)
     draft.new_assertion()
 
-def make_assertion(draft: AssertDraft) -> None:
+def make_assertion(draft: AssertDraft, **kwargs) -> None:
     """Computes all the elements to make an assertion given the draft content and assemble it
     
     :param draft: The assertion draft
     :type draft: `olivaw.test.AssertDraft`
+
+    :param **kwargs: Optional set of parameters to set to the `olivaw.test.AssertDraft` instance
+    :type **kwargs: See `olivaw.test.AssertDraft` for more details
     """
+    draft(**kwargs)
     assemble_assertion(
         draft,
         make_result(
@@ -654,7 +679,7 @@ def make_assertion(draft: AssertDraft) -> None:
         )
     )
 
-def make_not_tested(draft: AssertDraft, *criterions: list[str]) -> None:
+def make_not_tested(draft: AssertDraft, *criterions: list[str], **kwargs) -> None:
     """Prepare assertions with outcome set as NotTested for the criterions identifiers passed as input, given the draft content
 
     :param draft: The test assertion draft
@@ -662,7 +687,12 @@ def make_not_tested(draft: AssertDraft, *criterions: list[str]) -> None:
 
     :param criterions: the list of criterion identifiers we want to report as NotTested
     :type criterion: `list[str]`
+
+    :param **kwargs: Optional set of parameters to set to the `olivaw.test.AssertDraft` instance
+    :type **kwargs: See `olivaw.test.AssertDraft` for more details
     """
+
+    draft(**kwargs)
 
     if len(criterions) > 0:
         custom_criterions = draft.custom_test_data if draft.has_field("custom_test_data") else None
@@ -677,5 +707,5 @@ def make_not_tested(draft: AssertDraft, *criterions: list[str]) -> None:
     errors = criterion_resources[draft.criterion]["errors"]
 
     for error in errors:
-        error = make_outcome(draft(outcome_type="NotTested"))
-        assemble_assertion(draft, make_result(draft, [error]))
+        error_node = make_outcome(draft, error=error, outcome_type="NotTested")
+        assemble_assertion(draft, make_result(draft, [error_node]))

@@ -5,12 +5,12 @@ from os.path import relpath, sep
 from rdflib import BNode, Graph as RdfLibGraph
 
 from olivaw.test.corese import Graph, QueryProcess
-from olivaw.test.turtle import make_assertion, make_not_tested, make_subject, new_report
+from olivaw.test.turtle import make_assertion, make_not_tested, make_subject, new_report, text_pointer
 from olivaw.constants import PWD_TO_ROOT_FOLDER, SKIPPED_TESTS
 
 from olivaw.test.query.uris import retrieveURIFromQuery
 
-from olivaw.test.generic.prefix import prefix_test
+from olivaw.test.generic.namespace import namespace_test
 from olivaw.test.generic.uri import uri_test
 from olivaw.test.util import AssertDraft, progress_bar
 
@@ -71,16 +71,15 @@ def test_competency_question(draft: RdfLibGraph, file: str) -> None:
 
     if not "syntax" in SKIPPED_TESTS:
         make_assertion(
-            draft(
-                criterion="syntax",
-                error="syntax-error",
-                messages=messages,
-                pointers=[[f'"{query}"']] * len(messages)
-            )
+            draft,
+            criterion="syntax",
+            error="syntax-error",
+            messages=messages,
+            pointers=[[text_pointer(query)]] * len(messages)
         )
 
     if len(messages) > 0:
-        make_not_tested(draft, "query-type", "prefix-validity", "uri-validity")
+        make_not_tested(draft, "query-type", "namespace-validity", "uri-validity")
         return
 
     if not "query-type" in SKIPPED_TESTS:
@@ -104,32 +103,31 @@ def test_competency_question(draft: RdfLibGraph, file: str) -> None:
 
         if queryType != "Select" and queryType != "Ask":
             messages =  [f"The query type was expected to be 'Ask' or 'Select', but got '{queryType}'"]
-            pointers = [[f'"{query}"']]
+            pointers = [[text_pointer(query)]]
         
         make_assertion(
-            draft(
-                criterion="query-type",
-                error="wrong-query-type",
-                messages=messages,
-                pointers=pointers
-            )
+            draft,
+            criterion="query-type",
+            error="wrong-query-type",
+            messages=messages,
+            pointers=pointers
         )
 
     if not "uri-validity" in SKIPPED_TESTS:
         query_uris = retrieveURIFromQuery(query)
 
         def get_uri_usage(_):
-            return f'"{query}"'
+            return text_pointer(query)
 
         uris_valid = uri_test(draft, query_uris, get_uri_usage)
 
         if not uris_valid:
-            make_not_tested(draft, "prefix-validity")
+            make_not_tested(draft, "namespace-validity", description="All the subject URIs should be well-formed")
             return
         
-    if not "prefix-validity" in SKIPPED_TESTS:    
+    if not "namespace-validity" in SKIPPED_TESTS:    
         def get_prefix_usage(_):
-            return query
+            return text_pointer(query)
         
-        prefix_test(draft, query_uris, get_prefix_usage)
+        namespace_test(draft, query_uris, get_prefix_usage)
     

@@ -13,22 +13,21 @@ from .badges import *
 
 from .prefixcc import *
 
-try:
-  from .corese_info import *
-except:
-  pass
+from .corese_info import *
 
-try:
-  from .markdown import *
-except:
-  pass
+from .markdown import *
 
 try:
   from .rdflib_info import *
 except:
   pass
 
-__all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown", "badges", "prefixcc"]
+try:
+  from .regex import *
+except:
+  pass
+
+__all__ = ["uris", "paths", "corese_info", "git_info", "sparql", "rdflib_info", "markdown", "badges", "prefixcc", "regex"]
 
 COMMAND: list[str] = []
 """List of all the arguments that were typed after "olivaw" in the command line"""
@@ -87,6 +86,9 @@ ONTOLOGY_NAMESPACE: str = None
 TERM_DISTANCE_THRESHOLD: int = None
 """The desired levenshtein threshold to accept terms as different enough"""
 
+PROJECT_PREFIXES: dict[str, str] = {}
+"""The additional set of prefix declaration to use in the reports pointers"""
+
 BLOCKING_ERRORS: list[str] = None
 """The errors ids that are defined as blocking"""
 
@@ -137,6 +139,9 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
 
     if "term_distance_threshold" in repo_parameters:
       TERM_DISTANCE_THRESHOLD = repo_parameters["term_distance_threshold"]
+
+    if "project_prefixes" in repo_parameters:
+      PROJECT_PREFIXES = repo_parameters["project_prefixes"]
 
     if "blocking_errors" in repo_parameters:
       BLOCKING_ERRORS = repo_parameters["blocking_errors"]
@@ -259,10 +264,11 @@ try:
             "title": str(criterion_title),
             "description": str(criterion_description),
             "errors" : [
-              str(id)
-              for id in criterions_graph.query(
+              str(error)
+              for line in criterions_graph.query(
                 GET_ERRORS_OF_TEST.replace("CRITERION_ID", criterion_id)
               )
+              for error in line
             ]
         }
         for criterion_id, criterion_title, criterion_description in criterions

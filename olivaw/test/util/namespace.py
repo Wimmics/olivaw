@@ -1,4 +1,4 @@
-"""Module providing functions for indexing URIs and exploring similar URIs through these indexes"""
+"""Module providing functions for indexing namespace and exploring similar namespaces through these indexes"""
 
 from json import dumps, loads
 from os import sep
@@ -48,7 +48,7 @@ def iterate(root: dict) -> None:
     iterate_node(root)
 
 
-def make_prefix_tree(node: dict) -> None:
+def make_namespace_tree(node: dict) -> None:
     """Launch the recursive building of the tree index starting from a node
 
     :param node: The node to recurse
@@ -59,7 +59,7 @@ def make_prefix_tree(node: dict) -> None:
         iterate(node)
 
 
-def fetch_prefixes(node: dict, nb_generations: int) -> list[tuple[str, str]]:
+def fetch_namespaces(node: dict, nb_generations: int) -> list[tuple[str, str]]:
     """Returns the proper URIs that could satisfy the search requirements on the current branch
 
     :param node: The current index node
@@ -77,7 +77,7 @@ def fetch_prefixes(node: dict, nb_generations: int) -> list[tuple[str, str]]:
     result = []
 
     for child in node["children"]:
-        result += fetch_prefixes(child, nb_generations - 1)
+        result += fetch_namespaces(child, nb_generations - 1)
 
     return node["uris"] + result
 
@@ -111,12 +111,12 @@ def recurse_search(
     """
     if len(subject) == 0:
         nb_generations = threshold - score
-        return fetch_prefixes(node, nb_generations)
+        return fetch_namespaces(node, nb_generations)
 
     if subject[0] == node["char"]:
         if len(subject) == 1:
             nb_generations = threshold - score
-            return fetch_prefixes(node, nb_generations)
+            return fetch_namespaces(node, nb_generations)
 
         if len(node["children"]) == 0:
             return list(set(recurse_search(subject[2:], node, branch, score + 1, threshold)))
@@ -148,7 +148,7 @@ def recurse_search(
     return list(set(result))
 
 
-def similar_prefix_search(subject: str, index: dict, threshold: int) -> list[tuple[str, str]]:
+def similar_namespace_search(subject: str, index: dict, threshold: int) -> list[tuple[str, str]]:
    """Returns the most similar prefixes to the one passed as argument, with the index passed as argument, only those under a given Levenshtein distance
 
     :param subject: Namespace to search into the index
@@ -170,7 +170,7 @@ def similar_prefix_search(subject: str, index: dict, threshold: int) -> list[tup
         if not (item[1] == subject and threshold > 0)
     ]
 
-def common_prefix_search(subject: str, threshold: int) -> list[tuple[str, str]]:
+def common_namespace_search(subject: str, threshold: int) -> list[tuple[str, str]]:
     """Returns the most similar prefixes to the one passed as argument from `prefix.cc` dataset, only those under a given Levenshtein distance
 
     :param subject: Namespace to search into the index
@@ -182,7 +182,7 @@ def common_prefix_search(subject: str, threshold: int) -> list[tuple[str, str]]:
     :returns: List of prefix and namespace couples that statisfy the requirements
     :rtype: `list[tuple[str, str]]`
     """
-    return similar_prefix_search(subject, COMMON_URIS_TREE, threshold)
+    return similar_namespace_search(subject, COMMON_URIS_TREE, threshold)
 
 def parse_node_to_tuple_leaves(node: dict) -> None:
     """Parse the given index node to set the prefix/URIs stored as tuples
@@ -241,7 +241,7 @@ def make_index(prefix_base: list[tuple[str, str]]) -> dict:
         for char in set([namespace[1][0] for namespace in namespaces])
     }
     for node in tree.values():
-        make_prefix_tree(node)
+        make_namespace_tree(node)
     return tree
 
 def get_dict_from_node(node: dict, result: dict[str, str]) -> dict[str, str]:
