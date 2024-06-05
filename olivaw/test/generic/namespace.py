@@ -106,7 +106,7 @@ def namespace_test(
             continue
 
         # Testing namespace with common existing namespaces
-        message = f"The namespace {namespace} seems suspicious. Did you mean one of these namespaces?"
+        message = f"The following namespace seems suspicious:\n\n {namespace} \n\nDid you mean one of these namespaces?"
         
         namespace_pointers = [text_pointer("Namespace usage in the subject file:"), get_namespace_usage(namespace)]
         
@@ -117,7 +117,7 @@ def namespace_test(
 
         for fragment_path, uri in similar_uncommon:
             namespace_pointers += [
-                text_pointer(f"Similar namespace found in file {fragment_path}\nNamespace found: {uri}"),
+                text_pointer(f"Similar namespace found in file:\n{fragment_path} \n\nNamespace found:\n{uri}"),
                 turtle_pointer(
                     query_graph(
                         safe_load(fragment_path, disable_import=True, profile=OWL_RL),

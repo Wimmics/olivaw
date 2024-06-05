@@ -47,8 +47,8 @@ def html_special_chars(text: str) -> str:
                 .replace("<", "&#60;")\
                 .replace("_", "&lowbar;")\
                 .replace("^", "&Hat;")\
-                .replace("    ", "&nbsp;&nbsp;&nbsp;&nbsp;")\
-                .replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;")\
+                .replace("    ", "&#32;&#32;&#32;&#32;")\
+                .replace("\t", "&#32;&#32;&#32;&#32;")\
                 .replace("\\", "&#92;")\
                 .replace('"', "&#34;")\
                 .replace("[", "&#91;")\

@@ -50,7 +50,6 @@ from olivaw.constants.regex import PREFIX_PATTERN
 from olivaw.constants.regex import URI_PATTERN
 from olivaw.constants.sparql import (
     ADD_DESCRIPTION_LINKS,
-    GET_GRAPH_NAMESPACES,
     GET_OBJECT_USAGE,
     GET_PREDICATE_USAGE,
     REMOVE_DESCRIPTION_LINKS,
@@ -63,9 +62,7 @@ from olivaw.test.corese import (
     CORESE_NAMESPACES
 )
 
-from olivaw.test.util import COMMON_URI_DICT
-from olivaw.test.util.draft import AssertDraft
-from olivaw.test.util.skip import should_skip
+from olivaw.test.util import AssertDraft, should_skip
 
 def new_report(test_type: str) -> tuple[Graph, BNode]:
     """Creates a new report and add the assertor
