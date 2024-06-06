@@ -39,4 +39,4 @@ Here is the `parameters.json` used for the test:
 }
 ```
 
-Subjects `all-modules` and `all-fragments` are decided to be skipped here so that Github markdown renderer could generate the whole visualisation of the Markdpwn report.
+Subjects `all-modules` and `all-fragments` are decided to be skipped here so that Github markdown renderer could generate the whole visualisation of the Markdown report.
