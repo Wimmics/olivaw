@@ -7,3 +7,5 @@ The [COSWOT reports folder](./coswot/) should provide some examples of model tes
 The [AEC3PO reports folder](./aec3po/) should provide some examples of model tests made over the [AEC3PO ontology](https://github.com/Accord-Project/aec3po) project
 
 The [MUNC reports folder](./munc/) should provide some examples of model tests made over the [MUNC ontology](https://ns.inria.fr/munc) project
+
+The [NRV reports folder](./nrv/) should provide some examples of model tests made over the [NRV ontology](https://ns.inria.fr/nrv) project

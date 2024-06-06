@@ -1,0 +1,252 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix olivaw-earl: <https://raw.githubusercontent.com/Wimmics/olivaw/main/olivaw/test/olivaw-earl.ttl#> .
+@prefix schema: <https://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Each rdfs:domain is defined within the fragment"@en ;
+                    dcterms:identifier "domain-out-of-vocabulary" ;
+                    dcterms:title "Domains properly defined"@en ] ] ;
+    earl:subject _:module-src-nrv-v1 ;
+    earl:test olivaw-earl:domain-and-range-referencing .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a olivaw-earl:MinorFail ;
+                    dcterms:description "Statement not supported"@en ;
+                    dcterms:identifier "owl-ql-profile-error" ;
+                    dcterms:title "OWL QL Profile incompatible"@en ;
+                    earl:info """nrv:NormativeRequirement a rdfs:Class ;
+    rdfs:label "Normative Requirement"@en ;
+    rdfs:comment "a requirement implying, creating, or prescribing a norm."@en ;
+    rdfs:subClassOf <http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#DeonticSpecification> ;
+    owl:disjointUnionOf ( nrv:CompensableRequirement nrv:NonCompensableRequirement ),
+        ( nrv:ViolableRequirement nrv:NonViolableRequirement ),
+        ( nrv:PersistentRequirement nrv:NonPersistentRequirement ) .""" ],
+                [ a olivaw-earl:MinorFail ;
+                    dcterms:description "Statement not supported"@en ;
+                    dcterms:identifier "owl-rl-profile-error" ;
+                    dcterms:title "OWL RL Profile incompatible"@en ;
+                    earl:info """<http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#Obligation> a rdfs:Class ;
+    rdfs:label "obligation"@en ;
+    rdfs:comment "a Deontic Specification for a state, an act, or a course of ...",
+        "a situation, an act, or a course of action(s) to which a bea..." ;
+    rdfs:subClassOf <http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#DeonticSpecification>,
+        nrv:CompensableRequirement,
+        nrv:ViolableRequirement ;
+    owl:unionOf ( nrv:Achievement nrv:Maintenance ) .""",
+                        """nrv:NormativeRequirement a rdfs:Class ;
+    rdfs:label "Normative Requirement"@en ;
+    rdfs:comment "a requirement implying, creating, or prescribing a norm."@en ;
+    rdfs:subClassOf <http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#DeonticSpecification> ;
+    owl:disjointUnionOf ( nrv:CompensableRequirement nrv:NonCompensableRequirement ),
+        ( nrv:ViolableRequirement nrv:NonViolableRequirement ),
+        ( nrv:PersistentRequirement nrv:NonPersistentRequirement ) .""" ],
+                [ a olivaw-earl:MinorFail ;
+                    dcterms:description "Statement not supported"@en ;
+                    dcterms:identifier "owl-el-profile-error" ;
+                    dcterms:title "OWL EL Profile incompatible"@en ;
+                    earl:info """nrv:NormativeRequirement a rdfs:Class ;
+    rdfs:label "Normative Requirement"@en ;
+    rdfs:comment "a requirement implying, creating, or prescribing a norm."@en ;
+    rdfs:subClassOf <http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#DeonticSpecification> ;
+    owl:disjointUnionOf ( nrv:CompensableRequirement nrv:NonCompensableRequirement ),
+        ( nrv:ViolableRequirement nrv:NonViolableRequirement ),
+        ( nrv:PersistentRequirement nrv:NonPersistentRequirement ) .""" ] ] ;
+    earl:subject _:module-src-nrv-v1 ;
+    earl:test olivaw-earl:profile-compatibility .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the terms have have a satisfying Levenshtein distance from each other term."@en ;
+                    dcterms:identifier "too-close-terms" ;
+                    dcterms:title "Terms differenciated enough"@en ] ] ;
+    earl:subject _:module-src-nrv-v1 ;
+    earl:test olivaw-earl:terms-differenciation .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
+                    dcterms:identifier "owl-rl-constraint-violation" ;
+                    dcterms:title "OWL RL consistent"@en ] ] ;
+    earl:subject _:module-src-nrv-v1 ;
+    earl:test olivaw-earl:owl-rl-constraint .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a olivaw-earl:MinorFail ;
+                    dcterms:description "Subject terms not linked to a module by a rdfs:isDefinedBy property"@en ;
+                    dcterms:identifier "no-reference-module" ;
+                    dcterms:title "Term not referenced to a module"@en ;
+                    earl:info """:Achievement a rdfs:Class ;
+    rdfs:label "achievement"@en ;
+    rdfs:comment "an obligation for which achieving the content at least once ..." ;
+    rdfs:subClassOf <http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#Obligation> ;
+    owl:disjointUnionOf ( :PreemptiveAchievement :NonPreemptiveAchievement ),
+        ( :PerdurantAchievement :NonPerdurantAchievement ) .""",
+                        """:CoOccurantPunctual a rdfs:Class ;
+    rdfs:label "co-occurant punctual requirement"@en ;
+    rdfs:comment "TODO."@en ;
+    rdfs:subClassOf :Punctual ;
+    owl:disjointWith :NonCoOccurantPunctual .""",
+                        """:CompensableRequirement a rdfs:Class ;
+    rdfs:label "compensable requirement"@en ;
+    rdfs:comment "a requirement that can be compensated."@en ;
+    rdfs:subClassOf :NormativeRequirement ;
+    owl:disjointWith :NonCompensableRequirement .""",
+                        """:CompensatedRequirement a rdfs:Class ;
+    rdfs:label "compensated requirement"@en ;
+    rdfs:comment "a requirement violated in a state of affairs and compensated..." ;
+    rdfs:subClassOf :CompensableRequirement .""",
+                        """:Compensation a rdfs:Class ;
+    rdfs:label "compensation"@en ;
+    rdfs:comment "a set of penalties or sanctions imposed on the violator ; fu..." ;
+    rdfs:subClassOf <http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#Obligation> .""",
+                        """:CompliantRequirement a rdfs:Class ;
+    rdfs:label "compliant requirement"@en ;
+    rdfs:comment "a requirement being compliant with a state of affairs."@en ;
+    rdfs:subClassOf :ViolableRequirement .""",
+                        """:Maintenance a rdfs:Class ;
+    rdfs:label "maintenance"@en ;
+    rdfs:comment "an obligation that needs to be obeyed for the whole duration..." ;
+    rdfs:subClassOf <http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#Obligation> .""",
+                        """:NonCoOccurantPunctual a rdfs:Class ;
+    rdfs:label "non co-occurant punctual requirement"@en ;
+    rdfs:comment "TODO."@en ;
+    rdfs:subClassOf :Punctual ;
+    owl:disjointWith :CoOccurantPunctual .""",
+                        """:NonCompensableRequirement a rdfs:Class ;
+    rdfs:label "non compensable requirement"@en ;
+    rdfs:comment "a requirement that cannot be compensated."@en ;
+    rdfs:subClassOf :NormativeRequirement ;
+    owl:disjointWith :CompensableRequirement .""",
+                        """:NonPerdurantAchievement a rdfs:Class ;
+    rdfs:label "non perdurant requirement"@en ;
+    rdfs:comment "achievement requirement that does not persist after being vi..." ;
+    rdfs:subClassOf :Achievement ;
+    owl:disjointWith :PerdurantAchievement .""",
+                        """:NonPersistentRequirement a rdfs:Class ;
+    rdfs:label "non persistent requirement"@en ;
+    rdfs:comment "a requirement that is in force at a particular time point on..." ;
+    rdfs:subClassOf :NormativeRequirement ;
+    owl:disjointWith :PersistentRequirement .""",
+                        """:NonPreemptiveAchievement a rdfs:Class ;
+    rdfs:label "non preemptive achievement requirement"@en ;
+    rdfs:comment "an achievement requirement that cannot be fulfilled even bef..." ;
+    rdfs:subClassOf :Achievement .""",
+                        """:NonViolableRequirement a rdfs:Class ;
+    rdfs:label "non violable requirement"@en ;
+    rdfs:comment "a requirement that cannot be violated."@en ;
+    rdfs:subClassOf :NormativeRequirement ;
+    owl:disjointWith :ViolableRequirement .""",
+                        """:NormativeRequirement a rdfs:Class ;
+    rdfs:label "Normative Requirement"@en ;
+    rdfs:comment "a requirement implying, creating, or prescribing a norm."@en ;
+    rdfs:subClassOf <http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#DeonticSpecification> ;
+    owl:disjointUnionOf ( :CompensableRequirement :NonCompensableRequirement ),
+        ( :ViolableRequirement :NonViolableRequirement ),
+        ( :PersistentRequirement :NonPersistentRequirement ) .""",
+                        """:PerdurantAchievement a rdfs:Class ;
+    rdfs:label "perdurant achievement requirement"@en ;
+    rdfs:comment "achievement requirement that persists after being violated."@en ;
+    rdfs:subClassOf :Achievement ;
+    owl:disjointWith :NonPerdurantAchievement .""",
+                        """:PersistentRequirement a rdfs:Class ;
+    rdfs:label "persistent requirement"@en ;
+    rdfs:comment "a requirement that needs to be obeyed for the whole duration..." ;
+    rdfs:subClassOf :NormativeRequirement ;
+    owl:disjointWith :NonPersistentRequirement .""",
+                        """:PreemptiveAchievement a rdfs:Class ;
+    rdfs:label "preemptive achievement requirement"@en ;
+    rdfs:comment "an achievement requirement that can be fulfilled even before..." ;
+    rdfs:subClassOf :Achievement .""",
+                        """:Punctual a rdfs:Class ;
+    rdfs:label "punctual"@en ;
+    rdfs:comment "an obligation for which the contents must be immediately ach..." ;
+    rdfs:subClassOf :NonPersistentRequirement ;
+    owl:disjointUnionOf ( :CoOccurantPunctual :NonCoOccurantPunctual ) ;
+    owl:intersectionOf ( :Achievement :Maintenance ) .""",
+                        """:ViolableRequirement a rdfs:Class ;
+    rdfs:label "violable requirement"@en ;
+    rdfs:comment "a requirement that can be violated."@en ;
+    rdfs:subClassOf :NormativeRequirement ;
+    owl:disjointWith :NonViolableRequirement .""",
+                        """:ViolatedRequirement a rdfs:Class ;
+    rdfs:label "violated requirement"@en ;
+    rdfs:comment "a requirement violated by a state of affairs."@en ;
+    rdfs:subClassOf :ViolableRequirement .""",
+                        """:hasCompensation a owl:ObjectProperty ;
+    rdfs:label "has for compensation"@en ;
+    rdfs:comment "links a compensable requirement to a compensation."@en ;
+    rdfs:domain :CompensableRequirement ;
+    rdfs:range :Compensation .""",
+                        """:hasCompliance a owl:ObjectProperty ;
+    rdfs:label "has for compliance"@en ;
+    rdfs:comment "links a violable requirement to compliance."@en ;
+    rdfs:domain :ViolableRequirement ;
+    rdfs:range <http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#Compliance> ;
+    owl:propertyDisjointWith :hasViolation .""",
+                        """:hasViolation a owl:ObjectProperty ;
+    rdfs:label "has for violation"@en ;
+    rdfs:comment "links a violable requirement to a violation."@en ;
+    rdfs:domain :ViolableRequirement ;
+    rdfs:range <http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#Violation> .""" ] ] ;
+    earl:subject _:module-src-nrv-v1 ;
+    earl:test olivaw-earl:term-referencing .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the terms defined in the subject have a rdfs:label in English"@en ;
+                    dcterms:identifier "not-labeled-term" ;
+                    dcterms:title "All terms labeled"@en ] ] ;
+    earl:subject _:module-src-nrv-v1 ;
+    earl:test olivaw-earl:labeled-terms .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Each rdfs:range is defined within the fragment"@en ;
+                    dcterms:identifier "range-out-of-vocabulary" ;
+                    dcterms:title "Ranges properly defined"@en ] ] ;
+    earl:subject _:module-src-nrv-v1 ;
+    earl:test olivaw-earl:domain-and-range-referencing .
+
+[] a earl:TestSubject ;
+    dcterms:hasPart <https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl> ;
+    dcterms:identifier "all-fragments" ;
+    dcterms:title "All the fragments from branch main that are syntaxically correct as well as their recursive imports"@en .
+
+[] a earl:TestSubject ;
+    dcterms:hasPart <https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl> ;
+    dcterms:identifier "all-modules" ;
+    dcterms:title "All the modules from branch main that are syntaxically correct as well as their recursive imports"@en .
+
+_:NicoRobertIn a foaf:Person ;
+    schema:mainEntityOfPage <https://github.com/NicoRobertIn> .
+
+_:NicoRobertIn-manual a foaf:OnlineAccount ;
+    dcterms:date "2024-06-06T14:32:36.312535"^^xsd:dateTime ;
+    dcterms:description "Test triggered by @NicoRobertIn by manual trigger"@en ;
+    dcterms:title "NicoRobertIn using manual script"@en ;
+    earl:mainAssertor _:NicoRobertIn ;
+    foaf:member <https://github.com/Wimmics/olivaw/blob/main/olivaw/test/model/suite.py> .
+
+_:module-src-nrv-v1 a earl:TestSubject ;
+    dcterms:hasPart <https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl> ;
+    dcterms:identifier "module-src-nrv-v1" ;
+    dcterms:title "Standalone module src/nrv_v1.ttl from branch main"@en .
+
