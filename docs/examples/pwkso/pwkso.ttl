@@ -1,0 +1,87 @@
+## The PWKSO ontology for representing possible worlds and Kripke structures
+
+@base <http://ns.inria.fr/pwkso/> .
+@prefix : <> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+
+: a owl:Ontology ;
+    dct:title "Possible Worlds and Kripke Structures Ontology"@en ;
+    dct:description  "an ontology for representing possible worlds and Kripke structures."@en ;
+    cc:license <https://creativecommons.org/licenses/by/4.0/> ;
+    vann:preferredNamespacePrefix "pwkso" ;
+    vann:preferredNamespaceUri : .
+    
+:PossibleWorld a owl:Class ;
+    rdfs:label "possible world"@en;
+    rdfs:comment "a consistent representation of how the world is, could have been or would be"@en .
+
+:verifiedIn a owl:ObjectProperty ;
+    rdfs:label "verified in"@en;
+    rdfs:comment "links triples to a possible world in which their associated formula is verified"@en;
+    rdfs:range :PossibleWorld ;
+    owl:propertyDisjointWith :notVerifiedIn .
+
+:notVerifiedIn a owl:ObjectProperty ;
+    rdfs:label "not verified in"@en;
+    rdfs:comment "links triples to a possible world in which associated formula is not verified"@en;
+    rdfs:range :PossibleWorld ;
+    owl:propertyDisjointWith :verifiedIn .
+
+## Closed vs open possible worlds
+
+:ClosedPossibleWorld a owl:Class ;
+    rdfs:subClassOf :PossibleWorld ;
+    rdfs:label "closed possible world"@en;
+    rdfs:comment "represents a possible world with the Closed-World Assumption"@en .
+
+:OpenPossibleWorld a owl:Class ;
+    rdfs:subClassOf :PossibleWorld ;
+    rdfs:label "open possible world"@en;
+    rdfs:comment "represents a possible world with the Open-World Assumption"@en .
+
+
+## Representation using the (N+1)-ary pattern: Introducing a new class for a relation with a distinguished participant
+
+:KripkeRelation a owl:Class ;
+    rdfs:label "Kripke relation"@en;
+    rdfs:comment "represents the Kripke relations between possible worlds. Instances of :KripkeRelation are recommended to be represented as blank nodes"@en .
+
+:param a owl:ObjectProperty ;
+    rdfs:label "parameter"@en;
+    rdfs:comment "parameter of a Kripke relation"@en;
+    rdfs:domain :KripkeRelation ;
+    rdfs:range :PossibleWorld .
+
+:index a owl:ObjectProperty ;
+    rdfs:label "index"@en;
+    rdfs:comment "index of a Kripke relation"@en;
+    rdfs:domain :KripkeRelation .
+
+:hasRelation a owl:ObjectProperty ;
+    rdfs:label "has relation"@en;
+    rdfs:comment "links a possible world to one of its N-ary relations"@en;
+    rdfs:domain :PossibleWorld ;
+    rdfs:range :KripkeRelation .
+       
+:BinaryKripkeRelation 
+    rdfs:label "binary Kripke relation"@en;
+    rdfs:comment "relation that links a possible world with another to represent a unary modal operator"@en;
+    rdfs:subClassOf :KripkeRelation,
+     [ a owl:Restriction ;
+       owl:cardinality 1 ;
+       owl:onProperty :param ] .
+       
+:UnaryKripkeRelation
+    rdfs:label "unary Kripke relation"@en;
+    rdfs:comment "relation that links a possible world with another to represent a nullary modal operator"@en;
+    rdfs:subClassOf :KripkeRelation,
+     [ a owl:Restriction ;
+       owl:cardinality 0 ;
+       owl:onProperty :param ] .

@@ -1,0 +1,329 @@
+@prefix lrmlmm: <http://docs.oasis-open.org/legalruleml/ns/v1.0/metamodel#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rulemm: <http://docs.oasis-open.org/legalruleml/ns/v1.0/rule-metamodel#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
+@prefix voaf: <http://purl.org/vocommons/voaf#>.
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix nrv: <http://ns.inria.fr/nrv#> .
+@prefix : <http://ns.inria.fr/nrv#> .
+
+# Ontology documentation
+
+nrv: a owl:Ontology , voaf:Vocabulary; 
+    rdfs:isDefinedby <http://ns.inria.fr/nrv> ;  
+	dcterms:creator <http://ns.inria.fr/fabien.gandon/foaf.html#me> ;
+	dcterms:creator "Fabien Gandon" ;
+	dcterms:contributor "Fabien Gandon";
+	dcterms:contributor "Guido Governatori";
+    dcterms:description "An OWL vocabulary for describing normative requirements."@en ;
+    dcterms:title "Normative Requirements Vocabulary"@en ;
+	voaf:specializes lrmlmm: ;
+	vann:preferredNamespacePrefix "nrv";
+	vann:preferredNamespaceUri "http://ns.inria.fr/nrv#" ;   
+	rdfs:comment "This file specifies the set of OWL classes and properties proposed by the MIREL project to represent normative requirements."@en;
+    foaf:homepage <http://ns.inria.fr/nrv> ;  
+    dcterms:created "2017-07-26"^^xsd:date;
+    dcterms:modified "2017-08-18"^^xsd:date;
+    dcterms:publisher "Inria";
+    dcterms:type <http://purl.org/adms/assettype/Ontology>;
+    dcterms:status <http://purl.org/adms/status/UnderDevelopment>;
+    rdfs:seeAlso <http://www.mirelproject.eu/> .
+
+	
+# core normative requirements ontology
+
+:NormativeRequirement a rdfs:Class ;
+    rdfs:label "Normative Requirement"@en ;
+    rdfs:comment "a requirement implying, creating, or prescribing a norm."@en ;
+    rdfs:subClassOf lrmlmm:DeonticSpecification ;  # to check
+	owl:disjointUnionOf ( :CompensableRequirement :NonCompensableRequirement ) ;
+	owl:disjointUnionOf ( :ViolableRequirement :NonViolableRequirement ) ;
+	owl:disjointUnionOf ( :PersistentRequirement :NonPersistentRequirement ) .
+
+# review namespace
+
+:CompensableRequirement a rdfs:Class ;
+    rdfs:label "compensable requirement"@en ;
+    rdfs:comment "a requirement that can be compensated."@en ;
+	owl:disjointWith :NonCompensableRequirement ;
+    rdfs:subClassOf :NormativeRequirement .  
+
+:NonCompensableRequirement a rdfs:Class ;
+    rdfs:label "non compensable requirement"@en ;
+    rdfs:comment "a requirement that cannot be compensated."@en ;
+	owl:disjointWith :CompensableRequirement ;
+    rdfs:subClassOf :NormativeRequirement .  	
+
+:ViolableRequirement a rdfs:Class ;
+    rdfs:label "violable requirement"@en ;
+    rdfs:comment "a requirement that can be violated."@en ;
+	owl:disjointWith :NonViolableRequirement ;
+    rdfs:subClassOf :NormativeRequirement .  
+
+:NonViolableRequirement a rdfs:Class ;
+    rdfs:label "non violable requirement"@en ;
+    rdfs:comment "a requirement that cannot be violated."@en ;
+	owl:disjointWith :ViolableRequirement ;
+    rdfs:subClassOf :NormativeRequirement .  	
+	
+:PersistentRequirement a rdfs:Class ;
+    rdfs:label "persistent requirement"@en ;
+    rdfs:comment "a requirement that needs to be obeyed for the whole duration within the interval in which it is in force."@en ;
+	owl:disjointWith :NonPersistentRequirement ;
+    rdfs:subClassOf :NormativeRequirement .  
+
+:NonPersistentRequirement a rdfs:Class ;
+    rdfs:label "non persistent requirement"@en ;
+    rdfs:comment "a requirement that is in force at a particular time point only or for the instance it is in force."@en ;
+	owl:disjointWith :PersistentRequirement ;
+    rdfs:subClassOf :NormativeRequirement .  
+
+  
+# extending Legal RuleML Meta Model
+	
+lrmlmm:Obligation a rdfs:Class ;
+    rdfs:label "obligation"@en ;
+    rdfs:comment "a situation, an act, or a course of action(s) to which a bearer is legally bound, and if it is not achieved or performed results in a violation."@en ;
+    rdfs:subClassOf :ViolableRequirement ;
+	rdfs:subClassOf :CompensableRequirement ;
+	owl:unionOf ( :Achievement :Maintenance )  .
+
+lrmlmm:Permission a rdfs:Class ;
+    rdfs:label "permission"@en ;
+    rdfs:comment "something is permitted if the obligation or the prohibition to the contrary does not hold."@en ;
+    rdfs:subClassOf :NonViolableRequirement ;
+	rdfs:subClassOf :NonCompensableRequirement .
+
+lrmlmm:Prohibition a rdfs:Class ;
+    rdfs:label "prohibition"@en ;
+    rdfs:comment "a situation, an act, or a course of action(s) which a bearer should avoid, and if it is achieved results in a violation."@en ;
+    rdfs:subClassOf :ViolableRequirement ;
+	rdfs:subClassOf :CompensableRequirement .
+
+
+	
+# back to core normative requirements ontology
+
+:Compensation a rdfs:Class ;
+    rdfs:label "compensation"@en ;
+    rdfs:comment "a set of penalties or sanctions imposed on the violator ; fulfilling them makes amends for the violation."@en ;
+    rdfs:subClassOf lrmlmm:Obligation . 
+
+:hasCompensation a owl:ObjectProperty ;
+    rdfs:label "has for compensation"@en ;
+    rdfs:comment "links a compensable requirement to a compensation."@en ;
+	rdfs:domain :CompensableRequirement ;
+    rdfs:range :Compensation .
+
+:CompensatedRequirement a rdfs:Class ;
+    rdfs:label "compensated requirement"@en ;
+    rdfs:comment "a requirement violated in a state of affairs and compensated in that same state of affairs."@en ;
+    rdfs:subClassOf :CompensableRequirement . # not "compensated" since local to state of affairs.
+	   
+lrmlmm:Violation a rdfs:Class ;
+    rdfs:label "violation"@en ;
+    rdfs:comment "the result of a violated normative requirement."@en ;
+	owl:disjointWith lrmlmm:Compliance .
+	  
+:hasViolation a owl:ObjectProperty ;
+    rdfs:label "has for violation"@en ;
+    rdfs:comment "links a violable requirement to a violation."@en ;
+	rdfs:domain :ViolableRequirement ; # not "violated" since local to state of affairs.
+    rdfs:range lrmlmm:Violation .
+
+:ViolatedRequirement a rdfs:Class ;
+    rdfs:label "violated requirement"@en ;
+    rdfs:comment "a requirement violated by a state of affairs."@en ;
+    rdfs:subClassOf :ViolableRequirement .
+	   
+lrmlmm:Compliance a rdfs:Class ;
+    rdfs:label "compliance"@en ;
+    rdfs:comment "the result of normative requirement being respected."@en ;
+	owl:disjointWith lrmlmm:Violation .
+	  
+:hasCompliance a owl:ObjectProperty ;
+    rdfs:label "has for compliance"@en ;
+    rdfs:comment "links a violable requirement to compliance."@en ;
+	rdfs:domain :ViolableRequirement ;
+	owl:propertyDisjointWith :hasViolation;
+    rdfs:range lrmlmm:Compliance .
+
+:CompliantRequirement a rdfs:Class ;
+    rdfs:label "compliant requirement"@en ;
+    rdfs:comment "a requirement being compliant with a state of affairs."@en ;
+    rdfs:subClassOf :ViolableRequirement .
+
+:Achievement a rdfs:Class ;
+    rdfs:label "achievement"@en ;
+    rdfs:comment "an obligation for which achieving the content at least once is enough to fulfil it."@en ;
+	owl:disjointUnionOf ( :PreemptiveAchievement :NonPreemptiveAchievement ) ;
+	owl:disjointUnionOf ( :PerdurantAchievement :NonPerdurantAchievement ) ;
+    rdfs:subClassOf lrmlmm:Obligation . 
+
+:Maintenance a rdfs:Class ;
+    rdfs:label "maintenance"@en ;
+    rdfs:comment "an obligation that needs to be obeyed for the whole duration within the interval in which it is in force."@en ;
+    rdfs:subClassOf lrmlmm:Obligation . 
+
+
+:Punctual a rdfs:Class ;
+    rdfs:label "punctual"@en ;
+    rdfs:comment "an obligation for which the contents must be immediately achieved."@en ;
+	rdfs:subClassOf :NonPersistentRequirement ;
+	owl:disjointUnionOf ( :CoOccurantPunctual :NonCoOccurantPunctual ) ;
+    owl:intersectionOf ( :Achievement :Maintenance ) .
+
+:CoOccurantPunctual a rdfs:Class ;
+    rdfs:label "co-occurant punctual requirement"@en ;
+    rdfs:comment "TODO."@en ;
+	owl:disjointWith :NonCoOccurantPunctual ;
+    rdfs:subClassOf :Punctual .  
+
+:NonCoOccurantPunctual a rdfs:Class ;
+    rdfs:label "non co-occurant punctual requirement"@en ;
+    rdfs:comment "TODO."@en ;
+	owl:disjointWith :CoOccurantPunctual ;
+    rdfs:subClassOf :Punctual . 
+
+
+:PreemptiveAchievement a rdfs:Class ;
+    rdfs:label "preemptive achievement requirement"@en ;
+    rdfs:comment "an achievement requirement that can be fulfilled even before it is actually in force."@en ;
+    rdfs:subClassOf :Achievement .
+
+:NonPreemptiveAchievement a rdfs:Class ;
+    rdfs:label "non preemptive achievement requirement"@en ;
+    rdfs:comment "an achievement requirement that cannot be fulfilled even before it is actually in force."@en ;
+    rdfs:subClassOf :Achievement . 
+
+:PerdurantAchievement a rdfs:Class ;
+    rdfs:label "perdurant achievement requirement"@en ;
+    rdfs:comment "achievement requirement that persists after being violated."@en ;
+	owl:disjointWith :NonPerdurantAchievement ;
+    rdfs:subClassOf :Achievement .  
+
+:NonPerdurantAchievement a rdfs:Class ;
+    rdfs:label "non perdurant requirement"@en ;
+    rdfs:comment "achievement requirement that does not persist after being violated."@en ;
+	owl:disjointWith :PerdurantAchievement ;
+    rdfs:subClassOf :Achievement .	
+
+# imported and updated from Legal RuleML Meta Model
+
+rulemm:LogicalFormula a rdfs:Class ;
+    rdfs:label "logical formula"@en .
+
+rulemm:AtomicFormula a rdfs:Class ;
+    rdfs:label "atomic formula"@en .
+	
+lrmlmm:Compliance a rdfs:Class ;
+    rdfs:label "compliance"@en ;
+    rdfs:comment "an indication that an Obligation has been fulfilled or a Prohibition has not been violated."@en ;
+    rdfs:subClassOf lrmlmm:DeonticSpecification .
+
+lrmlmm:DeonticModality a rdfs:Class ;
+    rdfs:label "deontic modality"@en ;
+    rdfs:comment "a modality pertaining to Deontic Specifications."@en ;
+    rdfs:subClassOf lrmlmm:Modality .
+
+lrmlmm:DeonticSpecification a rdfs:Class ;
+    rdfs:label "deontic specification"@en ;
+    rdfs:comment "an Obligation, Permission, Prohibition, Right, ...."@en ;
+    rdfs:subClassOf rulemm:LogicalFormula .
+
+lrmlmm:Obligation a rdfs:Class ;
+    rdfs:label "obligation"@en ;
+    rdfs:comment "a Deontic Specification for a state, an act, or a course of action to which a Bearer is legally bound, and which, if it is not achieved or performed, results in a Violation."@en ;
+    rdfs:subClassOf lrmlmm:DeonticSpecification .
+
+lrmlmm:Permission a rdfs:Class ;
+    rdfs:label "permission"@en ;
+    rdfs:comment "a Deontic Specification for a state, an act, or a course of action where the Bearer has no Obligation or Prohibition to the contrary. A weak Permission is the absence of the Obligation or Prohibition to the contrary; a strong Permission is an exception or derogation of the Obligation or Prohibition to the contrary."@en ;
+    rdfs:subClassOf lrmlmm:DeonticSpecification .
+
+lrmlmm:Prohibition a rdfs:Class ;
+    rdfs:label "prohibition"@en ;
+    rdfs:comment "a Deontic Specification for a state, an act, or a course of action to which a Bearer is legally bound, and which, if it is achieved or performed, results in a Violation."@en ;
+    rdfs:subClassOf lrmlmm:DeonticSpecification .
+
+lrmlmm:Reparation a rdfs:Class ;
+    rdfs:label "reparation"@en ;
+    rdfs:comment "an indication that a PenaltyStatement is linked with a PrescriptiveStatement. It indicates that a sanction may apply where the PrescriptiveStatement entails a Deontic Specification and when there is a Violation of the Deontic Specification."@en ;
+    rdfs:subClassOf rulemm:AtomicFormula .
+
+lrmlmm:Right a rdfs:Class ;  # exact link to persmission?
+    rdfs:label "right"@en ;
+    rdfs:comment "(see also Permission) a Deontic Specification that gives a Permission to a party (the Bearer) and implies there are Obligations or Prohibitions on other parties (the AuxiliaryParty) such that the Bearer can (eventually) exercise the Right."@en ;
+    rdfs:subClassOf lrmlmm:DeonticSpecification .
+
+lrmlmm:SuborderList a rdfs:Class ;
+    rdfs:label "suborder list"@en ;
+    rdfs:comment "a Deontic Specification for a sequence of Deontic Specifications, i.e., Obligations, Prohibitions, Permissions, Rights and/or Suborder Lists. When a SuborderList holds, a Deontic Specification in the SuborderList holds if all Deontic Specifications that precede it in the SuborderList have been violated."@en ;
+    rdfs:subClassOf lrmlmm:DeonticSpecification .
+
+lrmlmm:Violation a rdfs:Class ;
+    rdfs:label "violation"@en ;
+    rdfs:comment "an indication that an Obligation or Prohibition has been violated."@en ;
+    rdfs:subClassOf lrmlmm:DeonticSpecification .
+
+lrmlmm:applies a owl:ObjectProperty ;
+    rdfs:label "applies"@en .
+	
+lrmlmm:DeonticRole a owl:ObjectProperty ;
+    rdfs:label "deontic role"@en .
+
+lrmlmm:Bearer a owl:ObjectProperty ;
+    rdfs:label "bearer"@en ;
+    rdfs:comment "a role in a Deontic Specification to which the Deontic Specification is primarily directed."@en ;
+    rdfs:subPropertyOf lrmlmm:DeonticRole .
+
+lrmlmm:applies a owl:ObjectProperty ;
+    rdfs:label "applies"@en .
+
+lrmlmm:Modality a rdfs:Class;
+   rdfs:label "modality"@en .
+	
+lrmlmm:appliesModality a owl:ObjectProperty ;
+    rdfs:label "applies modality"@en ;
+    rdfs:comment "the deontic mode that applies to a Deontic Specification in a Context or 	Association."@en ;
+    rdfs:range lrmlmm:Modality ;
+    rdfs:subPropertyOf lrmlmm:applies .
+
+lrmlmm:Reparation a rdfs:Class;
+   rdfs:label "reparation"@en .
+
+lrmlmm:PenaltyStatement a rdfs:Class;
+   rdfs:label "penalty statement"@en .
+   
+lrmlmm:appliesPenalty a owl:ObjectProperty ;
+    rdfs:label "applies penalty"@en ;
+    rdfs:comment "the PenaltyStatement that is linked to a LegalRule in a Reparation."@en ;
+    rdfs:domain lrmlmm:Reparation ;
+    rdfs:range lrmlmm:PenaltyStatement .
+
+lrmlmm:PrescriptiveStatement a rdfs:Class;
+   rdfs:label "prescriptive statement"@en .
+   
+lrmlmm:toPrescriptiveStatement a owl:ObjectProperty ;
+    rdfs:label "to prescriptive statement"@en ;
+    rdfs:comment "the PrescriptiveStatement that is linked to a PenaltyStatement in a Reparation."@en ;
+    rdfs:domain lrmlmm:Reparation ;
+    rdfs:range lrmlmm:PrescriptiveStatement .
+
+lrmlmm:DeonticSpecification a rdfs:Class;
+   rdfs:label "deontic specification"@en .
+
+rulemm:Term  a rdfs:Class;
+   rdfs:label "term"@en .
+   
+lrmlmm:DeonticRole a owl:ObjectProperty ;
+    rdfs:label "deontic role"@en ;
+    rdfs:comment "a role in a Deontic Specification"@en ;
+    rdfs:domain lrmlmm:DeonticSpecification ;
+    rdfs:range rulemm:Term .
