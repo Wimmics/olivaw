@@ -156,7 +156,7 @@ def make_subject_id_part(fragment_list: list[str]) -> str:
     ]
     usecases.sort()
 
-    subject_id_part = '-'.join(modules + modelets + datasets + questions + usecases)
+    subject_id_part = '-'.join(modules + modelets + datasets + questions + usecases).replace(".", "-").replace("_", "-")
     return subject_id_part
 
 def make_subject_id(heart: list[str], appendix: list[str]=[]) -> str:
@@ -409,13 +409,25 @@ def make_readable_turtle(turtle: str, extra_prefix_declaration: list[tuple[str, 
             extra_prefix_declaration
     ]
 
+    parser_graph = Graph()
+    parser_graph.parse(data=total_turtle, format="ttl")
+
     parsed_graph = Graph()
-    parsed_graph.parse(data=total_turtle, format="ttl")
+
+    parsed_graph.parse(
+        format="ttl",
+        data=parser_graph\
+            .query(SHORTEN_LITERALS)\
+            .serialize(format="ttl")\
+            .decode()\
+            .strip()
+    )
 
     for prefix, namespace in prefix_declaration:
-        parsed_graph.bind(prefix, namespace)
+        parsed_graph.bind(prefix, namespace, replace=True)
 
     return parsed_graph.serialize(format="ttl")
+    
 
 def uri_pointer(draft: AssertDraft, uri: str) -> Literal:
     """Makes a pointer containing some turtle definition of a URI
