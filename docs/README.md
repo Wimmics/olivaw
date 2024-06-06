@@ -10,3 +10,4 @@ The documentation here abroaches:
 * The [command line documentation](./commands.md) that lists all the available commands in olivaw, what they do and their different options
 * The [GitHub Actions documentation](./actions.md) that gives all the needed information about the available Composite Github Actions, what they do and their different options
 * The [pre-commit hook documentation](./pre-commit.md) that will explain how to add the pre-commit pre-built hook directly in a given project
+* The [examples/ folder](./examples/) contains several examples of model test reports generated over different pontology repositories
