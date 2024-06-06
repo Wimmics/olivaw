@@ -54,6 +54,12 @@ This field is mandatory and contains a string representing a gist index containi
 
 The command `olivaw init repo` will automatically create a gist initialized with all the files the project needs from the provided personnal access token.
 
+## project_prefixes
+
+This field is mandatory and contains a dictionary. The key is a string that represents a prefix. The value is a string that represents a namespace.
+
+These prefixes will be used while preparing the turtle data snippets in the different test reports in order to shorten the URIs in these snippets in order to make them more easily understandable by the ontology developpers.
+
 ## skipped_errors
 
 This field is not mandatory and provides a list of error ids that can be found in the [olivaw test documentation](./tests.md#2-available-tests) and in the [olivaw test resources file](../olivaw/constants/tests-resources.json)
