@@ -122,7 +122,7 @@ gateway = JavaGateway(
     # gateway_parameters=GatewayParameters(port=launch_gateway()),
     # python call back port set dynamically
     # callback_server_parameters=CallbackServerParameters(port=0),
-    # gateway to our instance of the graph DB
+    # gateway to the instance of the graph DB
     java_process=graph_db_process
 )
 register(gateway.shutdown)
@@ -131,7 +131,7 @@ register(gateway.shutdown)
 #python_port = gateway.get_callback_server().get_listening_port()
 
 # tell the Java side to connect to the python callback server with the new
-# python port. Note that we use the java_gateway_server attribute that
+# python port. Note that java_gateway_server attribute is used and
 # retrieves the GatewayServer instance.
 # gateway.java_gateway_server.resetCallbackClient(
 #    gateway\

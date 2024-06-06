@@ -16,15 +16,15 @@ Olivaw proposes:
 * composite actions that can directly be called in workflows from any Acimov project
 * a pre-commit hook that should prevent the biggest mistakes that could be pushed in an Acimov repository
 
-This tool proposes different test tools all powered by Corese, check their [website](https://project.inria.fr/corese/) and [repository](https://github.com/Wimmics/corese)
+This tool proposes different test tools all powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese).
 
-The test reports are then represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/)
+The test reports are then represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/).
 
-All the functional documentation concerning olivaw can be found in [the docs/ folder](./docs/)
+In order to get all the available features in olivaw check [olivaw functional documentation](./docs/).
 
-There is also technical documentation that can be followed from [there](./olivaw/)
+Moreover the project, from the project structure itself to the details about any module, function and constants, is documented, so check [olivaw technical documentation](./olivaw/).
 
-If a bug is to be found don't hesitate to create an [issue](https://github.com/Wimmics/olivaw/issues)
+If a bug is to be found or a feature to be proposed, please use [olivaw issue menu](https://github.com/Wimmics/olivaw/issues).
 
 # Getting started
 
@@ -61,7 +61,7 @@ This framework proposes automatically updated badges at the top of the README.md
 
 To make this work a personnal access token with the `gist` scope is required.
 
-* First go to the [Github webpage dedicated to access token generation](https://github.com/settings/tokens)
+* First go to the [Github access token generation webpage](https://github.com/settings/tokens).
 * Then create a personnal access token with only the `gist` scope. Copy/paste this token somewhere because it will never be shown again.
 * Then go to `{repository_url}/settings/secrets/actions`, create a new repository secret named `GIST_SECRET` and paste the key
 
@@ -69,7 +69,7 @@ To make this work a personnal access token with the `gist` scope is required.
 
 Finally this library needs a `parameters.json` file in the `.acimov/` folder that should contain parameters related to the repository.
 
-You can use this command to generate one:
+Use this command to generate one:
 
 ```shell
 olivaw init repo
@@ -79,9 +79,9 @@ Just follow the instructions (the personnal access token with `gist` scope will 
 
 After the execution of the command file named `parameters.json` in the `.acimov/` folder should have appeared and also badges added to the top of the repository `README.md` file.
 
-You can enventually customize this parameters using the [parameters documentation](./docs/parameters.md).
+These parameters can eventually be customized using the [olivaw parameters documentation](./docs/parameters.md).
 
-You are now ready to use all the commands of olivaw inside this repository!
+The olivaw commands are now available inside the repository!
 
 # Basics about olivaw
 
@@ -198,7 +198,7 @@ Then on each time a branch is published, the actions should create new gists and
 
 A pre-commit hook is available in this repository to prevent the developper to push big mistakes on the server.
 
-To use it should need first need to install pre-commit. I strongly advise to create a fresh new python 3.11 environment for the tool to work properly.
+To use it should need first need to install pre-commit. Create a fresh new python 3.11 environment for the tool to work properly.
 
 Once the new environment set, install pre-commit with this command:
 
@@ -233,3 +233,5 @@ git add .pre-commit-config.yaml
 Now, each time a commit is made, the staged files will be tested and the commit will be blocked if any blocking error is to be found in those files.
 
 The test takes a few seconds and pre-commit needs a moment to prepare the hook on the very first use.
+
+There is also the [olivaw pre-commit hook documentation](./docs/pre-commit.md).

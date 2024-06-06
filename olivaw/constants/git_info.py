@@ -21,7 +21,7 @@ else:
     ROOT_FOLDER = None
 
 if ROOT_FOLDER is None:
-  # git will print an error message explaining we are no in a git reository
+  # git will print an error message explaining program working directory is not in a git repository
   exit(1)
 
 # The repository URI

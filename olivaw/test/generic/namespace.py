@@ -106,7 +106,7 @@ def namespace_test(
             continue
 
         # Testing namespace with common existing namespaces
-        message = f"The following namespace seems suspicious:\n\n {namespace} \n\nDid you mean one of these namespaces?"
+        message = f"The following namespace seems suspicious:\n\n {namespace} \n\nWas it supposed to correspond to one of these namespaces?"
         
         namespace_pointers = [text_pointer("Namespace usage in the subject file:"), get_namespace_usage(namespace)]
         

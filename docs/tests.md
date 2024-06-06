@@ -62,7 +62,7 @@ This is the format that was chosen in the first place for exporting data since i
 
 The chosen vocabulary for representing these report was [EARL](https://www.w3.org/TR/EARL10/)
 
-In order to understand the representation of your report, let's have a very short introduction to this vocabulary.
+In order to understand the representation of the report, here is a very short introduction to this vocabulary.
 
 In this vocabulary, an assertion is the conjonction between 4 éléments:
 
@@ -71,21 +71,21 @@ In this vocabulary, an assertion is the conjonction between 4 éléments:
 * A criterion, the criteria that is tested on the subject
 * A result, what is the conclusion of the test lead by the asserter on this resource given the criterion
 
-Therefore in this report you should see the assertions this way:
+Therefore in this report the assertions will be instanciated this way:
 
 ```turtle
 [] a earl:Assertion ;
     earl:assertedBy _:theAssertor ;
-    earl:result [ a earl:TestResult ; ... we will see later the content ...] ;
+    earl:result [ a earl:TestResult ; ... the content will be detailed later ...] ;
     earl:subject _:theSubject ;
     earl:test olivaw-earl:theTestCriterion .
 ```
 
-Now we can see more in details how is expressed each part
+The next sections will explore in details how is expressed each part
 
 ### 1.1.1. The assertor
 
-The assertor, here always a human being using a software tool, is expressed in a similar way than in the [EARL vocabulary guide](https://www.w3.org/WAI/ER/EARL10/WD-EARL10-Guide-20120125#example307), except we prefer to use the term `foaf:OnlineAccount` instead of `foaf:Group`
+The assertor, here always a human being using a software tool, is expressed in a similar way than in the [EARL vocabulary guide](https://www.w3.org/WAI/ER/EARL10/WD-EARL10-Guide-20120125#example307), except the use of the term `foaf:OnlineAccount` instead of `foaf:Group` was preferred.
 
 The assertor declaration should follow this structure:
 
@@ -165,7 +165,7 @@ Then a result is represented this way:
 
 ### 1.1.5. The outcomes
 
-An outcome has different properties we will introduce in this section.
+An outcome has different properties that will be introduced in this section.
 
 **Outcome type**
 
@@ -183,7 +183,7 @@ In order to add more expressivity to denote the severity of an error, in the [ol
 * `olivaw-earl:MinorFail`: An error is detected but is not considered as blocking for production
 * `olivaw-earl:MajorFail`: An error is detected and is considered blocking for production
 
-In our test report you should see the different available outcome types:
+Here are the different outcome types that can be found in the reports:
 
 * `earl:Pass`
 * `earl:CannotTell`
@@ -234,7 +234,7 @@ It provides some basic statistics:
 * The number of assertion for each outcome type
 * A simple bar representing each percentage of outcome type
 
-Then you have a short explanation for the meaning behind each outcome type.
+Then there will be a short explanation for the meaning behind each outcome type.
 
 ![alt text](./assets/statistics.png)
 
@@ -260,7 +260,7 @@ The summary table is a table where each line is a summary containing the followi
 
 ![alt text](./assets/outcome-summary.png)
 
-After this summary table, for each outcome we have a subsection containing the detailed explanation.
+After this summary table, for each outcome there will be a subsection containing the detailed explanation.
 There is also one link at the top of this section to get back the summary table at the exact line where the outcome summary is.
 
 This explanation provides:
@@ -285,9 +285,9 @@ This explanation provides:
 
 This section is meant to list all the tests that are processed by this tool
 
-For each of them you should have also some information about the different errors that can be detected during each of them
+For each of them there is also also some information about the different errors that can be detected during each of them
 
-Some errors can provide *pointers*, either URIs or some textual content that should help you to find where is the error located in the subject
+Some errors can provide *pointers*, either URIs or some textual content that should help to find out where is the error located in the subject
 
 ## 2.1. Model tests
 
@@ -591,7 +591,7 @@ This test checks if the namespaces that can be found are different enough:
 
 This test is based on the fact that some typos can appear in prefixes.
 
-If the levenshtein distance between two prefixes is way too low then we can assume that there can be a typo in one of the prefixes.
+If the levenshtein distance between two prefixes is way too low then there might be a typo in one of the prefixes.
 
 The prefixcc dataset allows to cover well known namespaces while comparing the namespaces of the data fragments between them can cover the prefixes that are not known.
 

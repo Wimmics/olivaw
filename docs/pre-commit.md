@@ -8,7 +8,7 @@ This tool can help a project to keep code quality standards during the whole lif
 
 Pre-commit also allow developers to implement custom hooks that can be used in many other projects.
 
-For more details about pre-commit, read the [documentation](https://pre-commit.com/).
+For more details about pre-commit, read the [pre-commit documentation](https://pre-commit.com/).
 
 Olivaw repository contains a pre-commit hook that can be used in an acimov project.
 
@@ -16,8 +16,8 @@ Olivaw repository contains a pre-commit hook that can be used in an acimov proje
 
 * create a new python environment ([python 3.11 or higher](https://www.python.org/downloads/release/python-3110/))
 * install pre-commit in this environment using the command `pip install pre-commit`
-* add a `.pre-commit-config.yaml` file at the root of your repository (we will see later what to write inside)
-* use the command `pre-commit install` command at the root of your repository to set up the hooks
+* add a `.pre-commit-config.yaml` file at the root of the repository (we will see later what to write inside)
+* use the command `pre-commit install` command at the root of the repository to set up the hooks
 
 ## The .pre-commit-config.yaml file
 
@@ -47,6 +47,6 @@ Then, during each event trigger, some code will be executed based on the [olivaw
 
 For each file that is staged for commit, the accurate test (model, data or query) suite will be applied.
 
-Check the [tests documentation](./tests.md#2-available-tests) for more details.
+Check the [olivaw tests documentation](./tests.md#2-available-tests) for more details.
 
 If one of these tests raise an error, the commit or push will be blocked and some error summaries will be outputed.

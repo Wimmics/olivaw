@@ -67,7 +67,7 @@ def init_gist(key: str) -> str:
 def init_repo() -> None:
     """Executes the `olivaw init repo` command"""
 
-    print("Let's initialize your repository")
+    print("Let's initialize the repository")
 
     gist_secret = None
     gist_id = None
@@ -94,11 +94,11 @@ def init_repo() -> None:
         except Exception as e:
             print(f"Provided key seems to be invalid: {str(e)}")
 
-    print("First input the prefix you would like to use for your ontology:")
+    print("First input the preferred prefix of the ontology:")
     prefix = input()
-    print("First input the URL where your ontology should be deployed:")
+    print("First input the ontology namespace:")
     deploy_url = input()
-    print("Then input the minimum Levenshtein threshold you expect between each of the future ontology terms")
+    print("Then input the minimum Levenshtein threshold allowed between each of the future ontology terms:")
     print("Press enter for default value (3)")
     levenshtein_threshold = None
     while levenshtein_threshold is None:
@@ -130,5 +130,5 @@ def init_repo() -> None:
         }, indent=4))
 
     print("The repository is initialized!")
-    print("You still need to pass the Gist access token to Github so that your future Github Actions can be able to update the badges")
+    print("The Gist access token is still required to Github so that the future Github Actions can be able to update the badges")
     print(f"Just go to {REPO_URI}/settings/secrets/actions and set a secret named 'GIST_SECRET' to the value of the access token")

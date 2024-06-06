@@ -28,4 +28,4 @@ Subjects `all-modules` and `all-fragments` are decided to be skipped here becaus
 
 The command that was run to launch the tests was `olivaw test model`.
 
-You can check the [PWKSO turtle model report](./model-test-manual-NicoRobertIn-2024-06-06T14-38-00.ttl) and the [PWKSO markdown model report](./model-test-manual-NicoRobertIn-2024-06-06T14-38-00.md)
+Check the [PWKSO turtle model report](./model-test-manual-NicoRobertIn-2024-06-06T14-38-00.ttl) and the [PWKSO markdown model report](./model-test-manual-NicoRobertIn-2024-06-06T14-38-00.md)

@@ -694,7 +694,7 @@ def make_not_tested(draft: AssertDraft, *criterions: list[str], **kwargs) -> Non
     :param draft: The test assertion draft
     :type draft: `olivaw.test.AssertDraft`
 
-    :param criterions: the list of criterion identifiers we want to report as NotTested
+    :param criterions: the list of criterion identifiers that are needed to be reported as NotTested
     :type criterion: `list[str]`
 
     :param **kwargs: Optional set of parameters to set to the `olivaw.test.AssertDraft` instance

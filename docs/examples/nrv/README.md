@@ -28,4 +28,4 @@ Subjects `all-modules` and `all-fragments` are decided to be skipped here becaus
 
 The command that was run to launch the tests was `olivaw test model`.
 
-You can check the [NRV turtle model report](./model-test-manual-NicoRobertIn-2024-06-06T14-32-37.ttl) and the [NRV markdown model report](./model-test-manual-NicoRobertIn-2024-06-06T14-32-37.md)
+Check the [NRV turtle model report](./model-test-manual-NicoRobertIn-2024-06-06T14-32-37.ttl) and the [NRV markdown model report](./model-test-manual-NicoRobertIn-2024-06-06T14-32-37.md)

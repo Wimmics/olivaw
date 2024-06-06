@@ -28,4 +28,4 @@ Subjects `all-modules` and `all-fragments` are decided to be skipped here becaus
 
 The command that was run to launch the tests was `olivaw test model`.
 
-You can check the [MUNC turtle model report](./model-test-manual-NicoRobertIn-2024-06-06T14-22-30.ttl) and the [MUNC markdown model report](./model-test-manual-NicoRobertIn-2024-06-06T14-22-30.md)
+Can check the [MUNC turtle model report](./model-test-manual-NicoRobertIn-2024-06-06T14-22-30.ttl) and the [MUNC markdown model report](./model-test-manual-NicoRobertIn-2024-06-06T14-22-30.md)

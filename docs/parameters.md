@@ -8,9 +8,9 @@ A `parameters.json` file can be generated using this command:
 olivaw init repo
 ```
 
-Check the [command line documentation](./commands.md#olivaw-init-repo) for more details.
+Check the [olivaw command line documentation](./commands.md#olivaw-init-repo) for more details.
 
-These parameters will be explained in this page in case you would like to modify it.
+These parameters will be explained later in this document.
 
 # Parameters
 
@@ -42,21 +42,21 @@ The default value is 3.
 
 This field is mandatory and provides a list of error identifiers that will be considered as blocking.
 
-The list of error identifiers can be found in the [error resource file](../olivaw/constants/error-resources.json).
+The list of error identifiers can be found in the [olivaw error resource file](../olivaw/constants/error-resources.json).
 
 Most of the errors are considered by default as `MinorFail` except the `prefix-typo` error that is considered a `CannotTell`. If a error is considered as blocking, it will always be mentionned as a `MajorFail` outcome if integrated to a test report.
 
-See the [outcome documentation](./tests.md#115-the-outcomes), the [prefix validity test documentation](./tests.md#224-namespace-validity) and the [error resource file](../olivaw/constants/error-resources.json) for more details.
+See the [olivaw outcome documentation](./tests.md#115-the-outcomes), the [olivaw prefix validity test documentation](./tests.md#224-namespace-validity) and the [olivaw error resource file](../olivaw/constants/error-resources.json) for more details.
 
 ## gist_index
 
-This field is mandatory and contains a string representing a gist index containing the data for all the gist files of your badges.
+This field is mandatory and contains a string representing a gist index containing the data for all the gist files for all the project badges.
 
-The command `olivaw init repo` will automatically create a gist initialized with all the files your project need from the personnal access token you provide it.
+The command `olivaw init repo` will automatically create a gist initialized with all the files the project needs from the provided personnal access token.
 
 ## skipped_errors
 
-This field is not mandatory and provides a list of error ids that can be found in the [test documentation](./tests.md#2-available-tests) and in the [test resources file](../olivaw/constants/tests-resources.json)
+This field is not mandatory and provides a list of error ids that can be found in the [olivaw test documentation](./tests.md#2-available-tests) and in the [olivaw test resources file](../olivaw/constants/tests-resources.json)
 
 If an error id is in this list, this error should not appear in any test report, in the markdown files as well as in the turtle files
 
@@ -64,7 +64,7 @@ If not provided, olivaw considers that all errors should appear.
 
 ## skipped_tests
 
-This field is not mandatory and provides list of strings representing test ids that can be found in the [test documentation](./tests.md#2-available-tests) and in the [test resources file](../olivaw/constants/tests-resources.json)
+This field is not mandatory and provides list of strings representing test ids that can be found in the [olivaw test documentation](./tests.md#2-available-tests) and in the [olivaw test resources file](../olivaw/constants/tests-resources.json)
 
 If a test id is in this list, this test should not be run neither appear in any test report, in the markdown files as well as in the turtle files
 
@@ -86,7 +86,7 @@ For each test identifier provided, the different subjects provided in the list s
 
 If not provided, olivaw skips no subject for any given test.
 
-Check the [test documentation](./tests.md#2-available-tests) for more details about the available test and error identifiers.
+Check the [olivaw test documentation](./tests.md#2-available-tests) for more details about the available test and error identifiers.
 
 ## skip_for_subject
 
@@ -96,4 +96,4 @@ For each test subject provided, the different tests providd in the list should b
 
 If not provided, olivaw skips no test for any given subject.
 
-Check the [test documentation](./tests.md#2-available-tests) for more details about the available test and error identifiers.
+Check the [olivaw test documentation](./tests.md#2-available-tests) for more details about the available test and error identifiers.

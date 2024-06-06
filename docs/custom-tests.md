@@ -8,7 +8,7 @@ Once a test is launched, olivaw will check the custom tests and add them to thei
 
 These tests will be launched also during a [GitHub Actions test](./actions.md#automatic-test-on-push) trigger or during a [pre-commit test](./pre-commit.md) trigger.
 
-These tests can also be skipped using all the available test skipping features or be considered as blocking error using the [.acimov/parameters.json](./parameters.md) file.
+These tests can also be skipped using all the available test skipping features or be considered as blocking error using the `.acimov/parameters.json`, check the [olivaw parameters file documentation](./parameters.md).
 
 # How to add a custom test
 
@@ -36,7 +36,7 @@ This file should also match with the following criterias:
         * Neither equal to any [default test criterion identifier](./tests.md#2-available-tests)
         * Neither equal to any other custom test criterion identifier
 
-Some examples of custom tests will be provided [below](#custom-tests-examples) so that all of these criterias can be understood.
+Some examples of custom tests will be provided in the [olivaw custom tests examples section](#custom-tests-examples) so that all of these criterias can be understood.
 
 Once a model test or a data test is launched, olivaw will scan the `.acimov/custom-tests/model` and `.acimov/custom-tests/data` folder for any files that match all of these criterias.
 
@@ -67,11 +67,11 @@ Given this use case:
     * example: express the detection of cycle of `rdfs:subClassOf` properties
 * it becomes difficult for a developper to express a test that cannot target a node or a class, because the vocabulary itself is under development
 
-In order to tackle this problem, it is possible to take advantage of the engine runnning these tests, [CORESE](https://project.inria.fr/corese/) use all the non standard features that are documentd [there](https://files.inria.fr/corese/doc/shacl.html).
+In order to tackle this problem, it is possible to take advantage of the engine runnning these tests, [CORESE](https://project.inria.fr/corese/) use all the non standard features that are documented in the [CORESE SHACL documentation](https://files.inria.fr/corese/doc/shacl.html).
 
 Here there are 2 features that solve these issues.
 * The implementation of Corese version of the non standard ShaCL-SparQL which can add all the expressivity that SparQL can have
-* The features concerning the triple targetting and the path extensions, allowing to select any triple and explore the graph to search for the exact shapes we want without knowing precisely the URIs of nodes or classes we want to target.
+* The features concerning the triple targetting and the path extensions, allowing to select any triple and explore the graph to search for the exact sought shapes without knowing precisely the URIs of nodes or classes required to target.
 
 A last feature is also available in order to help the developper.
 
