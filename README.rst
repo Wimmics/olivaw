@@ -3,7 +3,7 @@ Olivaw
 
 An Agile methodology for ontology development named
 `ACIMOV <https://www.emse.fr/~zimmermann/Papers/mk2023.pdf>`__ has been
-proposed on 2023.
+proposed in 2023.
 
 This methodology is an extension of
 `SAMOD <https://essepuntato.it/samod/>`__ with some improvements,
@@ -12,34 +12,35 @@ including:
 -  the possibility to develop modular ontologies
 -  ensuring alignment to selected reference ontologies
 -  a wider collaboration between product owners, domain experts and
-   ontology developpers
+   ontology developers
 
 This repository is a python library meant for providing tools in an
 Acimov ontology development context.
 
 Olivaw proposes:
 
--  command lines that makes an Acimov development easier
+-  command lines that make an Acimov development easier
 -  composite actions that can directly be called in workflows from any
    Acimov project
 -  a pre-commit hook that should prevent the biggest mistakes that could
    be pushed in an Acimov repository
 
-This tool proposes different test tools all powered by Corese, check
+This tool proposes different test tools all powered by Corese, check the
 `Corese website <https://project.inria.fr/corese/>`__ and `Corese
 repository <https://github.com/Wimmics/corese>`__.
 
 The test reports are then represented using the `EARL
-vocabulary <https://www.w3.org/TR/EARL10-Schema/>`__.
+vocabulary <https://www.w3.org/TR/EARL10-Schema/>`__ and then exported
+in the markdown format.
 
 Some reports generated using existing other projects can be found in the
 `olivaw reports examples <https://github.com/Wimmics/olivaw/tree/main/docs/examples/>`__ folder.
 
-In order to get all the available features in olivaw, check `olivaw
+In order to get all the available features in olivaw, check the `olivaw
 functional documentation <https://github.com/Wimmics/olivaw/tree/main/docs/>`__.
 
 Moreover the project, from the project structure itself to the details
-about any module, function and constants, is documented, so check
+about any module, function and constants, is documented, so check the
 `olivaw technical documentation <https://github.com/Wimmics/olivaw/tree/main/olivaw/>`__.
 
 If a bug is to be found or a feature to be proposed, please use `olivaw
