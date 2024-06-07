@@ -20,7 +20,9 @@ This tool proposes different test tools all powered by Corese, check [Corese web
 
 The test reports are then represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/).
 
-In order to get all the available features in olivaw check [olivaw functional documentation](./docs/).
+Some reports generated using existing other projects can be found in the [olivaw reports examples](./docs/examples/) folder.
+
+In order to get all the available features in olivaw, check [olivaw functional documentation](./docs/).
 
 Moreover the project, from the project structure itself to the details about any module, function and constants, is documented, so check [olivaw technical documentation](./olivaw/).
 
@@ -30,7 +32,7 @@ If a bug is to be found or a feature to be proposed, please use [olivaw issue me
 
 ## Installing olivaw in a project
 
-First prepare a python environment version 3.8 or greater.
+First prepare a python environment version 3.8 or greater (3.11 if pre-commit hook is meant to be used).
 
 Then install the python library using this command:
 
@@ -44,16 +46,18 @@ pip install git+https://github.com/Wimmics/olivaw@v0.0.5
 
 This tool is meant to work on an Acimov structured repository.
 
-This repository constains:
+The [acimov olivaw repository template](https://github.com/Wimmics/Olivaw-Template) can be used to create a new project or be used to adapt an existing project to this structure.
+
+This repository contains:
 
 * the folders:
   * `.acimov/`
+  * `resources/`
+  * `primer/`
   * `src/`
   * `domains/`
   * `use-cases/`
-*  a `README.md` at the root
-
-A template repository ready to fork should be provided soon.
+*  a `README.md` file at the root folder
 
 ### Getting a personnal access token with gist scope
 
@@ -77,7 +81,7 @@ olivaw init repo
 
 Just follow the instructions (the personnal access token with `gist` scope will be asked again).
 
-After the execution of the command file named `parameters.json` in the `.acimov/` folder should have appeared and also badges added to the top of the repository `README.md` file.
+After the execution of the command file named `parameters.json` in the `.acimov/` folder should have appeared and also badges added to the top of the repository `README.md` file with an initialized gist on [gist website](https://gist.github.com/).
 
 These parameters can eventually be customized using the [olivaw parameters documentation](./docs/parameters.md).
 
@@ -88,8 +92,6 @@ The olivaw commands are now available inside the repository!
 ## The command line
 
 Here is only a short overview of the main commands. Check the [olivaw command line documentation](./docs/commands.md) for more details about the available commands.
-
-Also more is about to come.
 
 ### Model test
 
@@ -123,7 +125,7 @@ Each actions of this chapter involve to create a `.yaml` file located in `{repos
 
 ### Automatic tests on push
 
-In `worflows/` folder, add a `test.yaml` file containing this:
+In `./github/worflows/` folder, add a `test.yaml` file containing this:
 
 ```yaml
 name: test
@@ -135,24 +137,11 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - run: |
-        REF=${{ github.ref }}
-        echo "github.ref: $REF"
-        IFS='/' read -ra PATHS <<< "$REF"
-        BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
-        echo $BRANCH_NAME
-        echo "MAIN=main" >> $GITHUB_ENV
-        echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
     - uses: Wimmics/olivaw/test-actions@v0.0.5
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
         gist-secret: ${{ secrets.GIST_SECRET }}
-        model-test: true
-        data-test: true
-        query-test: true
-        commit-report: ${{ env.BRANCH == env.MAIN }}
-        archive-report: true
 ```
 
 Then, after each push on the repository an actions will be triggered and after some time, in the `.acimov/output/` folder should have appeared:
@@ -162,7 +151,7 @@ Then, after each push on the repository an actions will be triggered and after s
 
 ### Badges branch initialization
 
-In `worflows/` folder, add a `init-branch.yaml` file containing this:
+In `./github/worflows/` folder, add a `init-branch.yaml` file containing this:
 
 ```yaml
 name: init-branch
@@ -174,18 +163,7 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - name: Parsing repo ref data
-      shell: bash
-      run: |
-        REF=${{ inputs.ref }}
-        echo "github.ref: $REF"
-        IFS='/' read -ra PATHS <<< "$REF"
-
-        REF_TYPE="${PATHS[1]}"
-        echo $REF_TYPE
-        echo "REF_TYPE=$(echo ${REF_TYPE})" >> $GITHUB_ENV
     - uses: Wimmics/olivaw/init-branch@v0.0.5
-      if: ${{ env.REF_TYPE != 'tags' }}
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
@@ -230,7 +208,7 @@ Finally add the `.pre-commit-config.yaml` file to the commit:
 git add .pre-commit-config.yaml
 ```
 
-Now, each time a commit is made, the staged files will be tested and the commit will be blocked if any blocking error is to be found in those files.
+Now, each time a commit is made, the staged files will be tested and the commit will be blocked if any blocking error is to be found in any of those files.
 
 The test takes a few seconds and pre-commit needs a moment to prepare the hook on the very first use.
 
