@@ -22,17 +22,26 @@ if not exists(CORESE_LOCAL_PATH):
         with open(CORESE_LOCAL_PATH, "wb") as jar:
             jar.write(downloaded.read())
 
+# Reading README.rst file for injection into python package long description
+long_description = ""
+with open("./README.rst", "r") as readme:
+    long_description = readme.read()
+
 setup(
     name='olivaw',
     description="Python framework for supporting agile ontology development",
-    version='v0.0.6',
+    long_description=long_description,
+    license="LGPL-2.1",
+    keywords="semantics ontology",
+    version="v0.0.5",
     packages=find_packages(include=["olivaw", "olivaw.*"]),
     package_data={'': ['*.json', '*.ttl', '*.lock', '*.txt', '*.jar']},
     install_requires=[requirements],
     entry_points = {
         "console_scripts": ["olivaw=olivaw.main:run"]
     },
-    author='Niagunye',
+    author='Nicolas Robert',
+    author_email="nicolas_robert_31@hotmail.fr",
     url="https://github.com/Wimmics/olivaw",
     python_requires='>=3.8'
 )
