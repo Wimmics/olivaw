@@ -1,30 +1,30 @@
 # Olivaw
 
-An Agile methodology for ontology development named [ACIMOV](https://www.emse.fr/~zimmermann/Papers/mk2023.pdf) has been proposed on 2023.
+An Agile methodology for ontology development named [ACIMOV](https://www.emse.fr/~zimmermann/Papers/mk2023.pdf) has been proposed in 2023.
 
 This methodology is an extension of [SAMOD](https://essepuntato.it/samod/) with some improvements, including:
 
 * the possibility to develop modular ontologies
 * ensuring alignment to selected reference ontologies
-* a wider collaboration between product owners, domain experts and ontology developpers
+* a wider collaboration between product owners, domain experts and ontology developers
 
 This repository is a python library meant for providing tools in an Acimov ontology development context.
 
 Olivaw proposes:
 
-* command lines that makes an Acimov development easier
+* command lines that make an Acimov development easier
 * composite actions that can directly be called in workflows from any Acimov project
 * a pre-commit hook that should prevent the biggest mistakes that could be pushed in an Acimov repository
 
 This tool proposes different test tools all powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese).
 
-The test reports are then represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/).
+The test reports are then represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/) and then exported in the markdown format.
 
 Some reports generated using existing other projects can be found in the [olivaw reports examples](./docs/examples/) folder.
 
-In order to get all the available features in olivaw, check [olivaw functional documentation](./docs/).
+In order to get all the available features in olivaw, check the [olivaw functional documentation](./docs/).
 
-Moreover the project, from the project structure itself to the details about any module, function and constants, is documented, so check [olivaw technical documentation](./olivaw/).
+Moreover the project, from the project structure itself to the details about any module, function and constants, is documented, so check the [olivaw technical documentation](./olivaw/).
 
 If a bug is to be found or a feature to be proposed, please use [olivaw issue menu](https://github.com/Wimmics/olivaw/issues).
 
