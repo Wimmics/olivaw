@@ -51,7 +51,7 @@ runs:
       if: ${{ env.REF_TYPE != 'tags' }}
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@test-actions-15
+        pip install git+https://github.com/Wimmics/olivaw@v0.0.5
 
         BADGES="$(olivaw show badges --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         BADGES_DATA=($BADGES)
