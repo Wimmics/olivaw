@@ -33,14 +33,14 @@ The test reports are then represented using the `EARL
 vocabulary <https://www.w3.org/TR/EARL10-Schema/>`__.
 
 Some reports generated using existing other projects can be found in the
-`olivaw reports examples <https://github.com/Wimmics/olivaw/docs/examples/>`__ folder.
+`olivaw reports examples <https://github.com/Wimmics/olivaw/tree/main/docs/examples/>`__ folder.
 
 In order to get all the available features in olivaw, check `olivaw
-functional documentation <https://github.com/Wimmics/olivaw/docs/>`__.
+functional documentation <https://github.com/Wimmics/olivaw/tree/main/docs/>`__.
 
 Moreover the project, from the project structure itself to the details
 about any module, function and constants, is documented, so check
-`olivaw technical documentation <https://github.com/Wimmics/olivaw/olivaw/>`__.
+`olivaw technical documentation <https://github.com/Wimmics/olivaw/tree/main/olivaw/>`__.
 
 If a bug is to be found or a feature to be proposed, please use `olivaw
 issue menu <https://github.com/Wimmics/olivaw/issues>`__.
@@ -130,7 +130,7 @@ top of the repository ``README.md`` file with an initialized gist on
 `gist website <https://gist.github.com/>`__.
 
 These parameters can eventually be customized using the `olivaw
-parameters documentation <https://github.com/Wimmics/olivaw/docs/parameters.md>`__.
+parameters documentation <https://github.com/Wimmics/olivaw/blob/main/docs/parameters.md>`__.
 
 The olivaw commands are now available inside the repository!
 
@@ -141,7 +141,7 @@ The command line
 ----------------
 
 Here is only a short overview of the main commands. Check the `olivaw
-command line documentation <https://github.com/Wimmics/olivaw/docs/commands.md>`__ for more details
+command line documentation <https://github.com/Wimmics/olivaw/blob/main/docs/commands.md>`__ for more details
 about the available commands.
 
 Model test
@@ -175,7 +175,7 @@ The Github actions
 ------------------
 
 Here is an overview of the actions available. For more details see the
-`olivaw Github Actions documentation <https://github.com/Wimmics/olivaw/docs/actions.md>`__.
+`olivaw Github Actions documentation <https://github.com/Wimmics/olivaw/blob/main/docs/actions.md>`__.
 
 Each actions of this chapter involve to create a ``.yaml`` file located
 in ``{repository_path}/.github/workflows/``.
@@ -286,4 +286,4 @@ The test takes a few seconds and pre-commit needs a moment to prepare
 the hook on the very first use.
 
 There is also the `olivaw pre-commit hook
-documentation <https://github.com/Wimmics/olivaw/docs/pre-commit.md>`__.
+documentation <https://github.com/Wimmics/olivaw/blob/main/docs/pre-commit.md>`__.
