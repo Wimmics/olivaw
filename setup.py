@@ -24,7 +24,7 @@ if not exists(CORESE_LOCAL_PATH):
 
 setup(
     name='olivaw',
-    version='1.0',
+    version='v0.0.5',
     packages=find_packages(include=["olivaw", "olivaw.*"]),
     package_data={'': ['*.json', '*.ttl', '*.lock', '*.txt', '*.jar']},
     install_requires=[requirements],
