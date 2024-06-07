@@ -35,7 +35,7 @@ First prepare a python environment version 3.8 or greater.
 Then install the python library using this command:
 
 ```shell
-pip install git+https://github.com/Wimmics/olivaw@v0.0.3
+pip install git+https://github.com/Wimmics/olivaw@v0.0.5
 ```
 
 ## Intializing a repository
@@ -143,7 +143,7 @@ jobs:
         echo $BRANCH_NAME
         echo "MAIN=main" >> $GITHUB_ENV
         echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
-    - uses: Wimmics/olivaw/test-actions@v0.0.3
+    - uses: Wimmics/olivaw/test-actions@v0.0.5
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
@@ -184,7 +184,7 @@ jobs:
         REF_TYPE="${PATHS[1]}"
         echo $REF_TYPE
         echo "REF_TYPE=$(echo ${REF_TYPE})" >> $GITHUB_ENV
-    - uses: Wimmics/olivaw/init-branch@test-actions-18
+    - uses: Wimmics/olivaw/init-branch@v0.0.5
       if: ${{ env.REF_TYPE != 'tags' }}
       with:
         repository: ${{ github.repository }}
@@ -213,7 +213,7 @@ default_language_version:
   python: python3
 repos:
 - repo: https://github.com/Wimmics/olivaw
-  rev: v0.0.3
+  rev: v0.0.5
   hooks:
     - id: olivaw-test
 ```

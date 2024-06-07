@@ -23,7 +23,7 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/test-actions@v0.0.3
+    - uses: Wimmics/olivaw/test-actions@v0.0.5
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
@@ -65,7 +65,7 @@ jobs:
         BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
         echo $BRANCH_NAME
         echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
-    - uses: Wimmics/olivaw/test-actions@test-actions-8
+    - uses: Wimmics/olivaw/test-actions@v0.0.5
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}

@@ -1,3 +1,3 @@
-# Assets for markdown reports
+# Documentation assets
 
-Here are some images that are used in the markdown reports to display some bar charts.
+This folder contains some images that are used in the [olivaw functional documentation](../) folder.
