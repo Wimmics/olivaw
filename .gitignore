@@ -6,3 +6,4 @@ __pycache__/
 *.jar
 .env
 /dist
+/build/lib/olivaw

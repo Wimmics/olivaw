@@ -34,7 +34,13 @@ If a bug is to be found or a feature to be proposed, please use [olivaw issue me
 
 First prepare a python environment version 3.8 or greater (3.11 if pre-commit hook is meant to be used).
 
-Then install the python library using this command:
+Then install the library from pipy:
+
+```shell
+pip install olivaw==0.0.5
+```
+
+It can also be installed using this command:
 
 ```shell
 pip install git+https://github.com/Wimmics/olivaw@v0.0.5

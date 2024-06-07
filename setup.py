@@ -24,14 +24,15 @@ if not exists(CORESE_LOCAL_PATH):
 
 setup(
     name='olivaw',
-    version='v0.0.5',
+    description="Python framework for supporting agile ontology development",
+    version='v0.0.6',
     packages=find_packages(include=["olivaw", "olivaw.*"]),
     package_data={'': ['*.json', '*.ttl', '*.lock', '*.txt', '*.jar']},
     install_requires=[requirements],
     entry_points = {
         "console_scripts": ["olivaw=olivaw.main:run"]
     },
-    author='Me',
-    description='Set of tools meant for acimov structured projects',
+    author='Niagunye',
+    url="https://github.com/Wimmics/olivaw",
     python_requires='>=3.8'
 )
