@@ -47,12 +47,12 @@ def html_special_chars(text: str) -> str:
                 .replace("<", "&#60;")\
                 .replace("_", "&lowbar;")\
                 .replace("^", "&Hat;")\
+                .replace(" ", "&#32")\
                 .replace("    ", "&#32;&#32;&#32;&#32;")\
                 .replace("\t", "&#32;&#32;&#32;&#32;")\
                 .replace("\\", "&#92;")\
                 .replace('"', "&#34;")\
-                .replace("[", "&#91;")\
-                .strip()
+                .replace("[", "&#91;")
             for line in text.split("\n")
             if len(line.strip()) > 0
         ]).replace("&#10;&#60", "&#10; &#60")

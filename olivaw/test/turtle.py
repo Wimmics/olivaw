@@ -419,8 +419,7 @@ def make_readable_turtle(turtle: str, extra_prefix_declaration: list[tuple[str, 
         data=parser_graph\
             .query(SHORTEN_LITERALS)\
             .serialize(format="ttl")\
-            .decode()\
-            .strip()
+            .decode()
     )
 
     for prefix, namespace in prefix_declaration:
