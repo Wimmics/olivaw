@@ -53,7 +53,12 @@ def fragment_check(draft: AssertDraft, dataset: str) -> None:
         draft,
         criterion="syntax",
         error="syntax-error",
-        messages=[] if is_syntax_valid else graph_no_import
+        messages=[] if is_syntax_valid else [
+            message\
+                .replace("\\r", "")\
+                .replace("\\n", "\n")
+            for message in graph_no_import
+        ]
     )
 
     graph_with_import = safe_load(dataset) if is_syntax_valid else None
