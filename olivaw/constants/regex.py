@@ -1,6 +1,6 @@
 """A module meant to store the important regexes of the project"""
 
-from regex import Pattern, compile as regex_compile
+from regex import Pattern, compile as regex_compile, escape
 
 AST_ERROR_FORMAT: Pattern = regex_compile("ERROR fr\\.inria\\.corese\\.sparql\\.triple\\.parser\\.ASTQuery")
 """Regex: Detects SparQL parsing errors """
@@ -38,3 +38,5 @@ PREFIX_ERROR: Pattern = regex_compile('Prefix "[^"]+:" not bound')
 URI_FORMAT: Pattern = regex_compile("^(([^:/?#\s]+):)(\/\/([^/?#\s]*))?([^?#\s]*)(\?([^#\s]*))?(#(.*))?$")
 """Regex specifying the format of a URI"""
 
+MULTIPLE_HTML_CHARS: Pattern = regex_compile("(" + escape("&#") + "[0-9]+;)"+ "(" + escape("&#") + "[0-9]+;)")
+"""Regex detecting several html chars in a row without space between them"""

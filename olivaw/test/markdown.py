@@ -29,6 +29,7 @@ from olivaw.constants import (
     USECASE_URL_FORMAT
 )
 
+from olivaw.olivaw.constants.regex import MULTIPLE_HTML_CHARS
 from olivaw.test.generic.shacl import get_criterion_data
 
 def html_special_chars(text: str) -> str:
@@ -40,7 +41,7 @@ def html_special_chars(text: str) -> str:
     :returns: The parsed text
     :rtype: `str`
     """
-    return NEW_BR.sub(
+    result =  NEW_BR.sub(
         " &#10;",
         " &#10;".join([
             line\
@@ -55,8 +56,13 @@ def html_special_chars(text: str) -> str:
                 .replace("[", "&#91;")
             for line in text.split("\n")
             if len(line.strip()) > 0
-        ]).replace("&#10;&#60", "&#10; &#60")
+        ])
     )
+
+    for char_1, char_2 in MULTIPLE_HTML_CHARS.findall(result):
+        result = result.replace(f"{char_1}{char_2}", f"{char_1} {char_2}")
+
+    return result
 
 def profile_badge_data(report: Graph, request: str) -> tuple[str, str]:
     """Given the report and an ontology profile compatibility request, returns the proper label and colors of its related badge
