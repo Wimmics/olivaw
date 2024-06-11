@@ -26,10 +26,10 @@ from olivaw.constants import (
     MODULE_URL_FORMAT,
     NEW_BR,
     QUESTION_URL_FORMAT,
-    USECASE_URL_FORMAT
+    USECASE_URL_FORMAT,
+    MULTIPLE_HTML_CHARS
 )
 
-from olivaw.olivaw.constants.regex import MULTIPLE_HTML_CHARS
 from olivaw.test.generic.shacl import get_criterion_data
 
 def html_special_chars(text: str) -> str:
