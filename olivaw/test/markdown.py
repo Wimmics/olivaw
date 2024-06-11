@@ -61,6 +61,8 @@ def html_special_chars(text: str) -> str:
     for char_1, char_2 in MULTIPLE_HTML_CHARS.findall(result):
         result = result.replace(f"{char_1}{char_2}", f"{char_1} {char_2}")
 
+    result = result.replace(">&", "> &")
+
     return result
 
 def profile_badge_data(report: Graph, request: str) -> tuple[str, str]:
