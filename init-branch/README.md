@@ -18,7 +18,7 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/init-branch@v0.0.3
+    - uses: Wimmics/olivaw/init-branch@v0.0.5
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
