@@ -517,7 +517,7 @@ def query_graph(graph: JavaObject, query: str, format: int=TEXT_TSV) -> Union[li
     :param graph: The Corese graph to query
     :type graph: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
 
-    :param query: The SparQL query to run
+    :param query: The SPARQL query to run
     :type query: `str`
 
     :param format: Expected output format, defaults to `TEXT_TSV`(15)

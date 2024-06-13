@@ -1,4 +1,4 @@
-"""Module providing the functions needed for exploring a Corese SparQL request AST"""
+"""Module providing the functions needed for exploring a Corese SPARQL request AST"""
 
 from py4j import java_gateway
 from py4j.java_gateway import JavaObject
@@ -16,7 +16,7 @@ from olivaw.test.corese import (
 def retrieveFromMathExpression(term: JavaObject) -> list[str]:
     """Retrieves the URIs form a Corese Sparql request AST math expression
 
-    :param term: Corese SparQL AST math expression
+    :param term: Corese SPARQL AST math expression
     :type term: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.sparql.triple.parser.Expression`
 
     :returns: A list of URIs
@@ -36,9 +36,9 @@ def retrieveFromMathExpression(term: JavaObject) -> list[str]:
         ]
             
 def retrieveFromLeaf(leaf: JavaObject) -> list[str]:
-    """Retrieve the URIs from a Corese SparQL request AST Atom
+    """Retrieve the URIs from a Corese SPARQL request AST Atom
 
-    :param leaf: The Corese SparQL request AST Atom
+    :param leaf: The Corese SPARQL request AST Atom
     :type leaf: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.sparql.triple.parser.Atom`
 
     :returns: A list of URIs
@@ -50,9 +50,9 @@ def retrieveFromLeaf(leaf: JavaObject) -> list[str]:
         return []
         
 def retrieveFromBody(body: JavaObject) -> list[str]:
-    """Retrieve the URIs from a Corese SparQL request AST Exp iterable
+    """Retrieve the URIs from a Corese SPARQL request AST Exp iterable
 
-    :param leaf: The Corese SparQL request AST Exp iterable
+    :param leaf: The Corese SPARQL request AST Exp iterable
     :type leaf: `py4j.java_gateway.JavaObject` referencing an instance of `Iterable<fr.inria.corese.sparql.triple.parser.Exp>`
 
     :returns: A list of URIs
@@ -95,9 +95,9 @@ def retrieveFromBody(body: JavaObject) -> list[str]:
     return retrievedValues
 
 def retrieveURIFromQuery(query: str) -> list[str]:
-    """Retrieve the URIs from a Corese SparQL request
+    """Retrieve the URIs from a Corese SPARQL request
 
-    :param leaf: The Corese SparQL request
+    :param leaf: The Corese SPARQL request
     :type leaf: `str`
 
     :returns: A list of URIs

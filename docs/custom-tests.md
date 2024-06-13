@@ -62,7 +62,7 @@ There are 2 limitations related to the use of ShaCL:
 
 *About the expressivity problem:*
 
-It is not possible to express some constraints that can be expressed in SparQL (example: express the detection of cycle of `rdfs:subClassOf` properties)
+It is not possible to express some constraints that can be expressed in SPARQL (example: express the detection of cycle of `rdfs:subClassOf` properties)
 
 *About the targetting problem:*
 
@@ -72,12 +72,12 @@ in our case, the terms that are going to be implemented during the development p
 In order to tackle these problems, it is possible to take advantage of the engine runnning these tests, [CORESE](https://project.inria.fr/corese/) use all the non standard features that are documented in the [CORESE SHACL documentation](https://files.inria.fr/corese/doc/shacl.html).
 
 Here there are 2 features that solve these issues.
-* The implementation of Corese version of the non standard ShaCL-SparQL which can add all the expressivity that SparQL can have
+* The implementation of Corese version of the non standard ShaCL-SPARQL which can add all the expressivity that SPARQL can have
 * The features concerning the triple targetting and the path extensions, allowing to select any triple and explore the graph to search for the exact sought shapes without knowing precisely the URIs of nodes or classes required to target.
 
 A last feature is also available in order to help the developper.
 
-If the ontology namespace is needed for a ShaCL-SparQL request, it can be used without any hard code using the variable "$ontology_namespace". When loading a custom test containing a SparQL request, the clause "VALUES ($ontology_namespace) { ("...") }" will dynamically be added to the SparQL requests.
+If the ontology namespace is needed for a ShaCL-SPARQL request, it can be used without any hard code using the variable "$ontology_namespace". When loading a custom test containing a SPARQL request, the clause "VALUES ($ontology_namespace) { ("...") }" will dynamically be added to the SPARQL requests.
 
 # Custom tests examples
 

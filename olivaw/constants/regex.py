@@ -3,7 +3,7 @@
 from regex import Pattern, compile as regex_compile, escape
 
 AST_ERROR_FORMAT: Pattern = regex_compile("ERROR fr\\.inria\\.corese\\.sparql\\.triple\\.parser\\.ASTQuery")
-"""Regex: Detects SparQL parsing errors """
+"""Regex: Detects SPARQL parsing errors """
 
 MODULE_URL_FORMAT: Pattern = regex_compile('src/(([^/]+/)*[^/]+)$')
 """Format of a module fragment URL"""

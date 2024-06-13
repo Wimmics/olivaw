@@ -15,7 +15,7 @@ The files that can be found here:
 * [paths.py](./paths.py): A set of folder and file paths that are used to search for files within the acimov project
 * [prefixcc.py](./prefixcc.py): Some constants useful when preparing an index of the known web semantic namespaces known by the website prefix.cc
 * [rdflib_info](./rdflib_info.py): Some constants that are usefule in order to make the turtle test report format (see the [turtle format documentation](../../docs/tests.md#11-turtle-format))
-* [sparql.py](./sparql.py): A set of SparQL requests that are useful all over the project
+* [sparql.py](./sparql.py): A set of SPARQL requests that are useful all over the project
 * [uri_index.json](./uri_index.json): An index of all the common namespaces available in prefix.cc, in order to check for namespaces that may be similar to well known other namespaces
 * [uris.py](./uris.py): Some URIs that can be useful all over the project
 * [regex.py](./regex.py): Some import regexes for the project

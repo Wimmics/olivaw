@@ -628,7 +628,7 @@ Then let's see which tests are made on all of these subjects
 
 ### 2.3.1. Syntax
 
-This test checks if the SparQL request is syntaxically valid.
+This test checks if the SPARQL request is syntaxically valid.
 
 The request should be syntaxically valid in order for this test to pass 
 
@@ -645,18 +645,18 @@ The request should be syntaxically valid in order for this test to pass
 |-|-|
 |title|Unknown ontology term|
 |description|Test subject has syntax errors|
-|pointer|Some error messages from the SparQL request parsing error|
+|pointer|Some error messages from the SPARQL request parsing error|
 
 ### 2.3.2. Query type
 
-This test checks if the SparQL request is of type `SELECT` or `ASK`
+This test checks if the SPARQL request is of type `SELECT` or `ASK`
 
 The request should be of one of these types for the request to pass
 
 |id|query-type|
 |-|-|
 |title|Syntax test|
-|description|Error message from the SparQL request parsing error|
+|description|Error message from the SPARQL request parsing error|
 
 **Possible errors:**
 
@@ -666,11 +666,11 @@ The request should be of one of these types for the request to pass
 |-|-|
 |title|Unknown ontology term|
 |description|The query type was expected to be 'Ask' or 'Select', but got '{queryType}'|
-|pointer|The SparQL request|
+|pointer|The SPARQL request|
 
 ### 2.3.3. URI Validity
 
-This test checks if the SparQL request contains URIs that are all valid URIs
+This test checks if the SPARQL request contains URIs that are all valid URIs
 
 The request should contain only well formed URIs tha respect the regex `^(([^:/?#\s]+):)(\/\/([^/?#\s]*))?([^?#\s]*)(\?([^#\s]*))?(#(.*))?$`
 
@@ -687,7 +687,7 @@ The request should contain only well formed URIs tha respect the regex `^(([^:/?
 |-|-|
 |title|Invalid URI|
 |description|Expected valid URIs in subject but got: {the invalid uri}|
-|pointer|The SparQL request|
+|pointer|The SPARQL request|
 
 ### 2.3.4. Prefix Validity
 
@@ -706,7 +706,7 @@ This test checks if any namespace from the request are similar from any other na
 |-|-|
 |title|Invalid URI|
 |description|Possible prefix typo|
-|pointer|The SparQL request|
+|pointer|The SPARQL request|
 |pointer|The prefix found in prefixcc|
 |pointer|The similar namespace usage in the ontology|
 

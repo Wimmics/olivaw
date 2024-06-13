@@ -120,7 +120,7 @@ DATASETS: list[str] = None
 """Set of data fragments that should be tested"""
 
 VARIABLE_REQUESTS: list[str] = None
-"""SparQL request that rely on some repository data"""
+"""SPARQL request that rely on some repository data"""
 
 if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
   with open(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json", "r") as f:

@@ -1,4 +1,4 @@
-"""Module providing SparQL requests"""
+"""Module providing SPARQL requests"""
 
 from typing import List
 
@@ -14,7 +14,7 @@ SELECT DISTINCT ?s where {
   FILTER NOT EXISTS { ?s rdf:type skos:Concept . }
 }
 """
-"""SparQL request listing all the ontology terms not linked to a moduled by a rdfs:isDefinedBy property"""
+"""SPARQL request listing all the ontology terms not linked to a moduled by a rdfs:isDefinedBy property"""
 
 GET_BY_MODULE: str = """
 SELECT DISTINCT ?m where {
@@ -23,7 +23,7 @@ SELECT DISTINCT ?m where {
 }
 ORDER BY ?m
 """
-"""SparQL request to get all the triples with their related modules, using the rdfs:isDefinedBy property """
+"""SPARQL request to get all the triples with their related modules, using the rdfs:isDefinedBy property """
 
 LINK_SUBJECTS_FOR_MODULE: str = """
 insert {
@@ -68,10 +68,10 @@ SELECT DISTINCT ?property ?domain WHERE {
   FILTER (!(isblank(?domain) || ?domain = owl:Thing || strstarts(str(?domain), "ONTOLOGY_NAMESPACE")))
 }
 """
-"""SparQL request to get all the properties with a domain linking to a term not defined in the ontology"""
+"""SPARQL request to get all the properties with a domain linking to a term not defined in the ontology"""
 
 RANGE_OUT_OF_VOCABULARY: str = DOMAIN_OUT_OF_VOCABULARY.replace("domain", "range")
-"""SparQL request to get all the properties with a range linking to a term not defined in the ontology"""
+"""SPARQL request to get all the properties with a range linking to a term not defined in the ontology"""
 
 GET_IMPORTS: str = """
 SELECT DISTINCT ?i WHERE {
@@ -91,7 +91,7 @@ SELECT DISTINCT ?suffix1 ?suffix2 WHERE {
   BIND (SUBSTR(str(?s2), STRLEN("ONTOLOGY_NAMESPACE") + 1) as ?suffix2)
 } ORDER BY ?suffix1
 """
-"""SparQL request getting all the pairs of suffixes from the ontology in a given graph and 
+"""SPARQL request getting all the pairs of suffixes from the ontology in a given graph and 
 gets rid of the duplicates (ab and ba) and the auto pairs (aa)"""
 
 NOT_LABELED: str = """
@@ -405,7 +405,7 @@ select
   bind(regex(?identifier, "^([a-z]+(-[a-z]+)*){1}$") as ?identifier_format_check)
 }
 """
-"""SparQL request that check if a custom test was declared properly"""
+"""SPARQL request that check if a custom test was declared properly"""
 
 GET_MAJOR_FAILS: str = """
 select ?subject_title ?criterion ?error_title ?error_description  where {
@@ -448,7 +448,7 @@ WHERE  {
   BIND (concat(?request, "\\nvalues ($ontology_namespace) { (\\"ONTOLOGY_NAMESPACE\\") }\\n") as ?updated_request)
 }
 """
-"""Update the SparQL request in a custom test to add the variable $ontology_namespace"""
+"""Update the SPARQL request in a custom test to add the variable $ontology_namespace"""
 
 GET_ERRORS_OF_TEST: str = """
 select ?o where {
@@ -458,10 +458,10 @@ select ?o where {
 """Retrieve the possible error that can occur during a given test"""
 
 IS_OWL_QL_COMPATIBLE: str = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL QL")
-"""SparQL request that checks if the ontology is OWL QL compatible"""
+"""SPARQL request that checks if the ontology is OWL QL compatible"""
 
 IS_OWL_RL_COMPATIBLE: str = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL RL")
-"""SparQL request that checks if the ontology is OWL RL compatible"""
+"""SPARQL request that checks if the ontology is OWL RL compatible"""
 
 ADD_DESCRIPTION_LINKS: str = """
 insert {
