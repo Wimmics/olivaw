@@ -1,12 +1,36 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
+title: olivaw
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
 authors:
-- family-names: "Robert"
-  given-names: "Nicolas"
-  orcid: "https://orcid.org/0009-0009-2595-6168"
-- family-names: "Gandon"
-  given-names: "Fabien"
-  orcid: "https://orcid.org/0000-0003-0543-1232"
-title: "olivaw"
-version: 0.0.5
-url: "https://github.com/Wimmics/olivaw"
+  - given-names: Nicolas
+    family-names: Robert
+    email: nicolas_robert_31@hotmail.fr
+    affiliation: 'WIMMICS team, INRIA'
+    orcid: 'https://orcid.org/0009-0009-2595-6168'
+  - given-names: Fabien
+    family-names: Gandon
+    affiliation: 'WIMMICS team, INRIA'
+    orcid: 'https://orcid.org/0000-0003-0543-1232'
+repository-code: 'https://github.com/Wimmics/olivaw'
+url: 'https://pypi.org/project/olivaw/'
+abstract: Python framework for supporting agile ontology development
+keywords:
+  - semantics
+  - ontology
+  - schema
+  - vocabulary
+  - linked data
+  - validation
+  - RDF
+  - RDFS
+  - OWL
+  - SHACL
+  - SPARQL
+license: LGPL-2.1
+version: v0.0.5
