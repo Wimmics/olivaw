@@ -61,5 +61,5 @@ setup(
     entry_points = {
         "console_scripts": ["olivaw=olivaw.main:run"]
     },
-    python_requires='>=3.8'
+    python_requires='>=3.10'
 )
