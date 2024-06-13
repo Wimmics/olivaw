@@ -24,24 +24,42 @@ if not exists(CORESE_LOCAL_PATH):
 
 # Reading README.rst file for injection into python package long description
 long_description = ""
-with open("./README.rst", "r") as readme:
+with open("./README.md", "r") as readme:
     long_description = readme.read()
 
 setup(
     name='olivaw',
+    version="v0.0.0-b",
     description="Python framework for supporting agile ontology development",
     long_description=long_description,
-    license="LGPL-2.1",
-    keywords="semantics ontology",
-    version="v0.0.5",
+    long_description_content_type="text/markdown",
+    author='Nicolas Robert',
+    author_email="nicolas_robert_31@hotmail.fr",
+    maintainer='Nicolas Robert',
+    maintainer_email="nicolas_robert_31@hotmail.fr",
+    url="https://github.com/Wimmics/olivaw",
+    download_url="https://pypi.org/project/olivaw/",
     packages=find_packages(include=["olivaw", "olivaw.*"]),
+    license="LGPL-2.1",
+    license_files=["LICENSE"],
+    keywords=[
+        "semantics",
+        "ontology",
+        "schema",
+        "vocabulary",
+        "linked data",
+        "validation",
+        "RDF",
+        "RDFS",
+        "OWL",
+        "SHACL",
+        "SPARQL"
+    ],
+    platforms=[],
     package_data={'': ['*.json', '*.ttl', '*.lock', '*.txt', '*.jar']},
     install_requires=[requirements],
     entry_points = {
         "console_scripts": ["olivaw=olivaw.main:run"]
     },
-    author='Nicolas Robert',
-    author_email="nicolas_robert_31@hotmail.fr",
-    url="https://github.com/Wimmics/olivaw",
     python_requires='>=3.8'
 )

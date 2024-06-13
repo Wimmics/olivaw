@@ -18,13 +18,13 @@ Olivaw proposes:
 
 This tool proposes different test tools all powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese).
 
-The test reports are then represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/) and then exported in the markdown format.
+The test reports are first represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/) and then exported in the markdown format.
 
-Some reports generated using existing other projects can be found in the [olivaw reports examples](./docs/examples/) folder.
+Examples of reports generated from existing ontology projects can be found in the [olivaw reports examples](https://github.com/Wimmics/olivaw/blob/main/docs/examples/) folder.
 
-In order to get all the available features in olivaw, check the [olivaw functional documentation](./docs/).
+In order to get all the available features in olivaw, check the [olivaw functional documentation](https://github.com/Wimmics/olivaw/blob/main/docs/).
 
-Moreover the project, from the project structure itself to the details about any module, function and constants, is documented, so check the [olivaw technical documentation](./olivaw/).
+Moreover the project, from the project structure itself to the details about any module, function and constants, is documented, so check the [olivaw technical documentation](https://github.com/Wimmics/olivaw/blob/main/olivaw/).
 
 If a bug is to be found or a feature to be proposed, please use [olivaw issue menu](https://github.com/Wimmics/olivaw/issues).
 
@@ -89,7 +89,7 @@ Just follow the instructions (the personnal access token with `gist` scope will 
 
 After the execution of the command file named `parameters.json` in the `.acimov/` folder should have appeared and also badges added to the top of the repository `README.md` file with an initialized gist on [gist website](https://gist.github.com/).
 
-These parameters can eventually be customized using the [olivaw parameters documentation](./docs/parameters.md).
+These parameters can eventually be customized using the [olivaw parameters documentation](https://github.com/Wimmics/olivaw/blob/main/docs/parameters.md).
 
 The olivaw commands are now available inside the repository!
 
@@ -97,7 +97,7 @@ The olivaw commands are now available inside the repository!
 
 ## The command line
 
-Here is only a short overview of the main commands. Check the [olivaw command line documentation](./docs/commands.md) for more details about the available commands.
+Here is only a short overview of the main commands. Check the [olivaw command line documentation](https://github.com/Wimmics/olivaw/blob/main/docs/commands.md) for more details about the available commands.
 
 ### Model test
 
@@ -125,7 +125,7 @@ olivaw test query
 
 ## The Github actions
 
-Here is an overview of the actions available. For more details see the [olivaw Github Actions documentation](./docs/actions.md).
+Here is an overview of the actions available. For more details see the [olivaw Github Actions documentation](https://github.com/Wimmics/olivaw/blob/main/docs/actions.md).
 
 Each actions of this chapter involve to create a `.yaml` file located in `{repository_path}/.github/workflows/`.
 
@@ -218,4 +218,4 @@ Now, each time a commit is made, the staged files will be tested and the commit 
 
 The test takes a few seconds and pre-commit needs a moment to prepare the hook on the very first use.
 
-There is also the [olivaw pre-commit hook documentation](./docs/pre-commit.md).
+There is also the [olivaw pre-commit hook documentation](https://github.com/Wimmics/olivaw/blob/main/docs/pre-commit.md).
