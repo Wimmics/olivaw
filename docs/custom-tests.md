@@ -44,7 +44,7 @@ For each file that does, a message will be outputed to tell that the given file 
 
 If a custom test fails to match all of the criterias, a message will be outputed to explain why a given test was not integrated.
 
-Once a test is integrated, the report will use all the data from the provided `earl:TestCriterion` instead of the [olivaw-earl dataset](../olivaw/test/olivaw-earl.ttl). The criterion will also use the `earl:TestCriterion` identifier and a generic message will be generated for the report.  
+Once a test is integrated, the assertions related to this test will mention the provided `earl:TestCriterion`. The criterion will also use the `earl:TestCriterion` identifier and a generic message will be generated for the report.  
 
 The pointers of these errors will always be:
 
@@ -54,20 +54,22 @@ The pointers of these errors will always be:
 
 # Non-standard ShaCL features
 
-In order to go as far a developper wants into the expressivity and test as far as they want, it is important to know the limitations of ShaCL and propose solutions.
+In order to develop a proper custom test, it is important to know the limitations of ShaCL and keep in mind some workarounds that are told in this section.
 
 There are 2 limitations related to the use of ShaCL:
 * ShaCL expressivity limitations
 * ShaCL targetting limitations
 
-ShaCL has a limited  expressivity due to its basic use case, which was the validation of a __dataset__ given a __vocabulary that is already known__.
+*About the expressivity problem:*
 
-Given this use case:
-* it is not possible to express some constraints that can be expressed in SparQL
-    * example: express the detection of cycle of `rdfs:subClassOf` properties
-* it becomes difficult for a developper to express a test that cannot target a node or a class, because the vocabulary itself is under development
+It is not possible to express some constraints that can be expressed in SparQL (example: express the detection of cycle of `rdfs:subClassOf` properties)
 
-In order to tackle this problem, it is possible to take advantage of the engine runnning these tests, [CORESE](https://project.inria.fr/corese/) use all the non standard features that are documented in the [CORESE SHACL documentation](https://files.inria.fr/corese/doc/shacl.html).
+*About the targetting problem:*
+
+ShaCL has a limited targetting due to its basic use case, which was the validation of a __dataset__ given a __vocabulary that is already known__.
+in our case, the terms that are going to be implemented during the development process to come are not known in advance.
+
+In order to tackle these problems, it is possible to take advantage of the engine runnning these tests, [CORESE](https://project.inria.fr/corese/) use all the non standard features that are documented in the [CORESE SHACL documentation](https://files.inria.fr/corese/doc/shacl.html).
 
 Here there are 2 features that solve these issues.
 * The implementation of Corese version of the non standard ShaCL-SparQL which can add all the expressivity that SparQL can have
@@ -76,7 +78,6 @@ Here there are 2 features that solve these issues.
 A last feature is also available in order to help the developper.
 
 If the ontology namespace is needed for a ShaCL-SparQL request, it can be used without any hard code using the variable "$ontology_namespace". When loading a custom test containing a SparQL request, the clause "VALUES ($ontology_namespace) { ("...") }" will dynamically be added to the SparQL requests.
-
 
 # Custom tests examples
 
