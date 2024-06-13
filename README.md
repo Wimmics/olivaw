@@ -226,9 +226,9 @@ There is also the [olivaw pre-commit hook documentation](https://github.com/Wimm
 
 # Citation
 
-This repository is one result of the [hMAS ontology project](https://github.com/HyperAgents/hmas) and therefore a part of [HyperAgents ANR/SNF project](https://www.hyperagents.org/). Check the [contributors file](./CONTRIBUTORS.md) of the project.
+This repository is one result of the [hMAS ontology project](https://github.com/HyperAgents/hmas) and therefore a part of [HyperAgents ANR/SNF project](https://www.hyperagents.org/). Check the [contributors file](https://github.com/Wimmics/olivaw/blob/main/CONTRIBUTORS.md) of the project.
 
-Please cite as the GitHub repository metadata proposes and/or check the [citation file](./CITATION.cff).
+Please cite as the GitHub repository metadata proposes and/or check the [citation file](https://github.com/Wimmics/olivaw/blob/main/CITATION.cff).
 
 # Contributing / report an issue
 

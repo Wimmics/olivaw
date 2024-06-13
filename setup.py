@@ -29,7 +29,7 @@ with open("./README.md", "r") as readme:
 
 setup(
     name='olivaw',
-    version="v0.0.0-c",
+    version="v0.0.0.0",
     description="Python framework for supporting agile ontology development",
     long_description=long_description,
     long_description_content_type="text/markdown",
