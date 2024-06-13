@@ -1,3 +1,5 @@
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
 # Olivaw
 
 An Agile methodology for ontology development named [ACIMOV](https://www.emse.fr/~zimmermann/Papers/mk2023.pdf) has been proposed in 2023.
@@ -10,15 +12,11 @@ This methodology is an extension of [SAMOD](https://essepuntato.it/samod/) with 
 
 This repository is a python library meant for providing tools in an Acimov ontology development context.
 
-Olivaw is affiliated to the [Wimmics team](https://www.inria.fr/fr/wimmics), check the other [Wimmics projects](https://github.com/Wimmics).
-
 Olivaw proposes:
 
 * command lines that make an Acimov development easier
 * composite actions that can directly be called in workflows from any Acimov project
 * a pre-commit hook that should prevent the biggest mistakes that could be pushed in an Acimov repository
-
-This tool proposes different test tools all powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese).
 
 The test reports are first represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/) and then exported in the markdown format.
 
@@ -29,6 +27,10 @@ A template repository also exist in order for an ontology project to begin with 
 In order to get all the available features in olivaw, check the [olivaw functional documentation](https://github.com/Wimmics/olivaw/blob/main/docs/).
 
 Moreover the project, from the project structure itself to the details about any module, function and constants, is documented, so check the [olivaw technical documentation](https://github.com/Wimmics/olivaw/blob/main/olivaw/).
+
+Olivaw proposes different test tools all powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese).
+
+Olivaw is affiliated to the [Wimmics reasearch team](https://www.inria.fr/fr/wimmics), check the other [Wimmics projects](https://github.com/Wimmics).
 
 If a bug is to be found or a feature to be proposed, please use [olivaw issue menu](https://github.com/Wimmics/olivaw/issues).
 
