@@ -9,11 +9,73 @@
     earl:assertedBy _:NicoRobertIn-manual ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
+                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
+                    dcterms:identifier "owl-rl-constraint-violation" ;
+                    dcterms:title "OWL RL consistent"@en ] ] ;
+    earl:subject _:dataset-manufacturing-environments-discover-behavior-specifications ;
+    earl:test olivaw-earl:owl-rl-constraint .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a olivaw-earl:MinorFail ;
+                    dcterms:description "Some fragment terms are in ontology namespace but not defined in ontology"@en ;
                     dcterms:identifier "unknown-term" ;
-                    dcterms:title "Every term exists"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-organization ;
+                    dcterms:title "Unknown ontology term"@en ;
+                    earl:info "<https://ns.inria.fr/hmas/#platform> a :Platform .",
+                        "Term not recognized: <https://purl.org/hmas/Platform>" ] ] ;
+    earl:subject _:usecase-manufacturing-dataset-v1 ;
     earl:test olivaw-earl:term-recognition .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:dataset-logistics-configure-organization ;
+    earl:test olivaw-earl:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
+                    dcterms:identifier "owl-rl-constraint-violation" ;
+                    dcterms:title "OWL RL consistent"@en ] ] ;
+    earl:subject _:dataset-domain-template-scenario-template ;
+    earl:test olivaw-earl:owl-rl-constraint .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:dataset-logistics-structure-organization ;
+    earl:test olivaw-earl:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:dataset-manufacturing-environments-discover-platforms ;
+    earl:test olivaw-earl:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:dataset-domain-template-scenario-template ;
+    earl:test olivaw-earl:namespace-validity .
 
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
@@ -22,8 +84,48 @@
                     dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
                     dcterms:identifier "unknown-term" ;
                     dcterms:title "Every term exists"@en ] ] ;
-    earl:subject _:dataset-logistics-create-organization ;
+    earl:subject _:dataset-logistics-coordinate-activities ;
     earl:test olivaw-earl:term-recognition .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:dataset-manufacturing-environments-discover-signifiers ;
+    earl:test olivaw-earl:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
+                    dcterms:identifier "owl-rl-constraint-violation" ;
+                    dcterms:title "OWL RL consistent"@en ] ] ;
+    earl:subject _:dataset-logistics-coordinate-activities ;
+    earl:test olivaw-earl:owl-rl-constraint .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
+                    dcterms:identifier "owl-rl-constraint-violation" ;
+                    dcterms:title "OWL RL consistent"@en ] ] ;
+    earl:subject _:dataset-logistics-configure-organization ;
+    earl:test olivaw-earl:owl-rl-constraint .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:NotTested ;
+                    dcterms:description "The subject must be syntaxically correct"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "The test could not be run"@en ] ] ;
+    earl:subject _:dataset-manufacturing-environments-safety-rules ;
+    earl:test olivaw-earl:namespace-validity .
 
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
@@ -38,21 +140,44 @@
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
     earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:dataset-logistics-structure-organization ;
-    earl:test olivaw-earl:syntax .
+            earl:outcome [ a olivaw-earl:MinorFail ;
+                    dcterms:description "Some fragment terms are in ontology namespace but not defined in ontology"@en ;
+                    dcterms:identifier "unknown-term" ;
+                    dcterms:title "Unknown ontology term"@en ;
+                    earl:info "<http://example.org/platformSaintEtienne> :hasResourceProfile <http://example.org/platformSaintEtienneProfile> .",
+                        "Term not recognized: <https://purl.org/hmas/hasResourceProfile>" ] ] ;
+    earl:subject _:dataset-manufacturing-environments-discover-platforms ;
+    earl:test olivaw-earl:term-recognition .
 
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
     earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:NotTested ;
-                    dcterms:description "The subject must be syntaxically correct"@en ;
+            earl:outcome [ a earl:CannotTell ;
+                    dcterms:description """The following namespace seems suspicious:
+
+ http://www.w3.org/2011/http# 
+
+Was it supposed to correspond to one of these namespaces?"""@en ;
                     dcterms:identifier "namespace-typo" ;
-                    dcterms:title "The test could not be run"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-safety-rules ;
+                    dcterms:title "Possible namespace typo"@en ;
+                    earl:info """<http://example.org/coapForm> htv:methodName "PUT" .
+<http://example.org/httpForm> htv:methodName "PUT" .""",
+                        """Common namespace found 
+@prefix httpvoc: <http://www.w3.org/2006/http#> .""",
+                        "Namespace usage in the subject file:" ],
+                [ a earl:CannotTell ;
+                    dcterms:description """The following namespace seems suspicious:
+
+ https://www.w3.org/2001/XMLSchema# 
+
+Was it supposed to correspond to one of these namespaces?"""@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "Possible namespace typo"@en ;
+                    earl:info """Common namespace found 
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .""",
+                        "Namespace usage in the subject file:",
+                        "[] sh:datatype <https://www.w3.org/2001/XMLSchema#integer> ." ] ] ;
+    earl:subject _:dataset-manufacturing-environments-discover-behavior-specifications ;
     earl:test olivaw-earl:namespace-validity .
 
 [] a earl:Assertion ;
@@ -137,6 +262,24 @@ https://ns.inria.fr/hmas/#""",
                 [ a earl:CannotTell ;
                     dcterms:description """The following namespace seems suspicious:
 
+ https://api.interactions.ics.unisg.ch/cherrybot1/tcp/ 
+
+Was it supposed to correspond to one of these namespaces?"""@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "Possible namespace typo"@en ;
+                    earl:info "Namespace usage in the subject file:",
+                        """Similar namespace found in file:
+.\\use-cases\\manufacturing\\dataset-v1.ttl 
+
+Namespace found:
+https://api.interactions.ics.unisg.ch/cherrybot2/tcp/""",
+                        """[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> .""",
+                        """[] hctl:hasTarget similar-namespace:target .
+[] hctl:hasTarget similar-namespace:target .""" ],
+                [ a earl:CannotTell ;
+                    dcterms:description """The following namespace seems suspicious:
+
  https://api.interactions.ics.unisg.ch/cherrybot1/operator/ 
 
 Was it supposed to correspond to one of these namespaces?"""@en ;
@@ -148,8 +291,8 @@ Was it supposed to correspond to one of these namespaces?"""@en ;
 
 Namespace found:
 https://api.interactions.ics.unisg.ch/cherrybot2/operator/""",
-                        "[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/operator/%7Btoken%7D> .",
-                        "[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot2/operator/%7Btoken%7D> ." ],
+                        "[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/operator/%7Btoken%7D> .",
+                        "[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot2/operator/%7Btoken%7D> ." ],
                 [ a earl:CannotTell ;
                     dcterms:description """The following namespace seems suspicious:
 
@@ -164,6 +307,96 @@ Was it supposed to correspond to one of these namespaces?"""@en ;
                         """Common namespace found 
 @prefix eg: <http://www.example.org/> .""",
                         "Namespace usage in the subject file:" ],
+                [ a earl:CannotTell ;
+                    dcterms:description """The following namespace seems suspicious:
+
+ http://www.w3.org/2011/http# 
+
+Was it supposed to correspond to one of these namespaces?"""@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "Possible namespace typo"@en ;
+                    earl:info """Common namespace found 
+@prefix httpvoc: <http://www.w3.org/2006/http#> .""",
+                        "Namespace usage in the subject file:",
+                        """[] htv:methodName "PUT" .
+[] htv:methodName "GET" .
+[] owl:onProperty htv:methodName .
+[] htv:methodName "PUT" .
+[] htv:methodName "GET" .
+[] htv:methodName "GET" .
+[] htv:methodName "GET" .
+[] owl:onProperty htv:methodName .
+[] htv:methodName "POST" .
+[] htv:methodName "POST" .
+[] htv:methodName "GET" .
+[] owl:onProperty htv:methodName .
+[] htv:methodName "GET" .
+[] owl:onProperty htv:methodName .
+[] htv:methodName "DELETE" .
+[] htv:methodName "DELETE" .
+[] htv:methodName "PUT" .
+[] htv:methodName "PUT" .
+[] htv:methodName "PUT" .
+[] htv:methodName "PUT" .
+[] htv:methodName "GET" .
+[] htv:methodName "GET" .
+[] htv:methodName "POST" .
+[] htv:methodName "GET" .
+[] htv:methodName "GET" .""" ],
+                [ a earl:CannotTell ;
+                    dcterms:description """The following namespace seems suspicious:
+
+ https://api.interactions.ics.unisg.ch/cherrybot1/ 
+
+Was it supposed to correspond to one of these namespaces?"""@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "Possible namespace typo"@en ;
+                    earl:info "Namespace usage in the subject file:",
+                        """Similar namespace found in file:
+.\\use-cases\\manufacturing\\dataset-v1.ttl 
+
+Namespace found:
+https://api.interactions.ics.unisg.ch/cherrybot2/""",
+                        """[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/tcp> .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/operator/%7Btoken%7D> .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/operator> .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/gripper> .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/operator> .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/initialize> .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/gripper> .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> .""",
+                        """[] hctl:hasTarget similar-namespace:operator .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> .
+[] hctl:hasTarget similar-namespace:operator .
+[] hctl:hasTarget similar-namespace:initialize .
+[] hctl:hasTarget similar-namespace:gripper .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot2/operator/%7Btoken%7D> .
+[] hctl:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> .
+[] hctl:hasTarget similar-namespace:gripper .
+[] hctl:hasTarget similar-namespace:tcp .""" ],
+                [ a earl:CannotTell ;
+                    dcterms:description """The following namespace seems suspicious:
+
+ https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c# 
+
+Was it supposed to correspond to one of these namespaces?"""@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "Possible namespace typo"@en ;
+                    earl:info """<https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c#agent> a hmas:Agent ;
+    hmas:hasProfile <https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c#> ;
+    hmas:isContainedIn <https://ns.inria.fr/hmas/workspaces/cup-production-site#Workspace> ;
+    hmas:isHostedOn <https://ns.inria.fr/hmas/#platformplatform> .""",
+                        "Namespace usage in the subject file:",
+                        """Similar namespace found in file:
+.\\use-cases\\manufacturing\\dataset-v1.ttl 
+
+Namespace found:
+https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-d#""",
+                        """similar-namespace:agent a hmas:Agent ;
+    hmas:hasProfile similar-namespace: ;
+    hmas:isContainedIn <https://ns.inria.fr/hmas/workspaces/cup-production-site#Workspace> ;
+    hmas:isHostedOn <https://ns.inria.fr/hmas/#platformplatform> .""" ],
                 [ a earl:CannotTell ;
                     dcterms:description """The following namespace seems suspicious:
 
@@ -209,7 +442,7 @@ https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-2#
                 [ a earl:CannotTell ;
                     dcterms:description """The following namespace seems suspicious:
 
- https://api.interactions.ics.unisg.ch/cherrybot1/ 
+ http://192.168.1.26/properties/ 
 
 Was it supposed to correspond to one of these namespaces?"""@en ;
                     dcterms:identifier "namespace-typo" ;
@@ -219,25 +452,9 @@ Was it supposed to correspond to one of these namespaces?"""@en ;
 .\\use-cases\\manufacturing\\dataset-v1.ttl 
 
 Namespace found:
-https://api.interactions.ics.unisg.ch/cherrybot2/""",
-                        """[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/tcp> .
-[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/operator/%7Btoken%7D> .
-[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/operator> .
-[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/gripper> .
-[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> .
-[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/operator> .
-[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/initialize> .
-[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/gripper> .
-[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> .""",
-                        """[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot2/operator/%7Btoken%7D> .
-[] ns1:hasTarget similar-namespace:gripper .
-[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> .
-[] ns1:hasTarget similar-namespace:tcp .
-[] ns1:hasTarget similar-namespace:gripper .
-[] ns1:hasTarget similar-namespace:operator .
-[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> .
-[] ns1:hasTarget similar-namespace:operator .
-[] ns1:hasTarget similar-namespace:initialize .""" ],
+http://192.168.1.29/properties/""",
+                        "[] hctl:hasTarget <http://192.168.1.26/properties/pmu> .",
+                        "[] hctl:hasTarget similar-namespace:imu ." ],
                 [ a earl:CannotTell ;
                     dcterms:description """The following namespace seems suspicious:
 
@@ -264,99 +481,7 @@ https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-d#""",
                         """similar-namespace:agent a hmas:Agent ;
     hmas:hasProfile similar-namespace: ;
     hmas:isContainedIn <https://ns.inria.fr/hmas/workspaces/cup-production-site#Workspace> ;
-    hmas:isHostedOn <https://ns.inria.fr/hmas/#platformplatform> .""" ],
-                [ a earl:CannotTell ;
-                    dcterms:description """The following namespace seems suspicious:
-
- https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c# 
-
-Was it supposed to correspond to one of these namespaces?"""@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "Possible namespace typo"@en ;
-                    earl:info """<https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c#agent> a hmas:Agent ;
-    hmas:hasProfile <https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c#> ;
-    hmas:isContainedIn <https://ns.inria.fr/hmas/workspaces/cup-production-site#Workspace> ;
-    hmas:isHostedOn <https://ns.inria.fr/hmas/#platformplatform> .""",
-                        "Namespace usage in the subject file:",
-                        """Similar namespace found in file:
-.\\use-cases\\manufacturing\\dataset-v1.ttl 
-
-Namespace found:
-https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-d#""",
-                        """similar-namespace:agent a hmas:Agent ;
-    hmas:hasProfile similar-namespace: ;
-    hmas:isContainedIn <https://ns.inria.fr/hmas/workspaces/cup-production-site#Workspace> ;
-    hmas:isHostedOn <https://ns.inria.fr/hmas/#platformplatform> .""" ],
-                [ a earl:CannotTell ;
-                    dcterms:description """The following namespace seems suspicious:
-
- http://192.168.1.26/properties/ 
-
-Was it supposed to correspond to one of these namespaces?"""@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "Possible namespace typo"@en ;
-                    earl:info "Namespace usage in the subject file:",
-                        """Similar namespace found in file:
-.\\use-cases\\manufacturing\\dataset-v1.ttl 
-
-Namespace found:
-http://192.168.1.29/properties/""",
-                        "[] ns1:hasTarget <http://192.168.1.26/properties/pmu> .",
-                        "[] ns1:hasTarget similar-namespace:imu ." ],
-                [ a earl:CannotTell ;
-                    dcterms:description """The following namespace seems suspicious:
-
- http://www.w3.org/2011/http# 
-
-Was it supposed to correspond to one of these namespaces?"""@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "Possible namespace typo"@en ;
-                    earl:info """Common namespace found 
-@prefix httpvoc: <http://www.w3.org/2006/http#> .""",
-                        "Namespace usage in the subject file:",
-                        """[] ns1:methodName "PUT" .
-[] ns1:methodName "GET" .
-[] owl:onProperty ns1:methodName .
-[] ns1:methodName "PUT" .
-[] ns1:methodName "GET" .
-[] ns1:methodName "GET" .
-[] ns1:methodName "GET" .
-[] owl:onProperty ns1:methodName .
-[] ns1:methodName "POST" .
-[] ns1:methodName "POST" .
-[] ns1:methodName "GET" .
-[] owl:onProperty ns1:methodName .
-[] ns1:methodName "GET" .
-[] owl:onProperty ns1:methodName .
-[] ns1:methodName "DELETE" .
-[] ns1:methodName "DELETE" .
-[] ns1:methodName "PUT" .
-[] ns1:methodName "PUT" .
-[] ns1:methodName "PUT" .
-[] ns1:methodName "PUT" .
-[] ns1:methodName "GET" .
-[] ns1:methodName "GET" .
-[] ns1:methodName "POST" .
-[] ns1:methodName "GET" .
-[] ns1:methodName "GET" .""" ],
-                [ a earl:CannotTell ;
-                    dcterms:description """The following namespace seems suspicious:
-
- https://api.interactions.ics.unisg.ch/cherrybot1/tcp/ 
-
-Was it supposed to correspond to one of these namespaces?"""@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "Possible namespace typo"@en ;
-                    earl:info "Namespace usage in the subject file:",
-                        """Similar namespace found in file:
-.\\use-cases\\manufacturing\\dataset-v1.ttl 
-
-Namespace found:
-https://api.interactions.ics.unisg.ch/cherrybot2/tcp/""",
-                        """[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> .
-[] ns1:hasTarget <https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> .""",
-                        """[] ns1:hasTarget similar-namespace:target .
-[] ns1:hasTarget similar-namespace:target .""" ] ] ;
+    hmas:isHostedOn <https://ns.inria.fr/hmas/#platformplatform> .""" ] ] ;
     earl:subject _:usecase-manufacturing-dataset-v1 ;
     earl:test olivaw-earl:namespace-validity .
 
@@ -364,71 +489,11 @@ https://api.interactions.ics.unisg.ch/cherrybot2/tcp/""",
     earl:assertedBy _:NicoRobertIn-manual ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-signifiers ;
-    earl:test olivaw-earl:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
                     dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
                     dcterms:identifier "owl-rl-constraint-violation" ;
                     dcterms:title "OWL RL consistent"@en ] ] ;
     earl:subject _:dataset-manufacturing-environments-discover-signifiers ;
     earl:test olivaw-earl:owl-rl-constraint .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
-                    dcterms:identifier "owl-rl-constraint-violation" ;
-                    dcterms:title "OWL RL consistent"@en ] ] ;
-    earl:subject _:dataset-domain-template-scenario-template ;
-    earl:test olivaw-earl:owl-rl-constraint .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-core ;
-    earl:test olivaw-earl:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
-                    dcterms:identifier "owl-rl-constraint-violation" ;
-                    dcterms:title "OWL RL consistent"@en ] ] ;
-    earl:subject _:dataset-logistics-create-organization ;
-    earl:test olivaw-earl:owl-rl-constraint .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-organization ;
-    earl:test olivaw-earl:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:usecase-manufacturing-dataset-v1 ;
-    earl:test olivaw-earl:syntax .
 
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
@@ -444,41 +509,11 @@ https://api.interactions.ics.unisg.ch/cherrybot2/tcp/""",
     earl:assertedBy _:NicoRobertIn-manual ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
-                    dcterms:identifier "unknown-term" ;
-                    dcterms:title "Every term exists"@en ] ] ;
-    earl:subject _:dataset-domain-template-scenario-template ;
-    earl:test olivaw-earl:term-recognition .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:dataset-logistics-configure-organization ;
-    earl:test olivaw-earl:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
+                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
+                    dcterms:identifier "owl-rl-constraint-violation" ;
+                    dcterms:title "OWL RL consistent"@en ] ] ;
     earl:subject _:dataset-manufacturing-environments-discover-platforms ;
-    earl:test olivaw-earl:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-organization ;
-    earl:test olivaw-earl:namespace-validity .
+    earl:test olivaw-earl:owl-rl-constraint .
 
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
@@ -489,16 +524,6 @@ https://api.interactions.ics.unisg.ch/cherrybot2/tcp/""",
                     dcterms:title "Correct syntax"@en ] ] ;
     earl:subject _:dataset-logistics-coordinate-activities ;
     earl:test olivaw-earl:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:dataset-logistics-coordinate-activities ;
-    earl:test olivaw-earl:namespace-validity .
 
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
@@ -517,130 +542,7 @@ https://api.interactions.ics.unisg.ch/cherrybot2/tcp/""",
                     dcterms:description "Test subject has a correct syntax"@en ;
                     dcterms:identifier "syntax-error" ;
                     dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:dataset-logistics-create-organization ;
-    earl:test olivaw-earl:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:CannotTell ;
-                    dcterms:description """The following namespace seems suspicious:
-
- https://www.w3.org/2001/XMLSchema# 
-
-Was it supposed to correspond to one of these namespaces?"""@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "Possible namespace typo"@en ;
-                    earl:info """Common namespace found 
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .""",
-                        "Namespace usage in the subject file:",
-                        "[] sh:datatype <https://www.w3.org/2001/XMLSchema#integer> ." ],
-                [ a earl:CannotTell ;
-                    dcterms:description """The following namespace seems suspicious:
-
- http://www.w3.org/2011/http# 
-
-Was it supposed to correspond to one of these namespaces?"""@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "Possible namespace typo"@en ;
-                    earl:info """<http://example.org/coapForm> ns1:methodName "PUT" .
-<http://example.org/httpForm> ns1:methodName "PUT" .""",
-                        """Common namespace found 
-@prefix httpvoc: <http://www.w3.org/2006/http#> .""",
-                        "Namespace usage in the subject file:" ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-behavior-specifications ;
-    earl:test olivaw-earl:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
-                    dcterms:identifier "owl-rl-constraint-violation" ;
-                    dcterms:title "OWL RL consistent"@en ] ] ;
     earl:subject _:usecase-manufacturing-dataset-v1 ;
-    earl:test olivaw-earl:owl-rl-constraint .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
-                    dcterms:identifier "owl-rl-constraint-violation" ;
-                    dcterms:title "OWL RL consistent"@en ] ] ;
-    earl:subject _:dataset-logistics-structure-organization ;
-    earl:test olivaw-earl:owl-rl-constraint .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
-                    dcterms:identifier "unknown-term" ;
-                    dcterms:title "Every term exists"@en ] ] ;
-    earl:subject _:dataset-logistics-coordinate-activities ;
-    earl:test olivaw-earl:term-recognition .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
-                    dcterms:identifier "owl-rl-constraint-violation" ;
-                    dcterms:title "OWL RL consistent"@en ] ] ;
-    earl:subject _:dataset-logistics-coordinate-activities ;
-    earl:test olivaw-earl:owl-rl-constraint .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a olivaw-earl:MinorFail ;
-                    dcterms:description "Some fragment terms are in ontology namespace but not defined in ontology"@en ;
-                    dcterms:identifier "unknown-term" ;
-                    dcterms:title "Unknown ontology term"@en ;
-                    earl:info "<https://ns.inria.fr/hmas/#platform> a :Platform .",
-                        "Term not recognized: <https://purl.org/hmas/Platform>" ] ] ;
-    earl:subject _:usecase-manufacturing-dataset-v1 ;
-    earl:test olivaw-earl:term-recognition .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:NotTested ;
-                    dcterms:description "The subject must be syntaxically correct"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "The test could not be run"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-safety-rules ;
-    earl:test olivaw-earl:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
-                    dcterms:identifier "unknown-term" ;
-                    dcterms:title "Every term exists"@en ] ] ;
-    earl:subject _:dataset-logistics-structure-organization ;
-    earl:test olivaw-earl:term-recognition .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
-                    dcterms:identifier "owl-rl-constraint-violation" ;
-                    dcterms:title "OWL RL consistent"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-behavior-specifications ;
-    earl:test olivaw-earl:owl-rl-constraint .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-platforms ;
     earl:test olivaw-earl:syntax .
 
 [] a earl:Assertion ;
@@ -650,18 +552,58 @@ Was it supposed to correspond to one of these namespaces?"""@en ;
                     dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
                     dcterms:identifier "namespace-typo" ;
                     dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:dataset-domain-template-scenario-template ;
+    earl:subject _:dataset-manufacturing-environments-discover-organization ;
     earl:test olivaw-earl:namespace-validity .
 
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
-                    dcterms:identifier "unknown-term" ;
-                    dcterms:title "Every term exists"@en ] ] ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:dataset-logistics-create-organization ;
+    earl:test olivaw-earl:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
     earl:subject _:dataset-manufacturing-environments-discover-behavior-specifications ;
-    earl:test olivaw-earl:term-recognition .
+    earl:test olivaw-earl:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:dataset-domain-template-scenario-template ;
+    earl:test olivaw-earl:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:dataset-logistics-configure-organization ;
+    earl:test olivaw-earl:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:dataset-logistics-structure-organization ;
+    earl:test olivaw-earl:syntax .
 
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
@@ -680,28 +622,8 @@ Was it supposed to correspond to one of these namespaces?"""@en ;
                     dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
                     dcterms:identifier "owl-rl-constraint-violation" ;
                     dcterms:title "OWL RL consistent"@en ] ] ;
-    earl:subject _:dataset-logistics-configure-organization ;
+    earl:subject _:dataset-logistics-structure-organization ;
     earl:test olivaw-earl:owl-rl-constraint .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
-                    dcterms:identifier "owl-rl-constraint-violation" ;
-                    dcterms:title "OWL RL consistent"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-platforms ;
-    earl:test olivaw-earl:owl-rl-constraint .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
-                    dcterms:identifier "unknown-term" ;
-                    dcterms:title "Every term exists"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-core ;
-    earl:test olivaw-earl:term-recognition .
 
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
@@ -710,7 +632,7 @@ Was it supposed to correspond to one of these namespaces?"""@en ;
                     dcterms:description "Test subject has a correct syntax"@en ;
                     dcterms:identifier "syntax-error" ;
                     dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-behavior-specifications ;
+    earl:subject _:dataset-logistics-create-organization ;
     earl:test olivaw-earl:syntax .
 
 [] a earl:Assertion ;
@@ -720,7 +642,7 @@ Was it supposed to correspond to one of these namespaces?"""@en ;
                     dcterms:description "Test subject has a correct syntax"@en ;
                     dcterms:identifier "syntax-error" ;
                     dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:dataset-domain-template-scenario-template ;
+    earl:subject _:dataset-manufacturing-environments-discover-core ;
     earl:test olivaw-earl:syntax .
 
 [] a earl:Assertion ;
@@ -736,12 +658,32 @@ Was it supposed to correspond to one of these namespaces?"""@en ;
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
     earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+            earl:outcome [ a earl:NotTested ;
+                    dcterms:description "The subject must be syntaxically correct"@en ;
                     dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:dataset-logistics-configure-organization ;
+                    dcterms:title "The test could not be run"@en ] ] ;
+    earl:subject _:dataset-manufacturing-environments-safety-rules ;
     earl:test olivaw-earl:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:dataset-manufacturing-environments-discover-signifiers ;
+    earl:test olivaw-earl:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:dataset-manufacturing-environments-discover-organization ;
+    earl:test olivaw-earl:syntax .
 
 [] a earl:Assertion ;
     earl:assertedBy _:NicoRobertIn-manual ;
@@ -757,10 +699,40 @@ Was it supposed to correspond to one of these namespaces?"""@en ;
     earl:assertedBy _:NicoRobertIn-manual ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
+                    dcterms:identifier "unknown-term" ;
+                    dcterms:title "Every term exists"@en ] ] ;
+    earl:subject _:dataset-logistics-create-organization ;
+    earl:test olivaw-earl:term-recognition .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
+                    dcterms:identifier "owl-rl-constraint-violation" ;
+                    dcterms:title "OWL RL consistent"@en ] ] ;
+    earl:subject _:usecase-manufacturing-dataset-v1 ;
+    earl:test olivaw-earl:owl-rl-constraint .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
+                    dcterms:identifier "unknown-term" ;
+                    dcterms:title "Every term exists"@en ] ] ;
+    earl:subject _:dataset-manufacturing-environments-discover-behavior-specifications ;
+    earl:test olivaw-earl:term-recognition .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
                     dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
                     dcterms:identifier "namespace-typo" ;
                     dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:dataset-logistics-create-organization ;
+    earl:subject _:dataset-logistics-coordinate-activities ;
     earl:test olivaw-earl:namespace-validity .
 
 [] a earl:Assertion ;
@@ -777,22 +749,10 @@ Was it supposed to correspond to one of these namespaces?"""@en ;
     earl:assertedBy _:NicoRobertIn-manual ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:dataset-logistics-structure-organization ;
-    earl:test olivaw-earl:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:NicoRobertIn-manual ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a olivaw-earl:MinorFail ;
-                    dcterms:description "Some fragment terms are in ontology namespace but not defined in ontology"@en ;
+                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
                     dcterms:identifier "unknown-term" ;
-                    dcterms:title "Unknown ontology term"@en ;
-                    earl:info "<http://example.org/platformSaintEtienne> :hasResourceProfile <http://example.org/platformSaintEtienneProfile> .",
-                        "Term not recognized: <https://purl.org/hmas/hasResourceProfile>" ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-platforms ;
+                    dcterms:title "Every term exists"@en ] ] ;
+    earl:subject _:dataset-manufacturing-environments-discover-core ;
     earl:test olivaw-earl:term-recognition .
 
 [] a earl:Assertion ;
@@ -809,11 +769,51 @@ Was it supposed to correspond to one of these namespaces?"""@en ;
     earl:assertedBy _:NicoRobertIn-manual ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
+                    dcterms:identifier "unknown-term" ;
+                    dcterms:title "Every term exists"@en ] ] ;
+    earl:subject _:dataset-manufacturing-environments-discover-organization ;
+    earl:test olivaw-earl:term-recognition .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
+                    dcterms:identifier "owl-rl-constraint-violation" ;
+                    dcterms:title "OWL RL consistent"@en ] ] ;
+    earl:subject _:dataset-logistics-create-organization ;
+    earl:test olivaw-earl:owl-rl-constraint .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
                     dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
                     dcterms:identifier "namespace-typo" ;
                     dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:dataset-manufacturing-environments-discover-signifiers ;
+    earl:subject _:dataset-manufacturing-environments-discover-platforms ;
     earl:test olivaw-earl:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
+                    dcterms:identifier "unknown-term" ;
+                    dcterms:title "Every term exists"@en ] ] ;
+    earl:subject _:dataset-domain-template-scenario-template ;
+    earl:test olivaw-earl:term-recognition .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:NicoRobertIn-manual ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the ontologic terms in the subject are defined in the ontology"@en ;
+                    dcterms:identifier "unknown-term" ;
+                    dcterms:title "Every term exists"@en ] ] ;
+    earl:subject _:dataset-logistics-structure-organization ;
+    earl:test olivaw-earl:term-recognition .
 
 _:NicoRobertIn a foaf:Person ;
     schema:mainEntityOfPage <https://github.com/NicoRobertIn> .
@@ -879,7 +879,7 @@ _:dataset-manufacturing-environments-safety-rules a earl:TestSubject ;
     dcterms:title "Standalone dataset domains/manufacturing-environments/safety-rules/dataset.ttl from branch main"@en .
 
 _:NicoRobertIn-manual a foaf:OnlineAccount ;
-    dcterms:date "2024-06-13T15:40:50.767570"^^xsd:dateTime ;
+    dcterms:date "2024-06-13T15:51:40.201198"^^xsd:dateTime ;
     dcterms:description "Test triggered by @NicoRobertIn by manual trigger"@en ;
     dcterms:title "NicoRobertIn using manual script"@en ;
     earl:mainAssertor _:NicoRobertIn ;

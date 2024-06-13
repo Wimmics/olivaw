@@ -4,7 +4,7 @@ This file is an export of the RDF test report made out of [EARL vocabulary](http
 
 This test is powered by Corese, check the [website](https://project.inria.fr/corese/) and the [repository](https://github.com/Wimmics/corese)
 
-The original test report is available in turtle syntax [here](./query-test-manual-NicoRobertIn-2024-06-13T15-41-15.ttl).
+The original test report is available in turtle syntax [here](./query-test-manual-NicoRobertIn-2024-06-13T15-52-06.ttl).
 
 # Test Context
 
@@ -15,7 +15,7 @@ Here is some context about under which context this test was made
 |Title|NicoRobertIn&#32;using&#32;manual&#32;script|
 |Description|Test&#32;triggered&#32;by&#32;[@NicoRobertIn](https://github.com/NicoRobertIn)&#32;by&#32;manual&#32;trigger|
 |Script|[query test suite](https://github.com/Wimmics/olivaw/blob/main/olivaw/test/query/suite.py)
-|Date|2024-06-13 15:41:06|
+|Date|2024-06-13 15:51:57|
 
 ***
 
@@ -150,7 +150,7 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |----|----|----|
 |[Section top](#minorfail-outcome-number-1)|Identifier|`invalid-uri`|
 |[Section top](#minorfail-outcome-number-1)|Title|Invalid&#32;URI|
-|[Section top](#minorfail-outcome-number-1)|Description|Expected&#32;valid&#32;URIs&#32;in&#32;subject&#32;but&#32;got:&#32;#hasNormativeContext|
+|[Section top](#minorfail-outcome-number-1)|Description|Expected&#32;valid&#32;URIs&#32;in&#32;subject&#32;but&#32;got:&#32;#enforcesNorm|
 |[Section top](#minorfail-outcome-number-1)|Pointer|<pre lang="Turtle"><code>PREFIX&#32;:&#32; &#60;#>  &#10;SELECT&#32;?norm  &#10;WHERE&#32;{  &#10; &#32;&#32;?organization&#32;:enforcesNorm&#32;?norm&#32;.  &#10; &#32;&#32;?norm&#32;:hasNormativeContext&#32;?context&#32;.  &#10; &#32;&#32;FILTER(?context&#32;=&#32;:myContext)  &#10;}</code></pre>|
 
 ***
@@ -176,7 +176,7 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |----|----|----|
 |[Section top](#minorfail-outcome-number-2)|Identifier|`invalid-uri`|
 |[Section top](#minorfail-outcome-number-2)|Title|Invalid&#32;URI|
-|[Section top](#minorfail-outcome-number-2)|Description|Expected&#32;valid&#32;URIs&#32;in&#32;subject&#32;but&#32;got:&#32;#enforcesNorm|
+|[Section top](#minorfail-outcome-number-2)|Description|Expected&#32;valid&#32;URIs&#32;in&#32;subject&#32;but&#32;got:&#32;#hasNormativeContext|
 |[Section top](#minorfail-outcome-number-2)|Pointer|<pre lang="Turtle"><code>PREFIX&#32;:&#32; &#60;#>  &#10;SELECT&#32;?norm  &#10;WHERE&#32;{  &#10; &#32;&#32;?organization&#32;:enforcesNorm&#32;?norm&#32;.  &#10; &#32;&#32;?norm&#32;:hasNormativeContext&#32;?context&#32;.  &#10; &#32;&#32;FILTER(?context&#32;=&#32;:myContext)  &#10;}</code></pre>|
 
 ***
