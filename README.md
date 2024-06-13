@@ -10,6 +10,8 @@ This methodology is an extension of [SAMOD](https://essepuntato.it/samod/) with 
 
 This repository is a python library meant for providing tools in an Acimov ontology development context.
 
+This project is affiliated to the [Wimmics team](https://www.inria.fr/fr/wimmics), check the other [Wimmics projects](https://github.com/Wimmics).
+
 Olivaw proposes:
 
 * command lines that make an Acimov development easier
