@@ -1,0 +1,100 @@
+{
+    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+    "type": "SoftwareSourceCode",
+    "applicationCategory": "Ontology",
+    "author": [
+        {
+            "id": "https://orcid.org/0009-0009-2595-6168",
+            "type": "Person",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Research Centre Inria Sophia Antipolis - Méditerranée",
+                "@id": "https://ror.org/02kvxyf05"
+            },
+            "email": "nicolas_robert_31@hotmail.fr",
+            "familyName": "Robert",
+            "givenName": "Nicolas"
+        },
+        {
+            "type": "schema:Role",
+            "schema:author": "https://orcid.org/0009-0009-2595-6168",
+            "schema:endDate": "2024-06-30",
+            "schema:roleName": "R&D Engineer",
+            "schema:startDate": "2023-09-01"
+        },
+        {
+            "id": "https://orcid.org/0000-0003-0543-1232",
+            "type": "Person",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Research Centre Inria Sophia Antipolis - Méditerranée",
+                "@id": "https://ror.org/02kvxyf05"
+            },
+            "familyName": "Gandon",
+            "givenName": "Fabien"
+        }
+    ],
+    "codeRepository": "git+https://github.com/Wimmics/olivaw.git",
+    "contributor": [
+        {
+            "id": "https://orcid.org/0009-0009-2595-6168",
+            "type": "Person",
+            "affiliation": {
+                "type": "Organization",
+                "name": "Research Centre Inria Sophia Antipolis - Méditerranée",
+                "@id": "https://ror.org/02kvxyf05"
+            },
+            "email": "nicolas_robert_31@hotmail.fr",
+            "familyName": "Robert",
+            "givenName": "Nicolas"
+        },
+        {
+            "type": "schema:Role",
+            "schema:author": "https://orcid.org/0009-0009-2595-6168",
+            "schema:roleName": "Developer",
+            "schema:startDate": "2024-01-08"
+        }
+    ],
+    "dateCreated": "2024-01-07",
+    "dateModified": "2024-06-14",
+    "datePublished": "2024-06-14",
+    "description": "Python framework for supporting agile ontology development",
+    "downloadUrl": "https://github.com/Wimmics/olivaw.git",
+    "funder": {
+        "type": "Organization",
+        "name": "Research Centre Inria Sophia Antipolis - Méditerranée"
+    },
+    "keywords": [
+        "semantics",
+        "ontology",
+        "schema",
+        "vocabulary",
+        "linked data",
+        "validation",
+        "RDF",
+        "RDFS",
+        "OWL",
+        "SHACL",
+        "SPARQL"
+    ],
+    "license": "https://spdx.org/licenses/LGPL-2.1",
+    "name": "olivaw",
+    "operatingSystem": [
+        "Windows",
+        "Linux",
+        "MacOS"
+    ],
+    "programmingLanguage": "Python 3",
+    "relatedLink": "https://pypi.org/project/olivaw",
+    "runtimePlatform": [
+        "Python",
+        "JVM"
+    ],
+    "softwareRequirements": [
+        "Python >= 3.8",
+        "Java >= 11"
+    ],
+    "version": "0.0.5",
+    "developmentStatus": "active",
+    "issueTracker": "https://github.com/Wimmics/olivaw/issues"
+}
