@@ -10,7 +10,7 @@ This methodology is an extension of [SAMOD](https://essepuntato.it/samod/) with 
 
 This repository is a python library meant for providing tools in an Acimov ontology development context.
 
-This project is affiliated to the [Wimmics team](https://www.inria.fr/fr/wimmics), check the other [Wimmics projects](https://github.com/Wimmics).
+Olivaw is affiliated to the [Wimmics team](https://www.inria.fr/fr/wimmics), check the other [Wimmics projects](https://github.com/Wimmics).
 
 Olivaw proposes:
 
@@ -23,6 +23,8 @@ This tool proposes different test tools all powered by Corese, check [Corese web
 The test reports are first represented using the [EARL vocabulary](https://www.w3.org/TR/EARL10-Schema/) and then exported in the markdown format.
 
 Examples of reports generated from existing ontology projects can be found in the [olivaw reports examples](https://github.com/Wimmics/olivaw/blob/main/docs/examples/) folder.
+
+A template repository also exist in order for an ontology project to begin with the accurate repository architecture, workflows, template special files (primee, code of conduct, contributing, etc) so check the [acimov olivaw repository template](https://github.com/Wimmics/Olivaw-Template).
 
 In order to get all the available features in olivaw, check the [olivaw functional documentation](https://github.com/Wimmics/olivaw/blob/main/docs/).
 
@@ -221,3 +223,13 @@ Now, each time a commit is made, the staged files will be tested and the commit 
 The test takes a few seconds and pre-commit needs a moment to prepare the hook on the very first use.
 
 There is also the [olivaw pre-commit hook documentation](https://github.com/Wimmics/olivaw/blob/main/docs/pre-commit.md).
+
+# Citation
+
+This repository is one result of the [hMAS ontology project](https://github.com/HyperAgents/hmas) and therefore a part of [HyperAgents ANR/SNF project](https://www.hyperagents.org/). Check the [contributors file](./CONTRIBUTORS.md) of the project.
+
+Please cite as the GitHub repository metadata proposes and/or check the [citation file](./CITATION.cff).
+
+# Contributing / report an issue
+
+Don't hesitate to [report an issue](https://github.com/Wimmics/olivaw/issues) or [make a pull request](https://github.com/Wimmics/olivaw/pulls) at will.

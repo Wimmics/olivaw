@@ -22,7 +22,7 @@ if not exists(CORESE_LOCAL_PATH):
         with open(CORESE_LOCAL_PATH, "wb") as jar:
             jar.write(downloaded.read())
 
-# Reading README.rst file for injection into python package long description
+# Reading README.md file for injection into python package long description
 long_description = ""
 with open("./README.md", "r") as readme:
     long_description = readme.read()
@@ -56,7 +56,7 @@ setup(
         "SPARQL"
     ],
     platforms=[],
-    package_data={'': ['*.json', '*.ttl', '*.lock', '*.txt', '*.jar']},
+    package_data={'': ['*.json', '*.ttl', '*.jar']},
     install_requires=[requirements],
     entry_points = {
         "console_scripts": ["olivaw=olivaw.main:run"]
