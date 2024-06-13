@@ -34,11 +34,17 @@ If a bug is to be found or a feature to be proposed, please use [olivaw issue me
 
 # Getting started
 
+## Installation requirements
+
+Olivaw needs [python 3.8 or greater](https://www.python.org/downloads/) and [java version 11 or greater](https://www.java.com/en/download/manual.jsp).
+
+Using a virtual environment would be a good idea, check [anaconda navigator](https://docs.anaconda.com/free/navigator/) or equivalent such as [miniconda](https://docs.anaconda.com/free/miniconda/) or [venv](https://pypi.org/project/virtualenv/).
+
 ## Installing olivaw in a project
 
 First prepare a python environment version 3.8 or greater (3.11 if pre-commit hook is meant to be used).
 
-Then install the library from pipy:
+Then install the library from [pipy](https://pypi.org/project/olivaw/):
 
 ```shell
 pip install olivaw==0.0.5
