@@ -105,6 +105,12 @@ The olivaw commands are now available inside the repository!
 
 # Basics about olivaw
 
+There are three usages of olivaw that are complementary:
+
+* the [command](#the-command-line) line allows the developper to run tests on client side on demand and provides tools for everyday development
+* the [actions](#the-github-actions) can regularly make a health check of a branch on server side and manage the project badges
+* the [pre-commit](#the-pre-commit-hook) hook can test on client side a commit and block it if a blocking error is to be found in the staged files
+
 ## The command line
 
 Here is only a short overview of the main commands. Check the [olivaw command line documentation](https://github.com/Wimmics/olivaw/blob/main/docs/commands.md) for more details about the available commands.
@@ -189,6 +195,8 @@ jobs:
 Then on each time a branch is published, the actions should create new gists and update the badges in the README.md without anything left to do for the developper.
 
 ## The pre-commit hook
+
+[Pre-commit](https://pre-commit.com/) is a framework that allows on client side to connect programs to git events such as commit, push, merge, etc. 
 
 A pre-commit hook is available in this repository to prevent the developper to push big mistakes on the server.
 
