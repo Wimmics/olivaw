@@ -5,12 +5,8 @@ olivaw is a part of [hMAS ontology](https://github.com/HyperAgents/hmas) project
 
 ## Developers:
 
-* [Nicolas ROBERT](https://github.com/NicoRobertIn) - R&D Engineer - Biot (France) - ORCID ID: 0009-0009-2595-6168
-* [Fabien GANDON](https://github.com/FabienGandon) - Research Director - Biot (France) - ORCID ID: 0000-0003-0543-1232
-
-## All other contributors and their affiliations:
-
-* Wimmics - Biot (France) - ROR ID: https://ror.org/01nzkaw91
+* [Nicolas ROBERT](https://github.com/NicoRobertIn) - R&D Engineer - [Wimmics](https://www.inria.fr/fr/wimmics) - Biot (France) - ORCID ID: 0009-0009-2595-6168
+* [Fabien GANDON](https://github.com/FabienGandon) - Research Director - [Wimmics](https://www.inria.fr/fr/wimmics) - Biot (France) - ORCID ID: 0000-0003-0543-1232
 
 ## Special thanks to
 
