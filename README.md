@@ -43,7 +43,7 @@ Using a virtual environment would be a good idea, check [anaconda navigator](htt
 
 ## Installing olivaw in a project
 
-First prepare a python environment version 3.8 or greater (3.11 if pre-commit hook is meant to be used).
+First prepare a python environment version 3.10 or greater (3.11 if pre-commit hook is meant to be used).
 
 Then install the library from [pipy](https://pypi.org/project/olivaw/):
 
