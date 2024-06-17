@@ -113,7 +113,7 @@ runs:
         git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
         git push
     - name: Create the MODEL_PASS Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH) && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH) && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -123,7 +123,7 @@ runs:
         message: ${{ env.MODEL_PASS_LABEL }}
         color: ${{ env.MODEL_PASS_COLOR }}
     - name: Create the MODEL_NOTTESTED Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -133,7 +133,7 @@ runs:
         message: ${{ env.MODEL_NOTTESTED_LABEL }}
         color: ${{ env.MODEL_NOTTESTED_COLOR }}
     - name: Create the MODEL_CANNOTTELL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -143,7 +143,7 @@ runs:
         message: ${{ env.MODEL_CANNOTTELL_LABEL }}
         color: ${{ env.MODEL_CANNOTTELL_COLOR }}
     - name: Create the MODEL_MINORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -153,7 +153,7 @@ runs:
         message: ${{ env.MODEL_MINORFAIL_LABEL }}
         color: ${{ env.MODEL_MINORFAIL_COLOR }}
     - name: Create the MODEL_MAJORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -163,7 +163,7 @@ runs:
         message: ${{ env.MODEL_MAJORFAIL_LABEL }}
         color: ${{ env.MODEL_MAJORFAIL_COLOR }}
     - name: Create the DATA_PASS Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -173,7 +173,7 @@ runs:
         message: ${{ env.DATA_PASS_LABEL }}
         color: ${{ env.DATA_PASS_COLOR }}
     - name: Create the DATA_NOTTESTED Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -183,7 +183,7 @@ runs:
         message: ${{ env.DATA_NOTTESTED_LABEL }}
         color: ${{ env.DATA_NOTTESTED_COLOR }}
     - name: Create the DATA_CANNOTTELL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -193,7 +193,7 @@ runs:
         message: ${{ env.DATA_CANNOTTELL_LABEL }}
         color: ${{ env.DATA_CANNOTTELL_COLOR }}
     - name: Create the DATA_MINORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -203,7 +203,7 @@ runs:
         message: ${{ env.DATA_MINORFAIL_LABEL }}
         color: ${{ env.DATA_MINORFAIL_COLOR }}
     - name: Create the DATA_MAJORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -213,7 +213,7 @@ runs:
         message: ${{ env.DATA_MAJORFAIL_LABEL }}
         color: ${{ env.DATA_MAJORFAIL_COLOR }}
     - name: Create the QUERY_PASS Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -223,7 +223,7 @@ runs:
         message: ${{ env.QUERY_PASS_LABEL }}
         color: ${{ env.QUERY_PASS_COLOR }}
     - name: Create the QUERY_NOTTESTED Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -233,7 +233,7 @@ runs:
         message: ${{ env.QUERY_NOTTESTED_LABEL }}
         color: ${{ env.QUERY_NOTTESTED_COLOR }}
     - name: Create the QUERY_CANNOTTELL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -243,7 +243,7 @@ runs:
         message: ${{ env.QUERY_CANNOTTELL_LABEL }}
         color: ${{ env.QUERY_CANNOTTELL_COLOR }}
     - name: Create the QUERY_MINORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -253,7 +253,7 @@ runs:
         message: ${{ env.QUERY_MINORFAIL_LABEL }}
         color: ${{ env.QUERY_MINORFAIL_COLOR }}
     - name: Create the QUERY_MAJORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -263,7 +263,7 @@ runs:
         message: ${{ env.QUERY_MAJORFAIL_LABEL }}
         color: ${{ env.QUERY_MAJORFAIL_COLOR }}
     - name: Create the EL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -273,7 +273,7 @@ runs:
         message: ${{ env.EL_LABEL }}
         color: ${{ env.EL_COLOR }}
     - name: Create the RL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == "true") }}
+      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
