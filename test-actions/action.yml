@@ -17,15 +17,18 @@ inputs:
   model-test:
     description: "Should the model tests be run"
     type: boolean
-    required: true
+    required: false
+    default: true
   data-test:
     description: "Should the data tests be run"
     type: boolean
-    required: true
+    required: false
+    default: true
   query-test:
     description: "Should the query tests be run"
     type: boolean
-    required: true
+    required: false
+    default: true
   commit-report:
     description: "Should the report be committed on the repository"
     type: boolean
