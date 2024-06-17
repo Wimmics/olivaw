@@ -41,7 +41,8 @@ runs:
 
         BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
         echo $BRANCH_NAME
-        echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
+        echo "BRANCH=$(echo ${PATHS[2]})" >> $GITHUB_ENV
+        echo "REF_NAME=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
 
         echo "DEFAULT_BRANCH=$(echo ${{ github.event.repository.default_branch }})"
 
@@ -109,7 +110,7 @@ runs:
         git config --global user.email "no-reply@github.com"
         git config --global user.name "Olivaw in Actions"
         git add README.md
-        git commit -m "Initialize README.md for branch ${{ env.BRANCH }} [skip actions]"
+        git commit -m "Initialize README.md for branch ${{ env.REF_NAME }} [skip actions]"
         git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
         git push
     - name: Create the MODEL_PASS Badge
@@ -118,7 +119,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_MODEL_PASS.json
+        filename: ${{ env.REF_NAME }}_MODEL_PASS.json
         label: Pass
         message: ${{ env.MODEL_PASS_LABEL }}
         color: ${{ env.MODEL_PASS_COLOR }}
@@ -128,7 +129,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_MODEL_NOTTESTED.json
+        filename: ${{ env.REF_NAME }}_MODEL_NOTTESTED.json
         label: NotTested
         message: ${{ env.MODEL_NOTTESTED_LABEL }}
         color: ${{ env.MODEL_NOTTESTED_COLOR }}
@@ -138,7 +139,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_MODEL_CANNOTTELL.json
+        filename: ${{ env.REF_NAME }}_MODEL_CANNOTTELL.json
         label: CannotTell
         message: ${{ env.MODEL_CANNOTTELL_LABEL }}
         color: ${{ env.MODEL_CANNOTTELL_COLOR }}
@@ -148,7 +149,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_MODEL_MINORFAIL.json
+        filename: ${{ env.REF_NAME }}_MODEL_MINORFAIL.json
         label: MinorFail
         message: ${{ env.MODEL_MINORFAIL_LABEL }}
         color: ${{ env.MODEL_MINORFAIL_COLOR }}
@@ -158,7 +159,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_MODEL_MAJORFAIL.json
+        filename: ${{ env.REF_NAME }}_MODEL_MAJORFAIL.json
         label: MinorFail
         message: ${{ env.MODEL_MAJORFAIL_LABEL }}
         color: ${{ env.MODEL_MAJORFAIL_COLOR }}
@@ -168,7 +169,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_DATA_PASS.json
+        filename: ${{ env.REF_NAME }}_DATA_PASS.json
         label: Pass
         message: ${{ env.DATA_PASS_LABEL }}
         color: ${{ env.DATA_PASS_COLOR }}
@@ -178,7 +179,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_DATA_NOTTESTED.json
+        filename: ${{ env.REF_NAME }}_DATA_NOTTESTED.json
         label: NotTested
         message: ${{ env.DATA_NOTTESTED_LABEL }}
         color: ${{ env.DATA_NOTTESTED_COLOR }}
@@ -188,7 +189,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_DATA_CANNOTTELL.json
+        filename: ${{ env.REF_NAME }}_DATA_CANNOTTELL.json
         label: CannotTell
         message: ${{ env.DATA_CANNOTTELL_LABEL }}
         color: ${{ env.DATA_CANNOTTELL_COLOR }}
@@ -198,7 +199,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_DATA_MINORFAIL.json
+        filename: ${{ env.REF_NAME }}_DATA_MINORFAIL.json
         label: MinorFail
         message: ${{ env.DATA_MINORFAIL_LABEL }}
         color: ${{ env.DATA_MINORFAIL_COLOR }}
@@ -208,7 +209,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_DATA_MAJORFAIL.json
+        filename: ${{ env.REF_NAME }}_DATA_MAJORFAIL.json
         label: MinorFail
         message: ${{ env.DATA_MAJORFAIL_LABEL }}
         color: ${{ env.DATA_MAJORFAIL_COLOR }}
@@ -218,7 +219,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_QUERY_PASS.json
+        filename: ${{ env.REF_NAME }}_QUERY_PASS.json
         label: Pass
         message: ${{ env.QUERY_PASS_LABEL }}
         color: ${{ env.QUERY_PASS_COLOR }}
@@ -228,7 +229,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_QUERY_NOTTESTED.json
+        filename: ${{ env.REF_NAME }}_QUERY_NOTTESTED.json
         label: NotTested
         message: ${{ env.QUERY_NOTTESTED_LABEL }}
         color: ${{ env.QUERY_NOTTESTED_COLOR }}
@@ -238,7 +239,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_QUERY_CANNOTTELL.json
+        filename: ${{ env.REF_NAME }}_QUERY_CANNOTTELL.json
         label: CannotTell
         message: ${{ env.QUERY_CANNOTTELL_LABEL }}
         color: ${{ env.QUERY_CANNOTTELL_COLOR }}
@@ -248,7 +249,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_QUERY_MINORFAIL.json
+        filename: ${{ env.REF_NAME }}_QUERY_MINORFAIL.json
         label: MinorFail
         message: ${{ env.QUERY_MINORFAIL_LABEL }}
         color: ${{ env.QUERY_MINORFAIL_COLOR }}
@@ -258,7 +259,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_QUERY_MAJORFAIL.json
+        filename: ${{ env.REF_NAME }}_QUERY_MAJORFAIL.json
         label: MinorFail
         message: ${{ env.QUERY_MAJORFAIL_LABEL }}
         color: ${{ env.QUERY_MAJORFAIL_COLOR }}
@@ -268,7 +269,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_EL.json
+        filename: ${{ env.REF_NAME }}_EL.json
         label: OWL EL
         message: ${{ env.EL_LABEL }}
         color: ${{ env.EL_COLOR }}
@@ -278,7 +279,7 @@ runs:
       with:
         auth: ${{ inputs.gist-secret }}
         gistID: ${{ env.GISTID }}
-        filename: ${{ env.BRANCH }}_RL.json
+        filename: ${{ env.REF_NAME }}_RL.json
         label: OWL QL
         message: ${{ env.RL_LABEL }}
         color: ${{ env.RL_COLOR }}
