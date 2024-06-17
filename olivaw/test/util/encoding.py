@@ -26,8 +26,8 @@ def file_name(test_type: str) -> str:
     :returns: A file name
     :rtype: `str`
     """
-    suffix = MODE if not MODE == "manual" else f"{MODE}-{DEV_USERNAME}-{datetime_id()}"
-    name = f"{test_type}-test-{suffix.lower()}"
+    suffix = MODE.lower() if not MODE == "manual" else f"{MODE}-{DEV_USERNAME}-{datetime_id()}"
+    name = f"{test_type}-test-{suffix}"
     return name
 
 def save(path: str, content: str) -> None:
