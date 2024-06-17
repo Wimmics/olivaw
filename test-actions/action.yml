@@ -63,12 +63,13 @@ runs:
         ref: ${{ inputs.ref }}
 
     - name: Install Olivaw test suite
+      if: ${{ hashFiles('.acimov/parameters.json') != '' }}
       shell: bash
       run: pip install git+https://github.com/Wimmics/olivaw@v0.0.5
 
     - name: Generate model test report
       id: model-test
-      if: ${{ inputs.model-test == 'true' }}
+      if: ${{ (inputs.model-test == 'true') && (hashFiles('.acimov/parameters.json') != '') }}
       shell: bash
       run: |
         MODEL_SUMMARY="$(olivaw test model --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
@@ -102,7 +103,7 @@ runs:
     - name: Generate data test report
       shell: bash
       id: data-test
-      if: ${{ inputs.data-test == 'true' }}
+      if: ${{ (inputs.data-test == 'true') && (hashFiles('.acimov/parameters.json') != '') }}
       run: |
         DATA_SUMMARY="$(olivaw test data --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         DATA_TOKENS=($DATA_SUMMARY)
@@ -118,7 +119,7 @@ runs:
     - name: Generate query test report
       shell: bash
       id: query-test
-      if: ${{ inputs.query-test == 'true' }}
+      if: ${{ inputs.query-test == 'true' && (hashFiles('.acimov/parameters.json') != '') }}
       run: |
         QUERY_SUMMARY="$(olivaw test query --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         QUERY_TOKENS=($QUERY_SUMMARY)
@@ -134,7 +135,7 @@ runs:
     - name: Add output files to repository
       id: commit
       continue-on-error: true
-      if: ${{ ((inputs.model-test == 'true' || inputs.data-test == 'true' || inputs.query-test == 'true') && inputs.commit-report) == 'true' }}
+      if: ${{ ((inputs.model-test == 'true' || inputs.data-test == 'true' || inputs.query-test == 'true') && inputs.commit-report) == 'true' && (hashFiles('.acimov/parameters.json') != '') }}
       shell: bash
       run: |
         git config --global user.email "no-reply@github.com"
@@ -154,7 +155,7 @@ runs:
             .acimov/output/model-test-actions.ttl
 
     - name: Archive data test results
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && inputs.archive-report == 'true' }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && inputs.archive-report == 'true' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: actions/upload-artifact@v3
       with:
         name: data-test-report
@@ -163,7 +164,7 @@ runs:
           .acimov/output/data-test-actions.ttl
 
     - name: Archive query test results
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && inputs.archive-report == 'true' }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && inputs.archive-report == 'true' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: actions/upload-artifact@v3
       with:
         name: query-test-report
@@ -172,7 +173,7 @@ runs:
           .acimov/output/query-test-actions.ttl
 
     - name: Create the Pass Model Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -183,7 +184,7 @@ runs:
         color: green
 
     - name: Create the NotTested Model Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -194,7 +195,7 @@ runs:
         color: White
 
     - name: Create the CannotTell Model Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -205,7 +206,7 @@ runs:
         color: yellow
 
     - name: Create the MinorFail Model Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -216,7 +217,7 @@ runs:
         color: orange
 
     - name: Create the MajorFail Model Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -227,7 +228,7 @@ runs:
         color: red
 
     - name: Create the OWL_EL Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -238,7 +239,7 @@ runs:
         color: ${{ env.EL_COLOR }}
 
     - name: Create the OWL_QL Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -249,7 +250,7 @@ runs:
         color: ${{ env.QL_COLOR }}
 
     - name: Create the OWL_RL Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' }}
+      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -260,7 +261,7 @@ runs:
         color: ${{ env.RL_COLOR }}
 
     - name: Create the Pass Data badge
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -271,7 +272,7 @@ runs:
         color: green
 
     - name: Create the NotTested Data Badge
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -282,7 +283,7 @@ runs:
         color: White
 
     - name: Create the CannotTell Data Badge
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -293,7 +294,7 @@ runs:
         color: yellow
 
     - name: Create the MinorFail Data Badge
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -304,7 +305,7 @@ runs:
         color: orange
 
     - name: Create the MajorFail Data Badge
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' }}
+      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -315,7 +316,7 @@ runs:
         color: red
 
     - name: Create the Pass Query badge
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -326,7 +327,7 @@ runs:
         color: green
 
     - name: Create the NotTested Query Badge
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -337,7 +338,7 @@ runs:
         color: White
 
     - name: Create the CannotTell Query Badge
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -348,7 +349,7 @@ runs:
         color: yellow
 
     - name: Create the MinorFail Query Badge
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -359,7 +360,7 @@ runs:
         color: orange
 
     - name: Create the MajorFail Query Badge
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' }}
+      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
