@@ -45,6 +45,10 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - name: Get event name
+      shell: bash
+      run: echo "EVENT=${{ github.GITHUB_EVENT_NAME }}"
+
     - uses: actions/setup-python@v5 
       with:
         python-version: 'pypy3.10'
