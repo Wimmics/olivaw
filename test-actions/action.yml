@@ -47,7 +47,7 @@ runs:
   steps:
     - name: Get event name
       shell: bash
-      run: echo "EVENT=${{ github.GITHUB_EVENT_NAME }}"
+      run: echo "EVENT=${{ github.github_event_name }}"
 
     - uses: actions/setup-python@v5 
       with:
