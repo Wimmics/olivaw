@@ -1,4 +1,4 @@
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)![License: LGPL2.1](https://img.shields.io/badge/License-LGPLv2.1-blue)![Discussions: GitHub](https://img.shields.io/badge/Discussions-GitHub-blue)
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)![License: LGPL2.1](https://img.shields.io/badge/License-LGPL_2.1-blue)![Discussions: GitHub](https://img.shields.io/badge/Discussions-GitHub-blue)
 # Olivaw
 
 An Agile methodology for ontology development named [ACIMOV](https://www.emse.fr/~zimmermann/Papers/mk2023.pdf) has been proposed in 2023.
