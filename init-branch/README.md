@@ -32,4 +32,5 @@ Here is a summary of the available parameters:
 |`repository`|string|true||reference to the repository like `organization/repository`|`${{ github.repository }}`|
 |`ref`|string|true||reference to which branch was pushed|`${{ github.ref }}`|
 |`gist-secret`|string|true||personnal access token with the `gist` scope to update the gist files|`${{ secrets.GIST_SECRET }}`|
+|`init-badges`|boolean|false|true|states if the actions should intialize the badges values on gist||
 |`server-url`|string|false|`https://github.com`|URL of the server|`https://github.com`|

@@ -9,7 +9,7 @@ inputs:
   ref:
     description: "The ref of the repository to test"
     type: string
-    requird: true
+    required: true
   gist-secret:
     description: "The personal access token with only gist scope allowed"
     type: string
