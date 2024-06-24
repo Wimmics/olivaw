@@ -5,6 +5,7 @@ from os import sep
 from ssl import CERT_NONE, create_default_context
 from urllib.request import urlopen
 
+from olivaw.constants import ACTIONS
 from olivaw.constants.paths import PWD_TO_CONSTANTS
 from olivaw.constants.prefixcc import PREFIX_CC_PREFIXES
 from olivaw.test.util.print import smart_print
@@ -282,6 +283,9 @@ COMMON_URIS_TREE: dict = None
 """Index storing the most common prefixes (from `prefix.cc`) and related namespaces for Levenshtein distance search"""
 
 try:
+    if ACTIONS:
+        raise Exception()
+    
     common_prefixes = None
 
     # This site uses self signed certificate
