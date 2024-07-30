@@ -16,11 +16,11 @@
             "givenName": "Nicolas"
         },
         {
-            "@type": "Role",
-            "author": "https://orcid.org/0009-0009-2595-6168",
-            "endDate": "2024-06-30",
-            "roleName": "R&D Engineer",
-            "startDate": "2023-09-01"
+            "@type": "schema:Role",
+            "schema:author": "https://orcid.org/0009-0009-2595-6168",
+            "schema:endDate": "2024-06-30",
+            "schema:roleName": "R&D Engineer",
+            "schema:startDate": "2023-09-01"
         },
         {
             "@id": "https://orcid.org/0000-0003-0543-1232",
@@ -49,10 +49,10 @@
             "givenName": "Nicolas"
         },
         {
-            "@type": "Role",
-            "author": "https://orcid.org/0009-0009-2595-6168",
-            "roleName": "Developer",
-            "startDate": "2024-01-08"
+            "@type": "schema:Role",
+            "schema:author": "https://orcid.org/0009-0009-2595-6168",
+            "schema:roleName": "Developer",
+            "schema:startDate": "2024-01-08"
         }
     ],
     "dateCreated": "2024-01-07",
