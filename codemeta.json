@@ -6,62 +6,133 @@
         {
             "@id": "https://orcid.org/0009-0009-2595-6168",
             "@type": "Person",
-            "affiliation": {
-                "@type": "Organization",
-                "name": "Research Centre Inria Sophia Antipolis - Méditerranée",
-                "@id": "https://ror.org/02kvxyf05"
-            },
+            "affiliation": [
+                {
+                    "@id": "https://ror.org/02kvxyf05",
+                    "@type": "Organization",
+                    "name": "Institut national de recherche en informatique et en automatique"
+                },
+                {
+                    "@id": "https://ror.org/019tgvf94",
+                    "@type": "Organization",
+                    "name": "Université Côte d'Azur"
+                },
+                {
+                    "@id": "https://ror.org/02feahw73",
+                    "@type": "Organization",
+                    "name": "Centre National de la Recherche Scientifique"
+                },
+                {
+                    "@id": "https://ror.org/01215r597",
+                    "@type": "Organization",
+                    "name": "Laboratoire d'Informatique, Signaux et Systèmes de Sophia Antipolis"
+                }
+            ],
             "email": "nicolas_robert_31@hotmail.fr",
             "familyName": "Robert",
             "givenName": "Nicolas"
-        },
-        {
-            "@type": "schema:Role",
-            "schema:author": "https://orcid.org/0009-0009-2595-6168",
-            "schema:endDate": "2024-06-30",
-            "schema:roleName": "R&D Engineer",
-            "schema:startDate": "2023-09-01"
         },
         {
             "@id": "https://orcid.org/0000-0003-0543-1232",
             "@type": "Person",
-            "affiliation": {
-                "type": "Organization",
-                "name": "Research Centre Inria Sophia Antipolis - Méditerranée",
-                "@id": "https://ror.org/02kvxyf05"
-            },
+            "affiliation": [
+                {
+                    "@id": "https://ror.org/02kvxyf05",
+                    "@type": "Organization",
+                    "name": "Institut national de recherche en informatique et en automatique"
+                },
+                {
+                    "@id": "https://ror.org/019tgvf94",
+                    "@type": "Organization",
+                    "name": "Université Côte d'Azur"
+                },
+                {
+                    "@id": "https://ror.org/02feahw73",
+                    "@type": "Organization",
+                    "name": "Centre National de la Recherche Scientifique"
+                },
+                {
+                    "@id": "https://ror.org/01215r597",
+                    "@type": "Organization",
+                    "name": "Laboratoire d'Informatique, Signaux et Systèmes de Sophia Antipolis"
+                }
+            ],
             "familyName": "Gandon",
             "givenName": "Fabien"
+        },
+        {
+            "@id": "https://orcid.org/0000-0001-9814-8991",
+            "@type": "Person",
+            "affiliation": [
+                {
+                    "@id": "https://ror.org/001f39w38",
+                    "@type": "Organization",
+                    "name": "Clermont Auvergne INP"
+                },
+                {
+                    "@id": "https://ror.org/02feahw73",
+                    "@type": "Organization",
+                    "name": "Centre National de la Recherche Scientifique"
+                },
+                {
+                    "@id": "https://ror.org/00t3fpp34",
+                    "@type": "Organization",
+                    "name": "Laboratoire d'Informatique, de Modélisation et d'Optimisation des Systèmes"
+                },
+                {
+                    "@id": "https://ror.org/05a1dws80",
+                    "@type": "Organization",
+                    "name": "Mines Saint-Étienne"
+                },
+                {
+                    "@id": "https://ror.org/01a8ajp46",
+                    "@type": "Organization",
+                    "name": "Université Clermont Auvergne"
+                }
+            ],
+            "familyName": "Lefrançois",
+            "givenName": "Maxime"
+        }
+    ],
+    "contributor": [
+        {
+            "@id": "https://orcid.org/0000-0001-9064-0463",
+            "@type": "Person",
+            "affiliation": [
+                {
+                    "@id": "https://ror.org/02kvxyf05",
+                    "@type": "Organization",
+                    "name": "Institut national de recherche en informatique et en automatique"
+                },
+                {
+                    "@id": "https://ror.org/019tgvf94",
+                    "@type": "Organization",
+                    "name": "Université Côte d'Azur"
+                },
+                {
+                    "@id": "https://ror.org/02feahw73",
+                    "@type": "Organization",
+                    "name": "Centre National de la Recherche Scientifique"
+                },
+                {
+                    "@id": "https://ror.org/01215r597",
+                    "@type": "Organization",
+                    "name": "Laboratoire d'Informatique, Signaux et Systèmes de Sophia Antipolis"
+                }
+            ],
+            "familyName": "Michel",
+            "givenName": "Franck"
         }
     ],
     "codeRepository": "https://github.com/Wimmics/olivaw.git",
-    "contributor": [
-        {
-            "@id": "https://orcid.org/0009-0009-2595-6168",
-            "@type": "Person",
-            "affiliation": {
-                "@type": "Organization",
-                "name": "Research Centre Inria Sophia Antipolis - Méditerranée",
-                "@id": "https://ror.org/02kvxyf05"
-            },
-            "email": "nicolas_robert_31@hotmail.fr",
-            "familyName": "Robert",
-            "givenName": "Nicolas"
-        },
-        {
-            "@type": "schema:Role",
-            "schema:author": "https://orcid.org/0009-0009-2595-6168",
-            "schema:roleName": "Developer",
-            "schema:startDate": "2024-01-08"
-        }
-    ],
     "dateCreated": "2024-01-07",
     "dateModified": "2024-06-14",
     "datePublished": "2024-06-14",
     "description": "Python framework for supporting agile ontology development",
     "downloadUrl": "https://files.pythonhosted.org/packages/d9/0f/7094c8541566b0892869a38a825f13bd55fddab2b2512e26e8e3e23000d9/olivaw-0.0.5-py3-none-any.whl",
     "funder": {
-        "type": "Organization",
+        "@id": "https://ror.org/01nzkaw91",
+        "@type": "Organization",
         "name": "Research Centre Inria Sophia Antipolis - Méditerranée"
     },
     "keywords": [
