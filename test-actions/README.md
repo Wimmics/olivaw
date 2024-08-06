@@ -59,12 +59,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        REF=${{ github.ref }}
-        echo "github.ref: $REF"
-        IFS='/' read -ra PATHS <<< "$REF"
-        BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
-        echo $BRANCH_NAME
-        echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
+        IFS='/' read -ra PATHS <<< "${{ github.ref }}"
+        echo "BRANCH=$(echo ${PATHS[2]})" >> $GITHUB_ENV
     - uses: Wimmics/olivaw/test-actions@v0.0.5
       with:
         repository: ${{ github.repository }}
