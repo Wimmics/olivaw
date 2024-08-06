@@ -94,36 +94,7 @@
             "givenName": "Maxime"
         }
     ],
-    "contributor": [
-        {
-            "@id": "https://orcid.org/0000-0001-9064-0463",
-            "@type": "Person",
-            "affiliation": [
-                {
-                    "@id": "https://ror.org/02kvxyf05",
-                    "@type": "Organization",
-                    "name": "Institut national de recherche en informatique et en automatique"
-                },
-                {
-                    "@id": "https://ror.org/019tgvf94",
-                    "@type": "Organization",
-                    "name": "Université Côte d'Azur"
-                },
-                {
-                    "@id": "https://ror.org/02feahw73",
-                    "@type": "Organization",
-                    "name": "Centre National de la Recherche Scientifique"
-                },
-                {
-                    "@id": "https://ror.org/01215r597",
-                    "@type": "Organization",
-                    "name": "Laboratoire d'Informatique, Signaux et Systèmes de Sophia Antipolis"
-                }
-            ],
-            "familyName": "Michel",
-            "givenName": "Franck"
-        }
-    ],
+    "contributor": [],
     "codeRepository": "https://github.com/Wimmics/olivaw.git",
     "dateCreated": "2024-01-07",
     "dateModified": "2024-06-14",
