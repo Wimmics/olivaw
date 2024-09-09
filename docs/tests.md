@@ -52,7 +52,7 @@ Two output formats are available for now in order to read a test report:
 * turtle, a format meant for describing a RDF graph in a simplified way. This report is meant to be *machine readable*
 * markdown, a format that is meant to be processed by a markdown vizualizer. This report is meant ot be *human readable*
 
-The markdown format is made out of the turtle report and the [test resource dataset](../olivaw/test/olivaw-earl.ttl).
+The markdown format is made out of the turtle report and the [test resource dataset](../olivaw/test/olivaw.ttl).
 
 Let's go deeper into details concerning each of these formats
 
@@ -78,7 +78,7 @@ Therefore in this report the assertions will be instanciated this way:
     earl:assertedBy _:theAssertor ;
     earl:result [ a earl:TestResult ; ... the content will be detailed later ...] ;
     earl:subject _:theSubject ;
-    earl:test olivaw-earl:theTestCriterion .
+    earl:test olivaw:theTestCriterion .
 ```
 
 The next sections will explore in details how is expressed each part
@@ -120,9 +120,9 @@ _:file1-file2 a earl:TestSubject ;
 
 ### 1.1.3. The criterion
 
-The criterions are all references to the [olivaw earl dataset](https://github.com/Wimmics/olivaw/blob/main/olivaw/test/olivaw-earl.ttl#)
+The criterions are all references to the [olivaw ontology](https://github.com/Wimmics/olivaw/blob/main/olivaw/test/olivaw.ttl#)
 
-Therefore they are mentioned in the report in a form such as `olivaw-earl:syntax`, for the syntax criterion, represents the uri `https://github.com/Wimmics/olivaw/blob/main/olivaw/test/olivaw-earl.ttl#syntax`
+Therefore they are mentioned in the report in a form such as `olivaw:syntax`, for the syntax criterion, represents the uri `https://github.com/Wimmics/olivaw/blob/main/olivaw/test/olivaw.ttl#syntax`
 
 In the acimov earl dataset, each test subject has 3 components:
 
@@ -130,7 +130,7 @@ In the acimov earl dataset, each test subject has 3 components:
 * a title
 * a description
 
-For example the syntax criterion is defined this way in the olivaw-earl dataset:
+For example the syntax criterion is defined this way in the olivaw ontology:
 
 ```turtle
 :syntax a earl:TestCriterion ;
@@ -178,18 +178,18 @@ In the EARL vocabulary, the following outcome types are available:
 * `earl:NotTested`: This outcome means that the test could not be run because some requirements needed for this test was not fulfilled. If a test could not be run, the assertion will have only one outcome of type `earl:NotTested`
 * `earl:Fail`: This outome denotes that a problem was detected, that is defenitely an error, and that made this test not passed
 
-In order to add more expressivity to denote the severity of an error, in the [olivaw-earl dataset](../olivaw/test/olivaw-earl.ttl), the `earl:Fail` set was partionned into two subsets:
+In order to add more expressivity to denote the severity of an error, in the [olivaw ontology](../olivaw/test/olivaw.ttl), the `earl:Fail` set was partionned into two subsets:
 
-* `olivaw-earl:MinorFail`: An error is detected but is not considered as blocking for production
-* `olivaw-earl:MajorFail`: An error is detected and is considered blocking for production
+* `olivaw:MinorFail`: An error is detected but is not considered as blocking for production
+* `olivaw:MajorFail`: An error is detected and is considered blocking for production
 
 Here are the different outcome types that can be found in the reports:
 
 * `earl:Pass`
 * `earl:CannotTell`
 * `earl:NotTested`
-* `olivaw-earl:MinorFail`
-* `olivaw-earl:MajorFail`
+* `olivaw:MinorFail`
+* `olivaw:MajorFail`
 
 **Title**
 
@@ -209,7 +209,7 @@ Optional. When one of several pointers are set on an outcome, point to either a 
 
 ## 1.2. Markdown format
 
-This format is an export from the previous [turtle format](#turtle-format) with some extra information from the [olivaw-earl dataset](../olivaw/test/olivaw-earl.ttl).
+This format is an export from the previous [turtle format](#turtle-format) with some extra information from the [olivaw ontology](../olivaw/test/olivaw.ttl).
 
 Let's see each section in detail.
 
@@ -254,7 +254,7 @@ The summary table is a table where each line is a summary containing the followi
 * the current outcome number out of the total number of outcome of that type
 * the outcome type
 * the subject identifier
-* the criterion identifier (linked to its definition in the [olivaw-earl dataset](../olivaw/test/olivaw-earl.ttl))
+* the criterion identifier (linked to its definition in the [olivaw ontology](../olivaw/test/olivaw.ttl))
 * the outcome title
 * the link to the detailed explanation
 

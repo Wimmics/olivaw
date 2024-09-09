@@ -19,7 +19,8 @@ from rdflib.namespace import (
     FOAF,
     DCTERMS,
     SDO,
-    XSD
+    XSD,
+    PROV
 )
 
 from olivaw.constants import (
@@ -27,23 +28,32 @@ from olivaw.constants import (
     DEV_PROFILE,
     DOMAINS_URL,
     EARL_NAMESPACE,
+    COMMIT_DATE,
+    REPO_STATE,
+    PLATFORM_NAMESPACE,
     ONTOLOGY_PREFIX,
     ONTOLOGY_NAMESPACE,
     PROJECT_PREFIXES,
     SRC_NAMESPACE,
-    OLIVAW_EARL_NAMESPACE,
+    OLIVAW_NAMESPACE,
     ONTOLOGY_RDFLIB_NAMESPACE,
     ERROR_RESOURCES,
     BRANCH,
     USECASES_URL,
     SKIPPED_ERRORS,
     EXTRACT_STATEMENT,
+    OLIVAW_VERSION_BLOB_URI,
     OLIVAW_TEST_BLOB_URI,
     BLOCKING_ERRORS,
     MODE,
     SKIP_PASS,
     TESTED_ONLY,
-    CRITERION_DATA
+    CRITERION_DATA,
+    COMMIT_HASH,
+    ACTIONS,
+    REPO_URI,
+    VERSION,
+    REPO_REF
 )
 
 from olivaw.constants.regex import PREFIX_PATTERN
@@ -77,8 +87,10 @@ def new_report(test_type: str) -> tuple[Graph, BNode]:
 
     report.bind("earl", EARL_NAMESPACE)
     report.bind("", ONTOLOGY_RDFLIB_NAMESPACE)
-    report.bind("olivaw-earl", OLIVAW_EARL_NAMESPACE)
+    report.bind("olivaw", OLIVAW_NAMESPACE)
     report.bind("dcterms", DCTERMS)
+    report.bind("prov", PROV)
+    report.bind("git-platform", PLATFORM_NAMESPACE)
 
     assertor = make_assertor(report, test_type)
 
@@ -94,38 +106,85 @@ def make_assertor(report: Graph, test_type: str) -> BNode:
     :rtype: `rdflib.BNode`
     """
 
-    script_uri = f"{OLIVAW_TEST_BLOB_URI}/{test_type}/suite.py"
-    assertorId = f"{DEV_USERNAME}-{MODE}"
-    title = f"{DEV_USERNAME} using {MODE} script"
-    description = f"Test triggered by @{DEV_USERNAME} by {MODE} trigger"
+    triples = []
+
+    # Instanciate tester and its association
+    tester = BNode("tester")
+    triples.extend([
+        (tester, RDF.type, FOAF.Person), 
+        (tester, RDF.type, PROV.Agent),
+        (tester, FOAF.homepage, PLATFORM_NAMESPACE[DEV_USERNAME]) 
+    ])
+
+    tester_association = BNode("testerAssociation")
+    triples.extend([
+        (tester_association, RDF.type, PROV.Association),
+        (tester_association, PROV.agent, tester),
+        (tester_association, PROV.hadRole, OLIVAW_NAMESPACE.tester)
+    ])
+
+    # Instanciate tested project and its association
+    tested_project = URIRef(f"{REPO_URI}/tree/{COMMIT_HASH}") if ACTIONS else BNode("intermediateSnapshot")
+    triples.extend([
+        (tested_project, RDF.type, OLIVAW_NAMESPACE.VersionedEntity),
+        (tested_project, OLIVAW_NAMESPACE.hostedAt, URIRef(REPO_URI)),
+        (tested_project, OLIVAW_NAMESPACE.isOnBranch, Literal(BRANCH)),
+        (tested_project, OLIVAW_NAMESPACE.patchedBy, tester)
+    ])
+
+    if ACTIONS:
+        triples.extend([
+            (tested_project, DCTERMS.hasVersion, Literal(COMMIT_HASH)),
+            (tested_project, DCTERMS.date, Literal(COMMIT_DATE, datatype=XSD.dateTime))
+        ])
+    else:
+        triples.extend([
+            (tested_project, DCTERMS.hasVersion, Literal(REPO_STATE)),
+            (tested_project, OLIVAW_NAMESPACE.patchedFrom, Literal(COMMIT_HASH)),
+            (tested_project, DCTERMS.date, Literal(datetime.now(), datatype=XSD.dateTime))
+        ])
+
+    tested_project_association = BNode("testedProjectUsage")
+    triples.extend([
+        (tested_project_association, RDF.type, PROV.Usage),
+        (tested_project_association, PROV.entity, tested_project),
+        (tested_project_association, PROV.hadRole, OLIVAW_NAMESPACE.tested_project)
+    ])
+
+    # Instanciate test suite and its association
+    test_suite = URIRef(f"{OLIVAW_VERSION_BLOB_URI}/olivaw/test/{test_type}/suite.py")
+    triples.extend([
+        (test_suite, RDF.type, OLIVAW_NAMESPACE.VersionedEntity),
+        (test_suite, OLIVAW_NAMESPACE.hostedAt, URIRef(f"{OLIVAW_TEST_BLOB_URI}/{test_type}/suite.py")),
+        (test_suite, DCTERMS.hasVersion, Literal(VERSION))
+    ])
+
+    tested_suite_association = BNode("testSuiteUsage")
+    triples.extend([
+        (tested_suite_association, RDF.type, PROV.Usage),
+        (tested_suite_association, PROV.entity, test_suite),
+        (tested_suite_association, PROV.hadRole, OLIVAW_NAMESPACE.test_suite)
+    ])
+
+    # Instanciate activity
+    assertor = BNode("assertor")
+    triples.extend([
+        (assertor, RDF.type, PROV.Activity),
+        (assertor, RDF.type, EARL_NAMESPACE.Assertor),
+        (assertor, PROV.wasAssociatedWith, tester),
+        (assertor, PROV.qualifiedAssociation, tester_association),
+        (assertor, PROV.used, test_suite),
+        (assertor, PROV.qualifiedUsage, tested_suite_association),
+        (assertor, PROV.used, tested_project),
+        (assertor, PROV.qualifiedUsage, tested_project_association),
+        (assertor, DCTERMS.title, Literal(f"{test_type.capitalize()} tests of {REPO_REF} on branch {BRANCH}")),
+        (assertor, DCTERMS.description, Literal(f"{DEV_USERNAME} launch {MODE} run of {test_type} tests against {REPO_REF} on branch {BRANCH}"))
+    ])
     
-    # Define the developper and the assertor
-    assert_group = BNode(assertorId)
-    developper = BNode(DEV_USERNAME)
-
-    # Define the developper
-    developper_statement = [
-        (developper, RDF.type, FOAF.Person),
-        (developper, SDO.mainEntityOfPage, URIRef(DEV_PROFILE))
-    ]
-
-    for triple in developper_statement:
+    for triple in triples:
         report.add(triple)
-
-    # Define the developper using the software
-    assertor_statement = [
-        (assert_group, RDF.type, FOAF.OnlineAccount),
-        (assert_group, DCTERMS.title, Literal(title, lang="en")),
-        (assert_group, DCTERMS.description, Literal(description, lang="en")),
-        (assert_group, EARL_NAMESPACE.mainAssertor, developper),
-        (assert_group, FOAF.member, URIRef(script_uri)),
-        (assert_group, DCTERMS.date, Literal(datetime.now(), datatype=XSD.dateTime))
-    ]
-
-    for triple in assertor_statement:
-        report.add(triple)
-
-    return assert_group
+    
+    return assertor
 
 def make_subject_id_part(fragment_list: list[str]) -> str:
     """Analyze the heart or appendix of a subject and generate the subject identifier part related to this
@@ -519,7 +578,7 @@ def make_outcome(draft: AssertDraft, **kwargs) -> Optional[BNode]:
         outcome_title = outcome_ressources["title"]
         outcome_description = draft.description if (draft.has_field("description") and len(draft.description) > 0) else outcome_ressources["description"]
 
-    outcome_type_namespace = OLIVAW_EARL_NAMESPACE if draft.outcome_type.endswith("Fail") else EARL_NAMESPACE
+    outcome_type_namespace = OLIVAW_NAMESPACE if draft.outcome_type.endswith("Fail") else EARL_NAMESPACE
 
     outcome_statement = [
         (RDF.type, outcome_type_namespace[draft.outcome_type]),
@@ -655,7 +714,7 @@ def assemble_assertion(draft: AssertDraft, result: BNode) -> None:
     
     criterion = URIRef(draft.criterion_uri) \
                 if draft.has_field("criterion_uri") else \
-                OLIVAW_EARL_NAMESPACE[draft.criterion]
+                OLIVAW_NAMESPACE[draft.criterion]
     
     statement = [
         (RDF.type, EARL_NAMESPACE.Assertion),

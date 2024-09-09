@@ -53,6 +53,7 @@ def test_model() -> None:
     file_base_name = file_name("model")
     save_reports(
         file_base_name,
-        report.serialize(format="ttl"),
-        markdown_export(report, file_base_name, shape_data=shape_data)
+        assertor,
+        report,
+        ""#markdown_export(report, file_base_name, shape_data=shape_data)
     )

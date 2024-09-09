@@ -1,0 +1,215 @@
+@prefix : <https://ns.inria.fr/olivaw/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix earl: <http://www.w3.org/ns/earl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+##########################################################################
+#    Ontology Description                                                #
+#                                                                        #
+# OWL_PROFILE = OWL_2_RL (https://www.w3.org/TR/owl2-profiles/#OWL_2_RL) #
+#                                                                        #
+##########################################################################
+
+:ontology a owl:Ontology ;
+    dc:title "OLIVAW ontology"@en, "Ontologie OLIVAW"@fr ;
+    dc:description  "An ontology to describe OLIVAW (Ontology Long-lived Integration Via ACIMOV Workflow) test reports."@en,
+                    "Une ontologie pour la description de rapports OLIVAW (Intégration Durable d'Ontologie par Workflow ACIMOV)."@fr ;
+    dc:issued "2024-01-07"^^xsd:date ;
+    dc:creator <https://orcid.org/0009-0009-2595-6168> ;
+    dc:contributor <http://ns.inria.fr/fabien.gandon#me> , 
+                    <http://maxime-lefrancois.info/me#> ; 
+    cc:license <https://spdx.org/licenses/LGPL-2.1> ;
+    vann:preferredNamespacePrefix "olivaw" ;
+    vann:preferredNamespaceUri <https://ns.inria.fr/olivaw/>  .
+
+###########
+# Classes #
+###########
+
+:VersionedEntity a prov:Entity ;
+    rdfs:isDefinedBy :ontology ;
+    owl:hasKey (:hostedAt dc:hasVersion) ;
+    rdfs:comment "Entity that is hosted at a given URL and has a given version"@en ;
+    rdfs:label "Versioned entity"@en .
+
+:Result a owl:Class ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:comment "A result of a generation of an activity that hads ended"@en ;
+    rdfs:label "result"@en .
+
+##############
+# Properties #
+##############
+
+:hostedAt a owl:ObjectProperty ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:comment "A relationship between a versioned entity and a URL it is hosted at"@en ;
+    rdfs:label "hosted at"@en ;
+    rdfs:domain :VersionedEntity .
+
+:canOutcome a owl:ObjectProperty ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:label "can outcome"@en ;
+    rdfs:comment "A relationship between a test criterion and a error identifier this test criterion can end up with."@en ;
+    rdfs:domain earl:TestCriterion ;
+    rdfs:range xsd:string .
+
+:isOnBranch a owl:ObjectProperty ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:comment "A relationship between a versioned entity and a branch this versioned entity is on"@en ;
+    rdfs:label "is on branch"@en ;
+    rdfs:domain :VersionedEntity ;
+    rdfs:range xsd:string .
+
+:patchedBy a owl:ObjectProperty ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:comment "A relationship between a versioned entity and a developer this versioned entity is patched by"@en ;
+    rdfs:label "patched by"@en ;
+    rdfs:domain :VersionedEntity ;
+    rdfs:range prov:Agent .
+
+:patchedFrom a owl:ObjectProperty ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:comment "A relationship between a versioned entity and a commit hash this versioned entity is patched from"@en ;
+    rdfs:label "patched from"@en ;
+    rdfs:domain :VersionedEntity ;
+    rdfs:range xsd:string .
+
+:generatedAs a owl:ObjectProperty ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:comment "A relationship between a qualified generation and a result the generated entity is generated as"@en ;
+    rdfs:label "generated as"@en ;
+    rdfs:domain prov:Generation ;
+    rdfs:range :Result .
+
+##################
+# PROV extention #
+##################
+
+:test_suite a prov:Role ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:comment "Role of a script entity to be launched by a developer account to process a test over a project"@en ;
+    rdfs:label "Test script"@en .
+
+:tested_project a prov:Role ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:comment "Role of a project entity to be tested over a test script launched by a tester"@en ;
+    rdfs:label "Tested project"@en .
+
+:tester a prov:Role ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:comment "Role of a developer account agent to launch a test suite against a test subject"@en ;
+    rdfs:label "Tester"@en .
+
+:turtle_report a :Result ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:comment "Role of an entity to be the generated turtle (machine readable) test report of a testing activity"@en ;
+    rdfs:label "Turtle report"@en .
+
+:markdown_report a :Result ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:comment "Role of an entity to be the generated markdown (human readable) test report of a testing activity"@en ;
+    rdfs:label "Markdown report"@en .
+
+##################
+# EARL extension #
+##################
+
+# Adding subtypes of earl:Fail to express fail severity
+
+:MajorFail rdfs:subClassOf earl:Fail ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:label "Major fail"@en ;
+    rdfs:comment "The class of the fails that cannot be ignored."@en .
+
+:MinorFail rdfs:subClassOf earl:Fail ;
+    rdfs:isDefinedBy :ontology ;
+    rdfs:label "Minor fail"@en ;
+    rdfs:comment "The class of the fails that can be ignored."@en .
+
+[ a owl:AllDisjointClasses ;
+    owl:members (:MajorFail :MinorFail) ] . 
+
+# Test criterions
+
+:syntax a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "syntax-error" ;
+    dc:identifier "syntax" ;
+    dc:title "Syntax test"@en ;
+    dc:description "A test meant to check wether the test subject is syntaxically correct or not."@en .
+
+:owl-rl-constraint a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "owl-rl-constraint-violation" ;
+    dc:identifier "owl-rl-constraint" ;
+    dc:title "OWL RL Constraint test"@en ;
+    dc:description "A test meant to check wether the test subject is syntaxically correct or not."@en .
+
+:profile-compatibility a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "owl-rl-profile-error" , "owl-ql-profile-error" , "owl-el-profile-error" ;
+    dc:identifier "profile-compatibility" ;
+    dc:title "Profile compatibility test"@en ;
+    dc:description "A test meant to check whether the test subject is compatible with a profile or not, and if it is not, why."@en .
+
+:term-referencing a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "no-reference-module" ;
+    dc:identifier "term-referencing" ;
+    dc:title "Term referencing test"@en ;
+    dc:description "A test case from the Best Practices tests checking if each term of the test subject is referenced to a module through a rdfs:isDefinedBy property."@en .
+
+:domain-and-range-referencing a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "domain-out-of-vocabulary" , "range-out-of-vocabulary" ;
+    dc:identifier "domain-and-range-referencing" ;
+    dc:title "Domain and range referencing test"@en ;
+    dc:description "A test case from the Best Practices tests checking if all the ranges and domains from the test subject point to terms that are defined in the vocabulary."@en .
+
+:terms-differenciation a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "too-close-terms" ;
+    dc:identifier "terms-differenciation" ;
+    dc:title "Terms differenciation test"@en ;
+    dc:description "A test case from the Best Practices tests checking if all the terms are different enough from each other according to the Levenshtein distance metric."@en .
+
+:labeled-terms a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "not-labeled-term" ;
+    dc:identifier "labeled-terms" ;
+    dc:title "Term labeling test"@en ;
+    dc:description "A test case from the Best Practices tests checking if all the terms of the subject have a rdfs:label property pointing to a literal in English"@en .
+
+:term-recognition a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "unknown-term" ;
+    dc:identifier "term-recognition" ;
+    dc:title "Term recognition test"@en ;
+    dc:description "A test meant to detect if all the terms from the subject that are from the ontology namespace are indeed defined in the ontology"@en .
+
+:namespace-validity a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "namespace-typo" ;
+    dc:identifier "namespace-validity" ;
+    dc:title "Prefix validity test"@en ;
+    dc:description "A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc) or an ontology namespace"@en .
+
+:query-type a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "wrong-query-type" ;
+    dc:identifier "query-type" ;
+    dc:title "Query type test"@en ;
+    dc:description "A test meant to check if the query is indeed of type Select or Ask" .
+
+:uri-validity a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "invalid-uri" ;
+    dc:identifier "uri-validity" ;
+    dc:title "URI validity test"@en ;
+    dc:description "A test meant to check if all the URIs of the resource are well-formed"@en .

@@ -12,6 +12,7 @@ The files that can be found here:
 * [error-resources.json](./error-resources.json): Stores all the useful constants concerning the different errors that can be detected by olivaw
 * [git_info.py](./git_info.py): Provides all the needed information about the git information needed to perform all the tests properly. These information are gathered by git command lines but can be overrided if needed (check the [command line documentation](../../docs/commands.md))
 * [markdown.py](./markdown.py): Provides some constants that are used during the markdown format generation (see the [markdown documentation](../../docs/tests.md#12-markdown-format))
+* [olivaw.py](./olivaw.py): Some constants related to olivaw framework itself
 * [paths.py](./paths.py): A set of folder and file paths that are used to search for files within the acimov project
 * [prefixcc.py](./prefixcc.py): Some constants useful when preparing an index of the known web semantic namespaces known by the website prefix.cc
 * [rdflib_info](./rdflib_info.py): Some constants that are usefule in order to make the turtle test report format (see the [turtle format documentation](../../docs/tests.md#11-turtle-format))

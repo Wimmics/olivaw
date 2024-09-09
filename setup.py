@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 from os.path import sep, exists
 from urllib.request import urlopen
 
-from olivaw.constants import CORESE_PYTHON_URL, CORESE_LOCAL_PATH
+from olivaw.constants import CORESE_PYTHON_URL, CORESE_LOCAL_PATH, VERSION
 
 # Parse the requirements from requirements.txt
 requirements = None
@@ -29,7 +29,7 @@ with open("./README.md", "r") as readme:
 
 setup(
     name='olivaw',
-    version="v0.0.5",
+    version=VERSION,
     description="Python framework for supporting agile ontology development",
     long_description=long_description,
     long_description_content_type="text/markdown",

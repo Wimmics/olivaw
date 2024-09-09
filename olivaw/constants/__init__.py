@@ -15,14 +15,11 @@ from .prefixcc import *
 
 from .corese_info import *
 
-from .markdown import *
+from .olivaw import *
 
 try:
   from .rdflib_info import *
-except:
-  pass
-
-try:
+  from .markdown import *
   from .regex import *
 except:
   pass
@@ -248,16 +245,17 @@ if not BLOCKING_ERRORS is None:
     ERROR_RESOURCES[error]["blocking"] = error in BLOCKING_ERRORS
 
 CRITERION_DATA: dict[str, dict[str, Union[str, list[str]]]] = None
-"""Dictonary storing the criterions from the earl-olivaw dataset"""
+"""Dictonary storing the criterions from the olivaw ontology"""
 
 try:
     from rdflib import Graph
-    from rdflib.namespace import Namespace
+    from rdflib.namespace import Namespace, DCTERMS
 
     if not ONTOLOGY_NAMESPACE is None:
       ONTOLOGY_RDFLIB_NAMESPACE = Namespace(ONTOLOGY_NAMESPACE)
     criterions_graph = Graph()
-    criterions_graph.parse(PWD_TO_MODEL_TEST_ONTO)
+    criterions_graph.parse(PWD_TO_OLIVAW_ONTOLOGY)
+    criterions_graph.bind("dcterms", DCTERMS)
     criterions = criterions_graph.query(GET_CRITERION_DATA)
     CRITERION_DATA = {
         str(criterion_id): {
@@ -275,6 +273,7 @@ try:
     }
     CRITERION_IDS = list(CRITERION_DATA.keys())
 except:
+  raise
   pass
 
 MODEL_BEST_PRACTICES_TESTS: list[str] = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]

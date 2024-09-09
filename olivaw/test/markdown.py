@@ -952,7 +952,7 @@ def make_stat_chapter(outcomes: dict [ # Dictionary linking a severity to its re
         "",
         "<br/>",
         "",
-        "The different status types are an extension of the [EARL](https://www.w3.org/TR/EARL10-Schema/) vocabulary where the nextended terms can be found in the [olivaw-earl dataset](https://github.com/Wimmics/olivaw/blob/main/olivaw/test/olivaw-earl.ttl), each outcome type means:",
+        "The different status types are an extension of the [EARL](https://www.w3.org/TR/EARL10-Schema/) vocabulary where the nextended terms can be found in the [olivaw ontology](https://ns.inria.fr/olivaw#), each outcome type means:",
         "* :boom: MajorFail: This is an error that is critical and consider as blocking for production",
         "* :exclamation: MinorFail: This is an error that should be fixed, but it is cannot be considered as critical error",
         "* :warning: CannotTell: It is unclear if the subject passed or failed the test. This happens when an automated test requires human judgement to make a definite decision.",

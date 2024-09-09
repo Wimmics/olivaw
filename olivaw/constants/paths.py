@@ -43,8 +43,8 @@ PWD_TO_CONSTANTS: str = sep.join(__file__.split(sep)[:-1])
 PWD_TO_OVILAW: str = sep.join(__file__.split(sep)[:-2])
 """Path to the olivaw subfolder"""
 
-PWD_TO_MODEL_TEST_ONTO: str = f"{PWD_TO_OVILAW}{sep}test{sep}olivaw-earl.ttl"
-"""Path to the olivaw-earl dataset"""
+PWD_TO_OLIVAW_ONTOLOGY: str = f"{PWD_TO_OVILAW}{sep}test{sep}olivaw.ttl"
+"""Path to the olivaw ontology"""
 
 PWD_TO_CUSTOM_TESTS: str = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}"
 """Path to the repository custom-tests folder"""

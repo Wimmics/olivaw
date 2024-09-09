@@ -24,8 +24,8 @@ from olivaw.test.query.testing import question_tests
 from olivaw.constants import (
     PWD_TO_ROOT_FOLDER,
     GET_MAJOR_FAILS,
-    OLIVAW_EARL_DATASET,
-    PWD_TO_MODEL_TEST_ONTO,
+    OLIVAW_ONTOLOGY,
+    PWD_TO_OLIVAW_ONTOLOGY,
     GET_CRITERION_SUMMARY
 )
 from olivaw.test.turtle import new_report
@@ -44,7 +44,7 @@ sorted_files = {
 }
 
 olivaw_earl_graph = Graph()
-olivaw_earl_graph.parse(PWD_TO_MODEL_TEST_ONTO)
+olivaw_earl_graph.parse(PWD_TO_OLIVAW_ONTOLOGY)
 
 custom_tests_base = [export_graph(graph) for graph in model_shape_tests] + [export_graph(graph) for graph in data_shape_tests]
 custom_tests_base = "\n".join(custom_tests_base)
@@ -128,7 +128,7 @@ def main(files: Sequence[str] | None = None) -> int:
             ]
 
     for error in errors:
-        standard_criterion = error["criterion"].startswith(str(OLIVAW_EARL_DATASET))
+        standard_criterion = error["criterion"].startswith(str(OLIVAW_ONTOLOGY))
         criterion_title, criterion_description = [
             (str(title), str(description))
             for title, description in (

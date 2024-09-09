@@ -172,13 +172,13 @@ SELECT ?identifier ?title ?description {
     dcterms:description ?description .
 }
 """
-"""Retrieve the information of the criterion of a olivaw-earl TestCriterion"""
+"""Retrieve the information of the criterion of a olivaw TestCriterion"""
 
 IS_OWL_EL_COMPATIBLE: str = """
 select ?parsed {
   ?assertion a earl:Assertion ;
   earl:subject ?subject ;
-  earl:test olivaw-earl:profile-compatibility ;
+  earl:test olivaw:profile-compatibility ;
   earl:result ?result .
   
   ?subject dcterms:identifier "all-modules"  .
@@ -419,7 +419,7 @@ select ?subject_title ?criterion ?error_title ?error_description  where {
 ?result a earl:TestResult ;
     earl:outcome ?outcome .
 
-?outcome a olivaw-earl:MajorFail ;
+?outcome a olivaw:MajorFail ;
     dcterms:title ?error_title ;
     dcterms:description ?error_description .
 }

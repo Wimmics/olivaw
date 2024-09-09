@@ -1,7 +1,9 @@
 """Module providing constants related to the git information of the project and the developper"""
 
-from subprocess import check_output
+from subprocess import check_output, Popen, PIPE
 from sys import argv, builtin_module_names, exit
+
+from .olivaw import VERSION
 
 arg_root = [item.split("=")[1] for item in argv if item.startswith("--REPO-ROOT=")]
 
@@ -40,11 +42,71 @@ else:
     .decode('utf-8')\
     .strip()
   except:
-    pass
+    print('fatal: Command "git config --get remote.origin.url" should return the repository URI or argument "REPO_URI" should be set')
+    exit(1)
 
-if REPO_URI is None:
-  print('fatal: Command "git config --get remote.origin.url" should return the repository URI or argument "REPO_URI" should be set')
+# The commit hash
+arg_hash = [item.split("=")[1] for item in argv if item.startswith("--COMMIT_HASH=")]
 
+COMMIT_HASH: str = None
+"""Local repository commit hash"""
+
+if len(arg_hash) > 0:
+  COMMIT_HASH = arg_hash[0]
+else:
+  try:
+    COMMIT_HASH = check_output(
+      "git rev-parse HEAD".split(" ")
+    )\
+    .decode('utf-8')\
+    .strip()
+  except:
+    print('fatal: Command "git rev-parse HEAD" should return the current commit hash or argument "COMMIT_HASH" should be set')
+    exit(1)
+
+# The commit date
+arg_date = [item.split("=")[1] for item in argv if item.startswith("--COMMIT_DATE=")]
+
+COMMIT_DATE: str = None
+"""Local repository last commit date"""
+
+if len(arg_date) > 0:
+  COMMIT_DATE = arg_date[0]
+else:
+  try:
+    COMMIT_DATE = check_output(
+      "git log -1 --format=%cd --date=format:%Y-%m-%dT%H:%M:%S".split(" ")
+    )\
+    .decode('utf-8')\
+    .strip()
+  except:
+    print('fatal: Command "git log -1 --format=%cd --date=format:%Y-%m-%dT%H:%M:%S" should return the current last commit date or argument "COMMIT_DATE" should be set')
+    exit(1)
+
+# The repository state
+REPO_STATE: str = None
+"""Hash representing the current state of the local repository"""
+
+try:
+  # Launch the process that will output current repo state
+  snapshot = Popen(
+    "git ls-files -m -d -s .".split(" "),
+    stdout=PIPE
+  )
+
+  # Launch a hash process and inject as input the previous process output
+  REPO_STATE = check_output(
+    "git hash-object --stdin".split(" "),
+    stdin=snapshot.stdout
+  )\
+  .decode("utf-8")\
+  .strip()
+  
+  # Wait for snapshot process to end
+  snapshot.wait()
+except:
+  pass
+  
 if REPO_URI.endswith("/"):
   REPO_URI = REPO_URI[:-1]
 
@@ -127,11 +189,14 @@ SHAPE_BASE_URIS: str = None
 GIT_RAW: str = "https://raw.githubusercontent.com"
 """Base URL for the files hosted on GitHub, on raw mode"""
 
-OLIVAW_EARL_DATASET: str = f"{GIT_RAW}/{OLIVAW_REF}/main/olivaw/test/olivaw-earl.ttl#"
-"""URI of the olivaw-earl dataset"""
+OLIVAW_ONTOLOGY: str = f"https://ns.inria.fr/olivaw#"
+"""URI of the olivaw ontology"""
 
 OLIVAW_TEST_BLOB_URI: str = "https://github.com/Wimmics/olivaw/blob/main/olivaw/test"
 """URI prefix for the files in the test folder, in olivaw repository, on branch main"""
+
+OLIVAW_VERSION_BLOB_URI: str = f"https://github.com/Wimmics/olivaw/blob/{VERSION}"
+"""URI prefix for the files in olivaw project, on current tag"""
 
 try:
   SHAPE_BASE_URIS = f"{GIT_RAW}/{'/'.join(REPO_URI.split('/')[-2:])}/{BRANCH}/.acimov/custom-tests/"
