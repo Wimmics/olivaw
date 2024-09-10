@@ -48,22 +48,6 @@ else:
 # The commit hash
 arg_hash = [item.split("=")[1] for item in argv if item.startswith("--COMMIT_HASH=")]
 
-COMMIT_HASH: str = None
-"""Local repository commit hash"""
-
-if len(arg_hash) > 0:
-  COMMIT_HASH = arg_hash[0]
-else:
-  try:
-    COMMIT_HASH = check_output(
-      "git rev-parse HEAD".split(" ")
-    )\
-    .decode('utf-8')\
-    .strip()
-  except:
-    print('fatal: Command "git rev-parse HEAD" should return the current commit hash or argument "COMMIT_HASH" should be set')
-    exit(1)
-
 # The commit date
 arg_date = [item.split("=")[1] for item in argv if item.startswith("--COMMIT_DATE=")]
 
@@ -137,6 +121,22 @@ else:
   except:
     BRANCH = None
 
+COMMIT_HASH: str = None
+"""Local repository commit hash"""
+
+if len(arg_hash) > 0:
+  COMMIT_HASH = arg_hash[0]
+else:
+  try:
+    COMMIT_HASH = check_output(
+      f"git rev-parse origin/{BRANCH}".split(" ")
+    )\
+    .decode('utf-8')\
+    .strip()
+  except:
+    print(f'fatal: Command "git rev-parse origin/{BRANCH}" should return the current commit hash or argument "COMMIT_HASH" should be set')
+    exit(1)
+
 arg_ref = [item.split("=")[1] for item in argv if item.startswith("--REF=")]
 
 REF: str = None
@@ -182,6 +182,9 @@ USECASES_URL: str = SRC_URL.replace("src", "use-cases")
 
 OLIVAW_REF: str = "Wimmics/olivaw"
 """Identifier of olivaw repository"""
+
+OLIVAW_REPOSITORY: str = "https://github.com/Wimmics/olivaw"
+"""URL to olivaw repository"""
 
 SHAPE_BASE_URIS: str = None
 """Prefix of the URIs of the custom tests criterions and shapes"""

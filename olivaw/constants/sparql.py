@@ -151,15 +151,63 @@ SELECT DISTINCT ?outcome ?pointer WHERE {
 """Retrieve the pointers related to an outcome"""
 
 GET_ASSERTOR_DETAILS: str = """
-SELECT ?title ?description ?date ?script ?page WHERE {
-  ?account a foaf:OnlineAccount ;
-  dcterms:title ?title ;
-  dcterms:description ?description ;
-  dcterms:date ?date ;
-  foaf:member ?script ;
-  earl:mainAssertor _:assertor .
+SELECT
+  ?title
+  ?description
+  ?date
+  ?testerName
+  ?testerPage
+  ?testSuite
+  ?testSuiteVersion
+  ?testedProject
+  ?testedProjectVersion
+  ?testedProjectVersionDate
+  ?commit
+  ?turtleReport
+  ?markdownReport
+  WHERE {
 
-  _:assertor schema:mainEntityOfPage ?page .
+  # Retrieve activity information
+  ?assertor a earl:Assertor ;
+    dcterms:title ?title ;
+    dcterms:description ?description ;
+    prov:endedAtTime ?date ;
+    prov:qualifiedUsage ?testSuiteUsage , ?testedProjectUsage ;
+    prov:qualifiedAssociation ?testerAssociation ;
+    prov:generated ?turtleReport , ?markdownReport .
+
+  # Retrieve test suite information
+  ?testSuiteUsage prov:hadRole olivaw:test_suite ;
+    prov:entity ?testSuite .
+  
+  ?testSuite dcterms:hasVersion ?testSuiteVersion .
+
+  # Retrieve tested project information
+  ?testedProjectUsage prov:hadRole olivaw:tested_project ;
+    prov:entity ?testedProjectNode .
+
+  ?testedProjectNode olivaw:hostedAt ?testedProject ;
+    dcterms:hasVersion ?testedProjectVersion .
+
+  OPTIONAL {
+    ?testedProjectNode olivaw:patchedFrom ?commit ;
+      dcterms:date ?testedProjectVersionDate .
+  }
+
+  # Retrieve tester information
+  ?testerAssociation prov:hadRole olivaw:tester ;
+    prov:agent ?tester .
+
+  ?tester foaf:nick ?testerName ;
+    foaf:homepage ?testerPage .
+
+  # Retrieve turtle generation
+  ?turtleReport prov:qualifiedGeneration ?turtleGeneration .
+  ?turtleGeneration olivaw:generatedAs olivaw:turtle_report .
+
+  # Retrieve markdown generation 
+  ?markdownReport prov:qualifiedGeneration ?markdownGeneration .
+  ?markdownGeneration olivaw:generatedAs olivaw:markdown_report .
 } LIMIT 1
 """
 """Retrieve the information related to the assertor of a test report"""

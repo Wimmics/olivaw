@@ -4,11 +4,14 @@ from datetime import datetime
 from itertools import zip_longest
 from typing import Optional
 
+from os.path import sep, abspath
+
 from py4j.java_gateway import JavaObject
 
 from rdflib import (
     Graph,
     BNode,
+    IdentifiedNode,
     Literal,
     URIRef,
     Namespace
@@ -73,6 +76,7 @@ from olivaw.test.corese import (
 )
 
 from olivaw.test.util import AssertDraft, should_skip
+from olivaw.constants.paths import PWD_TO_OUTPUT_FOLDER
 
 def new_report(test_type: str) -> tuple[Graph, BNode]:
     """Creates a new report and add the assertor
@@ -113,7 +117,8 @@ def make_assertor(report: Graph, test_type: str) -> BNode:
     triples.extend([
         (tester, RDF.type, FOAF.Person), 
         (tester, RDF.type, PROV.Agent),
-        (tester, FOAF.homepage, PLATFORM_NAMESPACE[DEV_USERNAME]) 
+        (tester, FOAF.homepage, PLATFORM_NAMESPACE[DEV_USERNAME]),
+        (tester, FOAF.nick, Literal(DEV_USERNAME))
     ])
 
     tester_association = BNode("testerAssociation")
@@ -185,6 +190,51 @@ def make_assertor(report: Graph, test_type: str) -> BNode:
         report.add(triple)
     
     return assertor
+
+def end_activity(report: Graph, assertor: IdentifiedNode, reports_filename: str) -> None:
+    """Add the extra information at the end of an activity
+    
+    :param report: Test report
+    :type report: `rdflib.Graph`
+
+    :param assertor: Test assertor
+    :type assertor: `rdflib.IdentifiedNode`
+
+    :param reports_filename: Report files path and file name
+    :type reports_filename: `str`
+    """
+    reports_path = f"{PWD_TO_OUTPUT_FOLDER}{reports_filename}"
+    turtle_report_uri = URIRef(f"file:///{abspath(reports_path).replace(sep, '/')}.ttl")
+    markdown_report_uri = URIRef(f"file:///{abspath(reports_path).replace(sep, '/')}.md")
+
+    turtle_generation = BNode("turtleGeneration")
+    markdown_generation = BNode("markdownGeneration")
+
+    activity_end_time = datetime.now()
+
+    for triple in [
+        # Add end time of activity and generated files
+        (assertor, PROV.endedAtTime, Literal(activity_end_time, datatype=XSD.dateTime)),
+        (assertor, PROV.generated, turtle_report_uri),
+        (assertor, PROV.generated, markdown_report_uri),
+        # Adding turtle file generation
+        (turtle_report_uri, RDF.type, PROV.Entity),
+        (turtle_report_uri, PROV.generatedAtTime, Literal(activity_end_time, datatype=XSD.dateTime)),
+        (turtle_report_uri, PROV.qualifiedGeneration, turtle_generation),
+        # Qualifying turtle file generation
+        (turtle_generation, RDF.type, PROV.Generation),
+        (turtle_generation, PROV.activity, assertor),
+        (turtle_generation, OLIVAW_NAMESPACE.generatedAs, OLIVAW_NAMESPACE.turtle_report),
+        # Adding markdown file generation
+        (markdown_report_uri, RDF.type, PROV.Entity),
+        (markdown_report_uri, PROV.generatedAtTime, Literal(activity_end_time, datatype=XSD.dateTime)),
+        (markdown_report_uri, PROV.qualifiedGeneration, markdown_generation),
+        # Qualifying markdown file generation
+        (markdown_generation, RDF.type, PROV.Generation),
+        (markdown_generation, PROV.activity, assertor),
+        (markdown_generation, OLIVAW_NAMESPACE.generatedAs, OLIVAW_NAMESPACE.markdown_report)
+    ]:
+        report.add(triple)
 
 def make_subject_id_part(fragment_list: list[str]) -> str:
     """Analyze the heart or appendix of a subject and generate the subject identifier part related to this

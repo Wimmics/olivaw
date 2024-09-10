@@ -3,13 +3,15 @@
 from os.path import abspath
 
 from olivaw.test.markdown import markdown_export
-from olivaw.test.turtle import new_report
+from olivaw.test.turtle import end_activity, new_report
 from .testing import question_tests
 from olivaw.test.util import save_reports, print_title, file_name
 from olivaw.constants import QUESTIONS_GLOB_PATH, SKIPPED_SUBJECTS
 
 def test_query() -> None:
     """Executes the query tests over the current project"""
+    print_title("Running query tests")
+
     questions = [
         item
         for item in QUESTIONS_GLOB_PATH
@@ -23,12 +25,15 @@ def test_query() -> None:
         assertor=assertor
     )
 
-    file_name_base = file_name("query")
-
     print_title("Exporting results")
+
+    file_base_name = file_name("query")
+    end_activity(report, assertor, file_base_name)
+
+    markdown = markdown_export(report, file_base_name)
+
     save_reports(
-        file_name_base,
-        assertor,
+        file_base_name,
         report,
-        ""#markdown_export(report, file_name_base)
+        markdown
     )

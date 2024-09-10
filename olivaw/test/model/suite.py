@@ -16,7 +16,7 @@ from .testing import (
     shape_data
 )
 
-from olivaw.test.turtle import new_report
+from olivaw.test.turtle import end_activity, new_report
 
 ###
 # Test OWL_RL
@@ -50,10 +50,14 @@ def test_model() -> None:
     )
 
     print_title("Exporting results")
+
     file_base_name = file_name("model")
+    end_activity(report, assertor, file_base_name)
+
+    markdown = markdown_export(report, file_base_name, shape_data=shape_data)
+
     save_reports(
         file_base_name,
-        assertor,
         report,
-        ""#markdown_export(report, file_base_name, shape_data=shape_data)
+        markdown
     )

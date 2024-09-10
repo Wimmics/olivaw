@@ -1,11 +1,12 @@
 """Module providing functions for markdown report format generation"""
 
+from olivaw.constants import BRANCH
 from typing import Union
 from rdflib import BNode, Graph, Literal, URIRef
 from datetime import datetime
 from sys import argv
 
-from os.path import sep
+from os.path import sep, relpath
 
 from olivaw.constants import (
     SEVERITY_RANGE,
@@ -31,6 +32,8 @@ from olivaw.constants import (
 )
 
 from olivaw.test.generic.shacl import get_criterion_data
+from olivaw.constants import REPO_REF, PWD_TO_OUTPUT_FOLDER
+from olivaw.constants.git_info import OLIVAW_ONTOLOGY, OLIVAW_REPOSITORY, REPO_URI
 
 def html_special_chars(text: str) -> str:
     """Parse the characters from string that need to be converted into HTML special chars
@@ -223,32 +226,63 @@ def make_assertor_chapter(report: Graph) -> list[str]:
     """
     result = []
 
-    result.append("# Test Context")
+    result.append("# Test Activity")
     result.append("")
-    result.append("Here is some context about under which context this test was made")
+    result.append("Here is some information about the testing activity that led to this report")
     result.append("")
+    
+    (
+        test_title,
+        test_description,
+        test_date,
+        tester_name,
+        tester_page,
+        test_suite,
+        test_suite_version,
+        tested_project,
+        tested_project_version,
+        tested_project_version_date,
+        commit,
+        turtle_report,
+        markdown_report
+    ) = [
+        line
+        for line in report.query(GET_ASSERTOR_DETAILS)
+    ][0]
 
-    assertor_info = report.query(GET_ASSERTOR_DETAILS)
-    assertor_info = [x for x in assertor_info][0]
+    test_title = html_special_chars(test_title)\
+        .replace(REPO_REF, f"[{REPO_REF}]({tested_project})")
+    
+    test_description = html_special_chars(test_description)\
+        .replace(tester_name, f"[{tester_name}]({tester_page})")\
+        .replace(REPO_REF, f"[{REPO_REF}]({tested_project})")
+    
+    test_date = datetime.fromisoformat(str(test_date)).strftime("%Y-%m-%d %H:%M:%S")
+    tested_project_version_date = datetime.fromisoformat(str(tested_project_version_date)).strftime("%Y-%m-%d %H:%M:%S")
 
-    title, description, date, script, page = assertor_info
-
-    date = datetime.fromisoformat(str(date)).strftime("%Y-%m-%d %H:%M:%S")
-    dev = page.split('/')[-1]
-
-    description = html_special_chars(description).replace(f"@{dev}", f"[@{dev}]({page})")
-    script_name = script.split("/")[-2]
-
-    result.append(f"|Assertor|[{dev}]({page})|")
-    result.append("|----|-----|")
-    result.append(f"|Title|{html_special_chars(title)}|")
-    result.append(f"|Description|{description}|")
-    result.append(f"|Script|[{script_name} test suite]({script})")
-    result.append(f"|Date|{date}|")
-
-    result.append("")
-    result.append("***")
-    result.append("")
+    result.extend([
+        f"|Title|{test_title}|",
+        "|--|--|",
+        f"|Description|{test_description}|",
+        f"|Tester|[{tester_name}]({tester_page})|",
+        f"|Ontology|[{REPO_REF}]({tested_project})|"
+    ])
+    
+    result.extend([
+        f"|Ontology version|[{tested_project_version}]({REPO_URI}/tree/{tested_project_version})|"
+    ] if MODE == "actions" else [
+        f"|Ontology version|Local state `{tested_project_version}`|",
+        f"|Ontology version date|{tested_project_version_date}|",
+        f"|Ontology previous version|[{commit}]({REPO_URI}/tree/{commit})|"
+    ])
+    
+    result.extend([
+        f"|Ontology branch|[{BRANCH}]({REPO_URI}/tree/{BRANCH})|",
+        f"|Olivaw suite|[olivaw {test_suite.split('/')[-2]} test suite]({test_suite})|",
+        f"|Olivaw version|[{test_suite_version}]({OLIVAW_REPOSITORY})|",
+        f"|Generated turtle|[Turtle report](./{relpath(turtle_report[8:], PWD_TO_OUTPUT_FOLDER)})|",
+        f"|Generated Markdown|[Markdown report](./{relpath(markdown_report[8:], PWD_TO_OUTPUT_FOLDER)})|"
+    ])
 
     return result
 
@@ -332,14 +366,12 @@ def get_criterion_details(
     :rtype: `tuple[str, str, str, str]`
     
     """
-    criterion_path = uri.split("#")[0].split("/")
-    criterion_ref = "/".join(criterion_path[3:5])
 
     criterion_id = None
     criterion_title = None
     criterion_description = None
 
-    if criterion_ref == OLIVAW_REF:
+    if uri.split("#")[0] == OLIVAW_ONTOLOGY[:-1]:
         criterion_id = uri.split('#')[-1]
         criterion_resource = CRITERION_DATA if criterion_id in CRITERION_DATA else shape_data
         criterion_title = criterion_resource[criterion_id]["title"]
@@ -978,6 +1010,9 @@ def markdown_export(
 
     :param report: The turtle report
     :type report: `rdflib.Graph`
+
+    :param assertor: The test assertor
+    :type assertor: `rdflib.IdentifiedNode`
 
     :param file_name: The expected file name
     :type file_name: `str`

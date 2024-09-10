@@ -14,7 +14,7 @@ from .uris import EARL_PREFIX
 DEV_PROFILE: str = f"{PLATFORM_URL}/{DEV_USERNAME}"
 """Link to the developper GitHub profile"""
 
-PLATFORM_NAMESPACE: Namespace = Namespace(PLATFORM_URL)
+PLATFORM_NAMESPACE: Namespace = Namespace(f"{PLATFORM_URL}/")
 """Rdflib object representing the git platform namespace"""
 
 EARL_NAMESPACE: Namespace = Namespace(EARL_PREFIX)

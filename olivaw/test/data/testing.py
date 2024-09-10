@@ -32,7 +32,7 @@ from olivaw.test.util import progress_bar, AssertDraft
 
 from py4j.java_gateway import JavaObject
 
-shape_tests, shapes_data = load_valid_custom_tests(CUSTOM_DATA_TESTS)
+shape_tests, shape_data = load_valid_custom_tests(CUSTOM_DATA_TESTS)
 
 def fragment_check(draft: AssertDraft, dataset: str) -> None:
     """Executes a data test over a data fragment
@@ -66,7 +66,7 @@ def fragment_check(draft: AssertDraft, dataset: str) -> None:
 
     if not is_valid:
         make_not_tested(draft, "owl-rl-constraint", "term-recognition", "namespace-validity")
-        make_not_tested(draft(custom_test_data=shapes_data), *list(shapes_data.keys()))
+        make_not_tested(draft(custom_test_data=shape_data), *list(shape_data.keys()))
         return
 
     constraint_violations = []
