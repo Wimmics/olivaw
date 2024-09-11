@@ -73,7 +73,9 @@ runs:
         echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
         echo "REPO=$(echo ${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
 
-        echo "COMMIT_HASH=$(git rev-parse origin/${{ env.BRANCH }})" >> $GITHUB_ENV
+        COMMIT_HASH=$(git rev-parse origin/${{ env.BRANCH }})
+        echo "COMMIT_HASH=$(echo ${COMMIT_HASH})"
+        echo "COMMIT_HASH=$(echo ${COMMIT_HASH})" >> $GITHUB_ENV
 
     - name: Install Olivaw test suite
       if: ${{ hashFiles('.acimov/parameters.json') != '' }}
