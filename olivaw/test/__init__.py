@@ -10,6 +10,7 @@ from olivaw.constants import (
     BLOCKING_ERRORS,
     BRANCH
 )
+from olivaw.constants.git_info import COMMIT_HASH
 
 errors = []
 
@@ -36,4 +37,8 @@ if len(errors) > 0:
 
 if BRANCH is None:
     print('fatal: Command "git rev-parse --abbrev-ref HEAD" should return the current branch or BRANCH option should be set')
+    exit(1)
+
+if COMMIT_HASH is None:
+    print('fatal: Command "git rev-parse origin/HEAD" should return the current commit hash or argument "COMMIT_HASH" should be set')
     exit(1)

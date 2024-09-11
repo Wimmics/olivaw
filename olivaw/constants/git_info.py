@@ -134,8 +134,7 @@ else:
     .decode('utf-8')\
     .strip()
   except:
-    print(f'fatal: Command "git rev-parse origin/{BRANCH}" should return the current commit hash or argument "COMMIT_HASH" should be set')
-    exit(1)
+    pass
 
 arg_ref = [item.split("=")[1] for item in argv if item.startswith("--REF=")]
 
