@@ -45,9 +45,6 @@ else:
     print('fatal: Command "git config --get remote.origin.url" should return the repository URI or argument "REPO_URI" should be set')
     exit(1)
 
-# The commit hash
-arg_hash = [item.split("=")[1] for item in argv if item.startswith("--COMMIT_HASH=")]
-
 # The commit date
 arg_date = [item.split("=")[1] for item in argv if item.startswith("--COMMIT_DATE=")]
 
@@ -121,8 +118,11 @@ else:
   except:
     BRANCH = None
 
+# The current commit hash
 COMMIT_HASH: str = None
 """Local repository commit hash"""
+
+arg_hash = [item.split("=")[1] for item in argv if item.startswith("--COMMIT_HASH=")]
 
 if len(arg_hash) > 0:
   COMMIT_HASH = arg_hash[0]

@@ -106,6 +106,9 @@ def make_assertor(report: Graph, test_type: str) -> BNode:
     :param report: The test report
     :type report: `rdflib.Graph`
 
+    :param test_type: The type of test that is going to be run
+    :type test_type: `str`
+
     :return: The assertor node
     :rtype: `rdflib.BNode`
     """

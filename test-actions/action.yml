@@ -62,17 +62,30 @@ runs:
         repository: ${{ inputs.repository }}
         ref: ${{ inputs.ref }}
 
+    - name: Retrieve basic repository information
+      shell: bash
+      run: |
+        REF=${{ inputs.ref }}
+        echo "github.ref: $REF"
+        IFS='/' read -ra PATHS <<< "$REF"
+        BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
+        echo $BRANCH_NAME
+        echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
+        echo "REPO=$(echo ${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
+
+        echo "COMMIT_HASH=$(git rev-parse origin/${{ env.BRANCH }})" >> $GITHUB_ENV
+
     - name: Install Olivaw test suite
       if: ${{ hashFiles('.acimov/parameters.json') != '' }}
       shell: bash
-      run: pip install git+https://github.com/Wimmics/olivaw@v0.0.5
+      run: pip install git+https://github.com/Wimmics/olivaw@test-actions
 
     - name: Generate model test report
       id: model-test
       if: ${{ (inputs.model-test == 'true') && (hashFiles('.acimov/parameters.json') != '') }}
       shell: bash
       run: |
-        MODEL_SUMMARY="$(olivaw test model --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        MODEL_SUMMARY="$(olivaw test model --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }} --COMMIT_HASH=${{ env.COMMIT_HASH }})"
         MODEL_TOKENS=($MODEL_SUMMARY)
 
         echo "MODEL_PASS=$(echo ${MODEL_TOKENS[2]})" >> $GITHUB_ENV
@@ -90,14 +103,6 @@ runs:
 
         echo "GISTID=$(olivaw show gist --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})" >> $GITHUB_ENV
 
-        REF=${{ inputs.ref }}
-        echo "github.ref: $REF"
-        IFS='/' read -ra PATHS <<< "$REF"
-        BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
-        echo $BRANCH_NAME
-        echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
-        echo "REPO=$(echo ${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
-
         git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
 
     - name: Generate data test report
@@ -105,7 +110,7 @@ runs:
       id: data-test
       if: ${{ (inputs.data-test == 'true') && (hashFiles('.acimov/parameters.json') != '') }}
       run: |
-        DATA_SUMMARY="$(olivaw test data --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        DATA_SUMMARY="$(olivaw test data --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }} --COMMIT_HASH=${{ env.COMMIT_HASH }}))"
         DATA_TOKENS=($DATA_SUMMARY)
 
         echo "DATA_PASS=$(echo ${DATA_TOKENS[2]})" >> $GITHUB_ENV
@@ -121,7 +126,7 @@ runs:
       id: query-test
       if: ${{ inputs.query-test == 'true' && (hashFiles('.acimov/parameters.json') != '') }}
       run: |
-        QUERY_SUMMARY="$(olivaw test query --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
+        QUERY_SUMMARY="$(olivaw test query --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }} --COMMIT_HASH=${{ env.COMMIT_HASH }}))"
         QUERY_TOKENS=($QUERY_SUMMARY)
 
         echo "QUERY_PASS=$(echo ${QUERY_TOKENS[2]})" >> $GITHUB_ENV
