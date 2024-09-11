@@ -273,7 +273,6 @@ try:
     }
     CRITERION_IDS = list(CRITERION_DATA.keys())
 except:
-  raise
   pass
 
 MODEL_BEST_PRACTICES_TESTS: list[str] = ["owl-rl-constraint", "profile-compatibility", "term-referencing", "domain-and-range-referencing", "terms-differenciation", "labeled-terms"]
