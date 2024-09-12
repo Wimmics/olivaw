@@ -67,7 +67,7 @@ runs:
       run: |
         IFS='/' read -ra PATHS <<< "${{ inputs.ref }}"
 
-        BRANCH="${PATHS[2]}"
+        BRANCH=${PATHS[2]}
         echo "BRANCH=$(echo ${BRANCH})" >> $GITHUB_ENV
         echo "Repository branch: ${{ env.BRANCH }}"
 
