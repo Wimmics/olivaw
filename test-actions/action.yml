@@ -65,17 +65,17 @@ runs:
     - name: Retrieve basic repository information
       shell: bash
       run: |
-        REF=${{ inputs.ref }}
-        echo "github.ref: $REF"
-        IFS='/' read -ra PATHS <<< "$REF"
-        BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
-        echo $BRANCH_NAME
-        echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
+        IFS='/' read -ra PATHS <<< "${{ inputs.ref }}"
+
         echo "REPO=$(echo ${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
+        echo "Repository ref: ${{ env.REPO }}"
+
+        echo "BRANCH=$(echo ${PATHS[2]})" >> $GITHUB_ENV
+        echo "Repository branch: ${{ env.BRANCH }}"
 
         COMMIT_HASH=$(git rev-parse origin/${{ env.BRANCH }})
-        echo "COMMIT_HASH=$(echo ${COMMIT_HASH})"
         echo "COMMIT_HASH=$(echo ${COMMIT_HASH})" >> $GITHUB_ENV
+        echo "Commit hash: ${{ env.COMMIT_HASH }}"
 
     - name: Install Olivaw test suite
       if: ${{ hashFiles('.acimov/parameters.json') != '' }}
