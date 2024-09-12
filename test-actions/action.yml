@@ -71,7 +71,7 @@ runs:
         BRANCH="${PATHS[2]}"
         echo "BRANCH=$(echo $BRANCH)" >> $GITHUB_ENV
         echo "Local Repository branch: $BRANCH"
-        echo "Env Repository branch: ${{ BRANCH }}"
+        echo "Env Repository branch: ${{ env.BRANCH }}"
 
         COMMIT_HASH="$(git rev-parse origin/$BRANCH)"
         echo "COMMIT_HASH=$(echo $COMMIT_HASH)" >> $GITHUB_ENV
