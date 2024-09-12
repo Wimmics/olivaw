@@ -67,11 +67,13 @@ runs:
       run: |
         IFS='/' read -ra PATHS <<< "${{ inputs.ref }}"
 
-        echo "REPO=$(echo ${{ inputs.repository }} | cut -d'/' -f2)" >> $GITHUB_ENV
-        echo "Repository ref: ${{ env.REPO }}"
-
-        echo "BRANCH=$(echo ${PATHS[2]})" >> $GITHUB_ENV
+        BRANCH="${PATHS[2]}"
+        echo "BRANCH=$(echo ${BRANCH})" >> $GITHUB_ENV
         echo "Repository branch: ${{ env.BRANCH }}"
+
+        REPO="$(echo ${{ inputs.repository }} | cut -d'/' -f2)"
+        echo "REPO=$(echo ${REPO})" >> $GITHUB_ENV
+        echo "Repository: ${{ env.REPO }}"
 
         COMMIT_HASH=$(git rev-parse origin/${{ env.BRANCH }})
         echo "COMMIT_HASH=$(echo ${COMMIT_HASH})" >> $GITHUB_ENV
