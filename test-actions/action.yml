@@ -89,21 +89,11 @@ runs:
         COMMIT_REPORTS=${{ (env.RUN_ANY_TESTS == 'true') && (inputs.commit-report == 'true') }}
         echo "COMMIT_REPORTS=$(echo $COMMIT_REPORTS)" >> $GITHUB_ENV
 
-    - name: Get olivaw actions version
-      id: actions-version
-      shell: bash
-      run: |
-        ACTIONS_REF=${{ github.workflow_ref }}
-        IFS='@' read -ra ACTIONS_REF_PARTS <<< "$ACTIONS_REF"
-        OLIVAW_HASH="${ACTIONS_REF_PARTS[1]}"
-        echo "OLIVAW_HASH=$(echo $OLIVAW_HASH)" >> $GITHUB_ENV
-        echo "Olivaw hash: $OLIVAW_HASH"
-
     - name: Install Olivaw test suite
       id: install-olivaw
       if: ${{ env.INITIALIZED == 'true' }}
       shell: bash
-      run: pip install git+https://github.com/Wimmics/olivaw.git@${{ env.OLIVAW_HASH }}
+      run: pip install git+https://github.com/Wimmics/olivaw.git@${{ github.action_ref }}
 
     - name: Compute olivaw command line parameters
       id: olivaw-parameters
