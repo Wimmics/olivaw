@@ -62,6 +62,89 @@ runs:
         repository: ${{ github.repository }}
         ref: ${{ github.sha }}
 
+    - name: Github context diagnose
+      id: diagnose
+      shell: bash
+      run: |
+        echo "action"
+        echo ${{ github.action }}
+        echo "action_path"
+        echo ${{ github.action_path }}
+        echo "action_ref"
+        echo ${{ github.action_ref }}
+        echo "action_repository"
+        echo ${{ github.action_repository }}
+        echo "action_status"
+        echo ${{ github.action_status }}
+        echo "actor"
+        echo ${{ github.actor }}
+        echo "actor_id"
+        echo ${{ github.actor_id }}
+        echo "api_url"
+        echo ${{ github.api_url }}
+        echo "base_ref"
+        echo ${{ github.base_ref }}
+        echo "env"
+        echo ${{ github.env }}
+        echo "event"
+        echo ${{ github.event }}
+        echo "event_name"
+        echo ${{ github.event_name }}
+        echo "event_path"
+        echo ${{ github.event_path }}
+        echo "graphql_url"
+        echo ${{ github.graphql_url }}
+        echo "head_ref"
+        echo ${{ github.head_ref }}
+        echo "job"
+        echo ${{ github.job }}
+        echo "path"
+        echo ${{ github.path }}
+        echo "ref"
+        echo ${{ github.ref }}
+        echo "ref_name"
+        echo ${{ github.ref_name }}
+        echo "ref_protected"
+        echo ${{ github.ref_protected }}
+        echo "ref_type"
+        echo ${{ github.ref_type }}
+        echo "repository"
+        echo ${{ github.repository }}
+        echo "repository_id"
+        echo ${{ github.repository_id }}
+        echo "repository_owner"
+        echo ${{ github.repository_owner }}
+        echo "repository_owner_id"
+        echo ${{ github.repository_owner_id }}
+        echo "repositoryUrl"
+        echo ${{ github.repositoryUrl }}
+        echo "retention_days"
+        echo ${{ github.retention_days }}
+        echo "run_id"
+        echo ${{ github.run_id }}
+        echo "run_number"
+        echo ${{ github.run_number }}
+        echo "run_attempt"
+        echo ${{ github.run_attempt }}
+        echo "secret_source"
+        echo ${{ github.secret_source }}
+        echo "server_url"
+        echo ${{ github.server_url }}
+        echo "sha"
+        echo ${{ github.sha }}
+        echo "token"
+        echo ${{ github.token }}
+        echo "triggering_actor"
+        echo ${{ github.triggering_actor }}
+        echo "workflow"
+        echo ${{ github.workflow }}
+        echo "workflow_ref"
+        echo ${{ github.workflow_ref }}
+        echo "workflow_sha"
+        echo ${{ github.workflow_sha }}
+        echo "workspace"
+        echo ${{ github.workspace }}
+
     - name: Compute which actions steps to perform
       id: plan-actions
       shell: bash
