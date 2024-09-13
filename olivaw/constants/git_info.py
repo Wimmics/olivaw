@@ -45,25 +45,6 @@ else:
     print('fatal: Command "git config --get remote.origin.url" should return the repository URI or argument "REPO_URI" should be set')
     exit(1)
 
-# The commit date
-arg_date = [item.split("=")[1] for item in argv if item.startswith("--COMMIT_DATE=")]
-
-COMMIT_DATE: str = None
-"""Local repository last commit date"""
-
-if len(arg_date) > 0:
-  COMMIT_DATE = arg_date[0]
-else:
-  try:
-    COMMIT_DATE = check_output(
-      "git log -1 --format=%cd --date=format:%Y-%m-%dT%H:%M:%S".split(" ")
-    )\
-    .decode('utf-8')\
-    .strip()
-  except:
-    print('fatal: Command "git log -1 --format=%cd --date=format:%Y-%m-%dT%H:%M:%S" should return the current last commit date or argument "COMMIT_DATE" should be set')
-    exit(1)
-
 # The repository state
 REPO_STATE: str = None
 """Hash representing the current state of the local repository"""
@@ -136,6 +117,26 @@ else:
   except:
     pass
 
+# The commit date
+arg_date = [item.split("=")[1] for item in argv if item.startswith("--COMMIT_DATE=")]
+
+COMMIT_DATE: str = None
+"""Local repository last commit date"""
+
+if len(arg_date) > 0:
+  COMMIT_DATE = arg_date[0]
+else:
+  try:
+    COMMIT_DATE = check_output(
+      f"git log -1 --format=%cd --date=format:%Y-%m-%dT%H:%M:%S {COMMIT_HASH}".split(" ")
+    )\
+    .decode('utf-8')\
+    .strip()
+  except:
+    print('fatal: Command "git log -1 --format=%cd --date=format:%Y-%m-%dT%H:%M:%S {COMMIT_HASH}" should return the current last commit date or argument "COMMIT_DATE" should be set')
+    exit(1)
+
+# The repository ref
 arg_ref = [item.split("=")[1] for item in argv if item.startswith("--REF=")]
 
 REF: str = None

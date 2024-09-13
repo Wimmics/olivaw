@@ -48,47 +48,99 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Get event name
-      shell: bash
-      run: echo "EVENT=${{ github.event_name }}"
-
-    - uses: actions/setup-python@v5 
+    - name: Install python environment
+      id: setup-python
+      uses: actions/setup-python@v5 
       with:
         python-version: 'pypy3.10'
 
     - name: Get repository
+      id: checkout-repo
       uses: actions/checkout@v4
       with:
-        repository: ${{ inputs.repository }}
-        ref: ${{ inputs.ref }}
+        github-server-url: ${{ github.server_url }}
+        repository: ${{ github.repository }}
+        ref: ${{ github.sha }}
 
-    - name: Retrieve basic repository information
+    - name: Compute which actions steps to perform
+      id: plan-actions
       shell: bash
       run: |
+        INITIALIZED=${{ hashFiles('.acimov/parameters.json') != '' }}
+        echo "INITIALIZED=$(echo $INITIALIZED)" >> $GITHUB_ENV
+        echo "Is repository initialized: $INITIALIZED"
+
+        RUN_MODEL_TESTS=${{ (inputs.model-test == 'true') && (env.INITIALIZED == 'true') }}
+        echo "RUN_MODEL_TESTS=$(echo $RUN_MODEL_TESTS)" >> $GITHUB_ENV
+        echo "Run model tests: $RUN_MODEL_TESTS"
+
+        RUN_DATA_TESTS=${{ (inputs.data-test == 'true') && (env.INITIALIZED == 'true') }}
+        echo "RUN_DATA_TESTS=$(echo $RUN_DATA_TESTS)" >> $GITHUB_ENV
+        echo "Run data tests: $RUN_DATA_TESTS"
+
+        RUN_QUERY_TESTS=${{ (inputs.query-test == 'true') && (env.INITIALIZED == 'true') }}
+        echo "RUN_QUERY_TESTS=$(echo $RUN_QUERY_TESTS)" >> $GITHUB_ENV
+        echo "Run query tests: $RUN_QUERY_TESTS"
+
+        RUN_ANY_TESTS=${{ (env.RUN_MODEL_TESTS == 'true') || (env.RUN_DATA_TESTS == 'true') || (env.RUN_QUERY_TESTS == 'true') }}
+        echo "RUN_ANY_TESTS=$(echo $RUN_ANY_TESTS)" >> $GITHUB_ENV
+        echo "Run any tests: $RUN_ANY_TESTS"
+
+        COMMIT_REPORTS=${{ (env.RUN_ANY_TESTS == 'true') && (inputs.commit-report == 'true') }}
+        echo "COMMIT_REPORTS=$(echo $COMMIT_REPORTS)" >> $GITHUB_ENV
+
+    - name: Install Olivaw test suite
+      id: install-olivaw
+      if: ${{ env.INITIALIZED == 'true' }}
+      shell: bash
+      run: pip install git+https://github.com/Wimmics/olivaw@${{ github.workflow_sha }}
+
+    - name: Compute olivaw command line parameters
+      id: olivaw-parameters
+      if: ${{ env.INITIALIZED == 'true' }}
+      shell: bash
+      run: |
+        DEV_USERNAME=${{ github.actor }}
+        echo "DEV_USERNAME=$(echo $DEV_USERNAME)" >> $GITHUB_ENV
+        echo "Dev username: $DEV_USERNAME"
+
+        SERVER_URL=${{ github.server_url }}
+        REPO=${{ github.repository }}
+        REPO_URI="$SERVER_URL/$REPO"
+        echo "REPO_URI=$(echo $REPO_URI)" >> $GITHUB_ENV
+        echo "Repository URI: $REPO_URI"
+
         REF=${{ github.ref }}
         IFS='/' read -ra PATHS <<< "$REF"
-
         BRANCH="${PATHS[2]}"
         echo "BRANCH=$(echo $BRANCH)" >> $GITHUB_ENV
-        echo "Local Repository branch: $BRANCH"
-        echo "Env Repository branch: ${{ env.BRANCH }}"
+        echo "Repository branch: $BRANCH"
 
         COMMIT_HASH="$(git rev-parse origin/$BRANCH)"
         echo "COMMIT_HASH=$(echo $COMMIT_HASH)" >> $GITHUB_ENV
-        echo "Local Commit hash: $COMMIT_HASH"
-        echo "Env Commit hash: ${{ env.COMMIT_HASH }}"
+        echo "Commit hash: $COMMIT_HASH"
 
-    - name: Install Olivaw test suite
-      if: ${{ hashFiles('.acimov/parameters.json') != '' }}
+        COMMIT_DATE="$(git log -1 --format=%cd --date=format:%Y-%m-%dT%H:%M:%S $COMMIT_HASH)"
+        echo "COMMIT_DATE=$(echo $COMMIT_DATE)" >> $GITHUB_ENV
+        echo "Commit date: $COMMIT_DATE"
+
+        OLIVAW_PARAMETERS="--MODE==ACTIONS --DEV_USERNAME=$DEV_USERNAME --REPO_URI=$REPO_URI --BRANCH=$BRANCH --COMMIT_HASH=$COMMIT_HASH --COMMIT_DATE=$COMMIT_DATE"
+        echo "OLIVAW_PARAMETERS=$(echo $OLIVAW_PARAMETERS)" >> $GITHUB_ENV
+        echo "Olivaw Actions parameters: $OLIVAW_PARAMETERS"
+
+    - name: Retrieve current repository GIST parameter
+      id: repo-gist
+      if: ${{ env.INITIALIZED == 'true' }}
       shell: bash
-      run: pip install git+https://github.com/Wimmics/olivaw@test-actions
+      run: |
+        echo "GISTID=$(olivaw show gist ${{ env.OLIVAW_PARAMETERS }})" >> $GITHUB_ENV
 
     - name: Generate model test report
       id: model-test
-      if: ${{ (inputs.model-test == 'true') && (hashFiles('.acimov/parameters.json') != '') }}
+      if: ${{ env.RUN_MODEL_TESTS == 'true' }}
       shell: bash
       run: |
-        MODEL_SUMMARY="$(olivaw test model --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }} --COMMIT_HASH=${{ env.COMMIT_HASH }})"
+        MODEL_SUMMARY="$(olivaw test model ${{ env.OLIVAW_PARAMETERS }})"
         MODEL_TOKENS=($MODEL_SUMMARY)
 
         echo "MODEL_PASS=$(echo ${MODEL_TOKENS[2]})" >> $GITHUB_ENV
@@ -104,16 +156,14 @@ runs:
         echo "RL_LABEL=$(echo ${MODEL_TOKENS[29]})" >> $GITHUB_ENV
         echo "RL_COLOR=$(echo ${MODEL_TOKENS[32]})" >> $GITHUB_ENV
 
-        echo "GISTID=$(olivaw show gist --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})" >> $GITHUB_ENV
-
         git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
 
     - name: Generate data test report
-      shell: bash
       id: data-test
-      if: ${{ (inputs.data-test == 'true') && (hashFiles('.acimov/parameters.json') != '') }}
+      if: ${{ env.RUN_DATA_TESTS == 'true' }}
+      shell: bash
       run: |
-        DATA_SUMMARY="$(olivaw test data --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }} --COMMIT_HASH=${{ env.COMMIT_HASH }}))"
+        DATA_SUMMARY="$(olivaw test data ${{ env.OLIVAW_PARAMETERS }})"
         DATA_TOKENS=($DATA_SUMMARY)
 
         echo "DATA_PASS=$(echo ${DATA_TOKENS[2]})" >> $GITHUB_ENV
@@ -125,11 +175,11 @@ runs:
         git add .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
 
     - name: Generate query test report
-      shell: bash
       id: query-test
-      if: ${{ inputs.query-test == 'true' && (hashFiles('.acimov/parameters.json') != '') }}
+      if: ${{ env.RUN_QUERY_TESTS == 'true' }}
+      shell: bash
       run: |
-        QUERY_SUMMARY="$(olivaw test query --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }} --COMMIT_HASH=${{ env.COMMIT_HASH }}))"
+        QUERY_SUMMARY="$(olivaw test query ${{ env.OLIVAW_PARAMETERS }})"
         QUERY_TOKENS=($QUERY_SUMMARY)
 
         echo "QUERY_PASS=$(echo ${QUERY_TOKENS[2]})" >> $GITHUB_ENV
@@ -140,21 +190,58 @@ runs:
 
         git add .acimov/output/query-test-actions.ttl .acimov/output/query-test-actions.md -f
 
+    - name: Check files to commit and/or archive
+      id: check-reports
+      shell: bash
+      run: |
+        MODEL_REPORTS=${{(env.RUN_MODEL_TESTS == 'true') && (steps.model-test.conclusion == 'success') }}
+        echo "MODEL_REPORTS=$(echo $MODEL_REPORTS)" >> $GITHUB_ENV
+        echo "Model reports generated: $MODEL_REPORTS"
+
+        DATA_REPORTS=${{(env.RUN_DATA_TESTS == 'true') && (steps.data-test.conclusion == 'success') }}
+        echo "DATA_REPORTS=$(echo $DATA_REPORTS)" >> $GITHUB_ENV
+        echo "Data reports generated: $DATA_REPORTS"
+
+        QUERY_REPORTS=${{(env.QUERY_REPORTS == 'true') && (steps.query-test.conclusion == 'success') }}
+        echo "QUERY_REPORTS=$(echo $QUERY_REPORTS)" >> $GITHUB_ENV
+        echo "Query reports generated: $QUERY_REPORTS"
+
+        ANY_REPORTS=${{(env.MODEL_REPORTS == 'true') || (env.DATA_REPORTS == 'true') || (env.QUERY_REPORTS == 'true')}}
+        echo "ANY_REPORTS=$(echo $ANY_REPORTS)" >> $GITHUB_ENV
+        echo "Any reports generated: $ANY_REPORTS"
+
+        SHOULD_COMMIT=${{(env.ANY_REPORTS == 'true') && (env.COMMIT_REPORTS == 'true')}}
+        echo "SHOULD_COMMIT=$(echo $SHOULD_COMMIT)" >> $GITHUB_ENV
+        echo "Should proceed to commit: $SHOULD_COMMIT"
+
+        ARCHIVE_MODEL=${{(env.MODEL_REPORTS  == 'true') && (inputs.archive-report == 'true')}}
+        echo "ARCHIVE_MODEL=$(echo $ARCHIVE_MODEL)" >> $GITHUB_ENV
+        echo "Should archive model reports: $ARCHIVE_MODEL"
+
+        ARCHIVE_DATA=${{(env.DATA_REPORTS  == 'true') && (inputs.archive-report == 'true')}}
+        echo "ARCHIVE_DATA=$(echo $ARCHIVE_DATA)" >> $GITHUB_ENV
+        echo "Should archive data reports: $ARCHIVE_DATA"
+
+        ARCHIVE_QUERY=${{(env.QUERY_REPORTS  == 'true') && (inputs.archive-report == 'true')}}
+        echo "ARCHIVE_QUERY=$(echo $ARCHIVE_QUERY)" >> $GITHUB_ENV
+        echo "Should archive query reports: $ARCHIVE_QUERY"
+
     - name: Add output files to repository
-      id: commit
+      id: commit-reports
       continue-on-error: true
-      if: ${{ ((inputs.model-test == 'true' || inputs.data-test == 'true' || inputs.query-test == 'true') && inputs.commit-report) == 'true' && (hashFiles('.acimov/parameters.json') != '') }}
+      if: ${{ env.SHOULD_COMMIT == 'true' }}
       shell: bash
       run: |
         git config --global user.email "no-reply@github.com"
         git config --global user.name "Olivaw in Actions"
         git pull
         git commit -m "Provide automatic tests report [skip actions]"
-        git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
+        git remote set-url origin ${{ env.REPO_URI }}
         git push
 
     - name: Archive model test results
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && inputs.archive-report == 'true' }}
+      id: archive-model
+      if: ${{ env.ARCHIVE_MODEL == 'true' }}
       uses: actions/upload-artifact@v3
       with:
         name: model-test-report
@@ -163,7 +250,8 @@ runs:
             .acimov/output/model-test-actions.ttl
 
     - name: Archive data test results
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && inputs.archive-report == 'true' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: archive-data
+      if: ${{ env.ARCHIVE_DATA == 'true' }}
       uses: actions/upload-artifact@v3
       with:
         name: data-test-report
@@ -172,7 +260,8 @@ runs:
           .acimov/output/data-test-actions.ttl
 
     - name: Archive query test results
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && inputs.archive-report == 'true' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: archive-query
+      if: ${{ env.ARCHIVE_QUERY == 'true' }}
       uses: actions/upload-artifact@v3
       with:
         name: query-test-report
@@ -181,7 +270,8 @@ runs:
           .acimov/output/query-test-actions.ttl
 
     - name: Create the Pass Model Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: model-pass
+      if: ${{ env.MODEL_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -192,7 +282,8 @@ runs:
         color: green
 
     - name: Create the NotTested Model Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: model-nottested
+      if: ${{ env.MODEL_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -203,7 +294,8 @@ runs:
         color: White
 
     - name: Create the CannotTell Model Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: model-cannottell
+      if: ${{ env.MODEL_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -214,7 +306,8 @@ runs:
         color: yellow
 
     - name: Create the MinorFail Model Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: model-minorfail
+      if: ${{ env.MODEL_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -225,7 +318,8 @@ runs:
         color: orange
 
     - name: Create the MajorFail Model Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: model-majorfail
+      if: ${{ env.MODEL_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -236,7 +330,8 @@ runs:
         color: red
 
     - name: Create the OWL_EL Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: profile-el
+      if: ${{ env.MODEL_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -247,7 +342,8 @@ runs:
         color: ${{ env.EL_COLOR }}
 
     - name: Create the OWL_QL Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: profile-ql
+      if: ${{ env.MODEL_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -258,7 +354,8 @@ runs:
         color: ${{ env.QL_COLOR }}
 
     - name: Create the OWL_RL Badge
-      if: ${{ inputs.model-test == 'true' && steps.model-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: profile-rl
+      if: ${{ env.MODEL_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -269,7 +366,8 @@ runs:
         color: ${{ env.RL_COLOR }}
 
     - name: Create the Pass Data badge
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: data-pass
+      if: ${{ env.DATA_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -280,7 +378,8 @@ runs:
         color: green
 
     - name: Create the NotTested Data Badge
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: data-nottested
+      if: ${{ env.DATA_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -291,7 +390,8 @@ runs:
         color: White
 
     - name: Create the CannotTell Data Badge
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: data-cannottell
+      if: ${{ env.DATA_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -302,7 +402,8 @@ runs:
         color: yellow
 
     - name: Create the MinorFail Data Badge
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: data-minorfail
+      if: ${{ env.DATA_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -313,7 +414,8 @@ runs:
         color: orange
 
     - name: Create the MajorFail Data Badge
-      if: ${{ inputs.data-test == 'true' && steps.data-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: data-majorfail
+      if: ${{ env.DATA_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -324,7 +426,8 @@ runs:
         color: red
 
     - name: Create the Pass Query badge
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: query-pass
+      if: ${{ env.QUERY_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -335,7 +438,8 @@ runs:
         color: green
 
     - name: Create the NotTested Query Badge
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: query-nottested
+      if: ${{ env.QUERY_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -346,7 +450,8 @@ runs:
         color: White
 
     - name: Create the CannotTell Query Badge
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: query-cannottell
+      if: ${{ env.QUERY_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -357,7 +462,8 @@ runs:
         color: yellow
 
     - name: Create the MinorFail Query Badge
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: query-minorfail
+      if: ${{ env.QUERY_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
@@ -368,7 +474,8 @@ runs:
         color: orange
 
     - name: Create the MajorFail Query Badge
-      if: ${{ inputs.query-test == 'true' && steps.query-test.conclusion == 'success' && (hashFiles('.acimov/parameters.json') != '') }}
+      id: query-majorfail
+      if: ${{ env.QUERY_REPORTS == 'true' }}
       uses: schneegans/dynamic-badges-action@v1.7.0
       with:
         auth: ${{ inputs.gist-secret }}
