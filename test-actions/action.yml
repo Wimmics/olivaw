@@ -126,7 +126,7 @@ runs:
       if: ${{ env.INITIALIZED == 'true' }}
       shell: bash
       run: |
-        OLIVAW_PARAMETERS="--MODE==ACTIONS --REPO-ROOT=. --REF=${{ github.ref }}"
+        OLIVAW_PARAMETERS="--MODE=ACTIONS --REPO-ROOT=. --REF=${{ github.ref }}"
 
         DEV_USERNAME=${{ github.actor }}
         echo "DEV_USERNAME=$(echo $DEV_USERNAME)" >> $GITHUB_ENV

@@ -186,7 +186,7 @@ def make_assertor(report: Graph, test_type: str) -> BNode:
         (assertor, PROV.used, tested_project),
         (assertor, PROV.qualifiedUsage, tested_project_association),
         (assertor, DCTERMS.title, Literal(f"{test_type.capitalize()} tests of {REPO_REF} on branch {BRANCH}")),
-        (assertor, DCTERMS.description, Literal(f"{DEV_USERNAME} launch {MODE} run of {test_type} tests against {REPO_REF} on branch {BRANCH}"))
+        (assertor, DCTERMS.description, Literal(f"{DEV_USERNAME} launch {MODE.lower()} run of {test_type} tests against {REPO_REF} on branch {BRANCH}"))
     ])
     
     for triple in triples:

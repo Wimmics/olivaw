@@ -47,8 +47,11 @@ modes = [
   if item.startswith("--MODE=")
 ]
 
-MODE: str = modes[0].lower() if len(modes) > 0 else "manual"
+MODE: str = modes[0].upper() if len(modes) > 0 else "MANUAL"
 """The execution mode that will drive some olivaw behaviour, default is manual"""
+
+MANUAL: str = MODE == "MANUAL"
+"""Indicates if olivaw is in manual mode"""
 
 ACTIONS: bool = MODE == "ACTIONS"
 """Indicates if olivaw is in actions mode"""

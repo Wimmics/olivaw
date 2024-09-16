@@ -9,6 +9,7 @@ from rdflib import Graph
 
 
 from olivaw.constants import (
+    MANUAL,
     MODE,
     DEV_USERNAME,
     PWD_TO_OUTPUT_FOLDER
@@ -33,7 +34,7 @@ def file_name(test_type: str) -> str:
     :returns: A file name
     :rtype: `str`
     """
-    suffix = MODE.lower() if not MODE == "manual" else f"{MODE}-{DEV_USERNAME}-{datetime_id()}"
+    suffix = MODE.lower() if not MANUAL else f"{MODE.lower()}-{DEV_USERNAME}-{datetime_id()}"
     name = f"{test_type}-test-{suffix}"
     return name
 

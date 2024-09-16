@@ -1,6 +1,6 @@
 """Module providing functions for markdown report format generation"""
 
-from olivaw.constants import BRANCH
+from olivaw.constants import ACTIONS, BRANCH
 from typing import Union
 from rdflib import BNode, Graph, Literal, URIRef
 from datetime import datetime
@@ -270,7 +270,7 @@ def make_assertor_chapter(report: Graph) -> list[str]:
     
     result.extend([
         f"|Ontology version|[{tested_project_version}]({REPO_URI}/tree/{tested_project_version})|"
-    ] if MODE == "actions" else [
+    ] if ACTIONS else [
         f"|Ontology version|Local state `{tested_project_version}`|",
         f"|Ontology version date|{tested_project_version_date}|",
         f"|Ontology previous version|[{commit}]({REPO_URI}/tree/{commit})|"
@@ -1094,7 +1094,7 @@ def markdown_export(
             f"RL_color\t: {rl_color}"
         ]
 
-    if MODE == "ACTIONS":
+    if ACTIONS:
         for badgeData in badgesData:
             print(badgeData)
 
