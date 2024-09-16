@@ -142,7 +142,7 @@ runs:
         echo "BRANCH=$(echo $BRANCH)" >> $GITHUB_ENV
         echo "Repository branch: $BRANCH"
 
-        COMMIT_HASH="$(git rev-parse origin/$BRANCH --)"
+        COMMIT_HASH=${{ github.sha }}
         echo "COMMIT_HASH=$(echo $COMMIT_HASH)" >> $GITHUB_ENV
         echo "Commit hash: $COMMIT_HASH"
 
