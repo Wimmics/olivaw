@@ -5,7 +5,7 @@ from sys import argv, builtin_module_names, exit
 
 from .olivaw import VERSION
 
-arg_root = [item.split("=")[1] for item in argv if item.startswith("--REPO-ROOT=")]
+arg_root = [item.split("=")[1] for item in argv if item.startswith("--REPO_ROOT=")]
 
 ROOT_FOLDER: str = None
 """Root folder of the current repository"""
@@ -49,25 +49,30 @@ else:
 REPO_STATE: str = None
 """Hash representing the current state of the local repository"""
 
-try:
-  # Launch the process that will output current repo state
-  snapshot = Popen(
-    "git ls-files -m -d -s .".split(" "),
-    stdout=PIPE
-  )
+arg_state = [item.split("=")[1] for item in argv if item.startswith("--REPO_STATE=")]
 
-  # Launch a hash process and inject as input the previous process output
-  REPO_STATE = check_output(
-    "git hash-object --stdin".split(" "),
-    stdin=snapshot.stdout
-  )\
-  .decode("utf-8")\
-  .strip()
-  
-  # Wait for snapshot process to end
-  snapshot.wait()
-except:
-  pass
+if len(arg_state) > 0:
+  REPO_STATE = arg_state[0]
+else:
+  try:
+    # Launch the process that will output current repo state
+    snapshot = Popen(
+      "git ls-files -m -d -s .".split(" "),
+      stdout=PIPE
+    )
+
+    # Launch a hash process and inject as input the previous process output
+    REPO_STATE = check_output(
+      "git hash-object --stdin".split(" "),
+      stdin=snapshot.stdout
+    )\
+    .decode("utf-8")\
+    .strip()
+    
+    # Wait for snapshot process to end
+    snapshot.wait()
+  except:
+    pass
   
 if REPO_URI.endswith("/"):
   REPO_URI = REPO_URI[:-1]
