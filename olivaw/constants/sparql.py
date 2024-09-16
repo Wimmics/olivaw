@@ -187,11 +187,11 @@ SELECT
     prov:entity ?testedProjectNode .
 
   ?testedProjectNode olivaw:hostedAt ?testedProject ;
-    dcterms:hasVersion ?testedProjectVersion .
+    dcterms:hasVersion ?testedProjectVersion ;
+    dcterms:date ?testedProjectVersionDate .
 
   OPTIONAL {
-    ?testedProjectNode olivaw:patchedFrom ?commit ;
-      dcterms:date ?testedProjectVersionDate .
+    ?testedProjectNode olivaw:patchedFrom ?commit .
   }
 
   # Retrieve tester information
