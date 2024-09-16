@@ -229,7 +229,7 @@ runs:
 
         git add .acimov/output/query-test-actions.ttl .acimov/output/query-test-actions.md -f
 
-    - name: Check files to commit and/or archive
+    - name: Check generated reports
       id: check-reports
       shell: bash
       run: |
@@ -245,10 +245,18 @@ runs:
         echo "QUERY_REPORTS=$(echo $QUERY_REPORTS)" >> $GITHUB_ENV
         echo "Query reports generated: $QUERY_REPORTS"
 
+    - name: Check any report
+      id: any-report
+      shell: bash
+      run: |
         ANY_REPORTS=${{(env.MODEL_REPORTS == 'true') || (env.DATA_REPORTS == 'true') || (env.QUERY_REPORTS == 'true')}}
         echo "ANY_REPORTS=$(echo $ANY_REPORTS)" >> $GITHUB_ENV
         echo "Any reports generated: $ANY_REPORTS"
 
+    - name: Report publication planification
+      id: publish-report
+      shell: bash
+      run: |
         SHOULD_COMMIT=${{(env.ANY_REPORTS == 'true') && (env.COMMIT_REPORTS == 'true')}}
         echo "SHOULD_COMMIT=$(echo $SHOULD_COMMIT)" >> $GITHUB_ENV
         echo "Should proceed to commit: $SHOULD_COMMIT"
