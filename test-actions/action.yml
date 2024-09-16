@@ -62,16 +62,6 @@ runs:
         repository: ${{ github.repository }}
         ref: ${{ github.sha }}
 
-    - name: Get olivaw actions version
-      id: actions-version
-      shell: bash
-      run: |
-        ACTIONS_PATH=${{ github. action_path }}
-        IFS='/' read -ra ACTIONS_PATH_PARTS <<< "$ACTIONS_PATH"
-        OLIVAW_HASH="${ACTIONS_PATH_PARTS[7]}"
-        echo "OLIVAW_HASH=$(echo $OLIVAW_HASH)" >> $GITHUB_ENV
-        echo "Olivaw hash: $OLIVAW_HASH"
-
     - name: Compute which actions steps to perform
       id: plan-actions
       shell: bash
@@ -101,11 +91,14 @@ runs:
 
     - name: Get olivaw actions version
       id: actions-version
+      if: ${{ env.INITIALIZED == 'true' }}
       shell: bash
       run: |
-        ACTIONS_REF=${{ github.action_ref || github.ref_name }}
-        echo "ACTIONS_REF=$(echo $ACTIONS_REF)" >> $GITHUB_ENV
-        echo "Olivaw actions ref: $ACTIONS_REF"
+        ACTIONS_PATH=${{ github. action_path }}
+        IFS='/' read -ra ACTIONS_PATH_PARTS <<< "$ACTIONS_PATH"
+        OLIVAW_VERSION="${ACTIONS_PATH_PARTS[7]}"
+        echo "OLIVAW_VERSION=$(echo $OLIVAW_VERSION)" >> $GITHUB_ENV
+        echo "Olivaw hash: $OLIVAW_VERSION"
 
     - name: Install Olivaw test suite
       id: install-olivaw
