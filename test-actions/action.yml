@@ -62,14 +62,18 @@ runs:
         repository: ${{ github.repository }}
         ref: ${{ github.sha }}
 
-    - name: Compute which actions steps to perform
-      id: plan-actions
+    - name: Check if repository is initialized
+      id: check-init
       shell: bash
       run: |
         INITIALIZED=${{ hashFiles('.acimov/parameters.json') != '' }}
         echo "INITIALIZED=$(echo $INITIALIZED)" >> $GITHUB_ENV
         echo "Is repository initialized: $INITIALIZED"
 
+    - name: Compute which actions steps to perform
+      id: plan-actions
+      shell: bash
+      run: |
         A=${{ inputs.model-test == 'true' }}
         B=${{ env.INITIALIZED }}
         RUN_MODEL_TESTS=${{ (inputs.model-test == 'true') && (env.INITIALIZED == 'true') }}
@@ -84,12 +88,21 @@ runs:
         echo "RUN_QUERY_TESTS=$(echo $RUN_QUERY_TESTS)" >> $GITHUB_ENV
         echo "Run query tests: $RUN_QUERY_TESTS"
 
+    - name: Check if any test shoudld be launched
+      id: any-test
+      shell: bash
+      run: |
         RUN_ANY_TESTS=${{ (env.RUN_MODEL_TESTS == 'true') || (env.RUN_DATA_TESTS == 'true') || (env.RUN_QUERY_TESTS == 'true') }}
         echo "RUN_ANY_TESTS=$(echo $RUN_ANY_TESTS)" >> $GITHUB_ENV
         echo "Run any tests: $RUN_ANY_TESTS"
 
+    - name: Check if any report should be commited
+      id: should-commit
+      shell: bash
+      run: |
         COMMIT_REPORTS=${{ (env.RUN_ANY_TESTS == 'true') && (inputs.commit-report == 'true') }}
-        echo "COMMIT_REPORTS=$(echo $COMMIT_REPORTS)" >> $GITHUB_ENV
+        echo "COMMIT_REPORTS=$(echo $COMMIT_REPORTS)" >> $GITHUB_ENV 
+        echo "Should commit reports: $COMMIT_REPORTS"
 
     - name: Get olivaw actions version
       id: actions-version
