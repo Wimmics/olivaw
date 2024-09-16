@@ -71,7 +71,7 @@ runs:
         echo "Is repository initialized: $INITIALIZED"
 
         A=${{ inputs.model-test == 'true' }}
-        B=${{ env.INITIALIZED == 'true' }}
+        B=${{ env.INITIALIZED }}
         RUN_MODEL_TESTS=${{ (inputs.model-test == 'true') && (env.INITIALIZED == 'true') }}
         echo "RUN_MODEL_TESTS=$(echo $RUN_MODEL_TESTS)" >> $GITHUB_ENV
         echo "Run model tests: $RUN_MODEL_TESTS"
