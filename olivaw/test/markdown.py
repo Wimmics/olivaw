@@ -258,6 +258,7 @@ def make_assertor_chapter(report: Graph) -> list[str]:
         .replace(REPO_REF, f"[{REPO_REF}]({tested_project})")
     
     test_date = datetime.fromisoformat(str(test_date)).strftime("%Y-%m-%d %H:%M:%S")
+    print("BROKEN DATETIME" + tested_project_version_date)
     tested_project_version_date = datetime.fromisoformat(str(tested_project_version_date)).strftime("%Y-%m-%d %H:%M:%S")
 
     result.extend([
