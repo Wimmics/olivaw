@@ -1096,7 +1096,7 @@ def markdown_export(
     if "model" in argv:
         badges_data = {
             **badges_data, **{
-                f"{badge_name_prefix}_{profile.split("_")[1]}.json": {
+                f"{badge_name_prefix}_{profile.split('_')[1]}.json": {
                     "label": profile.replace("_", " "),
                     "message": message,
                     "color": color
