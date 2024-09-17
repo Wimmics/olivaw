@@ -113,9 +113,40 @@ runs:
         echo "OLIVAW_VERSION=$(echo $OLIVAW_VERSION)" >> $GITHUB_ENV
         echo "Olivaw version: $OLIVAW_VERSION"
 
+    - name: Caching virtual environment
+      id: cache-venv
+      if: ${{ env.INITIALIZED == 'true' }}
+      uses: actions/cache@v4
+      with:
+        path: ./.venv/
+        key: ${{ runner.os }}-${{ steps.setup-python.outputs.python-path }}-${{ env.OLIVAW_VERSION }}
+
+    - name: Plan if some installation is required in the virtual environment
+      id: plan-venv
+      if: ${{ env.INITIALIZED == 'true' }}
+      shell: bash
+      run: |
+        MAKE_VENV=${{ (env.INITIALIZED == 'true') && (steps.cache-venv.outputs.cache-hit != 'true') }}
+        echo "MAKE_VENV=$(echo $MAKE_VENV)" >> $GITHUB_ENV
+        echo "Prepare virtual environment: $MAKE_VENV"
+
+    - name: Initialize virtual environment if no cache hit
+      id: init-venv
+      if: ${{ env.MAKE_VENV == 'true' }}
+      shell: bash
+      run: |
+        python -m venv ./.venv
+
+    - name: Activate virtual environment
+      id: activate-venv
+      if: ${{ env.INITIALIZED == 'true' }}
+      shell: bash
+      run: |
+        source ./.venv/bin/activate
+
     - name: Install Olivaw test suite
       id: install-olivaw
-      if: ${{ env.INITIALIZED == 'true' }}
+      if: ${{ env.MAKE_VENV == 'true' }}
       shell: bash
       run: pip install git+https://github.com/Wimmics/olivaw.git@${{ env.OLIVAW_VERSION }}
 
