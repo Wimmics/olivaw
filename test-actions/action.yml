@@ -74,7 +74,6 @@ runs:
       id: plan-actions
       shell: bash
       run: |
-        A=${{ secrets.GIST_SECRET }}
         RUN_MODEL_TESTS=${{ (inputs.model-test == 'true') && (env.INITIALIZED == 'true') }}
         echo "RUN_MODEL_TESTS=$(echo $RUN_MODEL_TESTS)" >> $GITHUB_ENV
         echo "Run model tests: $RUN_MODEL_TESTS"
