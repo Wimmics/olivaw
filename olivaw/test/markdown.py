@@ -1117,7 +1117,7 @@ def markdown_export(
             }
         }
 
-    badges_data = {file: dumps(content) for file, content in badges_data.items()}
+    badges_data = {file: {"content": dumps(content)} for file, content in badges_data.items()}
 
     # form a request URL
     url=f"{GITHUB_API}/gists/{GIST_INDEX}"
