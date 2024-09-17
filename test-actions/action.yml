@@ -177,22 +177,7 @@ runs:
       if: ${{ env.RUN_MODEL_TESTS == 'true' }}
       shell: bash
       run: |
-        MODEL_SUMMARY="$(olivaw test model ${{ env.OLIVAW_PARAMETERS }})"
-        MODEL_TOKENS=($MODEL_SUMMARY)
-
-        echo "MODEL_PASS=$(echo ${MODEL_TOKENS[2]})" >> $GITHUB_ENV
-        echo "MODEL_NOTTESTED=$(echo ${MODEL_TOKENS[5]})" >> $GITHUB_ENV
-        echo "MODEL_CANNOTTELL=$(echo ${MODEL_TOKENS[8]})" >> $GITHUB_ENV
-        echo "MODEL_MINORFAIL=$(echo ${MODEL_TOKENS[11]})" >> $GITHUB_ENV
-        echo "MODEL_MAJORFAIL=$(echo ${MODEL_TOKENS[14]})" >> $GITHUB_ENV
-
-        echo "EL_LABEL=$(echo ${MODEL_TOKENS[17]})" >> $GITHUB_ENV
-        echo "EL_COLOR=$(echo ${MODEL_TOKENS[20]})" >> $GITHUB_ENV
-        echo "QL_LABEL=$(echo ${MODEL_TOKENS[23]})" >> $GITHUB_ENV
-        echo "QL_COLOR=$(echo ${MODEL_TOKENS[26]})" >> $GITHUB_ENV
-        echo "RL_LABEL=$(echo ${MODEL_TOKENS[29]})" >> $GITHUB_ENV
-        echo "RL_COLOR=$(echo ${MODEL_TOKENS[32]})" >> $GITHUB_ENV
-
+        olivaw test model ${{ env.OLIVAW_PARAMETERS }}
         git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
 
     - name: Generate data test report
@@ -200,15 +185,7 @@ runs:
       if: ${{ env.RUN_DATA_TESTS == 'true' }}
       shell: bash
       run: |
-        DATA_SUMMARY="$(olivaw test data ${{ env.OLIVAW_PARAMETERS }})"
-        DATA_TOKENS=($DATA_SUMMARY)
-
-        echo "DATA_PASS=$(echo ${DATA_TOKENS[2]})" >> $GITHUB_ENV
-        echo "DATA_NOTTESTED=$(echo ${DATA_TOKENS[5]})" >> $GITHUB_ENV
-        echo "DATA_CANNOTTELL=$(echo ${DATA_TOKENS[8]})" >> $GITHUB_ENV
-        echo "DATA_MINORFAIL=$(echo ${DATA_TOKENS[11]})" >> $GITHUB_ENV
-        echo "DATA_MAJORFAIL=$(echo ${DATA_TOKENS[14]})" >> $GITHUB_ENV
-
+        olivaw test data ${{ env.OLIVAW_PARAMETERS }}
         git add .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
 
     - name: Generate query test report
@@ -216,15 +193,7 @@ runs:
       if: ${{ env.RUN_QUERY_TESTS == 'true' }}
       shell: bash
       run: |
-        QUERY_SUMMARY="$(olivaw test query ${{ env.OLIVAW_PARAMETERS }})"
-        QUERY_TOKENS=($QUERY_SUMMARY)
-
-        echo "QUERY_PASS=$(echo ${QUERY_TOKENS[2]})" >> $GITHUB_ENV
-        echo "QUERY_NOTTESTED=$(echo ${QUERY_TOKENS[5]})" >> $GITHUB_ENV
-        echo "QUERY_CANNOTTELL=$(echo ${QUERY_TOKENS[8]})" >> $GITHUB_ENV
-        echo "QUERY_MINORFAIL=$(echo ${QUERY_TOKENS[11]})" >> $GITHUB_ENV
-        echo "QUERY_MAJORFAIL=$(echo ${QUERY_TOKENS[14]})" >> $GITHUB_ENV
-
+        olivaw test query ${{ env.OLIVAW_PARAMETERS }})
         git add .acimov/output/query-test-actions.ttl .acimov/output/query-test-actions.md -f
 
     - name: Check generated reports
