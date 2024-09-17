@@ -1132,7 +1132,7 @@ def markdown_export(
         "files": badges_data
     }
 
-    print(dumps(badges_data))
+    print(dumps(payload))
 
     #make a requests
     res=post(
