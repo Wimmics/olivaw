@@ -1132,6 +1132,8 @@ def markdown_export(
         "files": badges_data
     }
 
+    print(dumps(badges_data))
+
     #make a requests
     res=post(
         url,

@@ -193,7 +193,7 @@ runs:
       if: ${{ env.RUN_QUERY_TESTS == 'true' }}
       shell: bash
       run: |
-        olivaw test query ${{ env.OLIVAW_PARAMETERS }})
+        olivaw test query ${{ env.OLIVAW_PARAMETERS }}
         git add .acimov/output/query-test-actions.ttl .acimov/output/query-test-actions.md -f
 
     - name: Check generated reports
