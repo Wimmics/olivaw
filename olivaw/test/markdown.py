@@ -1129,10 +1129,7 @@ def markdown_export(
     payload={
         "gist_id": GIST_INDEX,
         "description": f"Olivaw badges for {REPO_NAME}",
-        "files": {
-            "description": f"Olivaw badges for {COMMAND[1]} tests",
-            "files": badges_data
-        }
+        "files": badges_data
     }
 
     #make a requests
