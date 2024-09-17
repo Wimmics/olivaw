@@ -5,6 +5,16 @@ from sys import argv, builtin_module_names, exit
 
 from .olivaw import VERSION
 
+# The GitHub gist token
+arg_token = [item.split("=")[1] for item in argv if item.startswith("--GIST_TOKEN=")]
+
+GIST_TOKEN: str = None
+"""GitHub gist token"""
+
+if len(arg_token) > 0:
+  GIST_TOKEN = arg_token[0]
+
+# The repository root folder
 arg_root = [item.split("=")[1] for item in argv if item.startswith("--REPO_ROOT=")]
 
 ROOT_FOLDER: str = None

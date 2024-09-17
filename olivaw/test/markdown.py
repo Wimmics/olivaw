@@ -1,9 +1,11 @@
 """Module providing functions for markdown report format generation"""
 
-from olivaw.constants import ACTIONS, BRANCH
+from olivaw.constants import ACTIONS, BRANCH, COMMAND
 from typing import Union
 from rdflib import BNode, Graph, Literal, URIRef
 from datetime import datetime
+from requests import post
+from json import dumps
 from sys import argv
 
 from os.path import sep, relpath
@@ -31,9 +33,12 @@ from olivaw.constants import (
     MULTIPLE_HTML_CHARS
 )
 
+from olivaw.constants.badges import GITHUB_API
+from olivaw.constants.corese_info import DECIDABILITY_RANGE
+from olivaw.constants.sparql import PROFILE_DETECTION_RESULTS, SEVERITIES
 from olivaw.test.generic.shacl import get_criterion_data
 from olivaw.constants import REPO_REF, PWD_TO_OUTPUT_FOLDER
-from olivaw.constants.git_info import OLIVAW_ONTOLOGY, OLIVAW_REPOSITORY, REPO_URI
+from olivaw.constants.git_info import GIST_TOKEN, OLIVAW_ONTOLOGY, OLIVAW_REPOSITORY, REF, REPO_NAME, REPO_URI
 
 def html_special_chars(text: str) -> str:
     """Parse the characters from string that need to be converted into HTML special chars
@@ -1072,30 +1077,62 @@ def markdown_export(
 
     md = "\n".join(md)
 
-    badgesData = [
-        f"Pass\t\t: {len(outcomes['Pass'])}",
-        f"NotTested\t: {len(outcomes['NotTested'])}",
-        f"CannotTell\t: {len(outcomes['CannotTell'])}",
-        f"MinorFail\t: {len(outcomes['MinorFail'])}",
-        f"MajorFail\t: {len(outcomes['MajorFail'])}"
-    ]
+    if not ACTIONS or GIST_TOKEN is None:
+        return md
+    
+    # Compute the badges data
+    badge_name_prefix = "_".join(REF.split("/")[1:])
+    badge_outcome_name_prefix = f"{badge_name_prefix}_{COMMAND[1].upper()}"
+
+    badges_data = {
+        f"{badge_outcome_name_prefix}_{name.upper()}.json": {
+            "label": name,
+            "message": str(len(outcomes[name])),
+            "color": color
+        }
+        for name, _, color in SEVERITY_RANGE
+    }
 
     if "model" in argv:
-        el_label, el_color = profile_badge_data(report, IS_OWL_EL_COMPATIBLE)
-        ql_label, ql_color = profile_badge_data(report, IS_OWL_QL_COMPATIBLE)
-        rl_label, rl_color = profile_badge_data(report, IS_OWL_RL_COMPATIBLE)
+        badges_data = {
+            **badges_data, **{
+                f"{badge_name_prefix}_{profile.split("_")[1]}.json": {
+                    "label": profile.replace("_", " "),
+                    "message": message,
+                    "color": color
+                }
+                for profile, (message, color) in zip(
+                    DECIDABILITY_RANGE,
+                    [
+                        profile_badge_data(report, request)
+                        for request in PROFILE_DETECTION_RESULTS
+                    ]
+                )
+            }
+        }
 
-        badgesData += [
-            f"EL_label\t: {el_label}",
-            f"EL_color\t: {el_color}",
-            f"QL_label\t: {ql_label}",
-            f"QL_color\t: {ql_color}",
-            f"RL_label\t: {rl_label}",
-            f"RL_color\t: {rl_color}"
-        ]
+    # form a request URL
+    url=f"{GITHUB_API}/gists"
+    
+    #print headers,parameters,payload
+    headers={'Authorization':f'token {GIST_TOKEN}'}
+    params={'scope':'gist'}
+    payload={
+        "description": f"Olivaw badges for {REPO_NAME}",
+        "public": False,
+        "files": badges_data
+    }
 
-    if ACTIONS:
-        for badgeData in badgesData:
-            print(badgeData)
+    #make a requests
+    res=post(
+        url,
+        headers=headers,
+        params=params,
+        data=dumps(payload)
+    )
+
+    print("Badge upload:")
+    print(f"\tStatus code: {res.status_code}")
+    print(f"\tResponse body: {res.text}")
 
     return md

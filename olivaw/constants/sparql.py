@@ -248,6 +248,19 @@ select ?parsed {
 """
 """Check if the model test report can state if the ontology is OWL EL compatible"""
 
+IS_OWL_QL_COMPATIBLE: str = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL QL")
+"""SPARQL request that checks if the ontology is OWL QL compatible"""
+
+IS_OWL_RL_COMPATIBLE: str = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL RL")
+"""SPARQL request that checks if the ontology is OWL RL compatible"""
+
+PROFILE_DETECTION_RESULTS: List[str] = [
+    IS_OWL_RL_COMPATIBLE,
+    IS_OWL_QL_COMPATIBLE,
+    IS_OWL_EL_COMPATIBLE
+]
+"""SPARQL requests dedicated to profile detection information retrieval in model test reports"""
+
 GET_ONTOLOGY_TERMS: str = """
 select distinct ?term where {
   {
@@ -504,12 +517,6 @@ select ?o where {
 }
 """
 """Retrieve the possible error that can occur during a given test"""
-
-IS_OWL_QL_COMPATIBLE: str = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL QL")
-"""SPARQL request that checks if the ontology is OWL QL compatible"""
-
-IS_OWL_RL_COMPATIBLE: str = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL RL")
-"""SPARQL request that checks if the ontology is OWL RL compatible"""
 
 ADD_DESCRIPTION_LINKS: str = """
 insert {
