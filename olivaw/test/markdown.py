@@ -1,6 +1,6 @@
 """Module providing functions for markdown report format generation"""
 
-from olivaw.constants import ACTIONS, BRANCH, COMMAND
+from olivaw.constants import ACTIONS, BRANCH, COMMAND, GIST_INDEX
 from typing import Union
 from rdflib import BNode, Graph, Literal, URIRef
 from datetime import datetime
@@ -1077,7 +1077,11 @@ def markdown_export(
 
     md = "\n".join(md)
 
-    if not ACTIONS or GIST_TOKEN is None:
+    if not ACTIONS:
+        return md
+    
+    if GIST_TOKEN is None:
+        print("No gist token to upload the badges")
         return md
     
     # Compute the badges data
@@ -1112,7 +1116,7 @@ def markdown_export(
         }
 
     # form a request URL
-    url=f"{GITHUB_API}/gists"
+    url=f"{GITHUB_API}/gists/{GIST_INDEX}"
     
     #print headers,parameters,payload
     headers={'Authorization':f'token {GIST_TOKEN}'}
