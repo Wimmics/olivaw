@@ -1092,7 +1092,8 @@ def markdown_export(
         f"{badge_outcome_name_prefix}_{name.upper()}.json": {
             "label": name,
             "message": str(len(outcomes[name])),
-            "color": color
+            "color": color,
+            "schemaVersion": 1
         }
         for name, _, color in SEVERITY_RANGE
     }
@@ -1103,7 +1104,8 @@ def markdown_export(
                 f"{badge_name_prefix}_{profile.split('_')[1]}.json": {
                     "label": profile.replace("_", " "),
                     "message": message,
-                    "color": color
+                    "color": color,
+                    "schemaVersion": 1
                 }
                 for profile, (message, color) in zip(
                     DECIDABILITY_RANGE,
