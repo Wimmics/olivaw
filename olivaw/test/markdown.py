@@ -5,7 +5,7 @@ from typing import Union
 from rdflib import BNode, Graph, Literal, URIRef
 from datetime import datetime
 from requests import post
-from json import dumps
+from json import dumps, loads
 from sys import argv
 
 from os.path import sep, relpath
@@ -1134,8 +1134,6 @@ def markdown_export(
         "files": badges_data
     }
 
-    print(dumps(payload))
-
     #make a requests
     res=post(
         url,
@@ -1146,6 +1144,8 @@ def markdown_export(
 
     print("Badge upload:")
     print(f"\tStatus code: {res.status_code}")
-    print(f"\tResponse body: {res.text}")
+
+    if res.status_code >= 400:
+        print(f"\tResponse body: {loads(res.text)["message"]}")
 
     return md
