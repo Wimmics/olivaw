@@ -35,7 +35,7 @@ from olivaw.constants import (
 
 from olivaw.constants.badges import GITHUB_API
 from olivaw.constants.corese_info import DECIDABILITY_RANGE
-from olivaw.constants.sparql import PROFILE_DETECTION_RESULTS, SEVERITIES
+from olivaw.constants.sparql import PROFILE_DETECTION_RESULTS
 from olivaw.test.generic.shacl import get_criterion_data
 from olivaw.constants import REPO_REF, PWD_TO_OUTPUT_FOLDER
 from olivaw.constants.git_info import GIST_TOKEN, OLIVAW_ONTOLOGY, OLIVAW_REPOSITORY, REF, REPO_NAME, REPO_URI
