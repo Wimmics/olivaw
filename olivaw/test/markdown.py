@@ -1121,12 +1121,18 @@ def markdown_export(
     url=f"{GITHUB_API}/gists/{GIST_INDEX}"
     
     #print headers,parameters,payload
-    headers={'Authorization':f'token {GIST_TOKEN}'}
+    headers={
+        'Authorization':f'token {GIST_TOKEN}',
+        'X-GitHub-Api-Version': '2022-11-28'
+    }
     params={'scope':'gist'}
     payload={
+        "gist_id": GIST_INDEX,
         "description": f"Olivaw badges for {REPO_NAME}",
-        "public": False,
-        "files": badges_data
+        "files": {
+            "description": f"Olivaw badges for {COMMAND[1]} tests",
+            "files": badges_data
+        }
     }
 
     #make a requests
