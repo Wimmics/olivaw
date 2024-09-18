@@ -113,40 +113,55 @@ runs:
         echo "OLIVAW_VERSION=$(echo $OLIVAW_VERSION)" >> $GITHUB_ENV
         echo "Olivaw version: $OLIVAW_VERSION"
 
-    - name: Caching virtual environment
-      id: cache-venv
+    - name: Compute virtual environment cache key
+      id: cache-key
       if: ${{ env.INITIALIZED == 'true' }}
-      uses: actions/cache@v4
+      shell: bash
+      run: |
+        CACHE_KEY = "${{ runner.os }}-${{ steps.setup-python.outputs.python-path }}-${{ env.OLIVAW_VERSION }}"
+        echo "CACHE_KEY=$(echo $CACHE_KEY)" >> $GITHUB_ENV
+        echo "Cache key: $CACHE_KEY"
+
+    - name: Try to retrieve virtual environment
+      id: cache-restore
+      if: ${{ env.INITIALIZED == 'true' }}
+      uses: actions/cache/restore@v4
       with:
-        path: ./.venv/
-        key: ${{ runner.os }}-${{ steps.setup-python.outputs.python-path }}-${{ env.OLIVAW_VERSION }}
+        path: .venv
+        key: ${{ env.CACHE_KEY }}
 
     - name: Plan if some installation is required in the virtual environment
       id: plan-venv
       if: ${{ env.INITIALIZED == 'true' }}
       shell: bash
       run: |
-        MAKE_VENV=${{ (env.INITIALIZED == 'true') && (steps.cache-venv.outputs.cache-hit != 'true') }}
+        MAKE_VENV=${{ (env.INITIALIZED == 'true') && (steps.cache-restore.outputs.cache-hit != 'true') }}
         echo "MAKE_VENV=$(echo $MAKE_VENV)" >> $GITHUB_ENV
         echo "Prepare virtual environment: $MAKE_VENV"
 
-    - name: Initialize virtual environment if no cache hit
+    - name: Prepare virtual environment if no cache hit
       id: init-venv
       if: ${{ env.MAKE_VENV == 'true' }}
       shell: bash
-      run: python -m venv ./.venv
+      run: |
+        python -m venv ./.venv
+        source ./.venv/bin/activate
+        pip install -q --upgrade pip
+        pip install -q git+https://github.com/Wimmics/olivaw.git@${{ env.OLIVAW_VERSION }}
 
-    - name: Activate virtual environment
+    - name: Save virtual environment if no chache hit
+      id: cache-restore
+      if: ${{ env.MAKE_VENV == 'true' }}
+      uses: actions/cache/save@v4
+      with:
+        path: .venv
+        key: ${{ env.CACHE_KEY }}
+
+    - name: Activate virtual environment if cache hit
       id: activate-venv
-      if: ${{ env.INITIALIZED == 'true' }}
+      if: ${{ env.MAKE_VENV != 'true' }}
       shell: bash
       run: source ./.venv/bin/activate
-
-    - name: Install Olivaw test suite
-      id: install-olivaw
-      if: ${{ env.MAKE_VENV == 'true' }}
-      shell: bash
-      run: pip install -q git+https://github.com/Wimmics/olivaw.git@${{ env.OLIVAW_VERSION }}
 
     - name: Compute olivaw command line parameters
       id: olivaw-parameters
