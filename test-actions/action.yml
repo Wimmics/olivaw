@@ -146,7 +146,7 @@ runs:
       id: install-olivaw
       if: ${{ env.MAKE_VENV == 'true' }}
       shell: bash
-      run: pip install git+https://github.com/Wimmics/olivaw.git@${{ env.OLIVAW_VERSION }}
+      run: pip install -q git+https://github.com/Wimmics/olivaw.git@${{ env.OLIVAW_VERSION }}
 
     - name: Compute olivaw command line parameters
       id: olivaw-parameters
@@ -197,7 +197,7 @@ runs:
       if: ${{ env.INITIALIZED == 'true' }}
       shell: bash
       run: |
-        pip freeze | grep olivaw
+        pip freeze
         GISTID=$(olivaw show gist ${{ env.OLIVAW_PARAMETERS }})
         echo "GISTID=$(echo $GISTID)" >> $GITHUB_ENV
         echo "Gist ID: $GISTID"
