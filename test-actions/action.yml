@@ -149,14 +149,6 @@ runs:
         pip install -q --upgrade pip
         pip install -q git+https://github.com/Wimmics/olivaw.git@${{ env.OLIVAW_VERSION }}
 
-    - name: Save virtual environment if no chache hit
-      id: cache-save
-      if: ${{ env.MAKE_VENV == 'true' }}
-      uses: actions/cache/save@v4
-      with:
-        path: .venv
-        key: ${{ env.CACHE_KEY }}
-
     - name: Activate virtual environment if cache hit
       id: activate-venv
       if: ${{ env.MAKE_VENV != 'true' }}
@@ -240,6 +232,14 @@ runs:
       run: |
         olivaw test query ${{ env.OLIVAW_PARAMETERS }}
         git add .acimov/output/query-test-actions.ttl .acimov/output/query-test-actions.md -f
+
+    - name: Save virtual environment if no chache hit
+      id: cache-save
+      if: ${{ env.MAKE_VENV == 'true' }}
+      uses: actions/cache/save@v4
+      with:
+        path: .venv
+        key: ${{ env.CACHE_KEY }}
 
     - name: Check generated reports
       id: check-reports
