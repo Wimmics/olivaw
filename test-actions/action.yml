@@ -150,7 +150,7 @@ runs:
         pip install -q git+https://github.com/Wimmics/olivaw.git@${{ env.OLIVAW_VERSION }}
 
     - name: Save virtual environment if no chache hit
-      id: cache-restore
+      id: cache-save
       if: ${{ env.MAKE_VENV == 'true' }}
       uses: actions/cache/save@v4
       with:
