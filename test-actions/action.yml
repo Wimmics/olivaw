@@ -134,15 +134,13 @@ runs:
       id: init-venv
       if: ${{ env.MAKE_VENV == 'true' }}
       shell: bash
-      run: |
-        python -m venv ./.venv
+      run: python -m venv ./.venv
 
     - name: Activate virtual environment
       id: activate-venv
       if: ${{ env.INITIALIZED == 'true' }}
       shell: bash
-      run: |
-        source ./.venv/bin/activate
+      run: source ./.venv/bin/activate
 
     - name: Install Olivaw test suite
       id: install-olivaw
@@ -208,6 +206,7 @@ runs:
       if: ${{ env.RUN_MODEL_TESTS == 'true' }}
       shell: bash
       run: |
+        pip freeze | grep olivaw
         olivaw test model ${{ env.OLIVAW_PARAMETERS }}
         git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
 
