@@ -197,6 +197,7 @@ runs:
       if: ${{ env.INITIALIZED == 'true' }}
       shell: bash
       run: |
+        pip freeze | grep olivaw
         GISTID=$(olivaw show gist ${{ env.OLIVAW_PARAMETERS }})
         echo "GISTID=$(echo $GISTID)" >> $GITHUB_ENV
         echo "Gist ID: $GISTID"
@@ -205,8 +206,7 @@ runs:
       id: model-test
       if: ${{ env.RUN_MODEL_TESTS == 'true' }}
       shell: bash
-      run: |
-        pip freeze | grep olivaw
+      run:
         olivaw test model ${{ env.OLIVAW_PARAMETERS }}
         git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
 
