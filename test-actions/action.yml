@@ -118,7 +118,7 @@ runs:
       if: ${{ env.INITIALIZED == 'true' }}
       shell: bash
       run: |
-        CACHE_KEY = "${{ runner.os }}-${{ steps.setup-python.outputs.python-path }}-${{ env.OLIVAW_VERSION }}"
+        CACHE_KEY="${{ runner.os }}-${{ steps.setup-python.outputs.python-path }}-${{ env.OLIVAW_VERSION }}"
         echo "CACHE_KEY=$(echo $CACHE_KEY)" >> $GITHUB_ENV
         echo "Cache key: $CACHE_KEY"
 
