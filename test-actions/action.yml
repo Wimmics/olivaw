@@ -60,7 +60,7 @@ runs:
       with:
         github-server-url: ${{ github.server_url }}
         repository: ${{ github.repository }}
-        ref: ${{ github.sha }}
+        ref: ${{ github.ref }}
 
     - name: Check if repository is initialized
       id: check-init
@@ -210,20 +210,26 @@ runs:
 
         if ${{ env.RUN_MODEL_TESTS == 'true' }}
         then
+          echo "Running model tests"
           olivaw test model ${{ env.OLIVAW_PARAMETERS }}
           git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
+          echo "Model tests done"
         fi
 
         if ${{ env.RUN_DATA_TESTS == 'true' }}
         then
+          echo "Running data tests"
           olivaw test data ${{ env.OLIVAW_PARAMETERS }}
           git add .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
+          echo "Data tests done"
         fi
 
         if ${{ env.RUN_QUERY_TESTS == 'true' }}
         then
+          echo "Running query tests"
           olivaw test query ${{ env.OLIVAW_PARAMETERS }}
           git add .acimov/output/query-test-actions.ttl .acimov/output/query-test-actions.md -f
+          echo "Query tests done"
         fi
 
     - name: Check generated reports
@@ -270,7 +276,6 @@ runs:
       run: |
         git config --global user.email "no-reply@github.com"
         git config --global user.name "Olivaw in Actions"
-        git pull
         git commit -m "Provide automatic tests report [skip actions]"
         git remote set-url origin ${{ env.REPO_URI }}
         git push
