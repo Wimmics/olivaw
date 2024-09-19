@@ -157,12 +157,6 @@ runs:
         path: .venv
         key: ${{ env.CACHE_KEY }}
 
-    - name: Activate virtual environment if cache hit
-      id: activate-venv
-      if: ${{ env.MAKE_VENV != 'true' }}
-      shell: bash
-      run: source ./.venv/bin/activate
-
     - name: Compute olivaw command line parameters
       id: olivaw-parameters
       if: ${{ env.INITIALIZED == 'true' }}
@@ -207,64 +201,46 @@ runs:
         echo "OLIVAW_PARAMETERS=$(echo $OLIVAW_PARAMETERS)" >> $GITHUB_ENV
         echo "Olivaw Actions parameters: $OLIVAW_PARAMETERS"
 
-    - name: Retrieve current repository GIST parameter
-      id: repo-gist
-      if: ${{ env.INITIALIZED == 'true' }}
+    - name: Generate test reports
+      id: run-test
+      if: ${{ env.RUN_ANY_TESTS == 'true' }}
       shell: bash
       run: |
         source ./.venv/bin/activate
-        pip freeze
-        GISTID=$(olivaw show gist ${{ env.OLIVAW_PARAMETERS }})
-        echo "GISTID=$(echo $GISTID)" >> $GITHUB_ENV
-        echo "Gist ID: $GISTID"
 
-    - name: Generate model test report
-      id: model-test
-      if: ${{ env.RUN_MODEL_TESTS == 'true' }}
-      shell: bash
-      run:
-        olivaw test model ${{ env.OLIVAW_PARAMETERS }}
-        git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
+        if ${{ env.RUN_MODEL_TESTS == 'true' }}
+        then
+          olivaw test model ${{ env.OLIVAW_PARAMETERS }}
+          git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
+        fi
 
-    - name: Generate data test report
-      id: data-test
-      if: ${{ env.RUN_DATA_TESTS == 'true' }}
-      shell: bash
-      run: |
-        olivaw test data ${{ env.OLIVAW_PARAMETERS }}
-        git add .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
+        if ${{ env.RUN_DATA_TESTS == 'true' }}
+        then
+          olivaw test data ${{ env.OLIVAW_PARAMETERS }}
+          git add .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
+        fi
 
-    - name: Generate query test report
-      id: query-test
-      if: ${{ env.RUN_QUERY_TESTS == 'true' }}
-      shell: bash
-      run: |
-        olivaw test query ${{ env.OLIVAW_PARAMETERS }}
-        git add .acimov/output/query-test-actions.ttl .acimov/output/query-test-actions.md -f
+        if ${{ env.RUN_QUERY_TESTS == 'true' }}
+        then
+          olivaw test query ${{ env.OLIVAW_PARAMETERS }}
+          git add .acimov/output/query-test-actions.ttl .acimov/output/query-test-actions.md -f
+        fi
 
     - name: Check generated reports
       id: check-reports
       shell: bash
       run: |
-        MODEL_REPORTS=${{(env.RUN_MODEL_TESTS == 'true') && (steps.model-test.conclusion == 'success') }}
-        echo "MODEL_REPORTS=$(echo $MODEL_REPORTS)" >> $GITHUB_ENV
-        echo "Model reports generated: $MODEL_REPORTS"
-
-        DATA_REPORTS=${{(env.RUN_DATA_TESTS == 'true') && (steps.data-test.conclusion == 'success') }}
-        echo "DATA_REPORTS=$(echo $DATA_REPORTS)" >> $GITHUB_ENV
-        echo "Data reports generated: $DATA_REPORTS"
-
-        QUERY_REPORTS=${{(env.QUERY_REPORTS == 'true') && (steps.query-test.conclusion == 'success') }}
-        echo "QUERY_REPORTS=$(echo $QUERY_REPORTS)" >> $GITHUB_ENV
-        echo "Query reports generated: $QUERY_REPORTS"
-
-    - name: Check any report
-      id: any-report
-      shell: bash
-      run: |
-        ANY_REPORTS=${{(env.MODEL_REPORTS == 'true') || (env.DATA_REPORTS == 'true') || (env.QUERY_REPORTS == 'true')}}
+        ANY_REPORTS=${{(env.RUN_ANY_TESTS == 'true') && (steps.run-test.conclusion == 'success') }}
         echo "ANY_REPORTS=$(echo $ANY_REPORTS)" >> $GITHUB_ENV
         echo "Any reports generated: $ANY_REPORTS"
+
+    - name: Check archive option
+      id: check-archive
+      shell: bash
+      run: |
+        SHOULD_ARCHIVE=${{(env.ANY_REPORTS == 'true') && (inputs.archive-report == 'true') }}
+        echo "SHOULD_ARCHIVE=$(echo $SHOULD_ARCHIVE)" >> $GITHUB_ENV
+        echo "Should archive any report: $SHOULD_ARCHIVE"
 
     - name: Report publication planification
       id: publish-report
@@ -274,15 +250,15 @@ runs:
         echo "SHOULD_COMMIT=$(echo $SHOULD_COMMIT)" >> $GITHUB_ENV
         echo "Should proceed to commit: $SHOULD_COMMIT"
 
-        ARCHIVE_MODEL=${{(env.MODEL_REPORTS  == 'true') && (inputs.archive-report == 'true')}}
+        ARCHIVE_MODEL=${{(env.SHOULD_ARCHIVE  == 'true') && (inputs.model-test == 'true')}}
         echo "ARCHIVE_MODEL=$(echo $ARCHIVE_MODEL)" >> $GITHUB_ENV
         echo "Should archive model reports: $ARCHIVE_MODEL"
 
-        ARCHIVE_DATA=${{(env.DATA_REPORTS  == 'true') && (inputs.archive-report == 'true')}}
+        ARCHIVE_DATA=${{(env.SHOULD_ARCHIVE  == 'true') && (inputs.data-test == 'true')}}
         echo "ARCHIVE_DATA=$(echo $ARCHIVE_DATA)" >> $GITHUB_ENV
         echo "Should archive data reports: $ARCHIVE_DATA"
 
-        ARCHIVE_QUERY=${{(env.QUERY_REPORTS  == 'true') && (inputs.archive-report == 'true')}}
+        ARCHIVE_QUERY=${{(env.SHOULD_ARCHIVE  == 'true') && (inputs.query-test == 'true')}}
         echo "ARCHIVE_QUERY=$(echo $ARCHIVE_QUERY)" >> $GITHUB_ENV
         echo "Should archive query reports: $ARCHIVE_QUERY"
 
