@@ -298,12 +298,7 @@ runs:
           --header 'Content-Type: application/json' \
           --header 'X-GitHub-Api-Version: 2022-11-28' \
           --header 'User-Agent: olivaw/${{ env.OLIVAW_VERSION }}' \
-          --data '{
-            "gist_id": "${{ env.GIST_ID }}",
-            "description": "Olivaw badges for ${{ github.repository }}",
-            "files": ${{ env.BADGES_PAYLOAD }}
-            }
-          }'
+          --data '${{ env.BADGES_PAYLOAD }}'
 
     - name: Archive model test results
       id: archive-model
