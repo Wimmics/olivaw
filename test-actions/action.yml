@@ -197,7 +197,7 @@ runs:
         source ./.venv/bin/activate
 
         GIST_ID="$(olivaw show gist ${{ env.OLIVAW_PARAMETERS }})"
-        echo "GIST_ID=$(echo $GIST_ID)" >> $GIST_ID
+        echo "GIST_ID=$(echo $GIST_ID)" >> $GITHUB_ENV
         echo "Gist ID: $GIST_ID"
 
         BADGES_PAYLOAD='{"gist_id": "$GIST_ID", "description": "Olivaw badges for ${{ github.repository }}", "files": {'
@@ -292,7 +292,7 @@ runs:
         git remote set-url origin ${{ env.REPO_URI }}
         git push
 
-        curl --request GET \
+        curl --request POST \
           --url 'https://api.github.com/gists/${{ env.GIST_ID }}?scope=gist' \
           --header 'Authorization: token ${{ inputs.gist-secret }}' \
           --header 'Content-Type: application/json' \
