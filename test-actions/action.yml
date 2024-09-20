@@ -2,18 +2,11 @@ name: "Olivaw tests"
 author: "Wimmics"
 description: "Launches Olivaw test suite"
 inputs:
-  repository:
-    description: "The url of the repository to test"
-    type: string
-    required: true
-  ref:
-    description: "The ref of the repository to test"
-    type: string
-    required: true
   gist-secret:
     description: "The personal access token with only gist scope allowed"
     type: string
-    required: true
+    required: false
+    default: ""
   model-test:
     description: "Should the model tests be run"
     type: boolean
@@ -39,11 +32,6 @@ inputs:
     type: boolean
     required: false
     default: true
-  server-url:
-    description: "The platform URL"
-    type: string
-    required: false
-    default: "https://github.com"
 
 runs:
   using: "composite"
@@ -208,10 +196,16 @@ runs:
       run: |
         source ./.venv/bin/activate
 
+        GIST_ID="$(olivaw show gist ${{ env.OLIVAW_PARAMETERS }})"
+        echo "GIST_ID=$(echo $GIST_ID)" >> $GIST_ID
+        echo "Gist ID: $GIST_ID"
+
+        BADGES_PAYLOAD='{"gist_id": "$GIST_ID", "description": "Olivaw badges for ${{ github.repository }}", "files": {'
+
         if ${{ env.RUN_MODEL_TESTS == 'true' }}
         then
           echo "Running model tests"
-          olivaw test model ${{ env.OLIVAW_PARAMETERS }}
+          BADGES_PAYLOAD="$BADGES_PAYLOAD$(olivaw test model ${{ env.OLIVAW_PARAMETERS }})"
           git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
           echo "Model tests done"
         fi
@@ -219,7 +213,14 @@ runs:
         if ${{ env.RUN_DATA_TESTS == 'true' }}
         then
           echo "Running data tests"
-          olivaw test data ${{ env.OLIVAW_PARAMETERS }}
+
+          SEPARATOR=""
+          if ${{ env.RUN_MODEL_TESTS == 'true' }}
+          then
+            SEPARATOR=", "
+          fi
+
+          BADGES_PAYLOAD="$BADGES_PAYLOAD$SEPARATOR$(olivaw test data ${{ env.OLIVAW_PARAMETERS }})"
           git add .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
           echo "Data tests done"
         fi
@@ -227,10 +228,21 @@ runs:
         if ${{ env.RUN_QUERY_TESTS == 'true' }}
         then
           echo "Running query tests"
-          olivaw test query ${{ env.OLIVAW_PARAMETERS }}
+
+          SEPARATOR=""
+          if ${{ (env.RUN_MODEL_TESTS == 'true') || (env.RUN_DATA_TESTS == 'true') }}
+          then
+            SEPARATOR=", "
+          fi
+
+          BADGES_PAYLOAD="$BADGES_PAYLOAD$SEPARATOR$(olivaw test query ${{ env.OLIVAW_PARAMETERS }})"
           git add .acimov/output/query-test-actions.ttl .acimov/output/query-test-actions.md -f
           echo "Query tests done"
         fi
+
+        BADGES_PAYLOAD="$BADGES_PAYLOAD}}"
+        echo "BADGES_PAYLOAD=$(echo $BADGES_PAYLOAD)" >> $GITHUB_ENV
+        echo "Olivaw badges payload: $BADGES_PAYLOAD"
 
     - name: Check generated reports
       id: check-reports
@@ -279,6 +291,18 @@ runs:
         git commit -m "Provide automatic tests report [skip actions]"
         git remote set-url origin ${{ env.REPO_URI }}
         git push
+
+        curl --request GET \
+          --url 'https://api.github.com/gists/${{ env.GIST_ID }}?scope=gist' \
+          --header 'Authorization: token ${{ inputs.gist-secret }}' \
+          --header 'Content-Type: application/json' \
+          --header 'X-GitHub-Api-Version: 2022-11-28' \
+          --data '{
+            "gist_id": "${{ env.GIST_ID }}",
+            "description": "Olivaw badges for ${{ github.repository }}",
+            "files": ${{ env.BADGES_PAYLOAD }}
+            }
+          }'
 
     - name: Archive model test results
       id: archive-model

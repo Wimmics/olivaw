@@ -73,35 +73,6 @@ def html_special_chars(text: str) -> str:
 
     return result
 
-def profile_badge_data(report: Graph, request: str) -> tuple[str, str]:
-    """Given the report and an ontology profile compatibility request, returns the proper label and colors of its related badge
-    
-    :param report: test report
-    :type report: `rdflib.Graph`
-
-    :param request: Request that retrieve the profile compatibility of the ontology in the report
-    :type request: `str`
-
-    :returns: The related badge label and message
-    :rtype: `tuple[str, str]`
-    """
-    profile_statuses = [str(x[0]) for x in report.query(request)]
-
-    if len(profile_statuses) == 0:
-        return "undetermined", "grey"
-    
-    no_pass = [status for status in profile_statuses if status != "Pass"]
-
-    if len(no_pass) == 0:
-        return "compatible", "green"
-    
-    is_fail = [status for status in no_pass if "Fail" in status]
-
-    if len(is_fail) > 0:
-        return "incompatible", "red"
-    
-    return "undetermined", "grey"
-
 def parse_outcomes(report: Graph) -> tuple[
     dict[ # dictionary of the outcomes information
         str, # Severity name
@@ -219,6 +190,35 @@ def title_to_id(title: str) -> str:
     while(title[start] == "#"): start += 1
     while(title[start] == " "): start += 1
     return f"#{title[start:].lower().replace(' ', '-')}"
+
+def profile_badge_data(report: Graph, request: str) -> tuple[str, str]:
+    """Given the report and an ontology profile compatibility request, returns the proper label and colors of its related badge
+    
+    :param report: test report
+    :type report: `rdflib.Graph`
+
+    :param request: Request that retrieve the profile compatibility of the ontology in the report
+    :type request: `str`
+
+    :returns: The related badge label and message
+    :rtype: `tuple[str, str]`
+    """
+    profile_statuses = [str(x[0]) for x in report.query(request)]
+
+    if len(profile_statuses) == 0:
+        return "undetermined", "grey"
+    
+    no_pass = [status for status in profile_statuses if status != "Pass"]
+
+    if len(no_pass) == 0:
+        return "compatible", "green"
+    
+    is_fail = [status for status in no_pass if "Fail" in status]
+
+    if len(is_fail) > 0:
+        return "incompatible", "red"
+    
+    return "undetermined", "grey"
 
 def make_assertor_chapter(report: Graph) -> list[str]:
     """Generates the assertor chapter of the report
@@ -1079,11 +1079,7 @@ def markdown_export(
 
     if not ACTIONS:
         return md
-    
-    if GIST_TOKEN is None:
-        print("No gist token to upload the badges")
-        return md
-    
+
     # Compute the badges data
     badge_name_prefix = "_".join(REF.split("/")[1:])
     badge_outcome_name_prefix = f"{badge_name_prefix}_{COMMAND[1].upper()}"
@@ -1118,34 +1114,6 @@ def markdown_export(
         }
 
     badges_data = {file: {"content": dumps(content)} for file, content in badges_data.items()}
-
-    # form a request URL
-    url=f"{GITHUB_API}/gists/{GIST_INDEX}"
-    
-    #print headers,parameters,payload
-    headers={
-        'Authorization':f'token {GIST_TOKEN}',
-        'X-GitHub-Api-Version': '2022-11-28'
-    }
-    params={'scope':'gist'}
-    payload={
-        "gist_id": GIST_INDEX,
-        "description": f"Olivaw badges for {REPO_NAME}",
-        "files": badges_data
-    }
-
-    #make a requests
-    res=post(
-        url,
-        headers=headers,
-        params=params,
-        data=dumps(payload)
-    )
-
-    print("Badge upload:")
-    print(f"\tStatus code: {res.status_code}")
-
-    if res.status_code >= 400:
-        print(f"\tResponse body: {loads(res.text)['message']}")
+    print(dumps(badges_data)[1:-1])
 
     return md
