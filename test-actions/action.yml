@@ -204,15 +204,14 @@ runs:
 
         if ${{ env.RUN_MODEL_TESTS == 'true' }}
         then
-          echo "Running model tests"
+          echo "Model tests ongoing..."
           BADGES_PAYLOAD="$BADGES_PAYLOAD$(olivaw test model ${{ env.OLIVAW_PARAMETERS }})"
           git add .acimov/output/model-test-actions.ttl .acimov/output/model-test-actions.md -f
-          echo "Model tests done"
         fi
 
         if ${{ env.RUN_DATA_TESTS == 'true' }}
         then
-          echo "Running data tests"
+          echo "Data tests ongoing..."
 
           SEPARATOR=""
           if ${{ env.RUN_MODEL_TESTS == 'true' }}
@@ -222,12 +221,11 @@ runs:
 
           BADGES_PAYLOAD="$BADGES_PAYLOAD$SEPARATOR$(olivaw test data ${{ env.OLIVAW_PARAMETERS }})"
           git add .acimov/output/data-test-actions.ttl .acimov/output/data-test-actions.md -f
-          echo "Data tests done"
         fi
 
         if ${{ env.RUN_QUERY_TESTS == 'true' }}
         then
-          echo "Running query tests"
+          echo "Query tests ongoing..."
 
           SEPARATOR=""
           if ${{ (env.RUN_MODEL_TESTS == 'true') || (env.RUN_DATA_TESTS == 'true') }}
@@ -237,7 +235,6 @@ runs:
 
           BADGES_PAYLOAD="$BADGES_PAYLOAD$SEPARATOR$(olivaw test query ${{ env.OLIVAW_PARAMETERS }})"
           git add .acimov/output/query-test-actions.ttl .acimov/output/query-test-actions.md -f
-          echo "Query tests done"
         fi
 
         BADGES_PAYLOAD="$BADGES_PAYLOAD}}"
@@ -286,11 +283,15 @@ runs:
       if: ${{ env.SHOULD_COMMIT == 'true' }}
       shell: bash
       run: |
+        echo "Pushing ${{ github.repository }} test reports for branch ${{ env.BRANCH }}"
+
         git config --global user.email "no-reply@github.com"
         git config --global user.name "Olivaw in Actions"
         git commit -m "Provide automatic tests report [skip actions]"
         git remote set-url origin ${{ env.REPO_URI }}
         git push
+
+        echo "Uploading ${{ github.repository }} badges values for branch ${{ env.BRANCH }} on gist ${{ env.GIST_ID }}"
 
         curl --request POST \
           --url 'https://api.github.com/gists/${{ env.GIST_ID }}?scope=gist' \
