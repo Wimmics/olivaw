@@ -176,8 +176,8 @@ runs:
         echo "Commit hash: $COMMIT_HASH"
         OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --COMMIT_HASH=$COMMIT_HASH"
 
-        #COMMIT_DATE="$(git log -1 --format=%cd --date=format:%Y-%m-%dT%H:%M:%S $COMMIT_HASH)"
-        COMMIT_DATE="$(date +'%Y-%m-%dT%H:%M:%S' -d '@${{ github.event.head_commit.timestamp }}')"
+        COMMIT_DATE='+' read -ra REF_PARTS <<< "${{ github.event.head_commit.timestamp }}"
+        COMMIT_DATE=${COMMIT_DATE[0]}
         echo "COMMIT_DATE=$(echo $COMMIT_DATE)" >> $GITHUB_ENV
         echo "Commit date: $COMMIT_DATE"
         OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --COMMIT_DATE=$COMMIT_DATE"
