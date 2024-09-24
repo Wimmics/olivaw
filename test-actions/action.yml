@@ -164,8 +164,7 @@ runs:
         echo "Repository URI: $REPO_URI"
         OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --REPO_URI=$REPO_URI"
 
-        REF=${{ github.ref }}
-        IFS='/' read -ra REF_PARTS <<< "$REF"
+        IFS='/' read -ra REF_PARTS <<< "${{ github.ref }}"
         BRANCH="${REF_PARTS[2]}"
         echo "BRANCH=$(echo $BRANCH)" >> $GITHUB_ENV
         echo "Repository branch: $BRANCH"
@@ -176,8 +175,8 @@ runs:
         echo "Commit hash: $COMMIT_HASH"
         OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --COMMIT_HASH=$COMMIT_HASH"
 
-        COMMIT_DATE='+' read -ra REF_PARTS <<< "${{ github.event.head_commit.timestamp }}"
-        COMMIT_DATE=${COMMIT_DATE[0]}
+        IFS='+' read -ra DATE_PARTS <<< "${{ github.event.head_commit.timestamp }}"
+        COMMIT_DATE=${DATE_PARTS[0]}
         echo "COMMIT_DATE=$(echo $COMMIT_DATE)" >> $GITHUB_ENV
         echo "Commit date: $COMMIT_DATE"
         OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --COMMIT_DATE=$COMMIT_DATE"
