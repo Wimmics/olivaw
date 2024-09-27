@@ -3,14 +3,19 @@
 __main__ = ["model", "data"]
 
 from sys import exit
+
+from os import makedirs
+from os.path import exists
+
 from olivaw.constants import (
     ONTOLOGY_PREFIX,
     ONTOLOGY_NAMESPACE,
     TERM_DISTANCE_THRESHOLD,
     BLOCKING_ERRORS,
-    BRANCH
+    BRANCH,
+    PWD_TO_OUTPUT_FOLDER,
+    COMMIT_HASH
 )
-from olivaw.constants.git_info import COMMIT_HASH
 
 errors = []
 
@@ -42,3 +47,6 @@ if BRANCH is None:
 if COMMIT_HASH is None:
     print('fatal: Command "git rev-parse origin/HEAD" should return the current commit hash or argument "COMMIT_HASH" should be set')
     exit(1)
+
+if not exists(PWD_TO_OUTPUT_FOLDER):
+        makedirs(PWD_TO_OUTPUT_FOLDER)
