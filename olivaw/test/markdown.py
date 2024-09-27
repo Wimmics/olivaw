@@ -265,8 +265,8 @@ def make_assertor_chapter(report: Graph) -> list[str]:
     test_date = datetime.fromisoformat(str(test_date)).strftime("%Y-%m-%d %H:%M:%S")
     tested_project_version_date = datetime.fromisoformat(str(tested_project_version_date)).strftime("%Y-%m-%d %H:%M:%S")
 
-    turtle_link = str(turtle_report) if ACTIONS else relpath(turtle_report[8:], PWD_TO_OUTPUT_FOLDER)
-    markdown_link = str(markdown_report) if ACTIONS else relpath(markdown_report[8:], PWD_TO_OUTPUT_FOLDER)
+    turtle_link = str(turtle_report) if ACTIONS else f"./{relpath(turtle_report[8:], PWD_TO_OUTPUT_FOLDER)}"
+    markdown_link = str(markdown_report) if ACTIONS else f"./{relpath(markdown_report[8:], PWD_TO_OUTPUT_FOLDER)}"
 
     result.extend([
         f"|Title|{test_title}|",
@@ -288,8 +288,8 @@ def make_assertor_chapter(report: Graph) -> list[str]:
         f"|Ontology branch|[{BRANCH}]({REPO_URI}/tree/{BRANCH})|",
         f"|Olivaw suite|[olivaw {test_suite.split('/')[-2]} test suite]({test_suite})|",
         f"|Olivaw version|[{test_suite_version}]({OLIVAW_REPOSITORY})|",
-        f"|Generated turtle|[Turtle report](./{turtle_link})|",
-        f"|Generated Markdown|[Markdown report](./{markdown_link})|"
+        f"|Generated turtle|[Turtle report]({turtle_link})|",
+        f"|Generated Markdown|[Markdown report]({markdown_link})|"
     ])
 
     return result
