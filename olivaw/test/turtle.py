@@ -210,7 +210,7 @@ def end_activity(report: Graph, assertor: IdentifiedNode, reports_filename: str)
 
     base_generation_path = f"file:///{abspath(reports_path).replace(sep, '/')}" \
         if not ACTIONS else \
-        f"{REPO_URI}/{COMMIT_HASH}/blob/{COMMIT_HASH}/.acimov/output/{reports_filename.split('/')[-1]}"
+        f"{REPO_URI}/blob/{COMMIT_HASH}/.acimov/output/{reports_filename.split('/')[-1]}"
 
     turtle_report_uri = URIRef(f"{base_generation_path}.ttl")
     markdown_report_uri = URIRef(f"{base_generation_path}.md")
