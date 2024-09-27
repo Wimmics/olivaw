@@ -1,12 +1,13 @@
 """Module providing functions for markdown report format generation"""
 
-from olivaw.constants import ACTIONS, BRANCH, COMMAND, GIST_INDEX
+from olivaw.constants import ACTIONS, BRANCH, COMMAND
 from typing import Union
 from rdflib import BNode, Graph, Literal, URIRef
 from datetime import datetime
-from requests import post
-from json import dumps, loads
+from json import dumps
 from sys import argv
+
+from importlib.metadata import version
 
 from os.path import sep, relpath
 
@@ -17,11 +18,6 @@ from olivaw.constants import (
     GET_DETAILED_OUTCOMES,
     GET_OUTCOMES_PARTS,
     GET_OUTCOME_POINTERS,
-    IS_OWL_EL_COMPATIBLE,
-    IS_OWL_QL_COMPATIBLE,
-    IS_OWL_RL_COMPATIBLE,
-    MODE,
-    OLIVAW_REF,
     PWD_TO_ROOT_FOLDER,
     CRITERION_DATA,
     DATASET_URL_FORMAT,
@@ -35,6 +31,7 @@ from olivaw.constants import (
 
 from olivaw.constants.badges import GITHUB_API
 from olivaw.constants.corese_info import DECIDABILITY_RANGE
+from olivaw.constants.olivaw import PIPY_OLIVAW
 from olivaw.constants.sparql import PROFILE_DETECTION_RESULTS
 from olivaw.test.generic.shacl import get_criterion_data
 from olivaw.constants import REPO_REF, PWD_TO_OUTPUT_FOLDER
@@ -287,7 +284,7 @@ def make_assertor_chapter(report: Graph) -> list[str]:
     result.extend([
         f"|Ontology branch|[{BRANCH}]({REPO_URI}/tree/{BRANCH})|",
         f"|Olivaw suite|[olivaw {test_suite.split('/')[-2]} test suite]({test_suite})|",
-        f"|Olivaw version|[{test_suite_version}]({OLIVAW_REPOSITORY})|",
+        f"|Olivaw version|[{test_suite_version}]({PIPY_OLIVAW}/{version("olivaw")})|",
         f"|Generated turtle|[Turtle report]({turtle_link})|",
         f"|Generated Markdown|[Markdown report]({markdown_link})|"
     ])
