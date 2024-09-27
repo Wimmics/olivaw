@@ -207,8 +207,13 @@ def end_activity(report: Graph, assertor: IdentifiedNode, reports_filename: str)
     :type reports_filename: `str`
     """
     reports_path = f"{PWD_TO_OUTPUT_FOLDER}{reports_filename}"
-    turtle_report_uri = URIRef(f"file:///{abspath(reports_path).replace(sep, '/')}.ttl")
-    markdown_report_uri = URIRef(f"file:///{abspath(reports_path).replace(sep, '/')}.md")
+
+    base_generation_path = f"file:///{abspath(reports_path).replace(sep, '/')}" \
+        if not ACTIONS else \
+        f"{REPO_URI}/{COMMIT_HASH}/blob/{COMMIT_HASH}/.acimov/output/{reports_filename.split('/')[-1]}"
+
+    turtle_report_uri = URIRef(f"{base_generation_path}.ttl")
+    markdown_report_uri = URIRef(f"{base_generation_path}.md")
 
     turtle_generation = BNode("turtleGeneration")
     markdown_generation = BNode("markdownGeneration")

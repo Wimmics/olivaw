@@ -67,7 +67,7 @@ else:
   try:
     # Launch the process that will output current repo state
     snapshot = Popen(
-      "git ls-files -m -d -s .".split(" "),
+      f"git ls-files -m -d -s {ROOT_FOLDER}".split(" "),
       stdout=PIPE
     )
 
