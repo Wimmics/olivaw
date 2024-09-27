@@ -284,7 +284,7 @@ def make_assertor_chapter(report: Graph) -> list[str]:
     result.extend([
         f"|Ontology branch|[{BRANCH}]({REPO_URI}/tree/{BRANCH})|",
         f"|Olivaw suite|[olivaw {test_suite.split('/')[-2]} test suite]({test_suite})|",
-        f"|Olivaw version|[{test_suite_version}]({PIPY_OLIVAW}/{version("olivaw")})|",
+        f"|Olivaw version|[{test_suite_version}]({PIPY_OLIVAW}/{version('olivaw')})|",
         f"|Generated turtle|[Turtle report]({turtle_link})|",
         f"|Generated Markdown|[Markdown report]({markdown_link})|"
     ])
