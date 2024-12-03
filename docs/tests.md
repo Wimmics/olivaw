@@ -15,6 +15,10 @@ These tests are powered by Corese, check their [website](https://project.inria.f
 1. [Outputs formats](#1-output-formats)<br/>
 &emsp;1.1. [Turtle format](#11-turtle-format)<br/>
 &emsp;&emsp;1.1.1. [The assertor](#111-the-assertor)<br/>
+&emsp;&emsp;&emsp;1.1.1.1. [The activity](#1111-the-activity)<br/>
+&emsp;&emsp;&emsp;1.1.1.2. [The tester](#1112-the-tester)<br/>
+&emsp;&emsp;&emsp;1.1.1.3. [The used resources](#1113-the-used-resources)<br/>
+&emsp;&emsp;&emsp;1.1.1.4. [The generated reports](#1114-the-generated-reports)<br/>
 &emsp;&emsp;1.1.2. [The subject](#112-the-subject)<br/>
 &emsp;&emsp;1.1.3. [The criterion](#113-the-criterion)<br/>
 &emsp;&emsp;1.1.4. [The result](#114-the-result)<br/>
@@ -85,20 +89,138 @@ The next sections will explore in details how is expressed each part
 
 ### 1.1.1. The assertor
 
-The assertor, here always a human being using a software tool, is expressed in a similar way than in the [EARL vocabulary guide](https://www.w3.org/WAI/ER/EARL10/WD-EARL10-Guide-20120125#example307), except the use of the term `foaf:OnlineAccount` instead of `foaf:Group` was preferred.
+The assertor is expressed using the [PROV ontology](https://www.w3.org/TR/prov-o/) as an activity:
+* *associated* with a human assuming the *role* of *developper*
+* *using* an OLIVAW script involved for the *usage* of *test suite*
+* *using* the tested project involved for the *usage* of *tested project*
 
-The assertor declaration should follow this structure:
+An additional `olivaw:generatedAs` property was implemented in the [olivaw ontology](../../olivaw/olivaw/constants/olivaw.py) to express the following statements:
+* this activity generated the `.ttl` file as turtle report
+* this activity generated the `.md` file as markdown report
 
-```turtle
-_:{MyDeveloperName} a foaf:Person ;
-    schema:mainEntityOfPage <https://github.com/{MyDeveloperName}> .
+In next sections we will see how are described the [activity](#1111-the-activity), the [tester](#1112-the-tester), the [used resources](#1113-the-used-resources) and the generated reports.
 
-_:{MyDeveloperName}-{triggerType} a foaf:OnlineAccount ;
-    dcterms:date "2024-02-06T11:38:05.750685"^^xsd:dateTime ;
-    dcterms:description "Test triggered by @{MyDeveloperName} by {triggerType} trigger"@en ;
-    dcterms:title "{MyDeveloperName} using {triggerType} script"@en ;
-    earl:mainAssertor _:{MyDeveloperName} ;
-    foaf:member <https://github.com/Wimmics/olivaw/blob/main/olivaw/test/{testType}/suite.py> .
+#### 1.1.1.1. The activity
+
+Here is the general structure of how the testing activity, that is the assertor of all the assertoin for that report, is described.
+
+__Note:__ if the test was run locally, the `<{URL to tested repository (commit hash in URL)}>` is a blank node named `_:intermediateSnapshot`.
+
+```ttl
+_:assertor a earl:Assertor, prov:Activity ;
+    dcterms:title "{Type of test} tests of {repository reference} on branch {tested branch}" ;
+    dcterms:description "{developper username} launch {type of OLIVAW execution} run of {type of test} tests against {repository reference}" ;
+    dcterms:endedAtTime "{end of test datetime}"^^xsd:dateTime ;
+    prov:wasAssociatedWith _:tester ;
+    prov:used <{URL to OLIVAW related test script (version in URL)}> ,
+        <{URL to tested repository (commit hash in URL)}> ;
+    prov:generated <{URI to turtle file}> ,
+        <{URI to markdown file}> ;
+    prov:qualifiedAssociation [
+        a prov:Association ;
+        prov:hadRole olivaw:tester ;
+        prov:agent _:tester
+    ] ;
+    prov:qualifiedUsage [
+        a prov:Usage ;
+        prov:entity <{URL to OLIVAW related test script}> ;
+        prov:hadRole olivaw:test_suite
+    ] , [
+        prov:Usage ;
+        prov:entity <{URL to tested repository}> ;
+        prov:hadRole olivaw:tested_project
+    ] .
+```
+
+#### 1.1.1.2. The tester
+
+Here is the description of the tester, that is the person involved in the test activity.
+
+__Note:__ here the `foaf:homepage` property in an `owl:InverseFunctionalProperty` which means that two testers in two reports with the same github homepage will be considered the same developper.
+
+```ttl
+@prefix git-platform: <https://github.com/> .
+
+_:tester a prov:Agent, foaf:Person ;
+    foaf:homepage git-platform:{developper username} ;
+    foaf:nick "{developper username}" .
+```
+
+#### 1.1.1.3. The used resources
+
+There are two resources used for the activity: the tested project and the test suite.
+
+__Note:__ both of them are using a type named `olivaw:VersionedEntity`, which is a subclass of `prov:Entity` identified by its `olivaw:hostedAt` and `dcterms:hasVersion` properties.
+
+Which means that two versioned entities hosted at the same URL with the same version in two reports will be considered the same versioned entity.
+
+Here is how the test suite is described:
+
+```ttl
+<{URL to OLIVAW related test script (version in URL)}> a olivaw:VersionedEntity ;
+    dcterms:hasVersion "{OLIVAW version}" ;
+    olivaw:hostedAt <{URL to OLIVAW related test script}> .
+```
+
+The tested project will be represented slightly differently depending if the test was run on Github or locally.
+
+Here is how the tested project will be described if the test was run by GitHub Actions:
+
+```ttl
+<{URL to tested repository (commit hash in URL)}> a olivaw:VersionedEntity ;
+    dcterms:date "2024-09-27T17:05:42"^^xsd:dateTime ;
+    dcterms:hasVersion "test project commit hash" ;
+    olivaw:hostedAt <{URL to tested repository without branch or commit hash}> ;
+    olivaw:isOnBranch "{tested branch}" ;
+    olivaw:patchedBy _:tester .
+```
+
+If the test was run locally, then the test is run on an intermediate version that was not committed and that is therefore not identified by any git commit hash.
+
+A hash is then computed using the command line `git ls-files -m -d -s . | git hash-object --stdin` in order to identify two identical intermediate versions or two different ones from the same previous git commit hash.
+
+```ttl
+_:intermediateSnapshot a olivaw:VersionedEntity ;
+    dcterms:date "2024-12-03T11:12:09.775367"^^xsd:dateTime ;
+    dcterms:hasVersion "{intermediate computed hash}" ;
+    olivaw:hostedAt <{URL to tested repository without branch or commit hash}> ;
+    olivaw:isOnBranch "{tested branch}" ;
+    olivaw:patchedBy _:tester ;
+    olivaw:patchedFrom "{commit hash of last commit}" .
+```
+
+#### 1.1.1.4. The generated reports
+
+Here is how the generated reports are described in the reports
+
+__Notes:__
+* a property `olivaw:generatedAs` was implementing to express the type of generation the generated resource is
+* generated reports URIs may be different depending if the test was run locally or on GitHub Actions side:
+    * if the test was run on GitHub Actions side, the reports URIs will just be their exact URIs on GitHub (URL including the repository ref and the commit hash pointing to the exact file)
+    * if the test was run locally, local paths of the form `<file:///C:/...>` will be used instead
+
+Here is a description of the generated markdown report:
+
+```ttl
+<{URI to markdown file}> a prov:Entity ;
+    prov:generatedAtTime "2024-12-03T11:12:19.016367"^^xsd:dateTime ;
+    prov:qualifiedGeneration [
+        a prov:Generation ;
+        prov:activity _:assertor ;
+        olivaw:generatedAs olivaw:markdown_report
+    ] .
+```
+
+And here is a description of the generated turtle report
+
+```ttl
+<{URI to turtle file}> a prov:Entity ;
+    prov:generatedAtTime "2024-12-03T11:12:19.016367"^^xsd:dateTime ;
+    prov:qualifiedGeneration [
+        a prov:Generation ;
+        prov:activity _:assertor ;
+        olivaw:generatedAs olivaw:turtle_report
+    ] .
 ```
 
 ### 1.1.2. The subject
@@ -113,7 +235,8 @@ An example of subject structure would be:
 
 ```turtle
 _:file1-file2 a earl:TestSubject ;
-    dcterms:hasPart <https://github.com/org/repo/blob/path/to/file1> , <https://github.com/org/repo/blob/path/to/file2> ;
+    dcterms:hasPart <https://github.com/org/repo/blob/path/to/file1> ,
+        <https://github.com/org/repo/blob/path/to/file2> ;
     dcterms:identifier "file1-file2" ;
     dcterms:title "Merged fragments file1 and file 2"@en .
 ```
