@@ -55,11 +55,22 @@ runs:
       with:
         repository: ${{ inputs.repository }}
         ref: ${{ inputs.ref }}
+    
+    - name: Get olivaw actions version
+      id: actions-version
+      shell: bash
+      run: |
+        ACTIONS_PATH=${{ github. action_path }}
+        IFS='/' read -ra ACTIONS_PATH_PARTS <<< "$ACTIONS_PATH"
+        OLIVAW_VERSION="${ACTIONS_PATH_PARTS[7]}"
+        echo "OLIVAW_VERSION=$(echo $OLIVAW_VERSION)" >> $GITHUB_ENV
+        echo "Olivaw version: $OLIVAW_VERSION"
+
     - name: Update README.md
       if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH) }}
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@v0.0.6
+        pip install git+https://github.com/Wimmics/olivaw@${{ env.OLIVAW_VERSION }}
 
         BADGES="$(olivaw show badges --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         BADGES_DATA=($BADGES)
