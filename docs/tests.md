@@ -36,6 +36,7 @@ These tests are powered by Corese, check their [website](https://project.inria.f
 &emsp;&emsp;2.1.5. [terms-differenciation](#215-terms-differenciation)<br/>
 &emsp;&emsp;2.1.6. [labeled-terms](#216-labeled-terms)<br/>
 &emsp;&emsp;2.1.7. [profile-compatibility](#217-profile-compatibility)<br/>
+&emsp;&emsp;2.1.8. [bad-extension-property](#218-bad-extension-property)<br/>
 &emsp;2.2. [Data tests](#22-data-tests)<br/>
 &emsp;&emsp;2.2.1. [syntax](#221-syntax)<br/>
 &emsp;&emsp;2.2.2. [owl-rl-constraint](#222-owl-rl-constraint)<br/>
@@ -621,6 +622,53 @@ If the subject is not included in a given profile, the test report will provide 
 |title|OWL EL Profile incompatible|
 |description|A general message got from Corese output|
 |pointer|Turtle snippet containing the code not compatible with the profile|
+
+### 2.1.8. bad-extension-property
+
+A test meant to test the proper use of predicates rdfs:subClassOf and rdfs:subPropertyOf on the ontology terms
+
+|id|bad-extension-property|
+|-|-|
+|title|Predicate extension test|
+|description|A test meant to test the proper use of predicates rdfs:subClassOf and rdfs:subPropertyOf on the ontology terms|
+
+**Possible errors:**
+
+* **property-subclassof**
+
+|id|property-subclassof|
+|-|-|
+|title|Property subclass|
+|description|Some ontology properties of the subject are also subclasses|
+|pointer|Turtle snippet describing the ontology property|
+|pointer|URI of one class the ontology property is the subclass of|
+
+* **class-subpropertyof**
+
+|id|class-subpropertyof|
+|-|-|
+|title|Class subproperty|
+|description|Some ontology classes of the subject are also subproperties|
+|pointer|Turtle snippet describing the ontology class|
+|pointer|URI of one class the ontology class is the subproperty of|
+
+* **subclassof-property**
+
+|id|subclassof-property|
+|-|-|
+|title|Subclass of property|
+|description|Some ontology terms of the subject are subclass of property|
+|pointer|Turtle snippet describing the ontology term|
+|pointer|URI of one property the ontology term is the subclass of|
+
+* **subpropertyof-class**
+
+|id|subpropertyof-class|
+|-|-|
+|title|Subproperty of class|
+|description|Some ontology terms of the subject are subproperty of class|
+|pointer|Turtle snippet describing the ontology term|
+|pointer|URI of one class the ontology term is the subproperty of|
 
 ## 2.2. Data tests
 

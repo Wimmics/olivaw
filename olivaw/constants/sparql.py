@@ -584,6 +584,7 @@ where {
        ?o
       ) as ?parsed
   )
+  filter(str(?o) != str(<http://www.w3.org/2002/07/owl#Thing>))
 }
 """
 """Request to shorten the literals when creating a code snippet"""
@@ -606,3 +607,113 @@ select distinct ?result where {
 }
 """
 """Retrieve the different namespaces that are used in a fragment"""
+
+PROPERTY_TYPES: str = """
+VALUES (?property_type) {
+    (rdf:Property)
+    (rdfs:ContainerMembershipProperty)
+    (owl:InverseFunctionalProperty)
+    (owl:AnnotationProperty)
+    (owl:SymmetricProperty)
+    (owl:IrreflexiveProperty)
+    (owl:ReflexiveProperty)
+    (owl:TransitiveProperty)
+    (owl:DeprecatedProperty)
+    (owl:OntologyProperty)
+    (owl:AsymmetricProperty)
+    (owl:DatatypeProperty)
+    (owl:FunctionalProperty)
+    (owl:ObjectProperty)
+  }
+"""
+"""
+Provides variable ?property_type in a SPARQL request matching with any `rdf:Property` from a RDF, RDFS and OWL point of view
+
+See following request on RDF graph `[owl:imports owl:, rdf:, rdfs:] .`
+
+```
+select * where {
+  ?x rdfs:subClassOf* rdf:Property
+}
+```
+"""
+
+CLASS_TYPES: str = """
+VALUES (?class_type) {
+    (rdfs:Datatype)
+    (rdfs:Class)
+    (owl:Restriction)
+    (owl:DataRange)
+    (owl:Class)
+    (owl:DeprecatedClass)
+  }
+"""
+"""
+Provides variable ?class_type in a SPARQL request matching with any `rdfs:Class` from a RDFS and OWL point of view
+
+See following request on RDF graph `[owl:imports owl:, rdf:, rdfs:] .`
+
+```
+select * where {
+  ?x rdfs:subClassOf* rdfs:Class
+}
+```
+"""
+
+GET_SUBCLASSOF_PROPERTIES: str = """
+SELECT ?x (max(?property) as ?anomaly) WHERE {
+  PROPERTY_TYPES
+  ?x rdfs:isDefinedBy ?m ;
+    rdfs:subClassOf+/rdf:type{0, 1} ?property .
+
+  ?property rdfs:subPropertyOf*/rdf:type{0,1} ?property_type .
+}
+""".replace("PROPERTY_TYPES", PROPERTY_TYPES)
+"""
+Retrieve any ontology term that is a `rdfs:subClassOf` of a `rdf:Property`.
+
+Note: Here nothing is assumed about the ontology term.
+"""
+
+GET_PROPERTY_SUBCLASSES: str = """
+SELECT ?x (max(?property_type) as ?anomaly) WHERE {
+  PROPERTY_TYPES
+  ?x rdfs:isDefinedBy ?m ;
+    rdfs:subClassOf ?class ;
+    rdfs:subPropertyOf*/rdf:type{0,1} ?property_type .
+}
+""".replace("PROPERTY_TYPES", PROPERTY_TYPES)
+"""
+Retrieve any `rdf:Property` ontology term that has a `rdfs:subClassOf` property
+
+Note: Here nothing is assumed about the superclass.
+"""
+
+GET_SUBPROPERTYOF_CLASSES: str = """
+SELECT ?x (max(?class) as ?anomaly) WHERE {
+  CLASS_TYPES
+  ?x rdfs:isDefinedBy ?m ;
+    rdfs:subPropertyOf+/rdf:type{0, 1} ?class .
+
+  ?class rdfs:subClassOf*/rdf:type{0,1} ?class_type .
+}
+""".replace("CLASS_TYPES", CLASS_TYPES)
+"""
+Retrieve any ontology term that is a `rdfs:subPropertyOf` of a `rdfs:Class`.
+
+Note: Here nothing is assumed about the ontology term.
+"""
+
+GET_CLASS_SUBPROPERTIES: str = """
+SELECT ?x (max(?class_type) as ?anomaly) WHERE {
+  CLASS_TYPES
+  ?x rdfs:isDefinedBy ?m ;
+    rdfs:subPropertyOf ?property ;
+    rdfs:subClassOf*/rdf:type{0,1} ?class_type .
+}
+""".replace("CLASS_TYPES", CLASS_TYPES)
+"""
+Retrieve any `rdfs:Class` ontology term that has a `rdfs:subProperty` property
+
+Note: Here nothing is assumed about the superproperty.
+"""

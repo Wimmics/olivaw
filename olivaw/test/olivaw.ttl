@@ -186,6 +186,13 @@
     dc:title "Term labeling test"@en ;
     dc:description "A test case from the Best Practices tests checking if all the terms of the subject have a rdfs:label property pointing to a literal in English"@en .
 
+:bad-extension-property a earl:TestCriterion ;
+    rdfs:isDefinedBy :ontology ;
+    :canOutcome "property-subclassof" , "class-subpropertyof",  "subclassof-property", "subpropertyof-class" ;
+    dc:identifier "bad-extension-property" ;
+    dc:title "Predicate extension test"@en ;
+    dc:description "A test meant to test the proper use of predicates rdfs:subClassOf and rdfs:subPropertyOf on the ontology terms"@en .
+
 :term-recognition a earl:TestCriterion ;
     rdfs:isDefinedBy :ontology ;
     :canOutcome "unknown-term" ;

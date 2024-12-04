@@ -306,5 +306,93 @@
             "title": "Invalid URI",
             "description": "Some URIs of the subject are not valid URIs"
         }
+    },
+    "property-subclassof": {
+        "Pass": {
+            "title": "No property subclass",
+            "description": "No ontology property is a subclass"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "Property subclass",
+            "description": "Some ontology properties of the subject are also subclasses"
+        },
+        "MinorFail": {
+            "title": "Property subclass",
+            "description": "Some ontology properties of the subject are also subclasses"
+        },
+        "MajorFail": {
+            "title": "Property subclass",
+            "description": "Some ontology properties of the subject are also subclasses"
+        }
+    },
+    "class-subpropertyof": {
+        "Pass": {
+            "title": "No class subproperty",
+            "description": "No ontology class is a subproperty"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "Class subproperty",
+            "description": "Some ontology classes of the subject are also subproperties"
+        },
+        "MinorFail": {
+            "title": "Class subproperty",
+            "description": "Some ontology classes of the subject are also subproperties"
+        },
+        "MajorFail": {
+            "title": "Class subproperty",
+            "description": "Some ontology classes of the subject are also subproperties"
+        }
+    },
+    "subclassof-property": {
+        "Pass": {
+            "title": "No subclass of property",
+            "description": "No ontology term is a subclass of a property"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "Subclass of property",
+            "description": "Some ontology terms of the subject are subclass of property"
+        },
+        "MinorFail": {
+            "title": "Subclass of property",
+            "description": "Some ontology terms of the subject are subclass of property"
+        },
+        "MajorFail": {
+            "title": "Subclass of property",
+            "description": "Some ontology terms of the subject are subclass of property"
+        }
+    },
+    "subpropertyof-class": {
+        "Pass": {
+            "title": "No subproperty of class",
+            "description": "No ontology term is a subproperty of a class"
+        },
+        "NotTested": {
+            "title": "The test could not be run",
+            "description": "The subject must be syntaxically correct"
+        },
+        "CannotTell": {
+            "title": "Subproperty of class",
+            "description": "Some ontology terms of the subject are subproperty of class"
+        },
+        "MinorFail": {
+            "title": "Subproperty of class",
+            "description": "Some ontology terms of the subject are subproperty of class"
+        },
+        "MajorFail": {
+            "title": "Subproperty of class",
+            "description": "Some ontology terms of the subject are subproperty of class"
+        }
     }
 }

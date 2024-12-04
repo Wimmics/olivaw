@@ -12,6 +12,7 @@ from olivaw.constants import (
     DOMAIN_OUT_OF_VOCABULARY
 )
 
+from olivaw.constants.sparql import GET_CLASS_SUBPROPERTIES, GET_PROPERTY_SUBCLASSES, GET_SUBCLASSOF_PROPERTIES, GET_SUBPROPERTYOF_CLASSES
 from olivaw.test.corese import query_graph
 from olivaw.test.turtle import make_assertion, uri_pointer
 from olivaw.test.util import levenshtein
@@ -77,13 +78,13 @@ def best_practices_test(
             for line in rov
             for uri in line.split("\t")
         ]] if len(rov) > 0 else []
-        rov_messages = ["Some properties have a range out of the ontology"] if len(rov) > 0 else []
+        subproperty_of_class_messages = ["Some properties have a range out of the ontology"] if len(rov) > 0 else []
 
         make_assertion(
             draft,
             criterion="domain-and-range-referencing",
             error="range-out-of-vocabulary",
-            messages=rov_messages,
+            messages=subproperty_of_class_messages,
             pointers=rov
         )
 
@@ -125,4 +126,72 @@ def best_practices_test(
             error="not-labeled-term",
             messages=not_labeled_messages,
             pointers=not_labeled_pointers
+        )
+
+    if not should_skip(draft, criterion="bad-extension-property"):
+        # Checking for subclassof pointing to properties
+        subclass_of_properties = query_graph(fragment_no_import, GET_SUBCLASSOF_PROPERTIES)
+        subclass_of_properties = [[
+            uri_pointer(draft(graph=fragment_no_import), uri)
+            for line in subclass_of_properties
+            for uri in line.split("\t")
+        ]] if len(subclass_of_properties) > 0 else []
+        subclass_of_properties_messages = ["Some classes are subclass of a property"] if len(subclass_of_properties) > 0 else []
+
+        make_assertion(
+            draft,
+            error="subclassof-property",
+            messages=subclass_of_properties_messages,
+            pointers=subclass_of_properties
+        )
+
+        # Checking for subproperty pointing to classes
+        subproperty_of_class = query_graph(fragment_no_import, GET_SUBPROPERTYOF_CLASSES)
+        subproperty_of_class = [[
+            uri_pointer(draft(graph=fragment_no_import), uri)
+            for line in subproperty_of_class
+            for uri in line.split("\t")
+        ]] if len(subproperty_of_class) > 0 else []
+        subproperty_of_class_messages = ["Some properties are subproperty of a class"] if len(subproperty_of_class) > 0 else []
+
+        make_assertion(
+            draft,
+            criterion="bad-extension-property",
+            error="subpropertyof-class",
+            messages=subproperty_of_class_messages,
+            pointers=subproperty_of_class
+        )
+
+        # Checking for classes being subproperties
+        class_subproperties = query_graph(fragment_no_import, GET_CLASS_SUBPROPERTIES)
+        class_subproperties = [[
+            uri_pointer(draft(graph=fragment_no_import), uri)
+            for line in class_subproperties
+            for uri in line.split("\t")
+        ]] if len(class_subproperties) > 0 else []
+        class_subproperties_messages = ["Some classes are also subproperties"] if len(class_subproperties) > 0 else []
+
+        make_assertion(
+            draft,
+            criterion="bad-extension-property",
+            error="class-subpropertyof",
+            messages=class_subproperties_messages,
+            pointers=class_subproperties
+        )
+
+        # Checking for properties being subclasses
+        property_subclasses = query_graph(fragment_no_import, GET_PROPERTY_SUBCLASSES)
+        property_subclasses = [[
+            uri_pointer(draft(graph=fragment_no_import), uri)
+            for line in property_subclasses
+            for uri in line.split("\t")
+        ]] if len(property_subclasses) > 0 else []
+        property_subclasses_messages = ["Some classes are also subproperties"] if len(property_subclasses) > 0 else []
+
+        make_assertion(
+            draft,
+            criterion="bad-extension-property",
+            error="property-subclassof",
+            messages=property_subclasses_messages,
+            pointers=property_subclasses
         )

@@ -539,7 +539,11 @@ def query_graph(graph: JavaObject, query: str, format: int=TEXT_TSV) -> Union[li
     result = resultFormater.toString()
     
     if not format == TURTLE:
-        result = result.split("\n")[1:-1]
+        result = [
+            line for line in
+            result.split("\n")[1:-1]
+            if len(line.strip()) > 0
+        ]
 
     return result
 
