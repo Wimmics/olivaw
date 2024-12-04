@@ -59,7 +59,7 @@ runs:
       if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH) }}
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@v0.0.5
+        pip install git+https://github.com/Wimmics/olivaw@v0.0.6
 
         BADGES="$(olivaw show badges --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
         BADGES_DATA=($BADGES)
