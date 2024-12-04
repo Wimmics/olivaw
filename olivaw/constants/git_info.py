@@ -148,8 +148,7 @@ else:
     .decode('utf-8')\
     .strip()
   except:
-    print('fatal: Command "git log -1 --format=%cd --date=format:%Y-%m-%dT%H:%M:%S {COMMIT_HASH}" should return the current last commit date or argument "COMMIT_DATE" should be set')
-    exit(1)
+    pass
 
 # The repository ref
 arg_ref = [item.split("=")[1] for item in argv if item.startswith("--REF=")]

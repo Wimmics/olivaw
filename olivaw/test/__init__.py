@@ -16,6 +16,7 @@ from olivaw.constants import (
     PWD_TO_OUTPUT_FOLDER,
     COMMIT_HASH
 )
+from olivaw.constants.git_info import COMMIT_DATE
 
 errors = []
 
@@ -46,6 +47,10 @@ if BRANCH is None:
 
 if COMMIT_HASH is None:
     print('fatal: Command "git rev-parse origin/HEAD" should return the current commit hash or argument "COMMIT_HASH" should be set')
+    exit(1)
+
+if COMMIT_DATE is None:
+    print('fatal: Command "git log -1 --format=%cd --date=format:%Y-%m-%dT%H:%M:%S {COMMIT_HASH}" should return the current last commit date or argument "COMMIT_DATE" should be set')
     exit(1)
 
 if not exists(PWD_TO_OUTPUT_FOLDER):
