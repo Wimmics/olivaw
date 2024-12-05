@@ -53,23 +53,15 @@ runs:
       run: |
         UNINITIALIZED=${{ hashFiles('.acimov/parameters.json') == '' }}
         echo "UNINITIALIZED=$(echo $UNINITIALIZED)" >> $GITHUB_ENV
-        echo "Is repository initialized: $UNINITIALIZED"
+        echo "Is repository uninitialized: $UNINITIALIZED"
 
     - name: Compute if actions should be skipped because of one of the previous issues
       id: init-tag-skip
       shell: bash
       run: |
-        echo "INIT_TAG_SKIP=${{ (env.TAG_SKIP == 'true') || (env.UNINITIALIZED == 'true') }}" >> $GITHUB_ENV
+        INIT_TAG_SKIP=${{ (env.TAG_SKIP == 'true') || (env.UNINITIALIZED == 'true') }} 
+        echo "INIT_TAG_SKIP=$INIT_TAG_SKIP" >> $GITHUB_ENV
         echo "Is event a tag or repo not initialized: $INIT_TAG_SKIP"
-
-    - name: Check if repository is initialized
-      id: check-init
-      if: ${{ env.INIT_TAG_SKIP != 'true' }}
-      shell: bash
-      run: |
-        UNINITIALIZED=${{ hashFiles('.acimov/parameters.json') != '' }}
-        echo "UNINITIALIZED=$(echo $UNINITIALIZED)" >> $GITHUB_ENV
-        echo "Is repository initialized: $UNINITIALIZED"
 
     - name: Install python
       id: setup-python
@@ -145,27 +137,21 @@ runs:
         path: .venv
         key: ${{ env.CACHE_KEY }}
 
-    - name: Retrieve Gist Id
+    - name: Retrieve Gist Id and badges values, then update README
       id: gist-id
       if: ${{ env.INIT_TAG_SKIP != 'true' }}
       shell: bash
       run: |
-        echo "GIST_ID=$(olivaw show gist ${{ env.OLIVAW_PARAMETERS }})" >> $GITHUB_ENV
+        source ./.venv/bin/activate
 
-    - name: Retrieve badges values
-      id: get-badges
-      if: ${{ env.INIT_TAG_SKIP != 'true' }}
-      shell: bash
-      run: |
+        GIST_ID=$(olivaw show gist ${{ env.OLIVAW_PARAMETERS }})
+        echo "GIST_ID=$GIST_ID" >> $GITHUB_ENV
+        echo "Git id: $GIST_ID"
+
         BADGES_FILES="$(olivaw show badges ${{ env.OLIVAW_PARAMETERS }})"
         echo "BADGES_FILES=$BADGES_FILES" >> $GITHUB_ENV
         echo "Badges files: $BADGES_FILES"
 
-    - name: Update README.md
-      id: update-readme
-      if: ${{ env.INIT_TAG_SKIP != 'true' }}
-      shell: bash
-      run: |
         olivaw init branch ${{ env.OLIVAW_PARAMETERS }}
 
     - name: Preparing Gist API Call
