@@ -130,13 +130,13 @@ def best_practices_test(
 
     if not should_skip(draft, criterion="bad-extension-property"):
         # Checking for subclassof pointing to properties
-        subclass_of_properties = query_graph(fragment_no_import, GET_SUBCLASSOF_PROPERTIES)
+        subclass_of_properties = query_graph(fragment_no_owl, GET_SUBCLASSOF_PROPERTIES)
         subclass_of_properties = [[
-            uri_pointer(draft(graph=fragment_no_import), uri)
+            uri_pointer(draft(graph=fragment_no_owl), uri)
             for line in subclass_of_properties
             for uri in line.split("\t")
         ]] if len(subclass_of_properties) > 0 else []
-        subclass_of_properties_messages = ["Some classes are subclass of a property"] if len(subclass_of_properties) > 0 else []
+        subclass_of_properties_messages = ["Some terms are subclass of a property"] if len(subclass_of_properties) > 0 else []
 
         make_assertion(
             draft,
@@ -146,13 +146,13 @@ def best_practices_test(
         )
 
         # Checking for subproperty pointing to classes
-        subproperty_of_class = query_graph(fragment_no_import, GET_SUBPROPERTYOF_CLASSES)
+        subproperty_of_class = query_graph(fragment_no_owl, GET_SUBPROPERTYOF_CLASSES)
         subproperty_of_class = [[
-            uri_pointer(draft(graph=fragment_no_import), uri)
+            uri_pointer(draft(graph=fragment_no_owl), uri)
             for line in subproperty_of_class
             for uri in line.split("\t")
         ]] if len(subproperty_of_class) > 0 else []
-        subproperty_of_class_messages = ["Some properties are subproperty of a class"] if len(subproperty_of_class) > 0 else []
+        subproperty_of_class_messages = ["Some terms are subproperty of a class"] if len(subproperty_of_class) > 0 else []
 
         make_assertion(
             draft,
@@ -163,9 +163,9 @@ def best_practices_test(
         )
 
         # Checking for classes being subproperties
-        class_subproperties = query_graph(fragment_no_import, GET_CLASS_SUBPROPERTIES)
+        class_subproperties = query_graph(fragment_no_owl, GET_CLASS_SUBPROPERTIES)
         class_subproperties = [[
-            uri_pointer(draft(graph=fragment_no_import), uri)
+            uri_pointer(draft(graph=fragment_no_owl), uri)
             for line in class_subproperties
             for uri in line.split("\t")
         ]] if len(class_subproperties) > 0 else []
@@ -180,13 +180,13 @@ def best_practices_test(
         )
 
         # Checking for properties being subclasses
-        property_subclasses = query_graph(fragment_no_import, GET_PROPERTY_SUBCLASSES)
+        property_subclasses = query_graph(fragment_no_owl, GET_PROPERTY_SUBCLASSES)
         property_subclasses = [[
-            uri_pointer(draft(graph=fragment_no_import), uri)
+            uri_pointer(draft(graph=fragment_no_owl), uri)
             for line in property_subclasses
             for uri in line.split("\t")
         ]] if len(property_subclasses) > 0 else []
-        property_subclasses_messages = ["Some classes are also subproperties"] if len(property_subclasses) > 0 else []
+        property_subclasses_messages = ["Some properties are also subclasses"] if len(property_subclasses) > 0 else []
 
         make_assertion(
             draft,
