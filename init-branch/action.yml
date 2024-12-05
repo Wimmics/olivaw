@@ -16,17 +16,16 @@ runs:
       shell: bash
       run: |
         REF=${{ github.ref }}
-        echo "github.ref: $REF"
+        echo "Repository ref: $REF"
         IFS='/' read -ra PATHS <<< "$REF"
 
         REF_TYPE="${PATHS[1]}"
-        echo $REF_TYPE
         echo "REF_TYPE=$(echo ${REF_TYPE})" >> $GITHUB_ENV
 
-        BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
-        echo $BRANCH_NAME
-        echo "BRANCH=$(echo ${PATHS[2]})" >> $GITHUB_ENV
-        echo "REF_NAME=$(echo $BRANCH_NAME)" >> $GITHUB_ENV
+        REF_NAME="${PATHS[1]}_${PATHS[2]}"
+        BRANCH=$(echo ${PATHS[2]})
+        echo "BRANCH=$BRANCH" >> $GITHUB_ENV
+        echo "REF_NAME=$REF_NAME" >> $GITHUB_ENV
 
         echo "Branch: $BRANCH"
         echo "Ref name: $REF_NAME"
@@ -36,12 +35,13 @@ runs:
       id: tag-skip
       shell: bash
       run: |
-        echo "TAG_SKIP=${{ (env.REF_TYPE == 'tags') || (github.event.repository.default_branch == env.BRANCH)}}" >> $GITHUB_ENV
+        TAG_SKIP=${{ (env.REF_TYPE == 'tags') || (github.event.repository.default_branch == env.BRANCH)}}
+        echo "TAG_SKIP=" >> $GITHUB_ENV
         echo "Is trigger event a tag: $TAG_SKIP"
 
     - name: Checkout repository
       id: repo-checkout
-      if: ${{ env.TAG_SKIP == 'true' }}
+      if: ${{ env.TAG_SKIP != 'true' }}
       uses: actions/checkout@v4
       with:
         repository: ${{ github.repository }}
