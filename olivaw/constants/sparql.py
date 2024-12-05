@@ -121,7 +121,7 @@ SELECT ?assertion ?subject ?result ?outcome ?outcomeType ?subjectId ?subjectTitl
     dcterms:identifier ?outcomeId ;
     dcterms:title ?outcomeTitle ;
     dcterms:description ?outcomeDescription .
-} ORDER BY DESC(?subjectId) ?criterionId
+} ORDER BY DESC(?subjectId) ?criterionId ?outcomeId ?outcomeDescription ?outcome
 """
 """Get all the data that is related to each outcome"""
 
@@ -138,7 +138,7 @@ GET_OUTCOMES_PARTS: str = """
 SELECT DISTINCT ?subjectId ?part WHERE {
   { GET_DETAILED_ASSERTIONS }
   ?subject dcterms:hasPart ?part .
-}
+} ORDER BY ?subjectId ?part
 """.replace("GET_DETAILED_ASSERTIONS", GET_DETAILED_OUTCOMES)
 """Retrieve the parts related to the subject of an outcome"""
 
