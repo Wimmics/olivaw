@@ -86,7 +86,11 @@ GET_TERM_PAIRS: str = """
 SELECT DISTINCT ?suffix1 ?suffix2 WHERE {
   ?s1 rdfs:isDefinedBy ?module1 .
   ?s2 rdfs:isDefinedBy ?module2 .
-  FILTER(str(?s1) > str(?s2))
+  FILTER(
+    strstarts(?s1, "ONTOLOGY_NAMESPACE") &&
+    strstarts(?s2, "ONTOLOGY_NAMESPACE") &&
+    str(?s1) > str(?s2)
+  )
   BIND (SUBSTR(str(?s1), STRLEN("ONTOLOGY_NAMESPACE") + 1) as ?suffix1)
   BIND (SUBSTR(str(?s2), STRLEN("ONTOLOGY_NAMESPACE") + 1) as ?suffix2)
 } ORDER BY ?suffix1
