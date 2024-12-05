@@ -42,7 +42,7 @@ def show_badges() -> None:
     file_prefix = "_".join(REF.split("/")[1:])
 
     badges_data = {
-        f"{file_prefix}_{badge}.json": {"content": get(f"{badges_base_url}/{old_ref}_{badge}.json")}.text
+        f"{file_prefix}_{badge}.json": {"content": get(f"{badges_base_url}/{old_ref}_{badge}.json").text}
         for badge in badge_names
     }
 
