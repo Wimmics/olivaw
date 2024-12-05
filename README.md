@@ -50,13 +50,13 @@ First prepare a python environment version 3.10 or greater (3.11 if pre-commit h
 Then install the library from [pipy](https://pypi.org/project/olivaw/):
 
 ```shell
-pip install olivaw==0.0.5
+pip install olivaw
 ```
 
 It can also be installed using this command:
 
 ```shell
-pip install git+https://github.com/Wimmics/olivaw@v0.0.5
+pip install git+https://github.com/Wimmics/olivaw
 ```
 
 ## Intializing a repository
@@ -162,7 +162,7 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/test-actions@v0.0.5
+    - uses: Wimmics/olivaw/test-actions@v0.0.6
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
@@ -188,7 +188,7 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/init-branch@v0.0.5
+    - uses: Wimmics/olivaw/init-branch@v0.0.6
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
@@ -218,7 +218,7 @@ default_language_version:
   python: python3
 repos:
 - repo: https://github.com/Wimmics/olivaw
-  rev: v0.0.5
+  rev: v0.0.6
   hooks:
     - id: olivaw-test
 ```

@@ -23,10 +23,8 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/test-actions@v0.0.5
+    - uses: Wimmics/olivaw/test-actions@v0.0.6
       with:
-        repository: ${{ github.repository }}
-        ref: ${{ github.ref }}
         gist-secret: ${{ secrets.GIST_SECRET }}
 ```
 
@@ -34,15 +32,12 @@ Here is a summary of the available parameters:
 
 |Parameter|Type|Required|Default|Description|Example|
 |---------|----|--------|-------|-----------|-------|
-|`repository`|string|true||reference to the repository like `organization/repository`|`${{ github.repository }}`|
-|`ref`|string|true||reference to which branch is pushed|`${{ github.ref }}`|
 |`gist-secret`|string|true||personnal access token with the `gist` scope to update the gist files|`${{ secrets.GIST_SECRET }}`|
 |`model-test`|boolean|false|true|should model tests be run, check the [test documentation](../docs/tests.md#21-model-tests)|true|
 |`data-test`|boolean|false|true|should data tests be run, check the [test documentation](../docs/tests.md#22-data-tests)|true|
 |`query-test`|boolean|false|true|should query tests be run[test documentation](../docs/tests.md#23-query-tests)|true|
 |`commit-report`|boolean|false|true|should the reports be pushed in `.acimov/output` folder|true|
 |`archive-report`|boolean|false|true|should the reports be uploaded as GitHub Artifacts in `Actions` menu|true|
-|`server-url`|string|false|`https://github.com`|URL of the server|`https://github.com`|
 
 Here is a second example where a the test reports are pushed only if the actions branch is `main`:
 
@@ -61,10 +56,8 @@ jobs:
     - run: |
         IFS='/' read -ra PATHS <<< "${{ github.ref }}"
         echo "BRANCH=$(echo ${PATHS[2]})" >> $GITHUB_ENV
-    - uses: Wimmics/olivaw/test-actions@v0.0.5
+    - uses: Wimmics/olivaw/test-actions@v0.0.6
       with:
-        repository: ${{ github.repository }}
-        ref: ${{ github.ref }}
         gist-secret: ${{ secrets.GIST_SECRET }}
         commit-report: ${{ env.BRANCH == env.MAIN }}
 ```
