@@ -2,36 +2,20 @@ name: "Olivaw branch initialisation"
 author: "Wimmics"
 description: "Launches Olivaw model test"
 inputs:
-  repository:
-    description: "The url of the repository to test"
-    type: string
-    required: true
-  ref:
-    description: "The ref of the repository to test"
-    type: string
-    required: true
   gist-secret:
     description: "The personal access token with only gist scope allowed"
     type: string
     required: true
-  init-badges:
-    description: "Should the gist badges values be initialized"
-    type: boolean
-    required: false
-    default: true
-  server-url:
-    description: "The platform URL"
-    type: string
-    required: false
-    default: "https://github.com"
 
 runs:
   using: "composite"
   steps:
+
     - name: Parsing repo ref data
+      id: repo-ref
       shell: bash
       run: |
-        REF=${{ inputs.ref }}
+        REF=${{ github.ref }}
         echo "github.ref: $REF"
         IFS='/' read -ra PATHS <<< "$REF"
 
@@ -42,255 +26,181 @@ runs:
         BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
         echo $BRANCH_NAME
         echo "BRANCH=$(echo ${PATHS[2]})" >> $GITHUB_ENV
-        echo "REF_NAME=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
+        echo "REF_NAME=$(echo $BRANCH_NAME)" >> $GITHUB_ENV
 
-        echo "DEFAULT_BRANCH=$(echo ${{ github.event.repository.default_branch }})"
+        echo "Branch: $BRANCH"
+        echo "Ref name: $REF_NAME"
+        echo "Ref type: $REF_TYPE"
 
-    - uses: actions/setup-python@v5 
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH) }}
-      with:
-        python-version: 'pypy3.10'
-    - uses: actions/checkout@v4
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH) }}
-      with:
-        repository: ${{ inputs.repository }}
-        ref: ${{ inputs.ref }}
-    
-    - name: Get olivaw actions version
-      id: actions-version
+    - name: Compute if actions should be skipped because of tag
+      id: tag-skip
       shell: bash
       run: |
-        ACTIONS_PATH=${{ github. action_path }}
+        echo "TAG_SKIP=${{ (env.REF_TYPE == 'tags') || (github.event.repository.default_branch == env.BRANCH)}}" >> $GITHUB_ENV
+        echo "Is trigger event a tag: $TAG_SKIP"
+
+    - name: Checkout repository
+      id: repo-checkout
+      if: ${{ env.TAG_SKIP == 'true' }}
+      uses: actions/checkout@v4
+      with:
+        repository: ${{ github.repository }}
+        ref: ${{ github.ref }}
+
+    - name: Compute if actions should be skipped because of uninitialized repository
+      id: init-skip
+      shell: bash
+      run: |
+        UNINITIALIZED=${{ hashFiles('.acimov/parameters.json') == '' }}
+        echo "UNINITIALIZED=$(echo $UNINITIALIZED)" >> $GITHUB_ENV
+        echo "Is repository initialized: $UNINITIALIZED"
+
+    - name: Compute if actions should be skipped because of one of the previous issues
+      id: init-tag-skip
+      shell: bash
+      run: |
+        echo "INIT_TAG_SKIP=${{ (env.TAG_SKIP == 'true') || (env.UNINITIALIZED == 'true') }}" >> $GITHUB_ENV
+        echo "Is event a tag or repo not initialized: $INIT_TAG_SKIP"
+
+    - name: Check if repository is initialized
+      id: check-init
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      shell: bash
+      run: |
+        UNINITIALIZED=${{ hashFiles('.acimov/parameters.json') != '' }}
+        echo "UNINITIALIZED=$(echo $UNINITIALIZED)" >> $GITHUB_ENV
+        echo "Is repository initialized: $UNINITIALIZED"
+
+    - name: Install python
+      id: setup-python
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      uses: actions/setup-python@v5 
+      with:
+        python-version: 'pypy3.10'
+
+    - name: Get olivaw actions version
+      id: olivaw-version
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      shell: bash
+      run: |
+        ACTIONS_PATH=${{ github.action_path }}
         IFS='/' read -ra ACTIONS_PATH_PARTS <<< "$ACTIONS_PATH"
         OLIVAW_VERSION="${ACTIONS_PATH_PARTS[7]}"
         echo "OLIVAW_VERSION=$(echo $OLIVAW_VERSION)" >> $GITHUB_ENV
         echo "Olivaw version: $OLIVAW_VERSION"
 
-    - name: Update README.md
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH) }}
+    - name: Compute olivaw command line parameters
+      id: olivaw-parameters
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
       shell: bash
       run: |
-        pip install git+https://github.com/Wimmics/olivaw@${{ env.OLIVAW_VERSION }}
+        OLIVAW_PARAMETERS="--MODE=ACTIONS"
+        OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --DEV_USERNAME=${{ github.actor }}"
+        OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --REPO_URI=${{ github.server_url }}/${{ github.repository }}"
+        OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --BRANCH=${{ github.ref }}"
+        echo "OLIVAW_PARAMETERS=$(echo $OLIVAW_PARAMETERS)" >> $GITHUB_ENV
+        echo "Olivaw parameters: $OLIVAW_PARAMETERS"
 
-        BADGES="$(olivaw show badges --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})"
-        BADGES_DATA=($BADGES)
+    - name: Compute virtual environment cache key
+      id: cache-key
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      shell: bash
+      run: |
+        CACHE_KEY="${{ runner.os }}-${{ steps.setup-python.outputs.python-path }}-${{ env.OLIVAW_VERSION }}"
+        echo "CACHE_KEY=$(echo $CACHE_KEY)" >> $GITHUB_ENV
+        echo "Cache key: $CACHE_KEY"
 
-        echo "MODEL_PASS_COLOR=${BADGES_DATA[2]}" >> $GITHUB_ENV
-        echo "MODEL_PASS_LABEL=${BADGES_DATA[5]}" >> $GITHUB_ENV
-        echo "MODEL_NOTTESTED_COLOR=${BADGES_DATA[8]}" >> $GITHUB_ENV
-        echo "MODEL_NOTTESTED_LABEL=${BADGES_DATA[11]}" >> $GITHUB_ENV
-        echo "MODEL_CANNOTTELL_COLOR=${BADGES_DATA[14]}" >> $GITHUB_ENV
-        echo "MODEL_CANNOTTELL_LABEL=${BADGES_DATA[17]}" >> $GITHUB_ENV
-        echo "MODEL_MINORFAIL_COLOR=${BADGES_DATA[20]}" >> $GITHUB_ENV
-        echo "MODEL_MINORFAIL_LABEL=${BADGES_DATA[23]}" >> $GITHUB_ENV
-        echo "MODEL_MAJORFAIL_COLOR=${BADGES_DATA[26]}" >> $GITHUB_ENV
-        echo "MODEL_MAJORFAIL_LABEL=${BADGES_DATA[29]}" >> $GITHUB_ENV
-        echo "DATA_PASS_COLOR=${BADGES_DATA[32]}" >> $GITHUB_ENV
-        echo "DATA_PASS_LABEL=${BADGES_DATA[35]}" >> $GITHUB_ENV
-        echo "DATA_NOTTESTED_COLOR=${BADGES_DATA[38]}" >> $GITHUB_ENV
-        echo "DATA_NOTTESTED_LABEL=${BADGES_DATA[41]}" >> $GITHUB_ENV
-        echo "DATA_CANNOTTELL_COLOR=${BADGES_DATA[44]}" >> $GITHUB_ENV
-        echo "DATA_CANNOTTELL_LABEL=${BADGES_DATA[47]}" >> $GITHUB_ENV
-        echo "DATA_MINORFAIL_COLOR=${BADGES_DATA[50]}" >> $GITHUB_ENV
-        echo "DATA_MINORFAIL_LABEL=${BADGES_DATA[53]}" >> $GITHUB_ENV
-        echo "DATA_MAJORFAIL_COLOR=${BADGES_DATA[56]}" >> $GITHUB_ENV
-        echo "DATA_MAJORFAIL_LABEL=${BADGES_DATA[59]}" >> $GITHUB_ENV
-        echo "QUERY_PASS_COLOR=${BADGES_DATA[62]}" >> $GITHUB_ENV
-        echo "QUERY_PASS_LABEL=${BADGES_DATA[65]}" >> $GITHUB_ENV
-        echo "QUERY_NOTTESTED_COLOR=${BADGES_DATA[68]}" >> $GITHUB_ENV
-        echo "QUERY_NOTTESTED_LABEL=${BADGES_DATA[71]}" >> $GITHUB_ENV
-        echo "QUERY_CANNOTTELL_COLOR=${BADGES_DATA[74]}" >> $GITHUB_ENV
-        echo "QUERY_CANNOTTELL_LABEL=${BADGES_DATA[77]}" >> $GITHUB_ENV
-        echo "QUERY_MINORFAIL_COLOR=${BADGES_DATA[80]}" >> $GITHUB_ENV
-        echo "QUERY_MINORFAIL_LABEL=${BADGES_DATA[83]}" >> $GITHUB_ENV
-        echo "QUERY_MAJORFAIL_COLOR=${BADGES_DATA[86]}" >> $GITHUB_ENV
-        echo "QUERY_MAJORFAIL_LABEL=${BADGES_DATA[89]}" >> $GITHUB_ENV
-        echo "EL_COLOR=${BADGES_DATA[92]}" >> $GITHUB_ENV
-        echo "EL_LABEL=${BADGES_DATA[95]}" >> $GITHUB_ENV
-        echo "RL_COLOR=${BADGES_DATA[98]}" >> $GITHUB_ENV
-        echo "RL_LABEL=${BADGES_DATA[101]}" >> $GITHUB_ENV
+    - name: Try to retrieve virtual environment
+      id: cache-restore
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      uses: actions/cache/restore@v4
+      with:
+        path: .venv
+        key: ${{ env.CACHE_KEY }}
 
-        echo "GISTID=$(olivaw show gist --MODE=ACTIONS --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --BRANCH=${{ inputs.ref }})" >> $GITHUB_ENV
+    - name: Plan if some installation is required in the virtual environment
+      id: plan-venv
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      shell: bash
+      run: |
+        MAKE_VENV=${{ (env.INIT_TAG_SKIP != 'true') && (steps.cache-restore.outputs.cache-hit != 'true') }}
+        echo "MAKE_VENV=$(echo $MAKE_VENV)" >> $GITHUB_ENV
+        echo "Prepare virtual environment: $MAKE_VENV"
 
-        olivaw init branch --DEV_USERNAME=${{ github.actor }} --REPO_URI=${{ inputs.server-url }}/${{ inputs.repository }} --REF=${{ inputs.ref }}
+    - name: Prepare virtual environment if no cache hit
+      id: init-venv
+      if: ${{ env.MAKE_VENV == 'true' }}
+      shell: bash
+      run: |
+        python -m venv ./.venv
+        source ./.venv/bin/activate
+        pip install -q --upgrade pip
+        pip install -q git+https://github.com/Wimmics/olivaw.git@${{ env.OLIVAW_VERSION }}
+
+    - name: Save virtual environment if no chache hit
+      id: cache-save
+      if: ${{ env.MAKE_VENV == 'true' }}
+      uses: actions/cache/save@v4
+      with:
+        path: .venv
+        key: ${{ env.CACHE_KEY }}
+
+    - name: Retrieve Gist Id
+      id: gist-id
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      shell: bash
+      run: |
+        echo "GIST_ID=$(olivaw show gist ${{ env.OLIVAW_PARAMETERS }})" >> $GITHUB_ENV
+
+    - name: Retrieve badges values
+      id: get-badges
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      shell: bash
+      run: |
+        BADGES_FILES="$(olivaw show badges ${{ env.OLIVAW_PARAMETERS }})"
+        echo "BADGES_FILES=$BADGES_FILES" >> $GITHUB_ENV
+        echo "Badges files: $BADGES_FILES"
+
+    - name: Update README.md
+      id: update-readme
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      shell: bash
+      run: |
+        olivaw init branch ${{ env.OLIVAW_PARAMETERS }}
+
+    - name: Preparing Gist API Call
+      id: gist-payload
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      shel: bash
+      run: |
+        GIST_PAYLOAD='{"gist_id": "${{ env.GIST_ID }}", "description": "Olivaw badges for ${{ github.repository }}", "files": "${{ env.BADGES_FILES }}"}'
+        echo "GIST_PAYLOAD=$GIST_PAYLOAD" >> $GITHUB_ENV
+        echo "Gist payload: $GIST_PAYLOAD"
+
+    - name: Upload Badges
+      id: gist-upload
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      continue-on-error: true
+      shell: bash
+      run: |
+        echo "Uploading ${{ github.repository }} badges values for branch ${{ env.BRANCH }} on gist ${{ env.GIST_ID }}"
+
+        curl --request POST \
+          --url 'https://api.github.com/gists/${{ env.GIST_ID }}?scope=gist' \
+          --header 'Authorization: token ${{ inputs.gist-secret }}' \
+          --header 'Content-Type: application/json' \
+          --header 'X-GitHub-Api-Version: 2022-11-28' \
+          --header 'User-Agent: olivaw/${{ env.OLIVAW_VERSION }}' \
+          --data '${{ env.GIST_PAYLOAD }}'
 
     - name: Commit README.md
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH) }}
+      id: commit-repo
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
       shell: bash
       run: |
         git config --global user.email "no-reply@github.com"
         git config --global user.name "Olivaw in Actions"
         git add README.md
         git commit -m "Initialize README.md for branch ${{ env.REF_NAME }} [skip actions]"
-        git remote set-url origin ${{ inputs.server-url }}/${{ inputs.repository }}
+        git remote set-url origin ${{ github.server-url }}/${{ github.repository }}
         git push
-    - name: Create the MODEL_PASS Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH) && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_MODEL_PASS.json
-        label: Pass
-        message: ${{ env.MODEL_PASS_LABEL }}
-        color: ${{ env.MODEL_PASS_COLOR }}
-    - name: Create the MODEL_NOTTESTED Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_MODEL_NOTTESTED.json
-        label: NotTested
-        message: ${{ env.MODEL_NOTTESTED_LABEL }}
-        color: ${{ env.MODEL_NOTTESTED_COLOR }}
-    - name: Create the MODEL_CANNOTTELL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_MODEL_CANNOTTELL.json
-        label: CannotTell
-        message: ${{ env.MODEL_CANNOTTELL_LABEL }}
-        color: ${{ env.MODEL_CANNOTTELL_COLOR }}
-    - name: Create the MODEL_MINORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_MODEL_MINORFAIL.json
-        label: MinorFail
-        message: ${{ env.MODEL_MINORFAIL_LABEL }}
-        color: ${{ env.MODEL_MINORFAIL_COLOR }}
-    - name: Create the MODEL_MAJORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_MODEL_MAJORFAIL.json
-        label: MinorFail
-        message: ${{ env.MODEL_MAJORFAIL_LABEL }}
-        color: ${{ env.MODEL_MAJORFAIL_COLOR }}
-    - name: Create the DATA_PASS Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_DATA_PASS.json
-        label: Pass
-        message: ${{ env.DATA_PASS_LABEL }}
-        color: ${{ env.DATA_PASS_COLOR }}
-    - name: Create the DATA_NOTTESTED Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_DATA_NOTTESTED.json
-        label: NotTested
-        message: ${{ env.DATA_NOTTESTED_LABEL }}
-        color: ${{ env.DATA_NOTTESTED_COLOR }}
-    - name: Create the DATA_CANNOTTELL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_DATA_CANNOTTELL.json
-        label: CannotTell
-        message: ${{ env.DATA_CANNOTTELL_LABEL }}
-        color: ${{ env.DATA_CANNOTTELL_COLOR }}
-    - name: Create the DATA_MINORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_DATA_MINORFAIL.json
-        label: MinorFail
-        message: ${{ env.DATA_MINORFAIL_LABEL }}
-        color: ${{ env.DATA_MINORFAIL_COLOR }}
-    - name: Create the DATA_MAJORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_DATA_MAJORFAIL.json
-        label: MinorFail
-        message: ${{ env.DATA_MAJORFAIL_LABEL }}
-        color: ${{ env.DATA_MAJORFAIL_COLOR }}
-    - name: Create the QUERY_PASS Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_QUERY_PASS.json
-        label: Pass
-        message: ${{ env.QUERY_PASS_LABEL }}
-        color: ${{ env.QUERY_PASS_COLOR }}
-    - name: Create the QUERY_NOTTESTED Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_QUERY_NOTTESTED.json
-        label: NotTested
-        message: ${{ env.QUERY_NOTTESTED_LABEL }}
-        color: ${{ env.QUERY_NOTTESTED_COLOR }}
-    - name: Create the QUERY_CANNOTTELL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_QUERY_CANNOTTELL.json
-        label: CannotTell
-        message: ${{ env.QUERY_CANNOTTELL_LABEL }}
-        color: ${{ env.QUERY_CANNOTTELL_COLOR }}
-    - name: Create the QUERY_MINORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_QUERY_MINORFAIL.json
-        label: MinorFail
-        message: ${{ env.QUERY_MINORFAIL_LABEL }}
-        color: ${{ env.QUERY_MINORFAIL_COLOR }}
-    - name: Create the QUERY_MAJORFAIL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_QUERY_MAJORFAIL.json
-        label: MinorFail
-        message: ${{ env.QUERY_MAJORFAIL_LABEL }}
-        color: ${{ env.QUERY_MAJORFAIL_COLOR }}
-    - name: Create the EL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_EL.json
-        label: OWL EL
-        message: ${{ env.EL_LABEL }}
-        color: ${{ env.EL_COLOR }}
-    - name: Create the RL Badge
-      if: ${{ (env.REF_TYPE != 'tags') && (github.event.repository.default_branch != env.BRANCH)  && (inputs.init-badges == 'true') }}
-      uses: schneegans/dynamic-badges-action@v1.7.0
-      with:
-        auth: ${{ inputs.gist-secret }}
-        gistID: ${{ env.GISTID }}
-        filename: ${{ env.REF_NAME }}_RL.json
-        label: OWL QL
-        message: ${{ env.RL_LABEL }}
-        color: ${{ env.RL_COLOR }}

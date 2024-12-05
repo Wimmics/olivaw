@@ -2,7 +2,7 @@
 
 from os.path import sep
 from requests import get
-from json import loads
+from json import dumps
 
 from olivaw.constants import ROOT_FOLDER
 from olivaw.constants.git_info import REF
@@ -39,11 +39,9 @@ def show_badges() -> None:
         for severity in ["PASS", "NOTTESTED", "CANNOTTELL", "MINORFAIL", "MAJORFAIL"]
     ] + ["EL", "QL", "RL"]
 
-    badges_data = [
-        loads(get(f"{badges_base_url}/{old_ref}_{badge}.json").text)
+    badges_data = {
+        f"{REF}_{badge}.json": get(f"{badges_base_url}/{old_ref}_{badge}.json").text
         for badge in badge_names
-    ]
+    }
 
-    for name, data in zip(badge_names, badges_data):
-        print(f"{name}_COLOR\t=\t{data['color']}")
-        print(f"{name}_LABEL\t=\t{data['message']}")
+    print(dumps(badges_data))
