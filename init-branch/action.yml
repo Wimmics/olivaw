@@ -99,15 +99,49 @@ runs:
         echo "OLIVAW_PARAMETERS=$(echo $OLIVAW_PARAMETERS)" >> $GITHUB_ENV
         echo "Olivaw parameters: $OLIVAW_PARAMETERS"
 
+    - name: Compute virtual environment cache key
+      id: cache-key
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      shell: bash
+      run: |
+        CACHE_KEY="${{ runner.os }}-${{ steps.setup-python.outputs.python-path }}-${{ env.OLIVAW_VERSION }}"
+        echo "CACHE_KEY=$(echo $CACHE_KEY)" >> $GITHUB_ENV
+        echo "Cache key: $CACHE_KEY"
+
+    - name: Try to retrieve virtual environment
+      id: cache-restore
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      uses: actions/cache/restore@v4
+      with:
+        path: .venv
+        key: ${{ env.CACHE_KEY }}
+
+    - name: Plan if some installation is required in the virtual environment
+      id: plan-venv
+      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      shell: bash
+      run: |
+        MAKE_VENV=${{ (env.INIT_TAG_SKIP != 'true') && (steps.cache-restore.outputs.cache-hit != 'true') }}
+        echo "MAKE_VENV=$(echo $MAKE_VENV)" >> $GITHUB_ENV
+        echo "Prepare virtual environment: $MAKE_VENV"
+
     - name: Prepare virtual environment if no cache hit
       id: init-venv
-      if: ${{ env.INIT_TAG_SKIP != 'true' }}
+      if: ${{ env.MAKE_VENV == 'true' }}
       shell: bash
       run: |
         python -m venv ./.venv
         source ./.venv/bin/activate
         pip install -q --upgrade pip
         pip install -q git+https://github.com/Wimmics/olivaw.git@${{ env.OLIVAW_VERSION }}
+
+    - name: Save virtual environment if no chache hit
+      id: cache-save
+      if: ${{ env.MAKE_VENV == 'true' }}
+      uses: actions/cache/save@v4
+      with:
+        path: .venv
+        key: ${{ env.CACHE_KEY }}
 
     - name: Retrieve Gist Id and badges values, then update README
       id: gist-id
