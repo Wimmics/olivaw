@@ -165,7 +165,7 @@ runs:
       if: ${{ env.INIT_TAG_SKIP != 'true' }}
       shell: bash
       run: |
-        GIST_PAYLOAD='{"gist_id": "${{ env.GIST_ID }}", "description": "Olivaw badges for ${{ github.repository }}", "files": "${{ env.BADGES_FILES }}"}'
+        GIST_PAYLOAD='{"gist_id": "${{ env.GIST_ID }}", "description": "Olivaw badges for ${{ github.repository }}", "files": ${{ env.BADGES_FILES }}}'
         echo "GIST_PAYLOAD=$GIST_PAYLOAD" >> $GITHUB_ENV
         echo "Gist payload: $GIST_PAYLOAD"
 
