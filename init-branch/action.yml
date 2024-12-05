@@ -89,7 +89,7 @@ runs:
         OLIVAW_PARAMETERS="--MODE=ACTIONS --REF=${{ github.ref }}"
         OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --DEV_USERNAME=${{ github.actor }}"
         OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --REPO_URI=${{ github.server_url }}/${{ github.repository }}"
-        OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --BRANCH=${{ github.BRANCH }}"
+        OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --BRANCH=${{ env.BRANCH }}"
         echo "OLIVAW_PARAMETERS=$(echo $OLIVAW_PARAMETERS)" >> $GITHUB_ENV
         echo "Olivaw parameters: $OLIVAW_PARAMETERS"
 
