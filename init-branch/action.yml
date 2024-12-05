@@ -15,6 +15,12 @@ runs:
       id: repo-ref
       shell: bash
       run: |
+        SERVER_URL=${{ github.server_url }}
+        REPO=${{ github.repository }}
+        REPO_URI="$SERVER_URL/$REPO"
+        echo "REPO_URI=$(echo $REPO_URI)" >> $GITHUB_ENV
+        echo "Repository URI: $REPO_URI"
+
         REF=${{ github.ref }}
         echo "Repository ref: $REF"
         IFS='/' read -ra PATHS <<< "$REF"
@@ -88,7 +94,7 @@ runs:
       run: |
         OLIVAW_PARAMETERS="--MODE=ACTIONS --REF=${{ github.ref }}"
         OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --DEV_USERNAME=${{ github.actor }}"
-        OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --REPO_URI=${{ github.server_url }}/${{ github.repository }}"
+        OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --REPO_URI=${{ env.REPO_URI }}"
         OLIVAW_PARAMETERS="$OLIVAW_PARAMETERS --BRANCH=${{ env.BRANCH }}"
         echo "OLIVAW_PARAMETERS=$(echo $OLIVAW_PARAMETERS)" >> $GITHUB_ENV
         echo "Olivaw parameters: $OLIVAW_PARAMETERS"
@@ -188,5 +194,5 @@ runs:
         git config --global user.name "Olivaw in Actions"
         git add README.md
         git commit -m "Initialize README.md for branch ${{ env.REF_NAME }} [skip actions]"
-        git remote set-url origin ${{ github.server-url }}/${{ github.repository }}
+        git remote set-url origin ${{ env.REPO_URI }}
         git push
