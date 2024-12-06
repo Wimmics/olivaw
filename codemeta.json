@@ -97,10 +97,10 @@
     "contributor": [],
     "codeRepository": "https://github.com/Wimmics/olivaw.git",
     "dateCreated": "2024-01-07",
-    "dateModified": "2024-12-05",
-    "datePublished": "2024-12-05",
+    "dateModified": "2024-12-06",
+    "datePublished": "2024-12-06",
     "description": "Python framework for supporting agile ontology development",
-    "downloadUrl": "https://files.pythonhosted.org/packages/d9/0f/7094c8541566b0892869a38a825f13bd55fddab2b2512e26e8e3e23000d9/olivaw-0.0.5-py3-none-any.whl",
+    "downloadUrl": "https://github.com/Wimmics/olivaw/releases/download/v0.0.6/olivaw-0.0.6-py3-none-any.whl",
     "funder": {
         "@id": "https://ror.org/01nzkaw91",
         "@type": "Organization",
