@@ -71,10 +71,11 @@ QUIET: bool = ACTIONS or PRECOMMIT
 ERROR_RESOURCES: dict = None
 """Provides the useful data concerning the errors"""
 
-with open(f"{PWD_TO_CONSTANTS}{sep}error-resources.json", "r") as f:
-  ERROR_RESOURCES = load(f)
+if not PWD_TO_CONSTANTS is None:
+  with open(f"{PWD_TO_CONSTANTS}{sep}error-resources.json", "r") as f:
+    ERROR_RESOURCES = load(f)
 
-ERROR_IDS: list[str] = list(ERROR_RESOURCES.keys())
+ERROR_IDS: list[str] = list(ERROR_RESOURCES.keys()) if not ERROR_RESOURCES is None else []
 """Set of all the errors of the default tests"""
 
 ONTOLOGY_PREFIX: str = None

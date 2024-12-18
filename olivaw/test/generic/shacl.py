@@ -5,7 +5,6 @@ import regex as re
 from glob import glob
 from os.path import sep
 
-from olivaw.constants.regex import NEW_LINES
 from olivaw.test.corese import (
     safe_load,
     query_graph,
@@ -28,7 +27,8 @@ from olivaw.constants import (
     GET_SHAPE_DESCRIPTION,
     GET_CRITERION_VALIDITY,
     CRITERION_IDS,
-    ADD_VARIABLE
+    ADD_VARIABLE,
+    NEW_LINES
 )
 
 from rdflib import Graph, URIRef
@@ -36,11 +36,10 @@ from rdflib.namespace import RDF, SH
 
 from olivaw.test.turtle import make_assertion, turtle_pointer, uri_pointer
 from olivaw.test.util import smart_print
-
-from py4j.java_gateway import JavaObject
-
 from olivaw.test.util.draft import AssertDraft
 from olivaw.test.util.skip import should_skip
+
+from py4j.java_gateway import JavaObject
 
 test_features = [
     "Custom test graph must have one and only one criterion",

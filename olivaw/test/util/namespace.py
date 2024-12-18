@@ -5,9 +5,11 @@ from os import sep
 from ssl import CERT_NONE, create_default_context
 from urllib.request import urlopen
 
-from olivaw.constants import ACTIONS
-from olivaw.constants.paths import PWD_TO_CONSTANTS
-from olivaw.constants.prefixcc import PREFIX_CC_PREFIXES
+from olivaw.constants import (
+    ACTIONS,
+    PWD_TO_CONSTANTS,
+    PREFIX_CC_PREFIXES
+)
 from olivaw.test.util.print import smart_print
 
 def iterate_node(node: dict) -> None:

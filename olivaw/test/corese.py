@@ -23,12 +23,14 @@ from olivaw.constants import (
     GET_IMPORTS,
     CORESE_LOCAL_PATH,
     ONTOLOGY_PREFIX,
-    ONTOLOGY_NAMESPACE
+    ONTOLOGY_NAMESPACE,
+    ON_POSIX,
+    MODULES_TTL_GLOB_PATH,
+    AST_ERROR_FORMAT,
+    URI_FORMAT,
+    URI_PATTERN,
+    GET_DECLARED_ONTOLOGIES
 )
-from olivaw.constants.git_info import ON_POSIX
-from olivaw.constants.paths import MODULES_TTL_GLOB_PATH
-from olivaw.constants.regex import AST_ERROR_FORMAT, URI_FORMAT, URI_PATTERN
-from olivaw.constants.sparql import GET_DECLARED_ONTOLOGIES
 from olivaw.test.util.print import print_title, smart_print
 
 ontologies = {}

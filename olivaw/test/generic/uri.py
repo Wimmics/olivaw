@@ -3,8 +3,7 @@
 from typing import Callable
 from py4j.java_gateway import JavaObject
 
-from olivaw.constants import SKIPPED_TESTS
-from olivaw.constants.regex import URI_FORMAT
+from olivaw.constants import SKIPPED_TESTS, URI_FORMAT
 from olivaw.test.turtle import make_assertion, text_pointer
 from olivaw.test.util.draft import AssertDraft
 

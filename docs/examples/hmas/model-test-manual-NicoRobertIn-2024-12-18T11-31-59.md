@@ -2,9 +2,9 @@
 
 This file is an export of the RDF test report made out of [EARL vocabulary](https://www.w3.org/TR/EARL10/)
 
-This test is powered by Corese, check the [website](https://project.inria.fr/corese/) and the [repository](https://github.com/Wimmics/corese)
+This test is powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese)
 
-The original test report is available in turtle syntax [here](./model-test-manual-NicoRobertIn-2024-12-05T14-48-41.ttl).
+The original test report is available in turtle syntax [here](./model-test-manual-NicoRobertIn-2024-12-18T11-31-59.ttl).
 
 # Test Activity
 
@@ -16,13 +16,13 @@ Here is some information about the testing activity that led to this report
 |Tester|[NicoRobertIn](https://github.com/NicoRobertIn)|
 |Ontology|[HyperAgents/hmas](https://github.com/HyperAgents/hmas)|
 |Ontology version|Local state `ca439d4144b23b3fe927509872babc8d82142fae`|
-|Ontology version date|2024-12-05 14:48:29|
+|Ontology version date|2024-12-18 11:31:48|
 |Ontology previous version|[3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b](https://github.com/HyperAgents/hmas/tree/3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b)|
 |Ontology branch|[HEAD](https://github.com/HyperAgents/hmas/tree/HEAD)|
-|Olivaw suite|[olivaw model test suite](https://github.com/Wimmics/olivaw/blob/v0.0.6/olivaw/test/model/suite.py)|
-|Olivaw version|[v0.0.6](https://pypi.org/project/olivaw/0.0.6)|
-|Generated turtle|[Turtle report](./model-test-manual-NicoRobertIn-2024-12-05T14-48-41.ttl)|
-|Generated Markdown|[Markdown report](./model-test-manual-NicoRobertIn-2024-12-05T14-48-41.md)|
+|Olivaw suite|[olivaw model test suite](https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/model/suite.py)|
+|Olivaw version|[v0.0.7](https://pypi.org/project/olivaw/0.0.7)|
+|Generated turtle|[Turtle report](./model-test-manual-NicoRobertIn-2024-12-18T11-31-59.ttl)|
+|Generated Markdown|[Markdown report](./model-test-manual-NicoRobertIn-2024-12-18T11-31-59.md)|
 
 # Statistic summary
 
@@ -37,10 +37,10 @@ Here is a short overview for this test report
 <br/>
 
 The different status types are an extension of the [EARL](https://www.w3.org/TR/EARL10-Schema/) vocabulary where the nextended terms can be found in the [olivaw ontology](https://ns.inria.fr/olivaw#), each outcome type means:
-* :boom: MajorFail: This is an error that is critical and consider as blocking for production
-* :exclamation: MinorFail: This is an error that should be fixed, but it is cannot be considered as critical error
-* :warning: CannotTell: It is unclear if the subject passed or failed the test. This happens when an automated test requires human judgement to make a definite decision.
-* :grey_question: NotTested:  The test has not been carried out. Here this is because a previous test that was mandatory to be passed did not end up as Pass.
+* :boom: MajorFail: This is an error that is critical and considered as blocking for production
+* :exclamation: MinorFail: This is an error that should be fixed, but it cannot be considered as critical error
+* :warning: CannotTell: It is unclear if the subject passed or failed the test. This happens when an automated test requires human judgement to make a final decision.
+* :grey_question: NotTested:  The test has not been carried out. It is because some prerequisite tests did not end up as Pass.
 * :white_check_mark: Pass: The subject passed the test.
 
 ***
@@ -1798,267 +1798,267 @@ Here is the chapter related to the Pass outcome
 
 |*Jump*|*Number*|*Status*|*Subject*|*Criterion*|*Title*|*Link*|
 |------|--------|--------|---------|-----------|-------|------|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-1">1/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-1)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-2">2/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-2)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-3">3/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-3)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-4">4/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-4)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-5">5/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-5)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-6">6/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-6)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-7">7/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-7)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-8">8/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-8)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-9">9/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-9)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-10">10/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-10)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-11">11/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-11)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-1">1/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-1)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-2">2/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-2)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-3">3/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-3)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-4">4/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-4)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-5">5/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-5)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-6">6/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-6)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-7">7/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-7)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-8">8/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-8)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-9">9/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-9)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-10">10/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-10)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-11">11/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-11)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-12">12/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-create-organization`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-12)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-13">13/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-13)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-14">14/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-14)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-15">15/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-15)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-16">16/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-16)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-17">17/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-17)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-18">18/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-18)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-19">19/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-19)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-20">20/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-20)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-21">21/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-21)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-22">22/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-22)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-23">23/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-23)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-13">13/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-13)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-14">14/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-14)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-15">15/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-15)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-16">16/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-16)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-17">17/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-17)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-18">18/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-18)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-19">19/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-19)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-20">20/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-20)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-21">21/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-21)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-22">22/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-22)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-23">23/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-23)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-24">24/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-coordinate-activities`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-24)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-25">25/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-25)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-26">26/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-26)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-27">27/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-27)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-28">28/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-28)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-29">29/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-29)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-30">30/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-30)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-31">31/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-31)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-32">32/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-32)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-33">33/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-33)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-34">34/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-34)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-35">35/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-35)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-25">25/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-25)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-26">26/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-26)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-27">27/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-27)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-28">28/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-28)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-29">29/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-29)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-30">30/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-30)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-31">31/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-31)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-32">32/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-32)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-33">33/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-33)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-34">34/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-34)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-35">35/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-35)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-36">36/261</div>|:white_check_mark:Pass|`module-src-regulation-modelet-logistics-configure-organization`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-36)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-37">37/261</div>|:white_check_mark:Pass|`module-src-regulation`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-37)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-38">38/261</div>|:white_check_mark:Pass|`module-src-regulation`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-38)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-39">39/261</div>|:white_check_mark:Pass|`module-src-regulation`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-39)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-40">40/261</div>|:white_check_mark:Pass|`module-src-regulation`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-40)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-41">41/261</div>|:white_check_mark:Pass|`module-src-regulation`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-41)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-42">42/261</div>|:white_check_mark:Pass|`module-src-regulation`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-42)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-43">43/261</div>|:white_check_mark:Pass|`module-src-regulation`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-43)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-44">44/261</div>|:white_check_mark:Pass|`module-src-regulation`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-44)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-45">45/261</div>|:white_check_mark:Pass|`module-src-regulation`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-45)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-46">46/261</div>|:white_check_mark:Pass|`module-src-regulation`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-46)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-47">47/261</div>|:white_check_mark:Pass|`module-src-regulation`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-47)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-37">37/261</div>|:white_check_mark:Pass|`module-src-regulation`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-37)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-38">38/261</div>|:white_check_mark:Pass|`module-src-regulation`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-38)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-39">39/261</div>|:white_check_mark:Pass|`module-src-regulation`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-39)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-40">40/261</div>|:white_check_mark:Pass|`module-src-regulation`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-40)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-41">41/261</div>|:white_check_mark:Pass|`module-src-regulation`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-41)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-42">42/261</div>|:white_check_mark:Pass|`module-src-regulation`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-42)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-43">43/261</div>|:white_check_mark:Pass|`module-src-regulation`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-43)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-44">44/261</div>|:white_check_mark:Pass|`module-src-regulation`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-44)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-45">45/261</div>|:white_check_mark:Pass|`module-src-regulation`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-45)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-46">46/261</div>|:white_check_mark:Pass|`module-src-regulation`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-46)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-47">47/261</div>|:white_check_mark:Pass|`module-src-regulation`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-47)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-48">48/261</div>|:white_check_mark:Pass|`module-src-regulation`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-48)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-49">49/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-49)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-50">50/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-50)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-51">51/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-51)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-52">52/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-52)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-53">53/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-53)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-54">54/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-54)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-55">55/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-55)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-56">56/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-56)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-57">57/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-57)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-58">58/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-58)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-59">59/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-59)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-49">49/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-49)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-50">50/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-50)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-51">51/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-51)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-52">52/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-52)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-53">53/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-53)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-54">54/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-54)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-55">55/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-55)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-56">56/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-56)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-57">57/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-57)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-58">58/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-58)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-59">59/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-59)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-60">60/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-60)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-61">61/261</div>|:white_check_mark:Pass|`module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-61)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-62">62/261</div>|:white_check_mark:Pass|`module-src-interaction`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-62)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-63">63/261</div>|:white_check_mark:Pass|`module-src-interaction`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-63)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-64">64/261</div>|:white_check_mark:Pass|`module-src-interaction`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-64)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-65">65/261</div>|:white_check_mark:Pass|`module-src-interaction`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-65)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-66">66/261</div>|:white_check_mark:Pass|`module-src-interaction`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-66)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-67">67/261</div>|:white_check_mark:Pass|`module-src-interaction`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-67)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-68">68/261</div>|:white_check_mark:Pass|`module-src-interaction`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-68)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-69">69/261</div>|:white_check_mark:Pass|`module-src-interaction`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-69)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-70">70/261</div>|:white_check_mark:Pass|`module-src-interaction`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-70)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-71">71/261</div>|:white_check_mark:Pass|`module-src-interaction`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-71)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-72">72/261</div>|:white_check_mark:Pass|`module-src-interaction`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-72)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-62">62/261</div>|:white_check_mark:Pass|`module-src-interaction`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-62)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-63">63/261</div>|:white_check_mark:Pass|`module-src-interaction`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-63)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-64">64/261</div>|:white_check_mark:Pass|`module-src-interaction`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-64)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-65">65/261</div>|:white_check_mark:Pass|`module-src-interaction`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-65)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-66">66/261</div>|:white_check_mark:Pass|`module-src-interaction`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-66)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-67">67/261</div>|:white_check_mark:Pass|`module-src-interaction`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-67)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-68">68/261</div>|:white_check_mark:Pass|`module-src-interaction`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-68)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-69">69/261</div>|:white_check_mark:Pass|`module-src-interaction`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-69)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-70">70/261</div>|:white_check_mark:Pass|`module-src-interaction`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-70)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-71">71/261</div>|:white_check_mark:Pass|`module-src-interaction`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-71)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-72">72/261</div>|:white_check_mark:Pass|`module-src-interaction`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-72)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-73">73/261</div>|:white_check_mark:Pass|`module-src-interaction`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-73)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-74">74/261</div>|:white_check_mark:Pass|`module-src-interaction`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-74)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-75">75/261</div>|:white_check_mark:Pass|`module-src-fipa`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-75)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-76">76/261</div>|:white_check_mark:Pass|`module-src-fipa`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-76)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-77">77/261</div>|:white_check_mark:Pass|`module-src-fipa`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-77)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-78">78/261</div>|:white_check_mark:Pass|`module-src-fipa`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-78)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-79">79/261</div>|:white_check_mark:Pass|`module-src-fipa`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-79)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-80">80/261</div>|:white_check_mark:Pass|`module-src-fipa`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-80)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-81">81/261</div>|:white_check_mark:Pass|`module-src-fipa`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-81)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-82">82/261</div>|:white_check_mark:Pass|`module-src-fipa`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-82)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-83">83/261</div>|:white_check_mark:Pass|`module-src-fipa`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-83)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-84">84/261</div>|:white_check_mark:Pass|`module-src-fipa`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-84)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-85">85/261</div>|:white_check_mark:Pass|`module-src-fipa`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-85)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-75">75/261</div>|:white_check_mark:Pass|`module-src-fipa`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-75)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-76">76/261</div>|:white_check_mark:Pass|`module-src-fipa`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-76)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-77">77/261</div>|:white_check_mark:Pass|`module-src-fipa`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-77)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-78">78/261</div>|:white_check_mark:Pass|`module-src-fipa`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-78)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-79">79/261</div>|:white_check_mark:Pass|`module-src-fipa`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-79)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-80">80/261</div>|:white_check_mark:Pass|`module-src-fipa`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-80)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-81">81/261</div>|:white_check_mark:Pass|`module-src-fipa`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-81)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-82">82/261</div>|:white_check_mark:Pass|`module-src-fipa`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-82)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-83">83/261</div>|:white_check_mark:Pass|`module-src-fipa`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-83)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-84">84/261</div>|:white_check_mark:Pass|`module-src-fipa`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-84)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-85">85/261</div>|:white_check_mark:Pass|`module-src-fipa`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-85)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-86">86/261</div>|:white_check_mark:Pass|`module-src-fipa`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-86)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-87">87/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-87)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-88">88/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-88)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-89">89/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-89)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-90">90/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-90)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-91">91/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-91)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-92">92/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-92)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-93">93/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-93)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-94">94/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-94)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-87">87/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-87)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-88">88/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-88)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-89">89/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-89)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-90">90/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-90)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-91">91/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-91)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-92">92/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-92)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-93">93/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-93)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-94">94/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-94)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-95">95/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-95)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-96">96/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-signifiers`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-96)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-97">97/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-97)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-98">98/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-98)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-99">99/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-99)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-100">100/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-100)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-101">101/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-101)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-102">102/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-102)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-103">103/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-103)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-104">104/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-104)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-97">97/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-97)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-98">98/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-98)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-99">99/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-99)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-100">100/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-100)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-101">101/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-101)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-102">102/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-102)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-103">103/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-103)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-104">104/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-104)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-105">105/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-105)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-106">106/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-platforms`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-106)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-107">107/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-107)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-108">108/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-108)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-109">109/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-109)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-110">110/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-110)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-111">111/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-111)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-112">112/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-112)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-113">113/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-113)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-114">114/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-114)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-107">107/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-107)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-108">108/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-108)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-109">109/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-109)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-110">110/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-110)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-111">111/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-111)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-112">112/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-112)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-113">113/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-113)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-114">114/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-114)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-115">115/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-115)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-116">116/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-organization`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-116)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-117">117/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-117)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-118">118/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-118)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-119">119/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-119)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-120">120/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-120)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-121">121/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-121)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-122">122/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-122)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-123">123/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-123)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-124">124/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-124)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-117">117/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-117)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-118">118/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-118)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-119">119/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-119)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-120">120/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-120)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-121">121/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-121)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-122">122/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-122)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-123">123/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-123)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-124">124/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-124)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-125">125/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-125)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-126">126/261</div>|:white_check_mark:Pass|`module-src-core-modelet-manufacturing-environments-discover-core`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-126)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-127">127/261</div>|:white_check_mark:Pass|`module-src-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-127)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-128">128/261</div>|:white_check_mark:Pass|`module-src-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-128)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-129">129/261</div>|:white_check_mark:Pass|`module-src-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-129)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-130">130/261</div>|:white_check_mark:Pass|`module-src-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-130)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-131">131/261</div>|:white_check_mark:Pass|`module-src-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-131)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-132">132/261</div>|:white_check_mark:Pass|`module-src-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-132)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-133">133/261</div>|:white_check_mark:Pass|`module-src-core`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-133)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-134">134/261</div>|:white_check_mark:Pass|`module-src-core`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-134)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-127">127/261</div>|:white_check_mark:Pass|`module-src-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-127)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-128">128/261</div>|:white_check_mark:Pass|`module-src-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-128)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-129">129/261</div>|:white_check_mark:Pass|`module-src-core`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-129)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-130">130/261</div>|:white_check_mark:Pass|`module-src-core`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-130)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-131">131/261</div>|:white_check_mark:Pass|`module-src-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-131)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-132">132/261</div>|:white_check_mark:Pass|`module-src-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-132)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-133">133/261</div>|:white_check_mark:Pass|`module-src-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-133)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-134">134/261</div>|:white_check_mark:Pass|`module-src-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-134)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-135">135/261</div>|:white_check_mark:Pass|`module-src-core`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-135)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-136">136/261</div>|:white_check_mark:Pass|`module-src-core`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-136)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-137">137/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-137)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-138">138/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-138)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-139">139/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-139)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-140">140/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-140)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-141">141/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-141)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-142">142/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-142)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-143">143/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-143)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-144">144/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-144)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-145">145/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-145)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-146">146/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-146)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-137">137/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-137)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-138">138/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-138)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-139">139/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-139)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-140">140/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-140)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-141">141/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-141)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-142">142/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-142)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-143">143/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-143)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-144">144/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-144)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-145">145/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-145)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-146">146/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-146)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-147">147/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-147)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-148">148/261</div>|:white_check_mark:Pass|`module-src-alignment-interaction-td`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-148)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-149">149/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-149)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-150">150/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-150)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-151">151/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-151)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-152">152/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-152)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-153">153/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-153)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-154">154/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-154)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-155">155/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-155)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-156">156/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-156)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-149">149/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-149)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-150">150/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-150)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-151">151/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-151)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-152">152/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-152)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-153">153/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-153)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-154">154/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-154)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-155">155/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-155)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-156">156/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-156)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-157">157/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-157)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-158">158/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-signifiers`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-158)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-159">159/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-159)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-160">160/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-160)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-161">161/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-161)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-162">162/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-162)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-163">163/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-163)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-164">164/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-164)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-165">165/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-165)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-166">166/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-166)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-167">167/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-167)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-168">168/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-168)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-159">159/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-159)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-160">160/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-160)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-161">161/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-161)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-162">162/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-162)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-163">163/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-163)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-164">164/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-164)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-165">165/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-165)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-166">166/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-166)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-167">167/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-167)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-168">168/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-168)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-169">169/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-169)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-170">170/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-platforms`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-170)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-171">171/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-171)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-172">172/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-172)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-173">173/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-173)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-174">174/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-174)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-175">175/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-175)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-176">176/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-176)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-177">177/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-177)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-178">178/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-178)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-179">179/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-179)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-180">180/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-180)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-181">181/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-181)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-171">171/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-171)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-172">172/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-172)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-173">173/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-173)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-174">174/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-174)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-175">175/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-175)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-176">176/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-176)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-177">177/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-177)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-178">178/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-178)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-179">179/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-179)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-180">180/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-180)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-181">181/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-181)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-182">182/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-182)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-183">183/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-organization`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-183)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-184">184/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-184)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-185">185/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-185)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-186">186/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-186)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-187">187/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-187)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-188">188/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-188)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-189">189/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-189)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-190">190/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-190)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-191">191/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-191)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-192">192/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-192)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-184">184/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-184)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-185">185/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-185)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-186">186/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-186)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-187">187/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-187)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-188">188/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-188)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-189">189/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-189)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-190">190/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-190)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-191">191/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-191)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-192">192/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-192)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-193">193/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-193)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-194">194/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-core`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-194)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-195">195/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-195)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-196">196/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-196)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-197">197/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-197)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-198">198/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-198)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-199">199/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-199)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-200">200/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-200)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-201">201/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-201)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-202">202/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-202)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-203">203/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-203)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-204">204/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-204)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-205">205/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-205)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-195">195/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-195)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-196">196/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-196)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-197">197/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-197)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-198">198/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-198)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-199">199/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-199)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-200">200/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-200)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-201">201/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-201)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-202">202/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-202)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-203">203/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-203)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-204">204/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-204)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-205">205/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-205)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-206">206/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-206)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-207">207/261</div>|:white_check_mark:Pass|`modelet-manufacturing-environments-discover-behavior-specifications`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-207)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-208">208/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-208)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-209">209/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-209)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-210">210/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-210)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-211">211/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-211)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-212">212/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-212)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-213">213/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-213)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-214">214/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-214)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-215">215/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-215)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-216">216/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-216)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-217">217/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-217)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-218">218/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-218)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-208">208/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-208)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-209">209/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-209)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-210">210/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-210)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-211">211/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-211)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-212">212/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-212)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-213">213/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-213)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-214">214/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-214)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-215">215/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-215)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-216">216/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-216)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-217">217/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-217)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-218">218/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-218)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-219">219/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-219)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-220">220/261</div>|:white_check_mark:Pass|`modelet-logistics-create-organization`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-220)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-221">221/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-221)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-222">222/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-222)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-223">223/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-223)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-224">224/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-224)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-225">225/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-225)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-226">226/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-226)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-227">227/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-227)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-228">228/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-228)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-229">229/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-229)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-230">230/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-230)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-231">231/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-231)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-221">221/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-221)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-222">222/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-222)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-223">223/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-223)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-224">224/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-224)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-225">225/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-225)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-226">226/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-226)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-227">227/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-227)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-228">228/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-228)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-229">229/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-229)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-230">230/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-230)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-231">231/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-231)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-232">232/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-232)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-233">233/261</div>|:white_check_mark:Pass|`modelet-logistics-coordinate-activities`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-233)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-234">234/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-234)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-235">235/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-235)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-236">236/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-236)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-237">237/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-237)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-238">238/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-238)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-239">239/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-239)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-240">240/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-240)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-241">241/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-241)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-242">242/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-242)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-243">243/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-243)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-244">244/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-244)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-234">234/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-234)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-235">235/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-235)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-236">236/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-236)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-237">237/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-237)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-238">238/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-238)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-239">239/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-239)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-240">240/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-240)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-241">241/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-241)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-242">242/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-242)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-243">243/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-243)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-244">244/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-244)|
 |[Chapter top](#pass-outcomes)|<div id="summary-Pass-245">245/261</div>|:white_check_mark:Pass|`modelet-logistics-configure-organization`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-245)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-246">246/261</div>|:white_check_mark:Pass|`all-modules`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-246)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-247">247/261</div>|:white_check_mark:Pass|`all-modules`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-247)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-248">248/261</div>|:white_check_mark:Pass|`all-modules`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-248)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-249">249/261</div>|:white_check_mark:Pass|`all-modules`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-249)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-250">250/261</div>|:white_check_mark:Pass|`all-modules`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-250)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-251">251/261</div>|:white_check_mark:Pass|`all-modules`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-251)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-252">252/261</div>|:white_check_mark:Pass|`all-modules`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-252)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-253">253/261</div>|:white_check_mark:Pass|`all-modules`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-253)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-254">254/261</div>|:white_check_mark:Pass|`all-fragments`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No class subproperty|[Jump](#pass-outcome-number-254)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-255">255/261</div>|:white_check_mark:Pass|`all-fragments`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No property subclass|[Jump](#pass-outcome-number-255)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-256">256/261</div>|:white_check_mark:Pass|`all-fragments`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subclass of property|[Jump](#pass-outcome-number-256)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-257">257/261</div>|:white_check_mark:Pass|`all-fragments`|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|No subproperty of class|[Jump](#pass-outcome-number-257)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-258">258/261</div>|:white_check_mark:Pass|`all-fragments`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-258)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-259">259/261</div>|:white_check_mark:Pass|`all-fragments`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-259)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-260">260/261</div>|:white_check_mark:Pass|`all-fragments`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-260)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-261">261/261</div>|:white_check_mark:Pass|`all-fragments`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-261)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-246">246/261</div>|:white_check_mark:Pass|`all-modules`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-246)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-247">247/261</div>|:white_check_mark:Pass|`all-modules`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-247)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-248">248/261</div>|:white_check_mark:Pass|`all-modules`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-248)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-249">249/261</div>|:white_check_mark:Pass|`all-modules`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-249)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-250">250/261</div>|:white_check_mark:Pass|`all-modules`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-250)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-251">251/261</div>|:white_check_mark:Pass|`all-modules`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-251)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-252">252/261</div>|:white_check_mark:Pass|`all-modules`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-252)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-253">253/261</div>|:white_check_mark:Pass|`all-modules`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-253)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-254">254/261</div>|:white_check_mark:Pass|`all-fragments`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-254)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-255">255/261</div>|:white_check_mark:Pass|`all-fragments`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-255)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-256">256/261</div>|:white_check_mark:Pass|`all-fragments`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-256)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-257">257/261</div>|:white_check_mark:Pass|`all-fragments`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-257)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-258">258/261</div>|:white_check_mark:Pass|`all-fragments`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-258)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-259">259/261</div>|:white_check_mark:Pass|`all-fragments`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-259)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-260">260/261</div>|:white_check_mark:Pass|`all-fragments`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-260)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-261">261/261</div>|:white_check_mark:Pass|`all-fragments`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-261)|
 
 ***
 
@@ -2078,17 +2078,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-1)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-1)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-1)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-1)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-1)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-1)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 2
@@ -2103,122 +2103,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-2)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-2)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-2)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-2)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-2)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-2)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 3
 
 [Jump to summary definition](#summary-Pass-3)	|	[Previous Pass outcome](#pass-outcome-number-2)	|	[Next Pass outcome](#pass-outcome-number-4)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-create-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/create-organization/onto.ttl|
-|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-3)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-3)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-3)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 4
-
-[Jump to summary definition](#summary-Pass-4)	|	[Previous Pass outcome](#pass-outcome-number-3)	|	[Next Pass outcome](#pass-outcome-number-5)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-create-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/create-organization/onto.ttl|
-|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-4)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-4)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-4)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 5
-
-[Jump to summary definition](#summary-Pass-5)	|	[Previous Pass outcome](#pass-outcome-number-4)	|	[Next Pass outcome](#pass-outcome-number-6)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-create-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/create-organization/onto.ttl|
-|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-5)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-5)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-5)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 6
-
-[Jump to summary definition](#summary-Pass-6)	|	[Previous Pass outcome](#pass-outcome-number-5)	|	[Next Pass outcome](#pass-outcome-number-7)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-create-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/create-organization/onto.ttl|
-|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-6)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-6)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-6)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 7
-
-[Jump to summary definition](#summary-Pass-7)	|	[Previous Pass outcome](#pass-outcome-number-6)	|	[Next Pass outcome](#pass-outcome-number-8)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -2236,14 +2136,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-7)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-7)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-7)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-3)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-3)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-3)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 8
+### Pass Outcome number 4
 
-[Jump to summary definition](#summary-Pass-8)	|	[Previous Pass outcome](#pass-outcome-number-7)	|	[Next Pass outcome](#pass-outcome-number-9)
+[Jump to summary definition](#summary-Pass-4)	|	[Previous Pass outcome](#pass-outcome-number-3)	|	[Next Pass outcome](#pass-outcome-number-5)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -2261,9 +2161,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-8)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-8)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-8)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-4)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-4)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-4)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 5
+
+[Jump to summary definition](#summary-Pass-5)	|	[Previous Pass outcome](#pass-outcome-number-4)	|	[Next Pass outcome](#pass-outcome-number-6)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-create-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/create-organization/onto.ttl|
+|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-5)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-5)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-5)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 6
+
+[Jump to summary definition](#summary-Pass-6)	|	[Previous Pass outcome](#pass-outcome-number-5)	|	[Next Pass outcome](#pass-outcome-number-7)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-create-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/create-organization/onto.ttl|
+|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-6)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-6)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-6)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 7
+
+[Jump to summary definition](#summary-Pass-7)	|	[Previous Pass outcome](#pass-outcome-number-6)	|	[Next Pass outcome](#pass-outcome-number-8)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-create-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/create-organization/onto.ttl|
+|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-7)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-7)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-7)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 8
+
+[Jump to summary definition](#summary-Pass-8)	|	[Previous Pass outcome](#pass-outcome-number-7)	|	[Next Pass outcome](#pass-outcome-number-9)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-create-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/create-organization/onto.ttl|
+|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-8)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-8)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-8)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 9
@@ -2278,17 +2278,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-9)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-9)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-9)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-9)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-9)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-9)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 10
@@ -2303,17 +2303,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-10)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-10)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-10)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-10)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-10)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-10)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 11
@@ -2328,17 +2328,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-11)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-11)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-11)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-11)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-11)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-11)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 12
@@ -2378,17 +2378,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-13)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-13)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-13)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-13)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-13)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-13)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 14
@@ -2403,122 +2403,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-14)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-14)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-14)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-14)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-14)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-14)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 15
 
 [Jump to summary definition](#summary-Pass-15)	|	[Previous Pass outcome](#pass-outcome-number-14)	|	[Next Pass outcome](#pass-outcome-number-16)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-coordinate-activities|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/coordinate-activities/onto.ttl|
-|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-15)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-15)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-15)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 16
-
-[Jump to summary definition](#summary-Pass-16)	|	[Previous Pass outcome](#pass-outcome-number-15)	|	[Next Pass outcome](#pass-outcome-number-17)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-coordinate-activities|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/coordinate-activities/onto.ttl|
-|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-16)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-16)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-16)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 17
-
-[Jump to summary definition](#summary-Pass-17)	|	[Previous Pass outcome](#pass-outcome-number-16)	|	[Next Pass outcome](#pass-outcome-number-18)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-coordinate-activities|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/coordinate-activities/onto.ttl|
-|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-17)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-17)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-17)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 18
-
-[Jump to summary definition](#summary-Pass-18)	|	[Previous Pass outcome](#pass-outcome-number-17)	|	[Next Pass outcome](#pass-outcome-number-19)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-coordinate-activities|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/coordinate-activities/onto.ttl|
-|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-18)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-18)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-18)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 19
-
-[Jump to summary definition](#summary-Pass-19)	|	[Previous Pass outcome](#pass-outcome-number-18)	|	[Next Pass outcome](#pass-outcome-number-20)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -2536,14 +2436,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-19)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-19)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-19)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-15)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-15)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-15)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 20
+### Pass Outcome number 16
 
-[Jump to summary definition](#summary-Pass-20)	|	[Previous Pass outcome](#pass-outcome-number-19)	|	[Next Pass outcome](#pass-outcome-number-21)
+[Jump to summary definition](#summary-Pass-16)	|	[Previous Pass outcome](#pass-outcome-number-15)	|	[Next Pass outcome](#pass-outcome-number-17)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -2561,9 +2461,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-20)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-20)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-20)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-16)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-16)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-16)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 17
+
+[Jump to summary definition](#summary-Pass-17)	|	[Previous Pass outcome](#pass-outcome-number-16)	|	[Next Pass outcome](#pass-outcome-number-18)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-coordinate-activities|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/coordinate-activities/onto.ttl|
+|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-17)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-17)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-17)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 18
+
+[Jump to summary definition](#summary-Pass-18)	|	[Previous Pass outcome](#pass-outcome-number-17)	|	[Next Pass outcome](#pass-outcome-number-19)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-coordinate-activities|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/coordinate-activities/onto.ttl|
+|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-18)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-18)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-18)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 19
+
+[Jump to summary definition](#summary-Pass-19)	|	[Previous Pass outcome](#pass-outcome-number-18)	|	[Next Pass outcome](#pass-outcome-number-20)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-coordinate-activities|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/coordinate-activities/onto.ttl|
+|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-19)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-19)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-19)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 20
+
+[Jump to summary definition](#summary-Pass-20)	|	[Previous Pass outcome](#pass-outcome-number-19)	|	[Next Pass outcome](#pass-outcome-number-21)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-coordinate-activities|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/coordinate-activities/onto.ttl|
+|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-20)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-20)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-20)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 21
@@ -2578,17 +2578,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-21)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-21)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-21)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-21)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-21)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-21)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 22
@@ -2603,17 +2603,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-22)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-22)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-22)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-22)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-22)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-22)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 23
@@ -2628,17 +2628,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-23)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-23)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-23)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-23)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-23)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-23)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 24
@@ -2678,17 +2678,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-25)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-25)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-25)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-25)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-25)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-25)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 26
@@ -2703,122 +2703,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-26)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-26)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-26)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-26)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-26)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-26)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 27
 
 [Jump to summary definition](#summary-Pass-27)	|	[Previous Pass outcome](#pass-outcome-number-26)	|	[Next Pass outcome](#pass-outcome-number-28)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-configure-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/configure-organization/onto.ttl|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-27)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-27)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-27)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 28
-
-[Jump to summary definition](#summary-Pass-28)	|	[Previous Pass outcome](#pass-outcome-number-27)	|	[Next Pass outcome](#pass-outcome-number-29)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-configure-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/configure-organization/onto.ttl|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-28)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-28)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-28)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 29
-
-[Jump to summary definition](#summary-Pass-29)	|	[Previous Pass outcome](#pass-outcome-number-28)	|	[Next Pass outcome](#pass-outcome-number-30)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-configure-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/configure-organization/onto.ttl|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-29)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-29)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-29)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 30
-
-[Jump to summary definition](#summary-Pass-30)	|	[Previous Pass outcome](#pass-outcome-number-29)	|	[Next Pass outcome](#pass-outcome-number-31)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation-modelet-logistics-configure-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/configure-organization/onto.ttl|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-30)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-30)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-30)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 31
-
-[Jump to summary definition](#summary-Pass-31)	|	[Previous Pass outcome](#pass-outcome-number-30)	|	[Next Pass outcome](#pass-outcome-number-32)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -2836,14 +2736,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-31)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-31)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-31)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-27)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-27)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-27)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 32
+### Pass Outcome number 28
 
-[Jump to summary definition](#summary-Pass-32)	|	[Previous Pass outcome](#pass-outcome-number-31)	|	[Next Pass outcome](#pass-outcome-number-33)
+[Jump to summary definition](#summary-Pass-28)	|	[Previous Pass outcome](#pass-outcome-number-27)	|	[Next Pass outcome](#pass-outcome-number-29)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -2861,9 +2761,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-32)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-32)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-32)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-28)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-28)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-28)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 29
+
+[Jump to summary definition](#summary-Pass-29)	|	[Previous Pass outcome](#pass-outcome-number-28)	|	[Next Pass outcome](#pass-outcome-number-30)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-configure-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/configure-organization/onto.ttl|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-29)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-29)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-29)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 30
+
+[Jump to summary definition](#summary-Pass-30)	|	[Previous Pass outcome](#pass-outcome-number-29)	|	[Next Pass outcome](#pass-outcome-number-31)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-configure-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/configure-organization/onto.ttl|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-30)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-30)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-30)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 31
+
+[Jump to summary definition](#summary-Pass-31)	|	[Previous Pass outcome](#pass-outcome-number-30)	|	[Next Pass outcome](#pass-outcome-number-32)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-configure-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/configure-organization/onto.ttl|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-31)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-31)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-31)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 32
+
+[Jump to summary definition](#summary-Pass-32)	|	[Previous Pass outcome](#pass-outcome-number-31)	|	[Next Pass outcome](#pass-outcome-number-33)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation-modelet-logistics-configure-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/logistics/configure-organization/onto.ttl|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-32)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-32)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-32)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 33
@@ -2878,17 +2878,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-33)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-33)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-33)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-33)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-33)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-33)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 34
@@ -2903,17 +2903,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-34)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-34)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-34)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-34)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-34)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-34)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 35
@@ -2928,17 +2928,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-35)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-35)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-35)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-35)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-35)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-35)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 36
@@ -2978,17 +2978,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-37)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-37)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-37)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-37)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-37)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-37)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 38
@@ -3003,122 +3003,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-38)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-38)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-38)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-38)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-38)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-38)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 39
 
 [Jump to summary definition](#summary-Pass-39)	|	[Previous Pass outcome](#pass-outcome-number-38)	|	[Next Pass outcome](#pass-outcome-number-40)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation|
-|----|----|
-|Title|Standalone&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-39)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-39)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-39)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 40
-
-[Jump to summary definition](#summary-Pass-40)	|	[Previous Pass outcome](#pass-outcome-number-39)	|	[Next Pass outcome](#pass-outcome-number-41)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation|
-|----|----|
-|Title|Standalone&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-40)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-40)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-40)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 41
-
-[Jump to summary definition](#summary-Pass-41)	|	[Previous Pass outcome](#pass-outcome-number-40)	|	[Next Pass outcome](#pass-outcome-number-42)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation|
-|----|----|
-|Title|Standalone&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-41)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-41)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-41)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 42
-
-[Jump to summary definition](#summary-Pass-42)	|	[Previous Pass outcome](#pass-outcome-number-41)	|	[Next Pass outcome](#pass-outcome-number-43)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-regulation|
-|----|----|
-|Title|Standalone&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-42)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-42)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-42)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 43
-
-[Jump to summary definition](#summary-Pass-43)	|	[Previous Pass outcome](#pass-outcome-number-42)	|	[Next Pass outcome](#pass-outcome-number-44)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -3136,14 +3036,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-43)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-43)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-43)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-39)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-39)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-39)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 44
+### Pass Outcome number 40
 
-[Jump to summary definition](#summary-Pass-44)	|	[Previous Pass outcome](#pass-outcome-number-43)	|	[Next Pass outcome](#pass-outcome-number-45)
+[Jump to summary definition](#summary-Pass-40)	|	[Previous Pass outcome](#pass-outcome-number-39)	|	[Next Pass outcome](#pass-outcome-number-41)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -3161,9 +3061,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-44)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-44)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-44)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-40)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-40)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-40)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 41
+
+[Jump to summary definition](#summary-Pass-41)	|	[Previous Pass outcome](#pass-outcome-number-40)	|	[Next Pass outcome](#pass-outcome-number-42)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation|
+|----|----|
+|Title|Standalone&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-41)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-41)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-41)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 42
+
+[Jump to summary definition](#summary-Pass-42)	|	[Previous Pass outcome](#pass-outcome-number-41)	|	[Next Pass outcome](#pass-outcome-number-43)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation|
+|----|----|
+|Title|Standalone&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-42)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-42)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-42)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 43
+
+[Jump to summary definition](#summary-Pass-43)	|	[Previous Pass outcome](#pass-outcome-number-42)	|	[Next Pass outcome](#pass-outcome-number-44)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation|
+|----|----|
+|Title|Standalone&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-43)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-43)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-43)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 44
+
+[Jump to summary definition](#summary-Pass-44)	|	[Previous Pass outcome](#pass-outcome-number-43)	|	[Next Pass outcome](#pass-outcome-number-45)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-regulation|
+|----|----|
+|Title|Standalone&#32;module&#32;src/regulation.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-44)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-44)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-44)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 45
@@ -3178,17 +3178,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-45)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-45)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-45)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-45)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-45)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-45)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 46
@@ -3203,17 +3203,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-46)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-46)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-46)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-46)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-46)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-46)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 47
@@ -3228,17 +3228,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-47)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-47)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-47)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-47)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-47)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-47)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 48
@@ -3278,17 +3278,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-49)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-49)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-49)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-49)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-49)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-49)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 50
@@ -3303,122 +3303,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-50)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-50)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-50)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-50)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-50)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-50)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 51
 
 [Jump to summary definition](#summary-Pass-51)	|	[Previous Pass outcome](#pass-outcome-number-50)	|	[Next Pass outcome](#pass-outcome-number-52)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications|
-|----|----|
-|Title|Merged&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-51)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-51)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-51)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 52
-
-[Jump to summary definition](#summary-Pass-52)	|	[Previous Pass outcome](#pass-outcome-number-51)	|	[Next Pass outcome](#pass-outcome-number-53)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications|
-|----|----|
-|Title|Merged&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-52)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-52)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-52)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 53
-
-[Jump to summary definition](#summary-Pass-53)	|	[Previous Pass outcome](#pass-outcome-number-52)	|	[Next Pass outcome](#pass-outcome-number-54)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications|
-|----|----|
-|Title|Merged&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-53)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-53)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-53)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 54
-
-[Jump to summary definition](#summary-Pass-54)	|	[Previous Pass outcome](#pass-outcome-number-53)	|	[Next Pass outcome](#pass-outcome-number-55)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications|
-|----|----|
-|Title|Merged&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-54)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-54)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-54)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 55
-
-[Jump to summary definition](#summary-Pass-55)	|	[Previous Pass outcome](#pass-outcome-number-54)	|	[Next Pass outcome](#pass-outcome-number-56)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -3436,14 +3336,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-55)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-55)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-55)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-51)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-51)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-51)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 56
+### Pass Outcome number 52
 
-[Jump to summary definition](#summary-Pass-56)	|	[Previous Pass outcome](#pass-outcome-number-55)	|	[Next Pass outcome](#pass-outcome-number-57)
+[Jump to summary definition](#summary-Pass-52)	|	[Previous Pass outcome](#pass-outcome-number-51)	|	[Next Pass outcome](#pass-outcome-number-53)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -3461,9 +3361,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-56)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-56)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-56)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-52)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-52)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-52)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 53
+
+[Jump to summary definition](#summary-Pass-53)	|	[Previous Pass outcome](#pass-outcome-number-52)	|	[Next Pass outcome](#pass-outcome-number-54)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications|
+|----|----|
+|Title|Merged&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-53)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-53)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-53)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 54
+
+[Jump to summary definition](#summary-Pass-54)	|	[Previous Pass outcome](#pass-outcome-number-53)	|	[Next Pass outcome](#pass-outcome-number-55)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications|
+|----|----|
+|Title|Merged&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-54)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-54)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-54)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 55
+
+[Jump to summary definition](#summary-Pass-55)	|	[Previous Pass outcome](#pass-outcome-number-54)	|	[Next Pass outcome](#pass-outcome-number-56)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications|
+|----|----|
+|Title|Merged&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-55)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-55)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-55)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 56
+
+[Jump to summary definition](#summary-Pass-56)	|	[Previous Pass outcome](#pass-outcome-number-55)	|	[Next Pass outcome](#pass-outcome-number-57)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-interaction-modelet-manufacturing-environments-discover-behavior-specifications|
+|----|----|
+|Title|Merged&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-56)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-56)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-56)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 57
@@ -3478,17 +3478,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-57)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-57)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-57)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-57)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-57)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-57)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 58
@@ -3503,17 +3503,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-58)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-58)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-58)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-58)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-58)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-58)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 59
@@ -3528,17 +3528,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-59)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-59)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-59)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-59)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-59)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-59)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 60
@@ -3603,17 +3603,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-62)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-62)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-62)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-62)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-62)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-62)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 63
@@ -3628,122 +3628,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-63)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-63)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-63)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-63)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-63)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-63)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 64
 
 [Jump to summary definition](#summary-Pass-64)	|	[Previous Pass outcome](#pass-outcome-number-63)	|	[Next Pass outcome](#pass-outcome-number-65)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-interaction|
-|----|----|
-|Title|Standalone&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-64)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-64)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-64)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 65
-
-[Jump to summary definition](#summary-Pass-65)	|	[Previous Pass outcome](#pass-outcome-number-64)	|	[Next Pass outcome](#pass-outcome-number-66)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-interaction|
-|----|----|
-|Title|Standalone&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-65)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-65)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-65)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 66
-
-[Jump to summary definition](#summary-Pass-66)	|	[Previous Pass outcome](#pass-outcome-number-65)	|	[Next Pass outcome](#pass-outcome-number-67)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-interaction|
-|----|----|
-|Title|Standalone&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-66)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-66)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-66)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 67
-
-[Jump to summary definition](#summary-Pass-67)	|	[Previous Pass outcome](#pass-outcome-number-66)	|	[Next Pass outcome](#pass-outcome-number-68)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-interaction|
-|----|----|
-|Title|Standalone&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-67)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-67)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-67)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 68
-
-[Jump to summary definition](#summary-Pass-68)	|	[Previous Pass outcome](#pass-outcome-number-67)	|	[Next Pass outcome](#pass-outcome-number-69)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -3761,14 +3661,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-68)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-68)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-68)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-64)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-64)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-64)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 69
+### Pass Outcome number 65
 
-[Jump to summary definition](#summary-Pass-69)	|	[Previous Pass outcome](#pass-outcome-number-68)	|	[Next Pass outcome](#pass-outcome-number-70)
+[Jump to summary definition](#summary-Pass-65)	|	[Previous Pass outcome](#pass-outcome-number-64)	|	[Next Pass outcome](#pass-outcome-number-66)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -3786,9 +3686,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-69)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-69)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-69)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-65)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-65)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-65)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 66
+
+[Jump to summary definition](#summary-Pass-66)	|	[Previous Pass outcome](#pass-outcome-number-65)	|	[Next Pass outcome](#pass-outcome-number-67)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-interaction|
+|----|----|
+|Title|Standalone&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-66)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-66)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-66)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 67
+
+[Jump to summary definition](#summary-Pass-67)	|	[Previous Pass outcome](#pass-outcome-number-66)	|	[Next Pass outcome](#pass-outcome-number-68)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-interaction|
+|----|----|
+|Title|Standalone&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-67)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-67)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-67)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 68
+
+[Jump to summary definition](#summary-Pass-68)	|	[Previous Pass outcome](#pass-outcome-number-67)	|	[Next Pass outcome](#pass-outcome-number-69)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-interaction|
+|----|----|
+|Title|Standalone&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-68)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-68)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-68)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 69
+
+[Jump to summary definition](#summary-Pass-69)	|	[Previous Pass outcome](#pass-outcome-number-68)	|	[Next Pass outcome](#pass-outcome-number-70)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-interaction|
+|----|----|
+|Title|Standalone&#32;module&#32;src/interaction.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-69)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-69)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-69)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 70
@@ -3803,17 +3803,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-70)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-70)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-70)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-70)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-70)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-70)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 71
@@ -3828,17 +3828,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-71)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-71)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-71)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-71)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-71)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-71)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 72
@@ -3853,17 +3853,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-72)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-72)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-72)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-72)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-72)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-72)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 73
@@ -3928,17 +3928,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-75)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-75)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-75)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-75)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-75)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-75)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 76
@@ -3953,122 +3953,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-76)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-76)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-76)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-76)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-76)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-76)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 77
 
 [Jump to summary definition](#summary-Pass-77)	|	[Previous Pass outcome](#pass-outcome-number-76)	|	[Next Pass outcome](#pass-outcome-number-78)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-fipa|
-|----|----|
-|Title|Standalone&#32;module&#32;src/fipa.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-77)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-77)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-77)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 78
-
-[Jump to summary definition](#summary-Pass-78)	|	[Previous Pass outcome](#pass-outcome-number-77)	|	[Next Pass outcome](#pass-outcome-number-79)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-fipa|
-|----|----|
-|Title|Standalone&#32;module&#32;src/fipa.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-78)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-78)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-78)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 79
-
-[Jump to summary definition](#summary-Pass-79)	|	[Previous Pass outcome](#pass-outcome-number-78)	|	[Next Pass outcome](#pass-outcome-number-80)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-fipa|
-|----|----|
-|Title|Standalone&#32;module&#32;src/fipa.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-79)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-79)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-79)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 80
-
-[Jump to summary definition](#summary-Pass-80)	|	[Previous Pass outcome](#pass-outcome-number-79)	|	[Next Pass outcome](#pass-outcome-number-81)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-fipa|
-|----|----|
-|Title|Standalone&#32;module&#32;src/fipa.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-80)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-80)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-80)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 81
-
-[Jump to summary definition](#summary-Pass-81)	|	[Previous Pass outcome](#pass-outcome-number-80)	|	[Next Pass outcome](#pass-outcome-number-82)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -4086,14 +3986,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-81)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-81)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-81)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-77)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-77)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-77)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 82
+### Pass Outcome number 78
 
-[Jump to summary definition](#summary-Pass-82)	|	[Previous Pass outcome](#pass-outcome-number-81)	|	[Next Pass outcome](#pass-outcome-number-83)
+[Jump to summary definition](#summary-Pass-78)	|	[Previous Pass outcome](#pass-outcome-number-77)	|	[Next Pass outcome](#pass-outcome-number-79)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -4111,9 +4011,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-82)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-82)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-82)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-78)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-78)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-78)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 79
+
+[Jump to summary definition](#summary-Pass-79)	|	[Previous Pass outcome](#pass-outcome-number-78)	|	[Next Pass outcome](#pass-outcome-number-80)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-fipa|
+|----|----|
+|Title|Standalone&#32;module&#32;src/fipa.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-79)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-79)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-79)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 80
+
+[Jump to summary definition](#summary-Pass-80)	|	[Previous Pass outcome](#pass-outcome-number-79)	|	[Next Pass outcome](#pass-outcome-number-81)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-fipa|
+|----|----|
+|Title|Standalone&#32;module&#32;src/fipa.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-80)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-80)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-80)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 81
+
+[Jump to summary definition](#summary-Pass-81)	|	[Previous Pass outcome](#pass-outcome-number-80)	|	[Next Pass outcome](#pass-outcome-number-82)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-fipa|
+|----|----|
+|Title|Standalone&#32;module&#32;src/fipa.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-81)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-81)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-81)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 82
+
+[Jump to summary definition](#summary-Pass-82)	|	[Previous Pass outcome](#pass-outcome-number-81)	|	[Next Pass outcome](#pass-outcome-number-83)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-fipa|
+|----|----|
+|Title|Standalone&#32;module&#32;src/fipa.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-82)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-82)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-82)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 83
@@ -4128,17 +4128,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-83)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-83)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-83)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-83)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-83)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-83)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 84
@@ -4153,17 +4153,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-84)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-84)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-84)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-84)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-84)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-84)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 85
@@ -4178,17 +4178,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-85)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-85)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-85)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-85)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-85)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-85)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 86
@@ -4228,17 +4228,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-87)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-87)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-87)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-87)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-87)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-87)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 88
@@ -4253,122 +4253,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-88)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-88)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-88)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-88)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-88)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-88)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 89
 
 [Jump to summary definition](#summary-Pass-89)	|	[Previous Pass outcome](#pass-outcome-number-88)	|	[Next Pass outcome](#pass-outcome-number-90)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-signifiers|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-89)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-89)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-89)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 90
-
-[Jump to summary definition](#summary-Pass-90)	|	[Previous Pass outcome](#pass-outcome-number-89)	|	[Next Pass outcome](#pass-outcome-number-91)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-signifiers|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-90)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-90)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-90)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 91
-
-[Jump to summary definition](#summary-Pass-91)	|	[Previous Pass outcome](#pass-outcome-number-90)	|	[Next Pass outcome](#pass-outcome-number-92)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-signifiers|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-91)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-91)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-91)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 92
-
-[Jump to summary definition](#summary-Pass-92)	|	[Previous Pass outcome](#pass-outcome-number-91)	|	[Next Pass outcome](#pass-outcome-number-93)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-signifiers|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-92)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-92)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-92)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 93
-
-[Jump to summary definition](#summary-Pass-93)	|	[Previous Pass outcome](#pass-outcome-number-92)	|	[Next Pass outcome](#pass-outcome-number-94)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -4386,14 +4286,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-93)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-93)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-93)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-89)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-89)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-89)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
 
 ***
-### Pass Outcome number 94
+### Pass Outcome number 90
 
-[Jump to summary definition](#summary-Pass-94)	|	[Previous Pass outcome](#pass-outcome-number-93)	|	[Next Pass outcome](#pass-outcome-number-95)
+[Jump to summary definition](#summary-Pass-90)	|	[Previous Pass outcome](#pass-outcome-number-89)	|	[Next Pass outcome](#pass-outcome-number-91)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -4411,9 +4311,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-94)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-94)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-94)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-90)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-90)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-90)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 91
+
+[Jump to summary definition](#summary-Pass-91)	|	[Previous Pass outcome](#pass-outcome-number-90)	|	[Next Pass outcome](#pass-outcome-number-92)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-signifiers|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-91)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-91)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-91)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 92
+
+[Jump to summary definition](#summary-Pass-92)	|	[Previous Pass outcome](#pass-outcome-number-91)	|	[Next Pass outcome](#pass-outcome-number-93)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-signifiers|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-92)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-92)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-92)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 93
+
+[Jump to summary definition](#summary-Pass-93)	|	[Previous Pass outcome](#pass-outcome-number-92)	|	[Next Pass outcome](#pass-outcome-number-94)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-signifiers|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-93)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-93)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-93)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 94
+
+[Jump to summary definition](#summary-Pass-94)	|	[Previous Pass outcome](#pass-outcome-number-93)	|	[Next Pass outcome](#pass-outcome-number-95)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-signifiers|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-94)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-94)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-94)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 95
@@ -4478,17 +4478,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-97)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-97)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-97)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-97)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-97)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-97)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 98
@@ -4503,122 +4503,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-98)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-98)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-98)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-98)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-98)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-98)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 99
 
 [Jump to summary definition](#summary-Pass-99)	|	[Previous Pass outcome](#pass-outcome-number-98)	|	[Next Pass outcome](#pass-outcome-number-100)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-platforms|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-platforms/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-99)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-99)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-99)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 100
-
-[Jump to summary definition](#summary-Pass-100)	|	[Previous Pass outcome](#pass-outcome-number-99)	|	[Next Pass outcome](#pass-outcome-number-101)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-platforms|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-platforms/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-100)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-100)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-100)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 101
-
-[Jump to summary definition](#summary-Pass-101)	|	[Previous Pass outcome](#pass-outcome-number-100)	|	[Next Pass outcome](#pass-outcome-number-102)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-platforms|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-platforms/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-101)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-101)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-101)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 102
-
-[Jump to summary definition](#summary-Pass-102)	|	[Previous Pass outcome](#pass-outcome-number-101)	|	[Next Pass outcome](#pass-outcome-number-103)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-platforms|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-platforms/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-102)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-102)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-102)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 103
-
-[Jump to summary definition](#summary-Pass-103)	|	[Previous Pass outcome](#pass-outcome-number-102)	|	[Next Pass outcome](#pass-outcome-number-104)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -4636,14 +4536,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-103)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-103)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-103)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-99)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-99)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-99)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
 
 ***
-### Pass Outcome number 104
+### Pass Outcome number 100
 
-[Jump to summary definition](#summary-Pass-104)	|	[Previous Pass outcome](#pass-outcome-number-103)	|	[Next Pass outcome](#pass-outcome-number-105)
+[Jump to summary definition](#summary-Pass-100)	|	[Previous Pass outcome](#pass-outcome-number-99)	|	[Next Pass outcome](#pass-outcome-number-101)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -4661,9 +4561,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-104)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-104)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-104)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-100)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-100)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-100)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 101
+
+[Jump to summary definition](#summary-Pass-101)	|	[Previous Pass outcome](#pass-outcome-number-100)	|	[Next Pass outcome](#pass-outcome-number-102)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-platforms|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-platforms/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-101)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-101)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-101)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 102
+
+[Jump to summary definition](#summary-Pass-102)	|	[Previous Pass outcome](#pass-outcome-number-101)	|	[Next Pass outcome](#pass-outcome-number-103)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-platforms|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-platforms/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-102)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-102)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-102)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 103
+
+[Jump to summary definition](#summary-Pass-103)	|	[Previous Pass outcome](#pass-outcome-number-102)	|	[Next Pass outcome](#pass-outcome-number-104)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-platforms|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-platforms/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-103)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-103)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-103)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 104
+
+[Jump to summary definition](#summary-Pass-104)	|	[Previous Pass outcome](#pass-outcome-number-103)	|	[Next Pass outcome](#pass-outcome-number-105)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-platforms|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-platforms/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-104)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-104)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-104)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 105
@@ -4728,17 +4728,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-107)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-107)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-107)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-107)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-107)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-107)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 108
@@ -4753,122 +4753,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-108)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-108)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-108)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-108)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-108)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-108)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 109
 
 [Jump to summary definition](#summary-Pass-109)	|	[Previous Pass outcome](#pass-outcome-number-108)	|	[Next Pass outcome](#pass-outcome-number-110)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-organization/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-109)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-109)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-109)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 110
-
-[Jump to summary definition](#summary-Pass-110)	|	[Previous Pass outcome](#pass-outcome-number-109)	|	[Next Pass outcome](#pass-outcome-number-111)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-organization/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-110)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-110)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-110)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 111
-
-[Jump to summary definition](#summary-Pass-111)	|	[Previous Pass outcome](#pass-outcome-number-110)	|	[Next Pass outcome](#pass-outcome-number-112)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-organization/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-111)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-111)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-111)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 112
-
-[Jump to summary definition](#summary-Pass-112)	|	[Previous Pass outcome](#pass-outcome-number-111)	|	[Next Pass outcome](#pass-outcome-number-113)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-organization|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-organization/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-112)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-112)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-112)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 113
-
-[Jump to summary definition](#summary-Pass-113)	|	[Previous Pass outcome](#pass-outcome-number-112)	|	[Next Pass outcome](#pass-outcome-number-114)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -4886,14 +4786,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-113)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-113)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-113)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-109)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-109)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-109)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
 
 ***
-### Pass Outcome number 114
+### Pass Outcome number 110
 
-[Jump to summary definition](#summary-Pass-114)	|	[Previous Pass outcome](#pass-outcome-number-113)	|	[Next Pass outcome](#pass-outcome-number-115)
+[Jump to summary definition](#summary-Pass-110)	|	[Previous Pass outcome](#pass-outcome-number-109)	|	[Next Pass outcome](#pass-outcome-number-111)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -4911,9 +4811,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-114)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-114)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-114)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-110)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-110)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-110)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 111
+
+[Jump to summary definition](#summary-Pass-111)	|	[Previous Pass outcome](#pass-outcome-number-110)	|	[Next Pass outcome](#pass-outcome-number-112)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-organization/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-111)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-111)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-111)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 112
+
+[Jump to summary definition](#summary-Pass-112)	|	[Previous Pass outcome](#pass-outcome-number-111)	|	[Next Pass outcome](#pass-outcome-number-113)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-organization/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-112)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-112)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-112)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 113
+
+[Jump to summary definition](#summary-Pass-113)	|	[Previous Pass outcome](#pass-outcome-number-112)	|	[Next Pass outcome](#pass-outcome-number-114)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-organization/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-113)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-113)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-113)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 114
+
+[Jump to summary definition](#summary-Pass-114)	|	[Previous Pass outcome](#pass-outcome-number-113)	|	[Next Pass outcome](#pass-outcome-number-115)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-organization|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-organization/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-114)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-114)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-114)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 115
@@ -4978,17 +4978,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-117)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-117)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-117)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-117)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-117)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-117)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 118
@@ -5003,122 +5003,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-118)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-118)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-118)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-118)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-118)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-118)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 119
 
 [Jump to summary definition](#summary-Pass-119)	|	[Previous Pass outcome](#pass-outcome-number-118)	|	[Next Pass outcome](#pass-outcome-number-120)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-core|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-core/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-119)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-119)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-119)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 120
-
-[Jump to summary definition](#summary-Pass-120)	|	[Previous Pass outcome](#pass-outcome-number-119)	|	[Next Pass outcome](#pass-outcome-number-121)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-core|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-core/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-120)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-120)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-120)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 121
-
-[Jump to summary definition](#summary-Pass-121)	|	[Previous Pass outcome](#pass-outcome-number-120)	|	[Next Pass outcome](#pass-outcome-number-122)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-core|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-core/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-121)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-121)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-121)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 122
-
-[Jump to summary definition](#summary-Pass-122)	|	[Previous Pass outcome](#pass-outcome-number-121)	|	[Next Pass outcome](#pass-outcome-number-123)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core-modelet-manufacturing-environments-discover-core|
-|----|----|
-|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-core/onto.ttl|
-|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-122)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-122)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-122)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 123
-
-[Jump to summary definition](#summary-Pass-123)	|	[Previous Pass outcome](#pass-outcome-number-122)	|	[Next Pass outcome](#pass-outcome-number-124)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -5136,14 +5036,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-123)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-123)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-123)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-119)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-119)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-119)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
 
 ***
-### Pass Outcome number 124
+### Pass Outcome number 120
 
-[Jump to summary definition](#summary-Pass-124)	|	[Previous Pass outcome](#pass-outcome-number-123)	|	[Next Pass outcome](#pass-outcome-number-125)
+[Jump to summary definition](#summary-Pass-120)	|	[Previous Pass outcome](#pass-outcome-number-119)	|	[Next Pass outcome](#pass-outcome-number-121)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -5161,9 +5061,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-124)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-124)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-124)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-120)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-120)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-120)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 121
+
+[Jump to summary definition](#summary-Pass-121)	|	[Previous Pass outcome](#pass-outcome-number-120)	|	[Next Pass outcome](#pass-outcome-number-122)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-core|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-core/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-121)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-121)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-121)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 122
+
+[Jump to summary definition](#summary-Pass-122)	|	[Previous Pass outcome](#pass-outcome-number-121)	|	[Next Pass outcome](#pass-outcome-number-123)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-core|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-core/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-122)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-122)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-122)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 123
+
+[Jump to summary definition](#summary-Pass-123)	|	[Previous Pass outcome](#pass-outcome-number-122)	|	[Next Pass outcome](#pass-outcome-number-124)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-core|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-core/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-123)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-123)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-123)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 124
+
+[Jump to summary definition](#summary-Pass-124)	|	[Previous Pass outcome](#pass-outcome-number-123)	|	[Next Pass outcome](#pass-outcome-number-125)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core-modelet-manufacturing-environments-discover-core|
+|----|----|
+|Title|Merged&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD&#32;with&#32;related&#32;terms&#32;from&#32;the&#32;fragments&#32;domains/manufacturing-environments/discover-core/onto.ttl|
+|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-124)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-124)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-124)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 125
@@ -5228,17 +5228,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-127)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-127)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-127)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-127)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-127)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-127)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 128
@@ -5253,122 +5253,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-128)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-128)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-128)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-128)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-128)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-128)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 129
 
 [Jump to summary definition](#summary-Pass-129)	|	[Previous Pass outcome](#pass-outcome-number-128)	|	[Next Pass outcome](#pass-outcome-number-130)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core|
-|----|----|
-|Title|Standalone&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-129)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-129)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-129)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 130
-
-[Jump to summary definition](#summary-Pass-130)	|	[Previous Pass outcome](#pass-outcome-number-129)	|	[Next Pass outcome](#pass-outcome-number-131)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core|
-|----|----|
-|Title|Standalone&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-130)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-130)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-130)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 131
-
-[Jump to summary definition](#summary-Pass-131)	|	[Previous Pass outcome](#pass-outcome-number-130)	|	[Next Pass outcome](#pass-outcome-number-132)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core|
-|----|----|
-|Title|Standalone&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-131)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-131)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-131)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 132
-
-[Jump to summary definition](#summary-Pass-132)	|	[Previous Pass outcome](#pass-outcome-number-131)	|	[Next Pass outcome](#pass-outcome-number-133)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-core|
-|----|----|
-|Title|Standalone&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-132)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-132)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-132)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 133
-
-[Jump to summary definition](#summary-Pass-133)	|	[Previous Pass outcome](#pass-outcome-number-132)	|	[Next Pass outcome](#pass-outcome-number-134)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -5386,14 +5286,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-133)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-133)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-133)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-129)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-129)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-129)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
 
 ***
-### Pass Outcome number 134
+### Pass Outcome number 130
 
-[Jump to summary definition](#summary-Pass-134)	|	[Previous Pass outcome](#pass-outcome-number-133)	|	[Next Pass outcome](#pass-outcome-number-135)
+[Jump to summary definition](#summary-Pass-130)	|	[Previous Pass outcome](#pass-outcome-number-129)	|	[Next Pass outcome](#pass-outcome-number-131)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -5411,9 +5311,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-134)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-134)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-134)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-130)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-130)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-130)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 131
+
+[Jump to summary definition](#summary-Pass-131)	|	[Previous Pass outcome](#pass-outcome-number-130)	|	[Next Pass outcome](#pass-outcome-number-132)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core|
+|----|----|
+|Title|Standalone&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-131)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-131)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-131)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 132
+
+[Jump to summary definition](#summary-Pass-132)	|	[Previous Pass outcome](#pass-outcome-number-131)	|	[Next Pass outcome](#pass-outcome-number-133)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core|
+|----|----|
+|Title|Standalone&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-132)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-132)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-132)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 133
+
+[Jump to summary definition](#summary-Pass-133)	|	[Previous Pass outcome](#pass-outcome-number-132)	|	[Next Pass outcome](#pass-outcome-number-134)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core|
+|----|----|
+|Title|Standalone&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-133)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-133)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-133)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 134
+
+[Jump to summary definition](#summary-Pass-134)	|	[Previous Pass outcome](#pass-outcome-number-133)	|	[Next Pass outcome](#pass-outcome-number-135)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-core|
+|----|----|
+|Title|Standalone&#32;module&#32;src/core.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-134)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-134)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-134)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 135
@@ -5478,17 +5478,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-137)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-137)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-137)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-137)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-137)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-137)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 138
@@ -5503,122 +5503,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-138)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-138)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-138)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-138)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-138)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-138)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 139
 
 [Jump to summary definition](#summary-Pass-139)	|	[Previous Pass outcome](#pass-outcome-number-138)	|	[Next Pass outcome](#pass-outcome-number-140)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-alignment-interaction-td|
-|----|----|
-|Title|Standalone&#32;module&#32;src/alignment/interaction-td.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-139)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-139)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-139)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 140
-
-[Jump to summary definition](#summary-Pass-140)	|	[Previous Pass outcome](#pass-outcome-number-139)	|	[Next Pass outcome](#pass-outcome-number-141)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-alignment-interaction-td|
-|----|----|
-|Title|Standalone&#32;module&#32;src/alignment/interaction-td.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-140)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-140)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-140)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 141
-
-[Jump to summary definition](#summary-Pass-141)	|	[Previous Pass outcome](#pass-outcome-number-140)	|	[Next Pass outcome](#pass-outcome-number-142)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-alignment-interaction-td|
-|----|----|
-|Title|Standalone&#32;module&#32;src/alignment/interaction-td.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-141)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-141)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-141)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 142
-
-[Jump to summary definition](#summary-Pass-142)	|	[Previous Pass outcome](#pass-outcome-number-141)	|	[Next Pass outcome](#pass-outcome-number-143)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|module-src-alignment-interaction-td|
-|----|----|
-|Title|Standalone&#32;module&#32;src/alignment/interaction-td.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-142)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-142)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-142)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 143
-
-[Jump to summary definition](#summary-Pass-143)	|	[Previous Pass outcome](#pass-outcome-number-142)	|	[Next Pass outcome](#pass-outcome-number-144)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -5636,14 +5536,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-143)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-143)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-143)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-139)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-139)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-139)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 144
+### Pass Outcome number 140
 
-[Jump to summary definition](#summary-Pass-144)	|	[Previous Pass outcome](#pass-outcome-number-143)	|	[Next Pass outcome](#pass-outcome-number-145)
+[Jump to summary definition](#summary-Pass-140)	|	[Previous Pass outcome](#pass-outcome-number-139)	|	[Next Pass outcome](#pass-outcome-number-141)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -5661,9 +5561,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-144)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-144)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-144)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-140)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-140)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-140)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 141
+
+[Jump to summary definition](#summary-Pass-141)	|	[Previous Pass outcome](#pass-outcome-number-140)	|	[Next Pass outcome](#pass-outcome-number-142)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-alignment-interaction-td|
+|----|----|
+|Title|Standalone&#32;module&#32;src/alignment/interaction-td.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-141)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-141)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-141)|Description|Statement&#32;not&#32;supported  &#10;Statement&#32;not&#32;supported&#32;in&#32;a&#32;Super&#32;Class&#32;Expression|
+
+***
+### Pass Outcome number 142
+
+[Jump to summary definition](#summary-Pass-142)	|	[Previous Pass outcome](#pass-outcome-number-141)	|	[Next Pass outcome](#pass-outcome-number-143)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-alignment-interaction-td|
+|----|----|
+|Title|Standalone&#32;module&#32;src/alignment/interaction-td.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-142)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-142)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-142)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 143
+
+[Jump to summary definition](#summary-Pass-143)	|	[Previous Pass outcome](#pass-outcome-number-142)	|	[Next Pass outcome](#pass-outcome-number-144)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-alignment-interaction-td|
+|----|----|
+|Title|Standalone&#32;module&#32;src/alignment/interaction-td.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-143)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-143)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-143)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 144
+
+[Jump to summary definition](#summary-Pass-144)	|	[Previous Pass outcome](#pass-outcome-number-143)	|	[Next Pass outcome](#pass-outcome-number-145)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-src-alignment-interaction-td|
+|----|----|
+|Title|Standalone&#32;module&#32;src/alignment/interaction-td.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-144)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-144)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-144)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 145
@@ -5678,17 +5678,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-145)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-145)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-145)|Description|Class&#32;Expression&#32;not&#32;supported&#32;with&#32;rdfs:subClassOf|
+|[Section top](#pass-outcome-number-145)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-145)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-145)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 146
@@ -5703,17 +5703,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-146)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-146)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-146)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-146)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-146)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-146)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 147
@@ -5778,17 +5778,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-149)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-149)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-149)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-149)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-149)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-149)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 150
@@ -5803,122 +5803,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-150)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-150)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-150)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-150)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-150)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-150)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 151
 
 [Jump to summary definition](#summary-Pass-151)	|	[Previous Pass outcome](#pass-outcome-number-150)	|	[Next Pass outcome](#pass-outcome-number-152)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-signifiers|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-151)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-151)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-151)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 152
-
-[Jump to summary definition](#summary-Pass-152)	|	[Previous Pass outcome](#pass-outcome-number-151)	|	[Next Pass outcome](#pass-outcome-number-153)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-signifiers|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-152)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-152)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-152)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 153
-
-[Jump to summary definition](#summary-Pass-153)	|	[Previous Pass outcome](#pass-outcome-number-152)	|	[Next Pass outcome](#pass-outcome-number-154)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-signifiers|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-153)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-153)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-153)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 154
-
-[Jump to summary definition](#summary-Pass-154)	|	[Previous Pass outcome](#pass-outcome-number-153)	|	[Next Pass outcome](#pass-outcome-number-155)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-signifiers|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-154)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-154)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-154)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 155
-
-[Jump to summary definition](#summary-Pass-155)	|	[Previous Pass outcome](#pass-outcome-number-154)	|	[Next Pass outcome](#pass-outcome-number-156)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -5936,14 +5836,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-155)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-155)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-155)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-151)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-151)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-151)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
 
 ***
-### Pass Outcome number 156
+### Pass Outcome number 152
 
-[Jump to summary definition](#summary-Pass-156)	|	[Previous Pass outcome](#pass-outcome-number-155)	|	[Next Pass outcome](#pass-outcome-number-157)
+[Jump to summary definition](#summary-Pass-152)	|	[Previous Pass outcome](#pass-outcome-number-151)	|	[Next Pass outcome](#pass-outcome-number-153)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -5961,9 +5861,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-156)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-156)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-156)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-152)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-152)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-152)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 153
+
+[Jump to summary definition](#summary-Pass-153)	|	[Previous Pass outcome](#pass-outcome-number-152)	|	[Next Pass outcome](#pass-outcome-number-154)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-signifiers|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-153)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-153)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-153)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 154
+
+[Jump to summary definition](#summary-Pass-154)	|	[Previous Pass outcome](#pass-outcome-number-153)	|	[Next Pass outcome](#pass-outcome-number-155)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-signifiers|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-154)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-154)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-154)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 155
+
+[Jump to summary definition](#summary-Pass-155)	|	[Previous Pass outcome](#pass-outcome-number-154)	|	[Next Pass outcome](#pass-outcome-number-156)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-signifiers|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-155)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-155)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-155)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 156
+
+[Jump to summary definition](#summary-Pass-156)	|	[Previous Pass outcome](#pass-outcome-number-155)	|	[Next Pass outcome](#pass-outcome-number-157)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-signifiers|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-signifiers/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-156)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-156)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-156)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 157
@@ -6028,17 +6028,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-159)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-159)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-159)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-159)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-159)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-159)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 160
@@ -6053,122 +6053,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-160)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-160)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-160)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-160)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-160)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-160)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 161
 
 [Jump to summary definition](#summary-Pass-161)	|	[Previous Pass outcome](#pass-outcome-number-160)	|	[Next Pass outcome](#pass-outcome-number-162)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-platforms|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-platforms/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-161)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-161)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-161)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 162
-
-[Jump to summary definition](#summary-Pass-162)	|	[Previous Pass outcome](#pass-outcome-number-161)	|	[Next Pass outcome](#pass-outcome-number-163)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-platforms|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-platforms/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-162)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-162)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-162)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 163
-
-[Jump to summary definition](#summary-Pass-163)	|	[Previous Pass outcome](#pass-outcome-number-162)	|	[Next Pass outcome](#pass-outcome-number-164)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-platforms|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-platforms/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-163)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-163)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-163)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 164
-
-[Jump to summary definition](#summary-Pass-164)	|	[Previous Pass outcome](#pass-outcome-number-163)	|	[Next Pass outcome](#pass-outcome-number-165)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-platforms|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-platforms/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-164)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-164)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-164)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 165
-
-[Jump to summary definition](#summary-Pass-165)	|	[Previous Pass outcome](#pass-outcome-number-164)	|	[Next Pass outcome](#pass-outcome-number-166)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -6186,14 +6086,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-165)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-165)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-165)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-161)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-161)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-161)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 166
+### Pass Outcome number 162
 
-[Jump to summary definition](#summary-Pass-166)	|	[Previous Pass outcome](#pass-outcome-number-165)	|	[Next Pass outcome](#pass-outcome-number-167)
+[Jump to summary definition](#summary-Pass-162)	|	[Previous Pass outcome](#pass-outcome-number-161)	|	[Next Pass outcome](#pass-outcome-number-163)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -6211,9 +6111,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-166)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-166)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-166)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-162)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-162)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-162)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 163
+
+[Jump to summary definition](#summary-Pass-163)	|	[Previous Pass outcome](#pass-outcome-number-162)	|	[Next Pass outcome](#pass-outcome-number-164)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-platforms|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-platforms/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-163)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-163)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-163)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 164
+
+[Jump to summary definition](#summary-Pass-164)	|	[Previous Pass outcome](#pass-outcome-number-163)	|	[Next Pass outcome](#pass-outcome-number-165)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-platforms|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-platforms/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-164)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-164)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-164)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 165
+
+[Jump to summary definition](#summary-Pass-165)	|	[Previous Pass outcome](#pass-outcome-number-164)	|	[Next Pass outcome](#pass-outcome-number-166)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-platforms|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-platforms/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-165)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-165)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-165)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 166
+
+[Jump to summary definition](#summary-Pass-166)	|	[Previous Pass outcome](#pass-outcome-number-165)	|	[Next Pass outcome](#pass-outcome-number-167)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-platforms|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-platforms/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-166)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-166)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-166)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 167
@@ -6228,17 +6228,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-167)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-167)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-167)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-167)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-167)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-167)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 168
@@ -6253,17 +6253,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-168)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-168)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-168)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-168)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-168)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-168)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 169
@@ -6328,17 +6328,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-171)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-171)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-171)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-171)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-171)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-171)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 172
@@ -6353,122 +6353,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-172)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-172)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-172)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-172)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-172)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-172)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 173
 
 [Jump to summary definition](#summary-Pass-173)	|	[Previous Pass outcome](#pass-outcome-number-172)	|	[Next Pass outcome](#pass-outcome-number-174)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-173)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-173)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-173)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 174
-
-[Jump to summary definition](#summary-Pass-174)	|	[Previous Pass outcome](#pass-outcome-number-173)	|	[Next Pass outcome](#pass-outcome-number-175)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-174)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-174)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-174)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 175
-
-[Jump to summary definition](#summary-Pass-175)	|	[Previous Pass outcome](#pass-outcome-number-174)	|	[Next Pass outcome](#pass-outcome-number-176)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-175)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-175)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-175)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 176
-
-[Jump to summary definition](#summary-Pass-176)	|	[Previous Pass outcome](#pass-outcome-number-175)	|	[Next Pass outcome](#pass-outcome-number-177)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-176)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-176)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-176)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 177
-
-[Jump to summary definition](#summary-Pass-177)	|	[Previous Pass outcome](#pass-outcome-number-176)	|	[Next Pass outcome](#pass-outcome-number-178)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -6486,14 +6386,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-177)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-177)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-177)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-173)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-173)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-173)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 178
+### Pass Outcome number 174
 
-[Jump to summary definition](#summary-Pass-178)	|	[Previous Pass outcome](#pass-outcome-number-177)	|	[Next Pass outcome](#pass-outcome-number-179)
+[Jump to summary definition](#summary-Pass-174)	|	[Previous Pass outcome](#pass-outcome-number-173)	|	[Next Pass outcome](#pass-outcome-number-175)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -6511,9 +6411,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-178)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-178)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-178)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-174)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-174)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-174)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 175
+
+[Jump to summary definition](#summary-Pass-175)	|	[Previous Pass outcome](#pass-outcome-number-174)	|	[Next Pass outcome](#pass-outcome-number-176)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-175)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-175)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-175)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 176
+
+[Jump to summary definition](#summary-Pass-176)	|	[Previous Pass outcome](#pass-outcome-number-175)	|	[Next Pass outcome](#pass-outcome-number-177)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-176)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-176)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-176)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 177
+
+[Jump to summary definition](#summary-Pass-177)	|	[Previous Pass outcome](#pass-outcome-number-176)	|	[Next Pass outcome](#pass-outcome-number-178)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-177)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-177)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-177)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 178
+
+[Jump to summary definition](#summary-Pass-178)	|	[Previous Pass outcome](#pass-outcome-number-177)	|	[Next Pass outcome](#pass-outcome-number-179)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-178)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-178)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-178)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 179
@@ -6528,17 +6528,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-179)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-179)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-179)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-179)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-179)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-179)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 180
@@ -6553,17 +6553,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-180)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-180)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-180)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-180)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-180)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-180)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 181
@@ -6578,17 +6578,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-181)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-181)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-181)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-181)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-181)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-181)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 182
@@ -6653,17 +6653,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-184)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-184)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-184)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-184)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-184)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-184)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 185
@@ -6678,122 +6678,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-185)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-185)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-185)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-185)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-185)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-185)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 186
 
 [Jump to summary definition](#summary-Pass-186)	|	[Previous Pass outcome](#pass-outcome-number-185)	|	[Next Pass outcome](#pass-outcome-number-187)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-core|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-core/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-186)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-186)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-186)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 187
-
-[Jump to summary definition](#summary-Pass-187)	|	[Previous Pass outcome](#pass-outcome-number-186)	|	[Next Pass outcome](#pass-outcome-number-188)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-core|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-core/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-187)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-187)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-187)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 188
-
-[Jump to summary definition](#summary-Pass-188)	|	[Previous Pass outcome](#pass-outcome-number-187)	|	[Next Pass outcome](#pass-outcome-number-189)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-core|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-core/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-188)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-188)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-188)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 189
-
-[Jump to summary definition](#summary-Pass-189)	|	[Previous Pass outcome](#pass-outcome-number-188)	|	[Next Pass outcome](#pass-outcome-number-190)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-core|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-core/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-189)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-189)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-189)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 190
-
-[Jump to summary definition](#summary-Pass-190)	|	[Previous Pass outcome](#pass-outcome-number-189)	|	[Next Pass outcome](#pass-outcome-number-191)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -6811,14 +6711,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-190)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-190)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-190)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-186)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-186)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-186)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 191
+### Pass Outcome number 187
 
-[Jump to summary definition](#summary-Pass-191)	|	[Previous Pass outcome](#pass-outcome-number-190)	|	[Next Pass outcome](#pass-outcome-number-192)
+[Jump to summary definition](#summary-Pass-187)	|	[Previous Pass outcome](#pass-outcome-number-186)	|	[Next Pass outcome](#pass-outcome-number-188)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -6836,14 +6736,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-191)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-191)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-191)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-187)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-187)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-187)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
 
 ***
-### Pass Outcome number 192
+### Pass Outcome number 188
 
-[Jump to summary definition](#summary-Pass-192)	|	[Previous Pass outcome](#pass-outcome-number-191)	|	[Next Pass outcome](#pass-outcome-number-193)
+[Jump to summary definition](#summary-Pass-188)	|	[Previous Pass outcome](#pass-outcome-number-187)	|	[Next Pass outcome](#pass-outcome-number-189)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -6861,9 +6761,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-192)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-192)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-192)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-188)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-188)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-188)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 189
+
+[Jump to summary definition](#summary-Pass-189)	|	[Previous Pass outcome](#pass-outcome-number-188)	|	[Next Pass outcome](#pass-outcome-number-190)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-core|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-core/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-189)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-189)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-189)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 190
+
+[Jump to summary definition](#summary-Pass-190)	|	[Previous Pass outcome](#pass-outcome-number-189)	|	[Next Pass outcome](#pass-outcome-number-191)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-core|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-core/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-190)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-190)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-190)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 191
+
+[Jump to summary definition](#summary-Pass-191)	|	[Previous Pass outcome](#pass-outcome-number-190)	|	[Next Pass outcome](#pass-outcome-number-192)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-core|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-core/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-191)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-191)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-191)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 192
+
+[Jump to summary definition](#summary-Pass-192)	|	[Previous Pass outcome](#pass-outcome-number-191)	|	[Next Pass outcome](#pass-outcome-number-193)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-core|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-core/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-192)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-192)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-192)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 193
@@ -6928,17 +6928,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-195)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-195)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-195)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-195)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-195)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-195)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 196
@@ -6953,122 +6953,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-196)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-196)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-196)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-196)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-196)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-196)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 197
 
 [Jump to summary definition](#summary-Pass-197)	|	[Previous Pass outcome](#pass-outcome-number-196)	|	[Next Pass outcome](#pass-outcome-number-198)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-behavior-specifications|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-197)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-197)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-197)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 198
-
-[Jump to summary definition](#summary-Pass-198)	|	[Previous Pass outcome](#pass-outcome-number-197)	|	[Next Pass outcome](#pass-outcome-number-199)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-behavior-specifications|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-198)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-198)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-198)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 199
-
-[Jump to summary definition](#summary-Pass-199)	|	[Previous Pass outcome](#pass-outcome-number-198)	|	[Next Pass outcome](#pass-outcome-number-200)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-behavior-specifications|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-199)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-199)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-199)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 200
-
-[Jump to summary definition](#summary-Pass-200)	|	[Previous Pass outcome](#pass-outcome-number-199)	|	[Next Pass outcome](#pass-outcome-number-201)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-manufacturing-environments-discover-behavior-specifications|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-200)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-200)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-200)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 201
-
-[Jump to summary definition](#summary-Pass-201)	|	[Previous Pass outcome](#pass-outcome-number-200)	|	[Next Pass outcome](#pass-outcome-number-202)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -7086,14 +6986,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-201)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-201)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-201)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-197)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-197)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-197)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 202
+### Pass Outcome number 198
 
-[Jump to summary definition](#summary-Pass-202)	|	[Previous Pass outcome](#pass-outcome-number-201)	|	[Next Pass outcome](#pass-outcome-number-203)
+[Jump to summary definition](#summary-Pass-198)	|	[Previous Pass outcome](#pass-outcome-number-197)	|	[Next Pass outcome](#pass-outcome-number-199)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -7111,9 +7011,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-202)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-202)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-202)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-198)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-198)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-198)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 199
+
+[Jump to summary definition](#summary-Pass-199)	|	[Previous Pass outcome](#pass-outcome-number-198)	|	[Next Pass outcome](#pass-outcome-number-200)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-behavior-specifications|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-199)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-199)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-199)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 200
+
+[Jump to summary definition](#summary-Pass-200)	|	[Previous Pass outcome](#pass-outcome-number-199)	|	[Next Pass outcome](#pass-outcome-number-201)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-behavior-specifications|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-200)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-200)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-200)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 201
+
+[Jump to summary definition](#summary-Pass-201)	|	[Previous Pass outcome](#pass-outcome-number-200)	|	[Next Pass outcome](#pass-outcome-number-202)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-behavior-specifications|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-201)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-201)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-201)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 202
+
+[Jump to summary definition](#summary-Pass-202)	|	[Previous Pass outcome](#pass-outcome-number-201)	|	[Next Pass outcome](#pass-outcome-number-203)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-manufacturing-environments-discover-behavior-specifications|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/manufacturing-environments/discover-behavior-specifications/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-202)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-202)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-202)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 203
@@ -7128,17 +7128,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-203)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-203)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-203)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-203)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-203)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-203)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 204
@@ -7153,17 +7153,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-204)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-204)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-204)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-204)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-204)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-204)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 205
@@ -7178,17 +7178,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-205)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-205)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-205)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-205)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-205)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-205)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 206
@@ -7253,17 +7253,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-208)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-208)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-208)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-208)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-208)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-208)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 209
@@ -7278,122 +7278,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-209)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-209)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-209)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-209)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-209)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-209)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 210
 
 [Jump to summary definition](#summary-Pass-210)	|	[Previous Pass outcome](#pass-outcome-number-209)	|	[Next Pass outcome](#pass-outcome-number-211)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-create-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/create-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-210)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-210)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-210)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 211
-
-[Jump to summary definition](#summary-Pass-211)	|	[Previous Pass outcome](#pass-outcome-number-210)	|	[Next Pass outcome](#pass-outcome-number-212)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-create-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/create-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-211)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-211)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-211)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 212
-
-[Jump to summary definition](#summary-Pass-212)	|	[Previous Pass outcome](#pass-outcome-number-211)	|	[Next Pass outcome](#pass-outcome-number-213)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-create-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/create-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-212)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-212)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-212)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 213
-
-[Jump to summary definition](#summary-Pass-213)	|	[Previous Pass outcome](#pass-outcome-number-212)	|	[Next Pass outcome](#pass-outcome-number-214)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-create-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/create-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-213)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-213)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-213)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 214
-
-[Jump to summary definition](#summary-Pass-214)	|	[Previous Pass outcome](#pass-outcome-number-213)	|	[Next Pass outcome](#pass-outcome-number-215)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -7411,14 +7311,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-214)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-214)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-214)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-210)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-210)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-210)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 215
+### Pass Outcome number 211
 
-[Jump to summary definition](#summary-Pass-215)	|	[Previous Pass outcome](#pass-outcome-number-214)	|	[Next Pass outcome](#pass-outcome-number-216)
+[Jump to summary definition](#summary-Pass-211)	|	[Previous Pass outcome](#pass-outcome-number-210)	|	[Next Pass outcome](#pass-outcome-number-212)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -7436,9 +7336,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-215)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-215)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-215)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-211)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-211)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-211)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 212
+
+[Jump to summary definition](#summary-Pass-212)	|	[Previous Pass outcome](#pass-outcome-number-211)	|	[Next Pass outcome](#pass-outcome-number-213)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-create-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/create-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-212)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-212)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-212)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 213
+
+[Jump to summary definition](#summary-Pass-213)	|	[Previous Pass outcome](#pass-outcome-number-212)	|	[Next Pass outcome](#pass-outcome-number-214)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-create-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/create-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-213)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-213)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-213)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 214
+
+[Jump to summary definition](#summary-Pass-214)	|	[Previous Pass outcome](#pass-outcome-number-213)	|	[Next Pass outcome](#pass-outcome-number-215)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-create-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/create-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-214)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-214)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-214)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 215
+
+[Jump to summary definition](#summary-Pass-215)	|	[Previous Pass outcome](#pass-outcome-number-214)	|	[Next Pass outcome](#pass-outcome-number-216)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-create-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/create-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-215)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-215)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-215)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 216
@@ -7453,17 +7453,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-216)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-216)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-216)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-216)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-216)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-216)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 217
@@ -7478,17 +7478,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-217)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-217)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-217)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-217)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-217)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-217)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 218
@@ -7503,17 +7503,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-218)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-218)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-218)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-218)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-218)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-218)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 219
@@ -7578,17 +7578,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-221)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-221)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-221)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-221)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-221)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-221)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 222
@@ -7603,122 +7603,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-222)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-222)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-222)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-222)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-222)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-222)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 223
 
 [Jump to summary definition](#summary-Pass-223)	|	[Previous Pass outcome](#pass-outcome-number-222)	|	[Next Pass outcome](#pass-outcome-number-224)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-coordinate-activities|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/coordinate-activities/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-223)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-223)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-223)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 224
-
-[Jump to summary definition](#summary-Pass-224)	|	[Previous Pass outcome](#pass-outcome-number-223)	|	[Next Pass outcome](#pass-outcome-number-225)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-coordinate-activities|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/coordinate-activities/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-224)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-224)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-224)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 225
-
-[Jump to summary definition](#summary-Pass-225)	|	[Previous Pass outcome](#pass-outcome-number-224)	|	[Next Pass outcome](#pass-outcome-number-226)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-coordinate-activities|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/coordinate-activities/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-225)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-225)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-225)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 226
-
-[Jump to summary definition](#summary-Pass-226)	|	[Previous Pass outcome](#pass-outcome-number-225)	|	[Next Pass outcome](#pass-outcome-number-227)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-coordinate-activities|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/coordinate-activities/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-226)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-226)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-226)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 227
-
-[Jump to summary definition](#summary-Pass-227)	|	[Previous Pass outcome](#pass-outcome-number-226)	|	[Next Pass outcome](#pass-outcome-number-228)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -7736,14 +7636,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-227)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-227)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-227)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-223)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-223)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-223)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 228
+### Pass Outcome number 224
 
-[Jump to summary definition](#summary-Pass-228)	|	[Previous Pass outcome](#pass-outcome-number-227)	|	[Next Pass outcome](#pass-outcome-number-229)
+[Jump to summary definition](#summary-Pass-224)	|	[Previous Pass outcome](#pass-outcome-number-223)	|	[Next Pass outcome](#pass-outcome-number-225)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -7761,9 +7661,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-228)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-228)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-228)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-224)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-224)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-224)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 225
+
+[Jump to summary definition](#summary-Pass-225)	|	[Previous Pass outcome](#pass-outcome-number-224)	|	[Next Pass outcome](#pass-outcome-number-226)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-coordinate-activities|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/coordinate-activities/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-225)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-225)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-225)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 226
+
+[Jump to summary definition](#summary-Pass-226)	|	[Previous Pass outcome](#pass-outcome-number-225)	|	[Next Pass outcome](#pass-outcome-number-227)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-coordinate-activities|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/coordinate-activities/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-226)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-226)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-226)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 227
+
+[Jump to summary definition](#summary-Pass-227)	|	[Previous Pass outcome](#pass-outcome-number-226)	|	[Next Pass outcome](#pass-outcome-number-228)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-coordinate-activities|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/coordinate-activities/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-227)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-227)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-227)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 228
+
+[Jump to summary definition](#summary-Pass-228)	|	[Previous Pass outcome](#pass-outcome-number-227)	|	[Next Pass outcome](#pass-outcome-number-229)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-coordinate-activities|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/coordinate-activities/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-228)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-228)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-228)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 229
@@ -7778,17 +7778,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-229)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-229)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-229)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-229)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-229)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-229)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 230
@@ -7803,17 +7803,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-230)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-230)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-230)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-230)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-230)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-230)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 231
@@ -7828,17 +7828,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-231)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-231)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-231)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-231)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-231)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-231)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 232
@@ -7903,17 +7903,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-234)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-234)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-234)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-234)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-234)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-234)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 235
@@ -7928,122 +7928,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-235)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-235)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-235)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-235)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-235)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-235)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 236
 
 [Jump to summary definition](#summary-Pass-236)	|	[Previous Pass outcome](#pass-outcome-number-235)	|	[Next Pass outcome](#pass-outcome-number-237)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-configure-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/configure-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-236)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-236)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-236)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 237
-
-[Jump to summary definition](#summary-Pass-237)	|	[Previous Pass outcome](#pass-outcome-number-236)	|	[Next Pass outcome](#pass-outcome-number-238)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-configure-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/configure-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-237)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-237)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-237)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 238
-
-[Jump to summary definition](#summary-Pass-238)	|	[Previous Pass outcome](#pass-outcome-number-237)	|	[Next Pass outcome](#pass-outcome-number-239)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-configure-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/configure-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-238)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-238)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-238)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 239
-
-[Jump to summary definition](#summary-Pass-239)	|	[Previous Pass outcome](#pass-outcome-number-238)	|	[Next Pass outcome](#pass-outcome-number-240)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|modelet-logistics-configure-organization|
-|----|----|
-|Title|Standalone&#32;modelet&#32;domains/logistics/configure-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-239)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-239)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-239)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 240
-
-[Jump to summary definition](#summary-Pass-240)	|	[Previous Pass outcome](#pass-outcome-number-239)	|	[Next Pass outcome](#pass-outcome-number-241)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -8061,14 +7961,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-240)|Identifier|`not-labeled-term`|
-|[Section top](#pass-outcome-number-240)|Title|All&#32;terms&#32;labeled|
-|[Section top](#pass-outcome-number-240)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+|[Section top](#pass-outcome-number-236)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-236)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-236)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
 
 ***
-### Pass Outcome number 241
+### Pass Outcome number 237
 
-[Jump to summary definition](#summary-Pass-241)	|	[Previous Pass outcome](#pass-outcome-number-240)	|	[Next Pass outcome](#pass-outcome-number-242)
+[Jump to summary definition](#summary-Pass-237)	|	[Previous Pass outcome](#pass-outcome-number-236)	|	[Next Pass outcome](#pass-outcome-number-238)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -8086,9 +7986,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-241)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-241)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-241)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-237)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-237)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-237)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 238
+
+[Jump to summary definition](#summary-Pass-238)	|	[Previous Pass outcome](#pass-outcome-number-237)	|	[Next Pass outcome](#pass-outcome-number-239)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-configure-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/configure-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-238)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-238)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-238)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 239
+
+[Jump to summary definition](#summary-Pass-239)	|	[Previous Pass outcome](#pass-outcome-number-238)	|	[Next Pass outcome](#pass-outcome-number-240)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-configure-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/configure-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-239)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-239)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-239)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 240
+
+[Jump to summary definition](#summary-Pass-240)	|	[Previous Pass outcome](#pass-outcome-number-239)	|	[Next Pass outcome](#pass-outcome-number-241)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-configure-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/configure-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-240)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-240)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-240)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 241
+
+[Jump to summary definition](#summary-Pass-241)	|	[Previous Pass outcome](#pass-outcome-number-240)	|	[Next Pass outcome](#pass-outcome-number-242)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|modelet-logistics-configure-organization|
+|----|----|
+|Title|Standalone&#32;modelet&#32;domains/logistics/configure-organization/onto.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-241)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-241)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-241)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 242
@@ -8103,17 +8103,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-242)|Identifier|`owl-el-profile-error`|
-|[Section top](#pass-outcome-number-242)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-242)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+|[Section top](#pass-outcome-number-242)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-242)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-242)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 243
@@ -8128,17 +8128,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-243)|Identifier|`owl-ql-profile-error`|
-|[Section top](#pass-outcome-number-243)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-243)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+|[Section top](#pass-outcome-number-243)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-243)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-243)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 244
@@ -8153,17 +8153,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-244)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-244)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-244)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-244)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-244)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-244)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 245
@@ -8203,17 +8203,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-246)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-246)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-246)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-246)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-246)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-246)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 247
@@ -8228,17 +8228,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-247)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-247)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-247)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-247)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-247)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-247)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 248
@@ -8253,17 +8253,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-248)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-248)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-248)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+|[Section top](#pass-outcome-number-248)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-248)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-248)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
 
 ***
 ### Pass Outcome number 249
@@ -8278,17 +8278,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-249)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-249)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-249)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+|[Section top](#pass-outcome-number-249)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-249)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-249)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
 
 ***
 ### Pass Outcome number 250
@@ -8303,17 +8303,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-250)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-250)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-250)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+|[Section top](#pass-outcome-number-250)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-250)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-250)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
 
 ***
 ### Pass Outcome number 251
@@ -8328,17 +8328,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-251)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-251)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-251)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+|[Section top](#pass-outcome-number-251)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-251)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-251)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
 
 ***
 ### Pass Outcome number 252
@@ -8353,17 +8353,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|OWL&#32;RL&#32;Constraint&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-252)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-252)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-252)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-252)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-252)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-252)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
 
 ***
 ### Pass Outcome number 253
@@ -8378,17 +8378,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
 |----|----|
-|Title|Profile&#32;compatibility&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-253)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-253)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-253)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-253)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-253)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-253)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 ### Pass Outcome number 254
@@ -8403,17 +8403,17 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-254)|Identifier|`class-subpropertyof`|
-|[Section top](#pass-outcome-number-254)|Title|No&#32;class&#32;subproperty|
-|[Section top](#pass-outcome-number-254)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+|[Section top](#pass-outcome-number-254)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-254)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-254)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 255
@@ -8428,122 +8428,22 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
 
 #### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
 |----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-255)|Identifier|`property-subclassof`|
-|[Section top](#pass-outcome-number-255)|Title|No&#32;property&#32;subclass|
-|[Section top](#pass-outcome-number-255)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+|[Section top](#pass-outcome-number-255)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-255)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-255)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
 
 ***
 ### Pass Outcome number 256
 
 [Jump to summary definition](#summary-Pass-256)	|	[Previous Pass outcome](#pass-outcome-number-255)	|	[Next Pass outcome](#pass-outcome-number-257)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|all-fragments|
-|----|----|
-|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-256)|Identifier|`subclassof-property`|
-|[Section top](#pass-outcome-number-256)|Title|No&#32;subclass&#32;of&#32;property|
-|[Section top](#pass-outcome-number-256)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
-
-***
-### Pass Outcome number 257
-
-[Jump to summary definition](#summary-Pass-257)	|	[Previous Pass outcome](#pass-outcome-number-256)	|	[Next Pass outcome](#pass-outcome-number-258)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|all-fragments|
-|----|----|
-|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[bad-extension-property](https://ns.inria.fr/olivaw#bad-extension-property)|
-|----|----|
-|Title|Predicate&#32;extension&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-257)|Identifier|`subpropertyof-class`|
-|[Section top](#pass-outcome-number-257)|Title|No&#32;subproperty&#32;of&#32;class|
-|[Section top](#pass-outcome-number-257)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
-
-***
-### Pass Outcome number 258
-
-[Jump to summary definition](#summary-Pass-258)	|	[Previous Pass outcome](#pass-outcome-number-257)	|	[Next Pass outcome](#pass-outcome-number-259)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|all-fragments|
-|----|----|
-|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-258)|Identifier|`domain-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-258)|Title|Domains&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-258)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 259
-
-[Jump to summary definition](#summary-Pass-259)	|	[Previous Pass outcome](#pass-outcome-number-258)	|	[Next Pass outcome](#pass-outcome-number-260)
-
-:white_check_mark:Pass outcome
-#### Subject detail
-|Name|all-fragments|
-|----|----|
-|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
-|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
-
-#### Criterion detail
-|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
-|----|----|
-|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
-|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
-
-#### Outcome Detail
-|Jump|Type|:white_check_mark:Pass|
-|----|----|----|
-|[Section top](#pass-outcome-number-259)|Identifier|`range-out-of-vocabulary`|
-|[Section top](#pass-outcome-number-259)|Title|Ranges&#32;properly&#32;defined|
-|[Section top](#pass-outcome-number-259)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
-
-***
-### Pass Outcome number 260
-
-[Jump to summary definition](#summary-Pass-260)	|	[Previous Pass outcome](#pass-outcome-number-259)	|	[Next Pass outcome](#pass-outcome-number-261)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -8561,14 +8461,14 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-260)|Identifier|`owl-rl-constraint-violation`|
-|[Section top](#pass-outcome-number-260)|Title|OWL&#32;RL&#32;consistent|
-|[Section top](#pass-outcome-number-260)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+|[Section top](#pass-outcome-number-256)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-256)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-256)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
 
 ***
-### Pass Outcome number 261
+### Pass Outcome number 257
 
-[Jump to summary definition](#summary-Pass-261)	|	[Previous Pass outcome](#pass-outcome-number-260)	|	Next Pass outcome
+[Jump to summary definition](#summary-Pass-257)	|	[Previous Pass outcome](#pass-outcome-number-256)	|	[Next Pass outcome](#pass-outcome-number-258)
 
 :white_check_mark:Pass outcome
 #### Subject detail
@@ -8586,9 +8486,109 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
 |----|----|----|
-|[Section top](#pass-outcome-number-261)|Identifier|`owl-rl-profile-error`|
-|[Section top](#pass-outcome-number-261)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
-|[Section top](#pass-outcome-number-261)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+|[Section top](#pass-outcome-number-257)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-257)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-257)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 258
+
+[Jump to summary definition](#summary-Pass-258)	|	[Previous Pass outcome](#pass-outcome-number-257)	|	[Next Pass outcome](#pass-outcome-number-259)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-fragments|
+|----|----|
+|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-258)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-258)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-258)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 259
+
+[Jump to summary definition](#summary-Pass-259)	|	[Previous Pass outcome](#pass-outcome-number-258)	|	[Next Pass outcome](#pass-outcome-number-260)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-fragments|
+|----|----|
+|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-259)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-259)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-259)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 260
+
+[Jump to summary definition](#summary-Pass-260)	|	[Previous Pass outcome](#pass-outcome-number-259)	|	[Next Pass outcome](#pass-outcome-number-261)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-fragments|
+|----|----|
+|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-260)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-260)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-260)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 261
+
+[Jump to summary definition](#summary-Pass-261)	|	[Previous Pass outcome](#pass-outcome-number-260)	|	Next Pass outcome
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-fragments|
+|----|----|
+|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Modelet logistics/configure-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/configure-organization/onto.ttl)<br/>- [Modelet logistics/coordinate-activities](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/coordinate-activities/onto.ttl)<br/>- [Modelet logistics/create-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/logistics/create-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-behavior-specifications](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-behavior-specifications/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-core](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-core/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-organization](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-organization/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-platforms](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-platforms/onto.ttl)<br/>- [Modelet manufacturing-environments/discover-signifiers](https://github.com/HyperAgents/hmas/blob/HEAD/domains/manufacturing-environments/discover-signifiers/onto.ttl)<br/>- [Module alignment/interaction-td](https://github.com/HyperAgents/hmas/blob/HEAD/src/alignment/interaction-td.ttl)<br/>- [Module core](https://github.com/HyperAgents/hmas/blob/HEAD/src/core.ttl)<br/>- [Module fipa](https://github.com/HyperAgents/hmas/blob/HEAD/src/fipa.ttl)<br/>- [Module interaction](https://github.com/HyperAgents/hmas/blob/HEAD/src/interaction.ttl)<br/>- [Module regulation](https://github.com/HyperAgents/hmas/blob/HEAD/src/regulation.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-261)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-261)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-261)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 

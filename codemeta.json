@@ -136,7 +136,7 @@
         "Python >= 3.10",
         "Java >= 11"
     ],
-    "version": "0.0.6",
+    "version": "0.0.7",
     "developmentStatus": "active",
     "issueTracker": "https://github.com/Wimmics/olivaw/issues"
 }

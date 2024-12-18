@@ -6,9 +6,9 @@ from olivaw.constants import (
     ROOT_FOLDER,
     BADGE_LIST,
     DEV_USERNAME,
-    GIST_INDEX
+    GIST_INDEX,
+    NEW_LINES
 )
-from olivaw.constants.regex import NEW_LINES
 from olivaw.init.util import badge_url
 
 def update_readme(gist_id: str=None) -> None:

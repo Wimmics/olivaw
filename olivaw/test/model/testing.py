@@ -1,10 +1,8 @@
 """Module providing the business logic behind the `olivaw test model` command"""
 
 from os.path import sep, relpath
-from typing import Union
 from py4j.java_gateway import JavaObject
 
-from olivaw.constants.sparql import LINK_SUBJECTS_FOR_MODULE, REMOVE_DESCRIPTION_LINKS
 from olivaw.test.corese import (
     query_graph, 
     safe_load,
@@ -20,7 +18,9 @@ from olivaw.constants import (
     MODEL_BEST_PRACTICES_TESTS,
     MODEL_BEST_PRACTICES_TESTS,
     CUSTOM_MODEL_TESTS,
-    TRIPLES_FOR_MODULE
+    TRIPLES_FOR_MODULE,
+    LINK_SUBJECTS_FOR_MODULE,
+    REMOVE_DESCRIPTION_LINKS
 )
 
 from olivaw.test.model.best_practices import best_practices_test

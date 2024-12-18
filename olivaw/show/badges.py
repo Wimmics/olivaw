@@ -4,8 +4,7 @@ from os.path import sep
 from requests import get
 from json import dumps
 
-from olivaw.constants import ROOT_FOLDER
-from olivaw.constants.git_info import REF
+from olivaw.constants import ROOT_FOLDER, REF
 
 def show_badges() -> None:
     """Executes the `olivaw show badges` command"""

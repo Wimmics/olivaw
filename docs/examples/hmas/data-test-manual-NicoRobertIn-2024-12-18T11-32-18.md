@@ -2,9 +2,9 @@
 
 This file is an export of the RDF test report made out of [EARL vocabulary](https://www.w3.org/TR/EARL10/)
 
-This test is powered by Corese, check the [website](https://project.inria.fr/corese/) and the [repository](https://github.com/Wimmics/corese)
+This test is powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese)
 
-The original test report is available in turtle syntax [here](./data-test-manual-NicoRobertIn-2024-12-05T14-49-03.ttl).
+The original test report is available in turtle syntax [here](./data-test-manual-NicoRobertIn-2024-12-18T11-32-18.ttl).
 
 # Test Activity
 
@@ -16,13 +16,13 @@ Here is some information about the testing activity that led to this report
 |Tester|[NicoRobertIn](https://github.com/NicoRobertIn)|
 |Ontology|[HyperAgents/hmas](https://github.com/HyperAgents/hmas)|
 |Ontology version|Local state `ca439d4144b23b3fe927509872babc8d82142fae`|
-|Ontology version date|2024-12-05 14:48:56|
+|Ontology version date|2024-12-18 11:32:12|
 |Ontology previous version|[3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b](https://github.com/HyperAgents/hmas/tree/3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b)|
 |Ontology branch|[HEAD](https://github.com/HyperAgents/hmas/tree/HEAD)|
-|Olivaw suite|[olivaw data test suite](https://github.com/Wimmics/olivaw/blob/v0.0.6/olivaw/test/data/suite.py)|
-|Olivaw version|[v0.0.6](https://pypi.org/project/olivaw/0.0.6)|
-|Generated turtle|[Turtle report](./data-test-manual-NicoRobertIn-2024-12-05T14-49-03.ttl)|
-|Generated Markdown|[Markdown report](./data-test-manual-NicoRobertIn-2024-12-05T14-49-03.md)|
+|Olivaw suite|[olivaw data test suite](https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/data/suite.py)|
+|Olivaw version|[v0.0.7](https://pypi.org/project/olivaw/0.0.7)|
+|Generated turtle|[Turtle report](./data-test-manual-NicoRobertIn-2024-12-18T11-32-18.ttl)|
+|Generated Markdown|[Markdown report](./data-test-manual-NicoRobertIn-2024-12-18T11-32-18.md)|
 
 # Statistic summary
 
@@ -37,10 +37,10 @@ Here is a short overview for this test report
 <br/>
 
 The different status types are an extension of the [EARL](https://www.w3.org/TR/EARL10-Schema/) vocabulary where the nextended terms can be found in the [olivaw ontology](https://ns.inria.fr/olivaw#), each outcome type means:
-* :boom: MajorFail: This is an error that is critical and consider as blocking for production
-* :exclamation: MinorFail: This is an error that should be fixed, but it is cannot be considered as critical error
-* :warning: CannotTell: It is unclear if the subject passed or failed the test. This happens when an automated test requires human judgement to make a definite decision.
-* :grey_question: NotTested:  The test has not been carried out. Here this is because a previous test that was mandatory to be passed did not end up as Pass.
+* :boom: MajorFail: This is an error that is critical and considered as blocking for production
+* :exclamation: MinorFail: This is an error that should be fixed, but it cannot be considered as critical error
+* :warning: CannotTell: It is unclear if the subject passed or failed the test. This happens when an automated test requires human judgement to make a final decision.
+* :grey_question: NotTested:  The test has not been carried out. It is because some prerequisite tests did not end up as Pass.
 * :white_check_mark: Pass: The subject passed the test.
 
 ***
@@ -238,8 +238,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -267,8 +267,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -295,8 +295,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -307,7 +307,7 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 |[Section top](#cannottell-outcome-number-3)|Pointer|<pre lang="Turtle"><code>Namespace&#32;usage&#32;in&#32;the&#32;subject&#32;file:</code></pre>|
 |[Section top](#cannottell-outcome-number-3)|Pointer|<pre lang="Turtle"><code>&#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/tcp> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/operator/%7Btoken%7D> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/operator> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/gripper> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/operator> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/initialize> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/gripper> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> &#32;.</code></pre>|
 |[Section top](#cannottell-outcome-number-3)|Pointer|<pre lang="Turtle"><code>Similar&#32;namespace&#32;found&#32;in&#32;file:  &#10;.&#92;use-cases&#92;manufacturing&#92;dataset-v1.ttl&#32;  &#10;Namespace&#32;found:  &#10;https://api.interactions.ics.unisg.ch/cherrybot2/</code></pre>|
-|[Section top](#cannottell-outcome-number-3)|Pointer|<pre lang="Turtle"><code>&#91;]&#32;hctl:hasTarget&#32;similar-namespace:tcp&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:gripper&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:operator&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:operator&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:initialize&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:gripper&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/operator/%7Btoken%7D> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> &#32;.</code></pre>|
+|[Section top](#cannottell-outcome-number-3)|Pointer|<pre lang="Turtle"><code>&#91;]&#32;hctl:hasTarget&#32;similar-namespace:initialize&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:gripper&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:tcp&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:operator&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:gripper&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/operator/%7Btoken%7D> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:operator&#32;.</code></pre>|
 
 ***
 ### CannotTell Outcome number 4
@@ -324,8 +324,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -353,8 +353,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -382,8 +382,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -392,7 +392,7 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 |[Section top](#cannottell-outcome-number-6)|Title|Possible&#32;namespace&#32;typo|
 |[Section top](#cannottell-outcome-number-6)|Description|The&#32;following&#32;namespace&#32;seems&#32;suspicious:  &#10; &#32;https://ns.inria.fr/hmas/&#32;  &#10;Was&#32;it&#32;supposed&#32;to&#32;correspond&#32;to&#32;one&#32;of&#32;these&#32;namespaces?|
 |[Section top](#cannottell-outcome-number-6)|Pointer|<pre lang="Turtle"><code>Namespace&#32;usage&#32;in&#32;the&#32;subject&#32;file:</code></pre>|
-|[Section top](#cannottell-outcome-number-6)|Pointer|<pre lang="Turtle"><code>&#60;https://ns.inria.fr/hmas/#platform> &#32;a&#32;hmas:Platform&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:hasProfile&#32; &#60;https://ns.inria.fr/hmas/> &#32;.  &#10;ns1:workspace&#32;a&#32;hmas:Workspace&#32;;  &#10; &#32; &#32; &#32; &#32;ns1:hasProfile&#32;ns1:&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:contains&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-1#artifact>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-2#artifact>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/truck#artifact> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-b#agent> &#32;a&#32;hmas:Agent&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:hasProfile&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-b#> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isContainedIn&#32;ns1:Workspace&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c#agent> &#32;a&#32;hmas:Agent&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:hasProfile&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c#> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isContainedIn&#32;ns1:Workspace&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-d#agent> &#32;a&#32;hmas:Agent&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:hasProfile&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-d#> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isContainedIn&#32;ns1:Workspace&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-1#> &#32;a&#32;hmas:ResourceProfile&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:exposesSignifier&#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;]&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isProfileOf&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-1#artifact> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-2#> &#32;a&#32;hmas:ResourceProfile&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:exposesSignifier&#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;]&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isProfileOf&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-2#artifact> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/truck#> &#32;a&#32;hmas:ResourceProfile&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:exposesSignifier&#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;]&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isProfileOf&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/truck#artifact> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-1#artifact> &#32;a&#32;hmas:Artifact&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-2#artifact> &#32;a&#32;hmas:Artifact&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/truck#artifact> &#32;a&#32;hmas:Artifact&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.</code></pre>|
+|[Section top](#cannottell-outcome-number-6)|Pointer|<pre lang="Turtle"><code>&#60;https://ns.inria.fr/hmas/#platform> &#32;a&#32;hmas:Platform&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:hasProfile&#32; &#60;https://ns.inria.fr/hmas/> &#32;.  &#10;ns2:workspace&#32;a&#32;hmas:Workspace&#32;;  &#10; &#32; &#32; &#32; &#32;ns2:hasProfile&#32;ns2:&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:contains&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-1#artifact>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-2#artifact>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/truck#artifact> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-b#agent> &#32;a&#32;hmas:Agent&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:hasProfile&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-b#> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isContainedIn&#32;ns2:Workspace&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c#agent> &#32;a&#32;hmas:Agent&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:hasProfile&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c#> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isContainedIn&#32;ns2:Workspace&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-d#agent> &#32;a&#32;hmas:Agent&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:hasProfile&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-d#> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isContainedIn&#32;ns2:Workspace&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-1#> &#32;a&#32;hmas:ResourceProfile&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:exposesSignifier&#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;]&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isProfileOf&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-1#artifact> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-2#> &#32;a&#32;hmas:ResourceProfile&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:exposesSignifier&#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;]&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isProfileOf&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-2#artifact> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/truck#> &#32;a&#32;hmas:ResourceProfile&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:exposesSignifier&#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;]&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isProfileOf&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/truck#artifact> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-1#artifact> &#32;a&#32;hmas:Artifact&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-2#artifact> &#32;a&#32;hmas:Artifact&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/truck#artifact> &#32;a&#32;hmas:Artifact&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.</code></pre>|
 |[Section top](#cannottell-outcome-number-6)|Pointer|<pre lang="Turtle"><code>Similar&#32;namespace&#32;found&#32;in&#32;file:  &#10;.&#92;use-cases&#92;manufacturing&#92;dataset-v1.ttl&#32;  &#10;Namespace&#32;found:  &#10;https://ns.inria.fr/hmas/#</code></pre>|
 |[Section top](#cannottell-outcome-number-6)|Pointer|<pre lang="Turtle"><code>similar-namespace:platform&#32;a&#32;hmas:Platform&#32;;  &#10; &#32; &#32;&#32; &#32;hmas:hasProfile&#32; &#60;https://ns.inria.fr/hmas/> &#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site#workspace> &#32;hmas:isHostedOn&#32;similar-namespace:platformplatform&#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-b#agent> &#32;hmas:isHostedOn&#32;similar-namespace:platformplatform&#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c#agent> &#32;hmas:isHostedOn&#32;similar-namespace:platformplatform&#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-d#agent> &#32;hmas:isHostedOn&#32;similar-namespace:platformplatform&#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-1#artifact> &#32;hmas:isHostedOn&#32;similar-namespace:platformplatform&#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/robotic-arm-2#artifact> &#32;hmas:isHostedOn&#32;similar-namespace:platformplatform&#32;.  &#10; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/artifacts/truck#artifact> &#32;hmas:isHostedOn&#32;similar-namespace:platformplatform&#32;.</code></pre>|
 
@@ -411,8 +411,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -441,8 +441,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -470,8 +470,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -499,8 +499,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -527,8 +527,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -555,8 +555,8 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:warning:CannotTell|
@@ -703,8 +703,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -803,8 +803,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -878,8 +878,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -978,8 +978,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1153,8 +1153,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1253,8 +1253,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1353,8 +1353,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1453,8 +1453,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1553,8 +1553,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
