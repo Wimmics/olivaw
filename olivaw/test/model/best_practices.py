@@ -9,10 +9,13 @@ from olivaw.constants import (
     ONTOLOGY_NAMESPACE,
     RANGE_OUT_OF_VOCABULARY,
     TERM_DISTANCE_THRESHOLD,
-    DOMAIN_OUT_OF_VOCABULARY
+    DOMAIN_OUT_OF_VOCABULARY,
+    GET_CLASS_SUBPROPERTIES,
+    GET_PROPERTY_SUBCLASSES,
+    GET_SUBCLASSOF_PROPERTIES,
+    GET_SUBPROPERTYOF_CLASSES
 )
 
-from olivaw.constants.sparql import GET_CLASS_SUBPROPERTIES, GET_PROPERTY_SUBCLASSES, GET_SUBCLASSOF_PROPERTIES, GET_SUBPROPERTYOF_CLASSES
 from olivaw.test.corese import query_graph
 from olivaw.test.turtle import make_assertion, uri_pointer
 from olivaw.test.util import levenshtein
@@ -128,7 +131,7 @@ def best_practices_test(
             pointers=not_labeled_pointers
         )
 
-    if not should_skip(draft, criterion="bad-extension-property"):
+    if not should_skip(draft, criterion="proper-extension-predicate"):
         # Checking for subclassof pointing to properties
         subclass_of_properties = query_graph(fragment_no_owl, GET_SUBCLASSOF_PROPERTIES)
         subclass_of_properties = [[
@@ -156,7 +159,7 @@ def best_practices_test(
 
         make_assertion(
             draft,
-            criterion="bad-extension-property",
+            criterion="proper-extension-predicate",
             error="subpropertyof-class",
             messages=subproperty_of_class_messages,
             pointers=subproperty_of_class
@@ -173,7 +176,7 @@ def best_practices_test(
 
         make_assertion(
             draft,
-            criterion="bad-extension-property",
+            criterion="proper-extension-predicate",
             error="class-subpropertyof",
             messages=class_subproperties_messages,
             pointers=class_subproperties
@@ -190,7 +193,7 @@ def best_practices_test(
 
         make_assertion(
             draft,
-            criterion="bad-extension-property",
+            criterion="proper-extension-predicate",
             error="property-subclassof",
             messages=property_subclasses_messages,
             pointers=property_subclasses

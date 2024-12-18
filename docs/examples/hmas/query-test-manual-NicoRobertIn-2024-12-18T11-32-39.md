@@ -2,9 +2,9 @@
 
 This file is an export of the RDF test report made out of [EARL vocabulary](https://www.w3.org/TR/EARL10/)
 
-This test is powered by Corese, check the [website](https://project.inria.fr/corese/) and the [repository](https://github.com/Wimmics/corese)
+This test is powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese)
 
-The original test report is available in turtle syntax [here](./query-test-manual-NicoRobertIn-2024-12-05T14-49-28.ttl).
+The original test report is available in turtle syntax [here](./query-test-manual-NicoRobertIn-2024-12-18T11-32-39.ttl).
 
 # Test Activity
 
@@ -16,13 +16,13 @@ Here is some information about the testing activity that led to this report
 |Tester|[NicoRobertIn](https://github.com/NicoRobertIn)|
 |Ontology|[HyperAgents/hmas](https://github.com/HyperAgents/hmas)|
 |Ontology version|Local state `ca439d4144b23b3fe927509872babc8d82142fae`|
-|Ontology version date|2024-12-05 14:49:18|
+|Ontology version date|2024-12-18 11:32:31|
 |Ontology previous version|[3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b](https://github.com/HyperAgents/hmas/tree/3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b)|
 |Ontology branch|[HEAD](https://github.com/HyperAgents/hmas/tree/HEAD)|
-|Olivaw suite|[olivaw query test suite](https://github.com/Wimmics/olivaw/blob/v0.0.6/olivaw/test/query/suite.py)|
-|Olivaw version|[v0.0.6](https://pypi.org/project/olivaw/0.0.6)|
-|Generated turtle|[Turtle report](./query-test-manual-NicoRobertIn-2024-12-05T14-49-28.ttl)|
-|Generated Markdown|[Markdown report](./query-test-manual-NicoRobertIn-2024-12-05T14-49-28.md)|
+|Olivaw suite|[olivaw query test suite](https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/query/suite.py)|
+|Olivaw version|[v0.0.7](https://pypi.org/project/olivaw/0.0.7)|
+|Generated turtle|[Turtle report](./query-test-manual-NicoRobertIn-2024-12-18T11-32-39.ttl)|
+|Generated Markdown|[Markdown report](./query-test-manual-NicoRobertIn-2024-12-18T11-32-39.md)|
 
 # Statistic summary
 
@@ -37,10 +37,10 @@ Here is a short overview for this test report
 <br/>
 
 The different status types are an extension of the [EARL](https://www.w3.org/TR/EARL10-Schema/) vocabulary where the nextended terms can be found in the [olivaw ontology](https://ns.inria.fr/olivaw#), each outcome type means:
-* :boom: MajorFail: This is an error that is critical and consider as blocking for production
-* :exclamation: MinorFail: This is an error that should be fixed, but it is cannot be considered as critical error
-* :warning: CannotTell: It is unclear if the subject passed or failed the test. This happens when an automated test requires human judgement to make a definite decision.
-* :grey_question: NotTested:  The test has not been carried out. Here this is because a previous test that was mandatory to be passed did not end up as Pass.
+* :boom: MajorFail: This is an error that is critical and considered as blocking for production
+* :exclamation: MinorFail: This is an error that should be fixed, but it cannot be considered as critical error
+* :warning: CannotTell: It is unclear if the subject passed or failed the test. This happens when an automated test requires human judgement to make a final decision.
+* :grey_question: NotTested:  The test has not been carried out. It is because some prerequisite tests did not end up as Pass.
 * :white_check_mark: Pass: The subject passed the test.
 
 ***
@@ -147,7 +147,7 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:exclamation:MinorFail|
@@ -173,7 +173,7 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:exclamation:MinorFail|
@@ -199,7 +199,7 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:exclamation:MinorFail|
@@ -225,7 +225,7 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:exclamation:MinorFail|
@@ -251,7 +251,7 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:exclamation:MinorFail|
@@ -523,7 +523,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |----|----|----|
 |[Section top](#pass-outcome-number-2)|Identifier|`syntax-error`|
 |[Section top](#pass-outcome-number-2)|Title|Correct&#32;syntax|
-|[Section top](#pass-outcome-number-2)|Description|All&#32;the&#32;subject&#32;URIs&#32;should&#32;be&#32;well-formed|
+|[Section top](#pass-outcome-number-2)|Description|All&#32;the&#32;subject&#32;URIs&#32;should&#32;conform&#32;to&#32;RFC&#32;3986|
 
 ***
 ### Pass Outcome number 3
@@ -573,7 +573,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |----|----|----|
 |[Section top](#pass-outcome-number-4)|Identifier|`syntax-error`|
 |[Section top](#pass-outcome-number-4)|Title|Correct&#32;syntax|
-|[Section top](#pass-outcome-number-4)|Description|All&#32;the&#32;subject&#32;URIs&#32;should&#32;be&#32;well-formed|
+|[Section top](#pass-outcome-number-4)|Description|All&#32;the&#32;subject&#32;URIs&#32;should&#32;conform&#32;to&#32;RFC&#32;3986|
 
 ***
 ### Pass Outcome number 5
@@ -623,7 +623,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |----|----|----|
 |[Section top](#pass-outcome-number-6)|Identifier|`syntax-error`|
 |[Section top](#pass-outcome-number-6)|Title|Correct&#32;syntax|
-|[Section top](#pass-outcome-number-6)|Description|All&#32;the&#32;subject&#32;URIs&#32;should&#32;be&#32;well-formed|
+|[Section top](#pass-outcome-number-6)|Description|All&#32;the&#32;subject&#32;URIs&#32;should&#32;conform&#32;to&#32;RFC&#32;3986|
 
 ***
 ### Pass Outcome number 7
@@ -690,8 +690,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -766,7 +766,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -790,8 +790,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -866,7 +866,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -890,8 +890,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -966,7 +966,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -990,8 +990,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1066,7 +1066,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1090,8 +1090,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1166,7 +1166,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1190,8 +1190,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1266,7 +1266,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1290,8 +1290,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1366,7 +1366,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1390,8 +1390,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1466,7 +1466,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1490,8 +1490,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1566,7 +1566,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1590,8 +1590,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1666,7 +1666,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1690,8 +1690,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1766,7 +1766,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1790,8 +1790,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1866,7 +1866,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1890,8 +1890,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1966,7 +1966,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -1990,8 +1990,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2066,7 +2066,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2090,8 +2090,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2166,7 +2166,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2190,8 +2190,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2266,7 +2266,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2290,8 +2290,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2366,7 +2366,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2390,8 +2390,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2466,7 +2466,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2490,8 +2490,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2566,7 +2566,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2590,8 +2590,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2666,7 +2666,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2690,8 +2690,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2766,7 +2766,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2790,8 +2790,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2866,7 +2866,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2890,8 +2890,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2966,7 +2966,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -2990,8 +2990,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3066,7 +3066,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3090,8 +3090,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3166,7 +3166,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3190,8 +3190,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3266,7 +3266,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3290,8 +3290,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3366,7 +3366,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3390,8 +3390,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3466,7 +3466,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3490,8 +3490,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3566,7 +3566,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3590,8 +3590,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3666,7 +3666,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3690,8 +3690,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3766,7 +3766,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3790,8 +3790,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3866,7 +3866,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3890,8 +3890,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3966,7 +3966,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -3990,8 +3990,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4066,7 +4066,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4090,8 +4090,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4166,7 +4166,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4190,8 +4190,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4266,7 +4266,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4290,8 +4290,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4366,7 +4366,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4390,8 +4390,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4466,7 +4466,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4490,8 +4490,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4566,7 +4566,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4590,8 +4590,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4666,7 +4666,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4690,8 +4690,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4766,7 +4766,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4790,8 +4790,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4866,7 +4866,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4890,8 +4890,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4966,7 +4966,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -4990,8 +4990,8 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 #### Criterion detail
 |Identifier|[namespace-validity](https://ns.inria.fr/olivaw#namespace-validity)|
 |----|----|
-|Title|Prefix&#32;validity&#32;test|
-|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;prefixes&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
+|Title|Namespace&#32;validity&#32;test|
+|Description|A&#32;test&#32;case&#32;checking&#32;if&#32;all&#32;the&#32;Namespaces&#32;are&#32;not&#32;too&#32;close&#32;from&#32;the&#32;most&#32;used&#32;existing&#32;namespaces&#32;(according&#32;to&#32;prefix&#32;cc)&#32;or&#32;an&#32;ontology&#32;namespace|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|
@@ -5066,7 +5066,7 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 |Identifier|[uri-validity](https://ns.inria.fr/olivaw#uri-validity)|
 |----|----|
 |Title|URI&#32;validity&#32;test|
-|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;are&#32;well-formed|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;if&#32;all&#32;the&#32;URIs&#32;of&#32;the&#32;resource&#32;conform&#32;to&#32;RFC&#32;3986|
 
 #### Outcome Detail
 |Jump|Type|:white_check_mark:Pass|

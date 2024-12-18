@@ -8,6 +8,8 @@ from os.path import sep, relpath, exists
 
 from olivaw.test.corese import export_graph
 
+from olivaw.test.query.testing import question_tests
+from olivaw.test.turtle import new_report
 from olivaw.test.model.testing import (
     modules_tests,
     modelets_tests,
@@ -19,8 +21,6 @@ from olivaw.test.data.testing import (
     shape_tests as data_shape_tests
 )
 
-from olivaw.test.query.testing import question_tests
-
 from olivaw.constants import (
     PWD_TO_ROOT_FOLDER,
     GET_MAJOR_FAILS,
@@ -28,7 +28,6 @@ from olivaw.constants import (
     PWD_TO_OLIVAW_ONTOLOGY,
     GET_CRITERION_SUMMARY
 )
-from olivaw.test.turtle import new_report
 
 sorted_files = {
     "model": {

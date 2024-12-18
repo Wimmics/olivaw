@@ -4,7 +4,11 @@ from setuptools import setup, find_packages
 from os.path import sep, exists
 from urllib.request import urlopen
 
-from olivaw.constants import CORESE_PYTHON_URL, CORESE_LOCAL_PATH, VERSION
+from olivaw.constants import (
+    CORESE_PYTHON_URL,
+    CORESE_LOCAL_PATH,
+    VERSION
+)
 
 # Parse the requirements from requirements.txt
 requirements = None

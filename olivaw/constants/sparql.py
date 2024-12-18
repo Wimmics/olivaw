@@ -1,7 +1,5 @@
 """Module providing SPARQL requests"""
 
-from typing import List
-
 NOT_REFERENCED: str = """
 SELECT DISTINCT ?s where {
   ?s ?p ?o .
@@ -129,7 +127,7 @@ SELECT ?assertion ?subject ?result ?outcome ?outcomeType ?subjectId ?subjectTitl
 """
 """Get all the data that is related to each outcome"""
 
-SEVERITY_RANGE: List[tuple[str, str, str]] = [
+SEVERITY_RANGE: list[tuple[str, str, str]] = [
   ("MajorFail", ":boom:", "red"),
   ("MinorFail", ":exclamation:", "orange"),
   ("CannotTell", ":warning:", "grey"),
@@ -258,7 +256,7 @@ IS_OWL_QL_COMPATIBLE: str = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL QL")
 IS_OWL_RL_COMPATIBLE: str = IS_OWL_EL_COMPATIBLE.replace("OWL EL", "OWL RL")
 """SPARQL request that checks if the ontology is OWL RL compatible"""
 
-PROFILE_DETECTION_RESULTS: List[str] = [
+PROFILE_DETECTION_RESULTS: list[str] = [
     IS_OWL_RL_COMPATIBLE,
     IS_OWL_QL_COMPATIBLE,
     IS_OWL_EL_COMPATIBLE

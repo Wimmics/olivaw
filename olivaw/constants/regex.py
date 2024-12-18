@@ -1,6 +1,10 @@
 """A module meant to store the important regexes of the project"""
 
-from regex import Pattern, compile as regex_compile, escape
+from regex import (
+    Pattern,
+    compile as regex_compile,
+    escape
+)
 
 AST_ERROR_FORMAT: Pattern = regex_compile("ERROR fr\\.inria\\.corese\\.sparql\\.triple\\.parser\\.ASTQuery")
 """Regex: Detects SPARQL parsing errors """

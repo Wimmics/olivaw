@@ -122,7 +122,7 @@ def test_competency_question(draft: RdfLibGraph, file: str) -> None:
         uris_valid = uri_test(draft, query_uris, get_uri_usage)
 
         if not uris_valid:
-            make_not_tested(draft, "namespace-validity", description="All the subject URIs should be well-formed")
+            make_not_tested(draft, "namespace-validity", description="All the subject URIs should conform to RFC 3986")
             return
         
     if not "namespace-validity" in SKIPPED_TESTS:    

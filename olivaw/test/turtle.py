@@ -21,14 +21,12 @@ from rdflib.namespace import (
     RDF,
     FOAF,
     DCTERMS,
-    SDO,
     XSD,
     PROV
 )
 
 from olivaw.constants import (
     DEV_USERNAME,
-    DEV_PROFILE,
     DOMAINS_URL,
     EARL_NAMESPACE,
     COMMIT_DATE,
@@ -56,17 +54,15 @@ from olivaw.constants import (
     ACTIONS,
     REPO_URI,
     VERSION,
-    REPO_REF
-)
-
-from olivaw.constants.regex import PREFIX_PATTERN
-from olivaw.constants.regex import URI_PATTERN
-from olivaw.constants.sparql import (
+    REPO_REF,
+    PREFIX_PATTERN,
+    URI_PATTERN,
     ADD_DESCRIPTION_LINKS,
     GET_OBJECT_USAGE,
     GET_PREDICATE_USAGE,
     REMOVE_DESCRIPTION_LINKS,
-    SHORTEN_LITERALS
+    SHORTEN_LITERALS,
+    PWD_TO_OUTPUT_FOLDER
 )
 
 from olivaw.test.corese import (
@@ -76,7 +72,6 @@ from olivaw.test.corese import (
 )
 
 from olivaw.test.util import AssertDraft, should_skip
-from olivaw.constants.paths import PWD_TO_OUTPUT_FOLDER
 
 def new_report(test_type: str) -> tuple[Graph, BNode]:
     """Creates a new report and add the assertor

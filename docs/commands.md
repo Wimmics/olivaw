@@ -17,9 +17,35 @@ All of these options are optional but can override the git information that are 
 * `--REF=...`: set to override the actuel ref
 * `--DEV_USERNAME=...`: set to override the actual git user name
 
+# olivaw --help or olivaw -h
+
+```shell
+olivaw --help
+```
+or
+
+```shell
+olivaw -h
+```
+
+These commands provides some basics about how to use olivaw command lines.
+
 # olivaw init
 
 There are commands for initializing a repository or a branch of an already initialized repository.
+
+## olivaw init --help or olivaw init -h
+
+```shell
+olivaw init --help
+```
+or
+
+```shell
+olivaw init -h
+```
+
+These commands provide some basics about how to use the different `olivaw init` commands.
 
 ## olivaw init repo
 
@@ -70,6 +96,19 @@ These tests will output two files located in the `.acimov/output/` folder:
 * One RDF file written in turtle format providing a report that is program-readable. See the [turtle format documentation](./tests.md#11-turtle-format) for more details.
 * One markdown file that is the human-readable version of the previous RDF file. See the [markdown format documentation](./tests.md#12-markdown-format) for more details
 
+## olivaw test --help or olivaw test -h
+
+```shell
+olivaw test --help
+```
+or
+
+```shell
+olivaw test -h
+```
+
+These commands provide some basics about how to use the different `olivaw test` commands.
+
 ## olivaw test model
 
 ```shell
@@ -119,6 +158,19 @@ Remove the tests inside `.acimov/output/` folder without removing the files gene
 The commands of this chapter are meant to retrieve easily some information from the parameters for the project.
 
 These commands were actually meant for Github Actions but they can also be used by users on demand.
+
+## olivaw show --help or olivaw show -h
+
+```shell
+olivaw show --help
+```
+or
+
+```shell
+olivaw show -h
+```
+
+These commands provide some basics about how to use the different `olivaw show` commands.
 
 ## olivaw show gist
 

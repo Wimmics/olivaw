@@ -2,9 +2,10 @@
 
 import requests
 from json import dumps, loads
+from dotenv import load_dotenv, set_key
+
 from os import getenv
 from os.path import sep, exists
-from dotenv import load_dotenv, set_key
 
 from .readme import update_readme
 

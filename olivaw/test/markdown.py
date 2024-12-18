@@ -26,16 +26,18 @@ from olivaw.constants import (
     NEW_BR,
     QUESTION_URL_FORMAT,
     USECASE_URL_FORMAT,
-    MULTIPLE_HTML_CHARS
+    MULTIPLE_HTML_CHARS,
+    DECIDABILITY_RANGE,
+    PIPY_OLIVAW,
+    PROFILE_DETECTION_RESULTS,
+    REPO_REF,
+    PWD_TO_OUTPUT_FOLDER,
+    OLIVAW_ONTOLOGY,
+    REF,
+    REPO_URI
 )
 
-from olivaw.constants.badges import GITHUB_API
-from olivaw.constants.corese_info import DECIDABILITY_RANGE
-from olivaw.constants.olivaw import PIPY_OLIVAW
-from olivaw.constants.sparql import PROFILE_DETECTION_RESULTS
 from olivaw.test.generic.shacl import get_criterion_data
-from olivaw.constants import REPO_REF, PWD_TO_OUTPUT_FOLDER
-from olivaw.constants.git_info import GIST_TOKEN, OLIVAW_ONTOLOGY, OLIVAW_REPOSITORY, REF, REPO_NAME, REPO_URI
 
 def html_special_chars(text: str) -> str:
     """Parse the characters from string that need to be converted into HTML special chars
@@ -990,10 +992,10 @@ def make_stat_chapter(outcomes: dict [ # Dictionary linking a severity to its re
         "<br/>",
         "",
         "The different status types are an extension of the [EARL](https://www.w3.org/TR/EARL10-Schema/) vocabulary where the nextended terms can be found in the [olivaw ontology](https://ns.inria.fr/olivaw#), each outcome type means:",
-        "* :boom: MajorFail: This is an error that is critical and consider as blocking for production",
-        "* :exclamation: MinorFail: This is an error that should be fixed, but it is cannot be considered as critical error",
-        "* :warning: CannotTell: It is unclear if the subject passed or failed the test. This happens when an automated test requires human judgement to make a definite decision.",
-        "* :grey_question: NotTested:  The test has not been carried out. Here this is because a previous test that was mandatory to be passed did not end up as Pass.",
+        "* :boom: MajorFail: This is an error that is critical and considered as blocking for production",
+        "* :exclamation: MinorFail: This is an error that should be fixed, but it cannot be considered as critical error",
+        "* :warning: CannotTell: It is unclear if the subject passed or failed the test. This happens when an automated test requires human judgement to make a final decision.",
+        "* :grey_question: NotTested:  The test has not been carried out. It is because some prerequisite tests did not end up as Pass.",
         "* :white_check_mark: Pass: The subject passed the test.",
         "",
         "***",
@@ -1048,7 +1050,7 @@ def markdown_export(
         "",
         "This file is an export of the RDF test report made out of [EARL vocabulary](https://www.w3.org/TR/EARL10/)",
         "",
-        "This test is powered by Corese, check the [website](https://project.inria.fr/corese/) and the [repository](https://github.com/Wimmics/corese)",
+        "This test is powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese)",
         "",
         f"The original test report is available in turtle syntax [here](./{file_name}.ttl).",
         ""

@@ -2,9 +2,9 @@
 
 from olivaw.test.markdown import markdown_export
 from olivaw.test.turtle import end_activity, new_report
-from .testing import data_tests, shape_data
 from olivaw.constants import DATASETS
 from olivaw.test.util import print_title, save_reports, file_name
+from .testing import data_tests, shape_data
 
 def test_data() -> None:
     """Executes the data tests over the project"""

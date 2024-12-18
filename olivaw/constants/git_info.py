@@ -1,9 +1,21 @@
 """Module providing constants related to the git information of the project and the developper"""
 
 from subprocess import check_output, Popen, PIPE
-from sys import argv, builtin_module_names, exit
+from sys import argv, builtin_module_names
+from os import getcwd
+from os.path import exists, sep
 
 from .olivaw import VERSION
+
+cwd = getcwd().split(sep)
+
+IS_GIT: bool = False
+"""Boolean specifying if the current working directory is in a git repository"""
+
+for i in range(len(cwd) + 1):
+  if exists(f"{sep.join(cwd[:i])}{sep}.git"):
+    IS_GIT = True
+    break
 
 # The GitHub gist token
 arg_token = [item.split("=")[1] for item in argv if item.startswith("--GIST_TOKEN=")]
@@ -22,7 +34,7 @@ ROOT_FOLDER: str = None
 
 if len(arg_root) > 0:
   ROOT_FOLDER = arg_root[0]
-else:
+elif IS_GIT:
   try:
     ROOT_FOLDER = check_output(
       "git rev-parse --show-toplevel".split(" ")
@@ -30,11 +42,7 @@ else:
     .decode("utf-8")\
     .strip()
   except:
-    ROOT_FOLDER = None
-
-if ROOT_FOLDER is None:
-  # git will print an error message explaining program working directory is not in a git repository
-  exit(1)
+    pass
 
 # The repository URI
 arg_repo = [item.split("=")[1] for item in argv if item.startswith("--REPO_URI=")]
@@ -44,7 +52,7 @@ REPO_URI: str = None
 
 if len(arg_repo) > 0:
   REPO_URI = arg_repo[0]
-else:
+elif IS_GIT:
   try:
     REPO_URI = check_output(
       "git config --get remote.origin.url".split(" ")
@@ -52,18 +60,26 @@ else:
     .decode('utf-8')\
     .strip()
   except:
-    print('fatal: Command "git config --get remote.origin.url" should return the repository URI or argument "REPO_URI" should be set')
-    exit(1)
+    pass
 
 # The repository state
 REPO_STATE: str = None
 """Hash representing the current state of the local repository"""
 
+REPO_NAME: str = None
+"""Repository name"""
+
+PLATFORM_URL: str = None
+"""Base reporitory platform URL"""
+
+REPO_REF: str = None
+"""Identifier of the current repository"""
+
 arg_state = [item.split("=")[1] for item in argv if item.startswith("--REPO_STATE=")]
 
 if len(arg_state) > 0:
   REPO_STATE = arg_state[0]
-else:
+elif IS_GIT:
   try:
     # Launch the process that will output current repo state
     snapshot = Popen(
@@ -84,17 +100,15 @@ else:
   except:
     pass
   
-if REPO_URI.endswith("/"):
+if not REPO_URI is None and REPO_URI.endswith("/"):
   REPO_URI = REPO_URI[:-1]
 
-REPO_NAME: str = REPO_URI.split('/')[-1]
-"""Repository name"""
+if not REPO_URI is None:
+  REPO_NAME = REPO_URI.split('/')[-1]
 
-PLATFORM_URL: str = "/".join(REPO_URI.split("/")[:-2])
-"""Base reporitory platform URL"""
+  PLATFORM_URL = "/".join(REPO_URI.split("/")[:-2])
 
-REPO_REF: str = REPO_URI[len(PLATFORM_URL) + 1:]
-"""Identifier of the current repository"""
+  REPO_REF = REPO_URI[len(PLATFORM_URL) + 1:]
 
 # The current branch
 arg_branch = [item.split("=")[1] for item in argv if item.startswith("--BRANCH=")]
@@ -104,7 +118,7 @@ BRANCH: str = None
 
 if len(arg_branch) > 0:
   BRANCH = arg_branch[0]
-else:
+elif IS_GIT:
   try:
     BRANCH = check_output(
       "git rev-parse --abbrev-ref HEAD".split(" ")
@@ -122,7 +136,7 @@ arg_hash = [item.split("=")[1] for item in argv if item.startswith("--COMMIT_HAS
 
 if len(arg_hash) > 0:
   COMMIT_HASH = arg_hash[0]
-else:
+elif IS_GIT:
   try:
     COMMIT_HASH = check_output(
       f"git rev-parse origin/{BRANCH}".split(" ")
@@ -140,7 +154,7 @@ COMMIT_DATE: str = None
 
 if len(arg_date) > 0:
   COMMIT_DATE = arg_date[0]
-else:
+elif IS_GIT:
   try:
     COMMIT_DATE = check_output(
       f"git log -1 --format=%cd --date=format:%Y-%m-%dT%H:%M:%S {COMMIT_HASH}".split(" ")
@@ -158,7 +172,7 @@ REF: str = None
 
 if len(arg_ref) > 0:
   REF = arg_ref[0]
-else:
+elif IS_GIT:
   try:
     REF = check_output(
       "git symbolic-ref HEAD".split(" ")
@@ -175,7 +189,7 @@ DEV_USERNAME: str = None
 
 if len(arg_dev_username) > 0:
   DEV_USERNAME = arg_dev_username[0]
-else:
+elif IS_GIT:
   try:
     DEV_USERNAME = check_output(
       "git config --global user.name".split(" ")

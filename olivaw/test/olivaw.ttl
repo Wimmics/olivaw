@@ -186,10 +186,10 @@
     dc:title "Term labeling test"@en ;
     dc:description "A test case from the Best Practices tests checking if all the terms of the subject have a rdfs:label property pointing to a literal in English"@en .
 
-:bad-extension-property a earl:TestCriterion ;
+:proper-extension-predicate a earl:TestCriterion ;
     rdfs:isDefinedBy :ontology ;
     :canOutcome "property-subclassof" , "class-subpropertyof",  "subclassof-property", "subpropertyof-class" ;
-    dc:identifier "bad-extension-property" ;
+    dc:identifier "proper-extension-predicate" ;
     dc:title "Predicate extension test"@en ;
     dc:description "A test meant to test the proper use of predicates rdfs:subClassOf and rdfs:subPropertyOf on the ontology terms"@en .
 
@@ -204,8 +204,8 @@
     rdfs:isDefinedBy :ontology ;
     :canOutcome "namespace-typo" ;
     dc:identifier "namespace-validity" ;
-    dc:title "Prefix validity test"@en ;
-    dc:description "A test case checking if all the prefixes are not too close from the most used existing namespaces (according to prefix cc) or an ontology namespace"@en .
+    dc:title "Namespace validity test"@en ;
+    dc:description "A test case checking if all the Namespaces are not too close from the most used existing namespaces (according to prefix cc) or an ontology namespace"@en .
 
 :query-type a earl:TestCriterion ;
     rdfs:isDefinedBy :ontology ;
@@ -219,4 +219,4 @@
     :canOutcome "invalid-uri" ;
     dc:identifier "uri-validity" ;
     dc:title "URI validity test"@en ;
-    dc:description "A test meant to check if all the URIs of the resource are well-formed"@en .
+    dc:description "A test meant to check if all the URIs of the resource conform to RFC 3986"@en .
