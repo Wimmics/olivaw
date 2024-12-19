@@ -3,7 +3,7 @@
 ___main__ = ["branch", "repo"]
 
 from sys import exit
-from olivaw.constants import REF, ROOT_FOLDER
+from olivaw.constants import REF, ROOT_FOLDER, REPO_URI
 
 if ROOT_FOLDER is None:
   # git will print an error message explaining program working directory is not in a git repository
