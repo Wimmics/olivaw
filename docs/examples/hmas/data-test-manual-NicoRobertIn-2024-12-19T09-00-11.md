@@ -4,7 +4,7 @@ This file is an export of the RDF test report made out of [EARL vocabulary](http
 
 This test is powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese)
 
-The original test report is available in turtle syntax [here](./data-test-manual-NicoRobertIn-2024-12-18T11-32-18.ttl).
+The original test report is available in turtle syntax [here](./data-test-manual-NicoRobertIn-2024-12-19T09-00-11.ttl).
 
 # Test Activity
 
@@ -16,13 +16,13 @@ Here is some information about the testing activity that led to this report
 |Tester|[NicoRobertIn](https://github.com/NicoRobertIn)|
 |Ontology|[HyperAgents/hmas](https://github.com/HyperAgents/hmas)|
 |Ontology version|Local state `ca439d4144b23b3fe927509872babc8d82142fae`|
-|Ontology version date|2024-12-18 11:32:12|
+|Ontology version date|2024-12-19 09:00:04|
 |Ontology previous version|[3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b](https://github.com/HyperAgents/hmas/tree/3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b)|
 |Ontology branch|[HEAD](https://github.com/HyperAgents/hmas/tree/HEAD)|
 |Olivaw suite|[olivaw data test suite](https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/data/suite.py)|
 |Olivaw version|[v0.0.7](https://pypi.org/project/olivaw/0.0.7)|
-|Generated turtle|[Turtle report](./data-test-manual-NicoRobertIn-2024-12-18T11-32-18.ttl)|
-|Generated Markdown|[Markdown report](./data-test-manual-NicoRobertIn-2024-12-18T11-32-18.md)|
+|Generated turtle|[Turtle report](./data-test-manual-NicoRobertIn-2024-12-19T09-00-11.ttl)|
+|Generated Markdown|[Markdown report](./data-test-manual-NicoRobertIn-2024-12-19T09-00-11.md)|
 
 # Statistic summary
 
@@ -307,7 +307,7 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 |[Section top](#cannottell-outcome-number-3)|Pointer|<pre lang="Turtle"><code>Namespace&#32;usage&#32;in&#32;the&#32;subject&#32;file:</code></pre>|
 |[Section top](#cannottell-outcome-number-3)|Pointer|<pre lang="Turtle"><code>&#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/tcp> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/operator/%7Btoken%7D> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/operator> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/gripper> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/operator> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/initialize> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/gripper> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot1/tcp/target> &#32;.</code></pre>|
 |[Section top](#cannottell-outcome-number-3)|Pointer|<pre lang="Turtle"><code>Similar&#32;namespace&#32;found&#32;in&#32;file:  &#10;.&#92;use-cases&#92;manufacturing&#92;dataset-v1.ttl&#32;  &#10;Namespace&#32;found:  &#10;https://api.interactions.ics.unisg.ch/cherrybot2/</code></pre>|
-|[Section top](#cannottell-outcome-number-3)|Pointer|<pre lang="Turtle"><code>&#91;]&#32;hctl:hasTarget&#32;similar-namespace:initialize&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:gripper&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:tcp&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:operator&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:gripper&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/operator/%7Btoken%7D> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:operator&#32;.</code></pre>|
+|[Section top](#cannottell-outcome-number-3)|Pointer|<pre lang="Turtle"><code>&#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/operator/%7Btoken%7D> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:operator&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:gripper&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:initialize&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:gripper&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32; &#60;https://api.interactions.ics.unisg.ch/cherrybot2/tcp/target> &#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:tcp&#32;.  &#10; &#91;]&#32;hctl:hasTarget&#32;similar-namespace:operator&#32;.</code></pre>|
 
 ***
 ### CannotTell Outcome number 4
@@ -422,9 +422,9 @@ This subchapter gives more details to the :warning:CannotTell outcomes
 |[Section top](#cannottell-outcome-number-7)|Description|The&#32;following&#32;namespace&#32;seems&#32;suspicious:  &#10; &#32;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-b#&#32;  &#10;Was&#32;it&#32;supposed&#32;to&#32;correspond&#32;to&#32;one&#32;of&#32;these&#32;namespaces?|
 |[Section top](#cannottell-outcome-number-7)|Pointer|<pre lang="Turtle"><code>Namespace&#32;usage&#32;in&#32;the&#32;subject&#32;file:</code></pre>|
 |[Section top](#cannottell-outcome-number-7)|Pointer|<pre lang="Turtle"><code>&#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-b#agent> &#32;a&#32;hmas:Agent&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:hasProfile&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-b#> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isContainedIn&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site#Workspace> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.</code></pre>|
-|[Section top](#cannottell-outcome-number-7)|Pointer|<pre lang="Turtle"><code>Similar&#32;namespace&#32;found&#32;in&#32;file:  &#10;.&#92;use-cases&#92;manufacturing&#92;dataset-v1.ttl&#32;  &#10;Namespace&#32;found:  &#10;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c#</code></pre>|
-|[Section top](#cannottell-outcome-number-7)|Pointer|<pre lang="Turtle"><code>similar-namespace:agent&#32;a&#32;hmas:Agent&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:hasProfile&#32;similar-namespace:&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isContainedIn&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site#Workspace> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.</code></pre>|
 |[Section top](#cannottell-outcome-number-7)|Pointer|<pre lang="Turtle"><code>Similar&#32;namespace&#32;found&#32;in&#32;file:  &#10;.&#92;use-cases&#92;manufacturing&#92;dataset-v1.ttl&#32;  &#10;Namespace&#32;found:  &#10;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-d#</code></pre>|
+|[Section top](#cannottell-outcome-number-7)|Pointer|<pre lang="Turtle"><code>similar-namespace:agent&#32;a&#32;hmas:Agent&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:hasProfile&#32;similar-namespace:&#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isContainedIn&#32; &#60;https://ns.inria.fr/hmas/workspaces/cup-production-site#Workspace> &#32;;  &#10; &#32; &#32; &#32; &#32;hmas:isHostedOn&#32; &#60;https://ns.inria.fr/hmas/#platformplatform> &#32;.</code></pre>|
+|[Section top](#cannottell-outcome-number-7)|Pointer|<pre lang="Turtle"><code>Similar&#32;namespace&#32;found&#32;in&#32;file:  &#10;.&#92;use-cases&#92;manufacturing&#92;dataset-v1.ttl&#32;  &#10;Namespace&#32;found:  &#10;https://ns.inria.fr/hmas/workspaces/cup-production-site/agents/agent-c#</code></pre>|
 
 ***
 ### CannotTell Outcome number 8

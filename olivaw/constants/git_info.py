@@ -175,7 +175,7 @@ if len(arg_ref) > 0:
 elif IS_GIT:
   try:
     REF = check_output(
-      "git symbolic-ref HEAD".split(" ")
+      "git symbolic-ref -q HEAD".split(" ")
     )\
     .decode('utf-8')\
     .strip()

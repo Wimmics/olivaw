@@ -4,7 +4,7 @@ This file is an export of the RDF test report made out of [EARL vocabulary](http
 
 This test is powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese)
 
-The original test report is available in turtle syntax [here](./model-test-manual-NicoRobertIn-2024-12-18T14-01-09.ttl).
+The original test report is available in turtle syntax [here](./model-test-manual-NicoRobertIn-2024-12-19T09-22-50.ttl).
 
 # Test Activity
 
@@ -16,13 +16,13 @@ Here is some information about the testing activity that led to this report
 |Tester|[NicoRobertIn](https://github.com/NicoRobertIn)|
 |Ontology|[acimov-tools/model-test](https://github.com/acimov-tools/model-test)|
 |Ontology version|Local state `a2c317b2a870d6eb0cc695363b98f6fa73d064e1`|
-|Ontology version date|2024-12-18 14:01:06|
+|Ontology version date|2024-12-19 09:22:48|
 |Ontology previous version|[7e5de163a77bbe88c1671a424b27f58c74f5fa7a](https://github.com/acimov-tools/model-test/tree/7e5de163a77bbe88c1671a424b27f58c74f5fa7a)|
 |Ontology branch|[main](https://github.com/acimov-tools/model-test/tree/main)|
 |Olivaw suite|[olivaw model test suite](https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/model/suite.py)|
 |Olivaw version|[v0.0.7](https://pypi.org/project/olivaw/0.0.7)|
-|Generated turtle|[Turtle report](./model-test-manual-NicoRobertIn-2024-12-18T14-01-09.ttl)|
-|Generated Markdown|[Markdown report](./model-test-manual-NicoRobertIn-2024-12-18T14-01-09.md)|
+|Generated turtle|[Turtle report](./model-test-manual-NicoRobertIn-2024-12-19T09-22-50.ttl)|
+|Generated Markdown|[Markdown report](./model-test-manual-NicoRobertIn-2024-12-19T09-22-50.md)|
 
 # Statistic summary
 

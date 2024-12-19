@@ -538,7 +538,6 @@ construct { ?s ?p ?parsed } where {
     }
   }
   ?s ?p ?o
-  filter (?p != ex:requires_description)
   bind(
     if(
       isliteral(?o) && strlen(?o) > 60,
@@ -546,6 +545,7 @@ construct { ?s ?p ?parsed } where {
        ?o
       ) as ?parsed
   )
+  filter (?p != ex:requires_description && (?s != ?parsed && ?p != owl:sameAs))
 }
 """
 """Extract the triples that are useful to create a code snippet"""

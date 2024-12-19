@@ -4,7 +4,7 @@ This file is an export of the RDF test report made out of [EARL vocabulary](http
 
 This test is powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese)
 
-The original test report is available in turtle syntax [here](./query-test-manual-NicoRobertIn-2024-12-18T11-32-39.ttl).
+The original test report is available in turtle syntax [here](./query-test-manual-NicoRobertIn-2024-12-19T09-00-34.ttl).
 
 # Test Activity
 
@@ -16,13 +16,13 @@ Here is some information about the testing activity that led to this report
 |Tester|[NicoRobertIn](https://github.com/NicoRobertIn)|
 |Ontology|[HyperAgents/hmas](https://github.com/HyperAgents/hmas)|
 |Ontology version|Local state `ca439d4144b23b3fe927509872babc8d82142fae`|
-|Ontology version date|2024-12-18 11:32:31|
+|Ontology version date|2024-12-19 09:00:27|
 |Ontology previous version|[3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b](https://github.com/HyperAgents/hmas/tree/3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b)|
 |Ontology branch|[HEAD](https://github.com/HyperAgents/hmas/tree/HEAD)|
 |Olivaw suite|[olivaw query test suite](https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/query/suite.py)|
 |Olivaw version|[v0.0.7](https://pypi.org/project/olivaw/0.0.7)|
-|Generated turtle|[Turtle report](./query-test-manual-NicoRobertIn-2024-12-18T11-32-39.ttl)|
-|Generated Markdown|[Markdown report](./query-test-manual-NicoRobertIn-2024-12-18T11-32-39.md)|
+|Generated turtle|[Turtle report](./query-test-manual-NicoRobertIn-2024-12-19T09-00-34.ttl)|
+|Generated Markdown|[Markdown report](./query-test-manual-NicoRobertIn-2024-12-19T09-00-34.md)|
 
 # Statistic summary
 

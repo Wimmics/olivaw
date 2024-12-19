@@ -6,14 +6,14 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///C:/Users/nrobert/Desktop/workspace/repositories/hmas/.acimov/output/query-test-manual-NicoRobertIn-2024-12-18T11-32-39.md> a prov:Entity ;
-    prov:generatedAtTime "2024-12-18T11:32:39.665147"^^xsd:dateTime ;
+<file:///C:/Users/nrobert/Desktop/workspace/repositories/examples-olivaw/hmas/.acimov/output/query-test-manual-NicoRobertIn-2024-12-19T09-00-34.md> a prov:Entity ;
+    prov:generatedAtTime "2024-12-19T09:00:34.368625"^^xsd:dateTime ;
     prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity _:assertor ;
             olivaw:generatedAs olivaw:markdown_report ] .
 
-<file:///C:/Users/nrobert/Desktop/workspace/repositories/hmas/.acimov/output/query-test-manual-NicoRobertIn-2024-12-18T11-32-39.ttl> a prov:Entity ;
-    prov:generatedAtTime "2024-12-18T11:32:39.665147"^^xsd:dateTime ;
+<file:///C:/Users/nrobert/Desktop/workspace/repositories/examples-olivaw/hmas/.acimov/output/query-test-manual-NicoRobertIn-2024-12-19T09-00-34.ttl> a prov:Entity ;
+    prov:generatedAtTime "2024-12-19T09:00:34.368625"^^xsd:dateTime ;
     prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity _:assertor ;
             olivaw:generatedAs olivaw:turtle_report ] .
@@ -29,78 +29,38 @@
                     dcterms:description "The query is of type Select or Ask"@en ;
                     dcterms:identifier "wrong-query-type" ;
                     dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q3 ;
+    earl:subject _:question-manufacturing-environments-discover-core-q5 ;
     earl:test olivaw:query-type .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-signifiers-q1 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q1 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q4 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q2 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q6 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
                     dcterms:description "Test subject has a correct syntax"@en ;
                     dcterms:identifier "syntax-error" ;
                     dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q5 ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q3 ;
     earl:test olivaw:syntax .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q7 ;
-    earl:test olivaw:uri-validity .
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-signifiers-q3 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q7 ;
+    earl:test olivaw:namespace-validity .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -109,7 +69,7 @@
                     dcterms:description "Test subject has a correct syntax"@en ;
                     dcterms:identifier "syntax-error" ;
                     dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q4 ;
+    earl:subject _:question-manufacturing-environments-discover-core-q2 ;
     earl:test olivaw:syntax .
 
 [] a earl:Assertion ;
@@ -132,60 +92,20 @@ WHERE {
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q2 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q7 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q2 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
                     dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
                     dcterms:identifier "namespace-typo" ;
                     dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q8 ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q2 ;
     earl:test olivaw:namespace-validity .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q5 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
                     dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
                     dcterms:identifier "namespace-typo" ;
                     dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q1 ;
+    earl:subject _:question-domain-template-scenario-template-q1 ;
     earl:test olivaw:namespace-validity .
 
 [] a earl:Assertion ;
@@ -195,74 +115,8 @@ WHERE {
                     dcterms:description "The query is of type Select or Ask"@en ;
                     dcterms:identifier "wrong-query-type" ;
                     dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q1 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q4 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q2 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q3 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a olivaw:MinorFail ;
-                    dcterms:description "Expected valid URIs in subject but got: #RegulativeNorm"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "Invalid URI"@en ;
-                    earl:info """PREFIX : <#>
-
-SELECT ?norm
-WHERE {
-  ?norm rdf:type :RegulativeNorm .
-}""" ] ] ;
-    earl:subject _:question-manufacturing-environments-safety-rules-1 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q1 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
     earl:subject _:question-manufacturing-environments-discover-platforms-q3 ;
-    earl:test olivaw:uri-validity .
+    earl:test olivaw:query-type .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -271,88 +125,8 @@ WHERE {
                     dcterms:description "The query is of type Select or Ask"@en ;
                     dcterms:identifier "wrong-query-type" ;
                     dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q4 ;
+    earl:subject _:question-logistics-structure-organization-q1 ;
     earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q1 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q8 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q5 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q5 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q2 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q2 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q5 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the subject URIs should conform to RFC 3986"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-safety-rules-3 ;
-    earl:test olivaw:syntax .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -368,340 +142,10 @@ WHERE {
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-coordinate-activities-q3 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-domain-template-scenario-template-q1 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q7 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-safety-rules-2 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-signifiers-q2 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q2 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q5 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q9 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q3 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-coordinate-activities-q2 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q1 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-signifiers-q1 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q2 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-signifiers-q3 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q4 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q1 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q1 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q2 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-signifiers-q2 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q4 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q7 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q9 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q9 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-coordinate-activities-q3 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q5 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q3 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q3 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q2 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the subject URIs should conform to RFC 3986"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-safety-rules-4 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q1 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q3 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
                     dcterms:description "Test subject has a correct syntax"@en ;
                     dcterms:identifier "syntax-error" ;
                     dcterms:title "Correct syntax"@en ] ] ;
     earl:subject _:question-logistics-coordinate-activities-q3 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q3 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q5 ;
     earl:test olivaw:syntax .
 
 [] a earl:Assertion ;
@@ -718,11 +162,11 @@ WHERE {
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-coordinate-activities-q2 ;
-    earl:test olivaw:namespace-validity .
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q2 ;
+    earl:test olivaw:query-type .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -731,8 +175,18 @@ WHERE {
                     dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
                     dcterms:identifier "namespace-typo" ;
                     dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-domain-template-scenario-template-q1 ;
+    earl:subject _:question-logistics-create-organization-q1 ;
     earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q3 ;
+    earl:test olivaw:syntax .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -741,7 +195,7 @@ WHERE {
                     dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
                     dcterms:identifier "namespace-typo" ;
                     dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q5 ;
+    earl:subject _:question-manufacturing-environments-discover-signifiers-q1 ;
     earl:test olivaw:namespace-validity .
 
 [] a earl:Assertion ;
@@ -758,21 +212,21 @@ WHERE {
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q2 ;
-    earl:test olivaw:query-type .
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q4 ;
+    earl:test olivaw:namespace-validity .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q1 ;
-    earl:test olivaw:namespace-validity .
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-coordinate-activities-q1 ;
+    earl:test olivaw:syntax .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -781,8 +235,18 @@ WHERE {
                     dcterms:description "All the URIs of the subject are valid"@en ;
                     dcterms:identifier "invalid-uri" ;
                     dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q3 ;
+    earl:subject _:question-logistics-structure-organization-q4 ;
     earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q3 ;
+    earl:test olivaw:syntax .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -791,7 +255,7 @@ WHERE {
                     dcterms:description "The query is of type Select or Ask"@en ;
                     dcterms:identifier "wrong-query-type" ;
                     dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-coordinate-activities-q2 ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q2 ;
     earl:test olivaw:query-type .
 
 [] a earl:Assertion ;
@@ -811,37 +275,7 @@ WHERE {
                     dcterms:description "The query is of type Select or Ask"@en ;
                     dcterms:identifier "wrong-query-type" ;
                     dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q3 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q4 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q1 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q4 ;
+    earl:subject _:question-manufacturing-environments-discover-signifiers-q3 ;
     earl:test olivaw:query-type .
 
 [] a earl:Assertion ;
@@ -851,73 +285,7 @@ WHERE {
                     dcterms:description "All the URIs of the subject are valid"@en ;
                     dcterms:identifier "invalid-uri" ;
                     dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q6 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q4 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q2 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a olivaw:MinorFail ;
-                    dcterms:description "Expected valid URIs in subject but got: #hasRespectStatus"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "Invalid URI"@en ;
-                    earl:info """PREFIX : <#>
-
-SELECT ?norm
-WHERE {
-  ?norm :hasRespectStatus false .
-}""" ] ] ;
-    earl:subject _:question-manufacturing-environments-safety-rules-3 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q1 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q6 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-coordinate-activities-q1 ;
+    earl:subject _:question-manufacturing-environments-discover-signifiers-q3 ;
     earl:test olivaw:uri-validity .
 
 [] a earl:Assertion ;
@@ -927,58 +295,8 @@ WHERE {
                     dcterms:description "All the URIs of the subject are valid"@en ;
                     dcterms:identifier "invalid-uri" ;
                     dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q3 ;
+    earl:subject _:question-logistics-create-organization-q7 ;
     earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-safety-rules-4 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q4 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q3 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q2 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q2 ;
-    earl:test olivaw:query-type .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -1009,31 +327,11 @@ ask {
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q1 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-coordinate-activities-q2 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q3 ;
-    earl:test olivaw:namespace-validity .
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q1 ;
+    earl:test olivaw:query-type .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -1049,130 +347,40 @@ ask {
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q4 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
                     dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
                     dcterms:identifier "namespace-typo" ;
                     dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q4 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q2 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q4 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q4 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-coordinate-activities-q1 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q1 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q2 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-coordinate-activities-q1 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q1 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q3 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-safety-rules-1 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
     earl:subject _:question-logistics-create-organization-q6 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q1 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-coordinate-activities-q1 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q4 ;
     earl:test olivaw:uri-validity .
 
 [] a earl:Assertion ;
@@ -1182,187 +390,23 @@ ask {
                     dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
                     dcterms:identifier "namespace-typo" ;
                     dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q4 ;
+    earl:subject _:question-logistics-structure-organization-q5 ;
     earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q1 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q2 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q4 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q1 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-signifiers-q2 ;
-    earl:test olivaw:query-type .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a olivaw:MinorFail ;
-                    dcterms:description "Expected valid URIs in subject but got: #hasNormativeContext"@en ;
+                    dcterms:description "Expected valid URIs in subject but got: #RegulativeNorm"@en ;
                     dcterms:identifier "invalid-uri" ;
                     dcterms:title "Invalid URI"@en ;
                     earl:info """PREFIX : <#>
 
 SELECT ?norm
 WHERE {
-  ?organization :enforcesNorm ?norm .
-  ?norm :hasNormativeContext ?context .
-  FILTER(?context = :myContext)
-}""" ],
-                [ a olivaw:MinorFail ;
-                    dcterms:description "Expected valid URIs in subject but got: #enforcesNorm"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "Invalid URI"@en ;
-                    earl:info """PREFIX : <#>
-
-SELECT ?norm
-WHERE {
-  ?organization :enforcesNorm ?norm .
-  ?norm :hasNormativeContext ?context .
-  FILTER(?context = :myContext)
+  ?norm rdf:type :RegulativeNorm .
 }""" ] ] ;
-    earl:subject _:question-manufacturing-environments-safety-rules-4 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q7 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-signifiers-q3 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q7 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q6 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q4 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q1 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q3 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q7 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q2 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q5 ;
+    earl:subject _:question-manufacturing-environments-safety-rules-1 ;
     earl:test olivaw:uri-validity .
 
 [] a earl:Assertion ;
@@ -1372,8 +416,28 @@ WHERE {
                     dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
                     dcterms:identifier "namespace-typo" ;
                     dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q3 ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q1 ;
     earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q4 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q2 ;
+    earl:test olivaw:uri-validity .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -1382,7 +446,177 @@ WHERE {
                     dcterms:description "Test subject has a correct syntax"@en ;
                     dcterms:identifier "syntax-error" ;
                     dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q2 ;
+    earl:subject _:question-logistics-create-organization-q8 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q7 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q3 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q2 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q1 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q8 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-signifiers-q2 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q5 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q6 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q2 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q3 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q1 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q1 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-signifiers-q1 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q1 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q1 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q5 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q2 ;
     earl:test olivaw:syntax .
 
 [] a earl:Assertion ;
@@ -1399,80 +633,10 @@ WHERE {
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q3 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-safety-rules-1 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q1 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q3 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q3 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q8 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q1 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
                     dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
                     dcterms:identifier "namespace-typo" ;
                     dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q2 ;
+    earl:subject _:question-logistics-structure-organization-q1 ;
     earl:test olivaw:namespace-validity .
 
 [] a earl:Assertion ;
@@ -1482,8 +646,128 @@ WHERE {
                     dcterms:description "All the URIs of the subject are valid"@en ;
                     dcterms:identifier "invalid-uri" ;
                     dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q4 ;
+    earl:subject _:question-manufacturing-environments-discover-core-q5 ;
     earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q4 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-coordinate-activities-q2 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-coordinate-activities-q2 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q1 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q8 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q9 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q1 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-coordinate-activities-q3 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q2 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q4 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q3 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q7 ;
+    earl:test olivaw:syntax .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -1499,10 +783,180 @@ WHERE {
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
             earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q3 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q2 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q4 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q1 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q3 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q6 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
                     dcterms:description "Test subject has a correct syntax"@en ;
                     dcterms:identifier "syntax-error" ;
                     dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-domain-template-scenario-template-q1 ;
+    earl:subject _:question-logistics-structure-organization-q4 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q1 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q2 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q3 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-signifiers-q1 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q1 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q8 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q2 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-safety-rules-1 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q1 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q3 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q4 ;
     earl:test olivaw:syntax .
 
 [] a earl:Assertion ;
@@ -1512,37 +966,7 @@ WHERE {
                     dcterms:description "The query is of type Select or Ask"@en ;
                     dcterms:identifier "wrong-query-type" ;
                     dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q9 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q1 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-domain-template-scenario-template-q1 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q3 ;
+    earl:subject _:question-logistics-structure-organization-q2 ;
     earl:test olivaw:query-type .
 
 [] a earl:Assertion ;
@@ -1562,7 +986,7 @@ WHERE {
                     dcterms:description "All the URIs of the subject are valid"@en ;
                     dcterms:identifier "invalid-uri" ;
                     dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q4 ;
+    earl:subject _:question-domain-template-scenario-template-q1 ;
     earl:test olivaw:uri-validity .
 
 [] a earl:Assertion ;
@@ -1572,267 +996,7 @@ WHERE {
                     dcterms:description "The query is of type Select or Ask"@en ;
                     dcterms:identifier "wrong-query-type" ;
                     dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q2 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q3 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-configure-organization-q1 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q6 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q2 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q3 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q6 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q5 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q1 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q3 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q3 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-signifiers-q3 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q2 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q1 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q3 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q3 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q3 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q4 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-platforms-q2 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q5 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-core-q7 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-safety-rules-3 ;
-    earl:test olivaw:query-type .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-create-organization-q8 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
-                    dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
     earl:subject _:question-manufacturing-environments-discover-signifiers-q1 ;
-    earl:test olivaw:uri-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q1 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q4 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The query is of type Select or Ask"@en ;
-                    dcterms:identifier "wrong-query-type" ;
-                    dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q2 ;
     earl:test olivaw:query-type .
 
 [] a earl:Assertion ;
@@ -1842,97 +1006,37 @@ WHERE {
                     dcterms:description "The query is of type Select or Ask"@en ;
                     dcterms:identifier "wrong-query-type" ;
                     dcterms:title "Accurate query type"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q5 ;
+    earl:subject _:question-domain-template-scenario-template-q1 ;
     earl:test olivaw:query-type .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
     earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q3 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
+            earl:outcome [ a olivaw:MinorFail ;
+                    dcterms:description "Expected valid URIs in subject but got: #enforcesNorm"@en ;
                     dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q5 ;
-    earl:test olivaw:uri-validity .
+                    dcterms:title "Invalid URI"@en ;
+                    earl:info """PREFIX : <#>
 
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q1 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q4 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-organization-q2 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Test subject has a correct syntax"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-logistics-structure-organization-q6 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the subject URIs should conform to RFC 3986"@en ;
-                    dcterms:identifier "syntax-error" ;
-                    dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-safety-rules-2 ;
-    earl:test olivaw:syntax .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
-                    dcterms:identifier "namespace-typo" ;
-                    dcterms:title "No namespace typo"@en ] ] ;
-    earl:subject _:question-logistics-coordinate-activities-q1 ;
-    earl:test olivaw:namespace-validity .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the URIs of the subject are valid"@en ;
+SELECT ?norm
+WHERE {
+  ?organization :enforcesNorm ?norm .
+  ?norm :hasNormativeContext ?context .
+  FILTER(?context = :myContext)
+}""" ],
+                [ a olivaw:MinorFail ;
+                    dcterms:description "Expected valid URIs in subject but got: #hasNormativeContext"@en ;
                     dcterms:identifier "invalid-uri" ;
-                    dcterms:title "All subject URI valid"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-signifiers-q3 ;
+                    dcterms:title "Invalid URI"@en ;
+                    earl:info """PREFIX : <#>
+
+SELECT ?norm
+WHERE {
+  ?organization :enforcesNorm ?norm .
+  ?norm :hasNormativeContext ?context .
+  FILTER(?context = :myContext)
+}""" ] ] ;
+    earl:subject _:question-manufacturing-environments-safety-rules-4 ;
     earl:test olivaw:uri-validity .
 
 [] a earl:Assertion ;
@@ -1952,7 +1056,17 @@ WHERE {
                     dcterms:description "Test subject has a correct syntax"@en ;
                     dcterms:identifier "syntax-error" ;
                     dcterms:title "Correct syntax"@en ] ] ;
-    earl:subject _:question-manufacturing-environments-discover-signifiers-q1 ;
+    earl:subject _:question-logistics-structure-organization-q1 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the subject URIs should conform to RFC 3986"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-safety-rules-4 ;
     earl:test olivaw:syntax .
 
 [] a earl:Assertion ;
@@ -1962,7 +1076,893 @@ WHERE {
                     dcterms:description "Test subject has a correct syntax"@en ;
                     dcterms:identifier "syntax-error" ;
                     dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q4 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q3 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q1 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q2 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
     earl:subject _:question-manufacturing-environments-discover-platforms-q4 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q3 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q3 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q2 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q2 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q7 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q3 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q5 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-safety-rules-3 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q4 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q7 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q3 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q4 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-coordinate-activities-q3 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q1 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-coordinate-activities-q2 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q3 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q2 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a olivaw:MinorFail ;
+                    dcterms:description "Expected valid URIs in subject but got: #hasRespectStatus"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "Invalid URI"@en ;
+                    earl:info """PREFIX : <#>
+
+SELECT ?norm
+WHERE {
+  ?norm :hasRespectStatus false .
+}""" ] ] ;
+    earl:subject _:question-manufacturing-environments-safety-rules-3 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q3 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q2 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q1 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q3 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q4 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q3 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q5 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q6 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-signifiers-q2 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q4 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-signifiers-q3 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q6 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the subject URIs should conform to RFC 3986"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-safety-rules-2 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q1 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q2 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q5 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q4 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q2 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q9 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-safety-rules-4 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q3 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q1 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q2 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q4 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q6 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-coordinate-activities-q2 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q3 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q5 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q4 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-safety-rules-1 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q1 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q7 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q7 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q1 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-safety-rules-2 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q2 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q4 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q6 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-signifiers-q2 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q4 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-platforms-q2 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q3 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-coordinate-activities-q1 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-configure-organization-q3 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q3 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q2 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q5 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q9 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-coordinate-activities-q1 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q5 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q4 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the URIs of the subject are valid"@en ;
+                    dcterms:identifier "invalid-uri" ;
+                    dcterms:title "All subject URI valid"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-organization-q3 ;
+    earl:test olivaw:uri-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q9 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q5 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q1 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-domain-template-scenario-template-q1 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q3 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q5 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the subject URIs should conform to RFC 3986"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-safety-rules-3 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q2 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q4 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-core-q3 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q6 ;
+    earl:test olivaw:syntax .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The query is of type Select or Ask"@en ;
+                    dcterms:identifier "wrong-query-type" ;
+                    dcterms:title "Accurate query type"@en ] ] ;
+    earl:subject _:question-logistics-create-organization-q5 ;
+    earl:test olivaw:query-type .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "It seems that none of the subject URIs have namespaces typos"@en ;
+                    dcterms:identifier "namespace-typo" ;
+                    dcterms:title "No namespace typo"@en ] ] ;
+    earl:subject _:question-logistics-structure-organization-q2 ;
+    earl:test olivaw:namespace-validity .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Test subject has a correct syntax"@en ;
+                    dcterms:identifier "syntax-error" ;
+                    dcterms:title "Correct syntax"@en ] ] ;
+    earl:subject _:question-manufacturing-environments-discover-behavior-specifications-q4 ;
     earl:test olivaw:syntax .
 
 _:testSuiteUsage a prov:Usage ;
@@ -1978,7 +1978,7 @@ _:testerAssociation a prov:Association ;
     prov:hadRole olivaw:tester .
 
 _:intermediateSnapshot a olivaw:VersionedEntity ;
-    dcterms:date "2024-12-18T11:32:31.836219"^^xsd:dateTime ;
+    dcterms:date "2024-12-19T09:00:27.076159"^^xsd:dateTime ;
     dcterms:hasVersion "ca439d4144b23b3fe927509872babc8d82142fae" ;
     olivaw:hostedAt <https://github.com/HyperAgents/hmas> ;
     olivaw:isOnBranch "HEAD" ;
@@ -2234,9 +2234,9 @@ _:assertor a earl:Assertor,
         prov:Activity ;
     dcterms:description "NicoRobertIn launch manual run of query tests against HyperAgents/hmas on branch HEAD" ;
     dcterms:title "Query tests of HyperAgents/hmas on branch HEAD" ;
-    prov:endedAtTime "2024-12-18T11:32:39.665147"^^xsd:dateTime ;
-    prov:generated <file:///C:/Users/nrobert/Desktop/workspace/repositories/hmas/.acimov/output/query-test-manual-NicoRobertIn-2024-12-18T11-32-39.md>,
-        <file:///C:/Users/nrobert/Desktop/workspace/repositories/hmas/.acimov/output/query-test-manual-NicoRobertIn-2024-12-18T11-32-39.ttl> ;
+    prov:endedAtTime "2024-12-19T09:00:34.368625"^^xsd:dateTime ;
+    prov:generated <file:///C:/Users/nrobert/Desktop/workspace/repositories/examples-olivaw/hmas/.acimov/output/query-test-manual-NicoRobertIn-2024-12-19T09-00-34.md>,
+        <file:///C:/Users/nrobert/Desktop/workspace/repositories/examples-olivaw/hmas/.acimov/output/query-test-manual-NicoRobertIn-2024-12-19T09-00-34.ttl> ;
     prov:qualifiedAssociation _:testerAssociation ;
     prov:qualifiedUsage _:testSuiteUsage,
         _:testedProjectUsage ;

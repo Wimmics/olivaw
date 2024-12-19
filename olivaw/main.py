@@ -2,7 +2,7 @@
 
 import sys
 from os import listdir, remove
-from os.path import sep
+from os.path import sep, exists
 
 from olivaw.constants import (
     COMMAND,
@@ -109,6 +109,8 @@ def flush() -> None:
     Delete files in `PATH/.acimov/output/` folder except GitHub Actions test reports 
     
     """
+    if not exists(f"{ROOT_FOLDER}{sep}.acimov{sep}output"):
+        return
 
     for filename in listdir(f"{ROOT_FOLDER}{sep}.acimov{sep}output"):
         if filename.split("-")[-1].split(".")[0] == "actions":

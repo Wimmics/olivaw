@@ -490,6 +490,8 @@ def extract_statement(graph: JavaObject, pointer: URIRef) -> Literal:
         statement,
         extra_prefix_declaration=[("", Namespace(pointer_namespace))]
     )
+    if len(pretty_pointer.strip()) == 0:
+        return Literal(str(pointer))
     return Literal(separate_prefix_data(pretty_pointer)[1])
 
 def make_readable_turtle(turtle: str, extra_prefix_declaration: list[tuple[str, str]] = []) -> str:

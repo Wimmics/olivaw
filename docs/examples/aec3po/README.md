@@ -38,4 +38,4 @@ Here is the `parameters.json` used for the test:
 }
 ```
 
-Check the [AEC3PO turtle model report](./model-test-manual-NicoRobertIn-2024-12-18T11-47-59.ttl) and the [AEC3PO markdown model report](./model-test-manual-NicoRobertIn-2024-12-18T11-47-59.md).
+Check the [AEC3PO turtle model report](./model-test-manual-NicoRobertIn-2024-12-19T09-11-10.ttl) and the [AEC3PO markdown model report](./model-test-manual-NicoRobertIn-2024-12-19T09-11-10.md).

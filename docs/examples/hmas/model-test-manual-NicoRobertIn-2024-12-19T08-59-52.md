@@ -4,7 +4,7 @@ This file is an export of the RDF test report made out of [EARL vocabulary](http
 
 This test is powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese)
 
-The original test report is available in turtle syntax [here](./model-test-manual-NicoRobertIn-2024-12-18T11-31-59.ttl).
+The original test report is available in turtle syntax [here](./model-test-manual-NicoRobertIn-2024-12-19T08-59-52.ttl).
 
 # Test Activity
 
@@ -16,13 +16,13 @@ Here is some information about the testing activity that led to this report
 |Tester|[NicoRobertIn](https://github.com/NicoRobertIn)|
 |Ontology|[HyperAgents/hmas](https://github.com/HyperAgents/hmas)|
 |Ontology version|Local state `ca439d4144b23b3fe927509872babc8d82142fae`|
-|Ontology version date|2024-12-18 11:31:48|
+|Ontology version date|2024-12-19 08:59:41|
 |Ontology previous version|[3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b](https://github.com/HyperAgents/hmas/tree/3b0b11eccd899dd65ac9c3bbf0c043e28b61b46b)|
 |Ontology branch|[HEAD](https://github.com/HyperAgents/hmas/tree/HEAD)|
 |Olivaw suite|[olivaw model test suite](https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/model/suite.py)|
 |Olivaw version|[v0.0.7](https://pypi.org/project/olivaw/0.0.7)|
-|Generated turtle|[Turtle report](./model-test-manual-NicoRobertIn-2024-12-18T11-31-59.ttl)|
-|Generated Markdown|[Markdown report](./model-test-manual-NicoRobertIn-2024-12-18T11-31-59.md)|
+|Generated turtle|[Turtle report](./model-test-manual-NicoRobertIn-2024-12-19T08-59-52.ttl)|
+|Generated Markdown|[Markdown report](./model-test-manual-NicoRobertIn-2024-12-19T08-59-52.md)|
 
 # Statistic summary
 
@@ -1772,7 +1772,7 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |[Section top](#minorfail-outcome-number-55)|Pointer|<pre lang="Turtle"><code>:isUsageOf&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;is&#32;usage&#32;of&#34;@en,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;est&#32;un&#32;usage&#32;de&#34;@fr&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;A&#32;relation&#32;that&#32;refers&#32;to&#32;a&#32;Facility&#32;involved&#32;in&#32;a&#32;Usage.&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;:Usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:regulation&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;:Facility&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-55)|Pointer|<pre lang="Turtle"><code>:isUsageIn&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;is&#32;usage&#32;in&#34;@en,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;est&#32;un&#32;usage&#32;dans&#34;@fr&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;A&#32;relation&#32;that&#32;refers&#32;to&#32;a&#32;Setting&#32;involved&#32;in&#32;a&#32;Usage.&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;:Usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:regulation&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;:Setting&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-55)|Pointer|<pre lang="Turtle"><code>:signifies&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;signifies&#34;@en,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;signifie&#34;@fr&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;A&#32;relation&#32;between&#32;a&#32;signifier&#32;and&#32;the&#32;specification&#32;of&#32;a&#32;be...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;:Signifier&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:interaction&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-55)|Pointer|<pre lang="Turtle"><code>:Signifier&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;Signifier&#34;@en,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;signifier&#34;@en,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;Signifiant&#34;@fr,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;signifiant&#34;@fr&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;A&#32;perceivable&#32;sign/cue&#32;that&#32;can&#32;be&#32;interpreted&#32;meaningfully&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:core&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:seeAlso&#32; &#60;https://github.com/HyperAgents/ns.hyperagents.org/issues/13#issuecomment-1028904491>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://github.com/HyperAgents/ns.hyperagents.org/issues/41> &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subClassOf&#32;:Hostable&#32;;  &#10; &#32; &#32; &#32; &#32;skos:note&#32; &#34;:Signifier&#32;works&#32;as&#32;a&#32;bridge&#32;between&#32;the&#32;Core&#32;and&#32;the&#32;Intera...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;skos:related&#32;:Affordance,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Signifier&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-55)|Pointer|<pre lang="Turtle"><code>:Signifier&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;Signifier&#34;@en,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;signifier&#34;@en,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;Signifiant&#34;@fr,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;signifiant&#34;@fr&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;A&#32;perceivable&#32;sign/cue&#32;that&#32;can&#32;be&#32;interpreted&#32;meaningfully&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:core&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:seeAlso&#32; &#60;https://github.com/HyperAgents/ns.hyperagents.org/issues/13#issuecomment-1028904491>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://github.com/HyperAgents/ns.hyperagents.org/issues/41> &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subClassOf&#32;:Hostable&#32;;  &#10; &#32; &#32; &#32; &#32;skos:note&#32; &#34;:Signifier&#32;works&#32;as&#32;a&#32;bridge&#32;between&#32;the&#32;Core&#32;and&#32;the&#32;Intera...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;skos:related&#32;:Affordance&#32;.</code></pre>|
 
 ***
 

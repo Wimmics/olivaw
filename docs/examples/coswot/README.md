@@ -41,4 +41,4 @@ Here is the `parameters.json` used for the test:
 
 Subjects `all-modules` and `all-fragments` are decided to be skipped here so that Github markdown renderer could generate the whole visualisation of the Markdown report.
 
-Check the [COSWOT turtle model report](./model-test-manual-NicoRobertIn-2024-12-18T11-40-02.ttl) and the [COSWOT markdown model report](./model-test-manual-NicoRobertIn-2024-12-18T11-40-02.md).
+Check the [COSWOT turtle model report](./model-test-manual-NicoRobertIn-2024-12-19T09-07-16.ttl) and the [COSWOT markdown model report](./model-test-manual-NicoRobertIn-2024-12-19T09-07-16.md).
