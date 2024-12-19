@@ -45,8 +45,7 @@ OLIVAW: Ontology Long-lived Integration Via ACIMOV Workflow
         tools = [
             x for x in dir(this)
             if callable(getattr(this, x)) and
-            not x.startswith("__") and
-            not x in ["listdir", "remove"]
+            getattr(this, x).__module__ == "olivaw.main"
         ]
         tools.sort(key="run".__eq__, reverse=True)
         docs = "\n".join([

@@ -7,4 +7,4 @@
     language: python
     additional_dependencies: ['-r', 'requirements-precommit.txt']
     files: \.ttl$|\.rq$
-    stages: [commit, push, manual]
+    stages: [pre-commit, pre-push, manual]
