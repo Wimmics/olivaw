@@ -88,6 +88,11 @@ OLIVAW: Ontology Long-lived Integration Via ACIMOV Workflow
     
     Ask some repository information to initialize the repository.
 
+    This command requires:
+        * A Git API token with `gist` scope (to read and update the project badges values)
+        * the ontology prefix
+        * the ontology namespace
+
     It consists of the following:
         * Creates a `PATH/.acimov/parameters.json` file with repository information
         * Creates a gist with proper files and files content to initialize the repository badges

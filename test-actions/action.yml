@@ -2,8 +2,8 @@ name: "Olivaw tests"
 author: "Wimmics"
 description: "Launches Olivaw test suite"
 branding:
-  icon: "search"
-  color: "blue"
+  icon: 'check-circle'
+  color: 'blue'
 inputs:
   gist-secret:
     description: "The personal access token with only gist scope allowed"

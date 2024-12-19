@@ -1,6 +1,6 @@
 name: "Olivaw branch initialisation"
 author: "Wimmics"
-description: "Launches Olivaw model test"
+description: "Runs Olivaw branch initialization"
 branding:
   icon: "git-branch"
   color: "blue"
