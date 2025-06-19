@@ -60,6 +60,11 @@ runs:
       id: init-skip
       shell: bash
       run: |
+
+        PARENT=$(git for-each-ref --format='%(refname:short)' refs/heads/ | while read branch; do   echo "$(git merge-base $branch ${{ github.sha }}) $branch"; done | sort | uniq | grep -v ${{ github.sha }} | sort | tail -n 1 | rev | cut -d " " -f 1 | rev)
+        echo "PARENT=$(echo $PARENT)" >> $GITHUB_ENV
+        echo "Parent branch is: $PARENT"
+
         UNINITIALIZED=${{ hashFiles('.acimov/parameters.json') == '' }}
         echo "UNINITIALIZED=$(echo $UNINITIALIZED)" >> $GITHUB_ENV
         echo "Is repository uninitialized: $UNINITIALIZED"
