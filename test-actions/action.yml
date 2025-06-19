@@ -307,7 +307,7 @@ runs:
     - name: Archive model test results
       id: archive-model
       if: ${{ env.ARCHIVE_MODEL == 'true' }}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: model-test-report
         path: |
@@ -317,7 +317,7 @@ runs:
     - name: Archive data test results
       id: archive-data
       if: ${{ env.ARCHIVE_DATA == 'true' }}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: data-test-report
         path: |
@@ -327,7 +327,7 @@ runs:
     - name: Archive query test results
       id: archive-query
       if: ${{ env.ARCHIVE_QUERY == 'true' }}
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: query-test-report
         path: |
