@@ -1,6 +1,6 @@
-[![OLIVAW DOI](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/NicoRobertIn/6832a8491d343286a026a71b8be1223a/raw/007_DOI.json)](https://doi.org/10.5281/zenodo.14288084)
+[![OLIVAW DOI](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/NicoRobertIn/6832a8491d343286a026a71b8be1223a/raw/008_DOI.json)](https://doi.org/10.5281/zenodo.14288084)
 [![OLIVAW HAL Id](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/NicoRobertIn/6832a8491d343286a026a71b8be1223a/raw/HAL.json)](https://hal.science/hal-04823080)
-[![OLIVAW SWHID Id](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/NicoRobertIn/6832a8491d343286a026a71b8be1223a/raw/007_SWHID.json)](https://archive.softwareheritage.org/browse/origin/directory/?origin_url=https://github.com/Wimmics/olivaw)
+[![OLIVAW SWHID Id](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/NicoRobertIn/6832a8491d343286a026a71b8be1223a/raw/008_SWHID.json)](https://archive.softwareheritage.org/browse/origin/directory/?origin_url=https://github.com/Wimmics/olivaw)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)![License: LGPL2.1](https://img.shields.io/badge/License-LGPL_2.1-blue)![Discussions: GitHub](https://img.shields.io/badge/Discussions-GitHub-blue)
 # Olivaw
 

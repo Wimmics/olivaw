@@ -4,7 +4,7 @@ from datetime import datetime
 from itertools import zip_longest
 from typing import Optional
 
-from os.path import sep, abspath
+from os.path import sep, abspath, relpath
 
 from py4j.java_gateway import JavaObject
 
@@ -65,6 +65,7 @@ from olivaw.constants import (
     PWD_TO_OUTPUT_FOLDER
 )
 
+from olivaw.constants.paths import PWD_TO_ROOT_FOLDER
 from olivaw.test.corese import (
     TURTLE,
     CORESE_PREFIX_TEXT,
@@ -242,43 +243,40 @@ def end_activity(report: Graph, assertor: IdentifiedNode, reports_filename: str)
 def make_subject_id_part(fragment_list: list[str]) -> str:
     """Analyze the heart or appendix of a subject and generate the subject identifier part related to this
 
-    :param fragment_list: List of files from the heart or appendix of a subject
-    :type fragment_list: `list[str]`
+    :param fragment_list: List of descriptions from the heart or appendix of a subject, see the following docs: `~olivaw.constants.MODULES`, `~olivaw.constants.MODELETS`, `~olivaw.constants.QUERIES`, `~olivaw.constants.DATASETS`, `~olivaw.constants.USECASES`
+    :type heart: `list[dict[str, str]]`
 
     :return: Subject identifier part
     :rtype: `str`
     """
 
-    modules = [item for item in fragment_list if item.startswith("src/")]
-    modules = ['module-' + '.'.join(item.split('.')[:-1]) for item in modules]
+    modules = [item for item in fragment_list if item["type"] == "module"]
+    modules = [f"module-{item['module']}" for item in modules]
     modules.sort()
-    modelets = [item for item in fragment_list if item.startswith("domains/") and item.endswith("/onto.ttl")]
-    modelets = ['modelet-' + '-'.join(item.split('/')[1:-1]) for item in modelets]
+    modelets = [item for item in fragment_list if item["type"] == "modelet"]
+    modelets = [f"modelet-{item['domain']}-{item['scenario']}" for item in modelets]
     modelets.sort()
-    datasets = [item for item in fragment_list if item.startswith("domains/") and item.endswith("/dataset.ttl")]
-    datasets = ['dataset-' + '-'.join(item.split('/')[1:-1]) for item in datasets]
+    datasets = [item for item in fragment_list if item["type"] == "dataset"]
+    datasets = [f"dataset-{item['domain']}-{item['scenario']}" for item in datasets]
     datasets.sort()
-    questions = [item for item in fragment_list if item.startswith("domains/") and item.endswith(".rq")]
-    questions = ['question-' + '-'.join(item[:-3].split('/')[1:]) for item in questions]
+    questions = [item for item in fragment_list if item["type"] == "query"]
+    questions = [f"query-{item['domain']}-{item['scenario']}-{item['question']}" for item in questions]
     questions.sort()
-    usecases = [item for item in fragment_list if item.startswith("use-cases/")]
-    usecases = [
-        'usecase-' + '-'.join('.'.join(item.split('.')[:-1]).split('/')[1:])
-        for item in usecases
-    ]
+    usecases = [item for item in fragment_list if item["type"] == "use-case"]
+    usecases = [f"usecase-{item['use-case']}-{item['fragment']}" for item in usecases]
     usecases.sort()
 
     subject_id_part = '-'.join(modules + modelets + datasets + questions + usecases).replace(".", "-").replace("_", "-")
     return subject_id_part
 
-def make_subject_id(heart: list[str], appendix: list[str]=[]) -> str:
+def make_subject_id(heart: list[dict[str, str]], appendix: list[dict[str, str]]=[]) -> str:
     """Computes the subject identifier of a subject
 
-    :param heart: List of file paths that are the heart of the subject
-    :type heart: `list[str]`
+    :param heart: List of descriptions that are the heart of the subject, see the following docs: `~olivaw.constants.MODULES`, `~olivaw.constants.MODELETS`, `~olivaw.constants.QUERIES`, `~olivaw.constants.DATASETS`, `~olivaw.constants.USECASES`
+    :type heart: `list[dict[str, str]]`
 
-    :param appendix: List of file paths that are the appendix of the subject, defaults to `[]`
-    :type appendix: `list[str]`, optional
+    :param appendix: List of descriptions that are the appendix of the subject, defaults to `[]`, see the following docs: `~olivaw.constants.MODULES`, `~olivaw.constants.MODELETS`, `~olivaw.constants.QUERIES`, `~olivaw.constants.DATASETS`, `~olivaw.constants.USECASES`
+    :type appendix: `list[dict[str, str]]`, optional
 
     :return: The subject identifier
     :rtype: `str`
@@ -290,13 +288,12 @@ def make_subject_id(heart: list[str], appendix: list[str]=[]) -> str:
         appendix_id = make_subject_id_part(appendix)
         result.append(appendix_id)
 
-    subject_id = "-".join(result).replace("/", "-")
-    return subject_id
+    return "-".join(result)
 
 def make_subject(
         draft: AssertDraft,
-        heart: list[str],
-        appendix: list[str]=[],
+        heart: list[dict[str, str]],
+        appendix: list[dict[str, str]]=[],
         name: str="",
         custom_title: str=""
 ):
@@ -305,11 +302,11 @@ def make_subject(
     :param draft: Draft of the test
     :type draft: `olivaw.test.AssertDraft`
     
-    :param heart: List of file paths that are the heart of the subject
-    :type heart: `list[str]`
+    :param heart: List of descriptions that are the heart of the subject, see the following docs: `~olivaw.constants.MODULES`, `~olivaw.constants.MODELETS`, `~olivaw.constants.QUERIES`, `~olivaw.constants.DATASETS`, `~olivaw.constants.USECASES`
+    :type heart: `list[dict[str, str]]`
 
-    :param appendix: List of file opaths that are the appendix of the subject, defaults to `[]`
-    :type appendix: `list[str]`, optional
+    :param appendix: List of descriptions that are the appendix of the subject, defaults to `[]`, see the following docs: `~olivaw.constants.MODULES`, `~olivaw.constants.MODELETS`, `~olivaw.constants.QUERIES`, `~olivaw.constants.DATASETS`, `~olivaw.constants.USECASES`
+    :type appendix: `list[dict[str, str]]`, optional
 
     :param name: Desired subject identifier, defaults to `""` and compute it
     :type name: `str`, optional
@@ -330,76 +327,27 @@ def make_subject(
             heart_type = "Standalone "
         else:
             heart_type = "Merged "
-        
-        if heart[0].startswith("src/"):
-            heart_type += "module"
-        elif heart[0].startswith("domains/"):
-            if heart[0].endswith("/onto.ttl"):
-                heart_type += "modelet"
-            elif heart[0].endswith("/dataset.ttl"):
-                heart_type += "dataset"
-            else:
-                heart_type = "competency question"
-        else:
-            heart_type += "use case"
+
+        heart_type += heart[0]["type"]
     
-    title = f"{heart_type} {', '.join(heart)} from branch {BRANCH}"
+    title = f"{heart_type} {', '.join([relpath(item['file'], PWD_TO_OUTPUT_FOLDER) for item in heart])} from branch {BRANCH}"
 
     if len(appendix) > 0:
         title = f"{title} with related terms from the fragments {', '.join(appendix)}"
 
     title = title if len(custom_title) == 0 else custom_title
-    
-    module_fragments = [item for item in heart + appendix if item.startswith('src/')]
-    module_fragments = [
-        SRC_NAMESPACE[item[4:]]
-        for item in module_fragments
+
+    fragments=[
+        relpath(item['type'], PWD_TO_ROOT_FOLDER)
+        for item in heart + appendix
     ]
 
-    modelets_fragment = [
-        item
-        for item in heart + appendix
-        if item.startswith('domains/')
-        and item.endswith('/onto.ttl')
-    ]
-    modelets_fragment = [
-        URIRef(DOMAINS_URL + item.split("domains/")[-1])
-        for item in modelets_fragment
-    ]
-
-    datasets_fragment = [
-        item
-        for item in heart + appendix
-        if item.startswith('domains/')
-        and item.endswith('/dataset.ttl')
-    ]
-    datasets_fragment = [
-        URIRef(DOMAINS_URL + item.split("domains/")[-1])
-        for item in datasets_fragment
-    ]
-
-    questions_fragment = [
-        item
-        for item in heart + appendix
-        if item.startswith('domains/')
-        and item.endswith('.rq')
-    ]
-    questions_fragment = [
-        URIRef(DOMAINS_URL + item.split("domains/")[-1])
-        for item in questions_fragment
-    ]
-    
-    usecases_fragment = [item for item in heart + appendix if item.startswith('use-cases/')]
-    usecases_fragment = [
-        URIRef(USECASES_URL + item.split("use-cases/")[-1])
-        for item in usecases_fragment
+    statements=[
+        (DCTERMS.hasPart, URIRef(f"{REPO_URI}/blob/{BRANCH}/" + item[(2 if item[2:] in ['./', '.\\'] else 0):]))
+        for item in fragments
     ]
 
     test_subject = BNode(subject_id, subject_id)
-    statements = [
-        (DCTERMS.hasPart, part)
-        for part in module_fragments + modelets_fragment + datasets_fragment + questions_fragment + usecases_fragment
-    ]
 
     statements = [
         (RDF.type, EARL_NAMESPACE.TestSubject),

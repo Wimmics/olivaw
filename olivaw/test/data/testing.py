@@ -4,6 +4,7 @@ from os.path import relpath, sep
 
 from rdflib import BNode, Graph
 
+from olivaw.constants.sparql import GET_DECLARED_ONTOLOGIES
 from olivaw.test.corese import (
     safe_load,
     check_OWL_constraints,
@@ -14,7 +15,7 @@ from olivaw.test.corese import (
 )
 
 from olivaw.constants import (
-    ROOT_FOLDER,
+    MODULES,
     GET_ONTOLOGY_TERMS,
     MODULES_TTL_GLOB_PATH,
     GET_TERM_USAGE,
@@ -34,17 +35,32 @@ from py4j.java_gateway import JavaObject
 
 shape_tests, shape_data = load_valid_custom_tests(CUSTOM_DATA_TESTS)
 
-def fragment_check(draft: AssertDraft, dataset: str) -> None:
+ONTOLOGIES: dict[str, str] = {}
+""""Dictionary `dict[str, str]` linking each project ontology URI as `str` to a give module absolute file path as `str` it corresponds to"""
+
+for module in MODULES:
+    try:
+        g = Graph()
+        g.parse(module["file"])
+        found_ontologies = [
+            str(ontology[0])
+            for ontology
+            in g.query(GET_DECLARED_ONTOLOGIES)
+        ]
+        ontologies = {**ontologies, **{ontology: module for ontology in found_ontologies}}
+    except:
+        continue
+
+def fragment_check(draft: AssertDraft, dataset: dict[str, str]) -> None:
     """Executes a data test over a data fragment
 
     :param draft: The assertion draft containing the useful information for reporting
     :type draft: `olivaw.test.AssertDraft`
 
-    :param dataset: File path of the data fragment to be tested
-    :type dataset: `str`
+    :param dataset: Dictionary reprenting the data fragment to be tested, see `~olivaw.constants.DATASETS` for more details
+    :type dataset: `dict[str, str]`
     """
-    dataset_key = relpath(dataset, ROOT_FOLDER).replace(sep, "/")
-    draft(subject=make_subject(draft, [dataset_key]))
+    draft(subject=make_subject(draft, [dataset]))
     graph_no_import = safe_load(dataset, disable_import=True)
 
     is_syntax_valid = not isinstance(graph_no_import, list)
@@ -61,7 +77,7 @@ def fragment_check(draft: AssertDraft, dataset: str) -> None:
         ]
     )
 
-    graph_with_import = safe_load(dataset) if is_syntax_valid else None
+    graph_with_import = safe_load(dataset, ontologies=ONTOLOGIES) if is_syntax_valid else None
     is_valid = is_syntax_valid and not isinstance(graph_with_import, list)
 
     if not is_valid:
@@ -93,11 +109,11 @@ def fragment_check(draft: AssertDraft, dataset: str) -> None:
     custom_test(draft, graph_no_owl,shape_tests)
         
 
-def get_ontology_terms(fragments: list[str]) -> list[str]:
+def get_ontology_terms(fragments: list[dict[str, str]]) -> list[str]:
     """Get all the terms that are defined in the ontology
 
-    :param fragments: List of the ontology files paths
-    :type fragments: `list[str]`
+    :param fragments: List of presentations of project RDF resources, see `~olivaw.constants.MODULES`, `~olivaw.constants.MODELETS`, `~olivaw.constants.DATASETS` and `~olivaw.constants.USE_CASES` for more details
+    :type fragments: `list[dict[str, str]]`
 
     :returns: The list of the ontology terms URIs
     :rtype: `list[str]`
@@ -111,18 +127,18 @@ def get_ontology_terms(fragments: list[str]) -> list[str]:
             continue
 
         graph_terms = query_graph(graph, GET_ONTOLOGY_TERMS)
-        terms += [(fragment, term[1:-1]) for term in graph_terms if len(term[1:-1]) > 0]
+        terms += [(fragment['file'], term[1:-1]) for term in graph_terms if len(term[1:-1]) > 0]
 
     terms = list(set(terms))
     terms.sort()
 
     return terms
 
-def data_tests(glob_path: list[str], report: Graph=None, assertor: BNode=None) -> None:
+def data_tests(data_fragments: list[str], report: Graph=None, assertor: BNode=None) -> None:
     """Execute a data test on each data fragment passed as input
 
-    :param glob_path: List of all the data fragments to be tested
-    :type glob_path: `list[str]`
+    :param data_fragments: List of all the data fragments to be tested
+    :type data_fragments: `list[str]`
 
     :param report: Test report to use for the tests to be run, defaults to `None` and create a new one
     :type report: `rdflib.Graph`, optional
@@ -135,7 +151,7 @@ def data_tests(glob_path: list[str], report: Graph=None, assertor: BNode=None) -
 
     draft = AssertDraft(report, assertor)
 
-    for dataset in progress_bar(glob_path):
+    for dataset in progress_bar(data_fragments):
         fragment_check(draft, dataset)
 
     return report
@@ -150,7 +166,7 @@ def best_practices(draft: AssertDraft, graph_rl: JavaObject) -> None:
     :type graph_rl: `py4j.java_gateway.JavaObject` referencing an instance of `fr.inria.corese.core.Graph`
     """
     if not "term-recognition" in SKIPPED_TESTS:
-        ontology_terms = list(set([term for _, term in get_ontology_terms(MODULES_TTL_GLOB_PATH)]))
+        ontology_terms = list(set([term for _, term in get_ontology_terms(MODULES)]))
 
         fragment_terms = query_graph(graph_rl, GET_ONTOLOGY_TERMS)
         fragment_terms = [term[1:-1] for term in fragment_terms if len(term[1:-1]) > 0]

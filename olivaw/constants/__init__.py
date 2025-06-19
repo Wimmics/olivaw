@@ -96,13 +96,13 @@ BLOCKING_ERRORS: list[str] = None
 GIST_INDEX: str = None
 """Id of Gist containing all the badges data"""
 
-SKIPPED_ERRORS: list[str] = None
+SKIPPED_ERRORS: list[str] = []
 """Error identifiers for errors that should not be written in the reports"""
 
-SKIPPED_TESTS: list[str] = None
+SKIPPED_TESTS: list[str] = []
 """Test identifiers that should not be written in the reports"""
 
-SKIPPED_SUBJECTS: list[str] = None
+SKIPPED_SUBJECTS: list[str] = []
 """Subject identifiers or relative paths from repo root to files that should be skipped in tests"""
 
 SKIP_FOR_TEST: dict[str, list[str]] = None
@@ -111,14 +111,11 @@ SKIP_FOR_TEST: dict[str, list[str]] = None
 SKIP_FOR_SUBJECT: dict[str, list[str]] = None
 """Dictionary of subjects (subjects identifiers or relative paths from repo root to files) that are linked to tests that should not be run on it"""
 
-TESTED_MODULES: list[str] = None
+TESTED_MODULES: list[str] = []
 """List of all the modules that should be tested"""
 
 TESTED_MODELETS: list[str] = None
 """List of all the modelets that should be tested"""
-
-DATASETS: list[str] = None
-"""Set of data fragments that should be tested"""
 
 VARIABLE_REQUESTS: list[str] = None
 """SPARQL request that rely on some repository data"""
@@ -250,6 +247,109 @@ if not BLOCKING_ERRORS is None:
 
 CRITERION_DATA: dict[str, dict[str, Union[str, list[str]]]] = None
 """Dictonary storing the criterions from the olivaw ontology"""
+
+MODULES: list[dict[str, str]] = []
+"""Definition of the different *modules* present in the current project
+
+This variable is a list of `dict`, each of them with the following key/value pairs:
+- **file**(`str`): Relative path to the *module* file, stored as `str` 
+- **module**(`str`): Given name of this *module*, stored as `str` 
+"""
+
+MODELETS: list[dict[str, str]] = []
+"""Definition of the different *modelets* present in the current project
+
+This variable is a list of `dict`, each of them with the following key/value pairs:
+- **file**(`str`): Relative path to the *modelet* file
+- **domain**(`str`): Given name of this *modelet*'s *domain*
+- **scenario**(`str`): Given name of this *modelet*'s *scenario*
+"""
+
+DATASETS: list[dict[str, str]] = []
+"""Definition of the different *datasets* present in the current project
+
+This variable is a list of `dict`, each of them with the following key/value pairs:
+- **file**(`str`): Relative path to the *dataset* file 
+- **domain**(`str`): Given name of this *dataset*'s *domain*
+- **scenario**(`str`): Given name of this *dataset*'s *scenario*
+"""
+
+QUERIES: list[dict[str, str]] = []
+"""Definition of the different *queries* present in the current project
+
+This variable is a list of `dict`, each of them with the following key/value pairs:
+- **file** (`str`): Relative path to the *query* file
+- **domain** (`str`): Given name of this *query*'s *domain*
+- **scenario** (`str`): Given name of this *query*'s *scenario*
+- **question** (`str`): Given name of this *query*'s *competency question*
+"""
+
+USE_CASES: list[dict[str, str]] = []
+"""Definition of the different *use cases* present in the current project
+
+This variable is a list of `dict`, each of them with the following key/value pairs:
+- **file** (`str`): Relative path to the *use case* file
+- **domain** (`str`): Given name of this *use case*'s *domain*
+- **scenario** (`str`): Given name of this *use case*'s *scenario*
+- **question** (`str`): Given name of this *use case*'s *competency question*
+"""
+ 
+try:
+  import regex as re
+  from glob import glob
+  from json import dumps
+  from os.path import relpath
+
+  def retrieve_path_pattern(pattern, path):
+    matches = next(
+      iter(re.findall(pattern, relpath(path, PWD_TO_ROOT_FOLDER))[:1]),
+      path
+    )
+    result = matches[0] if isinstance(matches, tuple) else matches
+    return result[2 if result[:2] in ["./", ".\\"] else 0:].replace("/", "-").replace("\\", "-")
+  
+  resources=[
+    ("MODULES", "module"),
+    ("MODELETS", "modelet"),
+    ("DATASETS", "dataset"),
+    ("QUERIES", "query"),
+    ("USE_CASES", "use-case")
+  ]
+  
+  for (variable_name, resource_name) in resources:
+    locals()[variable_name]=[]
+    definitions = locals()[f"{variable_name}_DEFINITION"]
+
+    for definition in definitions:
+      try:
+        locals()[variable_name].extend([
+          {
+            **{
+              "file": f"{abspath(PWD_TO_ROOT_FOLDER)}{sep}{relpath(match, PWD_TO_ROOT_FOLDER)}",
+              "type": resource_name
+            },
+            **{
+              variable: retrieve_path_pattern(pattern, match)
+              for variable, pattern in definition["patterns"].items()
+            }
+          }
+          for match in glob(f"{PWD_TO_ROOT_FOLDER}/{definition['glob']}", recursive=True)
+          if not "domain-template" in match
+        ])
+      except Exception as e:
+        if not ACTIONS:
+          print(f"Error: Could not parse resource {resource_name}.\n\tmessage: {str(e)}\n\tglob: {definition['glob']}\n\tpatterns:{str(definition['patterns'])}")
+
+    locals()[f"TESTED_{variable_name}"]=[
+      resource_item
+      for resource_item in locals()[variable_name]
+      if not resource_item["file"] in SKIPPED_SUBJECTS
+    ]
+
+    print(dumps(locals()[f"TESTED_{variable_name}"], indent=4))
+    
+except:
+  pass
 
 try:
     from rdflib import Graph

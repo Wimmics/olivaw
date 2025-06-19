@@ -56,7 +56,7 @@ def get_uris(fragments: list[str]) -> list[str]:
             continue
 
         graph_uris = query_graph(graph, GET_URIS, format=TEXT_CSV)
-        uris += [(fragment, term) for term in graph_uris]
+        uris += [(fragment['file'], term) for term in graph_uris]
 
     uris = list(set(uris))
     uris.sort()

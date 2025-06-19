@@ -33,21 +33,6 @@ from olivaw.constants import (
 )
 from olivaw.test.util.print import print_title, smart_print
 
-ontologies = {}
-
-for module in MODULES_TTL_GLOB_PATH:
-    try:
-        g = RdflibGraph()
-        g.parse(module)
-        found_ontologies = [
-            str(ontology[0])
-            for ontology
-            in g.query(GET_DECLARED_ONTOLOGIES)
-        ]
-        ontologies = {**ontologies, **{ontology: module for ontology in found_ontologies}}
-    except:
-        continue
-
 #####################################################
 # Start the java server & capture the stderr output #
 #####################################################
@@ -271,6 +256,7 @@ def load(
         disable_import: bool=False,
         graph: JavaObject=None,
         already_imported: list[str]=[],
+        ontologies: dict[str, str]={},
         profile=STD
     ) -> JavaObject:
     """Load a graph from one to several local files and/or a string.
@@ -295,6 +281,9 @@ def load(
 
     :param already_imported: List of resources that already have been injected into the passed `graph` parameter, defaults to `[]`
     :type already_imported: `list[str]`
+
+    :param ontologies: Dictionary a project ontology URI `str` to an absolute file path as `str` where to find the given ontology
+    :type ontologies: `dict[str, str]`
 
     :param profile: Reasoning profile to apply to the graph, defaults to `STD`(0) which stands for no reasoning
     :type profile: `int`, one of `STD`(0) / `OWL_RL`(1) / `OWL_LR_LITE`(2) / `OWL_RL_EXT`(3) / `OWL_RL_TEST`(4) / `RDFS_RL`(5)
@@ -394,21 +383,22 @@ def capture_syntax_errors() -> str:
     return "\n".join(final_report).strip()
 
 def safe_load(
-        path: Union[str, list[str]],
+        fragments: Union[str, list[str]],
         extras: str="",
         import_from_src: bool=True,
         disable_import: bool=False,
         disable_owl: bool=False,
         graph=None,
         already_imported: list[str]=[],
+        ontologies: dict[str, str]={},
         profile=STD
     ) -> Union[JavaObject, list[str]]:
     """Load a graph from one to several local files and/or a string.
     
     Returns a Graph if no syntax error or a list of error messages
 
-    :param path: local path or a URL or a list of these
-    :type path: `Union[str, list[str]]`
+    :param fragments: List of ontology KG resource, see `~olivaw.constants.MODULES`, `~olivaw.constants.MODELETS`, `~olivaw.constants.DATASETS`, `~olivaw.constants.USE_CASES` for more details
+    :type fragments: `Union[str, list[str]]`
 
     :param extras: Some extra turtle data, default to empty string
     :type extras: `str`, optional
@@ -428,18 +418,27 @@ def safe_load(
     :param already_imported: List of resources that already have been injected into the passed `graph` parameter, defaults to `[]`
     :type already_imported: `list[str]`
 
+    :param ontologies: Dictionary a project ontology URI `str` to an absolute file path as `str` where to find the given ontology
+    :type ontologies: `dict[str, str]`
+
     :param profile: Reasoning profile to apply to the graph, defaults to `STD`(0) which stands for no reasoning
     :type profile: `int`, one of `STD`(0) / `OWL_RL`(1) / `OWL_LR_LITE`(2) / `OWL_RL_EXT`(3) / `OWL_RL_TEST`(4) / `RDFS_RL`(5)
 
     :returns: Java Object (instance of Java Class `fr.inria.corese.core.Graph`) if loading process ended up successfully or a list of error messages otherwise
     :rtype: `Union[py4j.java_gateway.JavaObject, list[str]]`, the `py4j.java_gateway.JavaObject` references an instance of `fr.inria.corese.core.Graph`
     """
+    
+    try:
+        loaded_fragments=fragments["file"] if isinstance(fragments, dict) else [fragment["file"] for fragment in fragments]
+    except:
+        print(fragments)
+        raise
 
     syntax_errors = ""
     try:
         get_error_output()
         graph = load(
-            path,
+            loaded_fragments,
             extras=extras,
             import_from_src=import_from_src,
             disable_import=disable_import,
@@ -458,9 +457,9 @@ def safe_load(
             return syntax_errors
         
         try:
-            rdflib_errors = rdflib_check(path=path, extras=extras)
+            rdflib_errors = rdflib_check(path=loaded_fragments, extras=extras)
         except:
-            print(path)
+            print(loaded_fragments)
             raise
 
         if len(rdflib_errors) > 0:

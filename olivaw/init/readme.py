@@ -31,17 +31,21 @@ def update_readme(gist_id: str=None) -> None:
     if gist_id is None:
         gist_id = GIST_INDEX
 
+    #f"(.acimov/output/model-test-actions.md#{BADGE_LIST[badge]['label'].lower()}-outcomes)""
+    #(.acimov/output/data-test-actions.md)
+    #(.acimov/output/query-test-actions.md)
+
     readme = ["Profiles:\t"] + [
-        f"![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})"
+        f"[![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})](.acimov/output/model-test-actions.md)"
         for badge in list(BADGE_LIST.keys())[5:8]
     ] + [" "] + ["Model tests:\t"] + [
-        f"![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})"
+        f"[![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})](.acimov/output/model-test-actions.md#{BADGE_LIST[badge]['label'].lower()}-outcomes)"
         for badge in list(BADGE_LIST.keys())[:5]
     ] + [" "] + ["Data tests:\t"] + [
-        f"![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})"
+        f"[![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})](.acimov/output/data-test-actions.md#{BADGE_LIST[badge]['label'].lower()}-outcomes)"
         for badge in list(BADGE_LIST.keys())[8:13]
     ] + [" "] + ["Query tests:\t"] + [
-        f"![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})"
+        f"[![{BADGE_LIST[badge]['label']} Badge]({badge_url(DEV_USERNAME, gist_id, badge)})](.acimov/output/query-test-actions.md#{BADGE_LIST[badge]['label'].lower()}-outcomes)"
         for badge in list(BADGE_LIST.keys())[13:]
     ] + [" "] + readme[first_title_line:]
     

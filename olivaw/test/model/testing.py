@@ -3,17 +3,18 @@
 from os.path import sep, relpath
 from py4j.java_gateway import JavaObject
 
+from olivaw.constants.sparql import GET_DECLARED_ONTOLOGIES
 from olivaw.test.corese import (
     query_graph, 
     safe_load,
     OWLProfile,
     check_OWL_constraints,
-    profile_errors,
-    ontologies
+    profile_errors
 )
 from olivaw.constants import (
     GET_BY_MODULE,
     DECIDABILITY_RANGE,
+    MODULES,
     PWD_TO_ROOT_FOLDER,
     MODEL_BEST_PRACTICES_TESTS,
     MODEL_BEST_PRACTICES_TESTS,
@@ -45,6 +46,22 @@ from rdflib import Graph, BNode
 from olivaw.test.util.skip import should_skip
 
 shape_tests, shape_data = load_valid_custom_tests(CUSTOM_MODEL_TESTS)
+
+ONTOLOGIES: dict[str, str] = {}
+""""Dictionary `dict[str, str]` linking each project ontology URI as `str` to a give module absolute file path as `str` it corresponds to"""
+
+for module in MODULES:
+    try:
+        g = Graph()
+        g.parse(module["file"])
+        found_ontologies = [
+            str(ontology[0])
+            for ontology
+            in g.query(GET_DECLARED_ONTOLOGIES)
+        ]
+        ontologies = {**ontologies, **{ontology: module for ontology in found_ontologies}}
+    except:
+        continue
 
 def group_terms_by_module(modelet: JavaObject) -> dict[str, str]:
     """Get all the triples that has a subject included in the ontology.
@@ -156,6 +173,7 @@ def fragment_check(fragments, draft, extras="") -> bool:
     :returns: Boolean stating if the fragment can be used in further aggregated graph tests
     :rtype: `bool`
     """
+
     fragment_no_import = safe_load(
         fragments,
         extras,
@@ -175,7 +193,7 @@ def fragment_check(fragments, draft, extras="") -> bool:
         make_not_tested(draft(custom_test_data=shape_data), *list(shape_data.keys()))
         return True
     
-    fragment_with_import = safe_load(fragments, extras)
+    fragment_with_import = safe_load(fragments, extras, ontologies=ONTOLOGIES)
     with_import_load_error = isinstance(fragment_with_import, list)
 
     profile_check(fragment_no_import, draft)
@@ -220,9 +238,8 @@ def modules_tests(modules: list[str], report: Graph=None, assertor: BNode=None) 
     draft = AssertDraft(report, assertor)
 
     for module in progress_bar(modules):
-        module_key = relpath(module, PWD_TO_ROOT_FOLDER).replace(sep, "/")
         draft(file=module)
-        draft(subject=make_subject(draft, [module_key]))
+        draft(subject=make_subject(draft, [module]))
         load_error = fragment_check(module, draft)
 
         if not load_error:
@@ -256,8 +273,7 @@ def modelets_tests(modelets, report: Graph=None, assertor: BNode=None) -> list[s
         if "template" in modelet:
             continue
 
-        modelet_key = relpath(modelet, PWD_TO_ROOT_FOLDER).replace(sep, "/")
-        draft(subject=make_subject(draft, [modelet_key]))
+        draft(subject=make_subject(draft, [modelet]))
 
         load_error = fragment_check(
             modelet,
@@ -274,25 +290,24 @@ def modelets_tests(modelets, report: Graph=None, assertor: BNode=None) -> list[s
 
         moduled_triples = group_terms_by_module(alone_no_owl)
 
-        for module in moduled_triples.keys():
-            if not module in ontologies:
+        for module_uri in moduled_triples.keys():
+            if not module_uri in ONTOLOGIES:
                 continue
 
-            module_path = ontologies[module].replace(sep, "/")
-            module_key = relpath(module_path, PWD_TO_ROOT_FOLDER).replace(sep, "/")
+            module_match = ontologies[module_uri]
 
-            if module_path.startswith("./"):
-                module_path = module_path[2:]
+            if module_match.startswith("./"):
+                module_match = module_match[2:]
 
-            if should_skip(draft, file=[modelet, module_key]):
+            if should_skip(draft, file=[modelet["file"], relpath(module_match["file"], PWD_TO_ROOT_FOLDER)]):
                 continue
 
-            draft(subject=make_subject(draft, [module_path], [modelet_key]))
+            draft(subject=make_subject(draft, [module_match], [modelet]))
 
             fragment_check(
-                module_path,
+                module_match,
                 draft,
-                extras=moduled_triples[module]
+                extras=moduled_triples[module_uri]
             )
 
     return safe_modelets
@@ -318,19 +333,15 @@ def merged_fragment_set_test(
     :param custom_title: Custom title to give to the subject, defaults to `""` and computes a title
     :type custom_title: `str`
     """
-    fragments_keys = [
-        relpath(fragment, PWD_TO_ROOT_FOLDER).replace(sep, "/")
-        for fragment in fragments_to_merge
-    ]
 
-    if len(fragments_keys) == 0:
+    if len(fragments_to_merge) == 0:
         return
 
     draft = AssertDraft(report, assertor, file=fragments_to_merge)
     
     draft(subject=make_subject(
         draft,
-        fragments_keys,
+        fragments_to_merge,
         name=heart_name,
         custom_title=custom_title
     ))

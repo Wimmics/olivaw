@@ -1,4 +1,4 @@
-VERSION:str = "v0.0.7"
+VERSION:str = "v0.0.8"
 """Olivaw package version"""
 
 PIPY_OLIVAW: str = "https://pypi.org/project/olivaw"
