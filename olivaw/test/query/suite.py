@@ -6,7 +6,7 @@ from olivaw.test.markdown import markdown_export
 from olivaw.test.turtle import end_activity, new_report
 from .testing import question_tests
 from olivaw.test.util import save_reports, print_title, file_name
-from olivaw.constants import QUERIES, QUESTIONS_GLOB_PATH, SKIPPED_SUBJECTS
+from olivaw.constants import TESTED_QUERIES, SKIPPED_SUBJECTS
 
 def test_query() -> None:
     """Executes the query tests over the current project"""
@@ -14,7 +14,7 @@ def test_query() -> None:
 
     questions = [
         item
-        for item in QUERIES
+        for item in TESTED_QUERIES
         if not abspath(item["file"]) in SKIPPED_SUBJECTS
     ]
 

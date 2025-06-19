@@ -2,7 +2,7 @@
 
 from olivaw.test.markdown import markdown_export
 from olivaw.test.turtle import end_activity, new_report
-from olivaw.constants import DATASETS
+from olivaw.constants import TESTED_DATASETS, TESTED_USECASES
 from olivaw.test.util import print_title, save_reports, file_name
 from .testing import data_tests, shape_data
 
@@ -13,7 +13,7 @@ def test_data() -> None:
     report, assertor = new_report("data")
 
     data_tests(
-        DATASETS,
+        TESTED_DATASETS + TESTED_USECASES,
         report=report,
         assertor=assertor
     )

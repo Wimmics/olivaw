@@ -111,11 +111,20 @@ SKIP_FOR_TEST: dict[str, list[str]] = None
 SKIP_FOR_SUBJECT: dict[str, list[str]] = None
 """Dictionary of subjects (subjects identifiers or relative paths from repo root to files) that are linked to tests that should not be run on it"""
 
-TESTED_MODULES: list[str] = []
+TESTED_MODULES: list[dict[str, str]] = []
 """List of all the modules that should be tested"""
 
-TESTED_MODELETS: list[str] = None
+TESTED_MODELETS: list[dict[str, str]] = None
 """List of all the modelets that should be tested"""
+
+TESTED_DATASETS: list[dict[str, str]] = None
+"""List of all the datasets that should be tested"""
+
+TESTED_USECASES: list[dict[str, str]] = None
+"""List of all the use cases that should be tested"""
+
+TESTED_QUERIES: list[dict[str, str]] = None
+"""List of all the queries that should be tested"""
 
 VARIABLE_REQUESTS: list[str] = None
 """SPARQL request that rely on some repository data"""
@@ -346,7 +355,7 @@ try:
       if not resource_item["file"] in SKIPPED_SUBJECTS
     ]
 
-    print(dumps(locals()[f"TESTED_{variable_name}"], indent=4))
+    #print(dumps(locals()[f"TESTED_{variable_name}"], indent=4))
     
 except:
   pass

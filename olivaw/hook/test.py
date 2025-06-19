@@ -4,7 +4,7 @@
 from typing import Sequence
 from pre_commit import output
 from rdflib import Graph
-from os.path import sep, relpath, exists
+from os.path import sep, relpath, exists, abspath
 
 from olivaw.test.corese import export_graph
 
@@ -26,7 +26,12 @@ from olivaw.constants import (
     GET_MAJOR_FAILS,
     OLIVAW_ONTOLOGY,
     PWD_TO_OLIVAW_ONTOLOGY,
-    GET_CRITERION_SUMMARY
+    GET_CRITERION_SUMMARY,
+    TESTED_MODULES,
+    TESTED_MODELETS,
+    TESTED_DATASETS,
+    TESTED_USECASES,
+    TESTED_QUERIES
 )
 
 sorted_files = {
@@ -62,39 +67,34 @@ def main(files: Sequence[str] | None = None) -> int:
     if files is None:
         return 0
 
-    paths = [
-        (file, relpath(file, PWD_TO_ROOT_FOLDER))
-        for file in files
-        if exists(file)
-    ]
+    abspaths = [abspath(file) for file in files]
 
     if len(files) == 0:
         return 0
+    
+    sorted_files["model"][modules_tests] = [
+        item
+        for item in TESTED_MODULES
+        if item["file"] in abspaths
+    ]
 
-    for abs_file_path, rel_file_path in paths:
+    sorted_files["model"][modelets_tests] = [
+        item
+        for item in TESTED_MODELETS
+        if item["file"] in abspaths
+    ]
 
-        if rel_file_path.startswith(f"src{sep}"):
-            sorted_files["model"][modules_tests].append(abs_file_path)
+    sorted_files["data"][data_tests] = [
+        item
+        for item in TESTED_DATASETS + TESTED_USECASES
+        if item["file"] in abspaths
+    ]
 
-        elif rel_file_path.startswith(f"domains{sep}"):
-
-            if rel_file_path.endswith(f"{sep}onto.ttl"):
-                sorted_files["model"][modelets_tests].append(abs_file_path)
-
-            elif rel_file_path.endswith(f"{sep}dataset.ttl"):
-                sorted_files["data"][data_tests].append(abs_file_path)
-
-            elif rel_file_path.endswith(".rq"):
-                sorted_files["query"][question_tests].append(abs_file_path)
-
-            else:
-                output.write_line(f"Unprocessable file: {abs_file_path}")
-
-        elif rel_file_path.startswith(f"use-cases{sep}"):
-            sorted_files["data"][data_tests].append(abs_file_path)
-
-        else:
-            output.write_line(f"Unprocessable file: {abs_file_path}")
+    sorted_files["query"][question_tests] = [
+        item
+        for item in TESTED_QUERIES
+        if item["file"] in abspaths
+    ]
         
     errors = []
         
