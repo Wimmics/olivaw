@@ -166,7 +166,7 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       MODULES_DEFINITION = repo_parameters["datasets_definition"]
 
     if "usecases_definition" in repo_parameters:
-      MODULES_DEFINITION = repo_parameters["datasets_definition"]
+      MODULES_DEFINITION = repo_parameters["usecases_definition"]
 
     if "queries_definition" in repo_parameters:
       MODULES_DEFINITION = repo_parameters["queries_definition"]
