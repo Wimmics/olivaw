@@ -4,7 +4,7 @@ This file is an export of the RDF test report made out of [EARL vocabulary](http
 
 This test is powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese)
 
-The original test report is available in turtle syntax [here](./model-test-manual-NicoRobertIn-2024-12-19T09-11-10.ttl).
+The original test report is available in turtle syntax [here](./model-test-manual-NicoRobertIn-2025-06-19T19-31-28.ttl).
 
 # Test Activity
 
@@ -15,24 +15,24 @@ Here is some information about the testing activity that led to this report
 |Description|[NicoRobertIn](https://github.com/NicoRobertIn)&#32;launch&#32;manual&#32;run&#32;of&#32;model&#32;tests&#32;against&#32;[Accord-Project/aec3po](https://github.com/Accord-Project/aec3po)&#32;on&#32;branch&#32;HEAD|
 |Tester|[NicoRobertIn](https://github.com/NicoRobertIn)|
 |Ontology|[Accord-Project/aec3po](https://github.com/Accord-Project/aec3po)|
-|Ontology version|Local state `f59cb31e783bd6fe54e8c5c413eeddc401c57f13`|
-|Ontology version date|2024-12-19 09:10:42|
-|Ontology previous version|[ef1ac8a152d8a37bf92cdaa007ecf5573c741bc8](https://github.com/Accord-Project/aec3po/tree/ef1ac8a152d8a37bf92cdaa007ecf5573c741bc8)|
+|Ontology version|Local state `d0703b23e859a6adfe36fbd753496e85634ac250`|
+|Ontology version date|2025-06-19 19:30:55|
+|Ontology previous version|[f13c0940bab095cfa024395b8597316a6c976220](https://github.com/Accord-Project/aec3po/tree/f13c0940bab095cfa024395b8597316a6c976220)|
 |Ontology branch|[HEAD](https://github.com/Accord-Project/aec3po/tree/HEAD)|
-|Olivaw suite|[olivaw model test suite](https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/model/suite.py)|
-|Olivaw version|[v0.0.7](https://pypi.org/project/olivaw/0.0.7)|
-|Generated turtle|[Turtle report](./model-test-manual-NicoRobertIn-2024-12-19T09-11-10.ttl)|
-|Generated Markdown|[Markdown report](./model-test-manual-NicoRobertIn-2024-12-19T09-11-10.md)|
+|Olivaw suite|[olivaw model test suite](https://github.com/Wimmics/olivaw/blob/v0.0.8/olivaw/test/model/suite.py)|
+|Olivaw version|[v0.0.8](https://pypi.org/project/olivaw/0.0.8)|
+|Generated turtle|[Turtle report](./model-test-manual-NicoRobertIn-2025-06-19T19-31-28.ttl)|
+|Generated Markdown|[Markdown report](./model-test-manual-NicoRobertIn-2025-06-19T19-31-28.md)|
 
 # Statistic summary
 
 Here is a short overview for this test report
 
-161 Outcomes
+394 Outcomes
 
-:boom:0 MajorFail, :exclamation:161 MinorFail, :warning:0 CannotTell, :grey_question:0 NotTested, :white_check_mark:0 Pass
+:boom:0 MajorFail, :exclamation:161 MinorFail, :warning:0 CannotTell, :grey_question:0 NotTested, :white_check_mark:233 Pass
 
-<div  style="border-radius: 12px; height: 25px; overflow: hidden"><img src="../assets/red.png" width="0%" height="25px"/><img src="../assets/orange.png" width="100%" height="25px"/><img src="../assets/grey.png" width="0%" height="25px"/><img src="../assets/white.png" width="0%" height="25px"/><img src="../assets/green.png" width="0%" height="25px"/></div>
+<div  style="border-radius: 12px; height: 25px; overflow: hidden"><img src="../assets/red.png" width="0%" height="25px"/><img src="../assets/orange.png" width="40%" height="25px"/><img src="../assets/grey.png" width="0%" height="25px"/><img src="../assets/white.png" width="0%" height="25px"/><img src="../assets/green.png" width="60%" height="25px"/></div>
 
 <br/>
 
@@ -48,7 +48,7 @@ The different status types are an extension of the [EARL](https://www.w3.org/TR/
 
 # MinorFail Outcomes
 
-[Jump to statistic summary](#statistic-summary)	|	Previous section	|	Next section
+[Jump to statistic summary](#statistic-summary)	|	Previous section	|	[Next section](#pass-outcomes)
 
 Here is the chapter related to the MinorFail outcome
 
@@ -63,123 +63,123 @@ Here is the chapter related to the MinorFail outcome
 
 |*Jump*|*Number*|*Status*|*Subject*|*Criterion*|*Title*|*Link*|
 |------|--------|--------|---------|-----------|-------|------|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-1">1/161</div>|:exclamation:MinorFail|`module-src-vocabularies-quantity-kinds`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-1)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-2">2/161</div>|:exclamation:MinorFail|`module-src-vocabularies-quantity-kinds`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-2)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-3">3/161</div>|:exclamation:MinorFail|`module-src-vocabularies-quantity-kinds`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-3)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-4">4/161</div>|:exclamation:MinorFail|`module-src-vocabularies-quantity-kinds`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-4)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-5">5/161</div>|:exclamation:MinorFail|`module-src-vocabularies-quantity-kinds`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Too close terms|[Jump](#minorfail-outcome-number-5)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-6">6/161</div>|:exclamation:MinorFail|`module-src-vocabularies-permitting-stages`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-6)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-7">7/161</div>|:exclamation:MinorFail|`module-src-vocabularies-permitting-stages`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-7)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-8">8/161</div>|:exclamation:MinorFail|`module-src-vocabularies-permitting-stages`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-8)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-9">9/161</div>|:exclamation:MinorFail|`module-src-vocabularies-permitting-stages`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-9)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-10">10/161</div>|:exclamation:MinorFail|`module-src-vocabularies-permitting-stages`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-10)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-11">11/161</div>|:exclamation:MinorFail|`module-src-vocabularies-disciplines`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-11)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-12">12/161</div>|:exclamation:MinorFail|`module-src-vocabularies-disciplines`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-12)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-13">13/161</div>|:exclamation:MinorFail|`module-src-vocabularies-disciplines`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-13)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-14">14/161</div>|:exclamation:MinorFail|`module-src-vocabularies-disciplines`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-14)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-15">15/161</div>|:exclamation:MinorFail|`module-src-vocabularies-disciplines`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-15)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-16">16/161</div>|:exclamation:MinorFail|`module-src-vocabularies-check-method-operators`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-16)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-17">17/161</div>|:exclamation:MinorFail|`module-src-vocabularies-check-method-operators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-17)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-18">18/161</div>|:exclamation:MinorFail|`module-src-vocabularies-check-method-operators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-18)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-19">19/161</div>|:exclamation:MinorFail|`module-src-vocabularies-check-method-operators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-19)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-20">20/161</div>|:exclamation:MinorFail|`module-src-vocabularies-check-method-operators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-20)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-21">21/161</div>|:exclamation:MinorFail|`module-src-vocabularies-check-method-comparators`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-21)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-22">22/161</div>|:exclamation:MinorFail|`module-src-vocabularies-check-method-comparators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-22)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-23">23/161</div>|:exclamation:MinorFail|`module-src-vocabularies-check-method-comparators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-23)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-24">24/161</div>|:exclamation:MinorFail|`module-src-vocabularies-check-method-comparators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-24)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-25">25/161</div>|:exclamation:MinorFail|`module-src-vocabularies-check-method-comparators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-25)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-26">26/161</div>|:exclamation:MinorFail|`module-src-vocabularies-check-method-comparators`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Too close terms|[Jump](#minorfail-outcome-number-26)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-27">27/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-usage`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-27)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-28">28/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-usage`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-28)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-29">29/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-usage`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-29)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-30">30/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-usage`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-30)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-31">31/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-usage`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-31)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-32">32/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-usage`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-32)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-33">33/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-structure`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-33)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-34">34/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-structure`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-34)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-35">35/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-structure`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-35)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-36">36/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-structure`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-36)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-37">37/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-structure`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-37)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-38">38/161</div>|:exclamation:MinorFail|`module-src-vocabularies-building-structure`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-38)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-39">39/161</div>|:exclamation:MinorFail|`module-src-vocabularies-administrative-areas`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-39)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-40">40/161</div>|:exclamation:MinorFail|`module-src-vocabularies-administrative-areas`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-40)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-41">41/161</div>|:exclamation:MinorFail|`module-src-vocabularies-administrative-areas`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-41)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-42">42/161</div>|:exclamation:MinorFail|`module-src-vocabularies-administrative-areas`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-42)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-43">43/161</div>|:exclamation:MinorFail|`module-src-vocabularies-administrative-areas`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-43)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-44">44/161</div>|:exclamation:MinorFail|`module-src-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-44)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-45">45/161</div>|:exclamation:MinorFail|`module-src-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-45)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-46">46/161</div>|:exclamation:MinorFail|`module-src-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-46)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-47">47/161</div>|:exclamation:MinorFail|`module-src-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-47)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-48">48/161</div>|:exclamation:MinorFail|`module-src-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-48)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-49">49/161</div>|:exclamation:MinorFail|`module-src-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-49)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-50">50/161</div>|:exclamation:MinorFail|`module-src-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-50)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-51">51/161</div>|:exclamation:MinorFail|`module-src-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-51)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-52">52/161</div>|:exclamation:MinorFail|`module-src-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-52)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-53">53/161</div>|:exclamation:MinorFail|`module-src-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-53)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-54">54/161</div>|:exclamation:MinorFail|`module-src-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-54)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-55">55/161</div>|:exclamation:MinorFail|`module-src-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-55)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-56">56/161</div>|:exclamation:MinorFail|`module-src-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-56)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-57">57/161</div>|:exclamation:MinorFail|`module-src-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-57)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-58">58/161</div>|:exclamation:MinorFail|`module-src-statement`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Too close terms|[Jump](#minorfail-outcome-number-58)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-59">59/161</div>|:exclamation:MinorFail|`module-src-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-59)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-60">60/161</div>|:exclamation:MinorFail|`module-src-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-60)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-61">61/161</div>|:exclamation:MinorFail|`module-src-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-61)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-62">62/161</div>|:exclamation:MinorFail|`module-src-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-62)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-63">63/161</div>|:exclamation:MinorFail|`module-src-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-63)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-64">64/161</div>|:exclamation:MinorFail|`module-src-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-64)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-65">65/161</div>|:exclamation:MinorFail|`module-src-model`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Term not referenced to a module|[Jump](#minorfail-outcome-number-65)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-66">66/161</div>|:exclamation:MinorFail|`module-src-legal-verifier`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-66)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-67">67/161</div>|:exclamation:MinorFail|`module-src-legal-verifier`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-67)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-68">68/161</div>|:exclamation:MinorFail|`module-src-legal-verifier`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-68)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-69">69/161</div>|:exclamation:MinorFail|`module-src-legal-verifier`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-69)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-70">70/161</div>|:exclamation:MinorFail|`module-src-feature-of-interest`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domain out of vocabulary|[Jump](#minorfail-outcome-number-70)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-71">71/161</div>|:exclamation:MinorFail|`module-src-feature-of-interest`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-71)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-72">72/161</div>|:exclamation:MinorFail|`module-src-evidence`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-72)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-73">73/161</div>|:exclamation:MinorFail|`module-src-evidence`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-73)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-74">74/161</div>|:exclamation:MinorFail|`module-src-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-74)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-75">75/161</div>|:exclamation:MinorFail|`module-src-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-75)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-76">76/161</div>|:exclamation:MinorFail|`module-src-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-76)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-77">77/161</div>|:exclamation:MinorFail|`module-src-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-77)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-78">78/161</div>|:exclamation:MinorFail|`module-src-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-78)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-79">79/161</div>|:exclamation:MinorFail|`module-src-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-79)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-80">80/161</div>|:exclamation:MinorFail|`module-src-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-80)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-81">81/161</div>|:exclamation:MinorFail|`module-src-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-81)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-82">82/161</div>|:exclamation:MinorFail|`module-src-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-82)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-83">83/161</div>|:exclamation:MinorFail|`module-src-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-83)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-84">84/161</div>|:exclamation:MinorFail|`module-src-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-84)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-85">85/161</div>|:exclamation:MinorFail|`module-src-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-85)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-86">86/161</div>|:exclamation:MinorFail|`module-src-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-86)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-87">87/161</div>|:exclamation:MinorFail|`module-src-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-87)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-88">88/161</div>|:exclamation:MinorFail|`module-src-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-88)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-89">89/161</div>|:exclamation:MinorFail|`module-src-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-89)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-90">90/161</div>|:exclamation:MinorFail|`module-src-compliance-verification-report`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Too close terms|[Jump](#minorfail-outcome-number-90)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-91">91/161</div>|:exclamation:MinorFail|`module-src-checking-act`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domain out of vocabulary|[Jump](#minorfail-outcome-number-91)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-92">92/161</div>|:exclamation:MinorFail|`module-src-checking-act`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-92)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-93">93/161</div>|:exclamation:MinorFail|`module-src-checking-act`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-93)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-94">94/161</div>|:exclamation:MinorFail|`module-src-check-method`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domain out of vocabulary|[Jump](#minorfail-outcome-number-94)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-95">95/161</div>|:exclamation:MinorFail|`module-src-check-method`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-95)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-96">96/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-96)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-97">97/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-97)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-98">98/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-98)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-99">99/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-99)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-100">100/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-100)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-101">101/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-101)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-102">102/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-102)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-103">103/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-103)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-104">104/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-104)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-105">105/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-105)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-106">106/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-106)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-107">107/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-107)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-108">108/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-108)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-109">109/161</div>|:exclamation:MinorFail|`module-src-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-109)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-110">110/161</div>|:exclamation:MinorFail|`module-src-check-method`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Term not referenced to a module|[Jump](#minorfail-outcome-number-110)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-111">111/161</div>|:exclamation:MinorFail|`module-src-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-111)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-112">112/161</div>|:exclamation:MinorFail|`module-src-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-112)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-113">113/161</div>|:exclamation:MinorFail|`module-src-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-113)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-114">114/161</div>|:exclamation:MinorFail|`module-src-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-114)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-115">115/161</div>|:exclamation:MinorFail|`module-src-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-115)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-116">116/161</div>|:exclamation:MinorFail|`module-src-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-116)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-117">117/161</div>|:exclamation:MinorFail|`module-src-aec3po`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Term not referenced to a module|[Jump](#minorfail-outcome-number-117)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-1">1/161</div>|:exclamation:MinorFail|`module-vocabularies-quantity-kinds`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-1)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-2">2/161</div>|:exclamation:MinorFail|`module-vocabularies-quantity-kinds`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-2)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-3">3/161</div>|:exclamation:MinorFail|`module-vocabularies-quantity-kinds`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-3)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-4">4/161</div>|:exclamation:MinorFail|`module-vocabularies-quantity-kinds`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-4)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-5">5/161</div>|:exclamation:MinorFail|`module-vocabularies-quantity-kinds`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Too close terms|[Jump](#minorfail-outcome-number-5)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-6">6/161</div>|:exclamation:MinorFail|`module-vocabularies-permitting-stages`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-6)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-7">7/161</div>|:exclamation:MinorFail|`module-vocabularies-permitting-stages`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-7)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-8">8/161</div>|:exclamation:MinorFail|`module-vocabularies-permitting-stages`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-8)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-9">9/161</div>|:exclamation:MinorFail|`module-vocabularies-permitting-stages`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-9)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-10">10/161</div>|:exclamation:MinorFail|`module-vocabularies-permitting-stages`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-10)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-11">11/161</div>|:exclamation:MinorFail|`module-vocabularies-disciplines`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-11)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-12">12/161</div>|:exclamation:MinorFail|`module-vocabularies-disciplines`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-12)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-13">13/161</div>|:exclamation:MinorFail|`module-vocabularies-disciplines`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-13)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-14">14/161</div>|:exclamation:MinorFail|`module-vocabularies-disciplines`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-14)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-15">15/161</div>|:exclamation:MinorFail|`module-vocabularies-disciplines`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-15)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-16">16/161</div>|:exclamation:MinorFail|`module-vocabularies-check-method-operators`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-16)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-17">17/161</div>|:exclamation:MinorFail|`module-vocabularies-check-method-operators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-17)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-18">18/161</div>|:exclamation:MinorFail|`module-vocabularies-check-method-operators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-18)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-19">19/161</div>|:exclamation:MinorFail|`module-vocabularies-check-method-operators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-19)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-20">20/161</div>|:exclamation:MinorFail|`module-vocabularies-check-method-operators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-20)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-21">21/161</div>|:exclamation:MinorFail|`module-vocabularies-check-method-comparators`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-21)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-22">22/161</div>|:exclamation:MinorFail|`module-vocabularies-check-method-comparators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-22)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-23">23/161</div>|:exclamation:MinorFail|`module-vocabularies-check-method-comparators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-23)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-24">24/161</div>|:exclamation:MinorFail|`module-vocabularies-check-method-comparators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-24)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-25">25/161</div>|:exclamation:MinorFail|`module-vocabularies-check-method-comparators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-25)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-26">26/161</div>|:exclamation:MinorFail|`module-vocabularies-check-method-comparators`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Too close terms|[Jump](#minorfail-outcome-number-26)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-27">27/161</div>|:exclamation:MinorFail|`module-vocabularies-building-usage`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-27)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-28">28/161</div>|:exclamation:MinorFail|`module-vocabularies-building-usage`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-28)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-29">29/161</div>|:exclamation:MinorFail|`module-vocabularies-building-usage`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-29)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-30">30/161</div>|:exclamation:MinorFail|`module-vocabularies-building-usage`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-30)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-31">31/161</div>|:exclamation:MinorFail|`module-vocabularies-building-usage`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-31)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-32">32/161</div>|:exclamation:MinorFail|`module-vocabularies-building-usage`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-32)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-33">33/161</div>|:exclamation:MinorFail|`module-vocabularies-building-structure`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-33)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-34">34/161</div>|:exclamation:MinorFail|`module-vocabularies-building-structure`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-34)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-35">35/161</div>|:exclamation:MinorFail|`module-vocabularies-building-structure`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-35)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-36">36/161</div>|:exclamation:MinorFail|`module-vocabularies-building-structure`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-36)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-37">37/161</div>|:exclamation:MinorFail|`module-vocabularies-building-structure`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-37)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-38">38/161</div>|:exclamation:MinorFail|`module-vocabularies-building-structure`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-38)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-39">39/161</div>|:exclamation:MinorFail|`module-vocabularies-administrative-areas`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-39)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-40">40/161</div>|:exclamation:MinorFail|`module-vocabularies-administrative-areas`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-40)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-41">41/161</div>|:exclamation:MinorFail|`module-vocabularies-administrative-areas`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-41)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-42">42/161</div>|:exclamation:MinorFail|`module-vocabularies-administrative-areas`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-42)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-43">43/161</div>|:exclamation:MinorFail|`module-vocabularies-administrative-areas`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-43)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-44">44/161</div>|:exclamation:MinorFail|`module-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-44)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-45">45/161</div>|:exclamation:MinorFail|`module-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-45)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-46">46/161</div>|:exclamation:MinorFail|`module-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-46)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-47">47/161</div>|:exclamation:MinorFail|`module-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-47)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-48">48/161</div>|:exclamation:MinorFail|`module-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-48)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-49">49/161</div>|:exclamation:MinorFail|`module-table`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-49)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-50">50/161</div>|:exclamation:MinorFail|`module-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-50)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-51">51/161</div>|:exclamation:MinorFail|`module-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-51)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-52">52/161</div>|:exclamation:MinorFail|`module-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-52)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-53">53/161</div>|:exclamation:MinorFail|`module-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-53)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-54">54/161</div>|:exclamation:MinorFail|`module-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-54)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-55">55/161</div>|:exclamation:MinorFail|`module-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-55)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-56">56/161</div>|:exclamation:MinorFail|`module-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-56)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-57">57/161</div>|:exclamation:MinorFail|`module-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-57)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-58">58/161</div>|:exclamation:MinorFail|`module-statement`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Too close terms|[Jump](#minorfail-outcome-number-58)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-59">59/161</div>|:exclamation:MinorFail|`module-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-59)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-60">60/161</div>|:exclamation:MinorFail|`module-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-60)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-61">61/161</div>|:exclamation:MinorFail|`module-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-61)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-62">62/161</div>|:exclamation:MinorFail|`module-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-62)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-63">63/161</div>|:exclamation:MinorFail|`module-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-63)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-64">64/161</div>|:exclamation:MinorFail|`module-model`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-64)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-65">65/161</div>|:exclamation:MinorFail|`module-model`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Term not referenced to a module|[Jump](#minorfail-outcome-number-65)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-66">66/161</div>|:exclamation:MinorFail|`module-legal-verifier`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-66)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-67">67/161</div>|:exclamation:MinorFail|`module-legal-verifier`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-67)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-68">68/161</div>|:exclamation:MinorFail|`module-legal-verifier`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-68)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-69">69/161</div>|:exclamation:MinorFail|`module-legal-verifier`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-69)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-70">70/161</div>|:exclamation:MinorFail|`module-feature-of-interest`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domain out of vocabulary|[Jump](#minorfail-outcome-number-70)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-71">71/161</div>|:exclamation:MinorFail|`module-feature-of-interest`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-71)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-72">72/161</div>|:exclamation:MinorFail|`module-evidence`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-72)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-73">73/161</div>|:exclamation:MinorFail|`module-evidence`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-73)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-74">74/161</div>|:exclamation:MinorFail|`module-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-74)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-75">75/161</div>|:exclamation:MinorFail|`module-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-75)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-76">76/161</div>|:exclamation:MinorFail|`module-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-76)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-77">77/161</div>|:exclamation:MinorFail|`module-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-77)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-78">78/161</div>|:exclamation:MinorFail|`module-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-78)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-79">79/161</div>|:exclamation:MinorFail|`module-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-79)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-80">80/161</div>|:exclamation:MinorFail|`module-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-80)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-81">81/161</div>|:exclamation:MinorFail|`module-document`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-81)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-82">82/161</div>|:exclamation:MinorFail|`module-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-82)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-83">83/161</div>|:exclamation:MinorFail|`module-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-83)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-84">84/161</div>|:exclamation:MinorFail|`module-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-84)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-85">85/161</div>|:exclamation:MinorFail|`module-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-85)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-86">86/161</div>|:exclamation:MinorFail|`module-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-86)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-87">87/161</div>|:exclamation:MinorFail|`module-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-87)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-88">88/161</div>|:exclamation:MinorFail|`module-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-88)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-89">89/161</div>|:exclamation:MinorFail|`module-compliance-verification-report`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-89)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-90">90/161</div>|:exclamation:MinorFail|`module-compliance-verification-report`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Too close terms|[Jump](#minorfail-outcome-number-90)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-91">91/161</div>|:exclamation:MinorFail|`module-checking-act`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domain out of vocabulary|[Jump](#minorfail-outcome-number-91)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-92">92/161</div>|:exclamation:MinorFail|`module-checking-act`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-92)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-93">93/161</div>|:exclamation:MinorFail|`module-checking-act`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-93)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-94">94/161</div>|:exclamation:MinorFail|`module-check-method`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domain out of vocabulary|[Jump](#minorfail-outcome-number-94)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-95">95/161</div>|:exclamation:MinorFail|`module-check-method`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-95)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-96">96/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-96)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-97">97/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-97)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-98">98/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-98)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-99">99/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-99)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-100">100/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-100)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-101">101/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-101)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-102">102/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-102)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-103">103/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-103)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-104">104/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-104)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-105">105/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-105)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-106">106/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-106)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-107">107/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-107)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-108">108/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-108)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-109">109/161</div>|:exclamation:MinorFail|`module-check-method`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-109)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-110">110/161</div>|:exclamation:MinorFail|`module-check-method`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Term not referenced to a module|[Jump](#minorfail-outcome-number-110)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-111">111/161</div>|:exclamation:MinorFail|`module-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-111)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-112">112/161</div>|:exclamation:MinorFail|`module-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-112)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-113">113/161</div>|:exclamation:MinorFail|`module-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-113)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-114">114/161</div>|:exclamation:MinorFail|`module-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-114)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-115">115/161</div>|:exclamation:MinorFail|`module-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-115)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-116">116/161</div>|:exclamation:MinorFail|`module-aec3po`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-116)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-117">117/161</div>|:exclamation:MinorFail|`module-aec3po`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Term not referenced to a module|[Jump](#minorfail-outcome-number-117)|
 |[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-118">118/161</div>|:exclamation:MinorFail|`all-modules`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domain out of vocabulary|[Jump](#minorfail-outcome-number-118)|
 |[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-119">119/161</div>|:exclamation:MinorFail|`all-modules`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Range out of vocabulary|[Jump](#minorfail-outcome-number-119)|
 |[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-120">120/161</div>|:exclamation:MinorFail|`all-modules`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|Terms not labeled|[Jump](#minorfail-outcome-number-120)|
@@ -237,9 +237,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-quantity-kinds|
+|Name|module-vocabularies-quantity-kinds|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
 
 #### Criterion detail
@@ -270,9 +270,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-quantity-kinds|
+|Name|module-vocabularies-quantity-kinds|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
 
 #### Criterion detail
@@ -296,9 +296,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-quantity-kinds|
+|Name|module-vocabularies-quantity-kinds|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
 
 #### Criterion detail
@@ -322,9 +322,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-quantity-kinds|
+|Name|module-vocabularies-quantity-kinds|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
 
 #### Criterion detail
@@ -348,9 +348,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-quantity-kinds|
+|Name|module-vocabularies-quantity-kinds|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
 
 #### Criterion detail
@@ -376,9 +376,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-permitting-stages|
+|Name|module-vocabularies-permitting-stages|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
 
 #### Criterion detail
@@ -393,7 +393,7 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |[Section top](#minorfail-outcome-number-6)|Identifier|`range-out-of-vocabulary`|
 |[Section top](#minorfail-outcome-number-6)|Title|Range&#32;out&#32;of&#32;vocabulary|
 |[Section top](#minorfail-outcome-number-6)|Description|Some&#32;properties&#32;have&#32;a&#32;range&#32;out&#32;of&#32;the&#32;ontology|
-|[Section top](#minorfail-outcome-number-6)|Pointer|<pre lang="Turtle"><code>:hasPermittingStage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;permitting&#32;stage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;to&#32;the&#32;permitting&#32;stage&#32;this&#32;entity&#32;pertains&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:permitting&lowbar;stage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nfd6c027292f24febbf9920729a244c55b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nfd6c027292f24febbf9920729a244c55b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nfd6c027292f24febbf9920729a244c55b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentProperty&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;.  &#10;&lowbar;:nfd6c027292f24febbf9920729a244c55b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:PermittingStageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-6)|Pointer|<pre lang="Turtle"><code>:hasPermittingStage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;permitting&#32;stage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;to&#32;the&#32;permitting&#32;stage&#32;this&#32;entity&#32;pertains&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:permitting&lowbar;stage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nfd269806845b4db09c281ab585e215c0b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nfd269806845b4db09c281ab585e215c0b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nfd269806845b4db09c281ab585e215c0b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentProperty&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;.  &#10;&lowbar;:nfd269806845b4db09c281ab585e215c0b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:PermittingStageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-6)|Pointer|http://www.w3.org/2004/02/skos/core#Concept|
 
 ***
@@ -403,9 +403,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-permitting-stages|
+|Name|module-vocabularies-permitting-stages|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
 
 #### Criterion detail
@@ -430,9 +430,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-permitting-stages|
+|Name|module-vocabularies-permitting-stages|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
 
 #### Criterion detail
@@ -456,9 +456,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-permitting-stages|
+|Name|module-vocabularies-permitting-stages|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
 
 #### Criterion detail
@@ -482,9 +482,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-permitting-stages|
+|Name|module-vocabularies-permitting-stages|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
 
 #### Criterion detail
@@ -508,9 +508,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-disciplines|
+|Name|module-vocabularies-disciplines|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
 
 #### Criterion detail
@@ -525,7 +525,7 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |[Section top](#minorfail-outcome-number-11)|Identifier|`range-out-of-vocabulary`|
 |[Section top](#minorfail-outcome-number-11)|Title|Range&#32;out&#32;of&#32;vocabulary|
 |[Section top](#minorfail-outcome-number-11)|Description|Some&#32;properties&#32;have&#32;a&#32;range&#32;out&#32;of&#32;the&#32;ontology|
-|[Section top](#minorfail-outcome-number-11)|Pointer|<pre lang="Turtle"><code>:hasDiscipline&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;discipline&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;(procedure,&#32;statement,&#32;verifier,&#32;...)&#32;to&#32;the...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:discipline&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n44c9384d349b4d27a65bb63d7ad8cd57b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n44c9384d349b4d27a65bb63d7ad8cd57b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n44c9384d349b4d27a65bb63d7ad8cd57b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;.  &#10;&lowbar;:n44c9384d349b4d27a65bb63d7ad8cd57b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:DisciplineNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-11)|Pointer|<pre lang="Turtle"><code>:hasDiscipline&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;discipline&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;(procedure,&#32;statement,&#32;verifier,&#32;...)&#32;to&#32;the...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:discipline&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n5e07b71279f54a67ba01250de8269a61b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n5e07b71279f54a67ba01250de8269a61b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n5e07b71279f54a67ba01250de8269a61b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;.  &#10;&lowbar;:n5e07b71279f54a67ba01250de8269a61b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:DisciplineNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-11)|Pointer|http://www.w3.org/2004/02/skos/core#Concept|
 
 ***
@@ -535,9 +535,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-disciplines|
+|Name|module-vocabularies-disciplines|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
 
 #### Criterion detail
@@ -565,9 +565,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-disciplines|
+|Name|module-vocabularies-disciplines|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
 
 #### Criterion detail
@@ -591,9 +591,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-disciplines|
+|Name|module-vocabularies-disciplines|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
 
 #### Criterion detail
@@ -617,9 +617,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-disciplines|
+|Name|module-vocabularies-disciplines|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
 
 #### Criterion detail
@@ -643,9 +643,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-check-method-operators|
+|Name|module-vocabularies-check-method-operators|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
 
 #### Criterion detail
@@ -675,9 +675,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-check-method-operators|
+|Name|module-vocabularies-check-method-operators|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
 
 #### Criterion detail
@@ -701,9 +701,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-check-method-operators|
+|Name|module-vocabularies-check-method-operators|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
 
 #### Criterion detail
@@ -727,9 +727,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-check-method-operators|
+|Name|module-vocabularies-check-method-operators|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
 
 #### Criterion detail
@@ -753,9 +753,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-check-method-operators|
+|Name|module-vocabularies-check-method-operators|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
 
 #### Criterion detail
@@ -779,9 +779,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-check-method-comparators|
+|Name|module-vocabularies-check-method-comparators|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
 
 #### Criterion detail
@@ -812,9 +812,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-check-method-comparators|
+|Name|module-vocabularies-check-method-comparators|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
 
 #### Criterion detail
@@ -838,9 +838,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-check-method-comparators|
+|Name|module-vocabularies-check-method-comparators|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
 
 #### Criterion detail
@@ -864,9 +864,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-check-method-comparators|
+|Name|module-vocabularies-check-method-comparators|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
 
 #### Criterion detail
@@ -890,9 +890,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-check-method-comparators|
+|Name|module-vocabularies-check-method-comparators|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
 
 #### Criterion detail
@@ -916,9 +916,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-check-method-comparators|
+|Name|module-vocabularies-check-method-comparators|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
 
 #### Criterion detail
@@ -947,9 +947,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-usage|
+|Name|module-vocabularies-building-usage|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
 
 #### Criterion detail
@@ -964,8 +964,8 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |[Section top](#minorfail-outcome-number-27)|Identifier|`range-out-of-vocabulary`|
 |[Section top](#minorfail-outcome-number-27)|Title|Range&#32;out&#32;of&#32;vocabulary|
 |[Section top](#minorfail-outcome-number-27)|Description|Some&#32;properties&#32;have&#32;a&#32;range&#32;out&#32;of&#32;the&#32;ontology|
-|[Section top](#minorfail-outcome-number-27)|Pointer|<pre lang="Turtle"><code>:forBuildingUsage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,&#32;or&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:na1115b2f76a94270b3d2dc2ce60a85b2b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:na1115b2f76a94270b3d2dc2ce60a85b2b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:na1115b2f76a94270b3d2dc2ce60a85b2b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:na1115b2f76a94270b3d2dc2ce60a85b2b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-27)|Pointer|<pre lang="Turtle"><code>:hasBuildingUsage&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;prop...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n4bb81fc0d09b4db692ffcfb556bc290db1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n4bb81fc0d09b4db692ffcfb556bc290db1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n4bb81fc0d09b4db692ffcfb556bc290db1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n4bb81fc0d09b4db692ffcfb556bc290db1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-27)|Pointer|<pre lang="Turtle"><code>:forBuildingUsage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,&#32;or&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n2615b41544814b3d91129e68fa97fdf3b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n2615b41544814b3d91129e68fa97fdf3b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n2615b41544814b3d91129e68fa97fdf3b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:n2615b41544814b3d91129e68fa97fdf3b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-27)|Pointer|<pre lang="Turtle"><code>:hasBuildingUsage&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;prop...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n01a8ff921e954942b17f485149c59741b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n01a8ff921e954942b17f485149c59741b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n01a8ff921e954942b17f485149c59741b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n01a8ff921e954942b17f485149c59741b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-27)|Pointer|http://www.w3.org/2004/02/skos/core#Concept|
 
 ***
@@ -975,9 +975,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-usage|
+|Name|module-vocabularies-building-usage|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
 
 #### Criterion detail
@@ -1003,9 +1003,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-usage|
+|Name|module-vocabularies-building-usage|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
 
 #### Criterion detail
@@ -1029,9 +1029,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-usage|
+|Name|module-vocabularies-building-usage|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
 
 #### Criterion detail
@@ -1055,9 +1055,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-usage|
+|Name|module-vocabularies-building-usage|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
 
 #### Criterion detail
@@ -1081,9 +1081,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-usage|
+|Name|module-vocabularies-building-usage|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
 
 #### Criterion detail
@@ -1107,9 +1107,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-structure|
+|Name|module-vocabularies-building-structure|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
 
 #### Criterion detail
@@ -1124,8 +1124,8 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |[Section top](#minorfail-outcome-number-33)|Identifier|`range-out-of-vocabulary`|
 |[Section top](#minorfail-outcome-number-33)|Title|Range&#32;out&#32;of&#32;vocabulary|
 |[Section top](#minorfail-outcome-number-33)|Description|Some&#32;properties&#32;have&#32;a&#32;range&#32;out&#32;of&#32;the&#32;ontology|
-|[Section top](#minorfail-outcome-number-33)|Pointer|<pre lang="Turtle"><code>:forBuildingStructure&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nc74c64fcbab74fb397a9a8e5684aaf37b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nc74c64fcbab74fb397a9a8e5684aaf37b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nc74c64fcbab74fb397a9a8e5684aaf37b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:nc74c64fcbab74fb397a9a8e5684aaf37b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-33)|Pointer|<pre lang="Turtle"><code>:hasBuildingStructure&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n65b176c9e4444d4d821973949c027dafb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n65b176c9e4444d4d821973949c027dafb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n65b176c9e4444d4d821973949c027dafb1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n65b176c9e4444d4d821973949c027dafb1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-33)|Pointer|<pre lang="Turtle"><code>:forBuildingStructure&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n823b910b5af4415888fd45c340ebb05db1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n823b910b5af4415888fd45c340ebb05db1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n823b910b5af4415888fd45c340ebb05db1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:n823b910b5af4415888fd45c340ebb05db1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-33)|Pointer|<pre lang="Turtle"><code>:hasBuildingStructure&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n885a595996314ffcab929bd7728d768ab1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n885a595996314ffcab929bd7728d768ab1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n885a595996314ffcab929bd7728d768ab1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n885a595996314ffcab929bd7728d768ab1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-33)|Pointer|http://www.w3.org/2004/02/skos/core#Concept|
 
 ***
@@ -1135,9 +1135,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-structure|
+|Name|module-vocabularies-building-structure|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
 
 #### Criterion detail
@@ -1162,9 +1162,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-structure|
+|Name|module-vocabularies-building-structure|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
 
 #### Criterion detail
@@ -1188,9 +1188,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-structure|
+|Name|module-vocabularies-building-structure|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
 
 #### Criterion detail
@@ -1214,9 +1214,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-structure|
+|Name|module-vocabularies-building-structure|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
 
 #### Criterion detail
@@ -1240,9 +1240,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-building-structure|
+|Name|module-vocabularies-building-structure|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
 
 #### Criterion detail
@@ -1266,9 +1266,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-administrative-areas|
+|Name|module-vocabularies-administrative-areas|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
 
 #### Criterion detail
@@ -1283,9 +1283,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |[Section top](#minorfail-outcome-number-39)|Identifier|`range-out-of-vocabulary`|
 |[Section top](#minorfail-outcome-number-39)|Title|Range&#32;out&#32;of&#32;vocabulary|
 |[Section top](#minorfail-outcome-number-39)|Description|Some&#32;properties&#32;have&#32;a&#32;range&#32;out&#32;of&#32;the&#32;ontology|
-|[Section top](#minorfail-outcome-number-39)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nbf83d28ea4a64284af7b7fdd99740079b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nbf83d28ea4a64284af7b7fdd99740079b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nbf83d28ea4a64284af7b7fdd99740079b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:nbf83d28ea4a64284af7b7fdd99740079b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-39)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:na88a442ff004448a905bf679039baf1cb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:na88a442ff004448a905bf679039baf1cb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:na88a442ff004448a905bf679039baf1cb1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:na88a442ff004448a905bf679039baf1cb1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-39)|Pointer|<pre lang="Turtle"><code>:AdministrativeArea&#32;rdfs:subClassOf&#32;&lowbar;:nf8fe30113dce48ff87056a71905a4630b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:nf8fe30113dce48ff87056a71905a4630b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;&lowbar;:nf8fe30113dce48ff87056a71905a4630b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;.  &#10;&lowbar;:nf8fe30113dce48ff87056a71905a4630b3&#32;rdf:first&#32;skos:Concept&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;(&#32;&lowbar;:nf8fe30113dce48ff87056a71905a4630b1&#32;)&#32;.  &#10;&lowbar;:nf8fe30113dce48ff87056a71905a4630b2&#32;rdfs:subClassOf&#32;&lowbar;:nf8fe30113dce48ff87056a71905a4630b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;&lowbar;:nf8fe30113dce48ff87056a71905a4630b3&#32;.  &#10;&lowbar;:nf8fe30113dce48ff87056a71905a4630b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;aec3po:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-39)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n22213ef90f004edbae448d79a1fd1fcbb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n22213ef90f004edbae448d79a1fd1fcbb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n22213ef90f004edbae448d79a1fd1fcbb1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:n22213ef90f004edbae448d79a1fd1fcbb1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-39)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n234a4c9499e6421cba26f83330630006b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n234a4c9499e6421cba26f83330630006b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n234a4c9499e6421cba26f83330630006b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:n234a4c9499e6421cba26f83330630006b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-39)|Pointer|<pre lang="Turtle"><code>:AdministrativeArea&#32;rdfs:subClassOf&#32;&lowbar;:n74cfe044dac14c9a8afab8528406c4f4b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n74cfe044dac14c9a8afab8528406c4f4b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;&lowbar;:n74cfe044dac14c9a8afab8528406c4f4b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;.  &#10;&lowbar;:n74cfe044dac14c9a8afab8528406c4f4b3&#32;rdf:first&#32;skos:Concept&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;(&#32;&lowbar;:n74cfe044dac14c9a8afab8528406c4f4b1&#32;)&#32;.  &#10;&lowbar;:n74cfe044dac14c9a8afab8528406c4f4b2&#32;rdfs:subClassOf&#32;&lowbar;:n74cfe044dac14c9a8afab8528406c4f4b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;&lowbar;:n74cfe044dac14c9a8afab8528406c4f4b3&#32;.  &#10;&lowbar;:n74cfe044dac14c9a8afab8528406c4f4b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;aec3po:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-39)|Pointer|http://www.w3.org/2004/02/skos/core#Concept|
 
 ***
@@ -1295,9 +1295,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-administrative-areas|
+|Name|module-vocabularies-administrative-areas|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
 
 #### Criterion detail
@@ -1327,9 +1327,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-administrative-areas|
+|Name|module-vocabularies-administrative-areas|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
 
 #### Criterion detail
@@ -1353,9 +1353,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-administrative-areas|
+|Name|module-vocabularies-administrative-areas|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
 
 #### Criterion detail
@@ -1379,9 +1379,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-vocabularies-administrative-areas|
+|Name|module-vocabularies-administrative-areas|
 |----|----|
-|Title|Standalone&#32;module&#32;src/vocabularies/administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
 
 #### Criterion detail
@@ -1405,9 +1405,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-table|
+|Name|module-table|
 |----|----|
-|Title|Standalone&#32;module&#32;src/table.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
 
 #### Criterion detail
@@ -1433,9 +1433,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-table|
+|Name|module-table|
 |----|----|
-|Title|Standalone&#32;module&#32;src/table.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
 
 #### Criterion detail
@@ -1461,9 +1461,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-table|
+|Name|module-table|
 |----|----|
-|Title|Standalone&#32;module&#32;src/table.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
 
 #### Criterion detail
@@ -1489,9 +1489,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-table|
+|Name|module-table|
 |----|----|
-|Title|Standalone&#32;module&#32;src/table.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
 
 #### Criterion detail
@@ -1517,9 +1517,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-table|
+|Name|module-table|
 |----|----|
-|Title|Standalone&#32;module&#32;src/table.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
 
 #### Criterion detail
@@ -1545,9 +1545,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-table|
+|Name|module-table|
 |----|----|
-|Title|Standalone&#32;module&#32;src/table.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
 
 #### Criterion detail
@@ -1573,9 +1573,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-statement|
+|Name|module-statement|
 |----|----|
-|Title|Standalone&#32;module&#32;src/statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
 
 #### Criterion detail
@@ -1601,9 +1601,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-statement|
+|Name|module-statement|
 |----|----|
-|Title|Standalone&#32;module&#32;src/statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
 
 #### Criterion detail
@@ -1627,9 +1627,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-statement|
+|Name|module-statement|
 |----|----|
-|Title|Standalone&#32;module&#32;src/statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
 
 #### Criterion detail
@@ -1653,9 +1653,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-statement|
+|Name|module-statement|
 |----|----|
-|Title|Standalone&#32;module&#32;src/statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
 
 #### Criterion detail
@@ -1681,9 +1681,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-statement|
+|Name|module-statement|
 |----|----|
-|Title|Standalone&#32;module&#32;src/statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
 
 #### Criterion detail
@@ -1707,9 +1707,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-statement|
+|Name|module-statement|
 |----|----|
-|Title|Standalone&#32;module&#32;src/statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
 
 #### Criterion detail
@@ -1733,9 +1733,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-statement|
+|Name|module-statement|
 |----|----|
-|Title|Standalone&#32;module&#32;src/statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
 
 #### Criterion detail
@@ -1761,9 +1761,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-statement|
+|Name|module-statement|
 |----|----|
-|Title|Standalone&#32;module&#32;src/statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
 
 #### Criterion detail
@@ -1787,9 +1787,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-statement|
+|Name|module-statement|
 |----|----|
-|Title|Standalone&#32;module&#32;src/statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
 
 #### Criterion detail
@@ -1814,9 +1814,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-model|
+|Name|module-model|
 |----|----|
-|Title|Standalone&#32;module&#32;src/model.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
 
 #### Criterion detail
@@ -1840,9 +1840,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-model|
+|Name|module-model|
 |----|----|
-|Title|Standalone&#32;module&#32;src/model.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
 
 #### Criterion detail
@@ -1866,9 +1866,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-model|
+|Name|module-model|
 |----|----|
-|Title|Standalone&#32;module&#32;src/model.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
 
 #### Criterion detail
@@ -1892,9 +1892,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-model|
+|Name|module-model|
 |----|----|
-|Title|Standalone&#32;module&#32;src/model.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
 
 #### Criterion detail
@@ -1918,9 +1918,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-model|
+|Name|module-model|
 |----|----|
-|Title|Standalone&#32;module&#32;src/model.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
 
 #### Criterion detail
@@ -1944,9 +1944,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-model|
+|Name|module-model|
 |----|----|
-|Title|Standalone&#32;module&#32;src/model.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
 
 #### Criterion detail
@@ -1970,9 +1970,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-model|
+|Name|module-model|
 |----|----|
-|Title|Standalone&#32;module&#32;src/model.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
 
 #### Criterion detail
@@ -2004,9 +2004,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-legal-verifier|
+|Name|module-legal-verifier|
 |----|----|
-|Title|Standalone&#32;module&#32;src/legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
 
 #### Criterion detail
@@ -2030,9 +2030,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-legal-verifier|
+|Name|module-legal-verifier|
 |----|----|
-|Title|Standalone&#32;module&#32;src/legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
 
 #### Criterion detail
@@ -2056,9 +2056,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-legal-verifier|
+|Name|module-legal-verifier|
 |----|----|
-|Title|Standalone&#32;module&#32;src/legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
 
 #### Criterion detail
@@ -2082,9 +2082,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-legal-verifier|
+|Name|module-legal-verifier|
 |----|----|
-|Title|Standalone&#32;module&#32;src/legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
 
 #### Criterion detail
@@ -2108,9 +2108,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-feature-of-interest|
+|Name|module-feature-of-interest|
 |----|----|
-|Title|Standalone&#32;module&#32;src/feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
 
 #### Criterion detail
@@ -2138,9 +2138,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-feature-of-interest|
+|Name|module-feature-of-interest|
 |----|----|
-|Title|Standalone&#32;module&#32;src/feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
 
 #### Criterion detail
@@ -2165,9 +2165,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-evidence|
+|Name|module-evidence|
 |----|----|
-|Title|Standalone&#32;module&#32;src/evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
 
 #### Criterion detail
@@ -2192,9 +2192,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-evidence|
+|Name|module-evidence|
 |----|----|
-|Title|Standalone&#32;module&#32;src/evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
 
 #### Criterion detail
@@ -2219,9 +2219,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-document|
+|Name|module-document|
 |----|----|
-|Title|Standalone&#32;module&#32;src/document.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
 
 #### Criterion detail
@@ -2246,9 +2246,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-document|
+|Name|module-document|
 |----|----|
-|Title|Standalone&#32;module&#32;src/document.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
 
 #### Criterion detail
@@ -2272,9 +2272,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-document|
+|Name|module-document|
 |----|----|
-|Title|Standalone&#32;module&#32;src/document.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
 
 #### Criterion detail
@@ -2299,9 +2299,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-document|
+|Name|module-document|
 |----|----|
-|Title|Standalone&#32;module&#32;src/document.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
 
 #### Criterion detail
@@ -2326,9 +2326,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-document|
+|Name|module-document|
 |----|----|
-|Title|Standalone&#32;module&#32;src/document.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
 
 #### Criterion detail
@@ -2352,9 +2352,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-document|
+|Name|module-document|
 |----|----|
-|Title|Standalone&#32;module&#32;src/document.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
 
 #### Criterion detail
@@ -2379,9 +2379,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-document|
+|Name|module-document|
 |----|----|
-|Title|Standalone&#32;module&#32;src/document.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
 
 #### Criterion detail
@@ -2406,9 +2406,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-document|
+|Name|module-document|
 |----|----|
-|Title|Standalone&#32;module&#32;src/document.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
 
 #### Criterion detail
@@ -2432,9 +2432,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-compliance-verification-report|
+|Name|module-compliance-verification-report|
 |----|----|
-|Title|Standalone&#32;module&#32;src/compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
 
 #### Criterion detail
@@ -2459,9 +2459,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-compliance-verification-report|
+|Name|module-compliance-verification-report|
 |----|----|
-|Title|Standalone&#32;module&#32;src/compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
 
 #### Criterion detail
@@ -2485,9 +2485,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-compliance-verification-report|
+|Name|module-compliance-verification-report|
 |----|----|
-|Title|Standalone&#32;module&#32;src/compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
 
 #### Criterion detail
@@ -2513,9 +2513,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-compliance-verification-report|
+|Name|module-compliance-verification-report|
 |----|----|
-|Title|Standalone&#32;module&#32;src/compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
 
 #### Criterion detail
@@ -2540,9 +2540,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-compliance-verification-report|
+|Name|module-compliance-verification-report|
 |----|----|
-|Title|Standalone&#32;module&#32;src/compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
 
 #### Criterion detail
@@ -2566,9 +2566,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-compliance-verification-report|
+|Name|module-compliance-verification-report|
 |----|----|
-|Title|Standalone&#32;module&#32;src/compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
 
 #### Criterion detail
@@ -2594,9 +2594,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-compliance-verification-report|
+|Name|module-compliance-verification-report|
 |----|----|
-|Title|Standalone&#32;module&#32;src/compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
 
 #### Criterion detail
@@ -2621,9 +2621,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-compliance-verification-report|
+|Name|module-compliance-verification-report|
 |----|----|
-|Title|Standalone&#32;module&#32;src/compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
 
 #### Criterion detail
@@ -2649,9 +2649,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-compliance-verification-report|
+|Name|module-compliance-verification-report|
 |----|----|
-|Title|Standalone&#32;module&#32;src/compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
 
 #### Criterion detail
@@ -2676,9 +2676,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-checking-act|
+|Name|module-checking-act|
 |----|----|
-|Title|Standalone&#32;module&#32;src/checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
 
 #### Criterion detail
@@ -2706,9 +2706,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-checking-act|
+|Name|module-checking-act|
 |----|----|
-|Title|Standalone&#32;module&#32;src/checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
 
 #### Criterion detail
@@ -2732,9 +2732,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-checking-act|
+|Name|module-checking-act|
 |----|----|
-|Title|Standalone&#32;module&#32;src/checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
 
 #### Criterion detail
@@ -2761,9 +2761,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -2791,9 +2791,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -2821,9 +2821,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -2848,9 +2848,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -2874,9 +2874,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -2900,9 +2900,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -2927,9 +2927,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -2954,9 +2954,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -2980,9 +2980,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -3006,9 +3006,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -3032,9 +3032,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -3058,9 +3058,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -3085,9 +3085,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -3111,9 +3111,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -3137,9 +3137,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -3163,9 +3163,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -3189,9 +3189,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-check-method|
+|Name|module-check-method|
 |----|----|
-|Title|Standalone&#32;module&#32;src/check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
 
 #### Criterion detail
@@ -3216,9 +3216,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-aec3po|
+|Name|module-aec3po|
 |----|----|
-|Title|Standalone&#32;module&#32;src/aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
 
 #### Criterion detail
@@ -3242,9 +3242,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-aec3po|
+|Name|module-aec3po|
 |----|----|
-|Title|Standalone&#32;module&#32;src/aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
 
 #### Criterion detail
@@ -3268,9 +3268,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-aec3po|
+|Name|module-aec3po|
 |----|----|
-|Title|Standalone&#32;module&#32;src/aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
 
 #### Criterion detail
@@ -3294,9 +3294,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-aec3po|
+|Name|module-aec3po|
 |----|----|
-|Title|Standalone&#32;module&#32;src/aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
 
 #### Criterion detail
@@ -3320,9 +3320,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-aec3po|
+|Name|module-aec3po|
 |----|----|
-|Title|Standalone&#32;module&#32;src/aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
 
 #### Criterion detail
@@ -3346,9 +3346,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-aec3po|
+|Name|module-aec3po|
 |----|----|
-|Title|Standalone&#32;module&#32;src/aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
 
 #### Criterion detail
@@ -3372,9 +3372,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-aec3po|
+|Name|module-aec3po|
 |----|----|
-|Title|Standalone&#32;module&#32;src/aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
 |Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
 
 #### Criterion detail
@@ -3426,14 +3426,14 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasReport&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;report&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;checking&#32;act&#32;to&#32;the&#32;resulting&#32;compliance&#32;verificatio...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:usedMethod&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:CheckMethod&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:madeBy&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:ProcessVerifier&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:checked&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:hasReport&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:ComplianceVerificationReport&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckingAct&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:checking&lowbar;act&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:conforms&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:ComplianceVerificationReport&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:operationalizes&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;operationalizes&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;check&#32;method&#32;to&#32;a&#32;check&#32;statement&#32;in&#32;a&#32;document&#32;that...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:allValuesFrom&#32;:DocumentSubdivision&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:hasSubdivision&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;owl:unionOf&#32;(&#32;:Document&#32;:DocumentSubdivision&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckStatement,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:DocumentSubdivision,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Statement&#32;;  &#10; &#32; &#32; &#32; &#32;owl:inverseOf&#32;:isOperationalizedBy&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method</code></pre>|
-|[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab6&#32;.  &#10;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab7&#32;.  &#10;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab8&#32;.  &#10;&lowbar;:n218ae2b85f2b47bdb85f7e4e76a2560ab2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab6&#32;.  &#10;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab7&#32;.  &#10;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab8&#32;.  &#10;&lowbar;:n8d5bac54e77c4dc4a6c283a41faf723ab2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasNestedValue&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;hasNestedValue&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;TBD&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb6&#32;.  &#10;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb7&#32;.  &#10;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb8&#32;.  &#10;&lowbar;:n11d99d9266fe4a79bd48283a3f373e8cb2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n09800c3927ab4088b73e07e1c21fa9b7b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n09800c3927ab4088b73e07e1c21fa9b7b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:n09800c3927ab4088b73e07e1c21fa9b7b2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n09800c3927ab4088b73e07e1c21fa9b7b3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n09800c3927ab4088b73e07e1c21fa9b7b2&#32;.  &#10;&lowbar;:n09800c3927ab4088b73e07e1c21fa9b7b4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n09800c3927ab4088b73e07e1c21fa9b7b3&#32;.  &#10;&lowbar;:n09800c3927ab4088b73e07e1c21fa9b7b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n09800c3927ab4088b73e07e1c21fa9b7b4&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b6&#32;.  &#10;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b7&#32;.  &#10;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b8&#32;.  &#10;&lowbar;:n4107b8d16b604d30a92ed8a221037ed7b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n0a28f1cf2fde4e2cb8ef49612f69c05bb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n0a28f1cf2fde4e2cb8ef49612f69c05bb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:n0a28f1cf2fde4e2cb8ef49612f69c05bb2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n0a28f1cf2fde4e2cb8ef49612f69c05bb3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n0a28f1cf2fde4e2cb8ef49612f69c05bb2&#32;.  &#10;&lowbar;:n0a28f1cf2fde4e2cb8ef49612f69c05bb4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n0a28f1cf2fde4e2cb8ef49612f69c05bb3&#32;.  &#10;&lowbar;:n0a28f1cf2fde4e2cb8ef49612f69c05bb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n0a28f1cf2fde4e2cb8ef49612f69c05bb4&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object</code></pre>|
-|[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:neea2f620c40141908fd84811cc1d70e1b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:neea2f620c40141908fd84811cc1d70e1b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:neea2f620c40141908fd84811cc1d70e1b2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:neea2f620c40141908fd84811cc1d70e1b3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:neea2f620c40141908fd84811cc1d70e1b2&#32;.  &#10;&lowbar;:neea2f620c40141908fd84811cc1d70e1b4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:neea2f620c40141908fd84811cc1d70e1b3&#32;.  &#10;&lowbar;:neea2f620c40141908fd84811cc1d70e1b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:neea2f620c40141908fd84811cc1d70e1b4&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:nf83fc6879c904a248e308b72292558f3b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nf83fc6879c904a248e308b72292558f3b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:nf83fc6879c904a248e308b72292558f3b2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:nf83fc6879c904a248e308b72292558f3b3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nf83fc6879c904a248e308b72292558f3b2&#32;.  &#10;&lowbar;:nf83fc6879c904a248e308b72292558f3b4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nf83fc6879c904a248e308b72292558f3b3&#32;.  &#10;&lowbar;:nf83fc6879c904a248e308b72292558f3b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:nf83fc6879c904a248e308b72292558f3b4&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>https://saref.etsi.org/core/FeatureOfInterest</code></pre>|
-|[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:na2b9d00b74c24f7c80f4abee9bc445a4b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:na2b9d00b74c24f7c80f4abee9bc445a4b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:na2b9d00b74c24f7c80f4abee9bc445a4b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:na2b9d00b74c24f7c80f4abee9bc445a4b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n374b7b73a22344db921443764580ed9db5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n374b7b73a22344db921443764580ed9db5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n374b7b73a22344db921443764580ed9db5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n374b7b73a22344db921443764580ed9db5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-118)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality</code></pre>|
 
 ***
@@ -3463,30 +3463,30 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:usedMethod&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;used&#32;method&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;checking&#32;act&#32;to&#32;the&#32;method&#32;it&#32;used&#32;(a&#32;aec3po:CheckMe...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:usedMethod&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:CheckMethod&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:madeBy&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:ProcessVerifier&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:checked&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:hasReport&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:ComplianceVerificationReport&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckingAct&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:checking&lowbar;act&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method</code></pre>|
 |[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:isOperationalizedBy&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;is&#32;operationalized&#32;by&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;check&#32;statement&#32;in&#32;a&#32;document&#32;to&#32;a&#32;check&#32;method&#32;that...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:allValuesFrom&#32;:DocumentSubdivision&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:hasSubdivision&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;owl:unionOf&#32;(&#32;:Document&#32;:DocumentSubdivision&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckStatement,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:DocumentSubdivision,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Statement&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;owl:inverseOf&#32;:operationalizes&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n9929c8ee88694909981f4d4cca15e417b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n9929c8ee88694909981f4d4cca15e417b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n9929c8ee88694909981f4d4cca15e417b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n9929c8ee88694909981f4d4cca15e417b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n9929c8ee88694909981f4d4cca15e417b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n9929c8ee88694909981f4d4cca15e417b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n9929c8ee88694909981f4d4cca15e417b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n9929c8ee88694909981f4d4cca15e417b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n9929c8ee88694909981f4d4cca15e417b6&#32;.  &#10;&lowbar;:n9929c8ee88694909981f4d4cca15e417b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n9929c8ee88694909981f4d4cca15e417b7&#32;.  &#10;&lowbar;:n9929c8ee88694909981f4d4cca15e417b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n9929c8ee88694909981f4d4cca15e417b8&#32;.  &#10;&lowbar;:n9929c8ee88694909981f4d4cca15e417b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b6&#32;.  &#10;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b7&#32;.  &#10;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b8&#32;.  &#10;&lowbar;:nc6d1870d5c264c53bdbc4c9dd7371d44b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b6&#32;.  &#10;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b7&#32;.  &#10;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b8&#32;.  &#10;&lowbar;:na19299ec7b134967a6fe3cfc1ad39116b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab6&#32;.  &#10;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab7&#32;.  &#10;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab8&#32;.  &#10;&lowbar;:n01e6d51724ae44cf9c092c05d1139ddab2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasUnit&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;hasUnit&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;the&#32;hasUnit&#32;property&#32;is&#32;used&#32;to&#32;link&#32;a&#32;specific&#32;property&#32;or&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;]&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;qudt:Unit&#32;;  &#10; &#32; &#32; &#32; &#32;owl:eqivalentProperty&#32;qudt:hasValue&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>http://qudt.org/schema/qudt/Unit</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb6&#32;.  &#10;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb7&#32;.  &#10;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb8&#32;.  &#10;&lowbar;:n394062ec90cf4b03bdc2fc6be43f9c9fb2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b6&#32;.  &#10;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b7&#32;.  &#10;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b8&#32;.  &#10;&lowbar;:nc619f6b3e9c94bf5bacd624e456b6bd8b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b6&#32;.  &#10;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b7&#32;.  &#10;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b8&#32;.  &#10;&lowbar;:n7ad8cf97d7af40aba8816e6171adb1c8b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n2e4833460ce24e85a8a2be330286243fb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n2e4833460ce24e85a8a2be330286243fb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n2e4833460ce24e85a8a2be330286243fb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n2e4833460ce24e85a8a2be330286243fb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n2e4833460ce24e85a8a2be330286243fb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n2e4833460ce24e85a8a2be330286243fb2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n2e4833460ce24e85a8a2be330286243fb6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n2e4833460ce24e85a8a2be330286243fb7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n2e4833460ce24e85a8a2be330286243fb6&#32;.  &#10;&lowbar;:n2e4833460ce24e85a8a2be330286243fb8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n2e4833460ce24e85a8a2be330286243fb7&#32;.  &#10;&lowbar;:n2e4833460ce24e85a8a2be330286243fb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n2e4833460ce24e85a8a2be330286243fb8&#32;.  &#10;&lowbar;:n2e4833460ce24e85a8a2be330286243fb2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasNestedTarget&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;hasNestedTarget&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasFormat&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Defines&#32;the&#32;format&#32;of&#32;an&#32;evidence,&#32;which&#32;is&#32;of&#32;type&#32;dct:form...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:allValuesFrom&#32;:DocumentSubdivision&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:hasSubdivision&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;owl:unionOf&#32;(&#32;:Document&#32;:DocumentSubdivision&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:DocumentSubdivision,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Statement&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:evidence&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;dc:format&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;an&#32;image,&#32;a&#32;drawing&#32;or&#32;a&#32;model&#32;can&#32;be&#32;an&#32;evidence.&#34;@en&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:nbc28dcec1db64c88bf8299f9eb970932b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nbc28dcec1db64c88bf8299f9eb970932b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:nbc28dcec1db64c88bf8299f9eb970932b2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:nbc28dcec1db64c88bf8299f9eb970932b3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nbc28dcec1db64c88bf8299f9eb970932b2&#32;.  &#10;&lowbar;:nbc28dcec1db64c88bf8299f9eb970932b4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nbc28dcec1db64c88bf8299f9eb970932b3&#32;.  &#10;&lowbar;:nbc28dcec1db64c88bf8299f9eb970932b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:nbc28dcec1db64c88bf8299f9eb970932b4&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n6fedf4cd3021401d89686820006e65e7b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n6fedf4cd3021401d89686820006e65e7b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:n6fedf4cd3021401d89686820006e65e7b2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n6fedf4cd3021401d89686820006e65e7b3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n6fedf4cd3021401d89686820006e65e7b2&#32;.  &#10;&lowbar;:n6fedf4cd3021401d89686820006e65e7b4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n6fedf4cd3021401d89686820006e65e7b3&#32;.  &#10;&lowbar;:n6fedf4cd3021401d89686820006e65e7b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n6fedf4cd3021401d89686820006e65e7b4&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n39dec571ceb84f089722b481cdfffee7b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n39dec571ceb84f089722b481cdfffee7b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n39dec571ceb84f089722b481cdfffee7b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n39dec571ceb84f089722b481cdfffee7b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nd6363267bb294efd899758dd663c710cb5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nd6363267bb294efd899758dd663c710cb5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nd6363267bb294efd899758dd663c710cb5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:nd6363267bb294efd899758dd663c710cb5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n65decd4f22ba4d8785fdf469fd8da541b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n65decd4f22ba4d8785fdf469fd8da541b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n65decd4f22ba4d8785fdf469fd8da541b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n65decd4f22ba4d8785fdf469fd8da541b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nd7c9cc19380d49fb9823efa027c03928b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nd7c9cc19380d49fb9823efa027c03928b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nd7c9cc19380d49fb9823efa027c03928b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:nd7c9cc19380d49fb9823efa027c03928b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n959c9bb6d28b48d9beee4049b992dab5b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n959c9bb6d28b48d9beee4049b992dab5b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n959c9bb6d28b48d9beee4049b992dab5b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n959c9bb6d28b48d9beee4049b992dab5b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n2166399e204041e4ba9f9d03b0bbd5f2b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n2166399e204041e4ba9f9d03b0bbd5f2b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n2166399e204041e4ba9f9d03b0bbd5f2b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n2166399e204041e4ba9f9d03b0bbd5f2b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:QuantityKind&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32;&#32; &#32;rdfs:isDefinedBy&#32; &#60;http://qudt.org/2.1/schema/qudt> &#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n1079952f6e9949fd9f85b8c2ec279810b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n1079952f6e9949fd9f85b8c2ec279810b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n1079952f6e9949fd9f85b8c2ec279810b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n1079952f6e9949fd9f85b8c2ec279810b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n1079952f6e9949fd9f85b8c2ec279810b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:n1079952f6e9949fd9f85b8c2ec279810b6&#32;rdf:first&#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n1079952f6e9949fd9f85b8c2ec279810b7&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n1079952f6e9949fd9f85b8c2ec279810b6&#32;.  &#10;&lowbar;:n1079952f6e9949fd9f85b8c2ec279810b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n1079952f6e9949fd9f85b8c2ec279810b7&#32;.  &#10;&lowbar;:n1079952f6e9949fd9f85b8c2ec279810b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n6840d4fa8df443c1b06f07bdfdf51632b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n6840d4fa8df443c1b06f07bdfdf51632b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n6840d4fa8df443c1b06f07bdfdf51632b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n6840d4fa8df443c1b06f07bdfdf51632b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n6840d4fa8df443c1b06f07bdfdf51632b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:n6840d4fa8df443c1b06f07bdfdf51632b6&#32;rdf:first&#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n6840d4fa8df443c1b06f07bdfdf51632b7&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n6840d4fa8df443c1b06f07bdfdf51632b6&#32;.  &#10;&lowbar;:n6840d4fa8df443c1b06f07bdfdf51632b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n6840d4fa8df443c1b06f07bdfdf51632b7&#32;.  &#10;&lowbar;:n6840d4fa8df443c1b06f07bdfdf51632b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:AdministrativeArea&#32;rdfs:subClassOf&#32;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b3,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b3,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;.  &#10;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b4&#32;rdf:first&#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b5&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b4&#32;.  &#10;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b6&#32;rdf:first&#32;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b2&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b7&#32;rdf:first&#32;skos:Concept&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b6&#32;.  &#10;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b5&#32;.  &#10;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b3&#32;rdfs:subClassOf&#32;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b7&#32;.  &#10;&lowbar;:n2e2c974fbf2649e1959dced6e896dc32b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;aec3po:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:forBuildingStructure&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n18c84f1b399f41b38de2a5d7a87a87c2b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n18c84f1b399f41b38de2a5d7a87a87c2b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n18c84f1b399f41b38de2a5d7a87a87c2b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:n18c84f1b399f41b38de2a5d7a87a87c2b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasBuildingStructure&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:na6434e47863c4973843a4ad2269d360cb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:na6434e47863c4973843a4ad2269d360cb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:na6434e47863c4973843a4ad2269d360cb1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:na6434e47863c4973843a4ad2269d360cb1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:forBuildingUsage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,&#32;or&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nf6f2d40338394b50984ad686032b48abb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nf6f2d40338394b50984ad686032b48abb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nf6f2d40338394b50984ad686032b48abb1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:nf6f2d40338394b50984ad686032b48abb1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasBuildingUsage&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;prop...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nab2d37911cb04a57a7f84a3aeaacea40b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nab2d37911cb04a57a7f84a3aeaacea40b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nab2d37911cb04a57a7f84a3aeaacea40b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:nab2d37911cb04a57a7f84a3aeaacea40b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasDiscipline&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;discipline&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;(procedure,&#32;statement,&#32;verifier,&#32;...)&#32;to&#32;the...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:discipline&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n9c33d0a302a845e9a86965d2e4415054b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n9c33d0a302a845e9a86965d2e4415054b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n9c33d0a302a845e9a86965d2e4415054b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;.  &#10;&lowbar;:n9c33d0a302a845e9a86965d2e4415054b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:DisciplineNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasPermittingStage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;permitting&#32;stage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;to&#32;the&#32;permitting&#32;stage&#32;this&#32;entity&#32;pertains&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:permitting&lowbar;stage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nc8ea7fa1311348279b3a55eff8570ec3b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nc8ea7fa1311348279b3a55eff8570ec3b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nc8ea7fa1311348279b3a55eff8570ec3b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentProperty&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;.  &#10;&lowbar;:nc8ea7fa1311348279b3a55eff8570ec3b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:PermittingStageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nfc5942c34417408e92f58f0425f5976db1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:nfc5942c34417408e92f58f0425f5976db2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nfc5942c34417408e92f58f0425f5976db1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:nfc5942c34417408e92f58f0425f5976db2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nfc5942c34417408e92f58f0425f5976db2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:nfc5942c34417408e92f58f0425f5976db6&#32;rdf:first&#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:nfc5942c34417408e92f58f0425f5976db7&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nfc5942c34417408e92f58f0425f5976db6&#32;.  &#10;&lowbar;:nfc5942c34417408e92f58f0425f5976db1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:nfc5942c34417408e92f58f0425f5976db7&#32;.  &#10;&lowbar;:nfc5942c34417408e92f58f0425f5976db2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n14a959d60e6c4e24aa2aa48807172cf4b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n14a959d60e6c4e24aa2aa48807172cf4b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n14a959d60e6c4e24aa2aa48807172cf4b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n14a959d60e6c4e24aa2aa48807172cf4b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n14a959d60e6c4e24aa2aa48807172cf4b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:n14a959d60e6c4e24aa2aa48807172cf4b6&#32;rdf:first&#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n14a959d60e6c4e24aa2aa48807172cf4b7&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n14a959d60e6c4e24aa2aa48807172cf4b6&#32;.  &#10;&lowbar;:n14a959d60e6c4e24aa2aa48807172cf4b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n14a959d60e6c4e24aa2aa48807172cf4b7&#32;.  &#10;&lowbar;:n14a959d60e6c4e24aa2aa48807172cf4b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:AdministrativeArea&#32;rdfs:subClassOf&#32;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b3,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b3,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;.  &#10;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b4&#32;rdf:first&#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b5&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b4&#32;.  &#10;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b6&#32;rdf:first&#32;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b2&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b7&#32;rdf:first&#32;skos:Concept&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b6&#32;.  &#10;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b5&#32;.  &#10;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b3&#32;rdfs:subClassOf&#32;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b7&#32;.  &#10;&lowbar;:n3c52ea7f2f21435aaf4dac54325d5de9b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;aec3po:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:forBuildingStructure&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nb82bed0e5cfb42b395a27432433719ebb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nb82bed0e5cfb42b395a27432433719ebb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nb82bed0e5cfb42b395a27432433719ebb1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:nb82bed0e5cfb42b395a27432433719ebb1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasBuildingStructure&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n07eefc774a7d4c8bbedeed01fe8250d3b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n07eefc774a7d4c8bbedeed01fe8250d3b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n07eefc774a7d4c8bbedeed01fe8250d3b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n07eefc774a7d4c8bbedeed01fe8250d3b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:forBuildingUsage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,&#32;or&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nc30d5b275d144ffe88e70ebdafae7017b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nc30d5b275d144ffe88e70ebdafae7017b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nc30d5b275d144ffe88e70ebdafae7017b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:nc30d5b275d144ffe88e70ebdafae7017b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasBuildingUsage&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;prop...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n29a95b8c770c48f6a2ca3ced434c6239b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n29a95b8c770c48f6a2ca3ced434c6239b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n29a95b8c770c48f6a2ca3ced434c6239b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n29a95b8c770c48f6a2ca3ced434c6239b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasDiscipline&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;discipline&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;(procedure,&#32;statement,&#32;verifier,&#32;...)&#32;to&#32;the...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:discipline&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n89e9a706ca354d61bf533cc74e21bbc0b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n89e9a706ca354d61bf533cc74e21bbc0b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n89e9a706ca354d61bf533cc74e21bbc0b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;.  &#10;&lowbar;:n89e9a706ca354d61bf533cc74e21bbc0b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:DisciplineNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-119)|Pointer|<pre lang="Turtle"><code>:hasPermittingStage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;permitting&#32;stage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;to&#32;the&#32;permitting&#32;stage&#32;this&#32;entity&#32;pertains&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:permitting&lowbar;stage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n67de284859454b8e9f7c97591139dde6b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n67de284859454b8e9f7c97591139dde6b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n67de284859454b8e9f7c97591139dde6b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentProperty&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;.  &#10;&lowbar;:n67de284859454b8e9f7c97591139dde6b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:PermittingStageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-119)|Pointer|http://www.w3.org/2004/02/skos/core#Concept|
 |[Section top](#minorfail-outcome-number-119)|Pointer|http://purl.org/dc/elements/1.1/format|
 
@@ -4205,14 +4205,14 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasReport&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;report&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;checking&#32;act&#32;to&#32;the&#32;resulting&#32;compliance&#32;verificatio...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:usedMethod&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:CheckMethod&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:madeBy&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:ProcessVerifier&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:checked&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:hasReport&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:ComplianceVerificationReport&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckingAct&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:checking&lowbar;act&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:conforms&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:ComplianceVerificationReport&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:operationalizes&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;operationalizes&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;check&#32;method&#32;to&#32;a&#32;check&#32;statement&#32;in&#32;a&#32;document&#32;that...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:allValuesFrom&#32;:DocumentSubdivision&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:hasSubdivision&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;owl:unionOf&#32;(&#32;:Document&#32;:DocumentSubdivision&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckStatement,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:DocumentSubdivision,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Statement&#32;;  &#10; &#32; &#32; &#32; &#32;owl:inverseOf&#32;:isOperationalizedBy&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method</code></pre>|
-|[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b6&#32;.  &#10;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b7&#32;.  &#10;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b8&#32;.  &#10;&lowbar;:n015ea156b1b847fd8cda0d232221dd04b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:na838d879aeae448ab085edf510177a27b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:na838d879aeae448ab085edf510177a27b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:na838d879aeae448ab085edf510177a27b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:na838d879aeae448ab085edf510177a27b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:na838d879aeae448ab085edf510177a27b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:na838d879aeae448ab085edf510177a27b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:na838d879aeae448ab085edf510177a27b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:na838d879aeae448ab085edf510177a27b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:na838d879aeae448ab085edf510177a27b6&#32;.  &#10;&lowbar;:na838d879aeae448ab085edf510177a27b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:na838d879aeae448ab085edf510177a27b7&#32;.  &#10;&lowbar;:na838d879aeae448ab085edf510177a27b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:na838d879aeae448ab085edf510177a27b8&#32;.  &#10;&lowbar;:na838d879aeae448ab085edf510177a27b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasNestedValue&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;hasNestedValue&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;TBD&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n67732396a67e48b2a6143b20e385db23b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n67732396a67e48b2a6143b20e385db23b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n67732396a67e48b2a6143b20e385db23b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n67732396a67e48b2a6143b20e385db23b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n67732396a67e48b2a6143b20e385db23b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n67732396a67e48b2a6143b20e385db23b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n67732396a67e48b2a6143b20e385db23b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n67732396a67e48b2a6143b20e385db23b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n67732396a67e48b2a6143b20e385db23b6&#32;.  &#10;&lowbar;:n67732396a67e48b2a6143b20e385db23b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n67732396a67e48b2a6143b20e385db23b7&#32;.  &#10;&lowbar;:n67732396a67e48b2a6143b20e385db23b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n67732396a67e48b2a6143b20e385db23b8&#32;.  &#10;&lowbar;:n67732396a67e48b2a6143b20e385db23b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:nd6f1295539934bdf9567cf3ae0b04b73b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nd6f1295539934bdf9567cf3ae0b04b73b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:nd6f1295539934bdf9567cf3ae0b04b73b2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:nd6f1295539934bdf9567cf3ae0b04b73b3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nd6f1295539934bdf9567cf3ae0b04b73b2&#32;.  &#10;&lowbar;:nd6f1295539934bdf9567cf3ae0b04b73b4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nd6f1295539934bdf9567cf3ae0b04b73b3&#32;.  &#10;&lowbar;:nd6f1295539934bdf9567cf3ae0b04b73b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:nd6f1295539934bdf9567cf3ae0b04b73b4&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb6&#32;.  &#10;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb7&#32;.  &#10;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb8&#32;.  &#10;&lowbar;:nd76e7ea5b4d14781b961ef7933d5e5aeb2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n522e1365de93411f80cd4a24843546eeb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n522e1365de93411f80cd4a24843546eeb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:n522e1365de93411f80cd4a24843546eeb2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n522e1365de93411f80cd4a24843546eeb3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n522e1365de93411f80cd4a24843546eeb2&#32;.  &#10;&lowbar;:n522e1365de93411f80cd4a24843546eeb4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n522e1365de93411f80cd4a24843546eeb3&#32;.  &#10;&lowbar;:n522e1365de93411f80cd4a24843546eeb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n522e1365de93411f80cd4a24843546eeb4&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object</code></pre>|
-|[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:nbe5b0ec01add4e4d8084ea6b4b2e3af8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nbe5b0ec01add4e4d8084ea6b4b2e3af8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:nbe5b0ec01add4e4d8084ea6b4b2e3af8b2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:nbe5b0ec01add4e4d8084ea6b4b2e3af8b3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nbe5b0ec01add4e4d8084ea6b4b2e3af8b2&#32;.  &#10;&lowbar;:nbe5b0ec01add4e4d8084ea6b4b2e3af8b4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nbe5b0ec01add4e4d8084ea6b4b2e3af8b3&#32;.  &#10;&lowbar;:nbe5b0ec01add4e4d8084ea6b4b2e3af8b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:nbe5b0ec01add4e4d8084ea6b4b2e3af8b4&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n5d2626d472614a8a8957c5bee76996aeb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n5d2626d472614a8a8957c5bee76996aeb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:n5d2626d472614a8a8957c5bee76996aeb2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n5d2626d472614a8a8957c5bee76996aeb3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n5d2626d472614a8a8957c5bee76996aeb2&#32;.  &#10;&lowbar;:n5d2626d472614a8a8957c5bee76996aeb4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n5d2626d472614a8a8957c5bee76996aeb3&#32;.  &#10;&lowbar;:n5d2626d472614a8a8957c5bee76996aeb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n5d2626d472614a8a8957c5bee76996aeb4&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>https://saref.etsi.org/core/FeatureOfInterest</code></pre>|
-|[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n412771b6d3bc4697a29e39a3a54f1721b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n412771b6d3bc4697a29e39a3a54f1721b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n412771b6d3bc4697a29e39a3a54f1721b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n412771b6d3bc4697a29e39a3a54f1721b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n723e981986ed4eac8888cca4f54984d6b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n723e981986ed4eac8888cca4f54984d6b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n723e981986ed4eac8888cca4f54984d6b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n723e981986ed4eac8888cca4f54984d6b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-140)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality</code></pre>|
 
 ***
@@ -4242,30 +4242,30 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:usedMethod&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;used&#32;method&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;checking&#32;act&#32;to&#32;the&#32;method&#32;it&#32;used&#32;(a&#32;aec3po:CheckMe...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:usedMethod&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:CheckMethod&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:madeBy&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:ProcessVerifier&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:checked&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:hasReport&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:someValuesFrom&#32;:ComplianceVerificationReport&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Event>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckingAct&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:checking&lowbar;act&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method</code></pre>|
 |[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:isOperationalizedBy&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;is&#32;operationalized&#32;by&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;check&#32;statement&#32;in&#32;a&#32;document&#32;to&#32;a&#32;check&#32;method&#32;that...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:allValuesFrom&#32;:DocumentSubdivision&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:hasSubdivision&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;owl:unionOf&#32;(&#32;:Document&#32;:DocumentSubdivision&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckStatement,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:DocumentSubdivision,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Statement&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;owl:inverseOf&#32;:operationalizes&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b6&#32;.  &#10;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b7&#32;.  &#10;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b8&#32;.  &#10;&lowbar;:n6b185c1daac64a7d8662d39bda3b80f5b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb6&#32;.  &#10;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb7&#32;.  &#10;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb8&#32;.  &#10;&lowbar;:n9f261d66b5854a8c818b81aa4922eccdb2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b6&#32;.  &#10;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b7&#32;.  &#10;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b8&#32;.  &#10;&lowbar;:n705c6cf5264b4627b0e6968431d8e598b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasComparator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;comparator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;numerical&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;comparato...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;comparator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;tha...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:NumericalCheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;comparators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodComparator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb6&#32;.  &#10;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb7&#32;.  &#10;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb8&#32;.  &#10;&lowbar;:n78ecee192c2b414f8f8996a56d52abafb2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodComparatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasUnit&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;hasUnit&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;the&#32;hasUnit&#32;property&#32;is&#32;used&#32;to&#32;link&#32;a&#32;specific&#32;property&#32;or&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;]&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;qudt:Unit&#32;;  &#10; &#32; &#32; &#32; &#32;owl:eqivalentProperty&#32;qudt:hasValue&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>http://qudt.org/schema/qudt/Unit</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n648b05c08c1947a1b1207c6487863932b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n648b05c08c1947a1b1207c6487863932b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n648b05c08c1947a1b1207c6487863932b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n648b05c08c1947a1b1207c6487863932b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n648b05c08c1947a1b1207c6487863932b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n648b05c08c1947a1b1207c6487863932b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n648b05c08c1947a1b1207c6487863932b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n648b05c08c1947a1b1207c6487863932b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n648b05c08c1947a1b1207c6487863932b6&#32;.  &#10;&lowbar;:n648b05c08c1947a1b1207c6487863932b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n648b05c08c1947a1b1207c6487863932b7&#32;.  &#10;&lowbar;:n648b05c08c1947a1b1207c6487863932b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n648b05c08c1947a1b1207c6487863932b8&#32;.  &#10;&lowbar;:n648b05c08c1947a1b1207c6487863932b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n999cfe83fe65422ca3c753d562739650b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n999cfe83fe65422ca3c753d562739650b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n999cfe83fe65422ca3c753d562739650b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n999cfe83fe65422ca3c753d562739650b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n999cfe83fe65422ca3c753d562739650b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n999cfe83fe65422ca3c753d562739650b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n999cfe83fe65422ca3c753d562739650b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n999cfe83fe65422ca3c753d562739650b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n999cfe83fe65422ca3c753d562739650b6&#32;.  &#10;&lowbar;:n999cfe83fe65422ca3c753d562739650b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n999cfe83fe65422ca3c753d562739650b7&#32;.  &#10;&lowbar;:n999cfe83fe65422ca3c753d562739650b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n999cfe83fe65422ca3c753d562739650b8&#32;.  &#10;&lowbar;:n999cfe83fe65422ca3c753d562739650b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb6&#32;.  &#10;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb7&#32;.  &#10;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb8&#32;.  &#10;&lowbar;:n93a607b4cd5a4efcac150c5b602b3b0bb2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasOperator&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;operator&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;boolean&#32;check&#32;method&#32;to&#32;the&#32;check&#32;method&#32;operator&#32;it...&#34;,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#34;The&#32;operator&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;property&#32;of&#32;that&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BooleanCheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:check&lowbar;method&lowbar;Operators&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethodOperator&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b6&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b7&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b6&#32;.  &#10;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b8&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b7&#32;.  &#10;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b8&#32;.  &#10;&lowbar;:n2238f2cd6c95478796fd19270f2199d0b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:CheckMethodOperatorNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasNestedTarget&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;hasNestedTarget&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:check&lowbar;method&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:CheckMethod&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasFormat&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Defines&#32;the&#32;format&#32;of&#32;an&#32;evidence,&#32;which&#32;is&#32;of&#32;type&#32;dct:form...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:allValuesFrom&#32;:DocumentSubdivision&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:onProperty&#32;:hasSubdivision&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;owl:unionOf&#32;(&#32;:Document&#32;:DocumentSubdivision&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:DocumentSubdivision,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Statement&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:evidence&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;dc:format&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;an&#32;image,&#32;a&#32;drawing&#32;or&#32;a&#32;model&#32;can&#32;be&#32;an&#32;evidence.&#34;@en&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:nc70015c185ba46e2850273dbf819895fb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nc70015c185ba46e2850273dbf819895fb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:nc70015c185ba46e2850273dbf819895fb2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:nc70015c185ba46e2850273dbf819895fb3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nc70015c185ba46e2850273dbf819895fb2&#32;.  &#10;&lowbar;:nc70015c185ba46e2850273dbf819895fb4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nc70015c185ba46e2850273dbf819895fb3&#32;.  &#10;&lowbar;:nc70015c185ba46e2850273dbf819895fb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:nc70015c185ba46e2850273dbf819895fb4&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasProperty&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;Property&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;feature&#32;of&#32;interest&#32;to&#32;one&#32;of&#32;its&#32;aspect&#32;that&#32;is&#32;int...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;&lowbar;:nc251eb04786a497990a9a709572735a2b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Object>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;https://saref.etsi.org/core/FeatureOfInterest>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nc251eb04786a497990a9a709572735a2b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;Links&#32;a&#32;space&#32;to&#32;the&#32;area&#32;property&#32;of&#32;that&#32;space,&#32;a&#32;wall&#32;to&#32;...&#34; &#32;.  &#10;&lowbar;:nc251eb04786a497990a9a709572735a2b2&#32;rdf:first&#32;:CheckMethod&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:nc251eb04786a497990a9a709572735a2b3&#32;rdf:first&#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nc251eb04786a497990a9a709572735a2b2&#32;.  &#10;&lowbar;:nc251eb04786a497990a9a709572735a2b4&#32;rdf:first&#32;:FeatureOfInterest&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:nc251eb04786a497990a9a709572735a2b3&#32;.  &#10;&lowbar;:nc251eb04786a497990a9a709572735a2b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:nc251eb04786a497990a9a709572735a2b4&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n3934dcd8936b44968182d44e5f51696ab5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n3934dcd8936b44968182d44e5f51696ab5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n3934dcd8936b44968182d44e5f51696ab5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n3934dcd8936b44968182d44e5f51696ab5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n40c9d2135a0446ef93103dd19bcc2944b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n40c9d2135a0446ef93103dd19bcc2944b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n40c9d2135a0446ef93103dd19bcc2944b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n40c9d2135a0446ef93103dd19bcc2944b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nf6e03550f9514925a396f86c79205e20b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nf6e03550f9514925a396f86c79205e20b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nf6e03550f9514925a396f86c79205e20b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:nf6e03550f9514925a396f86c79205e20b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n00c95a8224bb4deb89b49e021ffa87d2b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n00c95a8224bb4deb89b49e021ffa87d2b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n00c95a8224bb4deb89b49e021ffa87d2b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n00c95a8224bb4deb89b49e021ffa87d2b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n0d5aa4937d4c4bd4973bbc94d39b4776b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n0d5aa4937d4c4bd4973bbc94d39b4776b5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n0d5aa4937d4c4bd4973bbc94d39b4776b5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n0d5aa4937d4c4bd4973bbc94d39b4776b5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasQuantityKind&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;a&#32;property&#32;to&#32;its&#32;quantity&#32;kind&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32; &#91;&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:unionOf&#32;(&#32;:FeatureOfInterest&#32;:Property&#32;:CheckMethod&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Quality>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Property&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:feature&lowbar;of&lowbar;interest&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n574d8787ebbe492786ea7eb157f2c86bb5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n574d8787ebbe492786ea7eb157f2c86bb5,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n574d8787ebbe492786ea7eb157f2c86bb5&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;qudt:QuantityKind,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Region>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;skos:example&#32; &#34;A&#32;space&#32;area&#32;property&#32;to&#32;the&#32;property&#32;kind&#32; &#92; &#34;area&#92; &#34;.&#34;@en&#32;.  &#10;&lowbar;:n574d8787ebbe492786ea7eb157f2c86bb5&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:QuantityKindNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:QuantityKind&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32;&#32; &#32;rdfs:isDefinedBy&#32; &#60;http://qudt.org/2.1/schema/qudt> &#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n6c42b2146c7c465a969e3628a2de4e52b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n6c42b2146c7c465a969e3628a2de4e52b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n6c42b2146c7c465a969e3628a2de4e52b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n6c42b2146c7c465a969e3628a2de4e52b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n6c42b2146c7c465a969e3628a2de4e52b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:n6c42b2146c7c465a969e3628a2de4e52b6&#32;rdf:first&#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n6c42b2146c7c465a969e3628a2de4e52b7&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n6c42b2146c7c465a969e3628a2de4e52b6&#32;.  &#10;&lowbar;:n6c42b2146c7c465a969e3628a2de4e52b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n6c42b2146c7c465a969e3628a2de4e52b7&#32;.  &#10;&lowbar;:n6c42b2146c7c465a969e3628a2de4e52b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n8f81787d70ef460d98b5afabca6b4e1cb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n8f81787d70ef460d98b5afabca6b4e1cb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n8f81787d70ef460d98b5afabca6b4e1cb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n8f81787d70ef460d98b5afabca6b4e1cb2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n8f81787d70ef460d98b5afabca6b4e1cb2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:n8f81787d70ef460d98b5afabca6b4e1cb6&#32;rdf:first&#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n8f81787d70ef460d98b5afabca6b4e1cb7&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n8f81787d70ef460d98b5afabca6b4e1cb6&#32;.  &#10;&lowbar;:n8f81787d70ef460d98b5afabca6b4e1cb1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n8f81787d70ef460d98b5afabca6b4e1cb7&#32;.  &#10;&lowbar;:n8f81787d70ef460d98b5afabca6b4e1cb2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:AdministrativeArea&#32;rdfs:subClassOf&#32;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b3,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b3,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;.  &#10;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b4&#32;rdf:first&#32;skos:Concept&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;(&#32;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b2&#32;)&#32;.  &#10;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b6&#32;rdf:first&#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b7&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b6&#32;.  &#10;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b7&#32;.  &#10;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b3&#32;rdfs:subClassOf&#32;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b4&#32;.  &#10;&lowbar;:n283ccbe6a97c47a2be0a984ec100d4c1b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;aec3po:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:forBuildingStructure&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n170cdfbdc96d40cbb1917d1784765247b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n170cdfbdc96d40cbb1917d1784765247b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n170cdfbdc96d40cbb1917d1784765247b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:n170cdfbdc96d40cbb1917d1784765247b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasBuildingStructure&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n51183e38e1524e499ec259d5a14aaea8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n51183e38e1524e499ec259d5a14aaea8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n51183e38e1524e499ec259d5a14aaea8b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n51183e38e1524e499ec259d5a14aaea8b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:forBuildingUsage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,&#32;or&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n36febd8c43c54cbf9141f7a1ff5e70b5b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n36febd8c43c54cbf9141f7a1ff5e70b5b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n36febd8c43c54cbf9141f7a1ff5e70b5b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:n36febd8c43c54cbf9141f7a1ff5e70b5b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasBuildingUsage&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;prop...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n0fc0cfeb7c744eb4b8e0e63bebde5ebbb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n0fc0cfeb7c744eb4b8e0e63bebde5ebbb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n0fc0cfeb7c744eb4b8e0e63bebde5ebbb1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n0fc0cfeb7c744eb4b8e0e63bebde5ebbb1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasDiscipline&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;discipline&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;(procedure,&#32;statement,&#32;verifier,&#32;...)&#32;to&#32;the...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:discipline&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n6807978c5e914a29a946ffb908359af4b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n6807978c5e914a29a946ffb908359af4b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n6807978c5e914a29a946ffb908359af4b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;.  &#10;&lowbar;:n6807978c5e914a29a946ffb908359af4b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:DisciplineNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
-|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasPermittingStage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;permitting&#32;stage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;to&#32;the&#32;permitting&#32;stage&#32;this&#32;entity&#32;pertains&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:permitting&lowbar;stage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:na96e5765ff6f418db973bd36bde7a376b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:na96e5765ff6f418db973bd36bde7a376b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:na96e5765ff6f418db973bd36bde7a376b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentProperty&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;.  &#10;&lowbar;:na96e5765ff6f418db973bd36bde7a376b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:PermittingStageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:na1e020264b26434a9174d72fc727a848b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:na1e020264b26434a9174d72fc727a848b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:na1e020264b26434a9174d72fc727a848b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:na1e020264b26434a9174d72fc727a848b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:na1e020264b26434a9174d72fc727a848b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:na1e020264b26434a9174d72fc727a848b6&#32;rdf:first&#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:na1e020264b26434a9174d72fc727a848b7&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:na1e020264b26434a9174d72fc727a848b6&#32;.  &#10;&lowbar;:na1e020264b26434a9174d72fc727a848b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:na1e020264b26434a9174d72fc727a848b7&#32;.  &#10;&lowbar;:na1e020264b26434a9174d72fc727a848b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:forAdministrativeArea&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;administrative&#32;area&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34; &#34; &#34;The&#32;administrative&#32;area&#32;for&#32;which&#32;something&#32;applies.&#92;r  &#10; &#32; &#32;A&#32;se...&#34; &#34; &#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:administrative&lowbar;areas&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n7a424abe3d1b4b2c85733c3387f31269b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n7a424abe3d1b4b2c85733c3387f31269b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n7a424abe3d1b4b2c85733c3387f31269b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n7a424abe3d1b4b2c85733c3387f31269b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n7a424abe3d1b4b2c85733c3387f31269b2&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#60;http://data.europa.eu/eli/ontology#AdministrativeArea>,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea&#32;.  &#10;&lowbar;:n7a424abe3d1b4b2c85733c3387f31269b6&#32;rdf:first&#32;:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n7a424abe3d1b4b2c85733c3387f31269b7&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n7a424abe3d1b4b2c85733c3387f31269b6&#32;.  &#10;&lowbar;:n7a424abe3d1b4b2c85733c3387f31269b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n7a424abe3d1b4b2c85733c3387f31269b7&#32;.  &#10;&lowbar;:n7a424abe3d1b4b2c85733c3387f31269b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:AdministrativeArea&#32;rdfs:subClassOf&#32;&lowbar;:n939591a863064dde90e60b115f1e4400b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n939591a863064dde90e60b115f1e4400b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n939591a863064dde90e60b115f1e4400b3,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;&lowbar;:n939591a863064dde90e60b115f1e4400b3,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;.  &#10;&lowbar;:n939591a863064dde90e60b115f1e4400b4&#32;rdf:first&#32;skos:Concept&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;(&#32;&lowbar;:n939591a863064dde90e60b115f1e4400b2&#32;)&#32;.  &#10;&lowbar;:n939591a863064dde90e60b115f1e4400b6&#32;rdf:first&#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;()&#32;.  &#10;&lowbar;:n939591a863064dde90e60b115f1e4400b7&#32;rdf:first&#32; &#60;https://schema.org/Place> &#32;;  &#10; &#32; &#32; &#32; &#32;rdf:rest&#32;&lowbar;:n939591a863064dde90e60b115f1e4400b6&#32;.  &#10;&lowbar;:n939591a863064dde90e60b115f1e4400b1&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;owl:unionOf&#32;&lowbar;:n939591a863064dde90e60b115f1e4400b7&#32;.  &#10;&lowbar;:n939591a863064dde90e60b115f1e4400b3&#32;rdfs:subClassOf&#32;&lowbar;:n939591a863064dde90e60b115f1e4400b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;&lowbar;:n939591a863064dde90e60b115f1e4400b2,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:AdministrativeArea,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;aec3po:AdministrativeArea&#32;;  &#10; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;&lowbar;:n939591a863064dde90e60b115f1e4400b4&#32;.  &#10;&lowbar;:n939591a863064dde90e60b115f1e4400b2&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;aec3po:AdministrativeAreaNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:forBuildingStructure&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n099c14d750e04304b569c5446e45f28cb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n099c14d750e04304b569c5446e45f28cb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n099c14d750e04304b569c5446e45f28cb1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:n099c14d750e04304b569c5446e45f28cb1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasBuildingStructure&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;structure&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;structure&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;structure&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n85a64a54e7f749ae8d454840f37ee782b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n85a64a54e7f749ae8d454840f37ee782b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingStructure&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n85a64a54e7f749ae8d454840f37ee782b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingStructure,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:n85a64a54e7f749ae8d454840f37ee782b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingStructureNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:forBuildingUsage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;for&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;for&#32;which&#32;a&#32;specific&#32;check,&#32;verifier,&#32;or&#32;...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n53734172446b49edb586cfcd0cdc478eb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n53734172446b49edb586cfcd0cdc478eb1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n53734172446b49edb586cfcd0cdc478eb1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:forDesign&#32;.  &#10;&lowbar;:n53734172446b49edb586cfcd0cdc478eb1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasBuildingUsage&#32;a&#32;owl:FunctionalProperty,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;building&#32;usage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;building&#32;usage&#32;design&#32;of&#32;a&#32;feature&#32;of&#32;interest&#32;or&#32;a&#32;prop...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:building&lowbar;usage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nb819d91162964d779b2a3dbb794aad94b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nb819d91162964d779b2a3dbb794aad94b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:BuildingUsage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nb819d91162964d779b2a3dbb794aad94b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:BuildingUsage,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Design&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32;:hasDesign&#32;.  &#10;&lowbar;:nb819d91162964d779b2a3dbb794aad94b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:BuildingUsageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasDiscipline&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;discipline&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;(procedure,&#32;statement,&#32;verifier,&#32;...)&#32;to&#32;the...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:discipline&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:nfde4f417c4e441dd86cc7f289cea1d18b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:nfde4f417c4e441dd86cc7f289cea1d18b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:Discipline&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:nfde4f417c4e441dd86cc7f289cea1d18b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:Discipline&#32;.  &#10;&lowbar;:nfde4f417c4e441dd86cc7f289cea1d18b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:DisciplineNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
+|[Section top](#minorfail-outcome-number-141)|Pointer|<pre lang="Turtle"><code>:hasPermittingStage&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;has&#32;permitting&#32;stage&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Links&#32;an&#32;entity&#32;to&#32;the&#32;permitting&#32;stage&#32;this&#32;entity&#32;pertains&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:permitting&lowbar;stage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;&lowbar;:n0e7028a6db4147a7b19a5c7f2150a0c8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#91;&#32;rdfs:subClassOf&#32;&lowbar;:n0e7028a6db4147a7b19a5c7f2150a0c8b1,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:equivalentClass&#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;owl:intersectionOf&#32;(&#32;skos:Concept&#32;&lowbar;:n0e7028a6db4147a7b19a5c7f2150a0c8b1&#32;)&#32;],  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:PermittingStage&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:subPropertyOf&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;;  &#10; &#32; &#32; &#32; &#32;owl:equivalentProperty&#32; &#60;https://w3id.org/digitalconstruction/0.5/Lifecycle#hasStage> &#32;.  &#10;&lowbar;:n0e7028a6db4147a7b19a5c7f2150a0c8b1&#32;a&#32;owl:Restriction&#32;;  &#10; &#32; &#32; &#32; &#32;owl:hasValue&#32;:PermittingStageNomenclature&#32;;  &#10; &#32; &#32; &#32; &#32;owl:onProperty&#32;skos:inScheme&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-141)|Pointer|http://www.w3.org/2004/02/skos/core#Concept|
 |[Section top](#minorfail-outcome-number-141)|Pointer|http://purl.org/dc/elements/1.1/format|
 
@@ -4952,6 +4952,6094 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 |[Section top](#minorfail-outcome-number-161)|Pointer|<pre lang="Turtle"><code>:PartialSafetyFactor1&#32;a&#32;owl:NamedIndividual,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;skos:Concept,  &#10; &#32; &#32; &#32; &#32; &#32; &#32; &#32; &#32;:QuantityKind&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;Partial&#32;Safety&#32;Factor&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;qudt:applicableUnit&#32; &#60;http://qudt.org/vocab/unit/UNITLESS> &#32;;  &#10; &#32; &#32; &#32; &#32;qudt:hasDimensionVector&#32; &#60;http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D0> &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:quantity&lowbar;kinds&#32;;  &#10; &#32; &#32; &#32; &#32;skos:broader&#32;:PartialSafetyFactor&#32;;  &#10; &#32; &#32; &#32; &#32;skos:definition&#32; &#34;Also&#32;written&#32;γM1,&#32;the&#32;partial&#32;safety&#32;factor&#32;for&#32;resistance&#32;r...&#34; &#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-161)|Pointer|<pre lang="Turtle"><code>:severity&#32;a&#32;owl:ObjectProperty&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;severity&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;Each&#32;verification&#32;result&#32;has&#32;exactly&#32;one&#32;value&#32;for&#32;the&#32;prope...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:domain&#32;:VerificationResult&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:compliance&lowbar;verification&lowbar;report&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:range&#32;:Severity&#32;.</code></pre>|
 |[Section top](#minorfail-outcome-number-161)|Pointer|<pre lang="Turtle"><code>:Severity&#32;a&#32;owl:Class&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:label&#32; &#34;Severity&#34;@en&#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:comment&#32; &#34;The&#32;class&#32;of&#32;validation&#32;result&#32;severity&#32;levels,&#32;including&#32;vi...&#34; &#32;;  &#10; &#32; &#32; &#32; &#32;rdfs:isDefinedBy&#32;:compliance&lowbar;verification&lowbar;report&#32;.</code></pre>|
+
+***
+
+</details>
+
+***
+
+
+# Pass Outcomes
+
+[Jump to statistic summary](#statistic-summary)	|	[Previous section](#minorfail-outcomes)	|	Next section
+
+Here is the chapter related to the Pass outcome
+
+:white_check_mark:233 Pass outcomes
+
+<details>
+<summary>Fold/Unfold the 233 summary and details</summary>
+
+## Pass Outcomes Summary
+
+:white_check_mark:233 Pass outcomes
+
+|*Jump*|*Number*|*Status*|*Subject*|*Criterion*|*Title*|*Link*|
+|------|--------|--------|---------|-----------|-------|------|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-1">1/233</div>|:white_check_mark:Pass|`module-vocabularies-quantity-kinds`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-1)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-2">2/233</div>|:white_check_mark:Pass|`module-vocabularies-quantity-kinds`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-2)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-3">3/233</div>|:white_check_mark:Pass|`module-vocabularies-quantity-kinds`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-3)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-4">4/233</div>|:white_check_mark:Pass|`module-vocabularies-quantity-kinds`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-4)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-5">5/233</div>|:white_check_mark:Pass|`module-vocabularies-quantity-kinds`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-5)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-6">6/233</div>|:white_check_mark:Pass|`module-vocabularies-quantity-kinds`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-6)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-7">7/233</div>|:white_check_mark:Pass|`module-vocabularies-quantity-kinds`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-7)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-8">8/233</div>|:white_check_mark:Pass|`module-vocabularies-quantity-kinds`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-8)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-9">9/233</div>|:white_check_mark:Pass|`module-vocabularies-quantity-kinds`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-9)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-10">10/233</div>|:white_check_mark:Pass|`module-vocabularies-quantity-kinds`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-10)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-11">11/233</div>|:white_check_mark:Pass|`module-vocabularies-permitting-stages`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-11)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-12">12/233</div>|:white_check_mark:Pass|`module-vocabularies-permitting-stages`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-12)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-13">13/233</div>|:white_check_mark:Pass|`module-vocabularies-permitting-stages`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-13)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-14">14/233</div>|:white_check_mark:Pass|`module-vocabularies-permitting-stages`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-14)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-15">15/233</div>|:white_check_mark:Pass|`module-vocabularies-permitting-stages`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-15)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-16">16/233</div>|:white_check_mark:Pass|`module-vocabularies-permitting-stages`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-16)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-17">17/233</div>|:white_check_mark:Pass|`module-vocabularies-permitting-stages`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-17)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-18">18/233</div>|:white_check_mark:Pass|`module-vocabularies-permitting-stages`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-18)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-19">19/233</div>|:white_check_mark:Pass|`module-vocabularies-permitting-stages`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-19)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-20">20/233</div>|:white_check_mark:Pass|`module-vocabularies-permitting-stages`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-20)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-21">21/233</div>|:white_check_mark:Pass|`module-vocabularies-disciplines`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-21)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-22">22/233</div>|:white_check_mark:Pass|`module-vocabularies-disciplines`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-22)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-23">23/233</div>|:white_check_mark:Pass|`module-vocabularies-disciplines`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-23)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-24">24/233</div>|:white_check_mark:Pass|`module-vocabularies-disciplines`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-24)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-25">25/233</div>|:white_check_mark:Pass|`module-vocabularies-disciplines`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-25)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-26">26/233</div>|:white_check_mark:Pass|`module-vocabularies-disciplines`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-26)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-27">27/233</div>|:white_check_mark:Pass|`module-vocabularies-disciplines`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-27)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-28">28/233</div>|:white_check_mark:Pass|`module-vocabularies-disciplines`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-28)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-29">29/233</div>|:white_check_mark:Pass|`module-vocabularies-disciplines`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-29)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-30">30/233</div>|:white_check_mark:Pass|`module-vocabularies-disciplines`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-30)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-31">31/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-operators`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-31)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-32">32/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-operators`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-32)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-33">33/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-operators`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-33)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-34">34/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-operators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-34)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-35">35/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-operators`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-35)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-36">36/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-operators`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-36)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-37">37/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-operators`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-37)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-38">38/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-operators`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-38)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-39">39/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-operators`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-39)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-40">40/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-operators`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-40)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-41">41/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-comparators`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-41)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-42">42/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-comparators`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-42)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-43">43/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-comparators`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-43)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-44">44/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-comparators`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-44)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-45">45/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-comparators`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-45)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-46">46/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-comparators`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-46)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-47">47/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-comparators`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-47)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-48">48/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-comparators`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-48)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-49">49/233</div>|:white_check_mark:Pass|`module-vocabularies-check-method-comparators`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-49)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-50">50/233</div>|:white_check_mark:Pass|`module-vocabularies-building-usage`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-50)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-51">51/233</div>|:white_check_mark:Pass|`module-vocabularies-building-usage`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-51)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-52">52/233</div>|:white_check_mark:Pass|`module-vocabularies-building-usage`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-52)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-53">53/233</div>|:white_check_mark:Pass|`module-vocabularies-building-usage`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-53)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-54">54/233</div>|:white_check_mark:Pass|`module-vocabularies-building-usage`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-54)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-55">55/233</div>|:white_check_mark:Pass|`module-vocabularies-building-usage`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-55)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-56">56/233</div>|:white_check_mark:Pass|`module-vocabularies-building-usage`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-56)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-57">57/233</div>|:white_check_mark:Pass|`module-vocabularies-building-usage`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-57)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-58">58/233</div>|:white_check_mark:Pass|`module-vocabularies-building-usage`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-58)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-59">59/233</div>|:white_check_mark:Pass|`module-vocabularies-building-structure`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-59)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-60">60/233</div>|:white_check_mark:Pass|`module-vocabularies-building-structure`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-60)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-61">61/233</div>|:white_check_mark:Pass|`module-vocabularies-building-structure`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-61)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-62">62/233</div>|:white_check_mark:Pass|`module-vocabularies-building-structure`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-62)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-63">63/233</div>|:white_check_mark:Pass|`module-vocabularies-building-structure`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-63)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-64">64/233</div>|:white_check_mark:Pass|`module-vocabularies-building-structure`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-64)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-65">65/233</div>|:white_check_mark:Pass|`module-vocabularies-building-structure`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-65)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-66">66/233</div>|:white_check_mark:Pass|`module-vocabularies-building-structure`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-66)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-67">67/233</div>|:white_check_mark:Pass|`module-vocabularies-building-structure`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-67)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-68">68/233</div>|:white_check_mark:Pass|`module-vocabularies-administrative-areas`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-68)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-69">69/233</div>|:white_check_mark:Pass|`module-vocabularies-administrative-areas`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-69)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-70">70/233</div>|:white_check_mark:Pass|`module-vocabularies-administrative-areas`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-70)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-71">71/233</div>|:white_check_mark:Pass|`module-vocabularies-administrative-areas`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-71)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-72">72/233</div>|:white_check_mark:Pass|`module-vocabularies-administrative-areas`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-72)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-73">73/233</div>|:white_check_mark:Pass|`module-vocabularies-administrative-areas`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-73)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-74">74/233</div>|:white_check_mark:Pass|`module-vocabularies-administrative-areas`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-74)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-75">75/233</div>|:white_check_mark:Pass|`module-vocabularies-administrative-areas`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-75)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-76">76/233</div>|:white_check_mark:Pass|`module-vocabularies-administrative-areas`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-76)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-77">77/233</div>|:white_check_mark:Pass|`module-vocabularies-administrative-areas`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-77)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-78">78/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-78)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-79">79/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-79)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-80">80/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-80)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-81">81/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-81)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-82">82/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-82)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-83">83/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-83)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-84">84/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-84)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-85">85/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-85)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-86">86/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-86)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-87">87/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-87)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-88">88/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-88)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-89">89/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-89)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-90">90/233</div>|:white_check_mark:Pass|`module-vocabularies--shape`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-90)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-91">91/233</div>|:white_check_mark:Pass|`module-table`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-91)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-92">92/233</div>|:white_check_mark:Pass|`module-table`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-92)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-93">93/233</div>|:white_check_mark:Pass|`module-table`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-93)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-94">94/233</div>|:white_check_mark:Pass|`module-table`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-94)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-95">95/233</div>|:white_check_mark:Pass|`module-table`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-95)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-96">96/233</div>|:white_check_mark:Pass|`module-table`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-96)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-97">97/233</div>|:white_check_mark:Pass|`module-table`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-97)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-98">98/233</div>|:white_check_mark:Pass|`module-table`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-98)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-99">99/233</div>|:white_check_mark:Pass|`module-table`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-99)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-100">100/233</div>|:white_check_mark:Pass|`module-table`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-100)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-101">101/233</div>|:white_check_mark:Pass|`module-statement`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-101)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-102">102/233</div>|:white_check_mark:Pass|`module-statement`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-102)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-103">103/233</div>|:white_check_mark:Pass|`module-statement`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-103)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-104">104/233</div>|:white_check_mark:Pass|`module-statement`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-104)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-105">105/233</div>|:white_check_mark:Pass|`module-statement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-105)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-106">106/233</div>|:white_check_mark:Pass|`module-statement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-106)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-107">107/233</div>|:white_check_mark:Pass|`module-statement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-107)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-108">108/233</div>|:white_check_mark:Pass|`module-statement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-108)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-109">109/233</div>|:white_check_mark:Pass|`module-statement`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-109)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-110">110/233</div>|:white_check_mark:Pass|`module-rase-statement`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-110)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-111">111/233</div>|:white_check_mark:Pass|`module-rase-statement`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-111)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-112">112/233</div>|:white_check_mark:Pass|`module-rase-statement`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-112)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-113">113/233</div>|:white_check_mark:Pass|`module-rase-statement`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-113)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-114">114/233</div>|:white_check_mark:Pass|`module-rase-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-114)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-115">115/233</div>|:white_check_mark:Pass|`module-rase-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-115)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-116">116/233</div>|:white_check_mark:Pass|`module-rase-statement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-116)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-117">117/233</div>|:white_check_mark:Pass|`module-rase-statement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-117)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-118">118/233</div>|:white_check_mark:Pass|`module-rase-statement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-118)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-119">119/233</div>|:white_check_mark:Pass|`module-rase-statement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-119)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-120">120/233</div>|:white_check_mark:Pass|`module-rase-statement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-120)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-121">121/233</div>|:white_check_mark:Pass|`module-rase-statement`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-121)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-122">122/233</div>|:white_check_mark:Pass|`module-rase-statement`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-122)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-123">123/233</div>|:white_check_mark:Pass|`module-model`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-123)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-124">124/233</div>|:white_check_mark:Pass|`module-model`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-124)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-125">125/233</div>|:white_check_mark:Pass|`module-model`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-125)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-126">126/233</div>|:white_check_mark:Pass|`module-model`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-126)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-127">127/233</div>|:white_check_mark:Pass|`module-model`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-127)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-128">128/233</div>|:white_check_mark:Pass|`module-model`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-128)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-129">129/233</div>|:white_check_mark:Pass|`module-model`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-129)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-130">130/233</div>|:white_check_mark:Pass|`module-model`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-130)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-131">131/233</div>|:white_check_mark:Pass|`module-model`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-131)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-132">132/233</div>|:white_check_mark:Pass|`module-legal-verifier`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-132)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-133">133/233</div>|:white_check_mark:Pass|`module-legal-verifier`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-133)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-134">134/233</div>|:white_check_mark:Pass|`module-legal-verifier`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-134)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-135">135/233</div>|:white_check_mark:Pass|`module-legal-verifier`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-135)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-136">136/233</div>|:white_check_mark:Pass|`module-legal-verifier`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-136)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-137">137/233</div>|:white_check_mark:Pass|`module-legal-verifier`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-137)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-138">138/233</div>|:white_check_mark:Pass|`module-legal-verifier`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-138)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-139">139/233</div>|:white_check_mark:Pass|`module-legal-verifier`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-139)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-140">140/233</div>|:white_check_mark:Pass|`module-legal-verifier`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-140)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-141">141/233</div>|:white_check_mark:Pass|`module-legal-verifier`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-141)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-142">142/233</div>|:white_check_mark:Pass|`module-legal-verifier`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-142)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-143">143/233</div>|:white_check_mark:Pass|`module-feature-of-interest`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-143)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-144">144/233</div>|:white_check_mark:Pass|`module-feature-of-interest`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-144)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-145">145/233</div>|:white_check_mark:Pass|`module-feature-of-interest`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-145)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-146">146/233</div>|:white_check_mark:Pass|`module-feature-of-interest`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-146)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-147">147/233</div>|:white_check_mark:Pass|`module-feature-of-interest`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-147)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-148">148/233</div>|:white_check_mark:Pass|`module-feature-of-interest`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-148)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-149">149/233</div>|:white_check_mark:Pass|`module-feature-of-interest`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-149)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-150">150/233</div>|:white_check_mark:Pass|`module-feature-of-interest`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-150)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-151">151/233</div>|:white_check_mark:Pass|`module-feature-of-interest`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-151)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-152">152/233</div>|:white_check_mark:Pass|`module-feature-of-interest`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-152)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-153">153/233</div>|:white_check_mark:Pass|`module-feature-of-interest`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-153)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-154">154/233</div>|:white_check_mark:Pass|`module-evidence`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-154)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-155">155/233</div>|:white_check_mark:Pass|`module-evidence`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-155)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-156">156/233</div>|:white_check_mark:Pass|`module-evidence`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-156)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-157">157/233</div>|:white_check_mark:Pass|`module-evidence`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-157)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-158">158/233</div>|:white_check_mark:Pass|`module-evidence`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-158)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-159">159/233</div>|:white_check_mark:Pass|`module-evidence`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-159)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-160">160/233</div>|:white_check_mark:Pass|`module-evidence`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-160)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-161">161/233</div>|:white_check_mark:Pass|`module-evidence`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-161)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-162">162/233</div>|:white_check_mark:Pass|`module-evidence`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-162)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-163">163/233</div>|:white_check_mark:Pass|`module-evidence`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-163)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-164">164/233</div>|:white_check_mark:Pass|`module-evidence`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-164)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-165">165/233</div>|:white_check_mark:Pass|`module-document`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-165)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-166">166/233</div>|:white_check_mark:Pass|`module-document`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-166)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-167">167/233</div>|:white_check_mark:Pass|`module-document`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-167)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-168">168/233</div>|:white_check_mark:Pass|`module-document`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-168)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-169">169/233</div>|:white_check_mark:Pass|`module-document`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-169)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-170">170/233</div>|:white_check_mark:Pass|`module-document`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-170)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-171">171/233</div>|:white_check_mark:Pass|`module-document`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-171)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-172">172/233</div>|:white_check_mark:Pass|`module-document`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-172)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-173">173/233</div>|:white_check_mark:Pass|`module-document`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-173)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-174">174/233</div>|:white_check_mark:Pass|`module-document`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-174)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-175">175/233</div>|:white_check_mark:Pass|`module-data-requirement`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-175)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-176">176/233</div>|:white_check_mark:Pass|`module-data-requirement`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-176)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-177">177/233</div>|:white_check_mark:Pass|`module-data-requirement`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-177)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-178">178/233</div>|:white_check_mark:Pass|`module-data-requirement`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-178)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-179">179/233</div>|:white_check_mark:Pass|`module-data-requirement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-179)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-180">180/233</div>|:white_check_mark:Pass|`module-data-requirement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-180)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-181">181/233</div>|:white_check_mark:Pass|`module-data-requirement`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile compatible|[Jump](#pass-outcome-number-181)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-182">182/233</div>|:white_check_mark:Pass|`module-data-requirement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-182)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-183">183/233</div>|:white_check_mark:Pass|`module-data-requirement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-183)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-184">184/233</div>|:white_check_mark:Pass|`module-data-requirement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-184)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-185">185/233</div>|:white_check_mark:Pass|`module-data-requirement`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-185)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-186">186/233</div>|:white_check_mark:Pass|`module-data-requirement`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-186)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-187">187/233</div>|:white_check_mark:Pass|`module-data-requirement`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-187)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-188">188/233</div>|:white_check_mark:Pass|`module-compliance-verification-report`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-188)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-189">189/233</div>|:white_check_mark:Pass|`module-compliance-verification-report`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-189)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-190">190/233</div>|:white_check_mark:Pass|`module-compliance-verification-report`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-190)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-191">191/233</div>|:white_check_mark:Pass|`module-compliance-verification-report`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-191)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-192">192/233</div>|:white_check_mark:Pass|`module-compliance-verification-report`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-192)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-193">193/233</div>|:white_check_mark:Pass|`module-compliance-verification-report`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-193)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-194">194/233</div>|:white_check_mark:Pass|`module-compliance-verification-report`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-194)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-195">195/233</div>|:white_check_mark:Pass|`module-compliance-verification-report`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-195)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-196">196/233</div>|:white_check_mark:Pass|`module-compliance-verification-report`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-196)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-197">197/233</div>|:white_check_mark:Pass|`module-checking-act`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-197)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-198">198/233</div>|:white_check_mark:Pass|`module-checking-act`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-198)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-199">199/233</div>|:white_check_mark:Pass|`module-checking-act`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-199)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-200">200/233</div>|:white_check_mark:Pass|`module-checking-act`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile compatible|[Jump](#pass-outcome-number-200)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-201">201/233</div>|:white_check_mark:Pass|`module-checking-act`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile compatible|[Jump](#pass-outcome-number-201)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-202">202/233</div>|:white_check_mark:Pass|`module-checking-act`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-202)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-203">203/233</div>|:white_check_mark:Pass|`module-checking-act`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-203)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-204">204/233</div>|:white_check_mark:Pass|`module-checking-act`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-204)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-205">205/233</div>|:white_check_mark:Pass|`module-checking-act`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-205)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-206">206/233</div>|:white_check_mark:Pass|`module-checking-act`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Any term is referenced|[Jump](#pass-outcome-number-206)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-207">207/233</div>|:white_check_mark:Pass|`module-checking-act`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-207)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-208">208/233</div>|:white_check_mark:Pass|`module-check-method`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-208)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-209">209/233</div>|:white_check_mark:Pass|`module-check-method`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-209)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-210">210/233</div>|:white_check_mark:Pass|`module-check-method`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-210)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-211">211/233</div>|:white_check_mark:Pass|`module-check-method`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-211)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-212">212/233</div>|:white_check_mark:Pass|`module-check-method`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-212)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-213">213/233</div>|:white_check_mark:Pass|`module-check-method`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-213)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-214">214/233</div>|:white_check_mark:Pass|`module-check-method`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-214)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-215">215/233</div>|:white_check_mark:Pass|`module-aec3po`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-215)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-216">216/233</div>|:white_check_mark:Pass|`module-aec3po`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-216)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-217">217/233</div>|:white_check_mark:Pass|`module-aec3po`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-217)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-218">218/233</div>|:white_check_mark:Pass|`module-aec3po`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-218)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-219">219/233</div>|:white_check_mark:Pass|`module-aec3po`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-219)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-220">220/233</div>|:white_check_mark:Pass|`module-aec3po`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-220)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-221">221/233</div>|:white_check_mark:Pass|`module-aec3po`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-221)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-222">222/233</div>|:white_check_mark:Pass|`module-aec3po`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-222)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-223">223/233</div>|:white_check_mark:Pass|`module-aec3po`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-223)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-224">224/233</div>|:white_check_mark:Pass|`all-modules`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-224)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-225">225/233</div>|:white_check_mark:Pass|`all-modules`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-225)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-226">226/233</div>|:white_check_mark:Pass|`all-modules`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-226)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-227">227/233</div>|:white_check_mark:Pass|`all-modules`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-227)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-228">228/233</div>|:white_check_mark:Pass|`all-modules`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-228)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-229">229/233</div>|:white_check_mark:Pass|`all-fragments`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-229)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-230">230/233</div>|:white_check_mark:Pass|`all-fragments`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-230)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-231">231/233</div>|:white_check_mark:Pass|`all-fragments`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-231)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-232">232/233</div>|:white_check_mark:Pass|`all-fragments`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-232)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-233">233/233</div>|:white_check_mark:Pass|`all-fragments`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-233)|
+
+***
+
+## Pass Outcomes Details
+
+This subchapter gives more details to the :white_check_mark:Pass outcomes
+
+### Pass Outcome number 1
+
+[Jump to summary definition](#summary-Pass-1)	|	Previous Pass outcome	|	[Next Pass outcome](#pass-outcome-number-2)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-quantity-kinds|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-1)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-1)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-1)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 2
+
+[Jump to summary definition](#summary-Pass-2)	|	[Previous Pass outcome](#pass-outcome-number-1)	|	[Next Pass outcome](#pass-outcome-number-3)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-quantity-kinds|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-2)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-2)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-2)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 3
+
+[Jump to summary definition](#summary-Pass-3)	|	[Previous Pass outcome](#pass-outcome-number-2)	|	[Next Pass outcome](#pass-outcome-number-4)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-quantity-kinds|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-3)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-3)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-3)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 4
+
+[Jump to summary definition](#summary-Pass-4)	|	[Previous Pass outcome](#pass-outcome-number-3)	|	[Next Pass outcome](#pass-outcome-number-5)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-quantity-kinds|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-4)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-4)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-4)|Description|Statement&#32;not&#32;supported&#32;in&#32;a&#32;Sub&#32;Class&#32;Expression|
+
+***
+### Pass Outcome number 5
+
+[Jump to summary definition](#summary-Pass-5)	|	[Previous Pass outcome](#pass-outcome-number-4)	|	[Next Pass outcome](#pass-outcome-number-6)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-quantity-kinds|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-5)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-5)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-5)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 6
+
+[Jump to summary definition](#summary-Pass-6)	|	[Previous Pass outcome](#pass-outcome-number-5)	|	[Next Pass outcome](#pass-outcome-number-7)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-quantity-kinds|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-6)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-6)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-6)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 7
+
+[Jump to summary definition](#summary-Pass-7)	|	[Previous Pass outcome](#pass-outcome-number-6)	|	[Next Pass outcome](#pass-outcome-number-8)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-quantity-kinds|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-7)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-7)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-7)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 8
+
+[Jump to summary definition](#summary-Pass-8)	|	[Previous Pass outcome](#pass-outcome-number-7)	|	[Next Pass outcome](#pass-outcome-number-9)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-quantity-kinds|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-8)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-8)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-8)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 9
+
+[Jump to summary definition](#summary-Pass-9)	|	[Previous Pass outcome](#pass-outcome-number-8)	|	[Next Pass outcome](#pass-outcome-number-10)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-quantity-kinds|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-9)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-9)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-9)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 10
+
+[Jump to summary definition](#summary-Pass-10)	|	[Previous Pass outcome](#pass-outcome-number-9)	|	[Next Pass outcome](#pass-outcome-number-11)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-quantity-kinds|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;quantity&lowbar;kinds.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-10)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-10)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-10)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 11
+
+[Jump to summary definition](#summary-Pass-11)	|	[Previous Pass outcome](#pass-outcome-number-10)	|	[Next Pass outcome](#pass-outcome-number-12)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-permitting-stages|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-11)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-11)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-11)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 12
+
+[Jump to summary definition](#summary-Pass-12)	|	[Previous Pass outcome](#pass-outcome-number-11)	|	[Next Pass outcome](#pass-outcome-number-13)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-permitting-stages|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-12)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-12)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-12)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 13
+
+[Jump to summary definition](#summary-Pass-13)	|	[Previous Pass outcome](#pass-outcome-number-12)	|	[Next Pass outcome](#pass-outcome-number-14)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-permitting-stages|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-13)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-13)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-13)|Description|Statement&#32;not&#32;supported&#32;in&#32;a&#32;Sub&#32;Class&#32;Expression|
+
+***
+### Pass Outcome number 14
+
+[Jump to summary definition](#summary-Pass-14)	|	[Previous Pass outcome](#pass-outcome-number-13)	|	[Next Pass outcome](#pass-outcome-number-15)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-permitting-stages|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-14)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-14)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-14)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 15
+
+[Jump to summary definition](#summary-Pass-15)	|	[Previous Pass outcome](#pass-outcome-number-14)	|	[Next Pass outcome](#pass-outcome-number-16)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-permitting-stages|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-15)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-15)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-15)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 16
+
+[Jump to summary definition](#summary-Pass-16)	|	[Previous Pass outcome](#pass-outcome-number-15)	|	[Next Pass outcome](#pass-outcome-number-17)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-permitting-stages|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-16)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-16)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-16)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 17
+
+[Jump to summary definition](#summary-Pass-17)	|	[Previous Pass outcome](#pass-outcome-number-16)	|	[Next Pass outcome](#pass-outcome-number-18)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-permitting-stages|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-17)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-17)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-17)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 18
+
+[Jump to summary definition](#summary-Pass-18)	|	[Previous Pass outcome](#pass-outcome-number-17)	|	[Next Pass outcome](#pass-outcome-number-19)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-permitting-stages|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-18)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-18)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-18)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 19
+
+[Jump to summary definition](#summary-Pass-19)	|	[Previous Pass outcome](#pass-outcome-number-18)	|	[Next Pass outcome](#pass-outcome-number-20)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-permitting-stages|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-19)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-19)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-19)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 20
+
+[Jump to summary definition](#summary-Pass-20)	|	[Previous Pass outcome](#pass-outcome-number-19)	|	[Next Pass outcome](#pass-outcome-number-21)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-permitting-stages|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;permitting&lowbar;stages.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-20)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-20)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-20)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 21
+
+[Jump to summary definition](#summary-Pass-21)	|	[Previous Pass outcome](#pass-outcome-number-20)	|	[Next Pass outcome](#pass-outcome-number-22)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-disciplines|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-21)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-21)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-21)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 22
+
+[Jump to summary definition](#summary-Pass-22)	|	[Previous Pass outcome](#pass-outcome-number-21)	|	[Next Pass outcome](#pass-outcome-number-23)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-disciplines|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-22)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-22)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-22)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 23
+
+[Jump to summary definition](#summary-Pass-23)	|	[Previous Pass outcome](#pass-outcome-number-22)	|	[Next Pass outcome](#pass-outcome-number-24)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-disciplines|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-23)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-23)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-23)|Description|Statement&#32;not&#32;supported&#32;in&#32;a&#32;Sub&#32;Class&#32;Expression|
+
+***
+### Pass Outcome number 24
+
+[Jump to summary definition](#summary-Pass-24)	|	[Previous Pass outcome](#pass-outcome-number-23)	|	[Next Pass outcome](#pass-outcome-number-25)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-disciplines|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-24)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-24)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-24)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 25
+
+[Jump to summary definition](#summary-Pass-25)	|	[Previous Pass outcome](#pass-outcome-number-24)	|	[Next Pass outcome](#pass-outcome-number-26)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-disciplines|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-25)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-25)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-25)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 26
+
+[Jump to summary definition](#summary-Pass-26)	|	[Previous Pass outcome](#pass-outcome-number-25)	|	[Next Pass outcome](#pass-outcome-number-27)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-disciplines|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-26)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-26)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-26)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 27
+
+[Jump to summary definition](#summary-Pass-27)	|	[Previous Pass outcome](#pass-outcome-number-26)	|	[Next Pass outcome](#pass-outcome-number-28)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-disciplines|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-27)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-27)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-27)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 28
+
+[Jump to summary definition](#summary-Pass-28)	|	[Previous Pass outcome](#pass-outcome-number-27)	|	[Next Pass outcome](#pass-outcome-number-29)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-disciplines|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-28)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-28)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-28)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 29
+
+[Jump to summary definition](#summary-Pass-29)	|	[Previous Pass outcome](#pass-outcome-number-28)	|	[Next Pass outcome](#pass-outcome-number-30)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-disciplines|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-29)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-29)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-29)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 30
+
+[Jump to summary definition](#summary-Pass-30)	|	[Previous Pass outcome](#pass-outcome-number-29)	|	[Next Pass outcome](#pass-outcome-number-31)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-disciplines|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;disciplines.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-30)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-30)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-30)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 31
+
+[Jump to summary definition](#summary-Pass-31)	|	[Previous Pass outcome](#pass-outcome-number-30)	|	[Next Pass outcome](#pass-outcome-number-32)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-operators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-31)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-31)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-31)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 32
+
+[Jump to summary definition](#summary-Pass-32)	|	[Previous Pass outcome](#pass-outcome-number-31)	|	[Next Pass outcome](#pass-outcome-number-33)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-operators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-32)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-32)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-32)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 33
+
+[Jump to summary definition](#summary-Pass-33)	|	[Previous Pass outcome](#pass-outcome-number-32)	|	[Next Pass outcome](#pass-outcome-number-34)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-operators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-33)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-33)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-33)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 34
+
+[Jump to summary definition](#summary-Pass-34)	|	[Previous Pass outcome](#pass-outcome-number-33)	|	[Next Pass outcome](#pass-outcome-number-35)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-operators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-34)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-34)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-34)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 35
+
+[Jump to summary definition](#summary-Pass-35)	|	[Previous Pass outcome](#pass-outcome-number-34)	|	[Next Pass outcome](#pass-outcome-number-36)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-operators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-35)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-35)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-35)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 36
+
+[Jump to summary definition](#summary-Pass-36)	|	[Previous Pass outcome](#pass-outcome-number-35)	|	[Next Pass outcome](#pass-outcome-number-37)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-operators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-36)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-36)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-36)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 37
+
+[Jump to summary definition](#summary-Pass-37)	|	[Previous Pass outcome](#pass-outcome-number-36)	|	[Next Pass outcome](#pass-outcome-number-38)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-operators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-37)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-37)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-37)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 38
+
+[Jump to summary definition](#summary-Pass-38)	|	[Previous Pass outcome](#pass-outcome-number-37)	|	[Next Pass outcome](#pass-outcome-number-39)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-operators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-38)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-38)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-38)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 39
+
+[Jump to summary definition](#summary-Pass-39)	|	[Previous Pass outcome](#pass-outcome-number-38)	|	[Next Pass outcome](#pass-outcome-number-40)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-operators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-39)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-39)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-39)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 40
+
+[Jump to summary definition](#summary-Pass-40)	|	[Previous Pass outcome](#pass-outcome-number-39)	|	[Next Pass outcome](#pass-outcome-number-41)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-operators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;operators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-40)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-40)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-40)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 41
+
+[Jump to summary definition](#summary-Pass-41)	|	[Previous Pass outcome](#pass-outcome-number-40)	|	[Next Pass outcome](#pass-outcome-number-42)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-comparators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-41)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-41)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-41)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 42
+
+[Jump to summary definition](#summary-Pass-42)	|	[Previous Pass outcome](#pass-outcome-number-41)	|	[Next Pass outcome](#pass-outcome-number-43)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-comparators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-42)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-42)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-42)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 43
+
+[Jump to summary definition](#summary-Pass-43)	|	[Previous Pass outcome](#pass-outcome-number-42)	|	[Next Pass outcome](#pass-outcome-number-44)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-comparators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-43)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-43)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-43)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 44
+
+[Jump to summary definition](#summary-Pass-44)	|	[Previous Pass outcome](#pass-outcome-number-43)	|	[Next Pass outcome](#pass-outcome-number-45)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-comparators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-44)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-44)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-44)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 45
+
+[Jump to summary definition](#summary-Pass-45)	|	[Previous Pass outcome](#pass-outcome-number-44)	|	[Next Pass outcome](#pass-outcome-number-46)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-comparators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-45)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-45)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-45)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 46
+
+[Jump to summary definition](#summary-Pass-46)	|	[Previous Pass outcome](#pass-outcome-number-45)	|	[Next Pass outcome](#pass-outcome-number-47)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-comparators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-46)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-46)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-46)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 47
+
+[Jump to summary definition](#summary-Pass-47)	|	[Previous Pass outcome](#pass-outcome-number-46)	|	[Next Pass outcome](#pass-outcome-number-48)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-comparators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-47)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-47)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-47)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 48
+
+[Jump to summary definition](#summary-Pass-48)	|	[Previous Pass outcome](#pass-outcome-number-47)	|	[Next Pass outcome](#pass-outcome-number-49)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-comparators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-48)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-48)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-48)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 49
+
+[Jump to summary definition](#summary-Pass-49)	|	[Previous Pass outcome](#pass-outcome-number-48)	|	[Next Pass outcome](#pass-outcome-number-50)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-check-method-comparators|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;check&lowbar;method&lowbar;comparators.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-49)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-49)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-49)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 50
+
+[Jump to summary definition](#summary-Pass-50)	|	[Previous Pass outcome](#pass-outcome-number-49)	|	[Next Pass outcome](#pass-outcome-number-51)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-usage|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-50)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-50)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-50)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 51
+
+[Jump to summary definition](#summary-Pass-51)	|	[Previous Pass outcome](#pass-outcome-number-50)	|	[Next Pass outcome](#pass-outcome-number-52)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-usage|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-51)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-51)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-51)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 52
+
+[Jump to summary definition](#summary-Pass-52)	|	[Previous Pass outcome](#pass-outcome-number-51)	|	[Next Pass outcome](#pass-outcome-number-53)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-usage|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-52)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-52)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-52)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 53
+
+[Jump to summary definition](#summary-Pass-53)	|	[Previous Pass outcome](#pass-outcome-number-52)	|	[Next Pass outcome](#pass-outcome-number-54)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-usage|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-53)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-53)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-53)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 54
+
+[Jump to summary definition](#summary-Pass-54)	|	[Previous Pass outcome](#pass-outcome-number-53)	|	[Next Pass outcome](#pass-outcome-number-55)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-usage|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-54)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-54)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-54)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 55
+
+[Jump to summary definition](#summary-Pass-55)	|	[Previous Pass outcome](#pass-outcome-number-54)	|	[Next Pass outcome](#pass-outcome-number-56)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-usage|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-55)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-55)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-55)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 56
+
+[Jump to summary definition](#summary-Pass-56)	|	[Previous Pass outcome](#pass-outcome-number-55)	|	[Next Pass outcome](#pass-outcome-number-57)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-usage|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-56)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-56)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-56)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 57
+
+[Jump to summary definition](#summary-Pass-57)	|	[Previous Pass outcome](#pass-outcome-number-56)	|	[Next Pass outcome](#pass-outcome-number-58)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-usage|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-57)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-57)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-57)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 58
+
+[Jump to summary definition](#summary-Pass-58)	|	[Previous Pass outcome](#pass-outcome-number-57)	|	[Next Pass outcome](#pass-outcome-number-59)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-usage|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;usage.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-58)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-58)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-58)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 59
+
+[Jump to summary definition](#summary-Pass-59)	|	[Previous Pass outcome](#pass-outcome-number-58)	|	[Next Pass outcome](#pass-outcome-number-60)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-structure|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-59)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-59)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-59)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 60
+
+[Jump to summary definition](#summary-Pass-60)	|	[Previous Pass outcome](#pass-outcome-number-59)	|	[Next Pass outcome](#pass-outcome-number-61)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-structure|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-60)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-60)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-60)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 61
+
+[Jump to summary definition](#summary-Pass-61)	|	[Previous Pass outcome](#pass-outcome-number-60)	|	[Next Pass outcome](#pass-outcome-number-62)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-structure|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-61)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-61)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-61)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 62
+
+[Jump to summary definition](#summary-Pass-62)	|	[Previous Pass outcome](#pass-outcome-number-61)	|	[Next Pass outcome](#pass-outcome-number-63)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-structure|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-62)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-62)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-62)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 63
+
+[Jump to summary definition](#summary-Pass-63)	|	[Previous Pass outcome](#pass-outcome-number-62)	|	[Next Pass outcome](#pass-outcome-number-64)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-structure|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-63)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-63)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-63)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 64
+
+[Jump to summary definition](#summary-Pass-64)	|	[Previous Pass outcome](#pass-outcome-number-63)	|	[Next Pass outcome](#pass-outcome-number-65)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-structure|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-64)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-64)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-64)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 65
+
+[Jump to summary definition](#summary-Pass-65)	|	[Previous Pass outcome](#pass-outcome-number-64)	|	[Next Pass outcome](#pass-outcome-number-66)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-structure|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-65)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-65)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-65)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 66
+
+[Jump to summary definition](#summary-Pass-66)	|	[Previous Pass outcome](#pass-outcome-number-65)	|	[Next Pass outcome](#pass-outcome-number-67)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-structure|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-66)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-66)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-66)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 67
+
+[Jump to summary definition](#summary-Pass-67)	|	[Previous Pass outcome](#pass-outcome-number-66)	|	[Next Pass outcome](#pass-outcome-number-68)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-building-structure|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;building&lowbar;structure.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-67)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-67)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-67)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 68
+
+[Jump to summary definition](#summary-Pass-68)	|	[Previous Pass outcome](#pass-outcome-number-67)	|	[Next Pass outcome](#pass-outcome-number-69)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-administrative-areas|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-68)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-68)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-68)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 69
+
+[Jump to summary definition](#summary-Pass-69)	|	[Previous Pass outcome](#pass-outcome-number-68)	|	[Next Pass outcome](#pass-outcome-number-70)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-administrative-areas|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-69)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-69)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-69)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 70
+
+[Jump to summary definition](#summary-Pass-70)	|	[Previous Pass outcome](#pass-outcome-number-69)	|	[Next Pass outcome](#pass-outcome-number-71)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-administrative-areas|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-70)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-70)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-70)|Description|Statement&#32;not&#32;supported&#32;in&#32;a&#32;Sub&#32;Class&#32;Expression|
+
+***
+### Pass Outcome number 71
+
+[Jump to summary definition](#summary-Pass-71)	|	[Previous Pass outcome](#pass-outcome-number-70)	|	[Next Pass outcome](#pass-outcome-number-72)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-administrative-areas|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-71)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-71)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-71)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 72
+
+[Jump to summary definition](#summary-Pass-72)	|	[Previous Pass outcome](#pass-outcome-number-71)	|	[Next Pass outcome](#pass-outcome-number-73)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-administrative-areas|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-72)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-72)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-72)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 73
+
+[Jump to summary definition](#summary-Pass-73)	|	[Previous Pass outcome](#pass-outcome-number-72)	|	[Next Pass outcome](#pass-outcome-number-74)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-administrative-areas|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-73)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-73)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-73)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 74
+
+[Jump to summary definition](#summary-Pass-74)	|	[Previous Pass outcome](#pass-outcome-number-73)	|	[Next Pass outcome](#pass-outcome-number-75)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-administrative-areas|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-74)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-74)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-74)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 75
+
+[Jump to summary definition](#summary-Pass-75)	|	[Previous Pass outcome](#pass-outcome-number-74)	|	[Next Pass outcome](#pass-outcome-number-76)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-administrative-areas|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-75)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-75)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-75)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 76
+
+[Jump to summary definition](#summary-Pass-76)	|	[Previous Pass outcome](#pass-outcome-number-75)	|	[Next Pass outcome](#pass-outcome-number-77)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-administrative-areas|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-76)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-76)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-76)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 77
+
+[Jump to summary definition](#summary-Pass-77)	|	[Previous Pass outcome](#pass-outcome-number-76)	|	[Next Pass outcome](#pass-outcome-number-78)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies-administrative-areas|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;administrative&lowbar;areas.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-77)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-77)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-77)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 78
+
+[Jump to summary definition](#summary-Pass-78)	|	[Previous Pass outcome](#pass-outcome-number-77)	|	[Next Pass outcome](#pass-outcome-number-79)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-78)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-78)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-78)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 79
+
+[Jump to summary definition](#summary-Pass-79)	|	[Previous Pass outcome](#pass-outcome-number-78)	|	[Next Pass outcome](#pass-outcome-number-80)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-79)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-79)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-79)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 80
+
+[Jump to summary definition](#summary-Pass-80)	|	[Previous Pass outcome](#pass-outcome-number-79)	|	[Next Pass outcome](#pass-outcome-number-81)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-80)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-80)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-80)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 81
+
+[Jump to summary definition](#summary-Pass-81)	|	[Previous Pass outcome](#pass-outcome-number-80)	|	[Next Pass outcome](#pass-outcome-number-82)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-81)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-81)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-81)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 82
+
+[Jump to summary definition](#summary-Pass-82)	|	[Previous Pass outcome](#pass-outcome-number-81)	|	[Next Pass outcome](#pass-outcome-number-83)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-82)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-82)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-82)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 83
+
+[Jump to summary definition](#summary-Pass-83)	|	[Previous Pass outcome](#pass-outcome-number-82)	|	[Next Pass outcome](#pass-outcome-number-84)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-83)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-83)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-83)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 84
+
+[Jump to summary definition](#summary-Pass-84)	|	[Previous Pass outcome](#pass-outcome-number-83)	|	[Next Pass outcome](#pass-outcome-number-85)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-84)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-84)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-84)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 85
+
+[Jump to summary definition](#summary-Pass-85)	|	[Previous Pass outcome](#pass-outcome-number-84)	|	[Next Pass outcome](#pass-outcome-number-86)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-85)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-85)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-85)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 86
+
+[Jump to summary definition](#summary-Pass-86)	|	[Previous Pass outcome](#pass-outcome-number-85)	|	[Next Pass outcome](#pass-outcome-number-87)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-86)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-86)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-86)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 87
+
+[Jump to summary definition](#summary-Pass-87)	|	[Previous Pass outcome](#pass-outcome-number-86)	|	[Next Pass outcome](#pass-outcome-number-88)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-87)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-87)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-87)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 88
+
+[Jump to summary definition](#summary-Pass-88)	|	[Previous Pass outcome](#pass-outcome-number-87)	|	[Next Pass outcome](#pass-outcome-number-89)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-88)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-88)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-88)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 89
+
+[Jump to summary definition](#summary-Pass-89)	|	[Previous Pass outcome](#pass-outcome-number-88)	|	[Next Pass outcome](#pass-outcome-number-90)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-89)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-89)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-89)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 90
+
+[Jump to summary definition](#summary-Pass-90)	|	[Previous Pass outcome](#pass-outcome-number-89)	|	[Next Pass outcome](#pass-outcome-number-91)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-vocabularies--shape|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;vocabularies&#92;&lowbar;shape.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-90)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-90)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-90)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 91
+
+[Jump to summary definition](#summary-Pass-91)	|	[Previous Pass outcome](#pass-outcome-number-90)	|	[Next Pass outcome](#pass-outcome-number-92)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-table|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-91)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-91)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-91)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 92
+
+[Jump to summary definition](#summary-Pass-92)	|	[Previous Pass outcome](#pass-outcome-number-91)	|	[Next Pass outcome](#pass-outcome-number-93)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-table|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-92)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-92)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-92)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 93
+
+[Jump to summary definition](#summary-Pass-93)	|	[Previous Pass outcome](#pass-outcome-number-92)	|	[Next Pass outcome](#pass-outcome-number-94)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-table|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-93)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-93)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-93)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 94
+
+[Jump to summary definition](#summary-Pass-94)	|	[Previous Pass outcome](#pass-outcome-number-93)	|	[Next Pass outcome](#pass-outcome-number-95)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-table|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-94)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-94)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-94)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 95
+
+[Jump to summary definition](#summary-Pass-95)	|	[Previous Pass outcome](#pass-outcome-number-94)	|	[Next Pass outcome](#pass-outcome-number-96)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-table|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-95)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-95)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-95)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 96
+
+[Jump to summary definition](#summary-Pass-96)	|	[Previous Pass outcome](#pass-outcome-number-95)	|	[Next Pass outcome](#pass-outcome-number-97)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-table|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-96)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-96)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-96)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 97
+
+[Jump to summary definition](#summary-Pass-97)	|	[Previous Pass outcome](#pass-outcome-number-96)	|	[Next Pass outcome](#pass-outcome-number-98)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-table|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-97)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-97)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-97)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 98
+
+[Jump to summary definition](#summary-Pass-98)	|	[Previous Pass outcome](#pass-outcome-number-97)	|	[Next Pass outcome](#pass-outcome-number-99)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-table|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-98)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-98)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-98)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 99
+
+[Jump to summary definition](#summary-Pass-99)	|	[Previous Pass outcome](#pass-outcome-number-98)	|	[Next Pass outcome](#pass-outcome-number-100)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-table|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-99)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-99)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-99)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 100
+
+[Jump to summary definition](#summary-Pass-100)	|	[Previous Pass outcome](#pass-outcome-number-99)	|	[Next Pass outcome](#pass-outcome-number-101)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-table|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;table.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-100)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-100)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-100)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 101
+
+[Jump to summary definition](#summary-Pass-101)	|	[Previous Pass outcome](#pass-outcome-number-100)	|	[Next Pass outcome](#pass-outcome-number-102)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-101)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-101)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-101)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 102
+
+[Jump to summary definition](#summary-Pass-102)	|	[Previous Pass outcome](#pass-outcome-number-101)	|	[Next Pass outcome](#pass-outcome-number-103)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-102)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-102)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-102)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 103
+
+[Jump to summary definition](#summary-Pass-103)	|	[Previous Pass outcome](#pass-outcome-number-102)	|	[Next Pass outcome](#pass-outcome-number-104)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-103)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-103)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-103)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 104
+
+[Jump to summary definition](#summary-Pass-104)	|	[Previous Pass outcome](#pass-outcome-number-103)	|	[Next Pass outcome](#pass-outcome-number-105)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-104)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-104)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-104)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 105
+
+[Jump to summary definition](#summary-Pass-105)	|	[Previous Pass outcome](#pass-outcome-number-104)	|	[Next Pass outcome](#pass-outcome-number-106)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-105)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-105)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-105)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 106
+
+[Jump to summary definition](#summary-Pass-106)	|	[Previous Pass outcome](#pass-outcome-number-105)	|	[Next Pass outcome](#pass-outcome-number-107)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-106)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-106)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-106)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 107
+
+[Jump to summary definition](#summary-Pass-107)	|	[Previous Pass outcome](#pass-outcome-number-106)	|	[Next Pass outcome](#pass-outcome-number-108)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-107)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-107)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-107)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 108
+
+[Jump to summary definition](#summary-Pass-108)	|	[Previous Pass outcome](#pass-outcome-number-107)	|	[Next Pass outcome](#pass-outcome-number-109)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-108)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-108)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-108)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 109
+
+[Jump to summary definition](#summary-Pass-109)	|	[Previous Pass outcome](#pass-outcome-number-108)	|	[Next Pass outcome](#pass-outcome-number-110)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-109)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-109)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-109)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 110
+
+[Jump to summary definition](#summary-Pass-110)	|	[Previous Pass outcome](#pass-outcome-number-109)	|	[Next Pass outcome](#pass-outcome-number-111)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-110)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-110)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-110)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 111
+
+[Jump to summary definition](#summary-Pass-111)	|	[Previous Pass outcome](#pass-outcome-number-110)	|	[Next Pass outcome](#pass-outcome-number-112)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-111)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-111)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-111)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 112
+
+[Jump to summary definition](#summary-Pass-112)	|	[Previous Pass outcome](#pass-outcome-number-111)	|	[Next Pass outcome](#pass-outcome-number-113)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-112)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-112)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-112)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 113
+
+[Jump to summary definition](#summary-Pass-113)	|	[Previous Pass outcome](#pass-outcome-number-112)	|	[Next Pass outcome](#pass-outcome-number-114)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-113)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-113)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-113)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 114
+
+[Jump to summary definition](#summary-Pass-114)	|	[Previous Pass outcome](#pass-outcome-number-113)	|	[Next Pass outcome](#pass-outcome-number-115)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-114)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-114)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-114)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 115
+
+[Jump to summary definition](#summary-Pass-115)	|	[Previous Pass outcome](#pass-outcome-number-114)	|	[Next Pass outcome](#pass-outcome-number-116)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-115)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-115)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-115)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 116
+
+[Jump to summary definition](#summary-Pass-116)	|	[Previous Pass outcome](#pass-outcome-number-115)	|	[Next Pass outcome](#pass-outcome-number-117)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-116)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-116)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-116)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 117
+
+[Jump to summary definition](#summary-Pass-117)	|	[Previous Pass outcome](#pass-outcome-number-116)	|	[Next Pass outcome](#pass-outcome-number-118)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-117)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-117)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-117)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 118
+
+[Jump to summary definition](#summary-Pass-118)	|	[Previous Pass outcome](#pass-outcome-number-117)	|	[Next Pass outcome](#pass-outcome-number-119)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-118)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-118)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-118)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 119
+
+[Jump to summary definition](#summary-Pass-119)	|	[Previous Pass outcome](#pass-outcome-number-118)	|	[Next Pass outcome](#pass-outcome-number-120)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-119)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-119)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-119)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 120
+
+[Jump to summary definition](#summary-Pass-120)	|	[Previous Pass outcome](#pass-outcome-number-119)	|	[Next Pass outcome](#pass-outcome-number-121)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-120)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-120)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-120)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 121
+
+[Jump to summary definition](#summary-Pass-121)	|	[Previous Pass outcome](#pass-outcome-number-120)	|	[Next Pass outcome](#pass-outcome-number-122)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-121)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-121)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-121)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 122
+
+[Jump to summary definition](#summary-Pass-122)	|	[Previous Pass outcome](#pass-outcome-number-121)	|	[Next Pass outcome](#pass-outcome-number-123)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-rase-statement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;rase&lowbar;statement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-122)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-122)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-122)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 123
+
+[Jump to summary definition](#summary-Pass-123)	|	[Previous Pass outcome](#pass-outcome-number-122)	|	[Next Pass outcome](#pass-outcome-number-124)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-model|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-123)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-123)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-123)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 124
+
+[Jump to summary definition](#summary-Pass-124)	|	[Previous Pass outcome](#pass-outcome-number-123)	|	[Next Pass outcome](#pass-outcome-number-125)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-model|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-124)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-124)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-124)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 125
+
+[Jump to summary definition](#summary-Pass-125)	|	[Previous Pass outcome](#pass-outcome-number-124)	|	[Next Pass outcome](#pass-outcome-number-126)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-model|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-125)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-125)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-125)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 126
+
+[Jump to summary definition](#summary-Pass-126)	|	[Previous Pass outcome](#pass-outcome-number-125)	|	[Next Pass outcome](#pass-outcome-number-127)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-model|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-126)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-126)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-126)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 127
+
+[Jump to summary definition](#summary-Pass-127)	|	[Previous Pass outcome](#pass-outcome-number-126)	|	[Next Pass outcome](#pass-outcome-number-128)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-model|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-127)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-127)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-127)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 128
+
+[Jump to summary definition](#summary-Pass-128)	|	[Previous Pass outcome](#pass-outcome-number-127)	|	[Next Pass outcome](#pass-outcome-number-129)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-model|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-128)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-128)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-128)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 129
+
+[Jump to summary definition](#summary-Pass-129)	|	[Previous Pass outcome](#pass-outcome-number-128)	|	[Next Pass outcome](#pass-outcome-number-130)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-model|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-129)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-129)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-129)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 130
+
+[Jump to summary definition](#summary-Pass-130)	|	[Previous Pass outcome](#pass-outcome-number-129)	|	[Next Pass outcome](#pass-outcome-number-131)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-model|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-130)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-130)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-130)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 131
+
+[Jump to summary definition](#summary-Pass-131)	|	[Previous Pass outcome](#pass-outcome-number-130)	|	[Next Pass outcome](#pass-outcome-number-132)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-model|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;model.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-131)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-131)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-131)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 132
+
+[Jump to summary definition](#summary-Pass-132)	|	[Previous Pass outcome](#pass-outcome-number-131)	|	[Next Pass outcome](#pass-outcome-number-133)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-legal-verifier|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-132)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-132)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-132)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 133
+
+[Jump to summary definition](#summary-Pass-133)	|	[Previous Pass outcome](#pass-outcome-number-132)	|	[Next Pass outcome](#pass-outcome-number-134)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-legal-verifier|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-133)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-133)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-133)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 134
+
+[Jump to summary definition](#summary-Pass-134)	|	[Previous Pass outcome](#pass-outcome-number-133)	|	[Next Pass outcome](#pass-outcome-number-135)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-legal-verifier|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-134)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-134)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-134)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 135
+
+[Jump to summary definition](#summary-Pass-135)	|	[Previous Pass outcome](#pass-outcome-number-134)	|	[Next Pass outcome](#pass-outcome-number-136)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-legal-verifier|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-135)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-135)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-135)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 136
+
+[Jump to summary definition](#summary-Pass-136)	|	[Previous Pass outcome](#pass-outcome-number-135)	|	[Next Pass outcome](#pass-outcome-number-137)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-legal-verifier|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-136)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-136)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-136)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 137
+
+[Jump to summary definition](#summary-Pass-137)	|	[Previous Pass outcome](#pass-outcome-number-136)	|	[Next Pass outcome](#pass-outcome-number-138)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-legal-verifier|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-137)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-137)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-137)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 138
+
+[Jump to summary definition](#summary-Pass-138)	|	[Previous Pass outcome](#pass-outcome-number-137)	|	[Next Pass outcome](#pass-outcome-number-139)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-legal-verifier|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-138)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-138)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-138)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 139
+
+[Jump to summary definition](#summary-Pass-139)	|	[Previous Pass outcome](#pass-outcome-number-138)	|	[Next Pass outcome](#pass-outcome-number-140)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-legal-verifier|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-139)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-139)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-139)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 140
+
+[Jump to summary definition](#summary-Pass-140)	|	[Previous Pass outcome](#pass-outcome-number-139)	|	[Next Pass outcome](#pass-outcome-number-141)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-legal-verifier|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-140)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-140)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-140)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 141
+
+[Jump to summary definition](#summary-Pass-141)	|	[Previous Pass outcome](#pass-outcome-number-140)	|	[Next Pass outcome](#pass-outcome-number-142)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-legal-verifier|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-141)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-141)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-141)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 142
+
+[Jump to summary definition](#summary-Pass-142)	|	[Previous Pass outcome](#pass-outcome-number-141)	|	[Next Pass outcome](#pass-outcome-number-143)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-legal-verifier|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;legal&lowbar;verifier.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-142)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-142)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-142)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 143
+
+[Jump to summary definition](#summary-Pass-143)	|	[Previous Pass outcome](#pass-outcome-number-142)	|	[Next Pass outcome](#pass-outcome-number-144)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-feature-of-interest|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-143)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-143)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-143)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 144
+
+[Jump to summary definition](#summary-Pass-144)	|	[Previous Pass outcome](#pass-outcome-number-143)	|	[Next Pass outcome](#pass-outcome-number-145)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-feature-of-interest|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-144)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-144)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-144)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 145
+
+[Jump to summary definition](#summary-Pass-145)	|	[Previous Pass outcome](#pass-outcome-number-144)	|	[Next Pass outcome](#pass-outcome-number-146)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-feature-of-interest|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-145)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-145)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-145)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 146
+
+[Jump to summary definition](#summary-Pass-146)	|	[Previous Pass outcome](#pass-outcome-number-145)	|	[Next Pass outcome](#pass-outcome-number-147)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-feature-of-interest|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-146)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-146)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-146)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 147
+
+[Jump to summary definition](#summary-Pass-147)	|	[Previous Pass outcome](#pass-outcome-number-146)	|	[Next Pass outcome](#pass-outcome-number-148)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-feature-of-interest|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-147)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-147)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-147)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 148
+
+[Jump to summary definition](#summary-Pass-148)	|	[Previous Pass outcome](#pass-outcome-number-147)	|	[Next Pass outcome](#pass-outcome-number-149)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-feature-of-interest|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-148)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-148)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-148)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 149
+
+[Jump to summary definition](#summary-Pass-149)	|	[Previous Pass outcome](#pass-outcome-number-148)	|	[Next Pass outcome](#pass-outcome-number-150)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-feature-of-interest|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-149)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-149)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-149)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 150
+
+[Jump to summary definition](#summary-Pass-150)	|	[Previous Pass outcome](#pass-outcome-number-149)	|	[Next Pass outcome](#pass-outcome-number-151)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-feature-of-interest|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-150)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-150)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-150)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 151
+
+[Jump to summary definition](#summary-Pass-151)	|	[Previous Pass outcome](#pass-outcome-number-150)	|	[Next Pass outcome](#pass-outcome-number-152)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-feature-of-interest|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-151)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-151)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-151)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 152
+
+[Jump to summary definition](#summary-Pass-152)	|	[Previous Pass outcome](#pass-outcome-number-151)	|	[Next Pass outcome](#pass-outcome-number-153)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-feature-of-interest|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-152)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-152)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-152)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 153
+
+[Jump to summary definition](#summary-Pass-153)	|	[Previous Pass outcome](#pass-outcome-number-152)	|	[Next Pass outcome](#pass-outcome-number-154)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-feature-of-interest|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;feature&lowbar;of&lowbar;interest.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-153)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-153)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-153)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 154
+
+[Jump to summary definition](#summary-Pass-154)	|	[Previous Pass outcome](#pass-outcome-number-153)	|	[Next Pass outcome](#pass-outcome-number-155)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-evidence|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-154)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-154)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-154)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 155
+
+[Jump to summary definition](#summary-Pass-155)	|	[Previous Pass outcome](#pass-outcome-number-154)	|	[Next Pass outcome](#pass-outcome-number-156)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-evidence|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-155)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-155)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-155)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 156
+
+[Jump to summary definition](#summary-Pass-156)	|	[Previous Pass outcome](#pass-outcome-number-155)	|	[Next Pass outcome](#pass-outcome-number-157)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-evidence|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-156)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-156)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-156)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 157
+
+[Jump to summary definition](#summary-Pass-157)	|	[Previous Pass outcome](#pass-outcome-number-156)	|	[Next Pass outcome](#pass-outcome-number-158)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-evidence|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-157)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-157)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-157)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 158
+
+[Jump to summary definition](#summary-Pass-158)	|	[Previous Pass outcome](#pass-outcome-number-157)	|	[Next Pass outcome](#pass-outcome-number-159)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-evidence|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-158)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-158)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-158)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 159
+
+[Jump to summary definition](#summary-Pass-159)	|	[Previous Pass outcome](#pass-outcome-number-158)	|	[Next Pass outcome](#pass-outcome-number-160)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-evidence|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-159)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-159)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-159)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 160
+
+[Jump to summary definition](#summary-Pass-160)	|	[Previous Pass outcome](#pass-outcome-number-159)	|	[Next Pass outcome](#pass-outcome-number-161)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-evidence|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-160)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-160)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-160)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 161
+
+[Jump to summary definition](#summary-Pass-161)	|	[Previous Pass outcome](#pass-outcome-number-160)	|	[Next Pass outcome](#pass-outcome-number-162)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-evidence|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-161)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-161)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-161)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 162
+
+[Jump to summary definition](#summary-Pass-162)	|	[Previous Pass outcome](#pass-outcome-number-161)	|	[Next Pass outcome](#pass-outcome-number-163)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-evidence|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-162)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-162)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-162)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 163
+
+[Jump to summary definition](#summary-Pass-163)	|	[Previous Pass outcome](#pass-outcome-number-162)	|	[Next Pass outcome](#pass-outcome-number-164)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-evidence|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-163)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-163)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-163)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 164
+
+[Jump to summary definition](#summary-Pass-164)	|	[Previous Pass outcome](#pass-outcome-number-163)	|	[Next Pass outcome](#pass-outcome-number-165)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-evidence|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;evidence.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-164)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-164)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-164)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 165
+
+[Jump to summary definition](#summary-Pass-165)	|	[Previous Pass outcome](#pass-outcome-number-164)	|	[Next Pass outcome](#pass-outcome-number-166)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-document|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-165)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-165)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-165)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 166
+
+[Jump to summary definition](#summary-Pass-166)	|	[Previous Pass outcome](#pass-outcome-number-165)	|	[Next Pass outcome](#pass-outcome-number-167)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-document|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-166)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-166)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-166)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 167
+
+[Jump to summary definition](#summary-Pass-167)	|	[Previous Pass outcome](#pass-outcome-number-166)	|	[Next Pass outcome](#pass-outcome-number-168)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-document|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-167)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-167)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-167)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 168
+
+[Jump to summary definition](#summary-Pass-168)	|	[Previous Pass outcome](#pass-outcome-number-167)	|	[Next Pass outcome](#pass-outcome-number-169)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-document|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-168)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-168)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-168)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 169
+
+[Jump to summary definition](#summary-Pass-169)	|	[Previous Pass outcome](#pass-outcome-number-168)	|	[Next Pass outcome](#pass-outcome-number-170)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-document|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-169)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-169)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-169)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 170
+
+[Jump to summary definition](#summary-Pass-170)	|	[Previous Pass outcome](#pass-outcome-number-169)	|	[Next Pass outcome](#pass-outcome-number-171)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-document|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-170)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-170)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-170)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 171
+
+[Jump to summary definition](#summary-Pass-171)	|	[Previous Pass outcome](#pass-outcome-number-170)	|	[Next Pass outcome](#pass-outcome-number-172)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-document|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-171)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-171)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-171)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 172
+
+[Jump to summary definition](#summary-Pass-172)	|	[Previous Pass outcome](#pass-outcome-number-171)	|	[Next Pass outcome](#pass-outcome-number-173)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-document|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-172)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-172)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-172)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 173
+
+[Jump to summary definition](#summary-Pass-173)	|	[Previous Pass outcome](#pass-outcome-number-172)	|	[Next Pass outcome](#pass-outcome-number-174)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-document|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-173)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-173)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-173)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 174
+
+[Jump to summary definition](#summary-Pass-174)	|	[Previous Pass outcome](#pass-outcome-number-173)	|	[Next Pass outcome](#pass-outcome-number-175)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-document|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;document.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-174)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-174)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-174)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 175
+
+[Jump to summary definition](#summary-Pass-175)	|	[Previous Pass outcome](#pass-outcome-number-174)	|	[Next Pass outcome](#pass-outcome-number-176)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-175)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-175)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-175)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 176
+
+[Jump to summary definition](#summary-Pass-176)	|	[Previous Pass outcome](#pass-outcome-number-175)	|	[Next Pass outcome](#pass-outcome-number-177)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-176)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-176)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-176)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 177
+
+[Jump to summary definition](#summary-Pass-177)	|	[Previous Pass outcome](#pass-outcome-number-176)	|	[Next Pass outcome](#pass-outcome-number-178)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-177)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-177)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-177)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 178
+
+[Jump to summary definition](#summary-Pass-178)	|	[Previous Pass outcome](#pass-outcome-number-177)	|	[Next Pass outcome](#pass-outcome-number-179)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-178)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-178)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-178)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 179
+
+[Jump to summary definition](#summary-Pass-179)	|	[Previous Pass outcome](#pass-outcome-number-178)	|	[Next Pass outcome](#pass-outcome-number-180)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-179)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-179)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-179)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;EL&#32;sublanguage|
+
+***
+### Pass Outcome number 180
+
+[Jump to summary definition](#summary-Pass-180)	|	[Previous Pass outcome](#pass-outcome-number-179)	|	[Next Pass outcome](#pass-outcome-number-181)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-180)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-180)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-180)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;QL&#32;sublanguage|
+
+***
+### Pass Outcome number 181
+
+[Jump to summary definition](#summary-Pass-181)	|	[Previous Pass outcome](#pass-outcome-number-180)	|	[Next Pass outcome](#pass-outcome-number-182)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-181)|Identifier|`owl-rl-profile-error`|
+|[Section top](#pass-outcome-number-181)|Title|OWL&#32;RL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-181)|Description|The&#32;subject&#32;is&#32;included&#32;in&#32;the&#32;OWL&#32;RL&#32;sublanguage|
+
+***
+### Pass Outcome number 182
+
+[Jump to summary definition](#summary-Pass-182)	|	[Previous Pass outcome](#pass-outcome-number-181)	|	[Next Pass outcome](#pass-outcome-number-183)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-182)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-182)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-182)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 183
+
+[Jump to summary definition](#summary-Pass-183)	|	[Previous Pass outcome](#pass-outcome-number-182)	|	[Next Pass outcome](#pass-outcome-number-184)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-183)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-183)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-183)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 184
+
+[Jump to summary definition](#summary-Pass-184)	|	[Previous Pass outcome](#pass-outcome-number-183)	|	[Next Pass outcome](#pass-outcome-number-185)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-184)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-184)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-184)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 185
+
+[Jump to summary definition](#summary-Pass-185)	|	[Previous Pass outcome](#pass-outcome-number-184)	|	[Next Pass outcome](#pass-outcome-number-186)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-185)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-185)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-185)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 186
+
+[Jump to summary definition](#summary-Pass-186)	|	[Previous Pass outcome](#pass-outcome-number-185)	|	[Next Pass outcome](#pass-outcome-number-187)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-186)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-186)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-186)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 187
+
+[Jump to summary definition](#summary-Pass-187)	|	[Previous Pass outcome](#pass-outcome-number-186)	|	[Next Pass outcome](#pass-outcome-number-188)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-data-requirement|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;data&lowbar;requirement.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-187)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-187)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-187)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 188
+
+[Jump to summary definition](#summary-Pass-188)	|	[Previous Pass outcome](#pass-outcome-number-187)	|	[Next Pass outcome](#pass-outcome-number-189)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-compliance-verification-report|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-188)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-188)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-188)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 189
+
+[Jump to summary definition](#summary-Pass-189)	|	[Previous Pass outcome](#pass-outcome-number-188)	|	[Next Pass outcome](#pass-outcome-number-190)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-compliance-verification-report|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-189)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-189)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-189)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 190
+
+[Jump to summary definition](#summary-Pass-190)	|	[Previous Pass outcome](#pass-outcome-number-189)	|	[Next Pass outcome](#pass-outcome-number-191)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-compliance-verification-report|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-190)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-190)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-190)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 191
+
+[Jump to summary definition](#summary-Pass-191)	|	[Previous Pass outcome](#pass-outcome-number-190)	|	[Next Pass outcome](#pass-outcome-number-192)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-compliance-verification-report|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-191)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-191)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-191)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 192
+
+[Jump to summary definition](#summary-Pass-192)	|	[Previous Pass outcome](#pass-outcome-number-191)	|	[Next Pass outcome](#pass-outcome-number-193)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-compliance-verification-report|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-192)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-192)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-192)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 193
+
+[Jump to summary definition](#summary-Pass-193)	|	[Previous Pass outcome](#pass-outcome-number-192)	|	[Next Pass outcome](#pass-outcome-number-194)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-compliance-verification-report|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-193)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-193)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-193)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 194
+
+[Jump to summary definition](#summary-Pass-194)	|	[Previous Pass outcome](#pass-outcome-number-193)	|	[Next Pass outcome](#pass-outcome-number-195)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-compliance-verification-report|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-194)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-194)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-194)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 195
+
+[Jump to summary definition](#summary-Pass-195)	|	[Previous Pass outcome](#pass-outcome-number-194)	|	[Next Pass outcome](#pass-outcome-number-196)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-compliance-verification-report|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-195)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-195)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-195)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 196
+
+[Jump to summary definition](#summary-Pass-196)	|	[Previous Pass outcome](#pass-outcome-number-195)	|	[Next Pass outcome](#pass-outcome-number-197)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-compliance-verification-report|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;compliance&lowbar;verification&lowbar;report.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-196)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-196)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-196)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 197
+
+[Jump to summary definition](#summary-Pass-197)	|	[Previous Pass outcome](#pass-outcome-number-196)	|	[Next Pass outcome](#pass-outcome-number-198)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-checking-act|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-197)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-197)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-197)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 198
+
+[Jump to summary definition](#summary-Pass-198)	|	[Previous Pass outcome](#pass-outcome-number-197)	|	[Next Pass outcome](#pass-outcome-number-199)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-checking-act|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-198)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-198)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-198)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 199
+
+[Jump to summary definition](#summary-Pass-199)	|	[Previous Pass outcome](#pass-outcome-number-198)	|	[Next Pass outcome](#pass-outcome-number-200)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-checking-act|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-199)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-199)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-199)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 200
+
+[Jump to summary definition](#summary-Pass-200)	|	[Previous Pass outcome](#pass-outcome-number-199)	|	[Next Pass outcome](#pass-outcome-number-201)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-checking-act|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-200)|Identifier|`owl-el-profile-error`|
+|[Section top](#pass-outcome-number-200)|Title|OWL&#32;EL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-200)|Description|Statement&#32;not&#32;supported&#32;in&#32;a&#32;Super&#32;Class&#32;Expression|
+
+***
+### Pass Outcome number 201
+
+[Jump to summary definition](#summary-Pass-201)	|	[Previous Pass outcome](#pass-outcome-number-200)	|	[Next Pass outcome](#pass-outcome-number-202)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-checking-act|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
+
+#### Criterion detail
+|Identifier|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|
+|----|----|
+|Title|Profile&#32;compatibility&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;whether&#32;the&#32;test&#32;subject&#32;is&#32;compatible&#32;with&#32;a&#32;profile&#32;or&#32;not,&#32;and&#32;if&#32;it&#32;is&#32;not,&#32;why.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-201)|Identifier|`owl-ql-profile-error`|
+|[Section top](#pass-outcome-number-201)|Title|OWL&#32;QL&#32;Profile&#32;compatible|
+|[Section top](#pass-outcome-number-201)|Description|Statement&#32;not&#32;supported&#32;in&#32;a&#32;Super&#32;Class&#32;Expression|
+
+***
+### Pass Outcome number 202
+
+[Jump to summary definition](#summary-Pass-202)	|	[Previous Pass outcome](#pass-outcome-number-201)	|	[Next Pass outcome](#pass-outcome-number-203)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-checking-act|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-202)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-202)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-202)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 203
+
+[Jump to summary definition](#summary-Pass-203)	|	[Previous Pass outcome](#pass-outcome-number-202)	|	[Next Pass outcome](#pass-outcome-number-204)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-checking-act|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-203)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-203)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-203)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 204
+
+[Jump to summary definition](#summary-Pass-204)	|	[Previous Pass outcome](#pass-outcome-number-203)	|	[Next Pass outcome](#pass-outcome-number-205)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-checking-act|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-204)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-204)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-204)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 205
+
+[Jump to summary definition](#summary-Pass-205)	|	[Previous Pass outcome](#pass-outcome-number-204)	|	[Next Pass outcome](#pass-outcome-number-206)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-checking-act|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-205)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-205)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-205)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 206
+
+[Jump to summary definition](#summary-Pass-206)	|	[Previous Pass outcome](#pass-outcome-number-205)	|	[Next Pass outcome](#pass-outcome-number-207)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-checking-act|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
+
+#### Criterion detail
+|Identifier|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|
+|----|----|
+|Title|Term&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;referenced&#32;to&#32;a&#32;module&#32;through&#32;a&#32;rdfs:isDefinedBy&#32;property.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-206)|Identifier|`no-reference-module`|
+|[Section top](#pass-outcome-number-206)|Title|Any&#32;term&#32;is&#32;referenced|
+|[Section top](#pass-outcome-number-206)|Description|Each&#32;term&#32;of&#32;the&#32;test&#32;subject&#32;is&#32;linked&#32;to&#32;a&#32;module&#32;by&#32;a&#32;rdfs:isDefinedBy&#32;property|
+
+***
+### Pass Outcome number 207
+
+[Jump to summary definition](#summary-Pass-207)	|	[Previous Pass outcome](#pass-outcome-number-206)	|	[Next Pass outcome](#pass-outcome-number-208)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-checking-act|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;checking&lowbar;act.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-207)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-207)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-207)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 208
+
+[Jump to summary definition](#summary-Pass-208)	|	[Previous Pass outcome](#pass-outcome-number-207)	|	[Next Pass outcome](#pass-outcome-number-209)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-check-method|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-208)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-208)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-208)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 209
+
+[Jump to summary definition](#summary-Pass-209)	|	[Previous Pass outcome](#pass-outcome-number-208)	|	[Next Pass outcome](#pass-outcome-number-210)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-check-method|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-209)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-209)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-209)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 210
+
+[Jump to summary definition](#summary-Pass-210)	|	[Previous Pass outcome](#pass-outcome-number-209)	|	[Next Pass outcome](#pass-outcome-number-211)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-check-method|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-210)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-210)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-210)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 211
+
+[Jump to summary definition](#summary-Pass-211)	|	[Previous Pass outcome](#pass-outcome-number-210)	|	[Next Pass outcome](#pass-outcome-number-212)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-check-method|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-211)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-211)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-211)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 212
+
+[Jump to summary definition](#summary-Pass-212)	|	[Previous Pass outcome](#pass-outcome-number-211)	|	[Next Pass outcome](#pass-outcome-number-213)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-check-method|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-212)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-212)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-212)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 213
+
+[Jump to summary definition](#summary-Pass-213)	|	[Previous Pass outcome](#pass-outcome-number-212)	|	[Next Pass outcome](#pass-outcome-number-214)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-check-method|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-213)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-213)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-213)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 214
+
+[Jump to summary definition](#summary-Pass-214)	|	[Previous Pass outcome](#pass-outcome-number-213)	|	[Next Pass outcome](#pass-outcome-number-215)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-check-method|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;check&lowbar;method.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-214)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-214)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-214)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 215
+
+[Jump to summary definition](#summary-Pass-215)	|	[Previous Pass outcome](#pass-outcome-number-214)	|	[Next Pass outcome](#pass-outcome-number-216)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-aec3po|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-215)|Identifier|`domain-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-215)|Title|Domains&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-215)|Description|Each&#32;rdfs:domain&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 216
+
+[Jump to summary definition](#summary-Pass-216)	|	[Previous Pass outcome](#pass-outcome-number-215)	|	[Next Pass outcome](#pass-outcome-number-217)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-aec3po|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
+
+#### Criterion detail
+|Identifier|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|
+|----|----|
+|Title|Domain&#32;and&#32;range&#32;referencing&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;ranges&#32;and&#32;domains&#32;from&#32;the&#32;test&#32;subject&#32;point&#32;to&#32;terms&#32;that&#32;are&#32;defined&#32;in&#32;the&#32;vocabulary.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-216)|Identifier|`range-out-of-vocabulary`|
+|[Section top](#pass-outcome-number-216)|Title|Ranges&#32;properly&#32;defined|
+|[Section top](#pass-outcome-number-216)|Description|Each&#32;rdfs:range&#32;is&#32;defined&#32;within&#32;the&#32;fragment|
+
+***
+### Pass Outcome number 217
+
+[Jump to summary definition](#summary-Pass-217)	|	[Previous Pass outcome](#pass-outcome-number-216)	|	[Next Pass outcome](#pass-outcome-number-218)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-aec3po|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
+
+#### Criterion detail
+|Identifier|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|
+|----|----|
+|Title|Term&#32;labeling&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;of&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;property&#32;pointing&#32;to&#32;a&#32;literal&#32;in&#32;English|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-217)|Identifier|`not-labeled-term`|
+|[Section top](#pass-outcome-number-217)|Title|All&#32;terms&#32;labeled|
+|[Section top](#pass-outcome-number-217)|Description|All&#32;the&#32;terms&#32;defined&#32;in&#32;the&#32;subject&#32;have&#32;a&#32;rdfs:label&#32;in&#32;English|
+
+***
+### Pass Outcome number 218
+
+[Jump to summary definition](#summary-Pass-218)	|	[Previous Pass outcome](#pass-outcome-number-217)	|	[Next Pass outcome](#pass-outcome-number-219)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-aec3po|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-218)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-218)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-218)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 219
+
+[Jump to summary definition](#summary-Pass-219)	|	[Previous Pass outcome](#pass-outcome-number-218)	|	[Next Pass outcome](#pass-outcome-number-220)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-aec3po|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-219)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-219)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-219)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 220
+
+[Jump to summary definition](#summary-Pass-220)	|	[Previous Pass outcome](#pass-outcome-number-219)	|	[Next Pass outcome](#pass-outcome-number-221)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-aec3po|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-220)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-220)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-220)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 221
+
+[Jump to summary definition](#summary-Pass-221)	|	[Previous Pass outcome](#pass-outcome-number-220)	|	[Next Pass outcome](#pass-outcome-number-222)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-aec3po|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-221)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-221)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-221)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 222
+
+[Jump to summary definition](#summary-Pass-222)	|	[Previous Pass outcome](#pass-outcome-number-221)	|	[Next Pass outcome](#pass-outcome-number-223)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-aec3po|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-222)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-222)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-222)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 223
+
+[Jump to summary definition](#summary-Pass-223)	|	[Previous Pass outcome](#pass-outcome-number-222)	|	[Next Pass outcome](#pass-outcome-number-224)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|module-aec3po|
+|----|----|
+|Title|Standalone&#32;module&#32;src&#92;aec3po.ttl&#32;from&#32;branch&#32;HEAD|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)|
+
+#### Criterion detail
+|Identifier|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|
+|----|----|
+|Title|Terms&#32;differenciation&#32;test|
+|Description|A&#32;test&#32;case&#32;from&#32;the&#32;Best&#32;Practices&#32;tests&#32;checking&#32;if&#32;all&#32;the&#32;terms&#32;are&#32;different&#32;enough&#32;from&#32;each&#32;other&#32;according&#32;to&#32;the&#32;Levenshtein&#32;distance&#32;metric.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-223)|Identifier|`too-close-terms`|
+|[Section top](#pass-outcome-number-223)|Title|Terms&#32;differenciated&#32;enough|
+|[Section top](#pass-outcome-number-223)|Description|All&#32;the&#32;terms&#32;have&#32;have&#32;a&#32;satisfying&#32;Levenshtein&#32;distance&#32;from&#32;each&#32;other&#32;term.|
+
+***
+### Pass Outcome number 224
+
+[Jump to summary definition](#summary-Pass-224)	|	[Previous Pass outcome](#pass-outcome-number-223)	|	[Next Pass outcome](#pass-outcome-number-225)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-modules|
+|----|----|
+|Title|All&#32;the&#32;modules&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)<br/>- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)<br/>- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)<br/>- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)<br/>- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)<br/>- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)<br/>- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)<br/>- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)<br/>- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)<br/>- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)<br/>- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)<br/>- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)<br/>- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)<br/>- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)<br/>- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)<br/>- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)<br/>- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)<br/>- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)<br/>- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)<br/>- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-224)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-224)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-224)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 225
+
+[Jump to summary definition](#summary-Pass-225)	|	[Previous Pass outcome](#pass-outcome-number-224)	|	[Next Pass outcome](#pass-outcome-number-226)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-modules|
+|----|----|
+|Title|All&#32;the&#32;modules&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)<br/>- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)<br/>- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)<br/>- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)<br/>- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)<br/>- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)<br/>- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)<br/>- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)<br/>- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)<br/>- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)<br/>- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)<br/>- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)<br/>- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)<br/>- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)<br/>- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)<br/>- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)<br/>- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)<br/>- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)<br/>- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)<br/>- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-225)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-225)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-225)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 226
+
+[Jump to summary definition](#summary-Pass-226)	|	[Previous Pass outcome](#pass-outcome-number-225)	|	[Next Pass outcome](#pass-outcome-number-227)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-modules|
+|----|----|
+|Title|All&#32;the&#32;modules&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)<br/>- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)<br/>- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)<br/>- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)<br/>- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)<br/>- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)<br/>- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)<br/>- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)<br/>- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)<br/>- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)<br/>- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)<br/>- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)<br/>- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)<br/>- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)<br/>- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)<br/>- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)<br/>- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)<br/>- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)<br/>- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)<br/>- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-226)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-226)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-226)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 227
+
+[Jump to summary definition](#summary-Pass-227)	|	[Previous Pass outcome](#pass-outcome-number-226)	|	[Next Pass outcome](#pass-outcome-number-228)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-modules|
+|----|----|
+|Title|All&#32;the&#32;modules&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)<br/>- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)<br/>- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)<br/>- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)<br/>- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)<br/>- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)<br/>- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)<br/>- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)<br/>- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)<br/>- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)<br/>- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)<br/>- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)<br/>- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)<br/>- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)<br/>- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)<br/>- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)<br/>- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)<br/>- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)<br/>- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)<br/>- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-227)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-227)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-227)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 228
+
+[Jump to summary definition](#summary-Pass-228)	|	[Previous Pass outcome](#pass-outcome-number-227)	|	[Next Pass outcome](#pass-outcome-number-229)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-modules|
+|----|----|
+|Title|All&#32;the&#32;modules&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)<br/>- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)<br/>- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)<br/>- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)<br/>- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)<br/>- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)<br/>- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)<br/>- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)<br/>- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)<br/>- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)<br/>- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)<br/>- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)<br/>- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)<br/>- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)<br/>- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)<br/>- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)<br/>- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)<br/>- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)<br/>- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)<br/>- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-228)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-228)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-228)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
+
+***
+### Pass Outcome number 229
+
+[Jump to summary definition](#summary-Pass-229)	|	[Previous Pass outcome](#pass-outcome-number-228)	|	[Next Pass outcome](#pass-outcome-number-230)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-fragments|
+|----|----|
+|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)<br/>- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)<br/>- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)<br/>- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)<br/>- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)<br/>- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)<br/>- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)<br/>- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)<br/>- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)<br/>- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)<br/>- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)<br/>- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)<br/>- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)<br/>- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)<br/>- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)<br/>- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)<br/>- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)<br/>- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)<br/>- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)<br/>- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|
+|----|----|
+|Title|OWL&#32;RL&#32;Constraint&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;check&#32;wether&#32;the&#32;test&#32;subject&#32;is&#32;syntaxically&#32;correct&#32;or&#32;not.|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-229)|Identifier|`owl-rl-constraint-violation`|
+|[Section top](#pass-outcome-number-229)|Title|OWL&#32;RL&#32;consistent|
+|[Section top](#pass-outcome-number-229)|Description|The&#32;provided&#32;graph&#32;is&#32;consistent&#32;for&#32;any&#32;OWL&#32;RL&#32;constraint|
+
+***
+### Pass Outcome number 230
+
+[Jump to summary definition](#summary-Pass-230)	|	[Previous Pass outcome](#pass-outcome-number-229)	|	[Next Pass outcome](#pass-outcome-number-231)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-fragments|
+|----|----|
+|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)<br/>- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)<br/>- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)<br/>- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)<br/>- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)<br/>- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)<br/>- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)<br/>- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)<br/>- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)<br/>- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)<br/>- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)<br/>- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)<br/>- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)<br/>- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)<br/>- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)<br/>- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)<br/>- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)<br/>- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)<br/>- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)<br/>- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-230)|Identifier|`class-subpropertyof`|
+|[Section top](#pass-outcome-number-230)|Title|No&#32;class&#32;subproperty|
+|[Section top](#pass-outcome-number-230)|Description|No&#32;ontology&#32;class&#32;is&#32;a&#32;subproperty|
+
+***
+### Pass Outcome number 231
+
+[Jump to summary definition](#summary-Pass-231)	|	[Previous Pass outcome](#pass-outcome-number-230)	|	[Next Pass outcome](#pass-outcome-number-232)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-fragments|
+|----|----|
+|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)<br/>- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)<br/>- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)<br/>- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)<br/>- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)<br/>- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)<br/>- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)<br/>- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)<br/>- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)<br/>- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)<br/>- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)<br/>- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)<br/>- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)<br/>- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)<br/>- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)<br/>- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)<br/>- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)<br/>- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)<br/>- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)<br/>- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-231)|Identifier|`property-subclassof`|
+|[Section top](#pass-outcome-number-231)|Title|No&#32;property&#32;subclass|
+|[Section top](#pass-outcome-number-231)|Description|No&#32;ontology&#32;property&#32;is&#32;a&#32;subclass|
+
+***
+### Pass Outcome number 232
+
+[Jump to summary definition](#summary-Pass-232)	|	[Previous Pass outcome](#pass-outcome-number-231)	|	[Next Pass outcome](#pass-outcome-number-233)
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-fragments|
+|----|----|
+|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)<br/>- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)<br/>- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)<br/>- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)<br/>- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)<br/>- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)<br/>- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)<br/>- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)<br/>- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)<br/>- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)<br/>- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)<br/>- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)<br/>- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)<br/>- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)<br/>- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)<br/>- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)<br/>- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)<br/>- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)<br/>- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)<br/>- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-232)|Identifier|`subclassof-property`|
+|[Section top](#pass-outcome-number-232)|Title|No&#32;subclass&#32;of&#32;property|
+|[Section top](#pass-outcome-number-232)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subclass&#32;of&#32;a&#32;property|
+
+***
+### Pass Outcome number 233
+
+[Jump to summary definition](#summary-Pass-233)	|	[Previous Pass outcome](#pass-outcome-number-232)	|	Next Pass outcome
+
+:white_check_mark:Pass outcome
+#### Subject detail
+|Name|all-fragments|
+|----|----|
+|Title|All&#32;the&#32;fragments&#32;from&#32;branch&#32;HEAD&#32;that&#32;are&#32;syntaxically&#32;correct&#32;as&#32;well&#32;as&#32;their&#32;recursive&#32;imports|
+|Composition|- [Module aec3po](https://github.com/Accord-Project/aec3po/blob/HEAD/src/aec3po.ttl)<br/>- [Module check&lowbar;method](https://github.com/Accord-Project/aec3po/blob/HEAD/src/check_method.ttl)<br/>- [Module checking&lowbar;act](https://github.com/Accord-Project/aec3po/blob/HEAD/src/checking_act.ttl)<br/>- [Module compliance&lowbar;verification&lowbar;report](https://github.com/Accord-Project/aec3po/blob/HEAD/src/compliance_verification_report.ttl)<br/>- [Module data&lowbar;requirement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/data_requirement.ttl)<br/>- [Module document](https://github.com/Accord-Project/aec3po/blob/HEAD/src/document.ttl)<br/>- [Module evidence](https://github.com/Accord-Project/aec3po/blob/HEAD/src/evidence.ttl)<br/>- [Module feature&lowbar;of&lowbar;interest](https://github.com/Accord-Project/aec3po/blob/HEAD/src/feature_of_interest.ttl)<br/>- [Module legal&lowbar;verifier](https://github.com/Accord-Project/aec3po/blob/HEAD/src/legal_verifier.ttl)<br/>- [Module model](https://github.com/Accord-Project/aec3po/blob/HEAD/src/model.ttl)<br/>- [Module rase&lowbar;statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/rase_statement.ttl)<br/>- [Module statement](https://github.com/Accord-Project/aec3po/blob/HEAD/src/statement.ttl)<br/>- [Module table](https://github.com/Accord-Project/aec3po/blob/HEAD/src/table.ttl)<br/>- [Module vocabularies/&lowbar;shape](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/_shape.ttl)<br/>- [Module vocabularies/administrative&lowbar;areas](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/administrative_areas.ttl)<br/>- [Module vocabularies/building&lowbar;structure](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_structure.ttl)<br/>- [Module vocabularies/building&lowbar;usage](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/building_usage.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;comparators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_comparators.ttl)<br/>- [Module vocabularies/check&lowbar;method&lowbar;operators](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/check_method_operators.ttl)<br/>- [Module vocabularies/disciplines](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/disciplines.ttl)<br/>- [Module vocabularies/permitting&lowbar;stages](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/permitting_stages.ttl)<br/>- [Module vocabularies/quantity&lowbar;kinds](https://github.com/Accord-Project/aec3po/blob/HEAD/src/vocabularies/quantity_kinds.ttl)|
+
+#### Criterion detail
+|Identifier|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|
+|----|----|
+|Title|Predicate&#32;extension&#32;test|
+|Description|A&#32;test&#32;meant&#32;to&#32;test&#32;the&#32;proper&#32;use&#32;of&#32;predicates&#32;rdfs:subClassOf&#32;and&#32;rdfs:subPropertyOf&#32;on&#32;the&#32;ontology&#32;terms|
+
+#### Outcome Detail
+|Jump|Type|:white_check_mark:Pass|
+|----|----|----|
+|[Section top](#pass-outcome-number-233)|Identifier|`subpropertyof-class`|
+|[Section top](#pass-outcome-number-233)|Title|No&#32;subproperty&#32;of&#32;class|
+|[Section top](#pass-outcome-number-233)|Description|No&#32;ontology&#32;term&#32;is&#32;a&#32;subproperty&#32;of&#32;a&#32;class|
 
 ***
 

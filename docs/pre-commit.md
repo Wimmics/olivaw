@@ -28,7 +28,7 @@ default_language_version:
   python: python3
 repos:
 - repo: https://github.com/Wimmics/olivaw
-  rev: v0.0.7
+  rev: v0.0.8
   hooks:
     - id: olivaw-test
 ```

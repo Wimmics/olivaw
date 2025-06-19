@@ -165,7 +165,7 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/test-actions@v0.0.7
+    - uses: Wimmics/olivaw/test-actions@v0.0.8
       with:
         gist-secret: ${{ secrets.GIST_SECRET }}
 ```
@@ -189,7 +189,7 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/init-branch@v0.0.7
+    - uses: Wimmics/olivaw/init-branch@v0.0.8
       with:
         gist-secret: ${{ secrets.GIST_SECRET }}
 ```
@@ -217,7 +217,7 @@ default_language_version:
   python: python3
 repos:
 - repo: https://github.com/Wimmics/olivaw
-  rev: v0.0.7
+  rev: v0.0.8
   hooks:
     - id: olivaw-test
 ```

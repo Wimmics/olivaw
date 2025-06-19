@@ -103,3 +103,91 @@ For each test subject provided, the different tests providd in the list should b
 If not provided, olivaw skips no test for any given subject.
 
 Check the [olivaw test documentation](./tests.md#2-available-tests) for more details about the available test and error identifiers.
+
+## modules_definition
+
+This field is optional and allows to declare where to find **modules** in a non-ACIMOV repository and how to guess their names from their file path.
+
+Default value:
+
+```json
+[
+    {
+        "glob": "src/**/*.ttl",
+        "patterns": {"module": "src[\\\\/](([^\\\\/]+[\\\\/]?)+)\\.ttl$"}
+    }
+]
+```
+
+## modelets_definition
+
+This field is optional and allows to declare where to find **modelets** in a non-ACIMOV repository and how to guess their related **motivating scenarios** from their file path.
+
+Default value:
+
+```json
+[
+    {
+        "glob": "domains/*/*/onto.ttl",
+        "patterns": {
+            "domain": "[\\\\/]([^\\\\/]+)[\\\\/][^\\\\/]+[\\\\/]onto\\.ttl$",
+            "scenario": "[\\\\/]([^\\\\/]+)[\\\\/]onto\\.ttl$"
+        }
+    }
+]
+```
+
+## datasets_definition
+
+This field is optional and allows to declare where to find **datasets** in a non-ACIMOV repository and how to guess their related **motivating scenarios** from their file path.
+
+Default value:
+
+```json
+[
+    {
+        "glob": "domains/*/*/dataset.ttl",
+        "patterns": {
+            "domain": "[\\\\/]([^\\\\/]+)[\\\\/][^\\\\/]+[\\\\/]dataset\\.ttl$",
+            "scenario": "[\\\\/]([^\\\\/]+)[\\\\/]dataset\\.ttl$"
+        }
+    }
+]
+```
+
+## usecases_definition
+
+This field is optional and allows to declare where to find **use-cases** in a non-ACIMOV repository and how to guess their names from their file path.
+
+Default value:
+
+```json
+[
+    {
+        "glob": "use-cases/*/**/*.ttl",
+        "patterns": {
+            "use-case": "^use-cases[\\\\/]([^\\\\/]+)[\\\\/]",
+            "fragment": "use-cases[\\\\/][^\\\\/]+[\\\\/](([^\\\\/]+[\\\\/]?)+)\\.ttl$"
+        }
+    }
+]
+```
+
+## queries_definition
+
+This field is optional and allows to declare where to find **queries** in a non-ACIMOV repository and how to guess their related **motivating scenarios** and **competency questions** from their file path.
+
+Default value:
+
+```json
+[
+    {
+        "glob": "domains/*/*/*.rq",
+        "patterns": {
+            "domain": "[\\\\/]([^\\\\/]+)[\\\\/][^\\\\/]+[\\\\/][^\\\\/]+\\.rq$",
+            "scenario": "[\\\\/]([^\\\\/]+)[\\\\/][^\\\\/]+\\.rq$",
+            "question": "[\\\\/]([^\\\\/]+)\\.rq$"
+        }
+    }
+]
+```

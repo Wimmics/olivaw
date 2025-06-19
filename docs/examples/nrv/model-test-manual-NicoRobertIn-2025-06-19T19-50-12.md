@@ -4,7 +4,7 @@ This file is an export of the RDF test report made out of [EARL vocabulary](http
 
 This test is powered by Corese, check [Corese website](https://project.inria.fr/corese/) and [Corese repository](https://github.com/Wimmics/corese)
 
-The original test report is available in turtle syntax [here](./model-test-manual-NicoRobertIn-2024-12-19T09-20-40.ttl).
+The original test report is available in turtle syntax [here](./model-test-manual-NicoRobertIn-2025-06-19T19-50-12.ttl).
 
 # Test Activity
 
@@ -15,14 +15,14 @@ Here is some information about the testing activity that led to this report
 |Description|[NicoRobertIn](https://github.com/NicoRobertIn)&#32;launch&#32;manual&#32;run&#32;of&#32;model&#32;tests&#32;against&#32;[acimov-tools/model-test](https://github.com/acimov-tools/model-test)&#32;on&#32;branch&#32;main|
 |Tester|[NicoRobertIn](https://github.com/NicoRobertIn)|
 |Ontology|[acimov-tools/model-test](https://github.com/acimov-tools/model-test)|
-|Ontology version|Local state `a2c317b2a870d6eb0cc695363b98f6fa73d064e1`|
-|Ontology version date|2024-12-19 09:20:38|
-|Ontology previous version|[7e5de163a77bbe88c1671a424b27f58c74f5fa7a](https://github.com/acimov-tools/model-test/tree/7e5de163a77bbe88c1671a424b27f58c74f5fa7a)|
+|Ontology version|Local state `d395c4bec5f5370cedb0fdb75dfe665bbc4e2c2e`|
+|Ontology version date|2025-06-19 19:50:10|
+|Ontology previous version|[2d2b197be6d9148e48186fc86072618c89134cc9](https://github.com/acimov-tools/model-test/tree/2d2b197be6d9148e48186fc86072618c89134cc9)|
 |Ontology branch|[main](https://github.com/acimov-tools/model-test/tree/main)|
-|Olivaw suite|[olivaw model test suite](https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/model/suite.py)|
-|Olivaw version|[v0.0.7](https://pypi.org/project/olivaw/0.0.7)|
-|Generated turtle|[Turtle report](./model-test-manual-NicoRobertIn-2024-12-19T09-20-40.ttl)|
-|Generated Markdown|[Markdown report](./model-test-manual-NicoRobertIn-2024-12-19T09-20-40.md)|
+|Olivaw suite|[olivaw model test suite](https://github.com/Wimmics/olivaw/blob/v0.0.8/olivaw/test/model/suite.py)|
+|Olivaw version|[v0.0.8](https://pypi.org/project/olivaw/0.0.8)|
+|Generated turtle|[Turtle report](./model-test-manual-NicoRobertIn-2025-06-19T19-50-12.ttl)|
+|Generated Markdown|[Markdown report](./model-test-manual-NicoRobertIn-2025-06-19T19-50-12.md)|
 
 # Statistic summary
 
@@ -63,10 +63,10 @@ Here is the chapter related to the MinorFail outcome
 
 |*Jump*|*Number*|*Status*|*Subject*|*Criterion*|*Title*|*Link*|
 |------|--------|--------|---------|-----------|-------|------|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-1">1/4</div>|:exclamation:MinorFail|`module-src-nrv-v1`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-1)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-2">2/4</div>|:exclamation:MinorFail|`module-src-nrv-v1`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-2)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-3">3/4</div>|:exclamation:MinorFail|`module-src-nrv-v1`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-3)|
-|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-4">4/4</div>|:exclamation:MinorFail|`module-src-nrv-v1`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Term not referenced to a module|[Jump](#minorfail-outcome-number-4)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-1">1/4</div>|:exclamation:MinorFail|`module-nrv-v1`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL EL Profile incompatible|[Jump](#minorfail-outcome-number-1)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-2">2/4</div>|:exclamation:MinorFail|`module-nrv-v1`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL QL Profile incompatible|[Jump](#minorfail-outcome-number-2)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-3">3/4</div>|:exclamation:MinorFail|`module-nrv-v1`|[profile-compatibility](https://ns.inria.fr/olivaw#profile-compatibility)|OWL RL Profile incompatible|[Jump](#minorfail-outcome-number-3)|
+|[Chapter top](#minorfail-outcomes)|<div id="summary-MinorFail-4">4/4</div>|:exclamation:MinorFail|`module-nrv-v1`|[term-referencing](https://ns.inria.fr/olivaw#term-referencing)|Term not referenced to a module|[Jump](#minorfail-outcome-number-4)|
 
 ***
 
@@ -80,9 +80,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -106,9 +106,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -132,9 +132,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -159,9 +159,9 @@ This subchapter gives more details to the :exclamation:MinorFail outcomes
 
 :exclamation:MinorFail outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -224,15 +224,15 @@ Here is the chapter related to the Pass outcome
 
 |*Jump*|*Number*|*Status*|*Subject*|*Criterion*|*Title*|*Link*|
 |------|--------|--------|---------|-----------|-------|------|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-1">1/9</div>|:white_check_mark:Pass|`module-src-nrv-v1`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-1)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-2">2/9</div>|:white_check_mark:Pass|`module-src-nrv-v1`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-2)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-3">3/9</div>|:white_check_mark:Pass|`module-src-nrv-v1`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-3)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-4">4/9</div>|:white_check_mark:Pass|`module-src-nrv-v1`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-4)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-5">5/9</div>|:white_check_mark:Pass|`module-src-nrv-v1`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-5)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-6">6/9</div>|:white_check_mark:Pass|`module-src-nrv-v1`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-6)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-7">7/9</div>|:white_check_mark:Pass|`module-src-nrv-v1`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-7)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-8">8/9</div>|:white_check_mark:Pass|`module-src-nrv-v1`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-8)|
-|[Chapter top](#pass-outcomes)|<div id="summary-Pass-9">9/9</div>|:white_check_mark:Pass|`module-src-nrv-v1`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-9)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-1">1/9</div>|:white_check_mark:Pass|`module-nrv-v1`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Domains properly defined|[Jump](#pass-outcome-number-1)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-2">2/9</div>|:white_check_mark:Pass|`module-nrv-v1`|[domain-and-range-referencing](https://ns.inria.fr/olivaw#domain-and-range-referencing)|Ranges properly defined|[Jump](#pass-outcome-number-2)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-3">3/9</div>|:white_check_mark:Pass|`module-nrv-v1`|[labeled-terms](https://ns.inria.fr/olivaw#labeled-terms)|All terms labeled|[Jump](#pass-outcome-number-3)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-4">4/9</div>|:white_check_mark:Pass|`module-nrv-v1`|[owl-rl-constraint](https://ns.inria.fr/olivaw#owl-rl-constraint)|OWL RL consistent|[Jump](#pass-outcome-number-4)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-5">5/9</div>|:white_check_mark:Pass|`module-nrv-v1`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No class subproperty|[Jump](#pass-outcome-number-5)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-6">6/9</div>|:white_check_mark:Pass|`module-nrv-v1`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No property subclass|[Jump](#pass-outcome-number-6)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-7">7/9</div>|:white_check_mark:Pass|`module-nrv-v1`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subclass of property|[Jump](#pass-outcome-number-7)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-8">8/9</div>|:white_check_mark:Pass|`module-nrv-v1`|[proper-extension-predicate](https://ns.inria.fr/olivaw#proper-extension-predicate)|No subproperty of class|[Jump](#pass-outcome-number-8)|
+|[Chapter top](#pass-outcomes)|<div id="summary-Pass-9">9/9</div>|:white_check_mark:Pass|`module-nrv-v1`|[terms-differenciation](https://ns.inria.fr/olivaw#terms-differenciation)|Terms differenciated enough|[Jump](#pass-outcome-number-9)|
 
 ***
 
@@ -246,9 +246,9 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 
 :white_check_mark:Pass outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -271,9 +271,9 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 
 :white_check_mark:Pass outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -296,9 +296,9 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 
 :white_check_mark:Pass outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -321,9 +321,9 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 
 :white_check_mark:Pass outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -346,9 +346,9 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 
 :white_check_mark:Pass outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -371,9 +371,9 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 
 :white_check_mark:Pass outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -396,9 +396,9 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 
 :white_check_mark:Pass outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -421,9 +421,9 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 
 :white_check_mark:Pass outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail
@@ -446,9 +446,9 @@ This subchapter gives more details to the :white_check_mark:Pass outcomes
 
 :white_check_mark:Pass outcome
 #### Subject detail
-|Name|module-src-nrv-v1|
+|Name|module-nrv-v1|
 |----|----|
-|Title|Standalone&#32;module&#32;src/nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
+|Title|Standalone&#32;module&#32;src&#92;nrv&lowbar;v1.ttl&#32;from&#32;branch&#32;main|
 |Composition|- [Module nrv&lowbar;v1](https://github.com/acimov-tools/model-test/blob/main/src/nrv_v1.ttl)|
 
 #### Criterion detail

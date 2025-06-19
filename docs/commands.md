@@ -64,7 +64,7 @@ Finally this command should provide:
 
 * a `parameters.json` file in the `.acimov/output/` folder
 * a gist created with files containing accurate starting value
-* badges in the README.md file pointing to the files of the fresh new gist
+* badges in the README.md file pointing to the files of the fresh new gist. These badges are clickable and point to their related reports and reports sections.
 
 ## olivaw init branch
 
@@ -74,7 +74,7 @@ olivaw init branch
 
 This command is meant for the [init-branch actions](./actions.md#branch-initialization) but can also be used locally if needed.
 
-The command updates the URLs for the files of the badges so that these badges are functional after the next [test actions](./actions.md#automatic-test-on-push)
+The command updates the URLs for the files of the badges so that these badges are functional after the next [test actions](./actions.md#automatic-test-on-push). These badges are clickable and point to their related reports and reports sections.
 
 # olivaw test
 

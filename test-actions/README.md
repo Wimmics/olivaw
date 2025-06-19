@@ -23,7 +23,7 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/test-actions@v0.0.7
+    - uses: Wimmics/olivaw/test-actions@v0.0.8
       with:
         gist-secret: ${{ secrets.GIST_SECRET }}
 ```
@@ -55,7 +55,7 @@ jobs:
     - run: |
         IFS='/' read -ra PATHS <<< "${{ github.ref }}"
         echo "BRANCH=$(echo ${PATHS[2]})" >> $GITHUB_ENV
-    - uses: Wimmics/olivaw/test-actions@v0.0.7
+    - uses: Wimmics/olivaw/test-actions@v0.0.8
       with:
         gist-secret: ${{ secrets.GIST_SECRET }}
         commit-report: ${{ env.BRANCH == github.event.repository.default_branch }}

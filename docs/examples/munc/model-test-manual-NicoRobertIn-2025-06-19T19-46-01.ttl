@@ -6,21 +6,51 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<file:///C:/Users/nrobert/Desktop/workspace/repositories/examples-olivaw/model-test/.acimov/output/model-test-manual-NicoRobertIn-2024-12-19T09-16-53.md> a prov:Entity ;
-    prov:generatedAtTime "2024-12-19T09:16:53.628325"^^xsd:dateTime ;
+<file:///C:/Users/nrobert/Desktop/workspace/repositories/model-test/.acimov/output/model-test-manual-NicoRobertIn-2025-06-19T19-46-01.md> a prov:Entity ;
+    prov:generatedAtTime "2025-06-19T19:46:01.255543"^^xsd:dateTime ;
     prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity _:assertor ;
             olivaw:generatedAs olivaw:markdown_report ] .
 
-<file:///C:/Users/nrobert/Desktop/workspace/repositories/examples-olivaw/model-test/.acimov/output/model-test-manual-NicoRobertIn-2024-12-19T09-16-53.ttl> a prov:Entity ;
-    prov:generatedAtTime "2024-12-19T09:16:53.628325"^^xsd:dateTime ;
+<file:///C:/Users/nrobert/Desktop/workspace/repositories/model-test/.acimov/output/model-test-manual-NicoRobertIn-2025-06-19T19-46-01.ttl> a prov:Entity ;
+    prov:generatedAtTime "2025-06-19T19:46:01.255543"^^xsd:dateTime ;
     prov:qualifiedGeneration [ a prov:Generation ;
             prov:activity _:assertor ;
             olivaw:generatedAs olivaw:turtle_report ] .
 
-<https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/model/suite.py> a olivaw:VersionedEntity ;
-    dcterms:hasVersion "v0.0.7" ;
+<https://github.com/Wimmics/olivaw/blob/v0.0.8/olivaw/test/model/suite.py> a olivaw:VersionedEntity ;
+    dcterms:hasVersion "v0.0.8" ;
     olivaw:hostedAt <https://github.com/Wimmics/olivaw/blob/main/olivaw/test/model/suite.py> .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
+                    dcterms:identifier "owl-rl-constraint-violation" ;
+                    dcterms:title "OWL RL consistent"@en ] ] ;
+    earl:subject _:module-munc ;
+    earl:test olivaw:owl-rl-constraint .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "Each rdfs:range is defined within the fragment"@en ;
+                    dcterms:identifier "range-out-of-vocabulary" ;
+                    dcterms:title "Ranges properly defined"@en ] ] ;
+    earl:subject _:module-munc ;
+    earl:test olivaw:domain-and-range-referencing .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "No ontology term is a subclass of a property"@en ;
+                    dcterms:identifier "subclassof-property" ;
+                    dcterms:title "No subclass of property"@en ] ] ;
+    earl:subject _:module-munc ;
+    earl:test olivaw:proper-extension-predicate .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -29,7 +59,7 @@
                     dcterms:description "All the terms have have a satisfying Levenshtein distance from each other term."@en ;
                     dcterms:identifier "too-close-terms" ;
                     dcterms:title "Terms differenciated enough"@en ] ] ;
-    earl:subject _:module-src-munc ;
+    earl:subject _:module-munc ;
     earl:test olivaw:terms-differenciation .
 
 [] a earl:Assertion ;
@@ -39,17 +69,7 @@
                     dcterms:description "Each rdfs:domain is defined within the fragment"@en ;
                     dcterms:identifier "domain-out-of-vocabulary" ;
                     dcterms:title "Domains properly defined"@en ] ] ;
-    earl:subject _:module-src-munc ;
-    earl:test olivaw:domain-and-range-referencing .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "Each rdfs:range is defined within the fragment"@en ;
-                    dcterms:identifier "range-out-of-vocabulary" ;
-                    dcterms:title "Ranges properly defined"@en ] ] ;
-    earl:subject _:module-src-munc ;
+    earl:subject _:module-munc ;
     earl:test olivaw:domain-and-range-referencing .
 
 [] a earl:Assertion ;
@@ -59,8 +79,47 @@
                     dcterms:description "No ontology property is a subclass"@en ;
                     dcterms:identifier "property-subclassof" ;
                     dcterms:title "No property subclass"@en ] ] ;
-    earl:subject _:module-src-munc ;
+    earl:subject _:module-munc ;
     earl:test olivaw:proper-extension-predicate .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a olivaw:MinorFail ;
+                    dcterms:description "Statement not supported"@en ;
+                    dcterms:identifier "owl-rl-profile-error" ;
+                    dcterms:title "OWL RL Profile incompatible"@en ;
+                    earl:info """munc:hasFullTranslation a owl:ReflexiveProperty,
+        owl:SymmetricProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "hasFullTranslation"@en ;
+    rdfs:domain munc:UncertaintyApproach ;
+    rdfs:range munc:UncertaintyApproach ;
+    rdfs:subPropertyOf munc:hasIdealTranslation .""" ],
+                [ a olivaw:MinorFail ;
+                    dcterms:description "Statement not supported"@en ;
+                    dcterms:identifier "owl-ql-profile-error" ;
+                    dcterms:title "OWL QL Profile incompatible"@en ;
+                    earl:info """munc:hasFullTranslation a owl:ReflexiveProperty,
+        owl:SymmetricProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "hasFullTranslation"@en ;
+    rdfs:domain munc:UncertaintyApproach ;
+    rdfs:range munc:UncertaintyApproach ;
+    rdfs:subPropertyOf munc:hasIdealTranslation .""" ],
+                [ a olivaw:MinorFail ;
+                    dcterms:description "Statement not supported"@en ;
+                    dcterms:identifier "owl-el-profile-error" ;
+                    dcterms:title "OWL EL Profile incompatible"@en ;
+                    earl:info """munc:hasFullTranslation a owl:ReflexiveProperty,
+        owl:SymmetricProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "hasFullTranslation"@en ;
+    rdfs:domain munc:UncertaintyApproach ;
+    rdfs:range munc:UncertaintyApproach ;
+    rdfs:subPropertyOf munc:hasIdealTranslation .""" ] ] ;
+    earl:subject _:module-munc ;
+    earl:test olivaw:profile-compatibility .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -149,87 +208,8 @@
     rdfs:comment "Each Uncertainty approach has its own logic to reason over m..." ;
     rdfs:domain :uncertaintyFeature ;
     rdfs:range :UncertaintyOperation .""" ] ] ;
-    earl:subject _:module-src-munc ;
+    earl:subject _:module-munc ;
     earl:test olivaw:term-referencing .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "No ontology term is a subclass of a property"@en ;
-                    dcterms:identifier "subclassof-property" ;
-                    dcterms:title "No subclass of property"@en ] ] ;
-    earl:subject _:module-src-munc ;
-    earl:test olivaw:proper-extension-predicate .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "No ontology class is a subproperty"@en ;
-                    dcterms:identifier "class-subpropertyof" ;
-                    dcterms:title "No class subproperty"@en ] ] ;
-    earl:subject _:module-src-munc ;
-    earl:test olivaw:proper-extension-predicate .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a olivaw:MinorFail ;
-                    dcterms:description "Statement not supported"@en ;
-                    dcterms:identifier "owl-rl-profile-error" ;
-                    dcterms:title "OWL RL Profile incompatible"@en ;
-                    earl:info """munc:hasFullTranslation a owl:ReflexiveProperty,
-        owl:SymmetricProperty,
-        owl:TransitiveProperty ;
-    rdfs:label "hasFullTranslation"@en ;
-    rdfs:domain munc:UncertaintyApproach ;
-    rdfs:range munc:UncertaintyApproach ;
-    rdfs:subPropertyOf munc:hasIdealTranslation .""" ],
-                [ a olivaw:MinorFail ;
-                    dcterms:description "Statement not supported"@en ;
-                    dcterms:identifier "owl-ql-profile-error" ;
-                    dcterms:title "OWL QL Profile incompatible"@en ;
-                    earl:info """munc:hasFullTranslation a owl:ReflexiveProperty,
-        owl:SymmetricProperty,
-        owl:TransitiveProperty ;
-    rdfs:label "hasFullTranslation"@en ;
-    rdfs:domain munc:UncertaintyApproach ;
-    rdfs:range munc:UncertaintyApproach ;
-    rdfs:subPropertyOf munc:hasIdealTranslation .""" ],
-                [ a olivaw:MinorFail ;
-                    dcterms:description "Statement not supported"@en ;
-                    dcterms:identifier "owl-el-profile-error" ;
-                    dcterms:title "OWL EL Profile incompatible"@en ;
-                    earl:info """munc:hasFullTranslation a owl:ReflexiveProperty,
-        owl:SymmetricProperty,
-        owl:TransitiveProperty ;
-    rdfs:label "hasFullTranslation"@en ;
-    rdfs:domain munc:UncertaintyApproach ;
-    rdfs:range munc:UncertaintyApproach ;
-    rdfs:subPropertyOf munc:hasIdealTranslation .""" ] ] ;
-    earl:subject _:module-src-munc ;
-    earl:test olivaw:profile-compatibility .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "All the terms defined in the subject have a rdfs:label in English"@en ;
-                    dcterms:identifier "not-labeled-term" ;
-                    dcterms:title "All terms labeled"@en ] ] ;
-    earl:subject _:module-src-munc ;
-    earl:test olivaw:labeled-terms .
-
-[] a earl:Assertion ;
-    earl:assertedBy _:assertor ;
-    earl:result [ a earl:TestResult ;
-            earl:outcome [ a earl:Pass ;
-                    dcterms:description "The provided graph is consistent for any OWL RL constraint"@en ;
-                    dcterms:identifier "owl-rl-constraint-violation" ;
-                    dcterms:title "OWL RL consistent"@en ] ] ;
-    earl:subject _:module-src-munc ;
-    earl:test olivaw:owl-rl-constraint .
 
 [] a earl:Assertion ;
     earl:assertedBy _:assertor ;
@@ -238,7 +218,27 @@
                     dcterms:description "No ontology term is a subproperty of a class"@en ;
                     dcterms:identifier "subpropertyof-class" ;
                     dcterms:title "No subproperty of class"@en ] ] ;
-    earl:subject _:module-src-munc ;
+    earl:subject _:module-munc ;
+    earl:test olivaw:proper-extension-predicate .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "All the terms defined in the subject have a rdfs:label in English"@en ;
+                    dcterms:identifier "not-labeled-term" ;
+                    dcterms:title "All terms labeled"@en ] ] ;
+    earl:subject _:module-munc ;
+    earl:test olivaw:labeled-terms .
+
+[] a earl:Assertion ;
+    earl:assertedBy _:assertor ;
+    earl:result [ a earl:TestResult ;
+            earl:outcome [ a earl:Pass ;
+                    dcterms:description "No ontology class is a subproperty"@en ;
+                    dcterms:identifier "class-subpropertyof" ;
+                    dcterms:title "No class subproperty"@en ] ] ;
+    earl:subject _:module-munc ;
     earl:test olivaw:proper-extension-predicate .
 
 [] a earl:TestSubject ;
@@ -252,7 +252,7 @@
     dcterms:title "All the modules from branch main that are syntaxically correct as well as their recursive imports"@en .
 
 _:testSuiteUsage a prov:Usage ;
-    prov:entity <https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/model/suite.py> ;
+    prov:entity <https://github.com/Wimmics/olivaw/blob/v0.0.8/olivaw/test/model/suite.py> ;
     prov:hadRole olivaw:test_suite .
 
 _:testedProjectUsage a prov:Usage ;
@@ -264,34 +264,34 @@ _:testerAssociation a prov:Association ;
     prov:hadRole olivaw:tester .
 
 _:intermediateSnapshot a olivaw:VersionedEntity ;
-    dcterms:date "2024-12-19T09:16:51.912306"^^xsd:dateTime ;
-    dcterms:hasVersion "a2c317b2a870d6eb0cc695363b98f6fa73d064e1" ;
+    dcterms:date "2025-06-19T19:45:59.716957"^^xsd:dateTime ;
+    dcterms:hasVersion "d395c4bec5f5370cedb0fdb75dfe665bbc4e2c2e" ;
     olivaw:hostedAt <https://github.com/acimov-tools/model-test> ;
     olivaw:isOnBranch "main" ;
     olivaw:patchedBy _:tester ;
-    olivaw:patchedFrom "7e5de163a77bbe88c1671a424b27f58c74f5fa7a" .
+    olivaw:patchedFrom "2d2b197be6d9148e48186fc86072618c89134cc9" .
 
 _:tester a prov:Agent,
         foaf:Person ;
     foaf:homepage git-platform:NicoRobertIn ;
     foaf:nick "NicoRobertIn" .
 
-_:module-src-munc a earl:TestSubject ;
+_:module-munc a earl:TestSubject ;
     dcterms:hasPart <https://github.com/acimov-tools/model-test/blob/main/src/munc.ttl> ;
-    dcterms:identifier "module-src-munc" ;
-    dcterms:title "Standalone module src/munc.ttl from branch main"@en .
+    dcterms:identifier "module-munc" ;
+    dcterms:title "Standalone module src\\munc.ttl from branch main"@en .
 
 _:assertor a earl:Assertor,
         prov:Activity ;
     dcterms:description "NicoRobertIn launch manual run of model tests against acimov-tools/model-test on branch main" ;
     dcterms:title "Model tests of acimov-tools/model-test on branch main" ;
-    prov:endedAtTime "2024-12-19T09:16:53.628325"^^xsd:dateTime ;
-    prov:generated <file:///C:/Users/nrobert/Desktop/workspace/repositories/examples-olivaw/model-test/.acimov/output/model-test-manual-NicoRobertIn-2024-12-19T09-16-53.md>,
-        <file:///C:/Users/nrobert/Desktop/workspace/repositories/examples-olivaw/model-test/.acimov/output/model-test-manual-NicoRobertIn-2024-12-19T09-16-53.ttl> ;
+    prov:endedAtTime "2025-06-19T19:46:01.255543"^^xsd:dateTime ;
+    prov:generated <file:///C:/Users/nrobert/Desktop/workspace/repositories/model-test/.acimov/output/model-test-manual-NicoRobertIn-2025-06-19T19-46-01.md>,
+        <file:///C:/Users/nrobert/Desktop/workspace/repositories/model-test/.acimov/output/model-test-manual-NicoRobertIn-2025-06-19T19-46-01.ttl> ;
     prov:qualifiedAssociation _:testerAssociation ;
     prov:qualifiedUsage _:testSuiteUsage,
         _:testedProjectUsage ;
     prov:used _:intermediateSnapshot,
-        <https://github.com/Wimmics/olivaw/blob/v0.0.7/olivaw/test/model/suite.py> ;
+        <https://github.com/Wimmics/olivaw/blob/v0.0.8/olivaw/test/model/suite.py> ;
     prov:wasAssociatedWith _:tester .
 

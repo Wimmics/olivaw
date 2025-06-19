@@ -18,7 +18,7 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-    - uses: Wimmics/olivaw/init-branch@v0.0.7
+    - uses: Wimmics/olivaw/init-branch@v0.0.8
       with:
         gist-secret: ${{ secrets.GIST_SECRET }}
 ```
