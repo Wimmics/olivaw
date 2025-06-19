@@ -93,17 +93,6 @@ runs:
         echo "OLIVAW_VERSION=$(echo $OLIVAW_VERSION)" >> $GITHUB_ENV
         echo "Olivaw version: $OLIVAW_VERSION"
 
-        TARGET_COMMIT=${{ github.sha }}
-
-        git fetch --all
-        PARENT=$(for branch in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/); do
-          BASE=$(git merge-base $branch $TARGET_COMMIT 2>/dev/null)
-          [ -n "$BASE" ] && echo "$BASE $branch"
-        done | sort | uniq | grep -v $TARGET_COMMIT | sort | tail -n 1 | awk '{print $2}')
-        
-        echo "PARENT=$(echo $PARENT)" >> $GITHUB_ENV
-        echo "Parent branch is: $PARENT"
-
     - name: Compute olivaw command line parameters
       id: olivaw-parameters
       if: ${{ env.INIT_TAG_SKIP != 'true' }}
