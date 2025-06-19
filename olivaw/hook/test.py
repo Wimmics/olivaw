@@ -30,7 +30,7 @@ from olivaw.constants import (
     TESTED_MODULES,
     TESTED_MODELETS,
     TESTED_DATASETS,
-    TESTED_USECASES,
+    TESTED_USE_CASES,
     TESTED_QUERIES
 )
 
@@ -86,7 +86,7 @@ def main(files: Sequence[str] | None = None) -> int:
 
     sorted_files["data"][data_tests] = [
         item
-        for item in TESTED_DATASETS + TESTED_USECASES
+        for item in TESTED_DATASETS + TESTED_USE_CASES
         if item["file"] in abspaths
     ]
 

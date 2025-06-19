@@ -120,7 +120,7 @@ TESTED_MODELETS: list[dict[str, str]] = None
 TESTED_DATASETS: list[dict[str, str]] = None
 """List of all the datasets that should be tested"""
 
-TESTED_USECASES: list[dict[str, str]] = None
+TESTED_USE_CASES: list[dict[str, str]] = None
 """List of all the use cases that should be tested"""
 
 TESTED_QUERIES: list[dict[str, str]] = None
