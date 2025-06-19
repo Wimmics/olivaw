@@ -6,6 +6,8 @@ from regex import (
     escape
 )
 
+from .badges import GIST_BADGE_PREFIX
+
 AST_ERROR_FORMAT: Pattern = regex_compile("ERROR fr\\.inria\\.corese\\.sparql\\.triple\\.parser\\.ASTQuery")
 """Regex: Detects SPARQL parsing errors """
 
@@ -44,3 +46,6 @@ URI_FORMAT: Pattern = regex_compile("^(([^:/?#\s]+):)(\/\/([^/?#\s]*))?([^?#\s]*
 
 MULTIPLE_HTML_CHARS: Pattern = regex_compile("(" + escape("&#") + "[0-9]+;)"+ "(" + escape("&#") + "[0-9]+;)")
 """Regex detecting several html chars in a row without space between them"""
+
+BADGE_URL_FORMAT: Pattern = regex_compile(f"({escape(GIST_BADGE_PREFIX)}\\/[^\\/]+/[^\\/]+/raw/([^_]+_[^_]+)_[^\\.]+\\.json)")
+"""Regex detecting a badge image URL"""
