@@ -156,6 +156,21 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
     if "gist_index" in repo_parameters:
       GIST_INDEX = repo_parameters["gist_index"]
 
+    if "modules_definition" in repo_parameters:
+      MODULES_DEFINITION = repo_parameters["modules_definition"]
+
+    if "modelets_definition" in repo_parameters:
+      MODULES_DEFINITION = repo_parameters["modelets_definition"]
+
+    if "datasets_definition" in repo_parameters:
+      MODULES_DEFINITION = repo_parameters["datasets_definition"]
+
+    if "usecases_definition" in repo_parameters:
+      MODULES_DEFINITION = repo_parameters["datasets_definition"]
+
+    if "queries_definition" in repo_parameters:
+      MODULES_DEFINITION = repo_parameters["queries_definition"]
+
     SKIPPED_ERRORS = repo_parameters["skipped_errors"] if "skipped_errors" in repo_parameters else []
 
     SKIPPED_TESTS = repo_parameters["skipped_tests"] if "skipped_tests" in repo_parameters else []
@@ -168,16 +183,6 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       )
       for path in repo_parameters["skipped_subjects"]
     ] if "skipped_subjects" in repo_parameters else []
-
-    TESTED_MODULES = [
-      file for file in MODULES_TTL_GLOB_PATH
-      if not abspath(file) in SKIPPED_SUBJECTS
-    ]
-
-    TESTED_MODELETS = [
-      file for file in MODELETS_TTL_GLOB_PATH
-      if not abspath(file) in SKIPPED_SUBJECTS
-    ]
 
     SKIP_FOR_TEST = {
       criterion: [
@@ -201,12 +206,6 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       for file, criterions
       in repo_parameters["skip_for_subject"].items()
     } if "skip_for_subject" in repo_parameters else {}
-
-    DATASETS = [
-      item
-      for item in USE_CASES_TTL_GLOB_PATH + DATASETS_TTL_GLOB_PATH
-      if not abspath(item) in SKIPPED_SUBJECTS
-    ]
 
   def add_repo_variables(request):
     return request\

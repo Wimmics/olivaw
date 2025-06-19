@@ -25,7 +25,6 @@ from olivaw.constants import (
     ONTOLOGY_PREFIX,
     ONTOLOGY_NAMESPACE,
     ON_POSIX,
-    MODULES_TTL_GLOB_PATH,
     AST_ERROR_FORMAT,
     URI_FORMAT,
     URI_PATTERN,

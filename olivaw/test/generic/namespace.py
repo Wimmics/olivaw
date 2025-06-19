@@ -5,8 +5,9 @@ from olivaw.constants import (
     NAMESPACE_SIMILARITY_THRESHOLD,
     GET_URIS,
     GET_NAMESPACE_USAGE,
-    DATASETS,
-    SKIPPED_TESTS
+    SKIPPED_TESTS,
+    TESTED_DATASETS,
+    TESTED_USE_CASES
 )
 
 from olivaw.test.corese import (
@@ -86,7 +87,12 @@ def namespace_test(
 
     datasets_prefixes = [
         (path, get_prefix_suffix(uri)[0])
-        for path, uri in get_uris(DATASETS)
+        for path, uri in get_uris(
+            [
+                item["file"]
+                for item in TESTED_DATASETS + TESTED_USE_CASES
+            ]
+        )
     ]
     datasets_prefixes_tree = make_index(datasets_prefixes)
 

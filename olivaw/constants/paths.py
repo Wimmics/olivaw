@@ -17,21 +17,6 @@ PWD_TO_ROOT_FOLDER: str = f"{relpath(ROOT_FOLDER, getcwd())}{sep}" if not ROOT_F
 PWD_TO_OUTPUT_FOLDER: str = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}output{sep}" if not ROOT_FOLDER is None else None
 """Path to the repository output folder"""
 
-MODULES_TTL_GLOB_PATH: list[str] = glob(f"{PWD_TO_ROOT_FOLDER}src{sep}**{sep}*.ttl", recursive=True) if not ROOT_FOLDER is None else None
-"""Modules files in the repository"""
-
-MODELETS_TTL_GLOB_PATH: list[str] = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}onto.ttl") if not ROOT_FOLDER is None else None
-"""Modelets files in the repository"""
-
-DATASETS_TTL_GLOB_PATH: list[str] = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}dataset.ttl") if not ROOT_FOLDER is None else None
-"""Dataset files in the repository"""
-
-USE_CASES_TTL_GLOB_PATH: list[str] = glob(f"{PWD_TO_ROOT_FOLDER}use-cases{sep}*{sep}**{sep}*.ttl", recursive=True) if not ROOT_FOLDER is None else None
-"""Use case files in the repository"""
-
-QUESTIONS_GLOB_PATH: list[str] = glob(f"{PWD_TO_ROOT_FOLDER}domains{sep}*{sep}*{sep}*.rq") if not ROOT_FOLDER is None else None
-"""Competency questions files in the repository"""
-
 CUSTOM_MODEL_TESTS: str = f"{PWD_TO_ROOT_FOLDER}.acimov{sep}custom-tests{sep}model{sep}*.shacl" if not ROOT_FOLDER is None else None
 """Custom model test files in the repository"""
 

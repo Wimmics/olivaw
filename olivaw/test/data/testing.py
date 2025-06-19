@@ -17,7 +17,6 @@ from olivaw.test.corese import (
 from olivaw.constants import (
     MODULES,
     GET_ONTOLOGY_TERMS,
-    MODULES_TTL_GLOB_PATH,
     GET_TERM_USAGE,
     GET_URIS,
     GET_NAMESPACE_USAGE,
