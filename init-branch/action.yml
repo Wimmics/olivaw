@@ -55,13 +55,22 @@ runs:
       with:
         repository: ${{ github.repository }}
         ref: ${{ github.ref }}
+        fetch-depth: 0
+        fetch-tags: true
 
     - name: Compute if actions should be skipped because of uninitialized repository
       id: init-skip
       shell: bash
       run: |
 
-        PARENT=$(git for-each-ref --format='%(refname:short)' refs/heads/ | while read branch; do   echo "$(git merge-base $branch ${{ github.sha }}) $branch"; done | sort | uniq | grep -v ${{ github.sha }} | sort | tail -n 1 | rev | cut -d " " -f 1 | rev)
+        TARGET_COMMIT=${{ github.sha }}
+
+        git fetch --all
+        PARENT=$(for branch in $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/); do
+          BASE=$(git merge-base $branch $TARGET_COMMIT 2>/dev/null)
+          [ -n "$BASE" ] && echo "$BASE $branch"
+        done | sort | uniq | grep -v $TARGET_COMMIT | sort | tail -n 1 | awk '{print $2}')
+        
         echo "PARENT=$(echo $PARENT)" >> $GITHUB_ENV
         echo "Parent branch is: $PARENT"
 
