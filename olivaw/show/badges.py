@@ -44,6 +44,9 @@ def show_badges() -> None:
 
     for badge in badge_names:
         response=get(f"{badges_base_url}/{old_ref}_{badge}.json")
-        badges_data[f"{file_prefix}_{badge}.json"]={"content": response.text if response.status_code == 200 else "init"}
+
+        badge_value=response.text if response.status_code == 200 else f'{{"label": "{badge.capitalize()}", "message": "init", "color": "grey", "schemaVersion": 1}}'
+
+        badges_data[f"{file_prefix}_{badge}.json"]={"content": badge_value}
 
     print(dumps(badges_data))
