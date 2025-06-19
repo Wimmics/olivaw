@@ -515,7 +515,7 @@ WHERE  {
 
 GET_ERRORS_OF_TEST: str = """
 select ?o where {
-    :CRITERION_ID :has-error ?o
+    :CRITERION_ID :canOutcome ?o
 }
 """
 """Retrieve the possible error that can occur during a given test"""

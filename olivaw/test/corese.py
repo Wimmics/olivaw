@@ -428,7 +428,11 @@ def safe_load(
     """
     
     try:
-        loaded_fragments=fragments["file"] if isinstance(fragments, dict) else [fragment["file"] for fragment in fragments]
+        loaded_fragments=fragments["file"] if isinstance(fragments, dict) else \
+            (
+                [fragment["file"] for fragment in fragments] if isinstance(fragments, list) else \
+                fragments
+            )
     except:
         print(fragments)
         raise

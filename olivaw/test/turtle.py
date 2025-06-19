@@ -330,7 +330,7 @@ def make_subject(
 
         heart_type += heart[0]["type"]
     
-    title = f"{heart_type} {', '.join([relpath(item['file'], PWD_TO_OUTPUT_FOLDER) for item in heart])} from branch {BRANCH}"
+    title = f"{heart_type} {', '.join([relpath(item['file'], PWD_TO_ROOT_FOLDER) for item in heart])} from branch {BRANCH}"
 
     if len(appendix) > 0:
         title = f"{title} with related terms from the fragments {', '.join(appendix)}"
@@ -338,7 +338,7 @@ def make_subject(
     title = title if len(custom_title) == 0 else custom_title
 
     fragments=[
-        relpath(item['type'], PWD_TO_ROOT_FOLDER)
+        relpath(item['file'], PWD_TO_ROOT_FOLDER).replace("\\", "/")
         for item in heart + appendix
     ]
 
@@ -761,7 +761,6 @@ def make_not_tested(draft: AssertDraft, *criterions: list[str], **kwargs) -> Non
     :param **kwargs: Optional set of parameters to set to the `olivaw.test.AssertDraft` instance
     :type **kwargs: See `olivaw.test.AssertDraft` for more details
     """
-
     draft(**kwargs)
 
     if len(criterions) > 0:

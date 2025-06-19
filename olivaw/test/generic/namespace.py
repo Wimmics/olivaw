@@ -42,8 +42,8 @@ def get_prefix_suffix(uri: str) -> tuple[str, str]:
 def get_uris(fragments: list[str]) -> list[str]:
     """Retrieves all the URIs that can be found in a set of fragments
 
-    :param fragments: List of files paths to retrieve URIs
-    :type fragments: `list[str]`
+    :param fragments: List of data fragments retrieve URIs
+    :type fragments: `dict[str, str]`
 
     :returns: A list of URIs that can be found in the fragments
     :rtype: `list[str]`
@@ -89,7 +89,7 @@ def namespace_test(
         (path, get_prefix_suffix(uri)[0])
         for path, uri in get_uris(
             [
-                item["file"]
+                item
                 for item in TESTED_DATASETS + TESTED_USE_CASES
             ]
         )

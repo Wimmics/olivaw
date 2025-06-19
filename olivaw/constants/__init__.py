@@ -160,16 +160,16 @@ if exists(f"{ROOT_FOLDER}{sep}.acimov{sep}parameters.json"):
       MODULES_DEFINITION = repo_parameters["modules_definition"]
 
     if "modelets_definition" in repo_parameters:
-      MODULES_DEFINITION = repo_parameters["modelets_definition"]
+      MODELETS_DEFINITION = repo_parameters["modelets_definition"]
 
     if "datasets_definition" in repo_parameters:
-      MODULES_DEFINITION = repo_parameters["datasets_definition"]
+      DATASETS_DEFINITION = repo_parameters["datasets_definition"]
 
     if "usecases_definition" in repo_parameters:
-      MODULES_DEFINITION = repo_parameters["usecases_definition"]
+      USE_CASES_DEFINITION = repo_parameters["usecases_definition"]
 
     if "queries_definition" in repo_parameters:
-      MODULES_DEFINITION = repo_parameters["queries_definition"]
+      QUERIES_DEFINITION = repo_parameters["queries_definition"]
 
     SKIPPED_ERRORS = repo_parameters["skipped_errors"] if "skipped_errors" in repo_parameters else []
 
